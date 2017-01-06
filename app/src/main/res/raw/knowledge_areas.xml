@@ -1,0 +1,363 @@
+<knowledge-areas>
+
+    <knowledge-area>
+        <name>Software Requirements</name>
+        <image>@drawable/requirements</image>
+        <description>This is a simple description.</description>
+        <topics>
+            <topic>
+                <name>Topic 1</name>
+                <description>Allahu akbar for you</description>
+            </topic>
+            <topic>
+                <name>Topic 2</name>
+                <description>Allahu akbar for you 2</description>
+            </topic>
+            <topic>
+                <name>Topic 3</name>
+                <description>Allahu akbar for you 3</description>
+            </topic>
+            <topic>
+                <name>Topic 4</name>
+                <description>Allahu akbar for you 4</description>
+            </topic>
+        </topics>
+    </knowledge-area>
+
+    <knowledge-area>
+        <name>Software Design</name>
+        <image>@drawable/design</image>
+        <description>This is a simple description.</description>
+        <topics>
+            <topic>
+                <name>Topic 1</name>
+                <description>Allahu akbar for you</description>
+            </topic>
+            <topic>
+                <name>Topic 2</name>
+                <description>Allahu akbar for you 2</description>
+            </topic>
+            <topic>
+                <name>Topic 3</name>
+                <description>Allahu akbar for you 3</description>
+            </topic>
+            <topic>
+                <name>Topic 4</name>
+                <description>Allahu akbar for you 4</description>
+            </topic>
+        </topics>
+    </knowledge-area>
+
+    <knowledge-area>
+        <name>Software Construction</name>
+        <image>@drawable/code_braces</image>
+        <description>This is a simple description.</description>
+        <topics>
+            <topic>
+                <name>Topic 1</name>
+                <description>Allahu akbar for you</description>
+            </topic>
+            <topic>
+                <name>Topic 2</name>
+                <description>Allahu akbar for you 2</description>
+            </topic>
+            <topic>
+                <name>Topic 3</name>
+                <description>Allahu akbar for you 3</description>
+            </topic>
+            <topic>
+                <name>Topic 4</name>
+                <description>Allahu akbar for you 4</description>
+            </topic>
+        </topics>
+    </knowledge-area>
+
+    <knowledge-area>
+        <name>Software Testing</name>
+        <image>@drawable/test_tube</image>
+        <description>This is a simple description.</description>
+        <topics>
+            <topic>
+                <name>Topic 1</name>
+                <description>Allahu akbar for you</description>
+            </topic>
+            <topic>
+                <name>Topic 2</name>
+                <description>Allahu akbar for you 2</description>
+            </topic>
+            <topic>
+                <name>Topic 3</name>
+                <description>Allahu akbar for you 3</description>
+            </topic>
+            <topic>
+                <name>Topic 4</name>
+                <description>Allahu akbar for you 4</description>
+            </topic>
+        </topics>
+    </knowledge-area>
+
+    <knowledge-area>
+        <name>Software Maintenance</name>
+        <image>@drawable/maintenance</image>
+        <description>This is a simple description.</description>
+        <topics>
+            <topic>
+                <name>Topic 1</name>
+                <description>Allahu akbar for you</description>
+            </topic>
+            <topic>
+                <name>Topic 2</name>
+                <description>Allahu akbar for you 2</description>
+            </topic>
+            <topic>
+                <name>Topic 3</name>
+                <description>Allahu akbar for you 3</description>
+            </topic>
+            <topic>
+                <name>Topic 4</name>
+                <description>Allahu akbar for you 4</description>
+            </topic>
+        </topics>
+    </knowledge-area>
+
+    <knowledge-area>
+        <name>Software Configuration Management</name>
+        <image>@drawable/bitbucket</image>
+        <description>This is a simple description.</description>
+        <topics>
+            <topic>
+                <name>Topic 1</name>
+                <description>Allahu akbar for you</description>
+            </topic>
+            <topic>
+                <name>Topic 2</name>
+                <description>Allahu akbar for you 2</description>
+            </topic>
+            <topic>
+                <name>Topic 3</name>
+                <description>Allahu akbar for you 3</description>
+            </topic>
+            <topic>
+                <name>Topic 4</name>
+                <description>Allahu akbar for you 4</description>
+            </topic>
+        </topics>
+    </knowledge-area>
+
+    <knowledge-area>
+        <name>Software Engineering Management</name>
+        <image>@drawable/management</image>
+        <description>This is a simple description.</description>
+        <topics>
+            <topic>
+                <name>Topic 1</name>
+                <description>Allahu akbar for you</description>
+            </topic>
+            <topic>
+                <name>Topic 2</name>
+                <description>Allahu akbar for you 2</description>
+            </topic>
+            <topic>
+                <name>Topic 3</name>
+                <description>Allahu akbar for you 3</description>
+            </topic>
+            <topic>
+                <name>Topic 4</name>
+                <description>Allahu akbar for you 4</description>
+            </topic>
+        </topics>
+    </knowledge-area>
+
+    <knowledge-area>
+        <name>Software Engineering Process</name>
+        <image>@drawable/process</image>
+        <description>This is a simple description.</description>
+        <topics>
+            <topic>
+                <name>Topic 1</name>
+                <description>Allahu akbar for you</description>
+            </topic>
+            <topic>
+                <name>Topic 2</name>
+                <description>Allahu akbar for you 2</description>
+            </topic>
+            <topic>
+                <name>Topic 3</name>
+                <description>Allahu akbar for you 3</description>
+            </topic>
+            <topic>
+                <name>Topic 4</name>
+                <description>Allahu akbar for you 4</description>
+            </topic>
+        </topics>
+    </knowledge-area>
+
+    <knowledge-area>
+        <name>Software Engineering Models and Methods</name>
+        <image>@drawable/models</image>
+        <description>This is a simple description.</description>
+        <topics>
+            <topic>
+                <name>Topic 1</name>
+                <description>Allahu akbar for you</description>
+            </topic>
+            <topic>
+                <name>Topic 2</name>
+                <description>Allahu akbar for you 2</description>
+            </topic>
+            <topic>
+                <name>Topic 3</name>
+                <description>Allahu akbar for you 3</description>
+            </topic>
+            <topic>
+                <name>Topic 4</name>
+                <description>Allahu akbar for you 4</description>
+            </topic>
+        </topics>
+    </knowledge-area>
+
+    <knowledge-area>
+        <name>Software Quality</name>
+        <image>@drawable/quality</image>
+        <description>This is a simple description.</description>
+        <topics>
+            <topic>
+                <name>Topic 1</name>
+                <description>Allahu akbar for you</description>
+            </topic>
+            <topic>
+                <name>Topic 2</name>
+                <description>Allahu akbar for you 2</description>
+            </topic>
+            <topic>
+                <name>Topic 3</name>
+                <description>Allahu akbar for you 3</description>
+            </topic>
+            <topic>
+                <name>Topic 4</name>
+                <description>Allahu akbar for you 4</description>
+            </topic>
+        </topics>
+    </knowledge-area>
+
+    <knowledge-area>
+        <name>Software Engineering Professional Practice</name>
+        <image>@drawable/professional</image>
+        <description>This is a simple description.</description>
+        <topics>
+            <topic>
+                <name>Topic 1</name>
+                <description>Allahu akbar for you</description>
+            </topic>
+            <topic>
+                <name>Topic 2</name>
+                <description>Allahu akbar for you 2</description>
+            </topic>
+            <topic>
+                <name>Topic 3</name>
+                <description>Allahu akbar for you 3</description>
+            </topic>
+            <topic>
+                <name>Topic 4</name>
+                <description>Allahu akbar for you 4</description>
+            </topic>
+        </topics>
+    </knowledge-area>
+
+    <knowledge-area>
+        <name>Software Engineering Economics</name>
+        <image>@drawable/currency_euro</image>
+        <description>This is a simple description.</description>
+        <topics>
+            <topic>
+                <name>Topic 1</name>
+                <description>Allahu akbar for you</description>
+            </topic>
+            <topic>
+                <name>Topic 2</name>
+                <description>Allahu akbar for you 2</description>
+            </topic>
+            <topic>
+                <name>Topic 3</name>
+                <description>Allahu akbar for you 3</description>
+            </topic>
+            <topic>
+                <name>Topic 4</name>
+                <description>Allahu akbar for you 4</description>
+            </topic>
+        </topics>
+    </knowledge-area>
+
+    <knowledge-area>
+        <name>Computing Foundations</name>
+        <image>@drawable/computer_chip</image>
+        <description>This is a simple description.</description>
+        <topics>
+            <topic>
+                <name>Topic 1</name>
+                <description>Allahu akbar for you</description>
+            </topic>
+            <topic>
+                <name>Topic 2</name>
+                <description>Allahu akbar for you 2</description>
+            </topic>
+            <topic>
+                <name>Topic 3</name>
+                <description>Allahu akbar for you 3</description>
+            </topic>
+            <topic>
+                <name>Topic 4</name>
+                <description>Allahu akbar for you 4</description>
+            </topic>
+        </topics>
+    </knowledge-area>
+
+    <knowledge-area>
+        <name>Mathematical Foundations</name>
+        <image>@drawable/function</image>
+        <description>This is a simple description.</description>
+        <topics>
+            <topic>
+                <name>Topic 1</name>
+                <description>Allahu akbar for you</description>
+            </topic>
+            <topic>
+                <name>Topic 2</name>
+                <description>Allahu akbar for you 2</description>
+            </topic>
+            <topic>
+                <name>Topic 3</name>
+                <description>Allahu akbar for you 3</description>
+            </topic>
+            <topic>
+                <name>Topic 4</name>
+                <description>Allahu akbar for you 4</description>
+            </topic>
+        </topics>
+    </knowledge-area>
+
+    <knowledge-area>
+        <name>Engineering Foundations</name>
+        <image>@drawable/engineer</image>
+        <description>This is a simple description.</description>
+        <topics>
+            <topic>
+                <name>Topic 1</name>
+                <description>Allahu akbar for you</description>
+            </topic>
+            <topic>
+                <name>Topic 2</name>
+                <description>Allahu akbar for you 2</description>
+            </topic>
+            <topic>
+                <name>Topic 3</name>
+                <description>Allahu akbar for you 3</description>
+            </topic>
+            <topic>
+                <name>Topic 4</name>
+                <description>Allahu akbar for you 4</description>
+            </topic>
+        </topics>
+    </knowledge-area>
+
+</knowledge-areas>

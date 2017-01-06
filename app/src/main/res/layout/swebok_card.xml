@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:cardElevation="3dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/ka_image"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/ka_image_height"
+                android:scaleType="fitCenter"
+                app:srcCompat="@mipmap/ic_settings_black_24dp" />
+
+            <TextView
+                android:id="@+id/ka_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/ka_image"
+                android:paddingLeft="@dimen/ka_title_padding"
+                android:paddingRight="@dimen/ka_title_padding"
+                android:paddingTop="@dimen/ka_title_padding"
+                android:text="SoftwareCenas"
+                android:textAlignment="center"
+                android:textColor="@color/colorPrimaryDark" />
+
+            <TextView
+                android:id="@+id/ka_topic_number"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/ka_name"
+                android:paddingBottom="@dimen/ka_title_padding"
+                android:paddingLeft="@dimen/ka_title_padding"
+                android:paddingRight="@dimen/ka_title_padding"
+                android:text="10 topics"
+                android:textAlignment="center" />
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+</LinearLayout>

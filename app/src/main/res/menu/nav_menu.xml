@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/swebok_nav"
+        android:icon="@mipmap/ic_book_black_24dp"
+        android:title="@string/swebok"></item>
+    <item
+        android:id="@+id/curricula_nav"
+        android:icon="@mipmap/ic_school_black_24dp"
+        android:title="@string/curricula"></item>
+    <item
+        android:id="@+id/rankings_nav"
+        android:icon="@mipmap/ic_assessment_black_24dp"
+        android:title="@string/rankings"></item>
+</menu>
