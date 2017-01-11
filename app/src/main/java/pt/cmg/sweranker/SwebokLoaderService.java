@@ -63,11 +63,13 @@ public class SwebokLoaderService extends Service {
                             knowledgeArea = new KnowledgeArea();
                         } else if (knowledgeArea != null) {
                             if (xmlElementName.equals("name")) {
-                                knowledgeArea.setName(getResources().getIdentifier(xmlParser.nextText(), "string", this.getPackageName()));
-                            } else if (xmlElementName.equals("description")) {
-                                knowledgeArea.setDescription(xmlParser.nextText());
+                                knowledgeArea.setNameResource(getResources().getIdentifier(xmlParser.nextText(), "string", this.getPackageName()));
                             } else if (xmlElementName.equals("image")) {
-                                knowledgeArea.setImage(getResources().getIdentifier(xmlParser.nextText(), "drawable", this.getPackageName()));
+                                knowledgeArea.setImageResource(getResources().getIdentifier(xmlParser.nextText(), "drawable", this.getPackageName()));
+                            } else if (xmlElementName.equals("description")) {
+                                knowledgeArea.setDescriptionResource(getResources().getIdentifier(xmlParser.nextText(), "string", this.getPackageName()));
+                            } else if (xmlElementName.equals("id")) {
+                                knowledgeArea.setId(Integer.valueOf(xmlParser.nextText()));
                             } else if (xmlElementName.equalsIgnoreCase("topics")) {
                                 List<KnowledgeAreaTopic> topics = parseTopics(xmlParser);
                                 knowledgeArea.setTopics(topics);
@@ -126,9 +128,11 @@ public class SwebokLoaderService extends Service {
                             topic = new KnowledgeAreaTopic();
                         } else if (topic != null) {
                             if (xmlElementName.equals("name")) {
-                                topic.setName(xmlParser.nextText());
+                                topic.setNameResource(getResources().getIdentifier(xmlParser.nextText(), "string", this.getPackageName()));
+                            } else if (xmlElementName.equals("id")) {
+                                topic.setId(Integer.valueOf(xmlParser.nextText()));
                             } else if (xmlElementName.equals("description")) {
-                                topic.setDescription(xmlParser.nextText());
+                                topic.setDescriptionResource(getResources().getIdentifier(xmlParser.nextText(), "string", this.getPackageName()));
                             }
                         }
                         break;

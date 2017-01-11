@@ -6,47 +6,58 @@ import java.util.List;
 public class KnowledgeArea {
 
     private int _nameResource;
-    private int _image;
-    private String _description;
+    private int _imageResource;
+    private int _descriptionResource;
+    private int _id;
     private List<KnowledgeAreaTopic> _topics;
 
     public KnowledgeArea() {
         _nameResource = 0;
-        _image = 0;
-        _description = "";
+        _imageResource = 0;
+        _descriptionResource = 0;
         _topics = new ArrayList<>();
+        _id = 0;
 
     }
 
-    public KnowledgeArea(int nameResource, int image, String description) {
+    public KnowledgeArea(int nameResource, int imageResource, int descriptionResource, int id) {
         _nameResource = nameResource;
-        _image = image;
-        _description = description;
+        _imageResource = imageResource;
+        _descriptionResource = descriptionResource;
         _topics = new ArrayList<>();
+        _id = id;
     }
 
-    public void setName(int nameResource) {
+    public void setNameResource(int nameResource) {
         _nameResource = nameResource;
     }
 
-    public void setDescription(String description) {
-        _description = description;
+    public void setDescriptionResource(int descriptionResource) {
+        _descriptionResource = descriptionResource;
     }
 
-    public void setImage(int image) {
-        _image = image;
+    public void setImageResource(int imageResource) {
+        _imageResource = imageResource;
     }
 
-    public String getDescription() {
-        return _description;
+    public int getDescriptionResource() {
+        return _descriptionResource;
     }
 
-    public int getName() {
+    public int getNameResourec() {
         return _nameResource;
     }
 
-    public int getImage() {
-        return _image;
+    public int getImageResource() {
+        return _imageResource;
+    }
+
+    public int getId() {
+        return _id;
+    }
+
+    public void setId(int id) {
+        _id = id;
     }
 
     public List<KnowledgeAreaTopic> getTopics() {
@@ -65,3 +76,5 @@ public class KnowledgeArea {
         _topics.add(topic);
     }
 }
+
+

@@ -6,33 +6,44 @@ package pt.cmg.sweranker;
 
 public class KnowledgeAreaTopic {
 
-    private String _name;
-    private String _description;
+    private int _nameResource;
+    private int _descriptionResource;
+    private int _id;
 
 
     public KnowledgeAreaTopic() {
-        _name = "";
-        _description = "";
+        _nameResource = 0;
+        _descriptionResource = 0;
+        _id = 0;
     }
 
-    public KnowledgeAreaTopic(String name, String description) {
-        _name = name;
-        _description = description;
+    public KnowledgeAreaTopic(int nameResource, int descriptionResource, int id) {
+        _nameResource = nameResource;
+        _descriptionResource = descriptionResource;
+        _id = id;
     }
 
-    public String getName() {
-        return _name;
+    public int getNameResource() {
+        return _nameResource;
     }
 
-    public void setName(String name) {
-        this._name = name;
+    public void setNameResource(int nameResource) {
+        _nameResource = nameResource;
     }
 
-    public String getDescription() {
-        return _description;
+    public int getDescriptionResource() {
+        return _descriptionResource;
     }
 
-    public void setDescription(String description) {
-        _description = description;
+    public void setDescriptionResource(int descriptionResource) {
+        _descriptionResource = descriptionResource;
+    }
+
+    public int getId() {
+        return _id;
+    }
+
+    public void setId(int id) {
+        _id = id;
     }
 }

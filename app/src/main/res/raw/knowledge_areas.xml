@@ -3,23 +3,43 @@
     <knowledge-area>
         <name>@string/ka_software_requirements</name>
         <image>@drawable/requirements</image>
-        <description>This is a simple description.</description>
+        <id>1</id>
+        <description>@string/ka_software_requirements_description</description>
         <topics>
             <topic>
-                <name>Topic 1</name>
-                <description>Allahu akbar for you</description>
+                <id>1</id>
+                <name>@string/ka1_topic1_name</name>
+                <description>@string/ka1_topic1_description</description>
             </topic>
             <topic>
-                <name>Topic 2</name>
-                <description>Allahu akbar for you 2</description>
+                <id>2</id>
+                <name>@string/ka1_topic2_name</name>
+                <description>@string/ka1_topic2_description</description>
             </topic>
             <topic>
-                <name>Topic 3</name>
-                <description>Allahu akbar for you 3</description>
+                <id>3</id>
+                <name>@string/ka1_topic3_name</name>
+                <description>@string/ka1_topic3_description</description>
             </topic>
             <topic>
-                <name>Topic 4</name>
-                <description>Allahu akbar for you 4</description>
+                <id>4</id>
+                <name>@string/ka1_topic4_name</name>
+                <description>@string/ka1_topic4_description</description>
+            </topic>
+            <topic>
+                <id>5</id>
+                <name>@string/ka1_topic5_name</name>
+                <description>@string/ka1_topic5_description</description>
+            </topic>
+            <topic>
+                <id>6</id>
+                <name>@string/ka1_topic6_name</name>
+                <description>@string/ka1_topic6_description</description>
+            </topic>
+            <topic>
+                <id>7</id>
+                <name>@string/ka1_topic7_name</name>
+                <description>@string/ka1_topic7_description</description>
             </topic>
         </topics>
     </knowledge-area>
@@ -27,23 +47,48 @@
     <knowledge-area>
         <name>@string/ka_software_design</name>
         <image>@drawable/design</image>
-        <description>This is a simple description.</description>
+        <id>2</id>
+        <description>@string/ka_software_design_description</description>
         <topics>
             <topic>
-                <name>Topic 1</name>
-                <description>Allahu akbar for you</description>
+                <id>8</id>
+                <name>@string/ka2_topic1_name</name>
+                <description>@string/ka1_topic1_description</description>
             </topic>
             <topic>
-                <name>Topic 2</name>
-                <description>Allahu akbar for you 2</description>
+                <id>9</id>
+                <name>@string/ka2_topic2_name</name>
+                <description>@string/ka2_topic2_description</description>
             </topic>
             <topic>
-                <name>Topic 3</name>
-                <description>Allahu akbar for you 3</description>
+                <id>10</id>
+                <name>@string/ka2_topic3_name</name>
+                <description>@string/ka2_topic3_description</description>
             </topic>
             <topic>
-                <name>Topic 4</name>
-                <description>Allahu akbar for you 4</description>
+                <id>11</id>
+                <name>@string/ka2_topic4_name</name>
+                <description>@string/ka2_topic4_description</description>
+            </topic>
+            <topic>
+                <id>12</id>
+                <name>@string/ka2_topic5_name</name>
+                <description>@string/ka2_topic5_description</description>
+            </topic>
+            <topic>
+                <id>13</id>
+                <name>@string/ka2_topic6_name</name>
+                <description>@string/ka2_topic6_description</description>
+            </topic>
+            <topic>
+                <id>14</id>
+                <name>@string/ka2_topic7_name</name>
+                <description>@string/ka2_topic7_description</description>
+            </topic>
+            <topic>
+                <id>15</id>
+                <name>@string/ka2_topic8_name</name>
+                <description>@string/ka2_topic8_description</description>
             </topic>
         </topics>
     </knowledge-area>
@@ -51,23 +96,33 @@
     <knowledge-area>
         <name>@string/ka_software_construction</name>
         <image>@drawable/code_braces</image>
-        <description>This is a simple description.</description>
+        <id>3</id>
+        <description>@string/ka_software_construction_description</description>
         <topics>
             <topic>
-                <name>Topic 1</name>
-                <description>Allahu akbar for you</description>
+                <id>16</id>
+                <name>@string/ka3_topic1_name</name>
+                <description>@string/ka3_topic1_description</description>
             </topic>
             <topic>
-                <name>Topic 2</name>
-                <description>Allahu akbar for you 2</description>
+                <id>17</id>
+                <name>@string/ka3_topic2_name</name>
+                <description>@string/ka3_topic2_description</description>
             </topic>
             <topic>
-                <name>Topic 3</name>
-                <description>Allahu akbar for you 3</description>
+                <id>18</id>
+                <name>@string/ka3_topic3_name</name>
+                <description>@string/ka3_topic3_description</description>
             </topic>
             <topic>
-                <name>Topic 4</name>
-                <description>Allahu akbar for you 4</description>
+                <id>19</id>
+                <name>@string/ka3_topic4_name</name>
+                <description>@string/ka3_topic4_description</description>
+            </topic>
+            <topic>
+                <id>20</id>
+                <name>@string/ka3_topic5_name</name>
+                <description>@string/ka3_topic5_description</description>
             </topic>
         </topics>
     </knowledge-area>
@@ -75,23 +130,38 @@
     <knowledge-area>
         <name>@string/ka_software_testing</name>
         <image>@drawable/test_tube</image>
-        <description>This is a simple description.</description>
+        <id>4</id>
+        <description>@string/ka_software_testing_description</description>
         <topics>
             <topic>
-                <name>Topic 1</name>
-                <description>Allahu akbar for you</description>
+                <id>21</id>
+                <name>@string/ka4_topic1_name</name>
+                <description>@string/ka4_topic1_description</description>
             </topic>
             <topic>
-                <name>Topic 2</name>
-                <description>Allahu akbar for you 2</description>
+                <id>22</id>
+                <name>@string/ka4_topic2_name</name>
+                <description>@string/ka4_topic2_description</description>
             </topic>
             <topic>
-                <name>Topic 3</name>
-                <description>Allahu akbar for you 3</description>
+                <id>23</id>
+                <name>@string/ka4_topic3_name</name>
+                <description>@string/ka4_topic3_description</description>
             </topic>
             <topic>
-                <name>Topic 4</name>
-                <description>Allahu akbar for you 4</description>
+                <id>24</id>
+                <name>@string/ka4_topic4_name</name>
+                <description>@string/ka4_topic4_description</description>
+            </topic>
+            <topic>
+                <id>25</id>
+                <name>@string/ka4_topic5_name</name>
+                <description>@string/ka4_topic5_description</description>
+            </topic>
+            <topic>
+                <id>26</id>
+                <name>@string/ka4_topic6_name</name>
+                <description>@string/ka4_topic6_description</description>
             </topic>
         </topics>
     </knowledge-area>
@@ -99,23 +169,33 @@
     <knowledge-area>
         <name>@string/ka_software_maintenance</name>
         <image>@drawable/maintenance</image>
-        <description>This is a simple description.</description>
+        <id>5</id>
+        <description>@string/ka_software_maintenance_description</description>
         <topics>
             <topic>
-                <name>Topic 1</name>
-                <description>Allahu akbar for you</description>
+                <id>27</id>
+                <name>@string/ka5_topic1_name</name>
+                <description>@string/ka5_topic1_description</description>
             </topic>
             <topic>
-                <name>Topic 2</name>
-                <description>Allahu akbar for you 2</description>
+                <id>28</id>
+                <name>@string/ka5_topic2_name</name>
+                <description>@string/ka5_topic2_description</description>
             </topic>
             <topic>
-                <name>Topic 3</name>
-                <description>Allahu akbar for you 3</description>
+                <id>29</id>
+                <name>@string/ka5_topic3_name</name>
+                <description>@string/ka5_topic3_description</description>
             </topic>
             <topic>
-                <name>Topic 4</name>
-                <description>Allahu akbar for you 4</description>
+                <id>30</id>
+                <name>@string/ka5_topic4_name</name>
+                <description>@string/ka5_topic4_description</description>
+            </topic>
+            <topic>
+                <id>31</id>
+                <name>@string/ka5_topic5_name</name>
+                <description>@string/ka5_topic5_description</description>
             </topic>
         </topics>
     </knowledge-area>
@@ -123,23 +203,43 @@
     <knowledge-area>
         <name>@string/ka_software_config_management</name>
         <image>@drawable/bitbucket</image>
-        <description>This is a simple description.</description>
+        <id>6</id>
+        <description>@string/ka_software_config_management_description</description>
         <topics>
             <topic>
-                <name>Topic 1</name>
-                <description>Allahu akbar for you</description>
+                <id>32</id>
+                <name>@string/ka6_topic1_name</name>
+                <description>@string/ka6_topic1_description</description>
             </topic>
             <topic>
-                <name>Topic 2</name>
-                <description>Allahu akbar for you 2</description>
+                <id>33</id>
+                <name>@string/ka6_topic2_name</name>
+                <description>@string/ka6_topic2_description</description>
             </topic>
             <topic>
-                <name>Topic 3</name>
-                <description>Allahu akbar for you 3</description>
+                <id>34</id>
+                <name>@string/ka6_topic3_name</name>
+                <description>@string/ka6_topic3_description</description>
             </topic>
             <topic>
-                <name>Topic 4</name>
-                <description>Allahu akbar for you 4</description>
+                <id>35</id>
+                <name>@string/ka6_topic4_name</name>
+                <description>@string/ka6_topic4_description</description>
+            </topic>
+            <topic>
+                <id>36</id>
+                <name>@string/ka6_topic5_name</name>
+                <description>@string/ka6_topic5_description</description>
+            </topic>
+            <topic>
+                <id>37</id>
+                <name>@string/ka6_topic6_name</name>
+                <description>@string/ka6_topic6_description</description>
+            </topic>
+            <topic>
+                <id>38</id>
+                <name>@string/ka6_topic7_name</name>
+                <description>@string/ka6_topic7_description</description>
             </topic>
         </topics>
     </knowledge-area>
@@ -147,23 +247,43 @@
     <knowledge-area>
         <name>@string/ka_software_engineering_management</name>
         <image>@drawable/management</image>
-        <description>This is a simple description.</description>
+        <id>7</id>
+        <description>@string/ka_software_engineering_management_description</description>
         <topics>
             <topic>
-                <name>Topic 1</name>
-                <description>Allahu akbar for you</description>
+                <id>39</id>
+                <name>@string/ka7_topic1_name</name>
+                <description>@string/ka7_topic1_description</description>
             </topic>
             <topic>
-                <name>Topic 2</name>
-                <description>Allahu akbar for you 2</description>
+                <id>40</id>
+                <name>@string/ka7_topic2_name</name>
+                <description>@string/ka7_topic2_description</description>
             </topic>
             <topic>
-                <name>Topic 3</name>
-                <description>Allahu akbar for you 3</description>
+                <id>41</id>
+                <name>@string/ka7_topic3_name</name>
+                <description>@string/ka7_topic3_description</description>
             </topic>
             <topic>
-                <name>Topic 4</name>
-                <description>Allahu akbar for you 4</description>
+                <id>42</id>
+                <name>@string/ka7_topic4_name</name>
+                <description>@string/ka7_topic4_description</description>
+            </topic>
+            <topic>
+                <id>43</id>
+                <name>@string/ka7_topic5_name</name>
+                <description>@string/ka7_topic5_description</description>
+            </topic>
+            <topic>
+                <id>44</id>
+                <name>@string/ka7_topic6_name</name>
+                <description>@string/ka7_topic6_description</description>
+            </topic>
+            <topic>
+                <id>45</id>
+                <name>@string/ka7_topic7_name</name>
+                <description>@string/ka7_topic7_description</description>
             </topic>
         </topics>
     </knowledge-area>
@@ -171,23 +291,33 @@
     <knowledge-area>
         <name>@string/ka_software_engineering_process</name>
         <image>@drawable/process</image>
-        <description>This is a simple description.</description>
+        <id>8</id>
+        <description>@string/ka_software_engineering_process_description</description>
         <topics>
             <topic>
-                <name>Topic 1</name>
-                <description>Allahu akbar for you</description>
+                <id>46</id>
+                <name>@string/ka8_topic1_name</name>
+                <description>@string/ka8_topic1_description</description>
             </topic>
             <topic>
-                <name>Topic 2</name>
-                <description>Allahu akbar for you 2</description>
+                <id>47</id>
+                <name>@string/ka8_topic2_name</name>
+                <description>@string/ka8_topic2_description</description>
             </topic>
             <topic>
-                <name>Topic 3</name>
-                <description>Allahu akbar for you 3</description>
+                <id>48</id>
+                <name>@string/ka8_topic3_name</name>
+                <description>@string/ka8_topic3_description</description>
             </topic>
             <topic>
-                <name>Topic 4</name>
-                <description>Allahu akbar for you 4</description>
+                <id>49</id>
+                <name>@string/ka8_topic4_name</name>
+                <description>@string/ka8_topic4_description</description>
+            </topic>
+            <topic>
+                <id>50</id>
+                <name>@string/ka8_topic5_name</name>
+                <description>@string/ka8_topic5_description</description>
             </topic>
         </topics>
     </knowledge-area>
@@ -195,23 +325,28 @@
     <knowledge-area>
         <name>@string/ka_software_models_methods</name>
         <image>@drawable/models</image>
-        <description>This is a simple description.</description>
+        <id>9</id>
+        <description>@string/ka_software_models_methods_description</description>
         <topics>
             <topic>
-                <name>Topic 1</name>
-                <description>Allahu akbar for you</description>
+                <id>51</id>
+                <name>@string/ka9_topic1_name</name>
+                <description>@string/ka9_topic1_description</description>
             </topic>
             <topic>
-                <name>Topic 2</name>
-                <description>Allahu akbar for you 2</description>
+                <id>52</id>
+                <name>@string/ka9_topic2_name</name>
+                <description>@string/ka9_topic2_description</description>
             </topic>
             <topic>
-                <name>Topic 3</name>
-                <description>Allahu akbar for you 3</description>
+                <id>53</id>
+                <name>@string/ka9_topic3_name</name>
+                <description>@string/ka9_topic3_description</description>
             </topic>
             <topic>
-                <name>Topic 4</name>
-                <description>Allahu akbar for you 4</description>
+                <id>54</id>
+                <name>@string/ka9_topic4_name</name>
+                <description>@string/ka9_topic4_description</description>
             </topic>
         </topics>
     </knowledge-area>
@@ -219,23 +354,28 @@
     <knowledge-area>
         <name>@string/ka_software_quality</name>
         <image>@drawable/quality</image>
-        <description>This is a simple description.</description>
+        <id>10</id>
+        <description>@string/ka_software_quality_description</description>
         <topics>
             <topic>
-                <name>Topic 1</name>
-                <description>Allahu akbar for you</description>
+                <id>55</id>
+                <name>@string/ka10_topic1_name</name>
+                <description>@string/ka10_topic1_description</description>
             </topic>
             <topic>
-                <name>Topic 2</name>
-                <description>Allahu akbar for you 2</description>
+                <id>56</id>
+                <name>@string/ka10_topic2_name</name>
+                <description>@string/ka10_topic2_description</description>
             </topic>
             <topic>
-                <name>Topic 3</name>
-                <description>Allahu akbar for you 3</description>
+                <id>57</id>
+                <name>@string/ka10_topic3_name</name>
+                <description>@string/ka10_topic3_description</description>
             </topic>
             <topic>
-                <name>Topic 4</name>
-                <description>Allahu akbar for you 4</description>
+                <id>58</id>
+                <name>@string/ka10_topic4_name</name>
+                <description>@string/ka10_topic4_description</description>
             </topic>
         </topics>
     </knowledge-area>
@@ -243,23 +383,23 @@
     <knowledge-area>
         <name>@string/ka_software_engineering_professional_practice</name>
         <image>@drawable/professional</image>
-        <description>This is a simple description.</description>
+        <id>11</id>
+        <description>@string/ka_software_engineering_professional_practice_description</description>
         <topics>
             <topic>
-                <name>Topic 1</name>
-                <description>Allahu akbar for you</description>
+                <id>59</id>
+                <name>@string/ka11_topic1_name</name>
+                <description>@string/ka11_topic1_description</description>
             </topic>
             <topic>
-                <name>Topic 2</name>
-                <description>Allahu akbar for you 2</description>
+                <id>60</id>
+                <name>@string/ka11_topic2_name</name>
+                <description>@string/ka11_topic2_description</description>
             </topic>
             <topic>
-                <name>Topic 3</name>
-                <description>Allahu akbar for you 3</description>
-            </topic>
-            <topic>
-                <name>Topic 4</name>
-                <description>Allahu akbar for you 4</description>
+                <id>61</id>
+                <name>@string/ka11_topic3_name</name>
+                <description>@string/ka11_topic3_description</description>
             </topic>
         </topics>
     </knowledge-area>
@@ -267,23 +407,33 @@
     <knowledge-area>
         <name>@string/ka_software_economics</name>
         <image>@drawable/currency_euro</image>
-        <description>This is a simple description.</description>
+        <id>12</id>
+        <description>@string/ka_software_economics_description</description>
         <topics>
             <topic>
-                <name>Topic 1</name>
-                <description>Allahu akbar for you</description>
+                <id>62</id>
+                <name>@string/ka12_topic1_name</name>
+                <description>@string/ka12_topic1_description</description>
             </topic>
             <topic>
-                <name>Topic 2</name>
-                <description>Allahu akbar for you 2</description>
+                <id>63</id>
+                <name>@string/ka12_topic2_name</name>
+                <description>@string/ka12_topic2_description</description>
             </topic>
             <topic>
-                <name>Topic 3</name>
-                <description>Allahu akbar for you 3</description>
+                <id>64</id>
+                <name>@string/ka12_topic3_name</name>
+                <description>@string/ka12_topic3_description</description>
             </topic>
             <topic>
-                <name>Topic 4</name>
-                <description>Allahu akbar for you 4</description>
+                <id>65</id>
+                <name>@string/ka12_topic4_name</name>
+                <description>@string/ka12_topic4_description</description>
+            </topic>
+            <topic>
+                <id>66</id>
+                <name>@string/ka12_topic5_name</name>
+                <description>@string/ka12_topic5_description</description>
             </topic>
         </topics>
     </knowledge-area>
@@ -291,23 +441,93 @@
     <knowledge-area>
         <name>@string/ka_computing_foundations</name>
         <image>@drawable/computer_chip</image>
-        <description>This is a simple description.</description>
+        <id>13</id>
+        <description>@string/ka_computing_foundations_description</description>
         <topics>
             <topic>
-                <name>Topic 1</name>
-                <description>Allahu akbar for you</description>
+                <id>67</id>
+                <name>@string/ka13_topic1_name</name>
+                <description>@string/ka13_topic1_description</description>
             </topic>
             <topic>
-                <name>Topic 2</name>
-                <description>Allahu akbar for you 2</description>
+                <id>68</id>
+                <name>@string/ka13_topic2_name</name>
+                <description>@string/ka13_topic2_description</description>
             </topic>
             <topic>
-                <name>Topic 3</name>
-                <description>Allahu akbar for you 3</description>
+                <id>69</id>
+                <name>@string/ka13_topic3_name</name>
+                <description>@string/ka13_topic3_description</description>
             </topic>
             <topic>
-                <name>Topic 4</name>
-                <description>Allahu akbar for you 4</description>
+                <id>70</id>
+                <name>@string/ka13_topic4_name</name>
+                <description>@string/ka13_topic4_description</description>
+            </topic>
+            <topic>
+                <id>71</id>
+                <name>@string/ka13_topic5_name</name>
+                <description>@string/ka13_topic5_description</description>
+            </topic>
+            <topic>
+                <id>72</id>
+                <name>@string/ka13_topic6_name</name>
+                <description>@string/ka13_topic6_description</description>
+            </topic>
+            <topic>
+                <id>73</id>
+                <name>@string/ka13_topic7_name</name>
+                <description>@string/ka13_topic7_description</description>
+            </topic>
+            <topic>
+                <id>74</id>
+                <name>@string/ka13_topic8_name</name>
+                <description>@string/ka13_topic8_description</description>
+            </topic>
+            <topic>
+                <id>75</id>
+                <name>@string/ka13_topic9_name</name>
+                <description>@string/ka13_topic9_description</description>
+            </topic>
+            <topic>
+                <id>76</id>
+                <name>@string/ka13_topic10_name</name>
+                <description>@string/ka13_topic10_description</description>
+            </topic>
+            <topic>
+                <id>77</id>
+                <name>@string/ka13_topic11_name</name>
+                <description>@string/ka13_topic11_description</description>
+            </topic>
+            <topic>
+                <id>78</id>
+                <name>@string/ka13_topic12_name</name>
+                <description>@string/ka13_topic12_description</description>
+            </topic>
+            <topic>
+                <id>79</id>
+                <name>@string/ka13_topic13_name</name>
+                <description>@string/ka13_topic13_description</description>
+            </topic>
+            <topic>
+                <id>80</id>
+                <name>@string/ka13_topic14_name</name>
+                <description>@string/ka13_topic14_description</description>
+            </topic>
+            <topic>
+                <id>81</id>
+                <name>@string/ka13_topic15_name</name>
+                <description>@string/ka13_topic15_description</description>
+            </topic>
+            <topic>
+                <id>82</id>
+                <name>@string/ka13_topic16_name</name>
+                <description>@string/ka13_topic16_description</description>
+            </topic>
+            <topic>
+                <id>83</id>
+                <name>@string/ka13_topic17_name</name>
+                <description>@string/ka13_topic17_description</description>
             </topic>
         </topics>
     </knowledge-area>
@@ -315,23 +535,63 @@
     <knowledge-area>
         <name>@string/ka_mathematical_foundations</name>
         <image>@drawable/function</image>
-        <description>This is a simple description.</description>
+        <id>14</id>
+        <description>@string/ka_mathematical_foundations_description</description>
         <topics>
             <topic>
-                <name>Topic 1</name>
-                <description>Allahu akbar for you</description>
+                <id>84</id>
+                <name>@string/ka14_topic1_name</name>
+                <description>@string/ka14_topic1_description</description>
             </topic>
             <topic>
-                <name>Topic 2</name>
-                <description>Allahu akbar for you 2</description>
+                <id>85</id>
+                <name>@string/ka14_topic2_name</name>
+                <description>@string/ka14_topic2_description</description>
             </topic>
             <topic>
-                <name>Topic 3</name>
-                <description>Allahu akbar for you 3</description>
+                <id>86</id>
+                <name>@string/ka14_topic3_name</name>
+                <description>@string/ka14_topic3_description</description>
             </topic>
             <topic>
-                <name>Topic 4</name>
-                <description>Allahu akbar for you 4</description>
+                <id>87</id>
+                <name>@string/ka14_topic4_name</name>
+                <description>@string/ka14_topic4_description</description>
+            </topic>
+            <topic>
+                <id>88</id>
+                <name>@string/ka14_topic5_name</name>
+                <description>@string/ka14_topic5_description</description>
+            </topic>
+            <topic>
+                <id>89</id>
+                <name>@string/ka14_topic6_name</name>
+                <description>@string/ka14_topic6_description</description>
+            </topic>
+            <topic>
+                <id>90</id>
+                <name>@string/ka14_topic7_name</name>
+                <description>@string/ka14_topic7_description</description>
+            </topic>
+            <topic>
+                <id>91</id>
+                <name>@string/ka14_topic8_name</name>
+                <description>@string/ka14_topic8_description</description>
+            </topic>
+            <topic>
+                <id>92</id>
+                <name>@string/ka14_topic9_name</name>
+                <description>@string/ka14_topic9_description</description>
+            </topic>
+            <topic>
+                <id>93</id>
+                <name>@string/ka14_topic10_name</name>
+                <description>@string/ka14_topic10_description</description>
+            </topic>
+            <topic>
+                <id>94</id>
+                <name>@string/ka14_topic11_name</name>
+                <description>@string/ka14_topic11_description</description>
             </topic>
         </topics>
     </knowledge-area>
@@ -339,23 +599,43 @@
     <knowledge-area>
         <name>@string/ka_engineering_foundations</name>
         <image>@drawable/engineer</image>
-        <description>This is a simple description.</description>
+        <id>15</id>
+        <description>@string/ka_engineering_foundations_description</description>
         <topics>
             <topic>
-                <name>Topic 1</name>
-                <description>Allahu akbar for you</description>
+                <id>95</id>
+                <name>@string/ka15_topic1_name</name>
+                <description>@string/ka15_topic1_description</description>
             </topic>
             <topic>
-                <name>Topic 2</name>
-                <description>Allahu akbar for you 2</description>
+                <id>96</id>
+                <name>@string/ka15_topic2_name</name>
+                <description>@string/ka15_topic2_description</description>
             </topic>
             <topic>
-                <name>Topic 3</name>
-                <description>Allahu akbar for you 3</description>
+                <id>97</id>
+                <name>@string/ka15_topic3_name</name>
+                <description>@string/ka15_topic3_description</description>
             </topic>
             <topic>
-                <name>Topic 4</name>
-                <description>Allahu akbar for you 4</description>
+                <id>98</id>
+                <name>@string/ka15_topic4_name</name>
+                <description>@string/ka15_topic4_description</description>
+            </topic>
+            <topic>
+                <id>99</id>
+                <name>@string/ka15_topic5_name</name>
+                <description>@string/ka15_topic5_description</description>
+            </topic>
+            <topic>
+                <id>100</id>
+                <name>@string/ka15_topic6_name</name>
+                <description>@string/ka15_topic6_description</description>
+            </topic>
+            <topic>
+                <id>101</id>
+                <name>@string/ka15_topic7_name</name>
+                <description>@string/ka15_topic7_description</description>
             </topic>
         </topics>
     </knowledge-area>

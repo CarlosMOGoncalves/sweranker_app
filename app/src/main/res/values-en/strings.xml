@@ -10,6 +10,8 @@
 
     <string name="action_settings">Settings</string>
 
+    <string name="topics">topics</string>
+
 
     <string name="ka_software_requirements">Software Requirements</string>
     <string name="ka_software_design">Software Design</string>
