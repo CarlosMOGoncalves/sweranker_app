@@ -1,7 +1,7 @@
 <knowledge-areas>
 
     <knowledge-area>
-        <name>Software Requirements</name>
+        <name>@string/ka_software_requirements</name>
         <image>@drawable/requirements</image>
         <description>This is a simple description.</description>
         <topics>
@@ -25,7 +25,7 @@
     </knowledge-area>
 
     <knowledge-area>
-        <name>Software Design</name>
+        <name>@string/ka_software_design</name>
         <image>@drawable/design</image>
         <description>This is a simple description.</description>
         <topics>
@@ -49,7 +49,7 @@
     </knowledge-area>
 
     <knowledge-area>
-        <name>Software Construction</name>
+        <name>@string/ka_software_construction</name>
         <image>@drawable/code_braces</image>
         <description>This is a simple description.</description>
         <topics>
@@ -73,7 +73,7 @@
     </knowledge-area>
 
     <knowledge-area>
-        <name>Software Testing</name>
+        <name>@string/ka_software_testing</name>
         <image>@drawable/test_tube</image>
         <description>This is a simple description.</description>
         <topics>
@@ -97,7 +97,7 @@
     </knowledge-area>
 
     <knowledge-area>
-        <name>Software Maintenance</name>
+        <name>@string/ka_software_maintenance</name>
         <image>@drawable/maintenance</image>
         <description>This is a simple description.</description>
         <topics>
@@ -121,7 +121,7 @@
     </knowledge-area>
 
     <knowledge-area>
-        <name>Software Configuration Management</name>
+        <name>@string/ka_software_config_management</name>
         <image>@drawable/bitbucket</image>
         <description>This is a simple description.</description>
         <topics>
@@ -145,7 +145,7 @@
     </knowledge-area>
 
     <knowledge-area>
-        <name>Software Engineering Management</name>
+        <name>@string/ka_software_engineering_management</name>
         <image>@drawable/management</image>
         <description>This is a simple description.</description>
         <topics>
@@ -169,7 +169,7 @@
     </knowledge-area>
 
     <knowledge-area>
-        <name>Software Engineering Process</name>
+        <name>@string/ka_software_engineering_process</name>
         <image>@drawable/process</image>
         <description>This is a simple description.</description>
         <topics>
@@ -193,7 +193,7 @@
     </knowledge-area>
 
     <knowledge-area>
-        <name>Software Engineering Models and Methods</name>
+        <name>@string/ka_software_models_methods</name>
         <image>@drawable/models</image>
         <description>This is a simple description.</description>
         <topics>
@@ -217,7 +217,7 @@
     </knowledge-area>
 
     <knowledge-area>
-        <name>Software Quality</name>
+        <name>@string/ka_software_quality</name>
         <image>@drawable/quality</image>
         <description>This is a simple description.</description>
         <topics>
@@ -241,7 +241,7 @@
     </knowledge-area>
 
     <knowledge-area>
-        <name>Software Engineering Professional Practice</name>
+        <name>@string/ka_software_engineering_professional_practice</name>
         <image>@drawable/professional</image>
         <description>This is a simple description.</description>
         <topics>
@@ -265,7 +265,7 @@
     </knowledge-area>
 
     <knowledge-area>
-        <name>Software Engineering Economics</name>
+        <name>@string/ka_software_economics</name>
         <image>@drawable/currency_euro</image>
         <description>This is a simple description.</description>
         <topics>
@@ -289,7 +289,7 @@
     </knowledge-area>
 
     <knowledge-area>
-        <name>Computing Foundations</name>
+        <name>@string/ka_computing_foundations</name>
         <image>@drawable/computer_chip</image>
         <description>This is a simple description.</description>
         <topics>
@@ -313,7 +313,7 @@
     </knowledge-area>
 
     <knowledge-area>
-        <name>Mathematical Foundations</name>
+        <name>@string/ka_mathematical_foundations</name>
         <image>@drawable/function</image>
         <description>This is a simple description.</description>
         <topics>
@@ -337,7 +337,7 @@
     </knowledge-area>
 
     <knowledge-area>
-        <name>Engineering Foundations</name>
+        <name>@string/ka_engineering_foundations</name>
         <image>@drawable/engineer</image>
         <description>This is a simple description.</description>
         <topics>

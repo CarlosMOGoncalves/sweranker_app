@@ -5,12 +5,41 @@
     <string name="rankings">Rankings</string>
 
 
-    <string name="openDrawer">Open</string>
-    <string name="closeDrawer">Close</string>
+    <string name="openDrawer">Abrir</string>
+    <string name="closeDrawer">Fechar</string>
 
-    <string name="action_settings">Settings</string>
+    <string name="action_settings">Definições</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
 
+    <string name="ka_software_requirements">Requisitos de Software</string>
+    <string name="ka1_topic1_name">Fundamentos de Requisitos de Software</string>
+    <string name="ka1_topic1_description">Sobre a defininição do que é um requisito; a diferença entre um requsito do produto  e um requisito do processo; a diferença entre requisitos funcionais e não-funcionais; requisitos inter-dependentes; como classificar quantitativamente requisitos e diferença entre requisitos de sistema e de software.</string>
+    <string name="ka1_topic2_name">Processo de Requisitos</string>
+    <string name="ka1_topic2_description">Sobre a natureza contínua do processo de requisitos e a sua natureza moldável ao contexto do projecto ou organização; os diferentes actores do processos (frequentemente conhecidos como “stakeholders”); como gerir um processo de requisitos e como avaliar a sua qualidade e ainda como o melhorar.</string>
+    <string name="ka1_topic3_name">•Levantamento de Requisitos</string>
+    <string name="ka1_topic3_description">Sobre a origem dos requisitos (como Conhecimento próprio do Domínio, stakeholders, regras do negócio, etc.) e as técnicas para os coleccionar eficazmente (tais como entrevistas, cenários, protótipos, reuniões, etc.).</string>
+    <string name="ka1_topic4_name">•Análise de Requisitos</string>
+    <string name="ka1_topic4_description">Sobre como classificar requisitos quanto ao seu tipo, importância, estabilidade ou extensão; modelação conceptual (tal como “Use Cases”, modelos de dados, modelos de estados, etc.).</string>
+    <string name="ka1_topic5_name">Especificação de Requisitos</string>
+    <string name="ka1_topic5_description">Sobre a produção de um conjunto de documentos sobre os requisitos que possa ser sistematicamente revisto, avaliado e aprovado. Estes documentos são: a Definição do Sistema, Especificação dos Requisitos do Sistema e Especificação dos Requisitos do Software (derivados dos requisitos do sistema).</string>
+    <string name="ka1_topic6_name">Validação de Requisitos</string>
+    <string name="ka1_topic6_description">Sobre as técnicas de validação dos requisitos levantados, tais como: Revisão por terceiros (“peer-review”), prototipagem, validação de modelos e testes de aceitação.</string>
+    <string name="ka1_topic7_name">Considerações práticas</string>
+    <string name="ka1_topic7_description">Sobre as particularidades práticas dos requisitos; a natureza iterativa do processo de requisitos; a gestão de alterações dos requisitos (como um todo ou em apenas alguns dos seus atributos); rastreamento de requisitos; medição do peso dos requisitos na eventualidade de alteração do produto.</string>
+
+
+    <string name="ka_software_design">Desenho de Software</string>
+    <string name="ka_software_construction">Construção de Software</string>
+    <string name="ka_software_testing">Teste de Software</string>
+    <string name="ka_software_maintenance">Manutenção de Software</string>
+    <string name="ka_software_config_management">Gestão de Configurações de Software</string>
+    <string name="ka_software_engineering_management">Gestão de Engenharia de Software</string>
+    <string name="ka_software_engineering_process">Processo de Engenharia de Software</string>
+    <string name="ka_software_models_methods">Modelos e Métodos de Engenharia de Software</string>
+    <string name="ka_software_quality">Qualidade de Engenharia de Software</string>
+    <string name="ka_software_engineering_professional_practice">Prática Profissional de Engenharia de Software</string>
+    <string name="ka_software_economics">Economia de Engenharia de Software</string>
+    <string name="ka_computing_foundations">Fundações de Computação</string>
+    <string name="ka_mathematical_foundations">Fundações de Matemática</string>
+    <string name="ka_engineering_foundations">Fundações de Engenharia</string>
 </resources>

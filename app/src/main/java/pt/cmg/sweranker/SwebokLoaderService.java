@@ -63,7 +63,7 @@ public class SwebokLoaderService extends Service {
                             knowledgeArea = new KnowledgeArea();
                         } else if (knowledgeArea != null) {
                             if (xmlElementName.equals("name")) {
-                                knowledgeArea.setName(xmlParser.nextText());
+                                knowledgeArea.setName(getResources().getIdentifier(xmlParser.nextText(), "string", this.getPackageName()));
                             } else if (xmlElementName.equals("description")) {
                                 knowledgeArea.setDescription(xmlParser.nextText());
                             } else if (xmlElementName.equals("image")) {

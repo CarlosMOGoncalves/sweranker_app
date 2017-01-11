@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">SweRanker</string>
+    <string name="swebok">SWEBOK</string>
+    <string name="curricula">Curricula</string>
+    <string name="rankings">Rankings</string>
+
+
+    <string name="openDrawer">Open</string>
+    <string name="closeDrawer">Close</string>
+
+    <string name="action_settings">Settings</string>
+
+
+    <string name="ka_software_requirements">Software Requirements</string>
+    <string name="ka_software_design">Software Design</string>
+    <string name="ka_software_construction">Software Constructions</string>
+    <string name="ka_software_testing">Software Testing</string>
+    <string name="ka_software_maintenance">Software Maintenance</string>
+    <string name="ka_software_config_management">Software Configuration Management</string>
+    <string name="ka_software_engineering_management">Software Engineering Management</string>
+    <string name="ka_software_engineering_process">Software Engineering Process</string>
+    <string name="ka_software_models_methods">Software Engineering Models and Methods</string>
+    <string name="ka_software_quality">Software Quality</string>
+    <string name="ka_software_engineering_professional_practice">Software Engineering Professional Practice</string>
+    <string name="ka_software_economics">Software Economics</string>
+    <string name="ka_computing_foundations">Computing Foundations</string>
+    <string name="ka_mathematical_foundations">Mathematical Foundations</string>
+    <string name="ka_engineering_foundations">Engineering Foundations</string>
+</resources>

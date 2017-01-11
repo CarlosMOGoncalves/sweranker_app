@@ -32,7 +32,7 @@ public class KnowledgeAreaAdapter extends RecyclerView.Adapter<KnowledgeAreaAdap
     @Override
     public void onBindViewHolder(KAViewHolder holder, int position) {
         KnowledgeArea knowledgeArea = _knowledgAreas.get(position);
-        holder._kaName.setText(knowledgeArea.getName());
+        holder._kaName.setText(_context.getResources().getString(knowledgeArea.getName()));
         holder._kaTopicCount.setText(knowledgeArea.getTopicsCount() + " topics");
         holder._kaImage.setImageDrawable(_context.getResources().getDrawable(knowledgeArea.getImage(), null));
     }

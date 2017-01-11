@@ -5,28 +5,28 @@ import java.util.List;
 
 public class KnowledgeArea {
 
-    private String _name;
+    private int _nameResource;
     private int _image;
     private String _description;
     private List<KnowledgeAreaTopic> _topics;
 
     public KnowledgeArea() {
-        _name = "";
+        _nameResource = 0;
         _image = 0;
         _description = "";
         _topics = new ArrayList<>();
 
     }
 
-    public KnowledgeArea(String name, int image, String description) {
-        _name = name;
+    public KnowledgeArea(int nameResource, int image, String description) {
+        _nameResource = nameResource;
         _image = image;
         _description = description;
         _topics = new ArrayList<>();
     }
 
-    public void setName(String name) {
-        _name = name;
+    public void setName(int nameResource) {
+        _nameResource = nameResource;
     }
 
     public void setDescription(String description) {
@@ -41,8 +41,8 @@ public class KnowledgeArea {
         return _description;
     }
 
-    public String getName() {
-        return _name;
+    public int getName() {
+        return _nameResource;
     }
 
     public int getImage() {
