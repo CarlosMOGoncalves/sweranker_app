@@ -165,6 +165,10 @@ public class SwebokLoaderService extends Service {
         return _knowledgeAreas;
     }
 
+    public KnowledgeArea getKnowledgeArea(final int knowledgeAreaId) {
+        return _knowledgeAreas.stream().filter(ka -> ka.getId() == knowledgeAreaId).findFirst().orElse(new KnowledgeArea());
+    }
+
 
     /**
      * Interface de comunicação com a Activity ou outro componente que a chamar.

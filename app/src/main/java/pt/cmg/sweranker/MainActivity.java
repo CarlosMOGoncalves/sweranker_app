@@ -20,9 +20,10 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.List;
 
+import pt.cmg.sweranker.fragments.KADetailsFragment;
 import pt.cmg.sweranker.fragments.SwebokFragment;
 
-public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, SwebokFragment.OnSwebokFragmentInteractionListener {
+public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, SwebokFragment.OnSwebokFragmentInteractionListener, KADetailsFragment.OnKaDetailsFragmentInteractionListener {
 
 
     private SwebokLoaderService _swebokLoaderService;
@@ -107,7 +108,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     }
 
     @Override
-    public List<KnowledgeArea> onSwebokFragmentInteraction() {
+    public List<KnowledgeArea> loadKnowledgeAreasForSwebokFragment() {
 
         List<KnowledgeArea> kas = new ArrayList<>();
         if (_isBound) {
@@ -117,5 +118,18 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         return kas;
     }
 
+    @Override
+    public void loadDetailedKnowledgeAreaFragment(int knowledgeAreaId) {
+        getFragmentManager().beginTransaction().replace(R.id.content_area, KADetailsFragment.newInstance(knowledgeAreaId), "KADetail").addToBackStack(null).commit();
+    }
 
+
+    @Override
+    public KnowledgeArea onKaDetailsFragmentInteraction(int knowledgeAreaIdToLoad) {
+        KnowledgeArea ka = new KnowledgeArea();
+        if (_isBound) {
+            ka = _swebokLoaderService.getKnowledgeArea(knowledgeAreaIdToLoad);
+        }
+        return ka;
+    }
 }

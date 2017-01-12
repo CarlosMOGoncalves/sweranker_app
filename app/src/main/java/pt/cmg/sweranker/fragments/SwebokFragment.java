@@ -12,27 +12,17 @@ import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import java.util.List;
 
 import pt.cmg.sweranker.KnowledgeArea;
-import pt.cmg.sweranker.KnowledgeAreaAdapter;
 import pt.cmg.sweranker.R;
 
 
 public class SwebokFragment extends Fragment {
 
-    /**
-     * Using parameters if anything needs to be passed to fragment
-     */
-    //private static final String ARG_PARAM1 = "param1";
-    //private static final String ARG_PARAM2 = "param2";
-
-    /**
-     * Here as well
-     */
-    //private String mParam1;
-    //private String mParam2;
 
     /**
      * This is a reference to the parent activity that this fragment will be attached to on onAttach()
@@ -56,10 +46,6 @@ public class SwebokFragment extends Fragment {
      */
     public static SwebokFragment newInstance() {
         SwebokFragment fragment = new SwebokFragment();
-        //Bundle args = new Bundle();
-        //args.putString(ARG_PARAM1, param1);
-        //args.putString(ARG_PARAM2, param2);
-        //fragment.setArguments(args);
         return fragment;
     }
 
@@ -76,10 +62,6 @@ public class SwebokFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-//        if (getArguments() != null) {
-//            mParam1 = getArguments().getString(ARG_PARAM1);
-//            mParam2 = getArguments().getString(ARG_PARAM2);
-//        }
     }
 
     @Override
@@ -89,7 +71,7 @@ public class SwebokFragment extends Fragment {
 
         _swebokGrid = (RecyclerView) _myView.findViewById(R.id.swebok_grid);
 
-        KnowledgeAreaAdapter adapter = new KnowledgeAreaAdapter(this.getActivity(), _parentActivity.onSwebokFragmentInteraction());
+        KnowledgeAreaAdapter adapter = new KnowledgeAreaAdapter(this.getActivity(), _parentActivity.loadKnowledgeAreasForSwebokFragment());
 
         RecyclerView.LayoutManager mLayoutManager = new GridLayoutManager(this.getActivity(), 2);
         _swebokGrid.setLayoutManager(mLayoutManager);
@@ -140,6 +122,70 @@ public class SwebokFragment extends Fragment {
      * Communication Interface
      */
     public interface OnSwebokFragmentInteractionListener {
-        List<KnowledgeArea> onSwebokFragmentInteraction();
+        List<KnowledgeArea> loadKnowledgeAreasForSwebokFragment();
+
+        void loadDetailedKnowledgeAreaFragment(int knowledgeAreaId);
+    }
+
+
+    /**
+     * This Adapter transforms a list of Knowledge Areas in Views for the parent fragment recycler view.
+     */
+    private class KnowledgeAreaAdapter extends RecyclerView.Adapter<KnowledgeAreaAdapter.KAViewHolder> {
+
+        private Context _context;
+        private List<KnowledgeArea> _knowledgAreas;
+
+
+        public KnowledgeAreaAdapter(Context context, List<KnowledgeArea> knowledgeAreas) {
+            _context = context;
+            _knowledgAreas = knowledgeAreas;
+        }
+
+        @Override
+        public KnowledgeAreaAdapter.KAViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+
+            View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.swebok_card, parent, false);
+            return new KnowledgeAreaAdapter.KAViewHolder(itemView);
+        }
+
+
+        @Override
+        public void onBindViewHolder(KnowledgeAreaAdapter.KAViewHolder holder, int position) {
+            KnowledgeArea knowledgeArea = _knowledgAreas.get(position);
+            holder._kaName.setText(_context.getResources().getString(knowledgeArea.getNameResource()));
+            holder._kaTopicCount.setText(knowledgeArea.getTopicsCount() + " " + _context.getResources().getString(R.string.topics_lowercase));
+            holder._kaImage.setImageDrawable(_context.getResources().getDrawable(knowledgeArea.getImageResource(), null));
+        }
+
+
+        @Override
+        public int getItemCount() {
+            return _knowledgAreas.size();
+        }
+
+
+        /**
+         * ViewHolder pattern to hold one of the cards
+         */
+        class KAViewHolder extends RecyclerView.ViewHolder {
+
+            private ImageView _kaImage;
+            private TextView _kaName;
+            private TextView _kaTopicCount;
+
+            public KAViewHolder(View view) {
+                super(view);
+                _kaImage = (ImageView) view.findViewById(R.id.ka_image);
+                _kaName = (TextView) view.findViewById(R.id.ka_name);
+                _kaTopicCount = (TextView) view.findViewById(R.id.ka_topic_number);
+
+                view.setOnClickListener(v -> {
+                    int pos = getAdapterPosition();
+                    _parentActivity.loadDetailedKnowledgeAreaFragment(_knowledgAreas.get(pos).getId());
+                });
+            }
+        }
+
     }
 }

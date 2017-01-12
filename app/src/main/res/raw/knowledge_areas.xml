@@ -53,7 +53,7 @@
             <topic>
                 <id>8</id>
                 <name>@string/ka2_topic1_name</name>
-                <description>@string/ka1_topic1_description</description>
+                <description>@string/ka2_topic1_description</description>
             </topic>
             <topic>
                 <id>9</id>

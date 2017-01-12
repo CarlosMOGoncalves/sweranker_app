@@ -44,7 +44,7 @@ public class KnowledgeArea {
         return _descriptionResource;
     }
 
-    public int getNameResourec() {
+    public int getNameResource() {
         return _nameResource;
     }
 
