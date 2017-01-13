@@ -3,33 +3,41 @@
     android:id="@+id/ka_info"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:layout_marginBottom="@dimen/card_margin">
 
-    <TextView
-        android:id="@+id/description_label"
+    <LinearLayout
+        android:id="@+id/ka_info_description"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingBottom="@dimen/card_margin"
-        android:text="@string/description"
-        android:textColor="@color/colorPrimaryDark"
-        android:textSize="@dimen/ka_detail_subtitle_size" />
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:elevation="3dp"
+        android:padding="@dimen/card_margin">
 
-    <TextView
-        android:id="@+id/ka_details_description_text"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingBottom="@dimen/card_margin"
-        android:text="DescriptionText"
-        android:textColor="@android:color/black"
-        android:textSize="@dimen/ka_detail_text_size" />
+        <TextView
+            android:id="@+id/description_label"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/card_margin"
+            android:text="@string/description"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="@dimen/ka_detail_subtitle_size" />
 
-    <TextView
-        android:id="@+id/ka_details_topics_label"
+        <TextView
+            android:id="@+id/ka_details_description_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/card_margin"
+            android:text="DescriptionText"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/ka_detail_text_size" />
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/imageView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingBottom="@dimen/card_margin"
-        android:text="Topics"
-        android:textColor="@color/colorPrimaryDark"
-        android:textSize="@dimen/ka_detail_subtitle_size" />
+        android:layout_height="@dimen/ka_detail_list_margin"
+        android:background="@color/grayerWhite" />
 
 </LinearLayout>

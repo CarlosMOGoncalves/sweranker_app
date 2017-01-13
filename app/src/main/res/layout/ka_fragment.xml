@@ -2,12 +2,14 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/grayerWhite">
 
     <LinearLayout
         android:id="@+id/ka_header"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@color/colorAccent"
         android:elevation="3dp"
         android:orientation="horizontal"
         android:paddingBottom="@dimen/card_margin">
@@ -37,8 +39,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@+id/ka_header"
-        android:paddingLeft="@dimen/card_margin"
-        android:paddingRight="@dimen/card_margin" />
+        android:layout_margin="@dimen/ka_detail_list_margin"
+        android:background="@color/colorAccent" />
 
 
 </RelativeLayout>

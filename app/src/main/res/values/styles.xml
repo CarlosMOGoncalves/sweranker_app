@@ -18,7 +18,7 @@
         <!-- Colour of the menu button-->
         <item name="colorControlNormal">@color/colorAccent</item>
         <!-- Applies to views in their activated state (i.e checked or switches) -->
-        <item name="colorControlActivated">@color/test_color</item>
+        <!--item name="colorControlActivated">@color/test_color</item-->
 
         <!-- Control highlights like ripples in the hamburger button -->
         <!--item name="colorControlHighlight">@color/test_color2</item-->

@@ -17,6 +17,7 @@
     <dimen name="ka_topic_count_padding_bottom">5dp</dimen>
     <dimen name="ka_topic_count_size">12dp</dimen>
 
+    <dimen name="ka_detail_list_margin">10dp</dimen>
     <dimen name="ka_detail_title_size">30dp</dimen>
     <dimen name="ka_detail_subtitle_size">22dp</dimen>
     <dimen name="ka_detail_topic_title">18dp</dimen>

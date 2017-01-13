@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ka_details_topics_text"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingTop="@dimen/card_margin"
+    android:paddingLeft="@dimen/card_margin"
+    android:paddingRight="@dimen/card_margin">
+
+    <TextView
+        android:id="@+id/ka_details_topics_label"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="3dp"
+        android:paddingBottom="@dimen/card_margin"
+        android:text="Topics"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="@dimen/ka_detail_subtitle_size" />
+</LinearLayout>
