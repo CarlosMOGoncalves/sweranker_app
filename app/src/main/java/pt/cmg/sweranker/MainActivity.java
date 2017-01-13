@@ -109,12 +109,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     @Override
     public List<KnowledgeArea> loadKnowledgeAreasForSwebokFragment() {
-
         List<KnowledgeArea> kas = new ArrayList<>();
         if (_isBound) {
             kas = _swebokLoaderService.getKnowledgeAreas();
         }
-
         return kas;
     }
 
@@ -125,7 +123,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
 
     @Override
-    public KnowledgeArea onKaDetailsFragmentInteraction(int knowledgeAreaIdToLoad) {
+    public KnowledgeArea getKnowledgeArea(int knowledgeAreaIdToLoad) {
         KnowledgeArea ka = new KnowledgeArea();
         if (_isBound) {
             ka = _swebokLoaderService.getKnowledgeArea(knowledgeAreaIdToLoad);

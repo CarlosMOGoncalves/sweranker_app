@@ -66,7 +66,7 @@ public class KADetailsFragment extends Fragment {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
             _knowledgeAreaId = getArguments().getInt(KNOWLEDGE_AREA_ID);
-            _knowledgeArea = _parentActivity.onKaDetailsFragmentInteraction(_knowledgeAreaId);
+            _knowledgeArea = _parentActivity.getKnowledgeArea(_knowledgeAreaId);
         }
     }
 
@@ -77,11 +77,9 @@ public class KADetailsFragment extends Fragment {
 
         ImageView kaImage = (ImageView) _myView.findViewById(R.id.ka_details_image);
         TextView kaTitle = (TextView) _myView.findViewById(R.id.ka_details_name);
-        TextView kaDescription = (TextView) _myView.findViewById(R.id.ka_details_description_text);
 
         kaImage.setImageDrawable(this.getResources().getDrawable(_knowledgeArea.getImageResource(), null));
         kaTitle.setText(this.getResources().getText(_knowledgeArea.getNameResource()));
-        kaDescription.setText(this.getResources().getText(_knowledgeArea.getDescriptionResource()));
 
         _topicList = (RecyclerView) _myView.findViewById(R.id.ka_details_topics_list);
 
@@ -95,13 +93,23 @@ public class KADetailsFragment extends Fragment {
     }
 
     /**
-     * Communication Interface
+     * Communication Interface used to load a Knowledge Area from the Activity
      */
     public interface OnKaDetailsFragmentInteractionListener {
-        KnowledgeArea onKaDetailsFragmentInteraction(int knowledgeAreaIdToLoad);
+        KnowledgeArea getKnowledgeArea(int knowledgeAreaIdToLoad);
     }
 
-    public class KADetailsAdapter extends RecyclerView.Adapter<KADetailsAdapter.KADetailsViewHolder> {
+    /**
+     * This adapter is used to fill the Recycler View of this fragment that shows de details of the Knowledge
+     * Area.
+     * <p>
+     * Unlike simpler adapters this one has an header type View. Refer to this code to understand how to use
+     * the adapter with more than one ViewHolder.
+     */
+    private class KADetailsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
+
+        private static final int TYPE_HEADER = 10;
+        private static final int TYPE_ITEM = 20;
 
         private KnowledgeArea _knowledgeArea;
         private Context _context;
@@ -113,18 +121,27 @@ public class KADetailsFragment extends Fragment {
         }
 
         @Override
-        public KADetailsViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+            View itemView;
+            if (viewType == TYPE_HEADER) {
+                itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.ka_details_header, parent, false);
+                return new KADetailsViewHolder(itemView);
+            }
 
-            View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.ka_topics_item, parent, false);
-            return new KADetailsViewHolder(itemView);
+            itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.ka_topics_item, parent, false);
+            return new KATopicsViewHolder(itemView);
         }
 
 
         @Override
-        public void onBindViewHolder(KADetailsViewHolder holder, int position) {
-            KnowledgeAreaTopic kaTopic = _knowledgeArea.getTopics().get(position);
-            holder._topicName.setText(_context.getResources().getString(kaTopic.getNameResource()));
-            holder._topicDescritpion.setText(_context.getResources().getString(kaTopic.getDescriptionResource()));
+        public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
+            if (holder instanceof KADetailsViewHolder) {
+                ((KADetailsViewHolder) holder)._kaDescription.setText(_context.getResources().getString(_knowledgeArea.getDescriptionResource()));
+            } else {
+                KnowledgeAreaTopic kaTopic = _knowledgeArea.getTopics().get(position);
+                ((KATopicsViewHolder) holder)._topicName.setText(_context.getResources().getString(kaTopic.getNameResource()));
+                ((KATopicsViewHolder) holder)._topicDescritpion.setText(_context.getResources().getString(kaTopic.getDescriptionResource()));
+            }
         }
 
 
@@ -133,16 +150,33 @@ public class KADetailsFragment extends Fragment {
             return _knowledgeArea.getTopicsCount();
         }
 
+        @Override
+        public int getItemViewType(int position) {
+            if (position == 0) // it is the header
+                return TYPE_HEADER;
+            return TYPE_ITEM;
+        }
+
+
+        class KADetailsViewHolder extends RecyclerView.ViewHolder {
+
+            private TextView _kaDescription;
+
+            public KADetailsViewHolder(View view) {
+                super(view);
+                _kaDescription = (TextView) view.findViewById(R.id.ka_details_description_text);
+            }
+        }
 
         /**
          * ViewHolder pattern to hold one of the cards
          */
-        public class KADetailsViewHolder extends RecyclerView.ViewHolder {
+        class KATopicsViewHolder extends RecyclerView.ViewHolder {
 
             private TextView _topicName;
             private TextView _topicDescritpion;
 
-            public KADetailsViewHolder(View view) {
+            public KATopicsViewHolder(View view) {
                 super(view);
                 _topicName = (TextView) view.findViewById(R.id.topic_name);
                 _topicDescritpion = (TextView) view.findViewById(R.id.topic_description);
