@@ -4,9 +4,8 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:paddingTop="@dimen/card_margin"
-    android:paddingLeft="@dimen/card_margin"
-    android:paddingRight="@dimen/card_margin">
+    android:paddingLeft="@dimen/ka_detail_list_padding"
+    android:paddingRight="@dimen/ka_detail_list_padding">
 
     <TextView
         android:id="@+id/ka_details_topics_label"
@@ -14,7 +13,8 @@
         android:layout_height="wrap_content"
         android:elevation="3dp"
         android:paddingBottom="@dimen/card_margin"
-        android:text="Topics"
-        android:textColor="@color/colorPrimaryDark"
+        android:paddingTop="@dimen/card_margin"
+        android:text="@string/topics"
+        android:textColor="@android:color/black"
         android:textSize="@dimen/ka_detail_subtitle_size" />
 </LinearLayout>

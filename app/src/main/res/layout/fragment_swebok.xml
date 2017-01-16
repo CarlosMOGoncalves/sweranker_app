@@ -3,7 +3,7 @@
     android:id="@+id/swebok_grid_container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/grayerWhite"
+    android:background="@color/darkerBackground"
     tools:context="pt.cmg.sweranker.fragments.SwebokFragment">
 
     <android.support.v7.widget.RecyclerView

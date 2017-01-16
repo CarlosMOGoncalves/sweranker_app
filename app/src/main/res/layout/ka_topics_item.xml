@@ -4,21 +4,22 @@
     android:layout_height="wrap_content"
     android:orientation="vertical"
     android:elevation="3dp"
-    android:padding="@dimen/card_margin">
+    android:paddingLeft="@dimen/ka_detail_list_padding"
+    android:paddingRight="@dimen/ka_detail_list_padding">
 
     <TextView
         android:id="@+id/topic_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="TextView"
+        android:text="@string/loren_ipsum_title"
         android:textSize="@dimen/ka_detail_topic_title" />
 
     <TextView
         android:id="@+id/topic_description"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="TextView"
-        android:textColor="@android:color/black"
+        android:text="@string/loren_ipsum_description"
+        android:textColor="@color/textColourBrowninsh"
         android:textSize="@dimen/ka_detail_text_size" />
 
 </LinearLayout>

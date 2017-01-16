@@ -146,6 +146,11 @@ public class KADetailsFragment extends Fragment {
         private static final int TYPE_TOPICS_TITLE = 15;
         private static final int TYPE_ITEM = 20;
 
+        /**
+         * Extra views at the top, namely the TYPE_HEADER and TYPE_TOPICS_TITLE
+         */
+        private static final int EXTRA_VIEWS = 2;
+
         private KnowledgeArea _knowledgeArea;
         private Context _context;
 
@@ -178,7 +183,7 @@ public class KADetailsFragment extends Fragment {
             } else if (holder instanceof KATopicsTitleViewHolder) {
                 // nothing to bind really
             } else {
-                KnowledgeAreaTopic kaTopic = _knowledgeArea.getTopics().get(position);
+                KnowledgeAreaTopic kaTopic = _knowledgeArea.getTopics().get(position - EXTRA_VIEWS);
                 ((KATopicsViewHolder) holder)._topicName.setText(_context.getResources().getString(kaTopic.getNameResource()));
                 ((KATopicsViewHolder) holder)._topicDescritpion.setText(_context.getResources().getString(kaTopic.getDescriptionResource()));
             }
@@ -187,7 +192,7 @@ public class KADetailsFragment extends Fragment {
 
         @Override
         public int getItemCount() {
-            return _knowledgeArea.getTopicsCount();
+            return _knowledgeArea.getTopicsCount() + EXTRA_VIEWS;
         }
 
         @Override
