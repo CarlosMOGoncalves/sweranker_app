@@ -237,6 +237,15 @@ public class KADetailsFragment extends Fragment {
                 super(view);
                 _topicName = (TextView) view.findViewById(R.id.topic_name);
                 _topicDescritpion = (TextView) view.findViewById(R.id.topic_description);
+
+                //This listener is used to set the visibility of the topic description, it is GONE by default
+                view.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        boolean isGone = _topicDescritpion.getVisibility() == View.GONE;
+                        _topicDescritpion.setVisibility(isGone ? View.VISIBLE : View.GONE);
+                    }
+                });
             }
         }
     }

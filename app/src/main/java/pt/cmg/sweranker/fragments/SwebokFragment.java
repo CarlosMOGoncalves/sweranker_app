@@ -11,6 +11,7 @@ import android.support.v7.widget.RecyclerView;
 import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -180,12 +181,16 @@ public class SwebokFragment extends Fragment {
                 _kaName = (TextView) view.findViewById(R.id.ka_name);
                 _kaTopicCount = (TextView) view.findViewById(R.id.ka_topic_number);
 
-                view.setOnClickListener(v -> {
-                    int pos = getAdapterPosition();
-                    _parentActivity.loadDetailedKnowledgeAreaFragment(_knowledgAreas.get(pos).getId());
+                view.setOnClickListener(new OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        int pos = getAdapterPosition();
+                        _parentActivity.loadDetailedKnowledgeAreaFragment(_knowledgAreas.get(pos).getId());
+                    }
                 });
             }
         }
-
     }
+
 }
+
