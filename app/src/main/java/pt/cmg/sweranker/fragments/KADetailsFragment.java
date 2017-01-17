@@ -2,13 +2,11 @@ package pt.cmg.sweranker.fragments;
 
 import android.app.Fragment;
 import android.content.Context;
-import android.content.res.Resources;
-import android.graphics.Rect;
 import android.os.Bundle;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,6 +16,8 @@ import android.widget.TextView;
 import pt.cmg.sweranker.KnowledgeArea;
 import pt.cmg.sweranker.KnowledgeAreaTopic;
 import pt.cmg.sweranker.R;
+import pt.cmg.sweranker.ui.ConstantSpacingItemDecorator;
+import pt.cmg.sweranker.ui.UnderlineDividerItemDecorator;
 
 /**
  * Created by Carlos on 12/01/2017.
@@ -86,43 +86,23 @@ public class KADetailsFragment extends Fragment {
 
         _topicList = (RecyclerView) _myView.findViewById(R.id.ka_details_topics_list);
 
-        KADetailsAdapter adapter = new KADetailsAdapter(this.getActivity(), _knowledgeArea);
 
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(this.getActivity(), LinearLayoutManager.VERTICAL, false);
         _topicList.setLayoutManager(mLayoutManager);
-        _topicList.addItemDecoration(new ConstantSpacingItemDecorator(20));
+
+        _topicList.addItemDecoration(new ConstantSpacingItemDecorator(this.getActivity(), 20, ConstantSpacingItemDecorator.Side.BOTTOM));
+        _topicList.addItemDecoration(new UnderlineDividerItemDecorator.Builder(this.getActivity(), ContextCompat.getColor((Context) _parentActivity, R.color.darkerBackground), 1)
+                .targetViewHolderClass(KADetailsAdapter.KATopicsViewHolder.class)
+                .skipViews(2)
+                .rightInset(20)
+                .leftInset(20)
+                .build());
+
         _topicList.setItemAnimator(new DefaultItemAnimator());
+
+        KADetailsAdapter adapter = new KADetailsAdapter(this.getActivity(), _knowledgeArea);
         _topicList.setAdapter(adapter);
         return _myView;
-    }
-
-
-    /**
-     * This Item Decorator uses a single pixel sized spacing
-     */
-    public class ConstantSpacingItemDecorator extends RecyclerView.ItemDecoration {
-
-        private int _spacingInDp;
-
-        public ConstantSpacingItemDecorator(int spacingInDp) {
-            _spacingInDp = spacingInDp;
-        }
-
-        @Override
-        public void getItemOffsets(Rect outRect, View view, RecyclerView parent, RecyclerView.State state) {
-            outRect.bottom = dpToPx(_spacingInDp);
-        }
-
-        /**
-         * Converts dp sizes to actual pixels
-         *
-         * @param dp
-         * @return
-         */
-        private int dpToPx(int dp) {
-            Resources r = getResources();
-            return Math.round(TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dp, r.getDisplayMetrics()));
-        }
     }
 
 

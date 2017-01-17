@@ -33,7 +33,9 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@+id/ka_details_name"
-        android:background="@color/colorAccent" />
+        android:background="@color/colorAccent"
+        android:paddingBottom="@dimen/ka_detail_list_padding"
+        android:clipToPadding="false" />
 
 
 </RelativeLayout>

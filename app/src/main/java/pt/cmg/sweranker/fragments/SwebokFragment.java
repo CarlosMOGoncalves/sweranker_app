@@ -2,13 +2,10 @@ package pt.cmg.sweranker.fragments;
 
 import android.app.Fragment;
 import android.content.Context;
-import android.content.res.Resources;
-import android.graphics.Rect;
 import android.os.Bundle;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -20,6 +17,7 @@ import java.util.List;
 
 import pt.cmg.sweranker.KnowledgeArea;
 import pt.cmg.sweranker.R;
+import pt.cmg.sweranker.ui.ConstantSpacingItemDecorator;
 
 
 public class SwebokFragment extends Fragment {
@@ -76,7 +74,7 @@ public class SwebokFragment extends Fragment {
 
         RecyclerView.LayoutManager mLayoutManager = new GridLayoutManager(this.getActivity(), 2);
         _swebokGrid.setLayoutManager(mLayoutManager);
-        _swebokGrid.addItemDecoration(new ConstantSpacingItemDecorator(10));
+        _swebokGrid.addItemDecoration(new ConstantSpacingItemDecorator(this.getActivity(), 10, ConstantSpacingItemDecorator.Side.LEFT, ConstantSpacingItemDecorator.Side.RIGHT, ConstantSpacingItemDecorator.Side.ALL_SIDES));
         _swebokGrid.setItemAnimator(new DefaultItemAnimator());
         _swebokGrid.setAdapter(adapter);
         return _myView;
@@ -87,35 +85,6 @@ public class SwebokFragment extends Fragment {
     public void onDetach() {
         super.onDetach();
         _parentActivity = null;
-    }
-
-
-    /**
-     * This Item Decorator uses a single pixel sized spacing
-     */
-    public class ConstantSpacingItemDecorator extends RecyclerView.ItemDecoration {
-
-        private int _spacingInDp;
-
-        public ConstantSpacingItemDecorator(int spacingInDp) {
-            _spacingInDp = spacingInDp;
-        }
-
-        @Override
-        public void getItemOffsets(Rect outRect, View view, RecyclerView parent, RecyclerView.State state) {
-            outRect.bottom = outRect.top = outRect.left = outRect.right = dpToPx(_spacingInDp);
-        }
-
-        /**
-         * Converts dp sizes to actual pixels
-         *
-         * @param dp
-         * @return
-         */
-        private int dpToPx(int dp) {
-            Resources r = getResources();
-            return Math.round(TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dp, r.getDisplayMetrics()));
-        }
     }
 
 

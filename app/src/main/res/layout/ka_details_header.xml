@@ -12,7 +12,7 @@
         android:id="@+id/ka_details_description_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingTop="@dimen/card_margin"
+        android:paddingTop="@dimen/ka_detail_list_padding"
         android:text="@string/loren_ipsum"
         android:textColor="@color/textColourBrowninsh"
         android:textSize="@dimen/ka_detail_text_size" />
