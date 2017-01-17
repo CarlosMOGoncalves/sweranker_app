@@ -2,7 +2,9 @@ package pt.cmg.sweranker.fragments;
 
 import android.app.Fragment;
 import android.content.Context;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -126,6 +128,8 @@ public class SwebokFragment extends Fragment {
             holder._kaName.setText(_context.getResources().getString(knowledgeArea.getNameResource()));
             holder._kaTopicCount.setText(knowledgeArea.getTopicsCount() + " " + _context.getResources().getString(R.string.topics_lowercase));
             holder._kaImage.setImageDrawable(_context.getResources().getDrawable(knowledgeArea.getImageResource(), null));
+            holder._kaImage.setBackgroundColor(ContextCompat.getColor(_context, knowledgeArea.getColourResource()));
+            holder._kaImage.setColorFilter(Color.parseColor("#ffffff"));
         }
 
 

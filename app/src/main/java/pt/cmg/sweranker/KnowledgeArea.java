@@ -10,6 +10,7 @@ public class KnowledgeArea {
     private int _descriptionResource;
     private int _id;
     private List<KnowledgeAreaTopic> _topics;
+    private int _colourResource;
 
     public KnowledgeArea() {
         _nameResource = 0;
@@ -17,6 +18,7 @@ public class KnowledgeArea {
         _descriptionResource = 0;
         _topics = new ArrayList<>();
         _id = 0;
+        _colourResource = 0;
 
     }
 
@@ -74,6 +76,14 @@ public class KnowledgeArea {
 
     public void addTopic(KnowledgeAreaTopic topic) {
         _topics.add(topic);
+    }
+
+    public int getColourResource() {
+        return _colourResource;
+    }
+
+    public void setColourResource(int colourResource) {
+        _colourResource = colourResource;
     }
 }
 

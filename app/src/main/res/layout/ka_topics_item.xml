@@ -4,6 +4,7 @@
     android:layout_height="wrap_content"
     android:orientation="vertical"
     android:elevation="3dp"
+    android:paddingTop="@dimen/ka_detail_topic_title_top_padding"
     android:paddingLeft="@dimen/ka_detail_list_padding"
     android:paddingRight="@dimen/ka_detail_list_padding">
 

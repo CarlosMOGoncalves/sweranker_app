@@ -66,6 +66,8 @@ public class SwebokLoaderService extends Service {
                                 knowledgeArea.setNameResource(getResources().getIdentifier(xmlParser.nextText(), "string", this.getPackageName()));
                             } else if (xmlElementName.equals("image")) {
                                 knowledgeArea.setImageResource(getResources().getIdentifier(xmlParser.nextText(), "drawable", this.getPackageName()));
+                            } else if (xmlElementName.equals("imageBackgroundColour")) {
+                                knowledgeArea.setColourResource(getResources().getIdentifier(xmlParser.nextText(), "color", this.getPackageName()));
                             } else if (xmlElementName.equals("description")) {
                                 knowledgeArea.setDescriptionResource(getResources().getIdentifier(xmlParser.nextText(), "string", this.getPackageName()));
                             } else if (xmlElementName.equals("id")) {

@@ -6,4 +6,12 @@
     <color name="darkerBackground">#eeeeee</color>
     <color name="textColourBrowninsh">#D7CCC8</color>
     <color name="test_color3">#e7db00</color>
+
+    <color name="cardColour1">#FFA726</color>
+    <color name="cardColour2">#26A69A</color>
+    <color name="cardColour3">#42A5F5</color>
+    <color name="cardColour4">#7E57C2</color>
+    <color name="cardColour5">#EF5350</color>
+    <color name="cardColour6">#8D6E63</color>
+
 </resources>
