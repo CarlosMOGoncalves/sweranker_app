@@ -1,9 +1,12 @@
 package pt.cmg.sweranker;
 
+import android.app.Activity;
+import android.app.Fragment;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.ServiceConnection;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.os.IBinder;
 import android.support.annotation.NonNull;
@@ -13,8 +16,12 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.transition.Slide;
+import android.transition.Transition;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -22,12 +29,16 @@ import java.util.List;
 
 import pt.cmg.sweranker.fragments.KADetailsFragment;
 import pt.cmg.sweranker.fragments.SwebokFragment;
+import pt.cmg.sweranker.ui.ImageSizeAndPlaceTransition;
+import pt.cmg.sweranker.ui.OnEndTransitionListener;
+import pt.cmg.sweranker.ui.UXUtils;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, SwebokFragment.OnSwebokFragmentInteractionListener, KADetailsFragment.OnKaDetailsFragmentInteractionListener {
 
 
     private SwebokLoaderService _swebokLoaderService;
     boolean _isBound = false;
+    private Toolbar _toolbar;
 
 
     private ServiceConnection _serviceConnection = new ServiceConnection() {
@@ -50,11 +61,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+        _toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(_toolbar);
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.nav_drawer);
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar, R.string.openDrawer, R.string.closeDrawer);
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, _toolbar, R.string.openDrawer, R.string.closeDrawer);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
@@ -117,8 +128,52 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     }
 
     @Override
-    public void loadDetailedKnowledgeAreaFragment(int knowledgeAreaId) {
-        getFragmentManager().beginTransaction().replace(R.id.content_area, KADetailsFragment.newInstance(knowledgeAreaId), "KADetail").addToBackStack(null).commit();
+    public void loadDetailedKnowledgeAreaFragment(View v, int knowledgeAreaId) {
+        ImageView image = (ImageView) v.findViewById(R.id.ka_image);
+        int imageBackgroundColour = ((ColorDrawable) image.getBackground()).getColor();
+
+        int actionBarOriginalColour = _toolbar.getSolidColor();
+        int statusBarOriginalColour = this.getWindow().getStatusBarColor();
+
+        long transitionDuration = 500;
+
+        Fragment kaDetailsFragment = KADetailsFragment.newInstance(knowledgeAreaId);
+        Activity myActivity = this;
+
+        Transition sharedImageEnterTransition = new ImageSizeAndPlaceTransition();
+        sharedImageEnterTransition.setDuration(transitionDuration);
+        kaDetailsFragment.setSharedElementEnterTransition(sharedImageEnterTransition);
+        sharedImageEnterTransition.addListener(new OnEndTransitionListener() {
+            @Override
+            public void onEndTransition(Transition transition) {
+                UXUtils.animateActionBarColourChange(_toolbar, imageBackgroundColour, 500, 0);
+                UXUtils.animateStatusBarColourChange(myActivity, imageBackgroundColour);
+            }
+        });
+
+
+        Transition sharedImageExitTransition = new ImageSizeAndPlaceTransition();
+        sharedImageExitTransition.setDuration(transitionDuration);
+        kaDetailsFragment.setSharedElementReturnTransition(sharedImageExitTransition);
+        sharedImageExitTransition.addListener(new OnEndTransitionListener() {
+            @Override
+            public void onEndTransition(Transition transition) {
+                UXUtils.animateStatusBarColourChange(myActivity, statusBarOriginalColour);
+                UXUtils.animateActionBarColourChange(_toolbar, actionBarOriginalColour, 500, 0);
+
+            }
+        });
+
+
+        Transition enterContentTransition = new Slide();
+        enterContentTransition.setDuration(transitionDuration);
+        kaDetailsFragment.setEnterTransition(enterContentTransition);
+        kaDetailsFragment.setExitTransition(enterContentTransition);
+
+
+        getFragmentManager().beginTransaction().addSharedElement(image, "ka_image").replace(R.id.content_area, kaDetailsFragment, "KADetail").addToBackStack(null).commit();
+
+
     }
 
 

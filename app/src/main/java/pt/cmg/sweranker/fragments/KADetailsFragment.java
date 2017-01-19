@@ -2,6 +2,7 @@ package pt.cmg.sweranker.fragments;
 
 import android.app.Fragment;
 import android.content.Context;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.DefaultItemAnimator;
@@ -82,6 +83,8 @@ public class KADetailsFragment extends Fragment {
         TextView kaTitle = (TextView) _myView.findViewById(R.id.ka_details_name);
 
         kaImage.setImageDrawable(this.getResources().getDrawable(_knowledgeArea.getImageResource(), null));
+        kaImage.setBackgroundColor(ContextCompat.getColor((Context) _parentActivity, _knowledgeArea.getColourResource()));
+        kaImage.setColorFilter(Color.parseColor("#ffffff"));
         kaTitle.setText(this.getResources().getText(_knowledgeArea.getNameResource()));
 
         _topicList = (RecyclerView) _myView.findViewById(R.id.ka_details_topics_list);

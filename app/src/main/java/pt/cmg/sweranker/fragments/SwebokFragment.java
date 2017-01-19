@@ -72,7 +72,7 @@ public class SwebokFragment extends Fragment {
 
         _swebokGrid = (RecyclerView) _myView.findViewById(R.id.swebok_grid);
 
-        KnowledgeAreaAdapter adapter = new KnowledgeAreaAdapter(this.getActivity(), _parentActivity.loadKnowledgeAreasForSwebokFragment());
+        KnowledgeAreaAdapter adapter = new KnowledgeAreaAdapter(this.getActivity(), this, _parentActivity.loadKnowledgeAreasForSwebokFragment());
 
         RecyclerView.LayoutManager mLayoutManager = new GridLayoutManager(this.getActivity(), 2);
         _swebokGrid.setLayoutManager(mLayoutManager);
@@ -96,7 +96,7 @@ public class SwebokFragment extends Fragment {
     public interface OnSwebokFragmentInteractionListener {
         List<KnowledgeArea> loadKnowledgeAreasForSwebokFragment();
 
-        void loadDetailedKnowledgeAreaFragment(int knowledgeAreaId);
+        void loadDetailedKnowledgeAreaFragment(View v, int knowledgeAreaId);
     }
 
 
@@ -107,18 +107,20 @@ public class SwebokFragment extends Fragment {
 
         private Context _context;
         private List<KnowledgeArea> _knowledgAreas;
+        private Fragment _f;
 
 
-        public KnowledgeAreaAdapter(Context context, List<KnowledgeArea> knowledgeAreas) {
+        public KnowledgeAreaAdapter(Context context, Fragment f, List<KnowledgeArea> knowledgeAreas) {
             _context = context;
             _knowledgAreas = knowledgeAreas;
+            _f = f;
         }
 
         @Override
         public KnowledgeAreaAdapter.KAViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 
             View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.swebok_card, parent, false);
-            return new KnowledgeAreaAdapter.KAViewHolder(itemView);
+            return new KnowledgeAreaAdapter.KAViewHolder(_f, itemView);
         }
 
 
@@ -130,6 +132,7 @@ public class SwebokFragment extends Fragment {
             holder._kaImage.setImageDrawable(_context.getResources().getDrawable(knowledgeArea.getImageResource(), null));
             holder._kaImage.setBackgroundColor(ContextCompat.getColor(_context, knowledgeArea.getColourResource()));
             holder._kaImage.setColorFilter(Color.parseColor("#ffffff"));
+            holder._kaImage.setTransitionName("ka_image" + position);
         }
 
 
@@ -148,7 +151,7 @@ public class SwebokFragment extends Fragment {
             private TextView _kaName;
             private TextView _kaTopicCount;
 
-            public KAViewHolder(View view) {
+            public KAViewHolder(Fragment f, View view) {
                 super(view);
                 _kaImage = (ImageView) view.findViewById(R.id.ka_image);
                 _kaName = (TextView) view.findViewById(R.id.ka_name);
@@ -158,10 +161,12 @@ public class SwebokFragment extends Fragment {
                     @Override
                     public void onClick(View v) {
                         int pos = getAdapterPosition();
-                        _parentActivity.loadDetailedKnowledgeAreaFragment(_knowledgAreas.get(pos).getId());
+                        _parentActivity.loadDetailedKnowledgeAreaFragment(v, _knowledgAreas.get(pos).getId());
                     }
                 });
             }
+
+
         }
     }
 

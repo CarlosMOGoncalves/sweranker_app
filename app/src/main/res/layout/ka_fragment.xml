@@ -8,36 +8,42 @@
     <ImageView
         android:id="@+id/ka_details_image"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/ka_image_height"
-        android:background="@color/colorPrimary"
+        android:layout_height="200dp"
         android:scaleType="fitCenter"
         app:srcCompat="@drawable/function"
         android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true" />
-
-    <TextView
-        android:id="@+id/ka_details_name"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/ka_details_image"
-        android:background="@color/darkerBackground"
-        android:gravity="center"
-        android:padding="@dimen/ka_title_padding"
-        android:text="Software Cenas"
-        android:textAlignment="viewStart"
-        android:textColor="@android:color/black"
-        android:textSize="@dimen/ka_detail_title_size" />
+        android:transitionName="ka_image" />
 
-
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/ka_details_topics_list"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/ka_details_name"
-        android:background="@color/colorAccent"
-        android:paddingBottom="@dimen/ka_detail_list_padding"
-        android:clipToPadding="false" />
+        android:orientation="vertical"
+        android:layout_below="@+id/ka_details_image"
+        android:transitionGroup="true">
+
+        <TextView
+            android:id="@+id/ka_details_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/darkerBackground"
+            android:gravity="center"
+            android:padding="@dimen/ka_title_padding"
+            android:text="Software Cenas"
+            android:textAlignment="viewStart"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/ka_detail_title_size" />
+
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/ka_details_topics_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorAccent"
+            android:paddingBottom="@dimen/ka_detail_list_padding"
+            android:clipToPadding="false" />
+
+    </LinearLayout>
 
 
 </RelativeLayout>
