@@ -1,4 +1,4 @@
-package pt.cmg.sweranker.pt.cmg.sweranker.util;
+package pt.cmg.sweranker.util;
 
 import android.content.Context;
 import android.content.res.Resources;
