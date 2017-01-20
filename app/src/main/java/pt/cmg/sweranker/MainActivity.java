@@ -31,6 +31,7 @@ import pt.cmg.sweranker.fragments.KADetailsFragment;
 import pt.cmg.sweranker.fragments.SwebokFragment;
 import pt.cmg.sweranker.ui.ImageSizeAndPlaceTransition;
 import pt.cmg.sweranker.ui.OnEndTransitionListener;
+import pt.cmg.sweranker.ui.OnStartTransitionListener;
 import pt.cmg.sweranker.ui.UXUtils;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, SwebokFragment.OnSwebokFragmentInteractionListener, KADetailsFragment.OnKaDetailsFragmentInteractionListener {
@@ -106,7 +107,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         int id = item.getItemId();
 
         if (id == R.id.swebok_nav) {
-            getFragmentManager().beginTransaction().add(R.id.content_area, SwebokFragment.newInstance(), "Swebok").commit();
+            // Careful with his, it is here because of the animations on KA details.
+            // When pressed the menu and selected one item the animations would not run.
+            getFragmentManager().popBackStackImmediate();
+            getFragmentManager().beginTransaction().replace(R.id.content_area, SwebokFragment.newInstance(), "Swebok").commit();
         } else if (id == R.id.curricula_nav) {
             Toast.makeText(getApplicationContext(), "Curriculos", Toast.LENGTH_LONG).show();
         } else if (id == R.id.rankings_nav) {
@@ -130,8 +134,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     @Override
     public void loadDetailedKnowledgeAreaFragment(View v, int knowledgeAreaId) {
         ImageView image = (ImageView) v.findViewById(R.id.ka_image);
-        int imageBackgroundColour = ((ColorDrawable) image.getBackground()).getColor();
 
+        // Gets the colour that will be changed between fragments, the source, which is the KA decorative colour
+        int imageBackgroundColour = ((ColorDrawable) image.getBackground()).getColor();
+        // ... and the original colours of the Action Bars and Status Bar so we can return back to the original colours
         int actionBarOriginalColour = _toolbar.getSolidColor();
         int statusBarOriginalColour = this.getWindow().getStatusBarColor();
 
@@ -140,40 +146,68 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         Fragment kaDetailsFragment = KADetailsFragment.newInstance(knowledgeAreaId);
         Activity myActivity = this;
 
-        Transition sharedImageEnterTransition = new ImageSizeAndPlaceTransition();
-        sharedImageEnterTransition.setDuration(transitionDuration);
-        kaDetailsFragment.setSharedElementEnterTransition(sharedImageEnterTransition);
-        sharedImageEnterTransition.addListener(new OnEndTransitionListener() {
+        Transition imageEnterTransition = createImageEnterSharedElementTransition(kaDetailsFragment, transitionDuration);
+
+        // Very important! Adding a listener in order to change the Action Bar colour and the Status Bar colour when this transition finishes.
+        imageEnterTransition.addListener(new OnEndTransitionListener() {
             @Override
             public void onEndTransition(Transition transition) {
-                UXUtils.animateActionBarColourChange(_toolbar, imageBackgroundColour, 500, 0);
-                UXUtils.animateStatusBarColourChange(myActivity, imageBackgroundColour);
+                UXUtils.animateActionBarColourChange(_toolbar, imageBackgroundColour, 0, 0);
+                UXUtils.animateStatusBarColourChange(myActivity, imageBackgroundColour, 0, 0);
             }
         });
 
+
+        Transition sharedImageExitTransition = createImageExitSharedElementTransition(kaDetailsFragment, transitionDuration);
+        // Very important! Adding a listener in order to change the Action Bar colour and the Status Bar colour when this transition starts.
+        sharedImageExitTransition.addListener(new OnStartTransitionListener() {
+            @Override
+            public void onStartTransition(Transition transition) {
+                UXUtils.animateStatusBarColourChange(myActivity, statusBarOriginalColour, 0, 0);
+                UXUtils.animateActionBarColourChange(_toolbar, actionBarOriginalColour, 0, 0);
+            }
+        });
+
+        // This just creates a transition for the rest of the content, i.e. not shared.
+        Transition contentTransition = new Slide();
+        contentTransition.setDuration(transitionDuration);
+        kaDetailsFragment.setEnterTransition(contentTransition);
+        kaDetailsFragment.setExitTransition(contentTransition);
+
+        getFragmentManager().beginTransaction().addSharedElement(image, "ka_image").replace(R.id.content_area, kaDetailsFragment, "KADetail").addToBackStack(null).commit();
+    }
+
+    /**
+     * Creates and sets a shared element transition from source fragment {@link SwebokFragment} to the target detailed fragment {@link KADetailsFragment}.
+     * The shared element is the KA decorative image and it will be set on the fragment transaction.
+     * This function only creates the Transition animation for the image.
+     *
+     * @param targetFragment
+     * @param transitionDuration
+     */
+    private Transition createImageEnterSharedElementTransition(Fragment targetFragment, long transitionDuration) {
+
+        Transition sharedImageEnterTransition = new ImageSizeAndPlaceTransition();
+        sharedImageEnterTransition.setDuration(transitionDuration);
+        targetFragment.setSharedElementEnterTransition(sharedImageEnterTransition);
+        return sharedImageEnterTransition;
+
+    }
+
+    /**
+     * Creates and sets a shared element transition from target fragment {@link KADetailsFragment} BACK TO the source fragment {@link SwebokFragment}.
+     * The shared element is the KA decorative image and it will be set on the fragment transaction.
+     * This function only creates the Transition animation for the image.
+     *
+     * @param targetFragment
+     * @param transitionDuration
+     */
+    private Transition createImageExitSharedElementTransition(Fragment targetFragment, long transitionDuration) {
 
         Transition sharedImageExitTransition = new ImageSizeAndPlaceTransition();
         sharedImageExitTransition.setDuration(transitionDuration);
-        kaDetailsFragment.setSharedElementReturnTransition(sharedImageExitTransition);
-        sharedImageExitTransition.addListener(new OnEndTransitionListener() {
-            @Override
-            public void onEndTransition(Transition transition) {
-                UXUtils.animateStatusBarColourChange(myActivity, statusBarOriginalColour);
-                UXUtils.animateActionBarColourChange(_toolbar, actionBarOriginalColour, 500, 0);
-
-            }
-        });
-
-
-        Transition enterContentTransition = new Slide();
-        enterContentTransition.setDuration(transitionDuration);
-        kaDetailsFragment.setEnterTransition(enterContentTransition);
-        kaDetailsFragment.setExitTransition(enterContentTransition);
-
-
-        getFragmentManager().beginTransaction().addSharedElement(image, "ka_image").replace(R.id.content_area, kaDetailsFragment, "KADetail").addToBackStack(null).commit();
-
-
+        targetFragment.setSharedElementReturnTransition(sharedImageExitTransition);
+        return sharedImageExitTransition;
     }
 
 

@@ -208,7 +208,7 @@
     <knowledge-area>
         <name>@string/ka_software_config_management</name>
         <image>@drawable/bitbucket</image>
-        <imageBackgroundColour>@color/cardColour3</imageBackgroundColour>
+        <imageBackgroundColour>@color/cardColour6</imageBackgroundColour>
         <id>6</id>
         <description>@string/ka_software_config_management_description</description>
         <topics>

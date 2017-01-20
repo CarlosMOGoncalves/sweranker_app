@@ -7,11 +7,20 @@ import android.support.annotation.ColorInt;
 import android.support.v7.widget.Toolbar;
 
 /**
- * Created by Carlos on 19/01/2017.
+ * UXUtils is an utility class with a set of utility functions that are somehow related to UX, such as painting some View,
+ * creating some animations etc.
  */
-
 public class UXUtils {
 
+    /**
+     * Takes a toolbar and creates an animator to paint it in the colour passed as parameter with the duration and delay given.
+     * It uses a Value Animator...not that I know what it does YET, but hey, deadlines...
+     *
+     * @param toolbar
+     * @param targetColour
+     * @param duration
+     * @param startDelay
+     */
     public static void animateActionBarColourChange(Toolbar toolbar, @ColorInt int targetColour, long duration, long startDelay) {
         Integer colorFrom = toolbar.getSolidColor();
         Integer colorTo = targetColour;
@@ -32,7 +41,17 @@ public class UXUtils {
 
     }
 
-    public static void animateStatusBarColourChange(Activity hostActivity, @ColorInt int targetColour) {
+    /**
+     * /**
+     * Takes an Activity and creates an animator to paint the Status Bar it in the colour passed as parameter with the duration and delay given.
+     * It uses a Value Animator...not that I know what it does YET, but hey, deadlines...
+     *
+     * @param hostActivity
+     * @param targetColour
+     * @param duration
+     * @param startDelay
+     */
+    public static void animateStatusBarColourChange(Activity hostActivity, @ColorInt int targetColour, long duration, long startDelay) {
         Integer colorStatusFrom = hostActivity.getWindow().getStatusBarColor();
         Integer colorStatusTo = targetColour;
 
@@ -46,8 +65,8 @@ public class UXUtils {
             }
         });
 
-        colorStatusAnimation.setDuration(500);
-        colorStatusAnimation.setStartDelay(0);
+        colorStatusAnimation.setDuration(duration);
+        colorStatusAnimation.setStartDelay(startDelay);
         colorStatusAnimation.start();
     }
 }

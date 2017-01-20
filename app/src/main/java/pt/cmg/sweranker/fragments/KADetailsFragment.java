@@ -8,6 +8,8 @@ import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.transition.Fade;
+import android.transition.TransitionManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -225,6 +227,7 @@ public class KADetailsFragment extends Fragment {
                 view.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
+                        TransitionManager.beginDelayedTransition(_topicList, new Fade());
                         boolean isGone = _topicDescritpion.getVisibility() == View.GONE;
                         _topicDescritpion.setVisibility(isGone ? View.VISIBLE : View.GONE);
                     }
