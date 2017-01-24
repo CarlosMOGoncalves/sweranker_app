@@ -16,9 +16,9 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import pt.cmg.sweranker.KnowledgeArea;
-import pt.cmg.sweranker.KnowledgeAreaTopic;
 import pt.cmg.sweranker.R;
+import pt.cmg.sweranker.knowledgeareas.KnowledgeArea;
+import pt.cmg.sweranker.knowledgeareas.KnowledgeAreaTopic;
 import pt.cmg.sweranker.ui.ConstantSpacingItemDecorator;
 import pt.cmg.sweranker.ui.UnderlineDividerItemDecorator;
 

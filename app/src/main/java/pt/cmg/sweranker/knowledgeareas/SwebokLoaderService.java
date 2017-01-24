@@ -1,4 +1,4 @@
-package pt.cmg.sweranker;
+package pt.cmg.sweranker.knowledgeareas;
 
 import android.app.Service;
 import android.content.Intent;
@@ -15,6 +15,8 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
+
+import pt.cmg.sweranker.R;
 
 
 public class SwebokLoaderService extends Service {
@@ -163,7 +165,7 @@ public class SwebokLoaderService extends Service {
         return _binder;
     }
 
-    protected List<KnowledgeArea> getKnowledgeAreas() {
+    public List<KnowledgeArea> getKnowledgeAreas() {
         return _knowledgeAreas;
     }
 
@@ -175,7 +177,7 @@ public class SwebokLoaderService extends Service {
     /**
      * Interface de comunicação com a Activity ou outro componente que a chamar.
      */
-    protected class SwebokLoaderBinder extends Binder {
+    public class SwebokLoaderBinder extends Binder {
         public SwebokLoaderService getService() {
             return SwebokLoaderService.this;
         }

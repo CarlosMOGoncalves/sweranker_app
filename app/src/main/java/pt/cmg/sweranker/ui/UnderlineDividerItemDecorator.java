@@ -7,7 +7,7 @@ import android.support.annotation.ColorInt;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
-import pt.cmg.sweranker.pt.cmg.sweranker.util.SweRankerUtils;
+import pt.cmg.sweranker.util.SweRankerUtils;
 
 /**
  * This Item Decorator is used to draw a simple underline below ViewHolders.

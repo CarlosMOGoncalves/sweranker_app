@@ -17,8 +17,8 @@ import android.widget.TextView;
 
 import java.util.List;
 
-import pt.cmg.sweranker.KnowledgeArea;
 import pt.cmg.sweranker.R;
+import pt.cmg.sweranker.knowledgeareas.KnowledgeArea;
 import pt.cmg.sweranker.ui.ConstantSpacingItemDecorator;
 
 
@@ -76,7 +76,11 @@ public class SwebokFragment extends Fragment {
 
         RecyclerView.LayoutManager mLayoutManager = new GridLayoutManager(this.getActivity(), 2);
         _swebokGrid.setLayoutManager(mLayoutManager);
-        _swebokGrid.addItemDecoration(new ConstantSpacingItemDecorator(this.getActivity(), 10, ConstantSpacingItemDecorator.Side.LEFT, ConstantSpacingItemDecorator.Side.RIGHT, ConstantSpacingItemDecorator.Side.ALL_SIDES));
+        _swebokGrid.addItemDecoration(new ConstantSpacingItemDecorator(this.getActivity(),
+                10,
+                ConstantSpacingItemDecorator.Side.LEFT,
+                ConstantSpacingItemDecorator.Side.RIGHT,
+                ConstantSpacingItemDecorator.Side.ALL_SIDES));
         _swebokGrid.setItemAnimator(new DefaultItemAnimator());
         _swebokGrid.setAdapter(adapter);
         return _myView;

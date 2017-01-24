@@ -1,4 +1,4 @@
-package pt.cmg.sweranker;
+package pt.cmg.sweranker.knowledgeareas;
 
 /**
  * Created by Carlos on 19/12/2016.

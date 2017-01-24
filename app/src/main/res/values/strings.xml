@@ -266,4 +266,70 @@
     <string name="ka15_topic7_name">Análise de Causa</string>
     <string name="ka15_topic7_description">Sobre o processo de investigação e identificação de como e porque aconteceu um evento indesejável e sua causa de raíz (i.e. o que deu origem ao evento);\nas principais técnicas para conduzir este tipo de análise (métodos de revisão, diagramas de estado presente vs estado desejável, revisão por terceiros, árvores de falha, etc.);\nas ferramentas de auxílio à análise (diagramas de causa-efeito, histogramas, diagramas de Pareto, etc.).</string>
 
+
+    <string name="up_mieic">MIEIC - Mestrado Integrado em Engenharia Informática e Computação</string>
+    <string name="up_mieic_description">Mestrado Integrado em Engenharia Informática e Computação da Universidade do Porto. 5 anos de estudo.</string>
+    <string name="up">Universidade do Porto</string>
+
+    <string name="up_class_discrete_mathematics">Matemática Discreta</string>
+    <string name="up_class_discrete_mathematics_topic1">Lógica proposicional</string>
+    <string name="up_class_discrete_mathematics_topic2">Métodos de prova em lógica proposicional</string>
+    <string name="up_class_discrete_mathematics_topic3">Quantificadores e representação do conhecimento</string>
+    <string name="up_class_discrete_mathematics_topic4">Métodos de prova em lógica de primeira ordem</string>
+    <string name="up_class_discrete_mathematics_topic5">Conjuntos, relações e ordens parciais</string>
+    <string name="up_class_discrete_mathematics_topic6">Funções</string>
+    <string name="up_class_discrete_mathematics_topic7">Introdução à teoria dos números</string>
+    <string name="up_class_discrete_mathematics_topic8">Congruências e equações de aritmética modular</string>
+    <string name="up_class_discrete_mathematics_topic9">Indução e recursão</string>
+    <string name="up_class_discrete_mathematics_topic10">Relações de recorrência</string>
+
+    <string name="up_class_programming_fundations">Fundamentos da Programação</string>
+    <string name="up_class_programming_fundations_topic1">Elementos de programação em Scheme</string>
+    <string name="up_class_programming_fundations_topic2">Procedimentos e processos</string>
+    <string name="up_class_programming_fundations_topic3">Recursividade e iteração</string>
+    <string name="up_class_programming_fundations_topic4">Ordem de crescimento dos processos</string>
+    <string name="up_class_programming_fundations_topic5">Selectores e construtores</string>
+    <string name="up_class_programming_fundations_topic6">Barreiras de abstracção</string>
+    <string name="up_class_programming_fundations_topic7">Listas</string>
+    <string name="up_class_programming_fundations_topic8">Exemplo de uma abstracção (conjuntos)</string>
+    <string name="up_class_programming_fundations_topic9">Modificadores</string>
+    <string name="up_class_programming_fundations_topic10">Listas mutáveis</string>
+    <string name="up_class_programming_fundations_topic11">Filas de espera</string>
+    <string name="up_class_programming_fundations_topic12">Tabelas</string>
+    <string name="up_class_programming_fundations_topic13">Vectores</string>
+    <string name="up_class_programming_fundations_topic14">Ficheiros de Texto</string>
+
+    <string name="up_class_programming">Programação</string>
+    <string name="up_class_programming_topic1">Tipos de dados simples e I/O básico</string>
+    <string name="up_class_programming_topic2">Operadores</string>
+    <string name="up_class_programming_topic3">Expressões aritméticas e booleanas</string>
+    <string name="up_class_programming_topic4">Estruturas de controlo: estruturas de selecção e de repetição</string>
+    <string name="up_class_programming_topic5">Tipos de dados estruturados: arrays, strings e structs de C</string>
+    <string name="up_class_programming_topic6">Vectors e strings de C++</string>
+    <string name="up_class_programming_topic7">Apontadores e alocação dinâmica de memória</string>
+    <string name="up_class_programming_topic8">Definição e declaração de funções</string>
+    <string name="up_class_programming_topic9">Variáveis locais e variáveis globais</string>
+    <string name="up_class_programming_topic10">Mecanismos de passagem de parâmetros e retorno de valores</string>
+    <string name="up_class_programming_topic11">\"Overloading\" de funções</string>
+    <string name="up_class_programming_topic12">\"Templates\" em C++</string>
+    <string name="up_class_programming_topic13">Funções recursivas</string>
+    <string name="up_class_programming_topic14">Streams: entrada e saída usando ficheiros de texto</string>
+    <string name="up_class_programming_topic15">Stringstreams</string>
+    <string name="up_class_programming_topic16">Classes e "structs"</string>
+    <string name="up_class_programming_topic17">Membros-dado e membros-função de uma classe</string>
+    <string name="up_class_programming_topic18">Visibilidade dos membros</string>
+    <string name="up_class_programming_topic19">Conceito de encapsulamento</string>
+    <string name="up_class_programming_topic20">Construtores e Destrutores</string>
+    <string name="up_class_programming_topic21">Contentores C++: vector, list, queue, stack, map, multimap, set, multiset</string>
+    <string name="up_class_programming_topic22">Iteradores e algoritmos</string>
+    <string name="up_class_programming_topic23">Qualificativos especiais: const, static, friend</string>
+    <string name="up_class_programming_topic24">Overloading de operadores</string>
+    <string name="up_class_programming_topic25">Conceitos de herança e de polimorfismo</string>
+    <string name="up_class_programming_topic26">Classes derivadas</string>
+    <string name="up_class_programming_topic27">Acesso aos membros da classe base</string>
+    <string name="up_class_programming_topic28">Formas de polimorfismo: \"overloading\" de funções; \"overriding\" (funções virtuais); \"templates\"</string>
+    <string name="up_class_programming_topic29">Classes abstractas</string>
+    <string name="up_class_programming_topic30">Tratamento de Excepções</string>
+    <string name="up_class_programming_topic31">Implementação de abstracções</string>
+
 </resources>

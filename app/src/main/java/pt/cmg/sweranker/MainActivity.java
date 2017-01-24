@@ -27,35 +27,61 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.List;
 
+import pt.cmg.sweranker.degrees.Degree;
+import pt.cmg.sweranker.degrees.DegreesLoaderService;
+import pt.cmg.sweranker.fragments.DegreesFragment;
 import pt.cmg.sweranker.fragments.KADetailsFragment;
 import pt.cmg.sweranker.fragments.SwebokFragment;
+import pt.cmg.sweranker.knowledgeareas.KnowledgeArea;
+import pt.cmg.sweranker.knowledgeareas.SwebokLoaderService;
 import pt.cmg.sweranker.ui.ImageSizeAndPlaceTransition;
 import pt.cmg.sweranker.ui.OnEndTransitionListener;
 import pt.cmg.sweranker.ui.OnStartTransitionListener;
 import pt.cmg.sweranker.ui.UXUtils;
 
-public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, SwebokFragment.OnSwebokFragmentInteractionListener, KADetailsFragment.OnKaDetailsFragmentInteractionListener {
+public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener,
+        SwebokFragment.OnSwebokFragmentInteractionListener,
+        KADetailsFragment.OnKaDetailsFragmentInteractionListener,
+        DegreesFragment.DegreesFragmentInteractionListener {
 
 
     private SwebokLoaderService _swebokLoaderService;
-    boolean _isBound = false;
+    private DegreesLoaderService _degreesLoaderService;
+    boolean _isSwebokServiceBound = false;
+    boolean _isDegreesServiceBound = false;
     private Toolbar _toolbar;
 
 
-    private ServiceConnection _serviceConnection = new ServiceConnection() {
+    private ServiceConnection _swebokServiceConnection = new ServiceConnection() {
         @Override
         public void onServiceConnected(ComponentName name, IBinder service) {
             SwebokLoaderService.SwebokLoaderBinder binder = (SwebokLoaderService.SwebokLoaderBinder) service;
             _swebokLoaderService = binder.getService();
-            _isBound = true;
+            _isSwebokServiceBound = true;
         }
 
         @Override
         public void onServiceDisconnected(ComponentName name) {
             _swebokLoaderService = null;
-            _isBound = false;
+            _isSwebokServiceBound = false;
         }
     };
+
+    private ServiceConnection _degreesServiceConnection = new ServiceConnection() {
+        @Override
+        public void onServiceConnected(ComponentName name, IBinder service) {
+            DegreesLoaderService.DegreesLoaderBinder binder = (DegreesLoaderService.DegreesLoaderBinder) service;
+            _degreesLoaderService = binder.getService();
+            _isDegreesServiceBound = true;
+        }
+
+        @Override
+        public void onServiceDisconnected(ComponentName name) {
+            _degreesLoaderService = null;
+            _isDegreesServiceBound = false;
+        }
+    };
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -78,9 +104,13 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     @Override
     protected void onStart() {
         super.onStart();
-        Intent intent = new Intent(this, SwebokLoaderService.class);
-        startService(intent);
-        bindService(intent, _serviceConnection, Context.BIND_AUTO_CREATE);
+        Intent startSwebokServiceIntent = new Intent(this, SwebokLoaderService.class);
+        startService(startSwebokServiceIntent);
+        bindService(startSwebokServiceIntent, _swebokServiceConnection, Context.BIND_AUTO_CREATE);
+
+        Intent startDegreesServiceIntent = new Intent(this, DegreesLoaderService.class);
+        startService(startDegreesServiceIntent);
+        bindService(startDegreesServiceIntent, _degreesServiceConnection, Context.BIND_AUTO_CREATE);
     }
 
     @Override
@@ -112,7 +142,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             getFragmentManager().popBackStackImmediate();
             getFragmentManager().beginTransaction().replace(R.id.content_area, SwebokFragment.newInstance(), "Swebok").commit();
         } else if (id == R.id.curricula_nav) {
-            Toast.makeText(getApplicationContext(), "Curriculos", Toast.LENGTH_LONG).show();
+            // Careful with his, it is here because of the animations on KA details.
+            // When pressed the menu and selected one item the animations would not run.
+            getFragmentManager().popBackStackImmediate();
+            getFragmentManager().beginTransaction().replace(R.id.content_area, DegreesFragment.newInstance(), "Degrees").commit();
         } else if (id == R.id.rankings_nav) {
             Toast.makeText(getApplicationContext(), "Rankings", Toast.LENGTH_LONG).show();
         }
@@ -125,7 +158,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     @Override
     public List<KnowledgeArea> loadKnowledgeAreasForSwebokFragment() {
         List<KnowledgeArea> kas = new ArrayList<>();
-        if (_isBound) {
+        if (_isSwebokServiceBound) {
             kas = _swebokLoaderService.getKnowledgeAreas();
         }
         return kas;
@@ -214,9 +247,18 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     @Override
     public KnowledgeArea getKnowledgeArea(int knowledgeAreaIdToLoad) {
         KnowledgeArea ka = new KnowledgeArea();
-        if (_isBound) {
+        if (_isSwebokServiceBound) {
             ka = _swebokLoaderService.getKnowledgeArea(knowledgeAreaIdToLoad);
         }
         return ka;
+    }
+
+    @Override
+    public List<Degree> loadDegreesForFragment() {
+        List<Degree> degrees = new ArrayList<>();
+        if (_isDegreesServiceBound) {
+            degrees = _degreesLoaderService.getDegrees();
+        }
+        return degrees;
     }
 }

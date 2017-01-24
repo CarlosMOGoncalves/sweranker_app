@@ -1,4 +1,4 @@
-package pt.cmg.sweranker;
+package pt.cmg.sweranker.knowledgeareas;
 
 import java.util.ArrayList;
 import java.util.List;

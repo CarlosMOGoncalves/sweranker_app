@@ -6,7 +6,7 @@ import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
-import pt.cmg.sweranker.pt.cmg.sweranker.util.SweRankerUtils;
+import pt.cmg.sweranker.util.SweRankerUtils;
 
 
 /**
