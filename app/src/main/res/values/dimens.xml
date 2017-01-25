@@ -11,6 +11,7 @@
 
     <dimen name="card_margin">5dp</dimen>
     <dimen name="card_album_radius">0dp</dimen>
+    <dimen name="card_size">200dp</dimen>
 
     <dimen name="ka_image_height">160dp</dimen>
     <dimen name="ka_title_padding">10dp</dimen>

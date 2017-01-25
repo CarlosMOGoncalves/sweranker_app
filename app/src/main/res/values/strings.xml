@@ -267,7 +267,7 @@
     <string name="ka15_topic7_description">Sobre o processo de investigação e identificação de como e porque aconteceu um evento indesejável e sua causa de raíz (i.e. o que deu origem ao evento);\nas principais técnicas para conduzir este tipo de análise (métodos de revisão, diagramas de estado presente vs estado desejável, revisão por terceiros, árvores de falha, etc.);\nas ferramentas de auxílio à análise (diagramas de causa-efeito, histogramas, diagramas de Pareto, etc.).</string>
 
 
-    <string name="up_mieic">MIEIC - Mestrado Integrado em Engenharia Informática e Computação</string>
+    <string name="up_mieic">MIEIC</string>
     <string name="up_mieic_description">Mestrado Integrado em Engenharia Informática e Computação da Universidade do Porto. 5 anos de estudo.</string>
     <string name="up">Universidade do Porto</string>
 
@@ -331,5 +331,22 @@
     <string name="up_class_programming_topic29">Classes abstractas</string>
     <string name="up_class_programming_topic30">Tratamento de Excepções</string>
     <string name="up_class_programming_topic31">Implementação de abstracções</string>
+
+
+    <string name="uminho_miei">MiEI</string>
+    <string name="uminho_miei_description">Mestrado Integrado em Engenharia Informática da Universidade do Minho. 5 anos de estudo.</string>
+    <string name="uminho">Universidade do Minho</string>
+
+    <string name="uc_mei">MEI</string>
+    <string name="uc_mei_description">Mestrado em Engenharia Informática da Universidade de Coimbra. 5 anos de estudo.</string>
+    <string name="uc">Universidade de Coimbra</string>
+
+    <string name="uav_mei">LEI + MEI</string>
+    <string name="uav_mei_description">Licenciatura em Engenheria Informatica seguida de Mestrado em Engenharia Informática da Universidade de Aveiro. 3 + 2 anos de estudo.</string>
+    <string name="uav">Universidade de Aveiro</string>
+
+    <string name="ist_meic">LEIC + MEIC</string>
+    <string name="ist_meic_description">Licenciatura em Engenheria Informatica e de Computadores seguida de Mestrado em Engenharia Informática e de Computadores do Insituto Superio Técnico da Universidade de Lisboa. 3 + 2 anos de estudo.</string>
+    <string name="ist">Instituto Superior Técnico - Lisboa</string>
 
 </resources>

@@ -7,26 +7,31 @@
 
     <android.support.v7.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="@dimen/card_size"
+
         app:cardElevation="3dp">
 
-        <RelativeLayout
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:paddingTop="@dimen/ka_title_padding"
+            android:paddingLeft="@dimen/ka_title_padding"
+            android:paddingRight="@dimen/ka_title_padding"
+            android:paddingBottom="@dimen/ka_title_padding"
+            android:orientation="vertical">
 
             <ImageView
                 android:id="@+id/university_image"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/ka_image_height"
-                android:scaleType="fitCenter" />
+                android:layout_height="140dp"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/feup_logo" />
 
             <TextView
                 android:id="@+id/degree_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/university_image"
-                android:paddingLeft="@dimen/ka_title_padding"
-                android:paddingRight="@dimen/ka_title_padding"
                 android:text="MEI"
                 android:textAlignment="center"
                 android:textColor="@color/colorPrimaryDark" />
@@ -36,12 +41,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/degree_name"
-                android:paddingLeft="@dimen/ka_title_padding"
-                android:paddingRight="@dimen/ka_title_padding"
-                android:paddingBottom="@dimen/ka_title_padding"
                 android:text="UMinho"
                 android:textAlignment="center" />
 
-        </RelativeLayout>
+        </LinearLayout>
     </android.support.v7.widget.CardView>
 </LinearLayout>

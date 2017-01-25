@@ -8,7 +8,6 @@
         <years>5</years>
         <university>@string/up</university>
         <classes>
-
             <class>
                 <id>mieic_c1</id>
                 <name>@string/up_class_discrete_mathematics</name>
@@ -58,7 +57,6 @@
                     </topic>
                 </program>
             </class>
-
             <class>
                 <id>mieic_c3</id>
                 <name>@string/up_class_programming_fundations</name>
@@ -124,7 +122,6 @@
                     </topic>
                 </program>
             </class>
-
             <class>
                 <id>mieic_c8</id>
                 <name>@string/up_class_programming</name>
@@ -258,9 +255,247 @@
                     </topic>
                 </program>
             </class>
-
-
         </classes>
-
     </degree>
+
+    <degree>
+        <name>@string/uminho_miei</name>
+        <image>@drawable/logo_uminho_2</image>
+        <id>2</id>
+        <description>@string/uminho_miei_description</description>
+        <years>5</years>
+        <university>@string/uminho</university>
+        <classes>
+            <class>
+                <id>mieic_c1</id>
+                <name>@string/up_class_discrete_mathematics</name>
+                <year>1</year>
+                <semester>1</semester>
+                <ects>6</ects>
+                <program>
+                    <topic>
+                        <id>c1t1</id>
+                        <description>@string/up_class_discrete_mathematics_topic1</description>
+                    </topic>
+                    <topic>
+                        <id>c1t2</id>
+                        <description>@string/up_class_discrete_mathematics_topic2</description>
+                    </topic>
+                    <topic>
+                        <id>c1t3</id>
+                        <description>@string/up_class_discrete_mathematics_topic3</description>
+                    </topic>
+                    <topic>
+                        <id>c1t4</id>
+                        <description>@string/up_class_discrete_mathematics_topic4</description>
+                    </topic>
+                    <topic>
+                        <id>c1t5</id>
+                        <description>@string/up_class_discrete_mathematics_topic5</description>
+                    </topic>
+                    <topic>
+                        <id>c1t6</id>
+                        <description>@string/up_class_discrete_mathematics_topic6</description>
+                    </topic>
+                    <topic>
+                        <id>c1t7</id>
+                        <description>@string/up_class_discrete_mathematics_topic7</description>
+                    </topic>
+                    <topic>
+                        <id>c1t8</id>
+                        <description>@string/up_class_discrete_mathematics_topic8</description>
+                    </topic>
+                    <topic>
+                        <id>c1t9</id>
+                        <description>@string/up_class_discrete_mathematics_topic9</description>
+                    </topic>
+                    <topic>
+                        <id>c1t10</id>
+                        <description>@string/up_class_discrete_mathematics_topic10</description>
+                    </topic>
+                </program>
+            </class>
+        </classes>
+    </degree>
+
+    <degree>
+        <name>@string/uc_mei</name>
+        <image>@drawable/uc_logo</image>
+        <id>3</id>
+        <description>@string/uc_mei_description</description>
+        <years>5</years>
+        <university>@string/uc</university>
+        <classes>
+            <class>
+                <id>mieic_c1</id>
+                <name>@string/up_class_discrete_mathematics</name>
+                <year>1</year>
+                <semester>1</semester>
+                <ects>6</ects>
+                <program>
+                    <topic>
+                        <id>c1t1</id>
+                        <description>@string/up_class_discrete_mathematics_topic1</description>
+                    </topic>
+                    <topic>
+                        <id>c1t2</id>
+                        <description>@string/up_class_discrete_mathematics_topic2</description>
+                    </topic>
+                    <topic>
+                        <id>c1t3</id>
+                        <description>@string/up_class_discrete_mathematics_topic3</description>
+                    </topic>
+                    <topic>
+                        <id>c1t4</id>
+                        <description>@string/up_class_discrete_mathematics_topic4</description>
+                    </topic>
+                    <topic>
+                        <id>c1t5</id>
+                        <description>@string/up_class_discrete_mathematics_topic5</description>
+                    </topic>
+                    <topic>
+                        <id>c1t6</id>
+                        <description>@string/up_class_discrete_mathematics_topic6</description>
+                    </topic>
+                    <topic>
+                        <id>c1t7</id>
+                        <description>@string/up_class_discrete_mathematics_topic7</description>
+                    </topic>
+                    <topic>
+                        <id>c1t8</id>
+                        <description>@string/up_class_discrete_mathematics_topic8</description>
+                    </topic>
+                    <topic>
+                        <id>c1t9</id>
+                        <description>@string/up_class_discrete_mathematics_topic9</description>
+                    </topic>
+                    <topic>
+                        <id>c1t10</id>
+                        <description>@string/up_class_discrete_mathematics_topic10</description>
+                    </topic>
+                </program>
+            </class>
+        </classes>
+    </degree>
+
+    <degree>
+        <name>@string/uav_mei</name>
+        <image>@drawable/uav_logo</image>
+        <id>4</id>
+        <description>@string/uav_mei_description</description>
+        <years>5</years>
+        <university>@string/uav</university>
+        <classes>
+            <class>
+                <id>mieic_c1</id>
+                <name>@string/up_class_discrete_mathematics</name>
+                <year>1</year>
+                <semester>1</semester>
+                <ects>6</ects>
+                <program>
+                    <topic>
+                        <id>c1t1</id>
+                        <description>@string/up_class_discrete_mathematics_topic1</description>
+                    </topic>
+                    <topic>
+                        <id>c1t2</id>
+                        <description>@string/up_class_discrete_mathematics_topic2</description>
+                    </topic>
+                    <topic>
+                        <id>c1t3</id>
+                        <description>@string/up_class_discrete_mathematics_topic3</description>
+                    </topic>
+                    <topic>
+                        <id>c1t4</id>
+                        <description>@string/up_class_discrete_mathematics_topic4</description>
+                    </topic>
+                    <topic>
+                        <id>c1t5</id>
+                        <description>@string/up_class_discrete_mathematics_topic5</description>
+                    </topic>
+                    <topic>
+                        <id>c1t6</id>
+                        <description>@string/up_class_discrete_mathematics_topic6</description>
+                    </topic>
+                    <topic>
+                        <id>c1t7</id>
+                        <description>@string/up_class_discrete_mathematics_topic7</description>
+                    </topic>
+                    <topic>
+                        <id>c1t8</id>
+                        <description>@string/up_class_discrete_mathematics_topic8</description>
+                    </topic>
+                    <topic>
+                        <id>c1t9</id>
+                        <description>@string/up_class_discrete_mathematics_topic9</description>
+                    </topic>
+                    <topic>
+                        <id>c1t10</id>
+                        <description>@string/up_class_discrete_mathematics_topic10</description>
+                    </topic>
+                </program>
+            </class>
+        </classes>
+    </degree>
+
+    <degree>
+        <name>@string/ist_meic</name>
+        <image>@drawable/ist_logo_2</image>
+        <id>5</id>
+        <description>@string/ist_meic_description</description>
+        <years>5</years>
+        <university>@string/ist</university>
+        <classes>
+            <class>
+                <id>mieic_c1</id>
+                <name>@string/up_class_discrete_mathematics</name>
+                <year>1</year>
+                <semester>1</semester>
+                <ects>6</ects>
+                <program>
+                    <topic>
+                        <id>c1t1</id>
+                        <description>@string/up_class_discrete_mathematics_topic1</description>
+                    </topic>
+                    <topic>
+                        <id>c1t2</id>
+                        <description>@string/up_class_discrete_mathematics_topic2</description>
+                    </topic>
+                    <topic>
+                        <id>c1t3</id>
+                        <description>@string/up_class_discrete_mathematics_topic3</description>
+                    </topic>
+                    <topic>
+                        <id>c1t4</id>
+                        <description>@string/up_class_discrete_mathematics_topic4</description>
+                    </topic>
+                    <topic>
+                        <id>c1t5</id>
+                        <description>@string/up_class_discrete_mathematics_topic5</description>
+                    </topic>
+                    <topic>
+                        <id>c1t6</id>
+                        <description>@string/up_class_discrete_mathematics_topic6</description>
+                    </topic>
+                    <topic>
+                        <id>c1t7</id>
+                        <description>@string/up_class_discrete_mathematics_topic7</description>
+                    </topic>
+                    <topic>
+                        <id>c1t8</id>
+                        <description>@string/up_class_discrete_mathematics_topic8</description>
+                    </topic>
+                    <topic>
+                        <id>c1t9</id>
+                        <description>@string/up_class_discrete_mathematics_topic9</description>
+                    </topic>
+                    <topic>
+                        <id>c1t10</id>
+                        <description>@string/up_class_discrete_mathematics_topic10</description>
+                    </topic>
+                </program>
+            </class>
+        </classes>
+    </degree>
+
 </degrees>

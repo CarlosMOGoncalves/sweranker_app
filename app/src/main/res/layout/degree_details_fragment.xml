@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="200dp">
+
+        <ImageView
+            android:id="@+id/degree_image"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_alignParentStart="true"
+            android:scaleType="fitCenter"
+            android:transitionName="ka_image"
+            app:srcCompat="@drawable/feup_logo" />
+
+        <TextView
+            android:id="@+id/univerity_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/degree_image"
+            android:background="@color/darkerBackground"
+            android:gravity="center"
+            android:padding="@dimen/ka_title_padding"
+            android:text="Universidade do Minho"
+            android:textAlignment="viewStart"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/ka_detail_title_size" />
+
+        <TextView
+            android:id="@+id/degree_name"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_toRightOf="@+id/degree_image"
+            android:layout_below="@+id/univerity_name"
+            android:background="@color/darkerBackground"
+            android:padding="@dimen/ka_title_padding"
+            android:text="MIEIC"
+            android:textAlignment="viewStart"
+            android:textColor="@android:color/black" />
+
+    </RelativeLayout>
+
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/degree_program_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorAccent"
+        android:paddingBottom="@dimen/ka_detail_list_padding"
+        android:clipToPadding="false" />
+
+
+</LinearLayout>
