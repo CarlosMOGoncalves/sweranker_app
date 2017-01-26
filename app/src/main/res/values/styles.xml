@@ -17,17 +17,16 @@
         <!--item name="colorAccent">@color/test_color</item-->
         <!-- Colour of the menu button-->
         <item name="colorControlNormal">@color/colorAccent</item>
-        <!-- Applies to views in their activated state (i.e checked or switches) -->
-        <!--item name="colorControlActivated">@color/test_color</item-->
+    </style>
 
-        <!-- Control highlights like ripples in the hamburger button -->
-        <!--item name="colorControlHighlight">@color/test_color2</item-->
 
-        <!-- Enable these below if you want clicking icons to trigger a ripple effect -->
-        <!--
-        <item name="selectableItemBackground">?android:selectableItemBackground</item>
-        <item name="selectableItemBackgroundBorderless">?android:selectableItemBackground</item>
-        -->
+    <style name="TabLayoutTheme" parent="Widget.Design.TabLayout">
+        <item name="tabIndicatorColor">@android:color/holo_green_light</item>
+        <item name="tabBackground">@color/colorPrimaryDark</item>
+        <item name="tabTextAppearance">@style/TextAppearance.Design.Tab</item>
+        <item name="tabSelectedTextColor">@color/colorAccent</item>
+        <!-- This acts basically as the color of the unselected tab -->
+        <item name="tabTextColor">@color/unselectedTextColor</item>
     </style>
 
 </resources>

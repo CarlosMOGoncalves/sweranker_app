@@ -10,6 +10,8 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import pt.cmg.sweranker.R;
 import pt.cmg.sweranker.degrees.Degree;
@@ -91,6 +93,14 @@ public class DegreeDetailsFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         _myView = inflater.inflate(R.layout.degree_details_fragment, container, false);
+
+        ImageView degreeImage = (ImageView) _myView.findViewById(R.id.degree_image);
+        TextView universityName = (TextView) _myView.findViewById(R.id.university_name);
+        TextView degreeName = (TextView) _myView.findViewById(R.id.degree_name);
+
+        degreeImage.setImageDrawable(this.getResources().getDrawable(_degree.getImageResource(), null));
+        universityName.setText(this.getResources().getText(_degree.getUniversityResource()));
+        degreeName.setText(this.getResources().getText(_degree.getNameResource()));
 
         ViewPager viewPager = (ViewPager) _myView.findViewById(R.id.degree_viewPager);
         viewPager.setAdapter(new CustomPagerAdapter(this.getActivity()));

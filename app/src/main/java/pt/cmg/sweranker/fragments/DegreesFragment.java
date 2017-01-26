@@ -123,8 +123,13 @@ public class DegreesFragment extends Fragment {
         @Override
         public void onBindViewHolder(DegreeViewHolder holder, int position) {
             Degree degree = _degrees.get(position);
+
             holder._degreeName.setText(_context.getResources().getString(degree.getNameResource()));
+            holder._degreeName.setTransitionName("degree_name" + position);
+
             holder._universityName.setText(_context.getResources().getString(degree.getUniversityResource()));
+            holder._universityName.setTransitionName("university_name" + position);
+
             holder._degreeImage.setImageDrawable(_context.getResources().getDrawable(degree.getImageResource(), null));
             holder._degreeImage.setTransitionName("degree_image" + position);
         }

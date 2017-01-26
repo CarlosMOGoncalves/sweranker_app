@@ -22,6 +22,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -265,10 +266,36 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     }
 
     @Override
-    public void loadDetailedDegreeFragment(View v, int degreeId) {
+    public void loadDetailedDegreeFragment(View degreeCard, int degreeId) {
+
+        ImageView image = (ImageView) degreeCard.findViewById(R.id.university_image);
+        TextView universityName = (TextView) degreeCard.findViewById(R.id.university_name);
+        TextView degreeName = (TextView) degreeCard.findViewById(R.id.degree_name);
+
+
+        long transitionDuration = 500;
 
         Fragment degreeDetailsFragment = DegreeDetailsFragment.newInstance(degreeId);
-        getFragmentManager().beginTransaction().replace(R.id.content_area, degreeDetailsFragment, "DegreeDetail").addToBackStack(null).commit();
+
+        Activity myActivity = this;
+
+        Transition imageEnterTransition = createImageEnterSharedElementTransition(degreeDetailsFragment, transitionDuration);
+        Transition sharedImageExitTransition = createImageExitSharedElementTransition(degreeDetailsFragment, transitionDuration);
+
+        // This just creates a transition for the rest of the content, i.e. not shared.
+        Transition contentTransition = new Slide();
+        contentTransition.setDuration(transitionDuration);
+        degreeDetailsFragment.setEnterTransition(contentTransition);
+        degreeDetailsFragment.setExitTransition(contentTransition);
+
+        getFragmentManager()
+                .beginTransaction()
+                .addSharedElement(image, "degree_image")
+                .addSharedElement(universityName, "university_name")
+                .addSharedElement(degreeName, "degree_name")
+                .replace(R.id.content_area, degreeDetailsFragment, "DegreeDetail")
+                .addToBackStack(null)
+                .commit();
     }
 
     /**
