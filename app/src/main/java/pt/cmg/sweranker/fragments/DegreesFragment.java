@@ -12,7 +12,6 @@ import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.List;
 
@@ -53,6 +52,8 @@ public class DegreesFragment extends Fragment {
     public interface DegreesFragmentInteractionListener {
 
         List<Degree> loadDegreesForFragment();
+
+        void loadDetailedDegreeFragment(View v, int degreeId);
 
     }
 
@@ -100,7 +101,7 @@ public class DegreesFragment extends Fragment {
     /**
      * This Adapter transforms a list of Knowledge Areas in Views for the parent fragment recycler view.
      */
-    private class DegreeAdapter extends RecyclerView.Adapter<DegreeAdapter.UniversityViewHolder> {
+    private class DegreeAdapter extends RecyclerView.Adapter<DegreeAdapter.DegreeViewHolder> {
 
         private Context _context;
         private List<Degree> _degrees;
@@ -112,15 +113,15 @@ public class DegreesFragment extends Fragment {
         }
 
         @Override
-        public UniversityViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        public DegreeViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 
             View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.degree_card, parent, false);
-            return new UniversityViewHolder(itemView);
+            return new DegreeViewHolder(itemView);
         }
 
 
         @Override
-        public void onBindViewHolder(UniversityViewHolder holder, int position) {
+        public void onBindViewHolder(DegreeViewHolder holder, int position) {
             Degree degree = _degrees.get(position);
             holder._degreeName.setText(_context.getResources().getString(degree.getNameResource()));
             holder._universityName.setText(_context.getResources().getString(degree.getUniversityResource()));
@@ -138,13 +139,13 @@ public class DegreesFragment extends Fragment {
         /**
          * ViewHolder pattern to hold one of the cards
          */
-        class UniversityViewHolder extends RecyclerView.ViewHolder {
+        class DegreeViewHolder extends RecyclerView.ViewHolder {
 
             private ImageView _degreeImage;
             private TextView _degreeName;
             private TextView _universityName;
 
-            public UniversityViewHolder(View view) {
+            public DegreeViewHolder(View view) {
                 super(view);
                 _degreeImage = (ImageView) view.findViewById(R.id.university_image);
                 _degreeName = (TextView) view.findViewById(R.id.degree_name);
@@ -153,9 +154,8 @@ public class DegreesFragment extends Fragment {
                 view.setOnClickListener(new OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Toast.makeText((Context) _parentActivity, "Allahu akbar", Toast.LENGTH_SHORT);
-//                        int pos = getAdapterPosition();
-//                        _parentActivity.loadDetailedKnowledgeAreaFragment(v, _knowledgAreas.get(pos).getId());
+                        int pos = getAdapterPosition();
+                        _parentActivity.loadDetailedDegreeFragment(v, _degrees.get(pos).getId());
                     }
                 });
             }

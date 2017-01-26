@@ -29,6 +29,7 @@ import java.util.List;
 
 import pt.cmg.sweranker.degrees.Degree;
 import pt.cmg.sweranker.degrees.DegreesLoaderService;
+import pt.cmg.sweranker.fragments.DegreeDetailsFragment;
 import pt.cmg.sweranker.fragments.DegreesFragment;
 import pt.cmg.sweranker.fragments.KADetailsFragment;
 import pt.cmg.sweranker.fragments.SwebokFragment;
@@ -42,7 +43,8 @@ import pt.cmg.sweranker.ui.UXUtils;
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener,
         SwebokFragment.OnSwebokFragmentInteractionListener,
         KADetailsFragment.OnKaDetailsFragmentInteractionListener,
-        DegreesFragment.DegreesFragmentInteractionListener {
+        DegreesFragment.DegreesFragmentInteractionListener,
+        DegreeDetailsFragment.DegreeDetailsFragmentInteractionListener {
 
 
     private SwebokLoaderService _swebokLoaderService;
@@ -165,8 +167,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     }
 
     @Override
-    public void loadDetailedKnowledgeAreaFragment(View v, int knowledgeAreaId) {
-        ImageView image = (ImageView) v.findViewById(R.id.ka_image);
+    public void loadDetailedKnowledgeAreaFragment(View knowledgeAreaCardView, int knowledgeAreaId) {
+        ImageView image = (ImageView) knowledgeAreaCardView.findViewById(R.id.ka_image);
 
         // Gets the colour that will be changed between fragments, the source, which is the KA decorative colour
         int imageBackgroundColour = ((ColorDrawable) image.getBackground()).getColor();
@@ -260,5 +262,28 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             degrees = _degreesLoaderService.getDegrees();
         }
         return degrees;
+    }
+
+    @Override
+    public void loadDetailedDegreeFragment(View v, int degreeId) {
+
+        Fragment degreeDetailsFragment = DegreeDetailsFragment.newInstance(degreeId);
+        getFragmentManager().beginTransaction().replace(R.id.content_area, degreeDetailsFragment, "DegreeDetail").addToBackStack(null).commit();
+    }
+
+    /**
+     * Loads a Degree passing its id.
+     *
+     * @param degreeId
+     * @return
+     */
+    @Override
+    public Degree getDegree(int degreeId) {
+
+        Degree degree = new Degree();
+        if (_isDegreesServiceBound) {
+            degree = _degreesLoaderService.getDegree(degreeId);
+        }
+        return degree;
     }
 }

@@ -262,6 +262,10 @@ public class DegreesLoaderService extends Service {
         return _degrees;
     }
 
+    public Degree getDegree(int degreeId) {
+        return _degrees.stream().filter(degree -> degree.getId() == degreeId).findFirst().orElse(new Degree());
+    }
+
     @Override
     public IBinder onBind(Intent intent) {
         return _binder;
