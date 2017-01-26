@@ -7,6 +7,7 @@ public class Degree {
 
     private int _id;
     private int _nameResource;
+    private int _fullNameResource;
     private int _imageResource;
     private int _descriptionResource;
     private int _years;
@@ -71,5 +72,13 @@ public class Degree {
 
     public void setClasses(List<DegreeClass> classes) {
         _classes = classes;
+    }
+
+    public int getFullNameResource() {
+        return _fullNameResource;
+    }
+
+    public void setFullNameResource(int fullNameResource) {
+        _fullNameResource = fullNameResource;
     }
 }

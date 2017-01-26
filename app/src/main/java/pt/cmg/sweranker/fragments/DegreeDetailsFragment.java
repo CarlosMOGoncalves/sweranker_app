@@ -100,7 +100,7 @@ public class DegreeDetailsFragment extends Fragment {
 
         degreeImage.setImageDrawable(this.getResources().getDrawable(_degree.getImageResource(), null));
         universityName.setText(this.getResources().getText(_degree.getUniversityResource()));
-        degreeName.setText(this.getResources().getText(_degree.getNameResource()));
+        degreeName.setText(this.getResources().getText(_degree.getFullNameResource()));
 
         ViewPager viewPager = (ViewPager) _myView.findViewById(R.id.degree_viewPager);
         viewPager.setAdapter(new CustomPagerAdapter(this.getActivity()));

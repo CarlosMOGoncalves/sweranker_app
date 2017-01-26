@@ -69,6 +69,9 @@ public class DegreesLoaderService extends Service {
                                 case "name":
                                     degree.setNameResource(getResources().getIdentifier(xmlParser.nextText(), "string", this.getPackageName()));
                                     break;
+                                case "fullname":
+                                    degree.setFullNameResource(getResources().getIdentifier(xmlParser.nextText(), "string", this.getPackageName()));
+                                    break;
                                 case "image":
                                     degree.setImageResource(getResources().getIdentifier(xmlParser.nextText(), "drawable", this.getPackageName()));
                                     break;

@@ -15,6 +15,7 @@
             android:layout_width="200dp"
             android:layout_height="200dp"
             android:layout_alignParentStart="true"
+            android:background="@android:color/background_light"
             android:scaleType="fitCenter"
             android:transitionName="degree_image"
             app:srcCompat="@drawable/feup_logo" />
@@ -30,6 +31,7 @@
             android:textAlignment="viewStart"
             android:textColor="@android:color/black"
             android:transitionName="university_name"
+            android:background="@android:color/background_light"
             android:textSize="@dimen/ka_detail_title_size" />
 
         <TextView
@@ -41,6 +43,7 @@
             android:padding="@dimen/ka_title_padding"
             android:textAlignment="viewStart"
             android:transitionName="degree_name"
+            android:background="@android:color/background_light"
             android:textColor="@color/colorPrimaryDark" />
 
     </RelativeLayout>

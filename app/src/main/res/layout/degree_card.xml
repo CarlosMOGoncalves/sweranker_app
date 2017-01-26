@@ -24,6 +24,7 @@
                 android:id="@+id/university_image"
                 android:layout_width="match_parent"
                 android:layout_height="140dp"
+                android:background="@android:color/background_light"
                 android:scaleType="fitCenter"
                 app:srcCompat="@drawable/feup_logo" />
 
@@ -34,7 +35,8 @@
                 android:layout_below="@id/university_image"
                 android:text="MEI"
                 android:textAlignment="center"
-                android:textColor="@color/colorPrimaryDark" />
+                android:textColor="@color/colorPrimaryDark"
+                android:background="@android:color/background_light" />
 
             <TextView
                 android:id="@+id/university_name"
@@ -42,7 +44,8 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/degree_name"
                 android:text="UMinho"
-                android:textAlignment="center" />
+                android:textAlignment="center"
+                android:background="@android:color/background_light" />
 
         </LinearLayout>
     </android.support.v7.widget.CardView>

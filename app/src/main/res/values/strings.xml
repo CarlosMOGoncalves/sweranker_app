@@ -268,7 +268,8 @@
 
 
     <string name="up_mieic">MIEIC</string>
-    <string name="up_mieic_description">Mestrado Integrado em Engenharia Informática e Computação da Universidade do Porto. 5 anos de estudo.</string>
+    <string name="up_mieic_fullname">Mestrado Integrado em Engenharia Informática e Computação</string>
+    <string name="up_mieic_description">O ensino da Engenharia Informática e Computação foi concebido na FEUP como requerendo um ciclo de formação e aprendizagem completo de cinco anos integrados, correspondendo aos 1º e 2º ciclos da implementação do Processo de Bolonha e conferindo de imediato o grau de Mestre.\n\nNo final dos três primeiros anos (1º ciclo) do MIEIC os alunos estarão providos de uma sólida formação de base, abrangendo as competências científicas e de engenharia essenciais, mas também os conhecimentos fundamentais de banda larga nas diversas áreas da informática, embora sem qualquer especialização. Este primeiro degrau é visto sobretudo como possibilitador de mobilidade de e para outras escolas nacionais e europeias.\n\nNo final dos cinco anos do curso os diplomados terão uma formação avançada em Engenharia Informática e Computação, podendo ter escolhido uma área de especialização ou manter um leque mais alargado de interesses, mercê de uma ampla oferta de opções, configurável individualmente, contida no plano de estudos. As possíveis especializações incluem atualmente:\n\nEngenharia de Software e Sistemas de Informação (2 sub-áreas com estes nomes)\nRedes e Tecnologias de Informação (sub-áreas de Tecnologias da Internet e de Infra-estruturas Informáticas)\nSistemas Inteligentes e Multimédia (2 sub-áreas com estes nomes)</string>
     <string name="up">Universidade do Porto</string>
 
     <string name="up_class_discrete_mathematics">Matemática Discreta</string>
@@ -334,18 +335,22 @@
 
 
     <string name="uminho_miei">MiEI</string>
+    <string name="uminho_miei_fullname">Mestrado Integrado em Engenharia Informática</string>
     <string name="uminho_miei_description">Mestrado Integrado em Engenharia Informática da Universidade do Minho. 5 anos de estudo.</string>
     <string name="uminho">Universidade do Minho</string>
 
     <string name="uc_mei">MEI</string>
+    <string name="uc_mei_fullname">Mestrado em Engenharia Informática</string>
     <string name="uc_mei_description">Mestrado em Engenharia Informática da Universidade de Coimbra. 5 anos de estudo.</string>
     <string name="uc">Universidade de Coimbra</string>
 
     <string name="uav_mei">LEI + MEI</string>
+    <string name="uav_mei_fullname">Licenciatura em Engenheria Informatica + Mestrado em Engenharia Informática</string>
     <string name="uav_mei_description">Licenciatura em Engenheria Informatica seguida de Mestrado em Engenharia Informática da Universidade de Aveiro. 3 + 2 anos de estudo.</string>
     <string name="uav">Universidade de Aveiro</string>
 
     <string name="ist_meic">LEIC + MEIC</string>
+    <string name="ist_meic_fullname">Licenciatura em Engenheria Informatica e de Computadores e Mestrado em Engenharia Informática e de Computadores</string>
     <string name="ist_meic_description">Licenciatura em Engenheria Informatica e de Computadores seguida de Mestrado em Engenharia Informática e de Computadores do Insituto Superio Técnico da Universidade de Lisboa. 3 + 2 anos de estudo.</string>
     <string name="ist">Instituto Superior Técnico - Lisboa</string>
 
