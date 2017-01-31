@@ -9,6 +9,7 @@
         <years>5</years>
         <university>@string/up</university>
         <classes>
+            <!-- 1º ANO -->
             <class>
                 <id>mieic_c1</id>
                 <name>@string/up_class_discrete_mathematics</name>
@@ -570,7 +571,7 @@
                 <name>@string/up_class_programming</name>
                 <year>1</year>
                 <semester>2</semester>
-                <ects>6</ects>
+                <ects>7.5</ects>
                 <program>
                     <topic>
                         <id>c8t1</id>
@@ -841,20 +842,387 @@
                     </topic>
                 </program>
             </class>
+            <!-- 1º ANO -->
 
+            <!-- 2º ANO -->
             <class>
-                <id>mieic_c9</id>
-                <name>@string/up_class_programming</name>
+                <id>mieic_c12</id>
+                <name>@string/up_class_computation_theory</name>
+                <year>2</year>
+                <semester>1</semester>
+                <ects>6</ects>
+                <program>
+                    <topic>
+                        <id>c12t1</id>
+                        <description>@string/up_class_computation_theory_topic1</description>
+                    </topic>
+                    <topic>
+                        <id>c12t2</id>
+                        <description>@string/up_class_computation_theory_topic2</description>
+                    </topic>
+                    <topic>
+                        <id>c12t3</id>
+                        <description>@string/up_class_computation_theory_topic3</description>
+                    </topic>
+                    <topic>
+                        <id>c12t4</id>
+                        <description>@string/up_class_computation_theory_topic4</description>
+                    </topic>
+                    <topic>
+                        <id>c12t5</id>
+                        <description>@string/up_class_computation_theory_topic5</description>
+                    </topic>
+                    <topic>
+                        <id>c12t6</id>
+                        <description>@string/up_class_computation_theory_topic6</description>
+                    </topic>
+                    <topic>
+                        <id>c12t7</id>
+                        <description>@string/up_class_computation_theory_topic7</description>
+                    </topic>
+                    <topic>
+                        <id>c12t8</id>
+                        <description>@string/up_class_computation_theory_topic8</description>
+                    </topic>
+                </program>
+            </class>
+            <class>
+                <id>mieic_c13</id>
+                <name>@string/up_class_numerical_methods</name>
+                <year>2</year>
+                <semester>1</semester>
+                <ects>4.5</ects>
+                <program>
+                    <topic>
+                        <id>c13t1</id>
+                        <description>@string/up_class_numerical_methods_topic1</description>
+                    </topic>
+                    <topic>
+                        <id>c13t2</id>
+                        <description>@string/up_class_numerical_methods_topic2</description>
+                    </topic>
+                    <topic>
+                        <id>c13t3</id>
+                        <description>@string/up_class_numerical_methods_topic3</description>
+                    </topic>
+                    <topic>
+                        <id>c13t4</id>
+                        <description>@string/up_class_numerical_methods_topic4</description>
+                    </topic>
+                    <topic>
+                        <id>c13t5</id>
+                        <description>@string/up_class_numerical_methods_topic5</description>
+                    </topic>
+                    <topic>
+                        <id>c13t6</id>
+                        <description>@string/up_class_numerical_methods_topic6</description>
+                    </topic>
+                    <topic>
+                        <id>c13t7</id>
+                        <description>@string/up_class_numerical_methods_topic7</description>
+                    </topic>
+                    <topic>
+                        <id>c13t8</id>
+                        <description>@string/up_class_numerical_methods_topic8</description>
+                    </topic>
+                    <topic>
+                        <id>c13t9</id>
+                        <description>@string/up_class_numerical_methods_topic9</description>
+                    </topic>
+                </program>
+            </class>
+            <class>
+                <id>mieic_c14</id>
+                <name>@string/up_class_physicsII</name>
+                <year>2</year>
+                <semester>1</semester>
+                <ects>6</ects>
+                <program>
+                    <topic>
+                        <id>c14t1</id>
+                        <description>@string/up_class_physicsII_topic1</description>
+                    </topic>
+                    <topic>
+                        <id>c14t2</id>
+                        <description>@string/up_class_physicsII_topic2</description>
+                    </topic>
+                    <topic>
+                        <id>c14t3</id>
+                        <description>@string/up_class_physicsII_topic3</description>
+                    </topic>
+                    <topic>
+                        <id>c14t4</id>
+                        <description>@string/up_class_physicsII_topic4</description>
+                    </topic>
+                    <topic>
+                        <id>c14t5</id>
+                        <description>@string/up_class_physicsII_topic5</description>
+                    </topic>
+                    <topic>
+                        <id>c14t6</id>
+                        <description>@string/up_class_physicsII_topic6</description>
+                    </topic>
+                    <topic>
+                        <id>c14t7</id>
+                        <description>@string/up_class_physicsII_topic7</description>
+                    </topic>
+                    <topic>
+                        <id>c14t8</id>
+                        <description>@string/up_class_physicsII_topic8</description>
+                    </topic>
+                    <topic>
+                        <id>c14t9</id>
+                        <description>@string/up_class_physicsII_topic9</description>
+                    </topic>
+                    <topic>
+                        <id>c14t10</id>
+                        <description>@string/up_class_physicsII_topic10</description>
+                    </topic>
+                </program>
+            </class>
+            <class>
+                <id>mieic_c15</id>
+                <name>@string/up_class_algorithms_structures</name>
+                <year>2</year>
+                <semester>1</semester>
+                <ects>7.5</ects>
+                <program>
+                    <topic>
+                        <id>c15t1</id>
+                        <description>@string/up_class_algorithms_structures_topic1</description>
+                    </topic>
+                    <topic>
+                        <id>c15t2</id>
+                        <description>@string/up_class_algorithms_structures_topic2</description>
+                    </topic>
+                    <topic>
+                        <id>c15t3</id>
+                        <description>@string/up_class_algorithms_structures_topic3</description>
+                    </topic>
+                    <topic>
+                        <id>c15t4</id>
+                        <description>@string/up_class_algorithms_structures_topic4</description>
+                    </topic>
+                    <topic>
+                        <id>c15t5</id>
+                        <description>@string/up_class_algorithms_structures_topic5</description>
+                    </topic>
+                    <topic>
+                        <id>c15t6</id>
+                        <description>@string/up_class_algorithms_structures_topic6</description>
+                    </topic>
+                    <topic>
+                        <id>c15t7</id>
+                        <description>@string/up_class_algorithms_structures_topic7</description>
+                    </topic>
+                    <topic>
+                        <id>c15t8</id>
+                        <description>@string/up_class_algorithms_structures_topic8</description>
+                    </topic>
+                    <topic>
+                        <id>c15t9</id>
+                        <description>@string/up_class_algorithms_structures_topic9</description>
+                    </topic>
+                    <topic>
+                        <id>c15t10</id>
+                        <description>@string/up_class_algorithms_structures_topic10</description>
+                    </topic>
+                    <topic>
+                        <id>c15t11</id>
+                        <description>@string/up_class_algorithms_structures_topic11</description>
+                    </topic>
+                    <topic>
+                        <id>c15t12</id>
+                        <description>@string/up_class_algorithms_structures_topic12</description>
+                    </topic>
+                    <topic>
+                        <id>c15t13</id>
+                        <description>@string/up_class_algorithms_structures_topic13</description>
+                    </topic>
+                </program>
+            </class>
+            <class>
+                <id>mieic_c16</id>
+                <name>@string/up_class_computer_labs</name>
+                <year>2</year>
+                <semester>1</semester>
+                <ects>6</ects>
+                <program>
+                    <topic>
+                        <id>c16t1</id>
+                        <description>@string/up_class_computer_labs_topic1</description>
+                    </topic>
+                    <topic>
+                        <id>c16t2</id>
+                        <description>@string/up_class_computer_labs_topic2</description>
+                    </topic>
+                    <topic>
+                        <id>c16t3</id>
+                        <description>@string/up_class_computer_labs_topic3</description>
+                    </topic>
+                    <topic>
+                        <id>c16t4</id>
+                        <description>@string/up_class_computer_labs_topic4</description>
+                    </topic>
+                    <topic>
+                        <id>c16t5</id>
+                        <description>@string/up_class_computer_labs_topic5</description>
+                    </topic>
+                    <topic>
+                        <id>c16t6</id>
+                        <description>@string/up_class_computer_labs_topic6</description>
+                    </topic>
+                    <topic>
+                        <id>c16t7</id>
+                        <description>@string/up_class_computer_labs_topic7</description>
+                    </topic>
+                    <topic>
+                        <id>c16t8</id>
+                        <description>@string/up_class_computer_labs_topic8</description>
+                    </topic>
+                    <topic>
+                        <id>c16t9</id>
+                        <description>@string/up_class_computer_labs_topic9</description>
+                    </topic>
+                    <topic>
+                        <id>c16t10</id>
+                        <description>@string/up_class_computer_labs_topic10</description>
+                    </topic>
+                    <topic>
+                        <id>c16t11</id>
+                        <description>@string/up_class_computer_labs_topic11</description>
+                    </topic>
+                    <topic>
+                        <id>c16t12</id>
+                        <description>@string/up_class_computer_labs_topic12</description>
+                    </topic>
+                    <topic>
+                        <id>c16t13</id>
+                        <description>@string/up_class_computer_labs_topic13</description>
+                    </topic>
+                </program>
+            </class>
+            <class>
+                <id>mieic_c17</id>
+                <name>@string/up_class_databases</name>
                 <year>2</year>
                 <semester>2</semester>
                 <ects>6</ects>
                 <program>
                     <topic>
-                        <id>c8t1</id>
-                        <description>@string/up_class_programming_topic1</description>
+                        <id>c17t1</id>
+                        <description>@string/up_class_databases_topic1</description>
+                    </topic>
+                    <topic>
+                        <id>c17t2</id>
+                        <description>@string/up_class_databases_topic2</description>
+                    </topic>
+                    <topic>
+                        <id>c17t3</id>
+                        <description>@string/up_class_databases_topic3</description>
+                    </topic>
+                    <topic>
+                        <id>c17t4</id>
+                        <description>@string/up_class_databases_topic4</description>
+                    </topic>
+                    <topic>
+                        <id>c17t5</id>
+                        <description>@string/up_class_databases_topic5</description>
+                    </topic>
+                    <topic>
+                        <id>c17t6</id>
+                        <description>@string/up_class_databases_topic6</description>
+                    </topic>
+                    <topic>
+                        <id>c17t7</id>
+                        <description>@string/up_class_databases_topic7</description>
+                    </topic>
+                    <topic>
+                        <id>c17t8</id>
+                        <description>@string/up_class_databases_topic8</description>
+                    </topic>
+                    <topic>
+                        <id>c17t9</id>
+                        <description>@string/up_class_databases_topic9</description>
+                    </topic>
+                    <topic>
+                        <id>c17t10</id>
+                        <description>@string/up_class_databases_topic10</description>
+                    </topic>
+                    <topic>
+                        <id>c17t11</id>
+                        <description>@string/up_class_databases_topic11</description>
+                    </topic>
+                    <topic>
+                        <id>c17t12</id>
+                        <description>@string/up_class_databases_topic12</description>
                     </topic>
                 </program>
             </class>
+            <class>
+                <id>mieic_c18</id>
+                <name>@string/up_class_algorithm_analysis</name>
+                <year>2</year>
+                <semester>2</semester>
+                <ects>6</ects>
+                <program>
+                    <topic>
+                        <id>c18t1</id>
+                        <description>@string/up_class_algorithm_analysis_topic1</description>
+                    </topic>
+                    <topic>
+                        <id>c18t2</id>
+                        <description>@string/up_class_algorithm_analysis_topic2</description>
+                    </topic>
+                    <topic>
+                        <id>c18t3</id>
+                        <description>@string/up_class_algorithm_analysis_topic3</description>
+                    </topic>
+                    <topic>
+                        <id>c18t4</id>
+                        <description>@string/up_class_algorithm_analysis_topic4</description>
+                    </topic>
+                    <topic>
+                        <id>c18t5</id>
+                        <description>@string/up_class_algorithm_analysis_topic5</description>
+                    </topic>
+                    <topic>
+                        <id>c18t6</id>
+                        <description>@string/up_class_algorithm_analysis_topic6</description>
+                    </topic>
+                    <topic>
+                        <id>c18t7</id>
+                        <description>@string/up_class_algorithm_analysis_topic7</description>
+                    </topic>
+                    <topic>
+                        <id>c18t8</id>
+                        <description>@string/up_class_algorithm_analysis_topic8</description>
+                    </topic>
+                    <topic>
+                        <id>c18t9</id>
+                        <description>@string/up_class_algorithm_analysis_topic9</description>
+                    </topic>
+                    <topic>
+                        <id>c18t10</id>
+                        <description>@string/up_class_algorithm_analysis_topic10</description>
+                    </topic>
+                    <topic>
+                        <id>c18t11</id>
+                        <description>@string/up_class_algorithm_analysis_topic11</description>
+                    </topic>
+                    <topic>
+                        <id>c18t12</id>
+                        <description>@string/up_class_algorithm_analysis_topic12</description>
+                    </topic>
+                    <topic>
+                        <id>c18t13</id>
+                        <description>@string/up_class_algorithm_analysis_topic13</description>
+                    </topic>
+                </program>
+            </class>
+            <!-- 2º ANO -->
+
+            <!-- 3º ANO -->
             <class>
                 <id>mieic_t10</id>
                 <name>@string/up_class_programming</name>
@@ -868,6 +1236,9 @@
                     </topic>
                 </program>
             </class>
+            <!-- 3º ANO -->
+
+            <!-- 4º ANO -->
             <class>
                 <id>mieic_t11</id>
                 <name>@string/up_class_programming</name>
@@ -881,6 +1252,9 @@
                     </topic>
                 </program>
             </class>
+            <!-- 4º ANO -->
+
+            <!-- 5º ANO -->
             <class>
                 <id>mieic_t12</id>
                 <name>@string/up_class_programming</name>
@@ -894,6 +1268,7 @@
                     </topic>
                 </program>
             </class>
+            <!-- 5º ANO -->
         </classes>
     </degree>
 

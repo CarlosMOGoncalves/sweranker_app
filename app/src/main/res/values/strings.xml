@@ -478,6 +478,97 @@
     <string name="up_class_microprocessors_topic11">Barramentos de comunicação com periféricos</string>
     <string name="up_class_microprocessors_topic12">Subsistema de armazenamento de dados</string>
 
+    <string name="up_class_computation_theory">Teoria da Computação</string>
+    <string name="up_class_computation_theory_topic1">Teoria dos Autómatos</string>
+    <string name="up_class_computation_theory_topic2">Autómatos Finitos</string>
+    <string name="up_class_computation_theory_topic3">Expressões Regulares e Linguagens</string>
+    <string name="up_class_computation_theory_topic4">Propriedades das Linguagens Regulares</string>
+    <string name="up_class_computation_theory_topic5">Gramáticas e Linguagens Sem Contexto</string>
+    <string name="up_class_computation_theory_topic6">Autómatos de Pilha</string>
+    <string name="up_class_computation_theory_topic7">Propriedades das Linguagens Sem Contexto</string>
+    <string name="up_class_computation_theory_topic8">Introdução às Máquinas de Turing</string>
+
+    <string name="up_class_numerical_methods">Métodos Numéricos</string>
+    <string name="up_class_numerical_methods_topic1">Representação numérica de quantidades</string>
+    <string name="up_class_numerical_methods_topic2">O erro em métodos numéricos</string>
+    <string name="up_class_numerical_methods_topic3">Zeros de funções reais - Métodos: Bissecções, Falsa Posição, Falsa Posição Modificado, Picard-Peano, Newton</string>
+    <string name="up_class_numerical_methods_topic4">Sistemas de equações não-lineares - Métodos: Newton, Aproximações Sucessivas ou Picard-Peano, Seidel</string>
+    <string name="up_class_numerical_methods_topic5">Sistemas de equações lineares - Métodos Directos e Iterativos ( Gauss, Cholesky, Seidel)</string>
+    <string name="up_class_numerical_methods_topic6">Quadratura e Cubatura - Métodos: Trapézios, Simpson</string>
+    <string name="up_class_numerical_methods_topic7">Integração de equações diferenciais de 1ª e de 2ª ordem - Métodos: Euler, Euler Melhorado, Runge-Kutta de 2ª e de 4ª ordem</string>
+    <string name="up_class_numerical_methods_topic8">Optimização uni e multidimensional, não linear convexa - Métodos: Pesquisa, Secção áurea, Quádrica, Gradiente, Levenberg-Marquardt</string>
+    <string name="up_class_numerical_methods_topic9">Ajuste de curvas – método dos mínimos quadrados</string>
+
+    <string name="up_class_physicsII">Física II</string>
+    <string name="up_class_physicsII_topic1">Electrostática. Estrutura atómica. Cargas e forças eléctricas. Condutores e isoladores.</string>
+    <string name="up_class_physicsII_topic2">Electricidade. Potencial electrostático. Fontes de força electromotriz. Condutores, semicondutores e diódos. Corrente eléctrica. Potência eléctrica. Lei de Ohm. Resistência. Supercondutividade. Associações de resistências</string>
+    <string name="up_class_physicsII_topic3">Capacidade eléctrica. Condutores isolados. Condensadores. Energia electrostática. Associações de condensadores.</string>
+    <string name="up_class_physicsII_topic4">Circuitos de corrente contínua. Diagramas de circuitos. Leis dos circuitos. Método das malhas. Estado estacionário de circuitos com condensadores.</string>
+    <string name="up_class_physicsII_topic5">Campo e potencial eléctricos. Campo e potencial produzidos por sistemas de sistemas de cargas pontuais. Linhas de campo e superfícies equipotenciais. Pontos críticos do campo eléctrico. Fluxo eléctrico. Lei de Gauss. Campo e potencial nos condutores</string>
+    <string name="up_class_physicsII_topic6">Campo magnético. Forças magnéticas. Torque e momento magnético. Lei de Ampère. Espiras e bobinas.</string>
+    <string name="up_class_physicsII_topic7">Indução electromagnética. Campo eléctrico induzido. Leis de Faraday e de Lenz. Geradores de corrente alternada. Indutância. Autoindução.</string>
+    <string name="up_class_physicsII_topic8">Processamento de sinais. Estado transitório dos circuitos. Equações diferenciais dos circuitos. Função de transferência. Constantes de tempo. Impedância generalizada. Associações de impedâncias.</string>
+    <string name="up_class_physicsII_topic9">Circuitos de corrente alternada. Funções sinusoidais. Fasores. Tensão alternada. Impedância complexa. Potência dissipada nos circuitos. Filtros de frequência. Função de resposta. Ressonância.</string>
+    <string name="up_class_physicsII_topic10">Ondas electromagnéticas e luz. Equações de Maxwell. Campos induzidos. Campo electromagnético no vácuo. Equação de onda. Ondas planas polarizadas. Ondas harmónicas. Espectro electromagnético. Teorias ondulatória e corpuscular da luz. Díodos emissores de luz (LED).</string>
+
+    <string name="up_class_algorithms_structures">Algoritmos e Estruturas de Dados</string>
+    <string name="up_class_algorithms_structures_topic1">Programação orientada por objectos</string>
+    <string name="up_class_algorithms_structures_topic2">Herança e Polimorfismo</string>
+    <string name="up_class_algorithms_structures_topic3">Aspectos básicos de UML</string>
+    <string name="up_class_algorithms_structures_topic4">Análise de algoritmos: classes e complexidade</string>
+    <string name="up_class_algorithms_structures_topic5">Algoritmos de pesquisa e ordenação</string>
+    <string name="up_class_algorithms_structures_topic6">Tipos abstractos de dados</string>
+    <string name="up_class_algorithms_structures_topic7">Iteradores</string>
+    <string name="up_class_algorithms_structures_topic8">Estruturas de dados lineares e sua implementação: pilhas, filas e listas</string>
+    <string name="up_class_algorithms_structures_topic9">Árvores binárias e algoritmos associados</string>
+    <string name="up_class_algorithms_structures_topic10">Tabelas de dispersão e algoritmos de manipulação</string>
+    <string name="up_class_algorithms_structures_topic11">Filas de prioridade</string>
+    <string name="up_class_algorithms_structures_topic12">Árvores equilibradas</string>
+    <string name="up_class_algorithms_structures_topic13">Árvores AVL e "Splay"</string>
+
+    <string name="up_class_computer_labs">Laboratório de Computadores</string>
+    <string name="up_class_computer_labs_topic1">Periféricos de entrada/saída e seus modos de funcionamento</string>
+    <string name="up_class_computer_labs_topic2">Mapeamento directo no espaço de endereçamento de memória</string>
+    <string name="up_class_computer_labs_topic3">Acesso a periféricos no modo \"polled\" e por interrupção</string>
+    <string name="up_class_computer_labs_topic4">Interrupções nos processadores IA-32, o controlador de interrupções do PC, escrita de rotinas de interrupção em Assembly e em C</string>
+    <string name="up_class_computer_labs_topic5">Periféricos típicos de um PC, como o teclado, o rato, a placa gráfica, o relógio de tempo real, o temporizador, o altifalante, a porta de série</string>
+    <string name="up_class_computer_labs_topic6">Programação na linguagem C: principais diferenças em relação à linguagem C++, métodos para estruturação do código</string>
+    <string name="up_class_computer_labs_topic7">Organização da memória em execução</string>
+    <string name="up_class_computer_labs_topic8">Funções: mecanismo de chamada, passagem de parâmetros, armazenamento local e retorno de valores</string>
+    <string name="up_class_computer_labs_topic9">Programação baseada em eventos</string>
+    <string name="up_class_computer_labs_topic10">Programação combinada em C e "assembly" dos processadores IA-32</string>
+    <string name="up_class_computer_labs_topic11">Criação e utilização de bibliotecas</string>
+    <string name="up_class_computer_labs_topic12">Ligação estática de código objecto</string>
+    <string name="up_class_computer_labs_topic13">Utilização de ferramentas de desenvolvimento de software: cc, make, db, ar, prof, diff, patch, SVN</string>
+
+    <string name="up_class_databases">Bases de Dados</string>
+    <string name="up_class_databases_topic1">Diagrama de classes UML</string>
+    <string name="up_class_databases_topic2">Modelo entidade-associação (E-R)</string>
+    <string name="up_class_databases_topic3">Modelo relacional, normalização e mapeamento de UML e E-R para relacional</string>
+    <string name="up_class_databases_topic4">Linguagem de definição de dados SQL e restricões de integridade</string>
+    <string name="up_class_databases_topic5">Álgebra relacional como linguagem de interrogação</string>
+    <string name="up_class_databases_topic6">Linguagem de manipulação de dados SQL</string>
+    <string name="up_class_databases_topic7">Vistas e índices</string>
+    <string name="up_class_databases_topic8">Desenho de interfaces</string>
+    <string name="up_class_databases_topic9">SQL na arquitectura cliente-servidor</string>
+    <string name="up_class_databases_topic10">Controlo de acessos</string>
+    <string name="up_class_databases_topic11">Transacções, controlo de concorrência e recuperação</string>
+    <string name="up_class_databases_topic12">Armazéns de dados</string>
+
+    <string name="up_class_algorithm_analysis">Concepção e Análise de Algoritmos</string>
+    <string name="up_class_algorithm_analysis_topic1">Técnicas de concepção de algoritmos: divisão e conquista</string>
+    <string name="up_class_algorithm_analysis_topic2">Técnicas de concepção de algoritmos: algoritmos gananciosos ("greedy")</string>
+    <string name="up_class_algorithm_analysis_topic3">Técnicas de concepção de algoritmos: programação dinâmica</string>
+    <string name="up_class_algorithm_analysis_topic4">Técnicas de concepção de algoritmos: algoritmos de retrocesso ("backtracking")</string>
+    <string name="up_class_algorithm_analysis_topic5">Técnicas de concepção de algoritmos: algoritmos probabilísticos</string>
+    <string name="up_class_algorithm_analysis_topic6">Representação e formalização de algoritmos</string>
+    <string name="up_class_algorithm_analysis_topic7">Análise da complexidade de algoritmos (temporal e espacial)</string>
+    <string name="up_class_algorithm_analysis_topic8">Verificação e correcção dos algoritmos</string>
+    <string name="up_class_algorithm_analysis_topic9">Estruturas de dados avançadas: filas de prioridade com alteração de prioridade</string>
+    <string name="up_class_algorithm_analysis_topic10">Estruturas de dados avançadas: conjuntos disjuntos</string>
+    <string name="up_class_algorithm_analysis_topic11">Algoritmos eficientes em grafos: visita em largura e em profundidade; ordenação topológica; componentes biconexos; componentes fortemente conexos; caminho mais curto; árvore de expansão mínima; fluxo máximo e fluxo máximo de custo mínimo em redes de transporte; circuito de Euler e problema do carteiro chinês; problemas de emparelhamento ("matching") e casamentos estáveis</string>
+    <string name="up_class_algorithm_analysis_topic12">Algoritmos em "strings": pesquisa exacta ("string matching"); pesquisa aproximada; "substring" comum mais comprida; compressão de texto</string>
+    <string name="up_class_algorithm_analysis_topic13">Problemas intratáveis: redução de problemas; teoria dos problemas NP-completos; exemplos de problemas intratáveis em grafos; algoritmos que fornecem soluções aproximadas em tempo polinomial para alguns problemas</string>
 
     <string name="uminho_miei">MiEI</string>
     <string name="uminho_miei_fullname">Mestrado Integrado em Engenharia Informática</string>
