@@ -92,8 +92,8 @@ public class KADetailsFragment extends Fragment {
         _topicList = (RecyclerView) _myView.findViewById(R.id.ka_details_topics_list);
 
 
-        RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(this.getActivity(), LinearLayoutManager.VERTICAL, false);
-        _topicList.setLayoutManager(mLayoutManager);
+        RecyclerView.LayoutManager linearLayoutManager = new LinearLayoutManager(this.getActivity(), LinearLayoutManager.VERTICAL, false);
+        _topicList.setLayoutManager(linearLayoutManager);
 
         _topicList.addItemDecoration(new ConstantSpacingItemDecorator(this.getActivity(), 20, ConstantSpacingItemDecorator.Side.BOTTOM));
         _topicList.addItemDecoration(new UnderlineDividerItemDecorator.Builder(this.getActivity(), ContextCompat.getColor((Context) _parentActivity, R.color.darkerBackground), 1)

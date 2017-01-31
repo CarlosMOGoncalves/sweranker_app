@@ -88,7 +88,7 @@ public class DegreesLoaderService extends Service {
                                     degree.setUniversityResource(getResources().getIdentifier(xmlParser.nextText(), "string", this.getPackageName()));
                                     break;
                                 case "classes":
-                                    List<DegreeClass> classes = parseClasses(xmlParser);
+                                    Map<Integer, List<DegreeClass>> classes = parseClasses(xmlParser);
                                     degree.setClasses(classes);
                                     break;
                                 default:
@@ -122,8 +122,8 @@ public class DegreesLoaderService extends Service {
      * @param xmlParser
      * @return
      */
-    private List<DegreeClass> parseClasses(XmlPullParser xmlParser) {
-        List<DegreeClass> topics = new ArrayList<>();
+    private Map<Integer, List<DegreeClass>> parseClasses(XmlPullParser xmlParser) {
+        Map<Integer, List<DegreeClass>> classesByYear = new HashMap<>();
         try {
 
             int eventType = xmlParser.getEventType();
@@ -179,7 +179,11 @@ public class DegreesLoaderService extends Service {
                     case XmlPullParser.END_TAG:
                         xmlElementName = xmlParser.getName();
                         if (xmlElementName.equalsIgnoreCase("class") && degreeClass != null) {
-                            topics.add(degreeClass);
+
+                            if (!classesByYear.containsKey(degreeClass.getYear())) {
+                                classesByYear.put(Integer.valueOf(degreeClass.getYear()), new ArrayList<>());
+                            }
+                            classesByYear.get(degreeClass.getYear()).add(degreeClass);
                         }
                         break;
                 }
@@ -190,7 +194,7 @@ public class DegreesLoaderService extends Service {
             e.printStackTrace();
         }
 
-        return topics;
+        return classesByYear;
     }
 
     /**

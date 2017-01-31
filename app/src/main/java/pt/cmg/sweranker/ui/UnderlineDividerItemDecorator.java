@@ -18,7 +18,7 @@ import pt.cmg.sweranker.util.SweRankerUtils;
  */
 public class UnderlineDividerItemDecorator extends RecyclerView.ItemDecoration {
 
-    private final Class _targetViewHolderClass;
+    private final Class<?> _targetViewHolderClass;
     private final Paint _paint;
     private final int _leftInset;
     private final int _rightInset;

@@ -2,6 +2,7 @@ package pt.cmg.sweranker.degrees;
 
 
 import java.util.List;
+import java.util.Map;
 
 public class Degree {
 
@@ -13,7 +14,7 @@ public class Degree {
     private int _years;
     private int _universityResource;
 
-    private List<DegreeClass> _classes;
+    private Map<Integer, List<DegreeClass>> _classesByYear;
 
     public Degree() {
     }
@@ -66,12 +67,31 @@ public class Degree {
         _universityResource = universityResource;
     }
 
-    public List<DegreeClass> getClasses() {
-        return _classes;
+    public Map<Integer, List<DegreeClass>> getClasses() {
+        return _classesByYear;
     }
 
-    public void setClasses(List<DegreeClass> classes) {
-        _classes = classes;
+    public void setClasses(Map<Integer, List<DegreeClass>> classes) {
+        _classesByYear = classes;
+    }
+
+    /**
+     * Returns the total amount of classes in this degree using some lambda magic.
+     *
+     * @return
+     */
+    public int getClassesCount() {
+        return _classesByYear.entrySet().stream().mapToInt(entry -> entry.getValue().size()).sum();
+    }
+
+
+    public List<DegreeClass> getClassesOfYear(int year) {
+        if (year > getYears()) {
+            throw new RuntimeException("Target years greater than the maximum number of availble years for this degree, input : " + year + " but maximum expected is " + getYears());
+        }
+
+        return _classesByYear.get(year);
+
     }
 
     public int getFullNameResource() {

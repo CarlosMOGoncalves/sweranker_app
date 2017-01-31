@@ -5,10 +5,10 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/degree_description"
+        android:id="@+id/year_title"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@android:color/background_light"
-        android:gravity="center"
-        android:textAlignment="textStart" />
+        android:layout_height="wrap_content"
+        android:background="@color/darkerBackground"
+        android:text="Year 1"
+        android:textSize="@dimen/ka_title_size" />
 </LinearLayout>
