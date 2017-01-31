@@ -13,7 +13,7 @@ public class DegreeClass {
     private int _nameResource;
     private int _year;
     private int _semester;
-    private int _ectsCredits;
+    private float _ectsCredits;
     private Map<String, Integer> _program;
 
     public DegreeClass() {
@@ -52,11 +52,11 @@ public class DegreeClass {
         _semester = semester;
     }
 
-    public int getEctsCredits() {
+    public float getEctsCredits() {
         return _ectsCredits;
     }
 
-    public void setEctsCredits(int ectsCredits) {
+    public void setEctsCredits(float ectsCredits) {
         _ectsCredits = ectsCredits;
     }
 

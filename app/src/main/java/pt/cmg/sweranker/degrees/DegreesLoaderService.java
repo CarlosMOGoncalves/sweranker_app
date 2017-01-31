@@ -165,7 +165,7 @@ public class DegreesLoaderService extends Service {
                                     degreeClass.setSemester(Integer.valueOf(xmlParser.nextText()));
                                     break;
                                 case "ects":
-                                    degreeClass.setEctsCredits(Integer.valueOf(xmlParser.nextText()));
+                                    degreeClass.setEctsCredits(Float.valueOf(xmlParser.nextText()));
                                     break;
                                 case "program":
                                     Map<String, Integer> program = parseClassProgram(xmlParser);

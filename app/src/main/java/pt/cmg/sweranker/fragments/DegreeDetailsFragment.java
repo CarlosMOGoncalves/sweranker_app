@@ -152,7 +152,7 @@ public class DegreeDetailsFragment extends Fragment {
             RecyclerView.LayoutManager linearLayoutManager = new LinearLayoutManager(_context, LinearLayoutManager.VERTICAL, false);
             degreeProgramList.setLayoutManager(linearLayoutManager);
 
-            degreeProgramList.addItemDecoration(new ConstantSpacingItemDecorator(_context, 20, ConstantSpacingItemDecorator.Side.BOTTOM));
+            degreeProgramList.addItemDecoration(new ConstantSpacingItemDecorator(_context, 2, ConstantSpacingItemDecorator.Side.BOTTOM));
             degreeProgramList.setItemAnimator(new DefaultItemAnimator());
 
             DegreeProgramAdapter adapter = new DegreeProgramAdapter();
@@ -211,8 +211,8 @@ public class DegreeDetailsFragment extends Fragment {
                 int counter = 1;
                 positions[0] = 0;
                 for (int i = 1; i < positions.length; i++) {
-                    positions[i] = counter + classCountByYear.get(i) + 1;
-                    counter += classCountByYear.get(i);
+                    positions[i] = counter + classCountByYear.get(i);
+                    counter += classCountByYear.get(i) + 1;
                 }
 
                 return positions;
@@ -284,7 +284,7 @@ public class DegreeDetailsFragment extends Fragment {
             @Override
             public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
                 if (holder instanceof DegreeYearViewHolder) {
-                    ((DegreeYearViewHolder) holder)._year.setText(_context.getResources().getString(R.string.year) + getYearOfPosition(position));
+                    ((DegreeYearViewHolder) holder)._year.setText(_context.getResources().getString(R.string.year) + " " + getYearOfPosition(position));
                 } else {
                     DegreeClass currentClass = _degreeClasses[position];
                     ((DegreeClassViewHolder) holder)._degreeClassName.setText(_context.getResources().getString(currentClass.getNameResource()));
@@ -301,7 +301,7 @@ public class DegreeDetailsFragment extends Fragment {
             private int getYearOfPosition(int recyclerViewPosition) {
                 // Aha, magic here! The BinarySearch actually returns the position that the given element occupies in the array, so it
                 // is used here not for finding out if it exists but rather to get its position. Neat.
-                return Arrays.binarySearch(_yearTitlePositions, recyclerViewPosition);
+                return Arrays.binarySearch(_yearTitlePositions, recyclerViewPosition) + 1;
             }
 
             @Override

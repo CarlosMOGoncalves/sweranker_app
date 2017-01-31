@@ -1,20 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+
+<android.support.v7.widget.RecyclerView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/program_list"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/program_list"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
-
-    <!--android.support.v7.widget.RecyclerView
-        android:id="@+id/degree_program_list"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/colorAccent"
-        android:paddingBottom="@dimen/ka_detail_list_padding"
-        android:clipToPadding="false" /-->
-
-</LinearLayout>
+    android:layout_height="match_parent" />
