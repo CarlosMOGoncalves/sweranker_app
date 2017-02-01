@@ -570,6 +570,66 @@
     <string name="up_class_algorithm_analysis_topic12">Algoritmos em "strings": pesquisa exacta ("string matching"); pesquisa aproximada; "substring" comum mais comprida; compressão de texto</string>
     <string name="up_class_algorithm_analysis_topic13">Problemas intratáveis: redução de problemas; teoria dos problemas NP-completos; exemplos de problemas intratáveis em grafos; algoritmos que fornecem soluções aproximadas em tempo polinomial para alguns problemas</string>
 
+    <string name="up_class_computer_graphics">Computação Gráfica</string>
+    <string name="up_class_computer_graphics_topic1">Panorâmica da Computação Gráfica e suas aplicações.</string>
+    <string name="up_class_computer_graphics_topic2">Síntese de Imagem de cenas 3D: iluminação local e iluminação global,cálculo de visibilidade</string>
+    <string name="up_class_computer_graphics_topic3">Representação de cor em Computação Gráfica</string>
+    <string name="up_class_computer_graphics_topic4">Transformações geométricas 2D/3D</string>
+    <string name="up_class_computer_graphics_topic5">Modelação: malhas poligonais 3D, curvas, superfícies e sólidos</string>
+    <string name="up_class_computer_graphics_topic6">Interacção</string>
+    <string name="up_class_computer_graphics_topic7">Conceitos para o desenvolvimento de interfaces gráficas</string>
+    <string name="up_class_computer_graphics_topic8">Computação Gráfica 2D: algoritmos de rasterização, transformações geométricas 2D e visualização 2D</string>
+
+    <string name="up_class_operating_systems">Sistemas Operativos</string>
+    <string name="up_class_operating_systems_topic1">Objetivos e funções de um S.O. </string>
+    <string name="up_class_operating_systems_topic2">Evolução dos sistemas operativos e estrutura dos S.O. modernos</string>
+    <string name="up_class_operating_systems_topic3">Abstrações suportadas por um S.O. e sua interface de programação </string>
+    <string name="up_class_operating_systems_topic4">Necessidades de suporte e de protecção de hardware</string>
+    <string name="up_class_operating_systems_topic5">Processos e "threads", a sua descrição e estados de um processo </string>
+    <string name="up_class_operating_systems_topic6">Estratégias de escalonamento</string>
+    <string name="up_class_operating_systems_topic7">Execução concorrente: problemas e soluções </string>
+    <string name="up_class_operating_systems_topic8">Mecanismos de sincronização entre processos </string>
+    <string name="up_class_operating_systems_topic9">Bloqueio mútuo </string>
+    <string name="up_class_operating_systems_topic10">Gestão básica de memória.</string>
+    <string name="up_class_operating_systems_topic11">Sistemas de memória virtual: paginação e segmentação </string>
+    <string name="up_class_operating_systems_topic12">Implementação de memória virtual; estratégias de alocação/libertação de memória </string>
+    <string name="up_class_operating_systems_topic13">Hardware e software de entrada/saída </string>
+    <string name="up_class_operating_systems_topic14">Abstracção das diferenças entre dispositivos. </string>
+    <string name="up_class_operating_systems_topic15">Interface do sistema de ficheiros </string>
+    <string name="up_class_operating_systems_topic16">Implementação do sistema de ficheiros; gestão do disco</string>
+    <string name="up_class_operating_systems_topic17">Linux: Manipulação de ficheiros e directórios</string>
+    <string name="up_class_operating_systems_topic18">Linux: Criação e gestão de processos e "threads"</string>
+    <string name="up_class_operating_systems_topic19">Linux: Intercomunicação entre processos: sinais, "pipes", FIFOs, e memória partilhada</string>
+    <string name="up_class_operating_systems_topic20">Linux: Sincronização entre processos e "threads": semáforos, mutexes e variáveis de condição.</string>
+
+
+    <string name="up_class_oop_labs">Laboratório de Programação Orientada por Objectos</string>
+    <string name="up_class_oop_labs_topic1">A linguagem Java: elementos da linguagem, diferenças em relação a C++ e novas características de Java 8 (expressões lambda, etc.).</string>
+    <string name="up_class_oop_labs_topic2">Testes unitários e desenvolvimento guiado por testes ("test-driven development") com JUnit, ferramentas de análise de cobertura e ferramentas de teste de mutação.</string>
+    <string name="up_class_oop_labs_topic3">Bibliotecas do Java (Java API): visão geral, colecções, interfaces gráficas e entrada/saída</string>
+    <string name="up_class_oop_labs_topic4">Desenho orientado por objectos com UML: princípios de desenho orientado por objectos; diagramas de classes, sequência e estados</string>
+    <string name="up_class_oop_labs_topic5">Desenvolvimento conduzido por modelos ("model-driven development")</string>
+    <string name="up_class_oop_labs_topic6">Padrões de desenho ("design patterns")</string>
+    <string name="up_class_oop_labs_topic7">Refabricação de código ("refactoring") e "code smells"</string>
+    <string name="up_class_oop_labs_topic8">Introdução ao desenvolvimento de aplicações móveis para Android</string>
+    <string name="up_class_oop_labs_topic9">Introdução a "multithreading", "remote method invocation" e animações em Java</string>
+    <string name="up_class_oop_labs_topic10">Reflexão, informação dinâmica de tipos e metaprogramação</string>
+    <string name="up_class_oop_labs_topic11">Ferramentas de análise dinâmica de programas ("debugging", "profiling")</string>
+
+    <string name="up_class_"></string>
+    <string name="up_class__topic1"></string>
+    <string name="up_class__topic2"></string>
+    <string name="up_class__topic3"></string>
+    <string name="up_class__topic4"></string>
+    <string name="up_class__topic5"></string>
+    <string name="up_class__topic6"></string>
+    <string name="up_class__topic7"></string>
+    <string name="up_class__topic8"></string>
+    <string name="up_class__topic9"></string>
+    <string name="up_class__topic10"></string>
+    <string name="up_class__topic11"></string>
+    <string name="up_class__topic12"></string>
+
     <string name="uminho_miei">MiEI</string>
     <string name="uminho_miei_fullname">Mestrado Integrado em Engenharia Informática</string>
     <string name="uminho_miei_description">Mestrado Integrado em Engenharia Informática da Universidade do Minho. 5 anos de estudo.</string>

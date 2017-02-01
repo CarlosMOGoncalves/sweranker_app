@@ -10,5 +10,6 @@
         android:layout_height="wrap_content"
         android:background="@color/darkerBackground"
         android:text="Year 1"
-        android:textSize="@dimen/ka_title_size" />
+        android:textAlignment="center"
+        android:textSize="@dimen/degree_detail_program_list_year_label_text_size" />
 </LinearLayout>
