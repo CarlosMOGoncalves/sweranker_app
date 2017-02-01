@@ -16,6 +16,7 @@
                 <year>1</year>
                 <semester>1</semester>
                 <ects>6</ects>
+                <optional>false</optional>
                 <program>
                     <topic>
                         <id>c1t1</id>
@@ -65,6 +66,7 @@
                 <year>1</year>
                 <semester>1</semester>
                 <ects>6</ects>
+                <optional>false</optional>
                 <program>
                     <topic>
                         <id>c2t1</id>
@@ -194,6 +196,7 @@
                 <year>1</year>
                 <semester>1</semester>
                 <ects>6</ects>
+                <optional>false</optional>
                 <program>
                     <topic>
                         <id>c3t1</id>
@@ -259,6 +262,7 @@
                 <year>1</year>
                 <semester>1</semester>
                 <ects>6</ects>
+                <optional>false</optional>
                 <program>
                     <topic>
                         <id>c4t1</id>
@@ -332,6 +336,7 @@
                 <year>1</year>
                 <semester>1</semester>
                 <ects>4.5</ects>
+                <optional>false</optional>
                 <program>
                     <topic>
                         <id>c5t1</id>
@@ -449,6 +454,7 @@
                 <year>1</year>
                 <semester>1</semester>
                 <ects>1.5</ects>
+                <optional>false</optional>
                 <program>
                     <topic>
                         <id>c6t1</id>
@@ -495,6 +501,7 @@
                 <year>1</year>
                 <semester>2</semester>
                 <ects>4.5</ects>
+                <optional>false</optional>
                 <program>
                     <topic>
                         <id>c7t1</id>
@@ -572,6 +579,7 @@
                 <year>1</year>
                 <semester>2</semester>
                 <ects>7.5</ects>
+                <optional>false</optional>
                 <program>
                     <topic>
                         <id>c8t1</id>
@@ -705,6 +713,7 @@
                 <year>1</year>
                 <semester>2</semester>
                 <ects>6</ects>
+                <optional>false</optional>
                 <program>
                     <topic>
                         <id>c9t1</id>
@@ -762,6 +771,7 @@
                 <year>1</year>
                 <semester>2</semester>
                 <ects>6</ects>
+                <optional>false</optional>
                 <program>
                     <topic>
                         <id>c10t1</id>
@@ -791,6 +801,7 @@
                 <year>1</year>
                 <semester>2</semester>
                 <ects>6</ects>
+                <optional>false</optional>
                 <program>
                     <topic>
                         <id>c11t1</id>
@@ -851,6 +862,7 @@
                 <year>2</year>
                 <semester>1</semester>
                 <ects>6</ects>
+                <optional>false</optional>
                 <program>
                     <topic>
                         <id>c12t1</id>
@@ -892,6 +904,7 @@
                 <year>2</year>
                 <semester>1</semester>
                 <ects>4.5</ects>
+                <optional>false</optional>
                 <program>
                     <topic>
                         <id>c13t1</id>
@@ -937,6 +950,7 @@
                 <year>2</year>
                 <semester>1</semester>
                 <ects>6</ects>
+                <optional>false</optional>
                 <program>
                     <topic>
                         <id>c14t1</id>
@@ -986,6 +1000,7 @@
                 <year>2</year>
                 <semester>1</semester>
                 <ects>7.5</ects>
+                <optional>false</optional>
                 <program>
                     <topic>
                         <id>c15t1</id>
@@ -1047,6 +1062,7 @@
                 <year>2</year>
                 <semester>1</semester>
                 <ects>6</ects>
+                <optional>false</optional>
                 <program>
                     <topic>
                         <id>c16t1</id>
@@ -1108,6 +1124,7 @@
                 <year>2</year>
                 <semester>2</semester>
                 <ects>6</ects>
+                <optional>false</optional>
                 <program>
                     <topic>
                         <id>c17t1</id>
@@ -1165,6 +1182,7 @@
                 <year>2</year>
                 <semester>2</semester>
                 <ects>6</ects>
+                <optional>false</optional>
                 <program>
                     <topic>
                         <id>c18t1</id>
@@ -1226,6 +1244,7 @@
                 <year>2</year>
                 <semester>2</semester>
                 <ects>6</ects>
+                <optional>false</optional>
                 <program>
                     <topic>
                         <id>c19t1</id>
@@ -1267,6 +1286,7 @@
                 <year>2</year>
                 <semester>2</semester>
                 <ects>6</ects>
+                <optional>false</optional>
                 <program>
                     <topic>
                         <id>c20t1</id>
@@ -1356,6 +1376,7 @@
                 <year>2</year>
                 <semester>2</semester>
                 <ects>6</ects>
+                <optional>false</optional>
                 <program>
                     <topic>
                         <id>c21t1</id>
@@ -1407,15 +1428,788 @@
 
             <!-- 3º ANO -->
             <class>
-                <id>mieic_t10</id>
-                <name>@string/up_class_programming</name>
+                <id>mieic_c22</id>
+                <name>@string/up_class_logic_programming</name>
+                <year>3</year>
+                <semester>1</semester>
+                <ects>4.5</ects>
+                <optional>false</optional>
+                <program>
+                    <topic>
+                        <id>c22t1</id>
+                        <description>@string/up_class_logic_programming_topic1</description>
+                    </topic>
+                    <topic>
+                        <id>c22t2</id>
+                        <description>@string/up_class_logic_programming_topic2</description>
+                    </topic>
+                    <topic>
+                        <id>c22t3</id>
+                        <description>@string/up_class_logic_programming_topic3</description>
+                    </topic>
+                    <topic>
+                        <id>c22t4</id>
+                        <description>@string/up_class_logic_programming_topic4</description>
+                    </topic>
+                    <topic>
+                        <id>c22t5</id>
+                        <description>@string/up_class_logic_programming_topic5</description>
+                    </topic>
+                    <topic>
+                        <id>c22t6</id>
+                        <description>@string/up_class_logic_programming_topic6</description>
+                    </topic>
+                    <topic>
+                        <id>c22t7</id>
+                        <description>@string/up_class_logic_programming_topic7</description>
+                    </topic>
+                    <topic>
+                        <id>c22t8</id>
+                        <description>@string/up_class_logic_programming_topic8</description>
+                    </topic>
+                    <topic>
+                        <id>c22t9</id>
+                        <description>@string/up_class_logic_programming_topic9</description>
+                    </topic>
+                    <topic>
+                        <id>c22t10</id>
+                        <description>@string/up_class_logic_programming_topic10</description>
+                    </topic>
+                </program>
+            </class>
+            <class>
+                <id>mieic_c23</id>
+                <name>@string/up_class_graphics_lab</name>
+                <year>3</year>
+                <semester>1</semester>
+                <ects>6</ects>
+                <optional>false</optional>
+                <program>
+                    <topic>
+                        <id>c23t1</id>
+                        <description>@string/up_class_graphics_lab_topic1</description>
+                    </topic>
+                    <topic>
+                        <id>c23t2</id>
+                        <description>@string/up_class_graphics_lab_topic2</description>
+                    </topic>
+                    <topic>
+                        <id>c23t3</id>
+                        <description>@string/up_class_graphics_lab_topic3</description>
+                    </topic>
+                    <topic>
+                        <id>c23t4</id>
+                        <description>@string/up_class_graphics_lab_topic4</description>
+                    </topic>
+                </program>
+            </class>
+            <class>
+                <id>mieic_c24</id>
+                <name>@string/up_class_software_engineering</name>
+                <year>3</year>
+                <semester>1</semester>
+                <ects>6</ects>
+                <optional>false</optional>
+                <program>
+                    <topic>
+                        <id>c24t1</id>
+                        <description>@string/up_class_software_engineering_topic1</description>
+                    </topic>
+                    <topic>
+                        <id>c24t2</id>
+                        <description>@string/up_class_software_engineering_topic2</description>
+                    </topic>
+                    <topic>
+                        <id>c24t3</id>
+                        <description>@string/up_class_software_engineering_topic3</description>
+                    </topic>
+                    <topic>
+                        <id>c24t4</id>
+                        <description>@string/up_class_software_engineering_topic4</description>
+                    </topic>
+                    <topic>
+                        <id>c24t5</id>
+                        <description>@string/up_class_software_engineering_topic5</description>
+                    </topic>
+                    <topic>
+                        <id>c24t6</id>
+                        <description>@string/up_class_software_engineering_topic6</description>
+                    </topic>
+                    <topic>
+                        <id>c24t7</id>
+                        <description>@string/up_class_software_engineering_topic7</description>
+                    </topic>
+                    <topic>
+                        <id>c24t8</id>
+                        <description>@string/up_class_software_engineering_topic8</description>
+                    </topic>
+                    <topic>
+                        <id>c24t9</id>
+                        <description>@string/up_class_software_engineering_topic9</description>
+                    </topic>
+                    <topic>
+                        <id>c24t10</id>
+                        <description>@string/up_class_software_engineering_topic10</description>
+                    </topic>
+                    <topic>
+                        <id>c24t11</id>
+                        <description>@string/up_class_software_engineering_topic11</description>
+                    </topic>
+                    <topic>
+                        <id>c24t12</id>
+                        <description>@string/up_class_software_engineering_topic12</description>
+                    </topic>
+                    <topic>
+                        <id>c24t13</id>
+                        <description>@string/up_class_software_engineering_topic13</description>
+                    </topic>
+                    <topic>
+                        <id>c24t14</id>
+                        <description>@string/up_class_software_engineering_topic14</description>
+                    </topic>
+                    <topic>
+                        <id>c24t15</id>
+                        <description>@string/up_class_software_engineering_topic15</description>
+                    </topic>
+                    <topic>
+                        <id>c24t16</id>
+                        <description>@string/up_class_software_engineering_topic16</description>
+                    </topic>
+                    <topic>
+                        <id>c24t17</id>
+                        <description>@string/up_class_software_engineering_topic17</description>
+                    </topic>
+                    <topic>
+                        <id>c24t18</id>
+                        <description>@string/up_class_software_engineering_topic18</description>
+                    </topic>
+                    <topic>
+                        <id>c24t19</id>
+                        <description>@string/up_class_software_engineering_topic19</description>
+                    </topic>
+                    <topic>
+                        <id>c24t20</id>
+                        <description>@string/up_class_software_engineering_topic20</description>
+                    </topic>
+                    <topic>
+                        <id>c24t21</id>
+                        <description>@string/up_class_software_engineering_topic21</description>
+                    </topic>
+                    <topic>
+                        <id>c24t22</id>
+                        <description>@string/up_class_software_engineering_topic22</description>
+                    </topic>
+                    <topic>
+                        <id>c24t23</id>
+                        <description>@string/up_class_software_engineering_topic23</description>
+                    </topic>
+                    <topic>
+                        <id>c24t24</id>
+                        <description>@string/up_class_software_engineering_topic24</description>
+                    </topic>
+                    <topic>
+                        <id>c24t25</id>
+                        <description>@string/up_class_software_engineering_topic25</description>
+                    </topic>
+                    <topic>
+                        <id>c24t26</id>
+                        <description>@string/up_class_software_engineering_topic26</description>
+                    </topic>
+                    <topic>
+                        <id>c24t27</id>
+                        <description>@string/up_class_software_engineering_topic27</description>
+                    </topic>
+                    <topic>
+                        <id>c24t28</id>
+                        <description>@string/up_class_software_engineering_topic28</description>
+                    </topic>
+                    <topic>
+                        <id>c24t29</id>
+                        <description>@string/up_class_software_engineering_topic29</description>
+                    </topic>
+                    <topic>
+                        <id>c24t30</id>
+                        <description>@string/up_class_software_engineering_topic30</description>
+                    </topic>
+                    <topic>
+                        <id>c24t31</id>
+                        <description>@string/up_class_software_engineering_topic31</description>
+                    </topic>
+                    <topic>
+                        <id>c24t32</id>
+                        <description>@string/up_class_software_engineering_topic32</description>
+                    </topic>
+                    <topic>
+                        <id>c24t33</id>
+                        <description>@string/up_class_software_engineering_topic33</description>
+                    </topic>
+                    <topic>
+                        <id>c24t34</id>
+                        <description>@string/up_class_software_engineering_topic34</description>
+                    </topic>
+                    <topic>
+                        <id>c24t35</id>
+                        <description>@string/up_class_software_engineering_topic35</description>
+                    </topic>
+                    <topic>
+                        <id>c24t36</id>
+                        <description>@string/up_class_software_engineering_topic36</description>
+                    </topic>
+                    <topic>
+                        <id>c24t37</id>
+                        <description>@string/up_class_software_engineering_topic37</description>
+                    </topic>
+                    <topic>
+                        <id>c24t38</id>
+                        <description>@string/up_class_software_engineering_topic38</description>
+                    </topic>
+                    <topic>
+                        <id>c24t39</id>
+                        <description>@string/up_class_software_engineering_topic39</description>
+                    </topic>
+                    <topic>
+                        <id>c24t40</id>
+                        <description>@string/up_class_software_engineering_topic40</description>
+                    </topic>
+                </program>
+            </class>
+            <class>
+                <id>mieic_c25</id>
+                <name>@string/up_class_computer_networks</name>
+                <year>3</year>
+                <semester>1</semester>
+                <ects>6</ects>
+                <optional>false</optional>
+                <program>
+                    <topic>
+                        <id>c25t1</id>
+                        <description>@string/up_class_computer_networks_topic1</description>
+                    </topic>
+                    <topic>
+                        <id>c25t2</id>
+                        <description>@string/up_class_computer_networks_topic2</description>
+                    </topic>
+                    <topic>
+                        <id>c25t3</id>
+                        <description>@string/up_class_computer_networks_topic3</description>
+                    </topic>
+                    <topic>
+                        <id>c25t4</id>
+                        <description>@string/up_class_computer_networks_topic4</description>
+                    </topic>
+                    <topic>
+                        <id>c25t5</id>
+                        <description>@string/up_class_computer_networks_topic5</description>
+                    </topic>
+                    <topic>
+                        <id>c25t6</id>
+                        <description>@string/up_class_computer_networks_topic6</description>
+                    </topic>
+                    <topic>
+                        <id>c25t7</id>
+                        <description>@string/up_class_computer_networks_topic7</description>
+                    </topic>
+                    <topic>
+                        <id>c25t8</id>
+                        <description>@string/up_class_computer_networks_topic8</description>
+                    </topic>
+                    <topic>
+                        <id>c25t9</id>
+                        <description>@string/up_class_computer_networks_topic9</description>
+                    </topic>
+                    <topic>
+                        <id>c25t10</id>
+                        <description>@string/up_class_computer_networks_topic10</description>
+                    </topic>
+                </program>
+            </class>
+            <class>
+                <id>mieic_c26</id>
+                <name>@string/up_class_web_tech</name>
+                <year>3</year>
+                <semester>2</semester>
+                <ects>7.5</ects>
+                <optional>false</optional>
+                <program>
+                    <topic>
+                        <id>c26t1</id>
+                        <description>@string/up_class_web_tech_topic1</description>
+                    </topic>
+                    <topic>
+                        <id>c26t2</id>
+                        <description>@string/up_class_web_tech_topic2</description>
+                    </topic>
+                    <topic>
+                        <id>c26t3</id>
+                        <description>@string/up_class_web_tech_topic3</description>
+                    </topic>
+                    <topic>
+                        <id>c26t4</id>
+                        <description>@string/up_class_web_tech_topic4</description>
+                    </topic>
+                    <topic>
+                        <id>c26t5</id>
+                        <description>@string/up_class_web_tech_topic5</description>
+                    </topic>
+                    <topic>
+                        <id>c26t6</id>
+                        <description>@string/up_class_web_tech_topic6</description>
+                    </topic>
+                    <topic>
+                        <id>c26t7</id>
+                        <description>@string/up_class_web_tech_topic7</description>
+                    </topic>
+                    <topic>
+                        <id>c26t8</id>
+                        <description>@string/up_class_web_tech_topic8</description>
+                    </topic>
+                    <topic>
+                        <id>c26t9</id>
+                        <description>@string/up_class_web_tech_topic9</description>
+                    </topic>
+                </program>
+            </class>
+            <class>
+                <id>mieic_c27</id>
+                <name>@string/up_class_db_web_labs</name>
                 <year>3</year>
                 <semester>2</semester>
                 <ects>6</ects>
+                <optional>false</optional>
                 <program>
                     <topic>
-                        <id>c8t1</id>
-                        <description>@string/up_class_programming_topic1</description>
+                        <id>c27t1</id>
+                        <description>@string/up_class_db_web_labs_topic1</description>
+                    </topic>
+                    <topic>
+                        <id>c27t2</id>
+                        <description>@string/up_class_db_web_labs_topic2</description>
+                    </topic>
+                    <topic>
+                        <id>c27t3</id>
+                        <description>@string/up_class_db_web_labs_topic3</description>
+                    </topic>
+                    <topic>
+                        <id>c27t4</id>
+                        <description>@string/up_class_db_web_labs_topic4</description>
+                    </topic>
+                    <topic>
+                        <id>c27t5</id>
+                        <description>@string/up_class_db_web_labs_topic5</description>
+                    </topic>
+                    <topic>
+                        <id>c27t6</id>
+                        <description>@string/up_class_db_web_labs_topic6</description>
+                    </topic>
+                </program>
+            </class>
+            <class>
+                <id>mieic_c28</id>
+                <name>@string/up_class_ai</name>
+                <year>3</year>
+                <semester>2</semester>
+                <ects>6</ects>
+                <optional>false</optional>
+                <program>
+                    <topic>
+                        <id>c28t1</id>
+                        <description>@string/up_class_ai_topic1</description>
+                    </topic>
+                    <topic>
+                        <id>c28t2</id>
+                        <description>@string/up_class_ai_topic2</description>
+                    </topic>
+                    <topic>
+                        <id>c28t3</id>
+                        <description>@string/up_class_ai_topic3</description>
+                    </topic>
+                    <topic>
+                        <id>c28t4</id>
+                        <description>@string/up_class_ai_topic4</description>
+                    </topic>
+                    <topic>
+                        <id>c28t5</id>
+                        <description>@string/up_class_ai_topic5</description>
+                    </topic>
+                    <topic>
+                        <id>c28t6</id>
+                        <description>@string/up_class_ai_topic6</description>
+                    </topic>
+                    <topic>
+                        <id>c28t7</id>
+                        <description>@string/up_class_ai_topic7</description>
+                    </topic>
+                    <topic>
+                        <id>c28t8</id>
+                        <description>@string/up_class_ai_topic8</description>
+                    </topic>
+                    <topic>
+                        <id>c28t9</id>
+                        <description>@string/up_class_ai_topic9</description>
+                    </topic>
+                    <topic>
+                        <id>c28t10</id>
+                        <description>@string/up_class_ai_topic10</description>
+                    </topic>
+                    <topic>
+                        <id>c28t11</id>
+                        <description>@string/up_class_ai_topic11</description>
+                    </topic>
+                    <topic>
+                        <id>c28t12</id>
+                        <description>@string/up_class_ai_topic12</description>
+                    </topic>
+                    <topic>
+                        <id>c28t13</id>
+                        <description>@string/up_class_ai_topic13</description>
+                    </topic>
+                    <topic>
+                        <id>c28t14</id>
+                        <description>@string/up_class_ai_topic14</description>
+                    </topic>
+                    <topic>
+                        <id>c28t15</id>
+                        <description>@string/up_class_ai_topic15</description>
+                    </topic>
+                    <topic>
+                        <id>c28t16</id>
+                        <description>@string/up_class_ai_topic16</description>
+                    </topic>
+                    <topic>
+                        <id>c28t17</id>
+                        <description>@string/up_class_ai_topic17</description>
+                    </topic>
+                    <topic>
+                        <id>c28t18</id>
+                        <description>@string/up_class_ai_topic18</description>
+                    </topic>
+                    <topic>
+                        <id>c28t19</id>
+                        <description>@string/up_class_ai_topic19</description>
+                    </topic>
+                    <topic>
+                        <id>c28t20</id>
+                        <description>@string/up_class_ai_topic20</description>
+                    </topic>
+                    <topic>
+                        <id>c28t21</id>
+                        <description>@string/up_class_ai_topic21</description>
+                    </topic>
+                    <topic>
+                        <id>c28t22</id>
+                        <description>@string/up_class_ai_topic22</description>
+                    </topic>
+                    <topic>
+                        <id>c28t23</id>
+                        <description>@string/up_class_ai_topic23</description>
+                    </topic>
+                    <topic>
+                        <id>c28t24</id>
+                        <description>@string/up_class_ai_topic24</description>
+                    </topic>
+                    <topic>
+                        <id>c28t25</id>
+                        <description>@string/up_class_ai_topic25</description>
+                    </topic>
+                    <topic>
+                        <id>c28t26</id>
+                        <description>@string/up_class_ai_topic26</description>
+                    </topic>
+                    <topic>
+                        <id>c28t27</id>
+                        <description>@string/up_class_ai_topic27</description>
+                    </topic>
+                    <topic>
+                        <id>c28t28</id>
+                        <description>@string/up_class_ai_topic28</description>
+                    </topic>
+                    <topic>
+                        <id>c28t29</id>
+                        <description>@string/up_class_ai_topic29</description>
+                    </topic>
+                    <topic>
+                        <id>c28t30</id>
+                        <description>@string/up_class_ai_topic30</description>
+                    </topic>
+                    <topic>
+                        <id>c28t31</id>
+                        <description>@string/up_class_ai_topic31</description>
+                    </topic>
+                    <topic>
+                        <id>c28t32</id>
+                        <description>@string/up_class_ai_topic32</description>
+                    </topic>
+                    <topic>
+                        <id>c28t33</id>
+                        <description>@string/up_class_ai_topic33</description>
+                    </topic>
+                    <topic>
+                        <id>c28t34</id>
+                        <description>@string/up_class_ai_topic34</description>
+                    </topic>
+                    <topic>
+                        <id>c28t35</id>
+                        <description>@string/up_class_ai_topic35</description>
+                    </topic>
+                    <topic>
+                        <id>c28t36</id>
+                        <description>@string/up_class_ai_topic36</description>
+                    </topic>
+                    <topic>
+                        <id>c28t37</id>
+                        <description>@string/up_class_ai_topic37</description>
+                    </topic>
+                    <topic>
+                        <id>c28t38</id>
+                        <description>@string/up_class_ai_topic38</description>
+                    </topic>
+                    <topic>
+                        <id>c28t39</id>
+                        <description>@string/up_class_ai_topic39</description>
+                    </topic>
+                    <topic>
+                        <id>c28t40</id>
+                        <description>@string/up_class_ai_topic40</description>
+                    </topic>
+                    <topic>
+                        <id>c28t41</id>
+                        <description>@string/up_class_ai_topic41</description>
+                    </topic>
+                    <topic>
+                        <id>c28t42</id>
+                        <description>@string/up_class_ai_topic42</description>
+                    </topic>
+                    <topic>
+                        <id>c28t43</id>
+                        <description>@string/up_class_ai_topic43</description>
+                    </topic>
+                </program>
+            </class>
+            <class>
+                <id>mieic_c29</id>
+                <name>@string/up_class_compilers</name>
+                <year>3</year>
+                <semester>2</semester>
+                <ects>6</ects>
+                <optional>false</optional>
+                <program>
+                    <topic>
+                        <id>c29t1</id>
+                        <description>@string/up_class_compilers_topic1</description>
+                    </topic>
+                    <topic>
+                        <id>c29t2</id>
+                        <description>@string/up_class_compilers_topic2</description>
+                    </topic>
+                    <topic>
+                        <id>c29t3</id>
+                        <description>@string/up_class_compilers_topic3</description>
+                    </topic>
+                    <topic>
+                        <id>c29t4</id>
+                        <description>@string/up_class_compilers_topic4</description>
+                    </topic>
+                    <topic>
+                        <id>c29t5</id>
+                        <description>@string/up_class_compilers_topic5</description>
+                    </topic>
+                    <topic>
+                        <id>c29t6</id>
+                        <description>@string/up_class_compilers_topic6</description>
+                    </topic>
+                    <topic>
+                        <id>c29t7</id>
+                        <description>@string/up_class_compilers_topic7</description>
+                    </topic>
+                    <topic>
+                        <id>c29t8</id>
+                        <description>@string/up_class_compilers_topic8</description>
+                    </topic>
+                    <topic>
+                        <id>c29t9</id>
+                        <description>@string/up_class_compilers_topic9</description>
+                    </topic>
+                    <topic>
+                        <id>c29t10</id>
+                        <description>@string/up_class_compilers_topic10</description>
+                    </topic>
+                    <topic>
+                        <id>c29t11</id>
+                        <description>@string/up_class_compilers_topic11</description>
+                    </topic>
+                    <topic>
+                        <id>c29t12</id>
+                        <description>@string/up_class_compilers_topic12</description>
+                    </topic>
+                    <topic>
+                        <id>c29t13</id>
+                        <description>@string/up_class_compilers_topic14</description>
+                    </topic>
+                </program>
+            </class>
+            <class>
+                <id>mieic_c30</id>
+                <name>@string/up_class_distributed_systems</name>
+                <year>3</year>
+                <semester>2</semester>
+                <ects>6</ects>
+                <optional>false</optional>
+                <program>
+                    <topic>
+                        <id>c30t1</id>
+                        <description>@string/up_class_distributed_systems_topic1</description>
+                    </topic>
+                    <topic>
+                        <id>c30t2</id>
+                        <description>@string/up_class_distributed_systems_topic2</description>
+                    </topic>
+                    <topic>
+                        <id>c30t3</id>
+                        <description>@string/up_class_distributed_systems_topic3</description>
+                    </topic>
+                    <topic>
+                        <id>c30t4</id>
+                        <description>@string/up_class_distributed_systems_topic4</description>
+                    </topic>
+                    <topic>
+                        <id>c30t5</id>
+                        <description>@string/up_class_distributed_systems_topic5</description>
+                    </topic>
+                    <topic>
+                        <id>c30t6</id>
+                        <description>@string/up_class_distributed_systems_topic6</description>
+                    </topic>
+                    <topic>
+                        <id>c30t7</id>
+                        <description>@string/up_class_distributed_systems_topic7</description>
+                    </topic>
+                    <topic>
+                        <id>c30t8</id>
+                        <description>@string/up_class_distributed_systems_topic8</description>
+                    </topic>
+                    <topic>
+                        <id>c30t9</id>
+                        <description>@string/up_class_distributed_systems_topic9</description>
+                    </topic>
+                    <topic>
+                        <id>c30t10</id>
+                        <description>@string/up_class_distributed_systems_topic10</description>
+                    </topic>
+                </program>
+            </class>
+            <class>
+                <id>mieic_c31</id>
+                <name>@string/up_class_personal_development</name>
+                <year>3</year>
+                <semester>2</semester>
+                <ects>4.5</ects>
+                <optional>false</optional>
+                <program>
+                    <topic>
+                        <id>c31t1</id>
+                        <description>@string/up_class_personal_development_topic1</description>
+                    </topic>
+                    <topic>
+                        <id>c31t2</id>
+                        <description>@string/up_class_personal_development_topic2</description>
+                    </topic>
+                    <topic>
+                        <id>c31t3</id>
+                        <description>@string/up_class_personal_development_topic3</description>
+                    </topic>
+                    <topic>
+                        <id>c31t4</id>
+                        <description>@string/up_class_personal_development_topic4</description>
+                    </topic>
+                    <topic>
+                        <id>c31t5</id>
+                        <description>@string/up_class_personal_development_topic5</description>
+                    </topic>
+                    <topic>
+                        <id>c31t6</id>
+                        <description>@string/up_class_personal_development_topic6</description>
+                    </topic>
+                    <topic>
+                        <id>c31t7</id>
+                        <description>@string/up_class_personal_development_topic7</description>
+                    </topic>
+                    <topic>
+                        <id>c31t8</id>
+                        <description>@string/up_class_personal_development_topic8</description>
+                    </topic>
+                    <topic>
+                        <id>c31t9</id>
+                        <description>@string/up_class_personal_development_topic9</description>
+                    </topic>
+                    <topic>
+                        <id>c31t10</id>
+                        <description>@string/up_class_personal_development_topic10</description>
+                    </topic>
+                    <topic>
+                        <id>c31t11</id>
+                        <description>@string/up_class_personal_development_topic11</description>
+                    </topic>
+                    <topic>
+                        <id>c31t12</id>
+                        <description>@string/up_class_personal_development_topic12</description>
+                    </topic>
+                </program>
+            </class>
+            <class>
+                <id>mieic_c32</id>
+                <name>@string/up_class_personal_development</name>
+                <year>4</year>
+                <semester>1</semester>
+                <ects>6</ects>
+                <optional>false</optional>
+                <program>
+                    <topic>
+                        <id>c31t1</id>
+                        <description>@string/up_class_personal_development_topic1</description>
+                    </topic>
+                    <topic>
+                        <id>c31t2</id>
+                        <description>@string/up_class_personal_development_topic2</description>
+                    </topic>
+                    <topic>
+                        <id>c31t3</id>
+                        <description>@string/up_class_personal_development_topic3</description>
+                    </topic>
+                    <topic>
+                        <id>c31t4</id>
+                        <description>@string/up_class_personal_development_topic4</description>
+                    </topic>
+                    <topic>
+                        <id>c31t5</id>
+                        <description>@string/up_class_personal_development_topic5</description>
+                    </topic>
+                    <topic>
+                        <id>c31t6</id>
+                        <description>@string/up_class_personal_development_topic6</description>
+                    </topic>
+                    <topic>
+                        <id>c31t7</id>
+                        <description>@string/up_class_personal_development_topic7</description>
+                    </topic>
+                    <topic>
+                        <id>c31t8</id>
+                        <description>@string/up_class_personal_development_topic8</description>
+                    </topic>
+                    <topic>
+                        <id>c31t9</id>
+                        <description>@string/up_class_personal_development_topic9</description>
+                    </topic>
+                    <topic>
+                        <id>c31t10</id>
+                        <description>@string/up_class_personal_development_topic10</description>
+                    </topic>
+                    <topic>
+                        <id>c31t11</id>
+                        <description>@string/up_class_personal_development_topic11</description>
+                    </topic>
+                    <topic>
+                        <id>c31t12</id>
+                        <description>@string/up_class_personal_development_topic12</description>
                     </topic>
                 </program>
             </class>
@@ -1428,6 +2222,7 @@
                 <year>4</year>
                 <semester>2</semester>
                 <ects>6</ects>
+                <optional>false</optional>
                 <program>
                     <topic>
                         <id>c8t1</id>
@@ -1444,6 +2239,7 @@
                 <year>5</year>
                 <semester>2</semester>
                 <ects>6</ects>
+                <optional>false</optional>
                 <program>
                     <topic>
                         <id>c8t1</id>
@@ -1470,6 +2266,7 @@
                 <year>1</year>
                 <semester>1</semester>
                 <ects>6</ects>
+                <optional>false</optional>
                 <program>
                     <topic>
                         <id>c1t1</id>
@@ -1531,6 +2328,7 @@
                 <year>1</year>
                 <semester>1</semester>
                 <ects>6</ects>
+                <optional>false</optional>
                 <program>
                     <topic>
                         <id>c1t1</id>
@@ -1592,6 +2390,7 @@
                 <year>1</year>
                 <semester>1</semester>
                 <ects>6</ects>
+                <optional>false</optional>
                 <program>
                     <topic>
                         <id>c1t1</id>
@@ -1653,6 +2452,7 @@
                 <year>1</year>
                 <semester>1</semester>
                 <ects>6</ects>
+                <optional>false</optional>
                 <program>
                     <topic>
                         <id>c1t1</id>
