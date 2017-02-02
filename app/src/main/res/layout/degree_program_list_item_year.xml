@@ -7,8 +7,9 @@
     <TextView
         android:id="@+id/year_title"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/degree_detail_program_list_year_label_line_height"
         android:background="@color/darkerBackground"
+        android:gravity="center"
         android:text="Year 1"
         android:textAlignment="center"
         android:textSize="@dimen/degree_detail_program_list_year_label_text_size" />

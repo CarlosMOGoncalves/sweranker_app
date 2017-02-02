@@ -4,6 +4,7 @@ import android.app.Fragment;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
+import android.support.v4.content.ContextCompat;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.widget.DefaultItemAnimator;
@@ -24,6 +25,7 @@ import pt.cmg.sweranker.R;
 import pt.cmg.sweranker.degrees.Degree;
 import pt.cmg.sweranker.degrees.DegreeClass;
 import pt.cmg.sweranker.ui.ConstantSpacingItemDecorator;
+import pt.cmg.sweranker.ui.UnderlineDividerItemDecorator;
 
 /**
  * Created by Carlos on 25/01/2017.
@@ -153,6 +155,11 @@ public class DegreeDetailsFragment extends Fragment {
             degreeProgramList.setLayoutManager(linearLayoutManager);
 
             degreeProgramList.addItemDecoration(new ConstantSpacingItemDecorator(_context, 2, ConstantSpacingItemDecorator.Side.BOTTOM));
+            degreeProgramList.addItemDecoration(new UnderlineDividerItemDecorator.Builder(_context,
+                    ContextCompat.getColor((Context) _parentActivity, R.color.darkerBackground),
+                    1)
+                    .targetViewHolderClass(DegreeProgramAdapter.DegreeClassViewHolder.class)
+                    .build());
             degreeProgramList.setItemAnimator(new DefaultItemAnimator());
 
             DegreeProgramAdapter adapter = new DegreeProgramAdapter();

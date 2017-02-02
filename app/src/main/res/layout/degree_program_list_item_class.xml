@@ -8,6 +8,7 @@
         android:id="@+id/class_name"
         android:layout_width="match_parent"
         android:layout_height="@dimen/degree_detail_program_list_line_height"
+        android:paddingLeft="@dimen/degree_detail_program_list_class_name_left_padding"
         android:gravity="center_vertical"
         android:text="Programming in C"
         android:textSize="@dimen/degree_detail_program_list_class_name_text_size" />

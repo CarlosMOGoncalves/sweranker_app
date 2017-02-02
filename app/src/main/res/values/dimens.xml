@@ -26,7 +26,9 @@
     <dimen name="ka_detail_text_size">15dp</dimen>
 
     <dimen name="degree_detail_program_list_year_label_text_size">20dp</dimen>
+    <dimen name="degree_detail_program_list_year_label_line_height">42dp</dimen>
     <dimen name="degree_detail_program_list_class_name_text_size">15dp</dimen>
-    <dimen name="degree_detail_program_list_line_height">25dp</dimen>
+    <dimen name="degree_detail_program_list_class_name_left_padding">12dp</dimen>
+    <dimen name="degree_detail_program_list_line_height">38dp</dimen>
 
 </resources>
