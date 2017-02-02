@@ -14,6 +14,7 @@ public class DegreeClass {
     private int _year;
     private int _semester;
     private float _ectsCredits;
+    private boolean _isOptional;
     private Map<String, Integer> _program;
 
     public DegreeClass() {
@@ -70,5 +71,13 @@ public class DegreeClass {
 
     public void addProgramTopic(String topicId, int topicDescriptionResource) {
         _program.put(topicId, topicDescriptionResource);
+    }
+
+    public boolean isOptionalClass() {
+        return _isOptional;
+    }
+
+    public void setOptionalClass(boolean isOptional) {
+        _isOptional = isOptional;
     }
 }

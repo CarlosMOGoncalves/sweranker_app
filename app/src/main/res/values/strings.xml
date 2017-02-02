@@ -900,6 +900,16 @@
     <string name="up_class_operations_research_topic11">Teoria da decisão</string>
     <string name="up_class_operations_research_topic12">Filas de espera</string>
 
+    <string name="up_class_project_labs">Laboratório de Gestão de Projectos</string>
+    <string name="up_class_project_labs_topic1">Gestão de Projectos: Arranque do projecto</string>
+    <string name="up_class_project_labs_topic2">Gestão de Projectos: Planeamento do projecto (decomposição hierárquica do projecto, definição de dependências, estimação de esforços, afectação de recursos, calendarização, diagramas, documento de plano do projecto, métodos PERT e CPM)</string>
+    <string name="up_class_project_labs_topic3">Gestão de Projectos: Monitorização e controlo do projecto (medição do progresso do projecto, “earned value management,” reporte periódico, replaneamento)</string>
+    <string name="up_class_project_labs_topic4">Gestão de Projectos: Fecho do projecto (relatório de fecho, lições aprendidas)</string>
+    <string name="up_class_project_labs_topic5">Trabalho em equipa: Grupo de trabalho, equipa, estilos de gestão e organização de equipas, “team building”, liderança e “coaching”, comunicação pessoal, gestão de reuniões,  negociação e gestão de conflitos, “logbooks”.</string>
+    <string name="up_class_project_labs_topic6">Metodologias e Ferramentas: Metodologias para gestão de projectos e organização de equipas de software: Team Software Process (TSP); Scrum; Rational Unified Process (RUP)</string>
+    <string name="up_class_project_labs_topic7">Metodologias e Ferramentas: Ferramentas para gestão de projectos e trabalho em equipa</string>
+    <string name="up_class_project_labs_topic8">Experimentação: Aplicação em projectos concretos, realizados por equipas de média dimensão, dos métodos, técnicas e formas de trabalho apresentados</string>
+
 
     <string name="uminho_miei">MiEI</string>
     <string name="uminho_miei_fullname">Mestrado Integrado em Engenharia Informática</string>

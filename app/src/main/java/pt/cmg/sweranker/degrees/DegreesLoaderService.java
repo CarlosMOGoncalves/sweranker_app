@@ -164,6 +164,9 @@ public class DegreesLoaderService extends Service {
                                 case "semester":
                                     degreeClass.setSemester(Integer.valueOf(xmlParser.nextText()));
                                     break;
+                                case "optional":
+                                    degreeClass.setOptionalClass(Boolean.valueOf(xmlParser.nextText()));
+                                    break;
                                 case "ects":
                                     degreeClass.setEctsCredits(Float.valueOf(xmlParser.nextText()));
                                     break;

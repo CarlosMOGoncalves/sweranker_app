@@ -2155,78 +2155,504 @@
                     </topic>
                 </program>
             </class>
+            <!-- 3º ANO -->
+
+            <!-- 4º ANO -->
             <class>
                 <id>mieic_c32</id>
-                <name>@string/up_class_personal_development</name>
+                <name>@string/up_class_information_systems</name>
+                <year>4</year>
+                <semester>1</semester>
+                <ects>4.5</ects>
+                <optional>false</optional>
+                <program>
+                    <topic>
+                        <id>c32t1</id>
+                        <description>@string/up_class_information_systems_topic1</description>
+                    </topic>
+                    <topic>
+                        <id>c32t2</id>
+                        <description>@string/up_class_information_systems_topic2</description>
+                    </topic>
+                    <topic>
+                        <id>c32t3</id>
+                        <description>@string/up_class_information_systems_topic3</description>
+                    </topic>
+                    <topic>
+                        <id>c32t4</id>
+                        <description>@string/up_class_information_systems_topic4</description>
+                    </topic>
+                    <topic>
+                        <id>c32t5</id>
+                        <description>@string/up_class_information_systems_topic5</description>
+                    </topic>
+                    <topic>
+                        <id>c32t6</id>
+                        <description>@string/up_class_information_systems_topic6</description>
+                    </topic>
+                    <topic>
+                        <id>c32t7</id>
+                        <description>@string/up_class_information_systems_topic7</description>
+                    </topic>
+                    <topic>
+                        <id>c32t8</id>
+                        <description>@string/up_class_information_systems_topic8</description>
+                    </topic>
+                    <topic>
+                        <id>c32t9</id>
+                        <description>@string/up_class_information_systems_topic9</description>
+                    </topic>
+                    <topic>
+                        <id>c32t10</id>
+                        <description>@string/up_class_information_systems_topic10</description>
+                    </topic>
+                    <topic>
+                        <id>c32t11</id>
+                        <description>@string/up_class_information_systems_topic11</description>
+                    </topic>
+                    <topic>
+                        <id>c32t12</id>
+                        <description>@string/up_class_information_systems_topic12</description>
+                    </topic>
+                </program>
+            </class>
+            <class>
+                <id>mieic_c33</id>
+                <name>@string/up_class_software_lab</name>
+                <year>4</year>
+                <semester>1</semester>
+                <ects>7.5</ects>
+                <optional>false</optional>
+                <program>
+                    <topic>
+                        <id>c33t1</id>
+                        <description>@string/up_class_software_lab_topic1</description>
+                    </topic>
+                    <topic>
+                        <id>c33t2</id>
+                        <description>@string/up_class_software_lab_topic2</description>
+                    </topic>
+                    <topic>
+                        <id>c33t3</id>
+                        <description>@string/up_class_software_lab_topic3</description>
+                    </topic>
+                    <topic>
+                        <id>c33t4</id>
+                        <description>@string/up_class_software_lab_topic4</description>
+                    </topic>
+                    <topic>
+                        <id>c33t5</id>
+                        <description>@string/up_class_software_lab_topic5</description>
+                    </topic>
+                    <topic>
+                        <id>c33t6</id>
+                        <description>@string/up_class_software_lab_topic6</description>
+                    </topic>
+                </program>
+            </class>
+            <class>
+                <id>mieic_c34</id>
+                <name>@string/up_class_company_management</name>
                 <year>4</year>
                 <semester>1</semester>
                 <ects>6</ects>
                 <optional>false</optional>
                 <program>
                     <topic>
-                        <id>c31t1</id>
-                        <description>@string/up_class_personal_development_topic1</description>
+                        <id>c34t1</id>
+                        <description>@string/up_class_company_management_topic1</description>
                     </topic>
                     <topic>
-                        <id>c31t2</id>
-                        <description>@string/up_class_personal_development_topic2</description>
+                        <id>c34t2</id>
+                        <description>@string/up_class_company_management_topic2</description>
                     </topic>
                     <topic>
-                        <id>c31t3</id>
-                        <description>@string/up_class_personal_development_topic3</description>
+                        <id>c34t3</id>
+                        <description>@string/up_class_company_management_topic3</description>
                     </topic>
                     <topic>
-                        <id>c31t4</id>
-                        <description>@string/up_class_personal_development_topic4</description>
+                        <id>c34t4</id>
+                        <description>@string/up_class_company_management_topic4</description>
                     </topic>
                     <topic>
-                        <id>c31t5</id>
-                        <description>@string/up_class_personal_development_topic5</description>
+                        <id>c34t5</id>
+                        <description>@string/up_class_company_management_topic5</description>
                     </topic>
                     <topic>
-                        <id>c31t6</id>
-                        <description>@string/up_class_personal_development_topic6</description>
+                        <id>c34t6</id>
+                        <description>@string/up_class_company_management_topic6</description>
                     </topic>
                     <topic>
-                        <id>c31t7</id>
-                        <description>@string/up_class_personal_development_topic7</description>
+                        <id>c34t7</id>
+                        <description>@string/up_class_company_management_topic7</description>
                     </topic>
                     <topic>
-                        <id>c31t8</id>
-                        <description>@string/up_class_personal_development_topic8</description>
+                        <id>c34t8</id>
+                        <description>@string/up_class_company_management_topic8</description>
                     </topic>
                     <topic>
-                        <id>c31t9</id>
-                        <description>@string/up_class_personal_development_topic9</description>
+                        <id>c34t9</id>
+                        <description>@string/up_class_company_management_topic9</description>
                     </topic>
                     <topic>
-                        <id>c31t10</id>
-                        <description>@string/up_class_personal_development_topic10</description>
+                        <id>c34t10</id>
+                        <description>@string/up_class_company_management_topic10</description>
                     </topic>
                     <topic>
-                        <id>c31t11</id>
-                        <description>@string/up_class_personal_development_topic11</description>
+                        <id>c34t11</id>
+                        <description>@string/up_class_company_management_topic11</description>
                     </topic>
                     <topic>
-                        <id>c31t12</id>
-                        <description>@string/up_class_personal_development_topic12</description>
+                        <id>c34t12</id>
+                        <description>@string/up_class_company_management_topic12</description>
+                    </topic>
+                    <topic>
+                        <id>c34t13</id>
+                        <description>@string/up_class_company_management_topic13</description>
                     </topic>
                 </program>
             </class>
-            <!-- 3º ANO -->
-
-            <!-- 4º ANO -->
             <class>
-                <id>mieic_t11</id>
-                <name>@string/up_class_programming</name>
+                <id>mieic_c35</id>
+                <name>@string/up_class_agents_ia</name>
                 <year>4</year>
-                <semester>2</semester>
+                <semester>1</semester>
                 <ects>6</ects>
                 <optional>false</optional>
                 <program>
                     <topic>
-                        <id>c8t1</id>
-                        <description>@string/up_class_programming_topic1</description>
+                        <id>c35t1</id>
+                        <description>@string/up_class_agents_ia_topic1</description>
+                    </topic>
+                    <topic>
+                        <id>c35t2</id>
+                        <description>@string/up_class_agents_ia_topic2</description>
+                    </topic>
+                    <topic>
+                        <id>c35t3</id>
+                        <description>@string/up_class_agents_ia_topic3</description>
+                    </topic>
+                    <topic>
+                        <id>c35t4</id>
+                        <description>@string/up_class_agents_ia_topic4</description>
+                    </topic>
+                    <topic>
+                        <id>c35t5</id>
+                        <description>@string/up_class_agents_ia_topic5</description>
+                    </topic>
+                    <topic>
+                        <id>c35t6</id>
+                        <description>@string/up_class_agents_ia_topic6</description>
+                    </topic>
+                    <topic>
+                        <id>c35t7</id>
+                        <description>@string/up_class_agents_ia_topic7</description>
+                    </topic>
+                    <topic>
+                        <id>c35t8</id>
+                        <description>@string/up_class_agents_ia_topic8</description>
+                    </topic>
+                    <topic>
+                        <id>c35t9</id>
+                        <description>@string/up_class_agents_ia_topic9</description>
+                    </topic>
+                    <topic>
+                        <id>c35t10</id>
+                        <description>@string/up_class_agents_ia_topic10</description>
+                    </topic>
+                    <topic>
+                        <id>c35t11</id>
+                        <description>@string/up_class_agents_ia_topic11</description>
+                    </topic>
+                    <topic>
+                        <id>c35t12</id>
+                        <description>@string/up_class_agents_ia_topic12</description>
+                    </topic>
+                    <topic>
+                        <id>c35t13</id>
+                        <description>@string/up_class_agents_ia_topic13</description>
+                    </topic>
+                    <topic>
+                        <id>c35t14</id>
+                        <description>@string/up_class_agents_ia_topic14</description>
+                    </topic>
+                    <topic>
+                        <id>c35t15</id>
+                        <description>@string/up_class_agents_ia_topic15</description>
+                    </topic>
+                    <topic>
+                        <id>c35t16</id>
+                        <description>@string/up_class_agents_ia_topic16</description>
+                    </topic>
+                    <topic>
+                        <id>c35t17</id>
+                        <description>@string/up_class_agents_ia_topic17</description>
+                    </topic>
+                    <topic>
+                        <id>c35t18</id>
+                        <description>@string/up_class_agents_ia_topic18</description>
+                    </topic>
+                    <topic>
+                        <id>c35t19</id>
+                        <description>@string/up_class_agents_ia_topic19</description>
+                    </topic>
+                    <topic>
+                        <id>c35t20</id>
+                        <description>@string/up_class_agents_ia_topic20</description>
+                    </topic>
+                    <topic>
+                        <id>c35t21</id>
+                        <description>@string/up_class_agents_ia_topic21</description>
+                    </topic>
+                </program>
+            </class>
+            <class>
+                <id>mieic_c36</id>
+                <name>@string/up_class_formal_methods</name>
+                <year>4</year>
+                <semester>1</semester>
+                <ects>6</ects>
+                <optional>false</optional>
+                <program>
+                    <topic>
+                        <id>c36t1</id>
+                        <description>@string/up_class_formal_methods_topic1</description>
+                    </topic>
+                    <topic>
+                        <id>c36t2</id>
+                        <description>@string/up_class_formal_methods_topic2</description>
+                    </topic>
+                    <topic>
+                        <id>c36t3</id>
+                        <description>@string/up_class_formal_methods_topic3</description>
+                    </topic>
+                    <topic>
+                        <id>c36t4</id>
+                        <description>@string/up_class_formal_methods_topic4</description>
+                    </topic>
+                    <topic>
+                        <id>c36t5</id>
+                        <description>@string/up_class_formal_methods_topic5</description>
+                    </topic>
+                    <topic>
+                        <id>c36t6</id>
+                        <description>@string/up_class_formal_methods_topic6</description>
+                    </topic>
+                    <topic>
+                        <id>c36t7</id>
+                        <description>@string/up_class_formal_methods_topic7</description>
+                    </topic>
+                    <topic>
+                        <id>c36t8</id>
+                        <description>@string/up_class_formal_methods_topic8</description>
+                    </topic>
+                    <topic>
+                        <id>c36t9</id>
+                        <description>@string/up_class_formal_methods_topic9</description>
+                    </topic>
+                    <topic>
+                        <id>c36t10</id>
+                        <description>@string/up_class_formal_methods_topic10</description>
+                    </topic>
+                    <topic>
+                        <id>c36t11</id>
+                        <description>@string/up_class_formal_methods_topic11</description>
+                    </topic>
+                    <topic>
+                        <id>c36t12</id>
+                        <description>@string/up_class_formal_methods_topic12</description>
+                    </topic>
+                    <topic>
+                        <id>c36t13</id>
+                        <description>@string/up_class_formal_methods_topic13</description>
+                    </topic>
+                    <topic>
+                        <id>c36t14</id>
+                        <description>@string/up_class_formal_methods_topic14</description>
+                    </topic>
+                    <topic>
+                        <id>c36t15</id>
+                        <description>@string/up_class_formal_methods_topic15</description>
+                    </topic>
+                    <topic>
+                        <id>c36t16</id>
+                        <description>@string/up_class_formal_methods_topic16</description>
+                    </topic>
+                    <topic>
+                        <id>c36t17</id>
+                        <description>@string/up_class_formal_methods_topic17</description>
+                    </topic>
+                    <topic>
+                        <id>c36t18</id>
+                        <description>@string/up_class_formal_methods_topic18</description>
+                    </topic>
+                    <topic>
+                        <id>c36t19</id>
+                        <description>@string/up_class_formal_methods_topic19</description>
+                    </topic>
+                    <topic>
+                        <id>c36t20</id>
+                        <description>@string/up_class_formal_methods_topic20</description>
+                    </topic>
+                    <topic>
+                        <id>c36t21</id>
+                        <description>@string/up_class_formal_methods_topic21</description>
+                    </topic>
+                    <topic>
+                        <id>c36t22</id>
+                        <description>@string/up_class_formal_methods_topic22</description>
+                    </topic>
+                    <topic>
+                        <id>c36t23</id>
+                        <description>@string/up_class_formal_methods_topic23</description>
+                    </topic>
+                    <topic>
+                        <id>c36t24</id>
+                        <description>@string/up_class_formal_methods_topic24</description>
+                    </topic>
+                    <topic>
+                        <id>c36t25</id>
+                        <description>@string/up_class_formal_methods_topic25</description>
+                    </topic>
+                    <topic>
+                        <id>c36t26</id>
+                        <description>@string/up_class_formal_methods_topic26</description>
+                    </topic>
+                    <topic>
+                        <id>c36t27</id>
+                        <description>@string/up_class_formal_methods_topic27</description>
+                    </topic>
+                    <topic>
+                        <id>c36t28</id>
+                        <description>@string/up_class_formal_methods_topic28</description>
+                    </topic>
+                    <topic>
+                        <id>c36t29</id>
+                        <description>@string/up_class_formal_methods_topic29</description>
+                    </topic>
+                    <topic>
+                        <id>c36t30</id>
+                        <description>@string/up_class_formal_methods_topic30</description>
+                    </topic>
+                    <topic>
+                        <id>c36t31</id>
+                        <description>@string/up_class_formal_methods_topic31</description>
+                    </topic>
+                </program>
+            </class>
+            <class>
+                <id>mieic_c37</id>
+                <name>@string/up_class_operations_research</name>
+                <year>4</year>
+                <semester>2</semester>
+                <ects>4.5</ects>
+                <optional>false</optional>
+                <program>
+                    <topic>
+                        <id>c37t1</id>
+                        <description>@string/up_class_operations_research_topic1</description>
+                    </topic>
+                    <topic>
+                        <id>c37t2</id>
+                        <description>@string/up_class_operations_research_topic2</description>
+                    </topic>
+                    <topic>
+                        <id>c37t3</id>
+                        <description>@string/up_class_operations_research_topic3</description>
+                    </topic>
+                    <topic>
+                        <id>c37t4</id>
+                        <description>@string/up_class_operations_research_topic4</description>
+                    </topic>
+                    <topic>
+                        <id>c37t5</id>
+                        <description>@string/up_class_operations_research_topic5</description>
+                    </topic>
+                    <topic>
+                        <id>c37t6</id>
+                        <description>@string/up_class_operations_research_topic6</description>
+                    </topic>
+                    <topic>
+                        <id>c37t7</id>
+                        <description>@string/up_class_operations_research_topic7</description>
+                    </topic>
+                    <topic>
+                        <id>c37t8</id>
+                        <description>@string/up_class_operations_research_topic8</description>
+                    </topic>
+                    <topic>
+                        <id>c37t9</id>
+                        <description>@string/up_class_operations_research_topic9</description>
+                    </topic>
+                    <topic>
+                        <id>c37t10</id>
+                        <description>@string/up_class_operations_research_topic10</description>
+                    </topic>
+                    <topic>
+                        <id>c37t11</id>
+                        <description>@string/up_class_operations_research_topic11</description>
+                    </topic>
+                    <topic>
+                        <id>c37t12</id>
+                        <description>@string/up_class_operations_research_topic12</description>
+                    </topic>
+                </program>
+            </class>
+            <class>
+                <id>mieic_c38</id>
+                <name>@string/up_class_project_labs</name>
+                <year>4</year>
+                <semester>2</semester>
+                <ects>7.5</ects>
+                <optional>false</optional>
+                <program>
+                    <topic>
+                        <id>c38t1</id>
+                        <description>@string/up_class_project_labs_topic1</description>
+                    </topic>
+                    <topic>
+                        <id>c38t2</id>
+                        <description>@string/up_class_project_labs_topic2</description>
+                    </topic>
+                    <topic>
+                        <id>c38t3</id>
+                        <description>@string/up_class_project_labs_topic3</description>
+                    </topic>
+                    <topic>
+                        <id>c38t4</id>
+                        <description>@string/up_class_project_labs_topic4</description>
+                    </topic>
+                    <topic>
+                        <id>c38t5</id>
+                        <description>@string/up_class_project_labs_topic5</description>
+                    </topic>
+                    <topic>
+                        <id>c38t6</id>
+                        <description>@string/up_class_project_labs_topic6</description>
+                    </topic>
+                    <topic>
+                        <id>c38t7</id>
+                        <description>@string/up_class_project_labs_topic7</description>
+                    </topic>
+                    <topic>
+                        <id>c38t8</id>
+                        <description>@string/up_class_project_labs_topic8</description>
+                    </topic>
+                    <topic>
+                        <id>c38t9</id>
+                        <description>@string/up_class_project_labs_topic9</description>
+                    </topic>
+                    <topic>
+                        <id>c38t10</id>
+                        <description>@string/up_class_project_labs_topic10</description>
+                    </topic>
+                    <topic>
+                        <id>c38t11</id>
+                        <description>@string/up_class_project_labs_topic11</description>
+                    </topic>
+                    <topic>
+                        <id>c38t12</id>
+                        <description>@string/up_class_project_labs_topic12</description>
                     </topic>
                 </program>
             </class>
@@ -2248,6 +2674,7 @@
                 </program>
             </class>
             <!-- 5º ANO -->
+
         </classes>
     </degree>
 
