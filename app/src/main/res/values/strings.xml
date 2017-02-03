@@ -1347,6 +1347,6 @@
     <string name="ist_meic">LEIC + MEIC</string>
     <string name="ist_meic_fullname">Licenciatura em Engenheria Informatica e de Computadores e Mestrado em Engenharia Informática e de Computadores</string>
     <string name="ist_meic_description">Licenciatura em Engenheria Informatica e de Computadores seguida de Mestrado em Engenharia Informática e de Computadores do Insituto Superio Técnico da Universidade de Lisboa. 3 + 2 anos de estudo.</string>
-    <string name="ist">Instituto Superior Técnico - Lisboa</string>
+    <string name="ist">Instituto Superior Técnico</string>
 
 </resources>

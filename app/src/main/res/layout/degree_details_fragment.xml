@@ -52,7 +52,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:transitionGroup="true">
+        android:transitionGroup="true"
+        android:background="@android:color/background_light">
 
         <android.support.design.widget.TabLayout
             android:id="@+id/degree_tabs"

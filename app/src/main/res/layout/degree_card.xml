@@ -29,22 +29,22 @@
                 app:srcCompat="@drawable/feup_logo" />
 
             <TextView
-                android:id="@+id/degree_name"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/university_image"
-                android:text="MEI"
-                android:textAlignment="center"
-                android:textColor="@color/colorPrimaryDark"
-                android:background="@android:color/background_light" />
-
-            <TextView
                 android:id="@+id/university_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/degree_name"
+                android:layout_below="@id/university_image"
                 android:text="UMinho"
                 android:textAlignment="center"
+                android:background="@android:color/background_light" />
+
+            <TextView
+                android:id="@+id/degree_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/university_name"
+                android:text="MEI"
+                android:textAlignment="center"
+                android:textColor="@color/colorPrimaryDark"
                 android:background="@android:color/background_light" />
 
         </LinearLayout>
