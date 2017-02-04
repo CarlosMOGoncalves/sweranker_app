@@ -5,9 +5,12 @@ import android.content.Context;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -65,6 +68,45 @@ public class SwebokFragment extends Fragment {
         super.onCreate(savedInstanceState);
     }
 
+
+    private class SlideUnderToolbar extends RecyclerView.OnScrollListener{
+
+
+        private RecyclerView _grid;
+        private LinearLayoutManager _layoutManager;
+        private Toolbar _toolBar;
+
+        private SlideUnderToolbar(RecyclerView grid , LinearLayoutManager manager , Toolbar toolbar){
+            _layoutManager = manager;
+            _toolBar = toolbar;
+            _grid = grid;
+        }
+
+        @Override
+        public void onScrollStateChanged(RecyclerView recyclerView, int newState) {
+            // we want the grid to scroll over the top of the toolbar but for the toolbar items
+            // to be clickable when visible. To achieve this we play games with elevation. The
+            // toolbar is laid out in front of the grid but when we scroll, we lower it's elevation
+            // to allow the content to pass in front (and reset when scrolled to top of the grid)
+            if (newState == RecyclerView.SCROLL_STATE_IDLE
+                    && _layoutManager.findFirstVisibleItemPosition() == 0
+                    && _layoutManager.findViewByPosition(0).getTop() == _grid.getPaddingTop()
+                    && _toolBar.getTranslationZ() != 0) {
+                // at top, reset elevation
+                _toolBar.setTranslationZ(0f);
+            } else if (newState == RecyclerView.SCROLL_STATE_DRAGGING
+                    && _toolBar.getTranslationZ() != -1f) {
+                // grid scrolled, lower toolbar to allow content to pass in front
+                _toolBar.setTranslationZ(-1f);
+                _toolBar.setElevation(-1f);
+            }
+        }
+    }
+
+
+
+
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -74,7 +116,7 @@ public class SwebokFragment extends Fragment {
 
         KnowledgeAreaAdapter adapter = new KnowledgeAreaAdapter(this.getActivity(), _parentActivity.loadKnowledgeAreasForSwebokFragment());
 
-        RecyclerView.LayoutManager mLayoutManager = new GridLayoutManager(this.getActivity(), 2);
+        GridLayoutManager mLayoutManager = new GridLayoutManager(this.getActivity(), 2);
         _swebokGrid.setLayoutManager(mLayoutManager);
         _swebokGrid.addItemDecoration(new ConstantSpacingItemDecorator(this.getActivity(),
                 10,
