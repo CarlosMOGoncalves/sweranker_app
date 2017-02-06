@@ -112,7 +112,7 @@ public class DegreeDetailsFragment extends Fragment {
         degreeName.setText(this.getResources().getText(_degree.getFullNameResource()));
 
         ViewPager viewPager = (ViewPager) _myView.findViewById(R.id.degree_viewPager);
-        viewPager.setAdapter(new CustomPagerAdapter(this.getActivity()));
+        viewPager.setAdapter(new TwoStaticPagesAdapter(this.getActivity()));
 
         TabLayout tabLayout = (TabLayout) _myView.findViewById(R.id.degree_tabs);
         tabLayout.setupWithViewPager(viewPager);
@@ -121,11 +121,11 @@ public class DegreeDetailsFragment extends Fragment {
     }
 
 
-    private class CustomPagerAdapter extends PagerAdapter {
+    private class TwoStaticPagesAdapter extends PagerAdapter {
 
         private Context _context;
 
-        private CustomPagerAdapter(Context context) {
+        private TwoStaticPagesAdapter(Context context) {
             _context = context;
         }
 
@@ -185,10 +185,10 @@ public class DegreeDetailsFragment extends Fragment {
         @Override
         public CharSequence getPageTitle(int position) {
             if (position == 0) {
-                return "Info";
+                return _context.getString(R.string.info);
             }
 
-            return "Program";
+            return _context.getString(R.string.program);
         }
 
         private class DegreeProgramAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {

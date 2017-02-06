@@ -71,7 +71,7 @@ public class DegreesFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        _myRootView = inflater.inflate(R.layout.degrees_fragment, container, false);
+        _myRootView = inflater.inflate(R.layout.degrees_grid_fragment, container, false);
 
         _degreesGrid = (RecyclerView) _myRootView.findViewById(R.id.degrees_grid);
 

@@ -5,7 +5,6 @@ import android.content.Context;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
@@ -110,7 +109,7 @@ public class SwebokFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        _myView = inflater.inflate(R.layout.fragment_swebok, container, false);
+        _myView = inflater.inflate(R.layout.swebok_kas_grid_fragment, container, false);
 
         _swebokGrid = (RecyclerView) _myView.findViewById(R.id.swebok_grid);
 

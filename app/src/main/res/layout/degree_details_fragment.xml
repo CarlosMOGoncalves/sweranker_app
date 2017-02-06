@@ -8,12 +8,12 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="200dp">
+        android:layout_height="wrap_content">
 
         <ImageView
             android:id="@+id/degree_image"
-            android:layout_width="200dp"
-            android:layout_height="200dp"
+            android:layout_width="@dimen/degree_detail_image_size"
+            android:layout_height="@dimen/degree_detail_image_size"
             android:layout_alignParentStart="true"
             android:background="@android:color/background_light"
             android:scaleType="fitCenter"
@@ -25,35 +25,35 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_toRightOf="@+id/degree_image"
+            android:background="@android:color/background_light"
             android:gravity="center"
             android:padding="@dimen/ka_title_padding"
             android:text="Universidade do Minho"
             android:textAlignment="viewStart"
             android:textColor="@android:color/black"
-            android:transitionName="university_name"
-            android:background="@android:color/background_light"
-            android:textSize="@dimen/ka_detail_title_size" />
+            android:textSize="@dimen/ka_detail_title_size"
+            android:transitionName="university_name" />
 
         <TextView
             android:id="@+id/degree_name"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_toRightOf="@+id/degree_image"
+            android:layout_height="wrap_content"
             android:layout_below="@+id/university_name"
+            android:layout_toRightOf="@+id/degree_image"
+            android:background="@android:color/background_light"
             android:padding="@dimen/ka_title_padding"
             android:textAlignment="viewStart"
-            android:transitionName="degree_name"
-            android:background="@android:color/background_light"
-            android:textColor="@color/colorPrimaryDark" />
+            android:textColor="@color/colorPrimaryDark"
+            android:transitionName="degree_name" />
 
     </RelativeLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@android:color/background_light"
         android:orientation="vertical"
-        android:transitionGroup="true"
-        android:background="@android:color/background_light">
+        android:transitionGroup="true">
 
         <android.support.design.widget.TabLayout
             android:id="@+id/degree_tabs"

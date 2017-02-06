@@ -10,8 +10,11 @@
 
     <string name="action_settings">Definições</string>
 
+    <string name="program">Programa</string>
+    <string name="info">Informação</string>
     <string name="topics">Tópicos</string>
     <string name="topics_lowercase">tópicos</string>
+
     <string name="description">Descrição</string>
     <string name="year">Ano</string>
 
@@ -42,7 +45,7 @@
     <string name="ka2_topic1_name">Fundamentos de Desenho de Software</string>
     <string name="ka2_topic1_description">Sobre os conceitos gerais de desenho (como objectivo, restrições, alternativas, contexto etc.);\no processo de desenho (diferença entre desenho arquitectural e detalhado);\nos principios do desenho de software (como asbtracção, acoplamento, coesão, decomposição, modularização, encapsulamento, separação de interface e implementação, suficiência, completividade, etc.).</string>
     <string name="ka2_topic2_name">Problemas-chave no Desenho de Software</string>
-    <string name="ka2_topic2_description">Sobre os problemas típicos no desenho de software como concurrência: controlo de eventos;\npersistência de dados;\ndistribuição de componentes e comunicação entre si;\ntratamento de erros e tolerância a falhas;\ninteracção e apresentação;\nsegurança.</string>
+    <string name="ka2_topic2_description">Sobre os problemas típicos no desenho de software como concorrência: controlo de eventos;\npersistência de dados;\ndistribuição de componentes e comunicação entre si;\ntratamento de erros e tolerância a falhas;\ninteracção e apresentação;\nsegurança.</string>
     <string name="ka2_topic3_name">Estrutura e Arquitectura de Software</string>
     <string name="ka2_topic3_description">Sobre estruturas e vistas do software tais como lógica, processual, física ou desenvolvimento;\nestilos de arquitectura comuns ( contrução por camadas, sistemas distribuídos, sistemas interactivos, sistemas adaptáveis ou outros);\npadrões de design (como “builder”, “factory”, “adapter”;\n“bridge”, “iterator”, “strategy”, etc.);\no cariz decisório do processo de design;\nfamilías de programas e “frameworks” de software.</string>
     <string name="ka2_topic4_name">Desenho de Interface com o Utilizador</string>
@@ -270,7 +273,7 @@
 
     <string name="up_mieic">MIEIC</string>
     <string name="up_mieic_fullname">Mestrado Integrado em Engenharia Informática e Computação</string>
-    <string name="up_mieic_description">O ensino da Engenharia Informática e Computação foi concebido na FEUP como requerendo um ciclo de formação e aprendizagem completo de cinco anos integrados, correspondendo aos 1º e 2º ciclos da implementação do Processo de Bolonha e conferindo de imediato o grau de Mestre.\n\nNo final dos três primeiros anos (1º ciclo) do MIEIC os alunos estarão providos de uma sólida formação de base, abrangendo as competências científicas e de engenharia essenciais, mas também os conhecimentos fundamentais de banda larga nas diversas áreas da informática, embora sem qualquer especialização. Este primeiro degrau é visto sobretudo como possibilitador de mobilidade de e para outras escolas nacionais e europeias.\n\nNo final dos cinco anos do curso os diplomados terão uma formação avançada em Engenharia Informática e Computação, podendo ter escolhido uma área de especialização ou manter um leque mais alargado de interesses, mercê de uma ampla oferta de opções, configurável individualmente, contida no plano de estudos. As possíveis especializações incluem atualmente:\n\nEngenharia de Software e Sistemas de Informação (2 sub-áreas com estes nomes)\nRedes e Tecnologias de Informação (sub-áreas de Tecnologias da Internet e de Infra-estruturas Informáticas)\nSistemas Inteligentes e Multimédia (2 sub-áreas com estes nomes)</string>
+    <string name="up_mieic_description">O ensino da Engenharia Informática e Computação foi concebido na FEUP como requerendo um ciclo de formação e aprendizagem completo de cinco anos integrados, correspondendo aos 1º e 2º ciclos da implementação do Processo de Bolonha e conferindo de imediato o grau de Mestre.\n\nNo final dos três primeiros anos (1º ciclo) do MIEIC os alunos estarão providos de uma sólida formação de base, abrangendo as competências científicas e de engenharia essenciais, mas também os conhecimentos fundamentais de banda larga nas diversas áreas da informática, embora sem qualquer especialização. Este primeiro degrau é visto sobretudo como possibilitador de mobilidade de e para outras escolas nacionais e europeias.\n\nNo final dos cinco anos do curso os diplomados terão uma formação avançada em Engenharia Informática e Computação, podendo ter escolhido uma área de especialização ou manter um leque mais alargado de interesses, mercê de uma ampla oferta de opções, configurável individualmente, contida no plano de estudos. As possíveis especializações incluem atualmente:\n\n- Engenharia de Software e Sistemas de Informação (2 sub-áreas com estes nomes)\n\n-Redes e Tecnologias de Informação (sub-áreas de Tecnologias da Internet e de Infra-estruturas Informáticas)\n\n-Sistemas Inteligentes e Multimédia (2 sub-áreas com estes nomes)</string>
     <string name="up">Universidade do Porto</string>
 
     <string name="up_class_discrete_mathematics">Matemática Discreta</string>
