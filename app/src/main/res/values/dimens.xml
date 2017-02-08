@@ -10,6 +10,7 @@
     <dimen name="backdrop_subtitle">18dp</dimen>
 
     <dimen name="card_margin">5dp</dimen>
+    <dimen name="card_inner_padding">5dp</dimen>
     <dimen name="card_album_radius">0dp</dimen>
     <dimen name="card_size">200dp</dimen>
 
@@ -31,5 +32,9 @@
     <dimen name="degree_detail_program_list_class_name_text_size">15dp</dimen>
     <dimen name="degree_detail_program_list_class_name_left_padding">12dp</dimen>
     <dimen name="degree_detail_program_list_line_height">38dp</dimen>
+
+    <dimen name="degree_class_title_size">25dp</dimen>
+    <dimen name="degree_class_list_item_size">15dp</dimen>
+    <dimen name="degree_class_list_line_height">25dp</dimen>
 
 </resources>

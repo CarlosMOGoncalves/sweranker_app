@@ -277,6 +277,7 @@
     <string name="up">Universidade do Porto</string>
 
     <string name="up_class_discrete_mathematics">Matemática Discreta</string>
+    <string name="up_class_discrete_mathematics_description">A Lógica constitui a base de qualquer raciocínio científico e essa é a razão primeira da sua inclusão no 1º ano do curso. Para além disso, no caso da Engenharia Informática, a Lógica tem um interesse directo operacional em múltiplas dimensões da profissão.</string>
     <string name="up_class_discrete_mathematics_topic1">Lógica proposicional</string>
     <string name="up_class_discrete_mathematics_topic2">Métodos de prova em lógica proposicional</string>
     <string name="up_class_discrete_mathematics_topic3">Quantificadores e representação do conhecimento</string>
@@ -289,6 +290,7 @@
     <string name="up_class_discrete_mathematics_topic10">Relações de recorrência</string>
 
     <string name="up_class_computer_architecture">Arquitectura e Organização de Computadores</string>
+    <string name="up_class_computer_architecture_description">Esta unidade curricular introduz os princípios de funcionamento de um computador moderno e a sua arquitectura geral, com especial ênfase na contribuição de cada subsistema para o desempenho global. A análise da tecnologia de implementação física dos computadores (circuitos lógicos e de memória), associada à explicação das formas elementares de representação de informação em formato digital, permitirá aos estudantes identificar e descrever princípios fundamentais da operação dos computadores, das linguagens de programação e do desenvolvimento de software.</string>
     <string name="up_class_computer_architecture_topic1">Áreas de aplicação de computadores e suas características</string>
     <string name="up_class_computer_architecture_topic2">Representação binária de números inteiros</string>
     <string name="up_class_computer_architecture_topic3">Operações binárias aritméticas elementares</string>
@@ -321,6 +323,7 @@
     <string name="up_class_computer_architecture_topic30">Desempenho de Memória</string>
 
     <string name="up_class_math_analysis">Análise Matemática</string>
+    <string name="up_class_math_analysis_description">Aquisição de conhecimentos teóricos e práticos sobre cálculo diferencial e integral em R que possibilitem a aplicação das ferramentas básicas da análise matemática ao tratamento e resolução dos problemas mais adaptados ao perfil do curso.\nCapacitar o estudante para a inovação, complementando os conhecimentos de forma a desenvolver soluções para resolução de novas questões.</string>
     <string name="up_class_math_analysis_topic1">Diferenciação</string>
     <string name="up_class_math_analysis_topic2">Aplicações da diferenciação: Máximos, mínimos, funções crescentes e decrescentes, concavidades</string>
     <string name="up_class_math_analysis_topic3">Aplicações da diferenciação: Gráficos de funções</string>
@@ -339,6 +342,7 @@
     <string name="up_class_math_analysis_topic16">Aproximação de funções: Séries de Fourier</string>
 
     <string name="up_class_algebra">Álgebra</string>
+    <string name="up_class_algebra_description">Esta disciplina tem dois objectivos fundamentais: por um lado, tratando-se de uma disciplina propedêutica tem um carácter didáctico/científico, promovendo o desenvolvimento do raciocínio lógico e de métodos de análise e, por outro, visa introduzir e desenvolver em termos teóricos um conjunto de conceitos que serão ferramentas essenciais para apoio às disciplinas mais específicas da Engenharia.</string>
     <string name="up_class_algebra_topic1">Definição de espaço linear (vectorial)</string>
     <string name="up_class_algebra_topic2">Subespaços vectoriais</string>
     <string name="up_class_algebra_topic3">Independência e dependência linear</string>
@@ -368,6 +372,7 @@
     <string name="up_class_algebra_topic27">Condição necessária e suficiente para a existência de representação matricial diagonal de uma transformação linear</string>
 
     <string name="up_class_project">Projecto FEUP</string>
+    <string name="up_class_project_description">Objectivos: Receber e integrar no ambiente FEUP os alunos recém-chegados;\nDar a conhecer os principais serviços disponíveis no campus;\nDar formação inicial nas áreas conhecidas como “Soft Skills” (trabalho em equipa, comunicação, etc.) e alertar para a sua importância ao longo da carreira em engenharia;\nDiscutir cientificamente um Tema\\resolver um Projecto de dificuldade limitada nas áreas de engenharia.</string>
     <string name="up_class_project_topic1">Competências profissionais não técnicas: Escrita em engenharia</string>
     <string name="up_class_project_topic2">Competências profissionais não técnicas: Comunicação eficaz</string>
     <string name="up_class_project_topic3">Competências profissionais não técnicas: Comunicação visual</string>
@@ -379,6 +384,7 @@
     <string name="up_class_project_topic9">Ferramentas baseadas em web (como algumas Google Apps)</string>
 
     <string name="up_class_statistical_methods">Métodos Estatísticos</string>
+    <string name="up_class_statistical_methods_description">Esta disciplina tem como objectivo: Garantir que os alunos adquiram uma visão integrada de conceitos e técnicas básicas da Estatística no âmbito do curso de Engenharia Informática.</string>
     <string name="up_class_statistical_methods_topic1">Objecto e Método da Estatística</string>
     <string name="up_class_statistical_methods_topic2">Estatística Descritiva: Caracterização de amostras Univariadas e bivariadas constituídas por dados quantitativos ou qualitativos</string>
     <string name="up_class_statistical_methods_topic3">Teoria Elementar de Probabilidade</string>
@@ -398,6 +404,7 @@
     <string name="up_class_statistical_methods_topic17">Teste de Hipóteses: Especificação de testes de hipóteses</string>
 
     <string name="up_class_programming_fundations">Fundamentos da Programação</string>
+    <string name="up_class_programming_fundations_description">Objectivos: Desenvolver os algoritmos para a resolução dos problemas adoptando uma abordagem estruturada;\nSeleccionar e criar as abstracções adequadas, tanto ao nível dos procedimentos como dos dados;\nUtilizar como ferramenta de desenvolvimento a linguagem Scheme, caracterizada por uma sintaxe simples.</string>
     <string name="up_class_programming_fundations_topic1">Elementos de programação em Scheme</string>
     <string name="up_class_programming_fundations_topic2">Procedimentos e processos</string>
     <string name="up_class_programming_fundations_topic3">Recursividade e iteração</string>
@@ -414,6 +421,7 @@
     <string name="up_class_programming_fundations_topic14">Ficheiros de Texto</string>
 
     <string name="up_class_programming">Programação</string>
+    <string name="up_class_programming_description">Os objectivos principais desta unidade curricular são dotar os estudantes com:\n- conhecimentos fundamentais sobre a programação procedimental e a programação baseada em objectos;\n- a capacidade de aplicar esses paradigmas de programação para desenvolver programas, usando a linguagem C++ como ferramenta.</string>
     <string name="up_class_programming_topic1">Tipos de dados simples e I/O básico</string>
     <string name="up_class_programming_topic2">Operadores</string>
     <string name="up_class_programming_topic3">Expressões aritméticas e booleanas</string>
@@ -447,6 +455,7 @@
     <string name="up_class_programming_topic31">Implementação de abstracções</string>
 
     <string name="up_class_physicsI">Física I</string>
+    <string name="up_class_physicsI_description">O objectivo desta unidade curricular é dar ao estudante conhecimentos básicos de mecânica e dos métodos computacionais usados para resolver sistemas dinâmicos. É usado um Sistema de Álgebra Computacional (CAS), para permitir que o estudante possa resolver problemas práticos de mecânica e sistemas dinâmicos, em vez de perder muito tempo em aprender métodos abstractos. Os conhecimentos adquiridos de dinâmica e modelação de sistemas físicos no computador serão bastante importantes em outras unidades curriculares relacionadas com computação gráfica e visualização, teoria de jogos, simulação e computação científica.</string>
     <string name="up_class_physicsI_topic1">Cinemática: Resolução de equações simples usando o método de separação de variáveis</string>
     <string name="up_class_physicsI_topic2">Cinemática vectorial: Identificação dos graus de liberdade de um sistema mecânico e resolução de sistemas de equações de movimento</string>
     <string name="up_class_physicsI_topic3">Movimento curvilíneo: Vectores tangente e normal. Aceleração centrípeta. Curvatura da trajectória. Cinemática dos corpos rígidos</string>
@@ -461,6 +470,7 @@
     <string name="up_class_physicsI_topic12">Sistemas caóticos: Comportamento assimptótico, atractores estranhos e sistemas caóticos</string>
 
     <string name="up_class_math_complements">Complementos de Matemática</string>
+    <string name="up_class_math_complements_description">A unidade curricular tem dois objectivos fundamentais: por um lado, tratando-se de uma unidade curricular propedêutica tem um carácter didáctico/científico, promovendo o desenvolvimento do raciocínio lógico e de métodos de análise e, por outro, visa introduzir e desenvolver em termos teóricos um conjunto de conceitos que serão ferramentas essenciais para apoio às restantes unidades curriculares.</string>
     <string name="up_class_math_complements_topic1">Funções Vectoriais: Propriedades, Curvas, Comprimento de arco, Curvatura</string>
     <string name="up_class_math_complements_topic2">Funções a várias variáveis: Superfícies quádricas, Curvas de nível e superfícies de nível, Derivadas parciais, Limites e continuidade</string>
     <string name="up_class_math_complements_topic3">Gradientes: Diferenciabilidade e gradiente, Gradientes e derivadas direccionais, Teorema do valor médio, Regras de derivação em cadeia, Valores máximos e mínimos, Diferenciais</string>
@@ -468,6 +478,7 @@
     <string name="up_class_math_complements_topic5">Integrais de Linha e Integrais de Superfície: Integrais de linha, Propriedades, Integrais de linha em relação ao comprimento de arco, Teorema de Green, Parametrização de superfícies, Área de uma superfície, Integrais de superfície, Divergência e rotacional, Teorema da divergência, Teorema de Stokes</string>
 
     <string name="up_class_microprocessors">Microprocessadores e Computadores Pessoais</string>
+    <string name="up_class_microprocessors_description">A unidade curricular de Microprocessadores e Computadores Pessoais tem por objectivo desenvolver, combinar e aplicar de forma integrada conceitos das áreas de Arquitectura de Computadores e de Linguagens de Programação. Por um lado, a unidade curricular explora as relações entre o conjunto de instruções do CPU e a programação de baixo nível (linguagem "assembly"). Por outro lado, reconhecendo que a arquitectura de computadores pessoais modernos vai muito para além da arquitectura do CPU, a unidade curricular abordará a arquitectura geral de um PC, incluindo o subsistema de armazenamento de dados e outros periféricos.</string>
     <string name="up_class_microprocessors_topic1">Introdução ao microprocessador e microcomputador</string>
     <string name="up_class_microprocessors_topic2">Arquitectura do microprocessador IA-32</string>
     <string name="up_class_microprocessors_topic3">Modos de endereçamento</string>
@@ -482,6 +493,7 @@
     <string name="up_class_microprocessors_topic12">Subsistema de armazenamento de dados</string>
 
     <string name="up_class_computation_theory">Teoria da Computação</string>
+    <string name="up_class_computation_theory_description">Preparar os estudantes em tópicos relacionados com teoria da computação, com um ênfase especial em tópicos relacionados com linguagens formais.\nCapacitar os estudantes para que estes sejam capazes de expressar problemas computacionais usando linguagens formais, autómatos e máquinas de Turing.</string>
     <string name="up_class_computation_theory_topic1">Teoria dos Autómatos</string>
     <string name="up_class_computation_theory_topic2">Autómatos Finitos</string>
     <string name="up_class_computation_theory_topic3">Expressões Regulares e Linguagens</string>
@@ -492,6 +504,7 @@
     <string name="up_class_computation_theory_topic8">Introdução às Máquinas de Turing</string>
 
     <string name="up_class_numerical_methods">Métodos Numéricos</string>
+    <string name="up_class_numerical_methods_description">A disciplina pretende em primeiro lugar fornecer aos estudantes competências sólidas no cálculo numérico. Será organizada por tópicos, cobrindo os problemas de representação numérica, a resolução de equações e sistemas de equações algébricas e diferenciais, a integração definida, a optimização não linear e o ajuste de curvas.</string>
     <string name="up_class_numerical_methods_topic1">Representação numérica de quantidades</string>
     <string name="up_class_numerical_methods_topic2">O erro em métodos numéricos</string>
     <string name="up_class_numerical_methods_topic3">Zeros de funções reais - Métodos: Bissecções, Falsa Posição, Falsa Posição Modificado, Picard-Peano, Newton</string>
@@ -503,6 +516,7 @@
     <string name="up_class_numerical_methods_topic9">Ajuste de curvas – método dos mínimos quadrados</string>
 
     <string name="up_class_physicsII">Física II</string>
+    <string name="up_class_physicsII_description">Esta unidade curricular visa dotar os estudantes com conhecimentos básicos de electromagnetismo e processamento de sinais. A abordagem é experimental, com recurso a experiências simples que os estudantes podem realizar durante as aulas teórico-práticas para consolidar os conhecimentos teóricos e adquirir experiência no uso dos instrumentos de medição. O Sistema de Computação Algébrica (CAS) usado na unidade curricular Física 1 é também aproveitado para facilitar a resolução de problemas e para visualizar campos eléctricos e magnéticos.</string>
     <string name="up_class_physicsII_topic1">Electrostática. Estrutura atómica. Cargas e forças eléctricas. Condutores e isoladores.</string>
     <string name="up_class_physicsII_topic2">Electricidade. Potencial electrostático. Fontes de força electromotriz. Condutores, semicondutores e diódos. Corrente eléctrica. Potência eléctrica. Lei de Ohm. Resistência. Supercondutividade. Associações de resistências</string>
     <string name="up_class_physicsII_topic3">Capacidade eléctrica. Condutores isolados. Condensadores. Energia electrostática. Associações de condensadores.</string>
@@ -515,6 +529,7 @@
     <string name="up_class_physicsII_topic10">Ondas electromagnéticas e luz. Equações de Maxwell. Campos induzidos. Campo electromagnético no vácuo. Equação de onda. Ondas planas polarizadas. Ondas harmónicas. Espectro electromagnético. Teorias ondulatória e corpuscular da luz. Díodos emissores de luz (LED).</string>
 
     <string name="up_class_algorithms_structures">Algoritmos e Estruturas de Dados</string>
+    <string name="up_class_algorithms_structures_description">Na sequência das unidades curriculares de Introdução à Programação, é objectivo desta unidade curricular: recorrer às noções de programação já estabelecidas e sistematizar o uso de estruturas de informação e de algoritmos para resolver categorias de problemas;  usar, como paradigma de suporte ao desenvolvimento de programas, a orientação por objectos; dar ênfase à organização dos programas em torno de tipos de dados abstractos. Serão realizados pequenos projectos usando a linguagem C++.</string>
     <string name="up_class_algorithms_structures_topic1">Programação orientada por objectos</string>
     <string name="up_class_algorithms_structures_topic2">Herança e Polimorfismo</string>
     <string name="up_class_algorithms_structures_topic3">Aspectos básicos de UML</string>
@@ -530,6 +545,7 @@
     <string name="up_class_algorithms_structures_topic13">Árvores AVL e "Splay"</string>
 
     <string name="up_class_computer_labs">Laboratório de Computadores</string>
+    <string name="up_class_computer_labs_description">Os objectivos da unidade curricular são dotar os estudantes com conhecimentos essenciais para serem capazes de:\n- utilizar a interface de "hardware" dos periféricos mais habituais de um PC;\n- desenvolver "software" de baixo nível e de "software" embebido para a plataforma PC;\n- usarem a linguagem de programação C de modo estruturado;\n- utilizarem várias ferramentas de desenvolvimento de software.</string>
     <string name="up_class_computer_labs_topic1">Periféricos de entrada/saída e seus modos de funcionamento</string>
     <string name="up_class_computer_labs_topic2">Mapeamento directo no espaço de endereçamento de memória</string>
     <string name="up_class_computer_labs_topic3">Acesso a periféricos no modo \"polled\" e por interrupção</string>
@@ -545,6 +561,7 @@
     <string name="up_class_computer_labs_topic13">Utilização de ferramentas de desenvolvimento de software: cc, make, db, ar, prof, diff, patch, SVN</string>
 
     <string name="up_class_databases">Bases de Dados</string>
+    <string name="up_class_databases_description">Este é um curso introdutório sobre bases de dados. Aborda o paradigma relacional. Abrange o desenho (modelo UML), construção (linguagem de definição de dados SQL), consulta (linguagem de manipulação de dados SQL) e gestão (optimização, controlo de acesso e políticas de concorrência) de bases de dados relacionais. Introduz, ainda, o conceito de bases de dados multi-dimensionais, bases de dados NoSQL e modelos de dados semi-estruturados.</string>
     <string name="up_class_databases_topic1">Diagrama de classes UML</string>
     <string name="up_class_databases_topic2">Modelo entidade-associação (E-R)</string>
     <string name="up_class_databases_topic3">Modelo relacional, normalização e mapeamento de UML e E-R para relacional</string>
@@ -559,6 +576,7 @@
     <string name="up_class_databases_topic12">Armazéns de dados</string>
 
     <string name="up_class_algorithm_analysis">Concepção e Análise de Algoritmos</string>
+    <string name="up_class_algorithm_analysis_description">Esta Unidade Curricular tem por objectivo complementar e aprofundar os conhecimentos assimilados nas disciplinas de "Programação" e de "Algoritmos e Estruturas de Dados", nomeadamente pela introdução de técnicas de concepção e implementação de algoritmos eficientes para a resolução de diferentes tipos de problemas, assim como a sua análise e avaliação.</string>
     <string name="up_class_algorithm_analysis_topic1">Técnicas de concepção de algoritmos: divisão e conquista</string>
     <string name="up_class_algorithm_analysis_topic2">Técnicas de concepção de algoritmos: algoritmos gananciosos ("greedy")</string>
     <string name="up_class_algorithm_analysis_topic3">Técnicas de concepção de algoritmos: programação dinâmica</string>
@@ -574,6 +592,7 @@
     <string name="up_class_algorithm_analysis_topic13">Problemas intratáveis: redução de problemas; teoria dos problemas NP-completos; exemplos de problemas intratáveis em grafos; algoritmos que fornecem soluções aproximadas em tempo polinomial para alguns problemas</string>
 
     <string name="up_class_computer_graphics">Computação Gráfica</string>
+    <string name="up_class_computer_graphics_description">Transmitir o conhecimento de conceitos, técnicas, algoritmos, tecnologias e arquitecturas de Computação Gráfica.\n - Reforçar os conhecimentos teóricos com a sua aplicação prática, por meio da implementação, teste e avaliação de algoritmos abordados em teoria.</string>
     <string name="up_class_computer_graphics_topic1">Panorâmica da Computação Gráfica e suas aplicações.</string>
     <string name="up_class_computer_graphics_topic2">Síntese de Imagem de cenas 3D: iluminação local e iluminação global,cálculo de visibilidade</string>
     <string name="up_class_computer_graphics_topic3">Representação de cor em Computação Gráfica</string>
@@ -584,7 +603,8 @@
     <string name="up_class_computer_graphics_topic8">Computação Gráfica 2D: algoritmos de rasterização, transformações geométricas 2D e visualização 2D</string>
 
     <string name="up_class_operating_systems">Sistemas Operativos</string>
-    <string name="up_class_operating_systems_topic1">Objetivos e funções de um S.O. </string>
+    <string name="up_class_operating_systems_description">Os objectivos principais desta unidade curricular são fornecer os conhecimentos fundamentais sobre:\n- a estrutura e o funcionamento de um sistema operativo;\n- a utilização da interface de programação (API) de um sistema operativo real.</string>
+    <string name="up_class_operating_systems_topic1">Objectivos e funções de um S.O. </string>
     <string name="up_class_operating_systems_topic2">Evolução dos sistemas operativos e estrutura dos S.O. modernos</string>
     <string name="up_class_operating_systems_topic3">Abstrações suportadas por um S.O. e sua interface de programação </string>
     <string name="up_class_operating_systems_topic4">Necessidades de suporte e de protecção de hardware</string>
@@ -607,6 +627,7 @@
 
 
     <string name="up_class_oop_labs">Laboratório de Programação Orientada por Objectos</string>
+    <string name="up_class_oop_labs_description">Desenvolver e aprofundar as competências de programação orientada por objectos, numa linguagem orientada por objectos moderna (Java), representativa das linguagens utilizadas para desenvolvimento de software aplicacional.\nDesenvolver competências de desenho orientado por objectos, usando a linguagem UML e aplicando bons princípios e padrões de desenho.\nAprender a desenvolver aplicações com interface gráfica e a utilizar bibliotecas extensas.\nAdquirir o hábito de seguir boas práticas de desenvolvimento de software (desenvolvimento iterativo, testes unitários, "debugging", "refactoring", SCV, programação em pares, etc.).</string>
     <string name="up_class_oop_labs_topic1">A linguagem Java: elementos da linguagem, diferenças em relação a C++ e novas características de Java 8 (expressões lambda, etc.).</string>
     <string name="up_class_oop_labs_topic2">Testes unitários e desenvolvimento guiado por testes ("test-driven development") com JUnit, ferramentas de análise de cobertura e ferramentas de teste de mutação.</string>
     <string name="up_class_oop_labs_topic3">Bibliotecas do Java (Java API): visão geral, colecções, interfaces gráficas e entrada/saída</string>
@@ -620,6 +641,7 @@
     <string name="up_class_oop_labs_topic11">Ferramentas de análise dinâmica de programas ("debugging", "profiling")</string>
 
     <string name="up_class_logic_programming">Programação em Lógica</string>
+    <string name="up_class_logic_programming_description"> Adquirir familiaridade com os paradigmas da Programação em Lógica e da Programação com Restrições. Desenvolver as capacidades de raciocínio abstracto e de representação de problemas de forma declarativa.</string>
     <string name="up_class_logic_programming_topic1">Fundações da Programação em Lógica: Lógica proposicional. Lógica de predicados. Regras de inferência. Cláusulas de Horn. Unificação. Resolução. Forma normal conjuntiva.</string>
     <string name="up_class_logic_programming_topic2">Fundações da Programação em Lógica: Conceito de programação em lógica. Origens do Prolog.</string>
     <string name="up_class_logic_programming_topic3">Conceitos da Programação em Lógica: Cláusulas. Predicados. Factos. Perguntas. Regras. Variáveis lógicas. Instanciação.</string>
@@ -632,12 +654,14 @@
     <string name="up_class_logic_programming_topic10">Programação em Lógica com Restrições: Programação em lógica com restrições (PLR). Controlo da pesquisa. Ordenação de variáveis e valores. Modelização de problemas em PLR. Programação com restrições no SICStus Prolog.</string>
 
     <string name="up_class_graphics_lab">Laboratório de Aplicações com Interface Gráfica</string>
+    <string name="up_class_graphics_lab_description">Esta unidade curricular tem por objectivo principal desenvolver um conjunto de competências práticas, algumas já tratadas em unidades curriculares anteriores num contexto mais teórico. Foca-se em trabalhos práticos de desenvolvimento, tendencialmente multidisciplinares, nomeadamente nas áreas de Computação Gráfica e Interfaces, de Programação em Lógica e de Sistemas Operativos.</string>
     <string name="up_class_graphics_lab_topic1">Síntese de imagem: Modelo de iluminação de Phong, Rendering de superfícies poligonais, Mapeamento de texturas.</string>
     <string name="up_class_graphics_lab_topic2">Interface Pessoa-Máquina: Funcionalidade e usabilidade Gestão de eventos e interacção com utilizador.</string>
     <string name="up_class_graphics_lab_topic3">Construção de interfaces GUI</string>
     <string name="up_class_graphics_lab_topic4">Sistemas Operativos: Comunicações, Sincronização.</string>
 
     <string name="up_class_software_engineering">Engenharia de Software</string>
+    <string name="up_class_software_engineering_description">No final da unidade curricular, os estudantes deverão ser capazes de:\n- descrever os princípios, conceitos e práticas da engenharia de software e do ciclo de vida do software;\n- conhecer e saber aplicar as técnicas e ferramentas necessárias para executar e gerir as várias actividades do processo de desenvolvimento de software de qualidade;\n- explicar os métodos e processos de construção de diferentes tipos de sistemas de software.</string>
     <string name="up_class_software_engineering_topic1">Problemática do desenvolvimento de software</string>
     <string name="up_class_software_engineering_topic2">Objectivos e âmbito da engenharia de software</string>
     <string name="up_class_software_engineering_topic3">Processo de Software: noção de processo de software</string>
@@ -681,6 +705,7 @@
     <string name="up_class_software_engineering_topic41">Melhoria de Processos: o modelo de maturidade CMMI</string>
 
     <string name="up_class_computer_networks">Redes de Computadores</string>
+    <string name="up_class_computer_networks_description">Redes de Computadores (RCOM) é a unidade curricular que introduz os estudantes no domínio de conhecimento das redes de comunicações. Os conceitos fundamentais endereçados em RCOM incluem os seguintes: canais de comunicação e controlo da ligação de dados, modelos de erro e atraso, comunicações multi-acesso, encaminhamento, controlo de fluxo e controlo de congestionamento. As principais tecnologias discutidas em RCOM são a Ethernet comutada, a Wireless LAN 802.11, a Internet e a pilha de comunicações TCP/IP. As implementações e projetos a desenvolver em RCOM incluem um protocolo de ligação de dados com controlo de fluxo, uma aplicação a funcionar em modo cliente, e a configuração e teste de redes Ethernet e IP.</string>
     <string name="up_class_computer_networks_topic1">Introdução às redes de computadores</string>
     <string name="up_class_computer_networks_topic2">Técnicas de transmissão de dados</string>
     <string name="up_class_computer_networks_topic3">Controlo da ligação de dados</string>
@@ -693,6 +718,7 @@
     <string name="up_class_computer_networks_topic10">Aplicações</string>
 
     <string name="up_class_web_tech">Linguagens e Tecnologias Web</string>
+    <string name="up_class_web_tech_description">Pretende-se, nesta disciplina, que os alunos desenvolvam competências nas linguagens e tecnologias WEB mais significativas, no contexto tecnológico actual, ou que foram determinantes no processo evolutivo da WEB. </string>
     <string name="up_class_web_tech_topic1">Protocolo HTTP</string>
     <string name="up_class_web_tech_topic2">Anotação de Documentos</string>
     <string name="up_class_web_tech_topic3">Folhas de Estilos</string>
@@ -704,6 +730,7 @@
     <string name="up_class_web_tech_topic9">Definição de tipos e estruturas de dados</string>
 
     <string name="up_class_db_web_labs">Laboratório de Bases de Dados e Aplicações Web</string>
+    <string name="up_class_db_web_labs_description">A unidade curricular de LBAW tem como objectivo sedimentar as matérias expostas nas unidades curriculares de bases de dados e linguagens e tecnologias web. Esta unidade curricular oferece uma perspectiva prática sobre duas áreas centrais da engenharia informática.\nNesta unidade curricular pretende-se dotar os estudantes da capacidade de projectar e desenvolver sistemas de informação acessíveis através da web e suportados por sistemas de gestão de bases de dados.</string>
     <string name="up_class_db_web_labs_topic1">Desenvolvimento de uma aplicação Web suportada por uma Base de Dados: levantamento de requisitos, concepção, modelação, implementação e documentação</string>
     <string name="up_class_db_web_labs_topic2">Noções gerais de arquitectura de aplicações Web. Utilização de linguagens de scripting de cliente (JavaScript) e de servidor (PHP)</string>
     <string name="up_class_db_web_labs_topic3">Apresentação do Document Object Model (DOM); utilização de frameworks AJAX e APIs de acesso a dados</string>
@@ -712,6 +739,7 @@
     <string name="up_class_db_web_labs_topic6">Noções gerais de usabilidade e acessibilidade Web</string>
 
     <string name="up_class_ai">Inteligência Artificial</string>
+    <string name="up_class_ai_description">Esta unidade curricular apresenta um conjunto de assuntos nucleares para a área dos Sistemas Inteligentes.\nOs seu objectivos são:\n- Saber o que caracteriza e distingue a IA e qual a sua aplicabilidade.\n- Saber como Representar, Adquirir, Manipular e Aplicar Conhecimento usando Sistemas Computacionais.\n- Desenvolver um pequeno projecto usando técnicas de IA.</string>
     <string name="up_class_ai_topic1">Noções Básicas: Definições: o que é a I. A.?</string>
     <string name="up_class_ai_topic2">Noções Básicas: Aplicações: em que domínios?</string>
     <string name="up_class_ai_topic3">Noções Básicas: Definições básicas de Agente</string>
@@ -757,6 +785,7 @@
     <string name="up_class_ai_topic43">Introdução às Redes Neuronais (Machine Learning): Exemplo de Aplicação</string>
 
     <string name="up_class_compilers">Compiladores</string>
+    <string name="up_class_compilers_description">Fornecer os conceitos que permitam:\n- compreender as fases de compilação de linguagens, em especial das linguagens imperativas e orientada por objectos;\n- especificar a sintaxe e semântica de uma linguagem de programação;\n- compreender e utilizar as estruturas de dados e os algoritmos principais usados na implementação de compiladores.</string>
     <string name="up_class_compilers_topic1">Introdução. Fases da compilação e estrutura típica de um compilador</string>
     <string name="up_class_compilers_topic2">Análise lexical: Expressões regulares autómatos finitos</string>
     <string name="up_class_compilers_topic3">Análise lexical: Autómatos finito.</string>
@@ -771,6 +800,7 @@
     <string name="up_class_compilers_topic12">Técnicas de geração de código final e de optimização</string>
 
     <string name="up_class_distributed_systems">Sistemas Distribuídos</string>
+    <string name="up_class_distributed_systems_description">Esta unidade curricular tem dois objectivos fundamentais:\ndotar os estudantes com conhecimentos teóricos sobre sistemas distribuídos para que possam tomar decisões correctas quando confrontados com a necessidade de implementar um sistema desta natureza;\ndotar os estudantes com conhecimentos práticos para que possa desenvolver e tirar partido dos sistemas distribuídos.</string>
     <string name="up_class_distributed_systems_topic1">Introdução aos sistemas distribuídos e à computação em rede</string>
     <string name="up_class_distributed_systems_topic2">Modelos de comunicação: troca de mensagens, invocação remota de funções</string>
     <string name="up_class_distributed_systems_topic3">Nomes: identificação e localização</string>
@@ -783,6 +813,7 @@
     <string name="up_class_distributed_systems_topic10">Sistemas baseados na Web (e.g. MapReduce, BigTable, Webservices, REST)</string>
 
     <string name="up_class_personal_development">Proficiência Pessoal e Interpessoal</string>
+    <string name="up_class_personal_development_description">Identificar e adquirir os conhecimentos essenciais para saber como maximizar progressivamente as condições de êxito do desempenho pessoal e interpessoal.Ter consciência da importância de saber utilizar competências complementares (soft skills) e de realizar mudanças evolutivas de forma a desenvolver um perfil profissional que contribua para melhorar continuamente a futura atividade do engenheiro informático.</string>
     <string name="up_class_personal_development_topic1">Qualidade nos Serviços ao Cliente (Interno/Externo)</string>
     <string name="up_class_personal_development_topic2">Interacção e Atitudes Comunicacionais</string>
     <string name="up_class_personal_development_topic3">Regras da Comunicação Profissional</string>
@@ -797,6 +828,7 @@
     <string name="up_class_personal_development_topic12">Maximização da Capacidade Criativa</string>
 
     <string name="up_class_information_systems">Sistemas de Informação</string>
+    <string name="up_class_information_systems_description">Interpretar, Classificar e Explicar:\n- Processo de vendas e Procurement gerido por um ERP;\n- a forma como o SI contribui para a Construção de Valor numa organização, com especial foco no ERP e em outros com o qual o ERP se integra (e.g.: sistema de execução fabril e gestão de armazém);\n- Tendências tecnológicas e o seu impacto nos sistemas de informação empresariais (Cloud Computing, Big Data, a nova Internet).</string>
     <string name="up_class_information_systems_topic1">Primavera ERP: Processos de Vendas e Aquisições</string>
     <string name="up_class_information_systems_topic2">Primavera ERP: Desenvolvimento de software com aplicações de terceiros e integração com o software PRIMAVERA.</string>
     <string name="up_class_information_systems_topic3">Sistemas de Informação e ERPs Conceitos: O que é um sistema de informação? Quantos tipos de sistemas de informação existem e quais os seus papéis numa organização? O sistema de informação como decisão estratégica.</string>
@@ -811,6 +843,7 @@
     <string name="up_class_information_systems_topic12">Sistemas de Informação nos Negócios</string>
 
     <string name="up_class_software_lab">Laboratório de Desenvolvimento de Software</string>
+    <string name="up_class_software_lab_description">Objectivos: dotar os alunos para serem capazes de definir e aplicar um processo de desenvolvimento de software, utilizando práticas ágeis, ferramentas tipicas de desenvolvimento de software, em equipa.</string>
     <string name="up_class_software_lab_topic1">Aplicação de processos de desenvolvimento de software, incluindo metodologias de planeamento de projecto.</string>
     <string name="up_class_software_lab_topic2">Identificação de requisitos, desenho, implementação, integração, teste, documentação e demonstração de um sistema de software.</string>
     <string name="up_class_software_lab_topic3">Introdução às Metodologias Ágeis: valores, principios fundamentais, práticas (“Planning Game”, “Small Releases”, “Acceptance tests”, “Unit-tests”, “Test-first programming”, “Simple Design”, “Refactoring”, “Design patterns”) e exemplos de metodologias populares (Scrum e XP).</string>
@@ -819,6 +852,7 @@
     <string name="up_class_software_lab_topic6">Utilização de APIs de larga escala.</string>
 
     <string name="up_class_company_management">Gestão de Empresas</string>
+    <string name="up_class_company_management_description">A unidade curricular tem por objectivo desenvolver competências na área da Gestão, integrando uma sólida componente teórica, baseada na apresentação e discussão de conceitos e metodologias, com a sua aplicação à análise e à discussão de casos de estudo.</string>
     <string name="up_class_company_management_topic1">A Gestão e o seu Contexto: A Gestão e o papel do Gestor</string>
     <string name="up_class_company_management_topic2">A Gestão e o seu Contexto: A evolução da Gestão</string>
     <string name="up_class_company_management_topic3">Gestão de Áreas Funcionais: Marketing</string>
@@ -834,6 +868,7 @@
     <string name="up_class_company_management_topic13">Controlo</string>
 
     <string name="up_class_agents_ia">Agentes e Inteligência Artificial Distribuída</string>
+    <string name="up_class_agents_ia_description">A unidade curricular assume-se como de Engenharia (evidenciando apenas a teoria essencial para se entender as aplicações práticas) e proporciona uma perspectiva global das técnicas associadas à especificação e desenvolvimento de Agentes computacionais bem como realça a sua relevância prática apresentando exemplos de aplicação.</string>
     <string name="up_class_agents_ia_topic1">Agentes: Definições, Arquitecturas básicas</string>
     <string name="up_class_agents_ia_topic2">Agentes: Representação de Conhecimento e Lógicas para Agentes</string>
     <string name="up_class_agents_ia_topic3">Agentes: Arquitecturas avançadas. Subsumpção e Agentes reactivos. Tipo mentalista e Agentes Deliberativos.</string>
@@ -857,6 +892,7 @@
     <string name="up_class_agents_ia_topic21">Exemplos de Aplicação de Sistemas Multi-Agente: E-Brokering - BIAS</string>
 
     <string name="up_class_formal_methods">Métodos Formais em Engenharia de Software</string>
+    <string name="up_class_formal_methods_description">Desenvolver as capacidades de abstracção de forma a descrever o que o sistema deve fazer e não a maneira de o fazer. Estar familiarizados com os métodos formais e forma como eles podem contribuir para aumentar a qualidade dos sistemas de software. </string>
     <string name="up_class_formal_methods_topic1">Introdução: O que são métodos formais</string>
     <string name="up_class_formal_methods_topic2">Introdução: Importância e aplicabilidade dos métodos formais no desenvolvimento de software</string>
     <string name="up_class_formal_methods_topic3">Introdução: Modelos de ciclo de vida e processos de desenvolvimento de software incorporando métodos formais</string>
@@ -890,6 +926,7 @@
     <string name="up_class_formal_methods_topic31">Especificação baseada em modelos (VDM): A ferramenta VDMTools</string>
 
     <string name="up_class_operations_research">Investigação Operacional</string>
+    <string name="up_class_operations_research_description">Dotar os alunos com competências para:\n- identificar problemas de decisão;\n- aplicar as várias fases de resolução de um problema de decisão, em particular, a definição e estruturação de problemas, a construção de modelos e a utilização de métodos quatitativoas para a obtenção da solução;\n- analisar de forma crítica a solução obtida;\n- perceber a importância do papel de agente de mudança nas organizações</string>
     <string name="up_class_operations_research_topic1">Programação Linear: Formulação de problemas</string>
     <string name="up_class_operations_research_topic2">Programação Linear: Resolução gráfica</string>
     <string name="up_class_operations_research_topic3">Programação Linear: Método Simplex</string>
@@ -904,6 +941,7 @@
     <string name="up_class_operations_research_topic12">Filas de espera</string>
 
     <string name="up_class_project_labs">Laboratório de Gestão de Projectos</string>
+    <string name="up_class_project_labs_description">No final da Unidade Curricular os estudantes deverão ser capazes de:\n- Identificar a necessidade de recurso à gestão de projectos bem como a importância do seu enquadramento estratégico;\n- Identificar os diferentes referenciais normativos e metodologias para a gestão de projectos;\n- Identificar e definir as áreas de processo e variáveis da gestão de projetos;\n- Aplicar metodologias e ferramentas de gestão de projecto e trabalho em equipa;\n- Aplicar conceitos e ferramentas de gestão da qualidade a projectos;\n- Identificar e gerir os riscos inerentes a um projetco. </string>
     <string name="up_class_project_labs_topic1">Gestão de Projectos: Arranque do projecto</string>
     <string name="up_class_project_labs_topic2">Gestão de Projectos: Planeamento do projecto (decomposição hierárquica do projecto, definição de dependências, estimação de esforços, afectação de recursos, calendarização, diagramas, documento de plano do projecto, métodos PERT e CPM)</string>
     <string name="up_class_project_labs_topic3">Gestão de Projectos: Monitorização e controlo do projecto (medição do progresso do projecto, “earned value management,” reporte periódico, replaneamento)</string>
@@ -914,6 +952,7 @@
     <string name="up_class_project_labs_topic8">Experimentação: Aplicação em projectos concretos, realizados por equipas de média dimensão, dos métodos, técnicas e formas de trabalho apresentados</string>
 
     <string name="up_class_swesys_architecture">Arquitectura de Sistemas de Software</string>
+    <string name="up_class_swesys_architecture_description">A disciplina de Arquitecturas de Sistemas de Software tem como objectivo principal introduzir os conceitos de arquitecturas de software, padrões de desenho e tópicos directamente relacionados, tais como o de componentes de software.</string>
     <string name="up_class_swesys_architecture_topic1">Desenho de software: conceitos, princípios e abordagens fundamentais.</string>
     <string name="up_class_swesys_architecture_topic2">O que é arquitectura de software? </string>
     <string name="up_class_swesys_architecture_topic3">A importância da arquitectura de software.</string>
@@ -932,6 +971,7 @@
     <string name="up_class_swesys_architecture_topic16">Estudo de arquitecturas tecnológicas complexas.</string>
 
     <string name="up_class_network_achitecture">Arquitectura e Gestão de Redes e Sistemas</string>
+    <string name="up_class_network_achitecture_description">Esta unidade curricular tem como objectivo que os estudantes adquiriram competências no planeamento e gestão integrada de infra-estruturas de rede, sistemas e serviços.</string>
     <string name="up_class_network_achitecture_topic1">Redes de Empresa: análise de requisitos</string>
     <string name="up_class_network_achitecture_topic2">Redes de Empresa: análise de fluxos</string>
     <string name="up_class_network_achitecture_topic3">Redes de Empresa: componentes e serviços fundamentais</string>
@@ -946,6 +986,7 @@
     <string name="up_class_network_achitecture_topic12">Gestão de Redes: avaliação de plataformas de gestão</string>
 
     <string name="up_class_parallel_computing">Computação Paralela</string>
+    <string name="up_class_parallel_computing_description">Aquisição de conhecimentos conducentes à utilização simultânea de várias unidades de processamento num sistema de computação. Construção de bases sólidas sobre arquitecturas paralelas, paralelização de algoritmos, modelos de programação, sincronização de processos e medidas de desempenho, através do desenvolvimento de programas.</string>
     <string name="up_class_parallel_computing_topic1">Medidas de desempenho: MIPS e FLOPS</string>
     <string name="up_class_parallel_computing_topic2">Caracterização de desempenho: ‘peak’, máximo e sustentável</string>
     <string name="up_class_parallel_computing_topic3">Máquinas paralelas: processadores superescalares e vectoriais, organização de memória e redes de interligação</string>
@@ -961,6 +1002,7 @@
     <string name="up_class_parallel_computing_topic13">P2P, GRID, CLOUD COMPUTING. Aplicações e características.</string>
 
     <string name="up_class_mobile_communication">Comunicações Móveis</string>
+    <string name="up_class_mobile_communication_description">Nesta UC são discutidos os aspectos fundamentais do funcionamento de redes de comunicações móveis, as tecnologias de comunicações móveis mais importantes, e técnicas de engenharia e de projeto de redes de comunicações móveis.</string>
     <string name="up_class_mobile_communication_topic1">Características de um sistema de comunicação móvel: aplicações; história; normalização; modelos de referência; atribuição de frequências.</string>
     <string name="up_class_mobile_communication_topic2">Transmissão sem fios: modelos de propagação do sinal; modulações; codificações; técnicas de transmissão canais de banda larga; técnicas adaptativas.</string>
     <string name="up_class_mobile_communication_topic3">Ligações de dados sem fios: técnicas de multiplexagem; técnicas duplex; técnicas ARQ para redes sem fios; técnicas de acesso múltiplo; controlo da ligação rádio.</string>
@@ -971,6 +1013,7 @@
     <string name="up_class_mobile_communication_topic8">Gestão de mobilidade: modelos; casos de estudo de redes 3GPP, IEEE e IETF.</string>
 
     <string name="up_class_computer_games">Desenvolvimento de Jogos de Computador</string>
+    <string name="up_class_computer_games_description">O objectivo desta unidade curricular é transmitir o conhecimento sobre o processo de desenvolvimento de jogos de computador, com ênfase particular nos aspectos relacionados com a programação dos diversos módulos que compõem um motor de jogo.</string>
     <string name="up_class_computer_games_topic1">Jogos de Computador: Conceito; enquadramento histórico; processo de desenvolvimento; aspectos psicológicos e sociais.</string>
     <string name="up_class_computer_games_topic2">Design de Jogos de Computador Criação de jogos de computador: criação da história, personagens, ambientes e níveis; mecânica do jogo; interacção com o utilizador; documentação de suporte.</string>
     <string name="up_class_computer_games_topic3">Programação de Jogos de Computador Arquitectura de um motor de jogo; estruturas de dados e algoritmos; motor gráfico; motor de lógica; motor de física. Inteligência artificial. Modelação procedimental.</string>
@@ -978,6 +1021,7 @@
     <string name="up_class_computer_games_topic5">A Indústria dos Jogos de Computador Enquadramento; áreas de negócio e aplicação dos jogos de computador; ciclo de vida do desenvolvimento de jogos de computador.</string>
 
     <string name="up_class_requirements_engineering">Engenharia de Requisitos de Sistemas de Software</string>
+    <string name="up_class_requirements_engineering_description"></string>
     <string name="up_class_requirements_engineering_topic1">Noção de requisito: requisitos funcionais e não funcionais; importância dos requisitos; o papel da análise e especificação; domínios de aplicação; requisitos como objectos sócio-técnicos; requisitos de sistemas de actividades humanas.</string>
     <string name="up_class_requirements_engineering_topic2">O processo de Engenharia de Requisitos: aspectos interdisciplinares da engenharia de requisitos; aspectos organizacionais; modelos de processo de ER; actores do processo de ER (stakeholders); apoio e gestão do processo de ER; qualidade e melhoria do processo de ER.</string>
     <string name="up_class_requirements_engineering_topic3">Processos para a identificação, descoberta e refinamento de requisitos: guiados por políticas organizacionais; desencadeados por problemas; desencadeados por imitação (by-example); iniciados por imposições do ambiente externo.</string>
@@ -998,6 +1042,7 @@
     <string name="up_class_requirements_engineering_topic18">Qualidade de requisitos: qualidade do projecto; avaliação da qualidade; checklists para garantia de qualidade.</string>
 
     <string name="up_class_logistics">Gestão de Operações e Logística</string>
+    <string name="up_class_logistics_description">Dotar os alunos com competências para planear, gerir e levar a cabo um processo de análise e especificação de requisitos de um sistema de software.</string>
     <string name="up_class_logistics_topic1">Competitividade e Operações; Diferentes abordagens à estratégia das operações: custo, qualidade, tempo de resposta, flexibilidade e inovação; Estratégias de outsourcing e ‘contract manufacturing’; Estratégias de operações nos serviços.</string>
     <string name="up_class_logistics_topic2">Fundamentos da produção em fluxo: abordagens, ferramentas e técnicas.</string>
     <string name="up_class_logistics_topic3">Análise de Processos</string>
@@ -1009,6 +1054,7 @@
     <string name="up_class_logistics_topic9">Localização de Armazéns</string>
 
     <string name="up_class_markup_languages">Linguagens de Anotação e Processamento de Documentos</string>
+    <string name="up_class_markup_languages_description">Esta unidade curricular foca-se na obtenção de linguagens de anotação para um dado domínio e na realização de aplicações baseadas em linguagens de anotação e tem por objetivos:\n- Sensibilizar os estudantes para as múltiplas aplicações não triviais das linguagens de anotação;\n- Familiarizar os estudantes com as tecnologias de processamento e armazenamento de informação semi-estruturada;\n- Aplicar as tecnologias de anotação na definição de uma linguagem e na resolução de um problema com recurso ao desenvolvimento de uma aplicação.</string>
     <string name="up_class_markup_languages_topic1">Desenho de linguagens de anotação. Análise de linguagens existentes em vários domínios.</string>
     <string name="up_class_markup_languages_topic2">Interrogação de documentos XML. A linguagem XPath. A linguagem XQuery.</string>
     <string name="up_class_markup_languages_topic3">Transformações de documentos XML com XSLT. Apresentação de documentos XML com XSL-FO.</string>
@@ -1017,6 +1063,7 @@
     <string name="up_class_markup_languages_topic6">Introdução à web semântica. Descrição de recursos em RDF e OWL. Interrogações em SPARQL.</string>
 
     <string name="up_class_marketing">Marketing</string>
+    <string name="up_class_marketing_description">A unidade curricular tem por objectivo desenvolver competências na área da Gestão de Marketing, integrando uma sólida componente teórica, baseada na apresentação e discussão de conceitos e metodologias, com a sua aplicação ao desenvolvimento de um plano de marketing e à discussão de casos de estudo.</string>
     <string name="up_class_marketing_topic1">Conceitos fundamentais de Marketing</string>
     <string name="up_class_marketing_topic2">Estratégias e planos de Marketing</string>
     <string name="up_class_marketing_topic3">Sistemas de informação e estudos de marketing</string>
@@ -1037,6 +1084,7 @@
     <string name="up_class_marketing_topic18">Pessoas, processos e evidência física no marketing de serviços</string>
 
     <string name="up_class_modelation_simulation">Modelação e Simulação de Sistemas</string>
+    <string name="up_class_modelation_simulation_description">Os objectivos da disciplina são:\n- Apresentar os conceitos básicos de modelação e simulação (computacional) e as suas diversas áreas de aplicação;\n- Apresentar as principais fases do ciclo de vida de um projecto de simulação, desde a fase de modelação até a análise e aplicação dos resultados;\n- Apresentar os principais tipos de modelos e a sua adequação ao tratamento de diferentes problemas.</string>
     <string name="up_class_modelation_simulation_topic1">Simulação como metodologia de engenharia</string>
     <string name="up_class_modelation_simulation_topic2">Modelação (realismo, abstracção) e tipos de modelos (normativos, comportamentais, …)</string>
     <string name="up_class_modelation_simulation_topic3">Preparação e tratamento de dados</string>
@@ -1053,6 +1101,7 @@
     <string name="up_class_modelation_simulation_topic14">Aplicações avançadas de simulação</string>
 
     <string name="up_class_multimedia_services">Multimédia e Novos Serviços</string>
+    <string name="up_class_multimedia_services_description">São objectivos da unidade curricular:\na) apresentar os conceitos, os serviços e as aplicações multimédia e hipermédia;\nb) apresentar as técnicas de codificação e representação da informação multimédia;\nc) introduzir as ferramentas de desenvolvimento de aplicações; d) desenvolver aplicações. </string>
     <string name="up_class_multimedia_services_topic1">Introdução à multimédia: definição, tipos de meios, níveis de informação, tecnologias básicas</string>
     <string name="up_class_multimedia_services_topic2">Aplicações multimédia: classificação, alguns exemplos</string>
     <string name="up_class_multimedia_services_topic3">Codificação e representação da informação multimédia: teoria da Informação e técnicas de compressão, compressão de imagem, compressão de vídeo, compressão de áudio</string>
@@ -1062,6 +1111,7 @@
     <string name="up_class_multimedia_services_topic7">Novos serviços: TV digital interactiva; Multimedia Streaming, IPtel</string>
 
     <string name="up_class_system_security">Segurança em Sistemas Informáticos</string>
+    <string name="up_class_system_security_description"></string>
     <string name="up_class_system_security_topic1">Fundamentos</string>
     <string name="up_class_system_security_topic2">Políticas de segurança</string>
     <string name="up_class_system_security_topic3">Criptografia: teoria e aplicações</string>
@@ -1069,6 +1119,7 @@
     <string name="up_class_system_security_topic5">Aspectos práticos em redes, em sistemas e na programação</string>
 
     <string name="up_class_embedded_systems">Sistemas Embutidos e de Tempo Real</string>
+    <string name="up_class_embedded_systems_description"></string>
     <string name="up_class_embedded_systems_topic1">Introdução aos sistemas embutidos e conceitos base </string>
     <string name="up_class_embedded_systems_topic2">Arquitecturas de Hardware para sistemas embutidos (CPUs e barramentos para periféricos) </string>
     <string name="up_class_embedded_systems_topic3">Arquitecturas de Software para Sistemas Embarcados </string>
@@ -1078,6 +1129,7 @@
     <string name="up_class_embedded_systems_topic7">Programação com POSIX para Tempo-Real</string>
 
     <string name="up_class_database_technologies">Tecnologias de Bases de Dados</string>
+    <string name="up_class_database_technologies_description"></string>
     <string name="up_class_database_technologies_topic1">Esquema físico e afinação (\"tuning\") de BD</string>
     <string name="up_class_database_technologies_topic2">Armazenamento de dados e índices</string>
     <string name="up_class_database_technologies_topic3">Execução e optimização de interrogações</string>
@@ -1090,6 +1142,7 @@
     <string name="up_class_database_technologies_topic10">Recuperação e replicação</string>
 
     <string name="up_class_integration_technologies">Tecnologias de Distribuição e Integração</string>
+    <string name="up_class_integration_technologies_description"></string>
     <string name="up_class_integration_technologies_topic1">Os paradigmas distribuídos da passagem de mensagens e invocação remota</string>
     <string name="up_class_integration_technologies_topic2">O mecanismo da invocação remota: RPC</string>
     <string name="up_class_integration_technologies_topic3">Distribuição orientada a objectos e componentes, middleware</string>
@@ -1107,6 +1160,7 @@
     <string name="up_class_integration_technologies_topic15">Serviços para distribuição e integração e sua utilização: BPI/BPEL</string>
 
     <string name="up_class_dissertation_preparation">Preparação da Dissertação</string>
+    <string name="up_class_dissertation_preparation_description"></string>
     <string name="up_class_dissertation_preparation_topic1">Métodos e técnicas em projectos de investigação</string>
     <string name="up_class_dissertation_preparation_topic2">Métodos sistemáticos de pesquisa de informação científica</string>
     <string name="up_class_dissertation_preparation_topic3">Concepção e realização de trabalhos para publicação</string>
@@ -1114,6 +1168,7 @@
     <string name="up_class_dissertation_preparation_topic5">Concepção, elaboração e defesa do relatório do projecto de dissertação</string>
 
     <string name="up_class_dissertation">Dissertação</string>
+    <string name="up_class_dissertation_description"></string>
     <string name="up_class_dissertation_topic1">Identificação de um problema a resolver</string>
     <string name="up_class_dissertation_topic2">Pesquisa do estado-da-arte respectivo</string>
     <string name="up_class_dissertation_topic3">Análise de potenciais soluções</string>
@@ -1122,6 +1177,7 @@
     <string name="up_class_dissertation_topic6">Escrita do relatório de dissertação</string>
 
     <string name="up_class_investment_analysis">Análise de Projectos de Investimento</string>
+    <string name="up_class_investment_analysis_description"></string>
     <string name="up_class_investment_analysis_topic1">Visão global da Análise de Projectos</string>
     <string name="up_class_investment_analysis_topic2">O Plano de Negócios</string>
     <string name="up_class_investment_analysis_topic3">Os Estudos de Viabilidade</string>
@@ -1132,6 +1188,7 @@
     <string name="up_class_investment_analysis_topic8">Risco e incerteza na avaliação. Os métodos empiricos de tratamento de risco. Métodos de simulação - análise de sensibilidade, cenários alternativos, análise do ponto morto, simulação de Monte Carlo. Árvores de Decisão. O CAPM na avaliação do risco dos projectos.</string>
 
     <string name="up_class_data_warehouses">Armazéns de Dados</string>
+    <string name="up_class_data_warehouses_description"></string>
     <string name="up_class_data_warehouses_topic1">Armazéns de dados: conceito, arquitectura e abordagens.</string>
     <string name="up_class_data_warehouses_topic2">O ciclo de vida de um projecto de armazéns de dados.</string>
     <string name="up_class_data_warehouses_topic3">Planeamento, levantamento de requisitos, identificação das fontes.</string>
@@ -1144,6 +1201,7 @@
     <string name="up_class_data_warehouses_topic10">Requisitos de metadados.</string>
 
     <string name="up_class_mobile_computing">Computação Móvel</string>
+    <string name="up_class_mobile_computing_description"></string>
     <string name="up_class_mobile_computing_topic1">Aplicações para dispositivos móveis: características adaptadas aos dispositivos móveis</string>
     <string name="up_class_mobile_computing_topic2">Aplicações para dispositivos móveis: necessidades e facilidades de comunicação</string>
     <string name="up_class_mobile_computing_topic3">Aplicações para dispositivos móveis: armazenamento local</string>
@@ -1167,6 +1225,7 @@
     <string name="up_class_mobile_computing_topic21">Utilização de ferramentas de desenvolvimento e emuladores dos dispositivos.</string>
 
     <string name="up_class_information">Descrição, Armazenamento e Pesquisa de Informação</string>
+    <string name="up_class_information_description"></string>
     <string name="up_class_information_topic1">Introdução às colecções de dados</string>
     <string name="up_class_information_topic2">Ferramentas para recolha, preparação e acesso a dados</string>
     <string name="up_class_information_topic3">Modelos de dados e armazenamento de colecções</string>
@@ -1178,6 +1237,7 @@
     <string name="up_class_information_topic9">Ontologias para dados de um domínio</string>
 
     <string name="up_class_data_mining">Extracção de Conhecimento e Aprendizagem Computacional</string>
+    <string name="up_class_data_mining_description"></string>
     <string name="up_class_data_mining_topic1">Introdução à extracção de conhecimento (Data Mining).</string>
     <string name="up_class_data_mining_topic2">Clustering: Algoritmos de partição (revisão do K-means, K-medoids) e algoritmos hierárquicos. Outros algoritmos. Medidas de avaliação.</string>
     <string name="up_class_data_mining_topic3">Regras de associação: Algoritmo APRIORI. Outros algoritmos. Medidas de avaliação.</string>
@@ -1189,6 +1249,7 @@
     <string name="up_class_data_mining_topic9">Text mining: Representação de dados para text mining. Medidas de avaliação. - Web Mining e sistemas de recomendação.</string>
 
     <string name="up_class_interaction_design">Interacção Pessoa-Computador</string>
+    <string name="up_class_interaction_design_description"></string>
     <string name="up_class_interaction_design_topic1">Projecto de Concepção da Interacção.</string>
     <string name="up_class_interaction_design_topic2">Compreender e Conceitualizar a Interacção.</string>
     <string name="up_class_interaction_design_topic3">Compreender os Utilizadores.</string>
@@ -1199,6 +1260,7 @@
     <string name="up_class_interaction_design_topic8">Introdução à Avaliação de Usabilidade.</string>
 
     <string name="up_class_agile_methods">Metodologias Ágeis de Desenvolvimento de Software</string>
+    <string name="up_class_agile_methods_description"></string>
     <string name="up_class_agile_methods_topic1">Introdução às Metodologias Ágeis. </string>
     <string name="up_class_agile_methods_topic2">A necessidade de métodos ágeis para desenvolvimento de software. </string>
     <string name="up_class_agile_methods_topic3">Software ágil: valores e principios fundamentais. </string>
@@ -1211,6 +1273,7 @@
     <string name="up_class_agile_methods_topic10">Desenvolvimento de projectos ágeis reais e sua relação com o utilizador.</string>
 
     <string name="up_class_vr_ar">Realidade Virtual e Aumentada</string>
+    <string name="up_class_vr_ar_description"></string>
     <string name="up_class_vr_ar_topic1">Conceitos</string>
     <string name="up_class_vr_ar_topic2">Aplicações</string>
     <string name="up_class_vr_ar_topic3">Tecnologias de visualização</string>
@@ -1233,6 +1296,7 @@
     <string name="up_class_vr_ar_topic20">Detecção de colisões</string>
 
     <string name="up_class_robotics">Robótica</string>
+    <string name="up_class_robotics_description"></string>
     <string name="up_class_robotics_topic1">Conceitos de Inteligência Artificial</string>
     <string name="up_class_robotics_topic2">Conceitos Básicos de Robótica</string>
     <string name="up_class_robotics_topic3">Enquadramento da Inteligência Artificial na Robótica</string>
@@ -1264,6 +1328,7 @@
     <string name="up_class_robotics_topic29">Aplicações: Plataformas Robóticas: Lego MindStorms NXT, ERS210A e ERS-7 (AIBOS da Sony), EcoBees, Humanóides RoboNova: Arquitecturas de Hardware e Software. Programação Prática de robôs e equipas de robôs</string>
 
     <string name="up_class_system_security2">Segurança em Sistemas Informáticos</string>
+    <string name="up_class_system_security2_description"></string>
     <string name="up_class_system_security2_topic1">Fundamentos</string>
     <string name="up_class_system_security2_topic2">Políticas de segurança</string>
     <string name="up_class_system_security2_topic3">Criptografia: teoria e aplicações</string>
@@ -1271,11 +1336,13 @@
     <string name="up_class_system_security2_topic5">Aspectos práticos em redes, em sistemas e na programação</string>
 
     <string name="up_class_software_seminar">Seminário de Engenharia de Software e Sistemas de Informação</string>
+    <string name="up_class_software_seminar_description"></string>
     <string name="up_class_software_seminar_topic1">Áreas de aplicação mais influenciadas pelo software actualmente: Identificação e discussão de factores de qualidade chave com elevado impacto na área de aplicação</string>
     <string name="up_class_software_seminar_topic2">Áreas de aplicação mais influenciadas pelo software actualmente: Identificação e análise crítica de bons e maus exemplos, e das melhores práticas da engenharia de software, na forma como este afecta o indivíduo e a sociedade</string>
     <string name="up_class_software_seminar_topic3">Áreas de aplicação mais influenciadas pelo software actualmente: Discussão e proposta de novas abordagens para mitigar problemas recorrentes</string>
 
     <string name="up_class_intelsystems_seminar">Seminário de Sistemas Inteligentes, Interacção e Multimédia</string>
+    <string name="up_class_intelsystems_seminar_description"></string>
     <string name="up_class_intelsystems_seminar_topic1">Modelação e Simulação: Aplicações a Gestão de Tráfego e evacuação de peões</string>
     <string name="up_class_intelsystems_seminar_topic2">\"Text Mining\": Aplicações na web e na análise de Repositórios de texto em Português</string>
     <string name="up_class_intelsystems_seminar_topic3">Instituições Electrónicas: Contratação, Confiança e Negociação Electrónica</string>
@@ -1288,6 +1355,7 @@
     <string name="up_class_intelsystems_seminar_topic10">Apresentações dos trabalhos realizados pelos alunos</string>
 
     <string name="up_class_network_services">Serviços de Rede e de Sistema</string>
+    <string name="up_class_network_services_description"></string>
     <string name="up_class_network_services_topic1">Arquitectura TCP/IP, endereçamento IP</string>
     <string name="up_class_network_services_topic2">Protocolos de encaminhamento em redes IP; routing interno e externo</string>
     <string name="up_class_network_services_topic3">Serviços básicos e de suporte de rede e de sistemas: serviço de DNS (Domain Name System) e serviço de atribuição de endereços e configurações (DHCP)</string>
@@ -1297,6 +1365,7 @@
     <string name="up_class_network_services_topic7">Serviços VoIP e teleconferência</string>
 
     <string name="up_class_swe_testing">Teste, Verificação e Validação de Software</string>
+    <string name="up_class_swe_testing_description"></string>
     <string name="up_class_swe_testing_topic1">Conceitos básicos de qualidade de software: noção de qualidade</string>
     <string name="up_class_swe_testing_topic2">Conceitos básicos de qualidade de software: atributos e métricas de qualidade segundo a norma ISO 9126</string>
     <string name="up_class_swe_testing_topic3">Conceitos básicos de qualidade de software: factores de qualidade</string>
@@ -1318,6 +1387,7 @@
     <string name="up_class_swe_testing_topic19">Inspecções, revisões e outras técnicas de análise estática de software</string>
 
     <string name="up_class_computer_vision">Visão por Computador</string>
+    <string name="up_class_computer_vision_description"></string>
     <string name="up_class_computer_vision_topic1">Aquisição de imagens digitais: imagens de intensidade (2D) e de distância/posição (3D)</string>
     <string name="up_class_computer_vision_topic2">Aquisição de imagens digitais: modelo geométrico e radiométrico de uma câmara</string>
     <string name="up_class_computer_vision_topic3">Processamento e análise de imagens de intensidade: filtragem</string>

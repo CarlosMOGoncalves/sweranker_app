@@ -13,6 +13,7 @@
             <class>
                 <id>mieic_c1</id>
                 <name>@string/up_class_discrete_mathematics</name>
+                <description></description>
                 <year>1</year>
                 <semester>1</semester>
                 <ects>6</ects>
