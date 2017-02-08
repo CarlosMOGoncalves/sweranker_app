@@ -11,6 +11,7 @@ public class DegreeClass {
 
     private String _id;
     private int _nameResource;
+    private int _descriptionResource;
     private int _year;
     private int _semester;
     private float _ectsCredits;
@@ -37,6 +38,14 @@ public class DegreeClass {
 
     public void setNameResource(int nameResource) {
         _nameResource = nameResource;
+    }
+
+    public int getDescriptionResource() {
+        return _descriptionResource;
+    }
+
+    public void setDescriptionResource(int descriptionResource) {
+        _descriptionResource = descriptionResource;
     }
 
     public int getYear() {

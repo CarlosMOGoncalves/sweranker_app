@@ -17,6 +17,9 @@
 
     <string name="description">Descrição</string>
     <string name="year">Ano</string>
+    <string name="semester">Semestre</string>
+    <string name="ects">ECTS</string>
+    <string name="optional">Opcional</string>
 
     <string name="loren_ipsum">Far away\nAcross the field\nTolling on the iron bell\nCalls the faithful to their knees\nTo hear the softly spoken magic spell</string>
     <string name="loren_ipsum_title">Us and Them</string>
@@ -1111,7 +1114,7 @@
     <string name="up_class_multimedia_services_topic7">Novos serviços: TV digital interactiva; Multimedia Streaming, IPtel</string>
 
     <string name="up_class_system_security">Segurança em Sistemas Informáticos</string>
-    <string name="up_class_system_security_description"></string>
+    <string name="up_class_system_security_description">Esta Unidade Curricular tem por âmbito o estudo da problemática de segurança de sistemas Informáticos, de forma a fornecer aos estudantes um painel básico dos conceitos e das ameaças e defesas de uma utilização abusiva e destrutiva de tais sistemas.</string>
     <string name="up_class_system_security_topic1">Fundamentos</string>
     <string name="up_class_system_security_topic2">Políticas de segurança</string>
     <string name="up_class_system_security_topic3">Criptografia: teoria e aplicações</string>
@@ -1119,7 +1122,7 @@
     <string name="up_class_system_security_topic5">Aspectos práticos em redes, em sistemas e na programação</string>
 
     <string name="up_class_embedded_systems">Sistemas Embutidos e de Tempo Real</string>
-    <string name="up_class_embedded_systems_description"></string>
+    <string name="up_class_embedded_systems_description">Esta UC tem por objectivo dotar os alunos com capacidade de desenvolver sistemas embarcados com requisitos de tempo-real, recorrendo, se necessário, a sistemas operativos de tempo-real.</string>
     <string name="up_class_embedded_systems_topic1">Introdução aos sistemas embutidos e conceitos base </string>
     <string name="up_class_embedded_systems_topic2">Arquitecturas de Hardware para sistemas embutidos (CPUs e barramentos para periféricos) </string>
     <string name="up_class_embedded_systems_topic3">Arquitecturas de Software para Sistemas Embarcados </string>
@@ -1129,7 +1132,7 @@
     <string name="up_class_embedded_systems_topic7">Programação com POSIX para Tempo-Real</string>
 
     <string name="up_class_database_technologies">Tecnologias de Bases de Dados</string>
-    <string name="up_class_database_technologies_description"></string>
+    <string name="up_class_database_technologies_description">Esta UC tem por objectivo habilitar os alunos a desenvolver e administrar grandes bases de dados, nomeadamente a afinar o esquema físico, a otimizar interrogações SQL, a tirar partido das extensões à manipulação de objetos e à tecnologia XML e a recuperar e replicar dados.</string>
     <string name="up_class_database_technologies_topic1">Esquema físico e afinação (\"tuning\") de BD</string>
     <string name="up_class_database_technologies_topic2">Armazenamento de dados e índices</string>
     <string name="up_class_database_technologies_topic3">Execução e optimização de interrogações</string>
@@ -1142,7 +1145,7 @@
     <string name="up_class_database_technologies_topic10">Recuperação e replicação</string>
 
     <string name="up_class_integration_technologies">Tecnologias de Distribuição e Integração</string>
-    <string name="up_class_integration_technologies_description"></string>
+    <string name="up_class_integration_technologies_description">Os objectivos principais da unidade curricular incluem:\n- a aquisição de conhecimento e prática dos conceitos essenciais do projeto e arquitetura de aplicaçãoes distribuídas empresariais;\n- aplicação dos principais padrões e tecnologias, consoante os requisitos e funcionalidades dos cenários finais;\n- conhecimaento detalhado de várias tecnologias, com vista à sua implementação fluente, e à sua interoperabilidade e integração.</string>
     <string name="up_class_integration_technologies_topic1">Os paradigmas distribuídos da passagem de mensagens e invocação remota</string>
     <string name="up_class_integration_technologies_topic2">O mecanismo da invocação remota: RPC</string>
     <string name="up_class_integration_technologies_topic3">Distribuição orientada a objectos e componentes, middleware</string>
@@ -1160,7 +1163,7 @@
     <string name="up_class_integration_technologies_topic15">Serviços para distribuição e integração e sua utilização: BPI/BPEL</string>
 
     <string name="up_class_dissertation_preparation">Preparação da Dissertação</string>
-    <string name="up_class_dissertation_preparation_description"></string>
+    <string name="up_class_dissertation_preparation_description">A unidade curricular \"Preparação de Dissertação\" acompanha o processo de organização e trabalho preliminar da dissertação do Mestrado Integrado em Engenharia Informática e Computação. Os estudantes completam PDIS antes do semestre em que a dissertação é realizada a tempo inteiro. O esforço da unidade é o equivalente a 6 ECTS (1/5 de semestre a tempo inteiro) e é ocupado com a escolha e familiarização com o tema da dissertação, com o estudo do estado da arte no domínio da dissertação e com a realização de trabalho preliminar que permita no semestre da dissertação um trabalho intenso, bem focado e com boa apresentação de resultados.</string>
     <string name="up_class_dissertation_preparation_topic1">Métodos e técnicas em projectos de investigação</string>
     <string name="up_class_dissertation_preparation_topic2">Métodos sistemáticos de pesquisa de informação científica</string>
     <string name="up_class_dissertation_preparation_topic3">Concepção e realização de trabalhos para publicação</string>
@@ -1168,7 +1171,7 @@
     <string name="up_class_dissertation_preparation_topic5">Concepção, elaboração e defesa do relatório do projecto de dissertação</string>
 
     <string name="up_class_dissertation">Dissertação</string>
-    <string name="up_class_dissertation_description"></string>
+    <string name="up_class_dissertation_description">Trabalho individual de investigação e desenvolvimento, conducente à elaboração de uma dissertação de natureza científica sobre um tema da área de conhecimento do curso, ou visando a integração e aplicação à resolução de problemas complexos de engenharia de conhecimentos, competências e atitudes adquiridos ao longo do curso.</string>
     <string name="up_class_dissertation_topic1">Identificação de um problema a resolver</string>
     <string name="up_class_dissertation_topic2">Pesquisa do estado-da-arte respectivo</string>
     <string name="up_class_dissertation_topic3">Análise de potenciais soluções</string>
@@ -1177,7 +1180,7 @@
     <string name="up_class_dissertation_topic6">Escrita do relatório de dissertação</string>
 
     <string name="up_class_investment_analysis">Análise de Projectos de Investimento</string>
-    <string name="up_class_investment_analysis_description"></string>
+    <string name="up_class_investment_analysis_description">O objectivo desta disciplina é dotar os alunos do conhecimento das metodologias-base para a análise da viabilidade económica e financeira de projectos de investimento. </string>
     <string name="up_class_investment_analysis_topic1">Visão global da Análise de Projectos</string>
     <string name="up_class_investment_analysis_topic2">O Plano de Negócios</string>
     <string name="up_class_investment_analysis_topic3">Os Estudos de Viabilidade</string>
@@ -1188,7 +1191,7 @@
     <string name="up_class_investment_analysis_topic8">Risco e incerteza na avaliação. Os métodos empiricos de tratamento de risco. Métodos de simulação - análise de sensibilidade, cenários alternativos, análise do ponto morto, simulação de Monte Carlo. Árvores de Decisão. O CAPM na avaliação do risco dos projectos.</string>
 
     <string name="up_class_data_warehouses">Armazéns de Dados</string>
-    <string name="up_class_data_warehouses_description"></string>
+    <string name="up_class_data_warehouses_description">O objectvo da UC Armazém de Dadtos é dotar os alunos da capacidade de projectar, implementar e explorar armazéns de dados (data warehouses).</string>
     <string name="up_class_data_warehouses_topic1">Armazéns de dados: conceito, arquitectura e abordagens.</string>
     <string name="up_class_data_warehouses_topic2">O ciclo de vida de um projecto de armazéns de dados.</string>
     <string name="up_class_data_warehouses_topic3">Planeamento, levantamento de requisitos, identificação das fontes.</string>
@@ -1201,7 +1204,7 @@
     <string name="up_class_data_warehouses_topic10">Requisitos de metadados.</string>
 
     <string name="up_class_mobile_computing">Computação Móvel</string>
-    <string name="up_class_mobile_computing_description"></string>
+    <string name="up_class_mobile_computing_description">Os objectivos principais desta unidade curricular visam a aquisição de conhecimento e prática dos conceitos essenciais do projecto, arquitectura e implementação de aplicações, principalmente empresariais, em dispositivos móveis, utilizando APIs de grande divulgação corrente.</string>
     <string name="up_class_mobile_computing_topic1">Aplicações para dispositivos móveis: características adaptadas aos dispositivos móveis</string>
     <string name="up_class_mobile_computing_topic2">Aplicações para dispositivos móveis: necessidades e facilidades de comunicação</string>
     <string name="up_class_mobile_computing_topic3">Aplicações para dispositivos móveis: armazenamento local</string>
@@ -1225,7 +1228,7 @@
     <string name="up_class_mobile_computing_topic21">Utilização de ferramentas de desenvolvimento e emuladores dos dispositivos.</string>
 
     <string name="up_class_information">Descrição, Armazenamento e Pesquisa de Informação</string>
-    <string name="up_class_information_description"></string>
+    <string name="up_class_information_description">A unidade curricular "Descrição, Armazenamento e Pesquisa de Informação" tem como objectivo:\n-Sensibilizar os estudantes para os problemas do armazenamento e organização de grandes coleções de dados;\n-Familiarizar os estudantes com os conceitos principais na pesquisa de documentos textuais e da sua aplicação em ferramentas;\n-Explorar os métodos e ferramentas para a descrição de recursos na web e para o uso da descrição em aplicações que fazem uso do significado dos dados</string>
     <string name="up_class_information_topic1">Introdução às colecções de dados</string>
     <string name="up_class_information_topic2">Ferramentas para recolha, preparação e acesso a dados</string>
     <string name="up_class_information_topic3">Modelos de dados e armazenamento de colecções</string>
@@ -1237,7 +1240,7 @@
     <string name="up_class_information_topic9">Ontologias para dados de um domínio</string>
 
     <string name="up_class_data_mining">Extracção de Conhecimento e Aprendizagem Computacional</string>
-    <string name="up_class_data_mining_description"></string>
+    <string name="up_class_data_mining_description">Os objectivos desta UC são:\n-Motivar para a utilização de técnicas de extração de conhecimento (EC) de dados, ou data mining, no apoio à decisão.\n-Desenvolver a capacidade de utilizar corretamente essas técnicas para análise automática de grandes quantidades de dados. </string>
     <string name="up_class_data_mining_topic1">Introdução à extracção de conhecimento (Data Mining).</string>
     <string name="up_class_data_mining_topic2">Clustering: Algoritmos de partição (revisão do K-means, K-medoids) e algoritmos hierárquicos. Outros algoritmos. Medidas de avaliação.</string>
     <string name="up_class_data_mining_topic3">Regras de associação: Algoritmo APRIORI. Outros algoritmos. Medidas de avaliação.</string>
@@ -1249,7 +1252,7 @@
     <string name="up_class_data_mining_topic9">Text mining: Representação de dados para text mining. Medidas de avaliação. - Web Mining e sistemas de recomendação.</string>
 
     <string name="up_class_interaction_design">Interacção Pessoa-Computador</string>
-    <string name="up_class_interaction_design_description"></string>
+    <string name="up_class_interaction_design_description">O principal objectivo da disciplina é o de preparar os estudantes para analisarem e projectarem as componentes interactivas dos sistemas, em particular da interface com os utilizadores, de uma forma adequada às suas necessidades, considerando o curto, médio e longo prazo.</string>
     <string name="up_class_interaction_design_topic1">Projecto de Concepção da Interacção.</string>
     <string name="up_class_interaction_design_topic2">Compreender e Conceitualizar a Interacção.</string>
     <string name="up_class_interaction_design_topic3">Compreender os Utilizadores.</string>
@@ -1260,7 +1263,7 @@
     <string name="up_class_interaction_design_topic8">Introdução à Avaliação de Usabilidade.</string>
 
     <string name="up_class_agile_methods">Metodologias Ágeis de Desenvolvimento de Software</string>
-    <string name="up_class_agile_methods_description"></string>
+    <string name="up_class_agile_methods_description">Os principais objectivos da unidade curricular é dotar os estudantes de conhecimentos e experiência concreta na definição, utilização e refinamento de processos ágeis para a especificidade de um projecto.</string>
     <string name="up_class_agile_methods_topic1">Introdução às Metodologias Ágeis. </string>
     <string name="up_class_agile_methods_topic2">A necessidade de métodos ágeis para desenvolvimento de software. </string>
     <string name="up_class_agile_methods_topic3">Software ágil: valores e principios fundamentais. </string>
@@ -1273,7 +1276,7 @@
     <string name="up_class_agile_methods_topic10">Desenvolvimento de projectos ágeis reais e sua relação com o utilizador.</string>
 
     <string name="up_class_vr_ar">Realidade Virtual e Aumentada</string>
-    <string name="up_class_vr_ar_description"></string>
+    <string name="up_class_vr_ar_description">Realidade Aumentada é uma tecnologia através da qual se pretende melhorar ou aumentar a visão que um utilizador tem do mundo real com imagens virtuais, usando técnicas de Visão por Computador e de Computação Gráfica/Realidade Virtual. O principal objectivo desta disciplina é transmitir aos alunos um conjunto de conhecimentos básicos destas técnicas, que lhes permitam prosseguir estudos mais avançados na área emergente da Realidade Aumentada, e a capacidade de realizar pequenos trabalhos ilustrativos das metodologias estudadas. </string>
     <string name="up_class_vr_ar_topic1">Conceitos</string>
     <string name="up_class_vr_ar_topic2">Aplicações</string>
     <string name="up_class_vr_ar_topic3">Tecnologias de visualização</string>
@@ -1296,7 +1299,7 @@
     <string name="up_class_vr_ar_topic20">Detecção de colisões</string>
 
     <string name="up_class_robotics">Robótica</string>
-    <string name="up_class_robotics_description"></string>
+    <string name="up_class_robotics_description">Os principais objectivos da UC Robótica são:\n-Compreender os conceitos básicos de Robótica e o enquadramento da Inteligência Artificial na Robótica.\n-Estudar métodos de perceção e interpretação sensorial (com ênfase na visão por computador)\n-Estudar os fundamentos da robótica cooperativa e da construção de equipas de robôs\n-Analisar as principais competições robóticas nacionais e internacionais, os simuladores robóticos mais realistas e as plataformas robóticas mais avançadas disponíveis no mercado.</string>
     <string name="up_class_robotics_topic1">Conceitos de Inteligência Artificial</string>
     <string name="up_class_robotics_topic2">Conceitos Básicos de Robótica</string>
     <string name="up_class_robotics_topic3">Enquadramento da Inteligência Artificial na Robótica</string>
@@ -1328,7 +1331,7 @@
     <string name="up_class_robotics_topic29">Aplicações: Plataformas Robóticas: Lego MindStorms NXT, ERS210A e ERS-7 (AIBOS da Sony), EcoBees, Humanóides RoboNova: Arquitecturas de Hardware e Software. Programação Prática de robôs e equipas de robôs</string>
 
     <string name="up_class_system_security2">Segurança em Sistemas Informáticos</string>
-    <string name="up_class_system_security2_description"></string>
+    <string name="up_class_system_security2_description">Esta Unidade Curricular tem por âmbito o estudo da problemática de segurança de sistemas Informáticos, de forma a fornecer aos estudantes um painel básico dos conceitos e das ameaças e defesas de uma utilização abusiva e destrutiva de tais sistemas.</string>
     <string name="up_class_system_security2_topic1">Fundamentos</string>
     <string name="up_class_system_security2_topic2">Políticas de segurança</string>
     <string name="up_class_system_security2_topic3">Criptografia: teoria e aplicações</string>
@@ -1336,13 +1339,13 @@
     <string name="up_class_system_security2_topic5">Aspectos práticos em redes, em sistemas e na programação</string>
 
     <string name="up_class_software_seminar">Seminário de Engenharia de Software e Sistemas de Informação</string>
-    <string name="up_class_software_seminar_description"></string>
+    <string name="up_class_software_seminar_description">O objectivo fundamental desta unidade curricular é aprender, discutir e desenhar soluções para as várias problemáticas que surgem pela influência da engenharia de software (e do uso do software em geral) pelas pessoas e pela sociedade como um todo.</string>
     <string name="up_class_software_seminar_topic1">Áreas de aplicação mais influenciadas pelo software actualmente: Identificação e discussão de factores de qualidade chave com elevado impacto na área de aplicação</string>
     <string name="up_class_software_seminar_topic2">Áreas de aplicação mais influenciadas pelo software actualmente: Identificação e análise crítica de bons e maus exemplos, e das melhores práticas da engenharia de software, na forma como este afecta o indivíduo e a sociedade</string>
     <string name="up_class_software_seminar_topic3">Áreas de aplicação mais influenciadas pelo software actualmente: Discussão e proposta de novas abordagens para mitigar problemas recorrentes</string>
 
     <string name="up_class_intelsystems_seminar">Seminário de Sistemas Inteligentes, Interacção e Multimédia</string>
-    <string name="up_class_intelsystems_seminar_description"></string>
+    <string name="up_class_intelsystems_seminar_description">Este Seminário tem como objectivos principais:\n-Tomar conhecimento e discutir sobre trabalhos de investigação em curso nas áreas dos Sistemas Inteligentes.\n-Tomar contacto com diferentes investigadores em Sistemas Inteligentes e, através deles, com vários grupos de investigação activos nos tópicos apresentados.</string>
     <string name="up_class_intelsystems_seminar_topic1">Modelação e Simulação: Aplicações a Gestão de Tráfego e evacuação de peões</string>
     <string name="up_class_intelsystems_seminar_topic2">\"Text Mining\": Aplicações na web e na análise de Repositórios de texto em Português</string>
     <string name="up_class_intelsystems_seminar_topic3">Instituições Electrónicas: Contratação, Confiança e Negociação Electrónica</string>
@@ -1365,7 +1368,7 @@
     <string name="up_class_network_services_topic7">Serviços VoIP e teleconferência</string>
 
     <string name="up_class_swe_testing">Teste, Verificação e Validação de Software</string>
-    <string name="up_class_swe_testing_description"></string>
+    <string name="up_class_swe_testing_description">O objectivo desta unidade curricular é o de dotar os alunos com conhecimentos consolidados na área das redes de computadores sob uma prespectiva de projectores e gestores de uma rede, nomedadamente, constituição de várias sub-redes para satisfazer requisitos específicos de organizações e utilizadores, atribuição de gamas de enderecos IP, gestão de serviços de encaminhamento de pacotes dentro de um domínio e entre domínios, identificação de servicos de redes necessários, sua instalação e configuração.</string>
     <string name="up_class_swe_testing_topic1">Conceitos básicos de qualidade de software: noção de qualidade</string>
     <string name="up_class_swe_testing_topic2">Conceitos básicos de qualidade de software: atributos e métricas de qualidade segundo a norma ISO 9126</string>
     <string name="up_class_swe_testing_topic3">Conceitos básicos de qualidade de software: factores de qualidade</string>
@@ -1387,7 +1390,7 @@
     <string name="up_class_swe_testing_topic19">Inspecções, revisões e outras técnicas de análise estática de software</string>
 
     <string name="up_class_computer_vision">Visão por Computador</string>
-    <string name="up_class_computer_vision_description"></string>
+    <string name="up_class_computer_vision_description">A visão por computador é uma área da ciência da computação focada na extracção de "informação útil" de imagens e vídeos. O objectivo da visão por computador é "descobrir a partir de imagens o que está presente no mundo, onde estão localizadas as coisas, que acções estão a ser executadas" (Marr,1982).</string>
     <string name="up_class_computer_vision_topic1">Aquisição de imagens digitais: imagens de intensidade (2D) e de distância/posição (3D)</string>
     <string name="up_class_computer_vision_topic2">Aquisição de imagens digitais: modelo geométrico e radiométrico de uma câmara</string>
     <string name="up_class_computer_vision_topic3">Processamento e análise de imagens de intensidade: filtragem</string>

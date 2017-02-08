@@ -13,7 +13,7 @@
             <class>
                 <id>mieic_c1</id>
                 <name>@string/up_class_discrete_mathematics</name>
-                <description></description>
+                <description>@string/up_class_discrete_mathematics_description</description>
                 <year>1</year>
                 <semester>1</semester>
                 <ects>6</ects>
@@ -64,6 +64,7 @@
             <class>
                 <id>mieic_c2</id>
                 <name>@string/up_class_computer_architecture</name>
+                <description>@string/up_class_computer_architecture_description</description>
                 <year>1</year>
                 <semester>1</semester>
                 <ects>6</ects>
@@ -194,6 +195,7 @@
             <class>
                 <id>mieic_c3</id>
                 <name>@string/up_class_programming_fundations</name>
+                <description>@string/up_class_programming_fundations_description</description>
                 <year>1</year>
                 <semester>1</semester>
                 <ects>6</ects>
@@ -260,6 +262,7 @@
             <class>
                 <id>mieic_c4</id>
                 <name>@string/up_class_math_analysis</name>
+                <description>@string/up_class_math_analysis_description</description>
                 <year>1</year>
                 <semester>1</semester>
                 <ects>6</ects>
@@ -334,6 +337,7 @@
             <class>
                 <id>mieic_c5</id>
                 <name>@string/up_class_algebra</name>
+                <description>@string/up_class_algebra_description</description>
                 <year>1</year>
                 <semester>1</semester>
                 <ects>4.5</ects>
@@ -452,6 +456,7 @@
             <class>
                 <id>mieic_c6</id>
                 <name>@string/up_class_project</name>
+                <description>@string/up_class_project_description</description>
                 <year>1</year>
                 <semester>1</semester>
                 <ects>1.5</ects>
@@ -499,6 +504,7 @@
             <class>
                 <id>mieic_c7</id>
                 <name>@string/up_class_statistical_methods</name>
+                <description>@string/up_class_statistical_methods_description</description>
                 <year>1</year>
                 <semester>2</semester>
                 <ects>4.5</ects>
@@ -577,6 +583,7 @@
             <class>
                 <id>mieic_c8</id>
                 <name>@string/up_class_programming</name>
+                <description>@string/up_class_programming_description</description>
                 <year>1</year>
                 <semester>2</semester>
                 <ects>7.5</ects>
@@ -711,6 +718,7 @@
             <class>
                 <id>mieic_c9</id>
                 <name>@string/up_class_physicsI</name>
+                <description>@string/up_class_physicsI_description</description>
                 <year>1</year>
                 <semester>2</semester>
                 <ects>6</ects>
@@ -769,6 +777,7 @@
             <class>
                 <id>mieic_c10</id>
                 <name>@string/up_class_math_complements</name>
+                <description>@string/up_class_math_complements_description</description>
                 <year>1</year>
                 <semester>2</semester>
                 <ects>6</ects>
@@ -799,6 +808,7 @@
             <class>
                 <id>mieic_c11</id>
                 <name>@string/up_class_microprocessors</name>
+                <description>@string/up_class_microprocessors_description</description>
                 <year>1</year>
                 <semester>2</semester>
                 <ects>6</ects>
@@ -860,6 +870,7 @@
             <class>
                 <id>mieic_c12</id>
                 <name>@string/up_class_computation_theory</name>
+                <description>@string/up_class_computation_theory_description</description>
                 <year>2</year>
                 <semester>1</semester>
                 <ects>6</ects>
@@ -902,6 +913,7 @@
             <class>
                 <id>mieic_c13</id>
                 <name>@string/up_class_numerical_methods</name>
+                <description>@string/up_class_numerical_methods_description</description>
                 <year>2</year>
                 <semester>1</semester>
                 <ects>4.5</ects>
@@ -948,6 +960,7 @@
             <class>
                 <id>mieic_c14</id>
                 <name>@string/up_class_physicsII</name>
+                <description>@string/up_class_physicsII_description</description>
                 <year>2</year>
                 <semester>1</semester>
                 <ects>6</ects>
@@ -998,6 +1011,7 @@
             <class>
                 <id>mieic_c15</id>
                 <name>@string/up_class_algorithms_structures</name>
+                <description>@string/up_class_algorithms_structures_description</description>
                 <year>2</year>
                 <semester>1</semester>
                 <ects>7.5</ects>
@@ -1060,6 +1074,7 @@
             <class>
                 <id>mieic_c16</id>
                 <name>@string/up_class_computer_labs</name>
+                <description>@string/up_class_computer_labs_description</description>
                 <year>2</year>
                 <semester>1</semester>
                 <ects>6</ects>
@@ -1122,6 +1137,7 @@
             <class>
                 <id>mieic_c17</id>
                 <name>@string/up_class_databases</name>
+                <description>@string/up_class_databases_description</description>
                 <year>2</year>
                 <semester>2</semester>
                 <ects>6</ects>
@@ -1180,6 +1196,7 @@
             <class>
                 <id>mieic_c18</id>
                 <name>@string/up_class_algorithm_analysis</name>
+                <description>@string/up_class_algorithm_analysis_description</description>
                 <year>2</year>
                 <semester>2</semester>
                 <ects>6</ects>
@@ -1242,6 +1259,7 @@
             <class>
                 <id>mieic_c19</id>
                 <name>@string/up_class_computer_graphics</name>
+                <description>@string/up_class_computer_graphics_description</description>
                 <year>2</year>
                 <semester>2</semester>
                 <ects>6</ects>
@@ -1284,6 +1302,7 @@
             <class>
                 <id>mieic_c20</id>
                 <name>@string/up_class_operating_systems</name>
+                <description>@string/up_class_operating_systems_description</description>
                 <year>2</year>
                 <semester>2</semester>
                 <ects>6</ects>
@@ -1374,6 +1393,7 @@
             <class>
                 <id>mieic_c21</id>
                 <name>@string/up_class_oop_labs</name>
+                <description>@string/up_class_oop_labs_description</description>
                 <year>2</year>
                 <semester>2</semester>
                 <ects>6</ects>
@@ -1431,6 +1451,7 @@
             <class>
                 <id>mieic_c22</id>
                 <name>@string/up_class_logic_programming</name>
+                <description>@string/up_class_logic_programming_description</description>
                 <year>3</year>
                 <semester>1</semester>
                 <ects>4.5</ects>
@@ -1481,6 +1502,7 @@
             <class>
                 <id>mieic_c23</id>
                 <name>@string/up_class_graphics_lab</name>
+                <description>@string/up_class_graphics_lab_description</description>
                 <year>3</year>
                 <semester>1</semester>
                 <ects>6</ects>
@@ -1507,6 +1529,7 @@
             <class>
                 <id>mieic_c24</id>
                 <name>@string/up_class_software_engineering</name>
+                <description>@string/up_class_software_engineering_description</description>
                 <year>3</year>
                 <semester>1</semester>
                 <ects>6</ects>
@@ -1677,6 +1700,7 @@
             <class>
                 <id>mieic_c25</id>
                 <name>@string/up_class_computer_networks</name>
+                <description>@string/up_class_computer_networks_description</description>
                 <year>3</year>
                 <semester>1</semester>
                 <ects>6</ects>
@@ -1727,6 +1751,7 @@
             <class>
                 <id>mieic_c26</id>
                 <name>@string/up_class_web_tech</name>
+                <description>@string/up_class_web_tech_description</description>
                 <year>3</year>
                 <semester>2</semester>
                 <ects>7.5</ects>
@@ -1773,6 +1798,7 @@
             <class>
                 <id>mieic_c27</id>
                 <name>@string/up_class_db_web_labs</name>
+                <description>@string/up_class_db_web_labs_description</description>
                 <year>3</year>
                 <semester>2</semester>
                 <ects>6</ects>
@@ -1807,6 +1833,7 @@
             <class>
                 <id>mieic_c28</id>
                 <name>@string/up_class_ai</name>
+                <description>@string/up_class_ai_description</description>
                 <year>3</year>
                 <semester>2</semester>
                 <ects>6</ects>
@@ -1989,6 +2016,7 @@
             <class>
                 <id>mieic_c29</id>
                 <name>@string/up_class_compilers</name>
+                <description>@string/up_class_compilers_description</description>
                 <year>3</year>
                 <semester>2</semester>
                 <ects>6</ects>
@@ -2051,6 +2079,7 @@
             <class>
                 <id>mieic_c30</id>
                 <name>@string/up_class_distributed_systems</name>
+                <description>@string/up_class_distributed_systems_description</description>
                 <year>3</year>
                 <semester>2</semester>
                 <ects>6</ects>
@@ -2101,6 +2130,7 @@
             <class>
                 <id>mieic_c31</id>
                 <name>@string/up_class_personal_development</name>
+                <description>@string/up_class_personal_development_description</description>
                 <year>3</year>
                 <semester>2</semester>
                 <ects>4.5</ects>
@@ -2162,6 +2192,7 @@
             <class>
                 <id>mieic_c32</id>
                 <name>@string/up_class_information_systems</name>
+                <description>@string/up_class_information_systems_description</description>
                 <year>4</year>
                 <semester>1</semester>
                 <ects>4.5</ects>
@@ -2220,6 +2251,7 @@
             <class>
                 <id>mieic_c33</id>
                 <name>@string/up_class_software_lab</name>
+                <description>@string/up_class_software_lab_description</description>
                 <year>4</year>
                 <semester>1</semester>
                 <ects>7.5</ects>
@@ -2254,6 +2286,7 @@
             <class>
                 <id>mieic_c34</id>
                 <name>@string/up_class_company_management</name>
+                <description>@string/up_class_company_management_description</description>
                 <year>4</year>
                 <semester>1</semester>
                 <ects>6</ects>
@@ -2316,6 +2349,7 @@
             <class>
                 <id>mieic_c35</id>
                 <name>@string/up_class_agents_ia</name>
+                <description>@string/up_class_agents_ia_description</description>
                 <year>4</year>
                 <semester>1</semester>
                 <ects>6</ects>
@@ -2410,6 +2444,7 @@
             <class>
                 <id>mieic_c36</id>
                 <name>@string/up_class_formal_methods</name>
+                <description>@string/up_class_formal_methods_description</description>
                 <year>4</year>
                 <semester>1</semester>
                 <ects>6</ects>
@@ -2544,6 +2579,7 @@
             <class>
                 <id>mieic_c37</id>
                 <name>@string/up_class_operations_research</name>
+                <description>@string/up_class_operations_research_description</description>
                 <year>4</year>
                 <semester>2</semester>
                 <ects>4.5</ects>
@@ -2602,6 +2638,7 @@
             <class>
                 <id>mieic_c38</id>
                 <name>@string/up_class_project_labs</name>
+                <description>@string/up_class_project_labs_description</description>
                 <year>4</year>
                 <semester>2</semester>
                 <ects>7.5</ects>
@@ -2660,6 +2697,7 @@
             <class>
                 <id>mieic_c39</id>
                 <name>@string/up_class_swesys_architecture</name>
+                <description>@string/up_class_swesys_architecture_description</description>
                 <year>4</year>
                 <semester>2</semester>
                 <ects>6</ects>
@@ -2742,6 +2780,7 @@
             <class>
                 <id>mieic_c40</id>
                 <name>@string/up_class_network_achitecture</name>
+                <description>@string/up_class_network_achitecture_description</description>
                 <year>4</year>
                 <semester>2</semester>
                 <ects>6</ects>
@@ -2800,6 +2839,7 @@
             <class>
                 <id>mieic_c41</id>
                 <name>@string/up_class_parallel_computing</name>
+                <description>@string/up_class_parallel_computing_description</description>
                 <year>4</year>
                 <semester>2</semester>
                 <ects>6</ects>
@@ -2862,6 +2902,7 @@
             <class>
                 <id>mieic_c42</id>
                 <name>@string/up_class_mobile_communication</name>
+                <description>@string/up_class_mobile_communication_description</description>
                 <year>4</year>
                 <semester>2</semester>
                 <ects>6</ects>
@@ -2904,6 +2945,7 @@
             <class>
                 <id>mieic_c43</id>
                 <name>@string/up_class_computer_games</name>
+                <description>@string/up_class_computer_games_description</description>
                 <year>4</year>
                 <semester>2</semester>
                 <ects>6</ects>
@@ -2934,6 +2976,7 @@
             <class>
                 <id>mieic_c44</id>
                 <name>@string/up_class_requirements_engineering</name>
+                <description>@string/up_class_requirements_engineering_description</description>
                 <year>4</year>
                 <semester>2</semester>
                 <ects>6</ects>
@@ -3016,6 +3059,7 @@
             <class>
                 <id>mieic_c45</id>
                 <name>@string/up_class_logistics</name>
+                <description>@string/up_class_logistics_description</description>
                 <year>4</year>
                 <semester>2</semester>
                 <ects>6</ects>
@@ -3062,6 +3106,7 @@
             <class>
                 <id>mieic_c45</id>
                 <name>@string/up_class_markup_languages</name>
+                <description>@string/up_class_markup_languages_description</description>
                 <year>4</year>
                 <semester>2</semester>
                 <ects>6</ects>
@@ -3096,6 +3141,7 @@
             <class>
                 <id>mieic_c46</id>
                 <name>@string/up_class_marketing</name>
+                <description>@string/up_class_marketing_description</description>
                 <year>4</year>
                 <semester>2</semester>
                 <ects>6</ects>
@@ -3178,6 +3224,7 @@
             <class>
                 <id>mieic_c47</id>
                 <name>@string/up_class_modelation_simulation</name>
+                <description>@string/up_class_modelation_simulation_description</description>
                 <year>4</year>
                 <semester>2</semester>
                 <ects>6</ects>
@@ -3244,6 +3291,7 @@
             <class>
                 <id>mieic_c48</id>
                 <name>@string/up_class_multimedia_services</name>
+                <description>@string/up_class_multimedia_services_description</description>
                 <year>4</year>
                 <semester>2</semester>
                 <ects>6</ects>
@@ -3282,6 +3330,7 @@
             <class>
                 <id>mieic_c49</id>
                 <name>@string/up_class_system_security</name>
+                <description>@string/up_class_system_security_description</description>
                 <year>4</year>
                 <semester>2</semester>
                 <ects>6</ects>
@@ -3312,6 +3361,7 @@
             <class>
                 <id>mieic_c50</id>
                 <name>@string/up_class_embedded_systems</name>
+                <description>@string/up_class_embedded_systems_description</description>
                 <year>4</year>
                 <semester>2</semester>
                 <ects>6</ects>
@@ -3350,6 +3400,7 @@
             <class>
                 <id>mieic_c51</id>
                 <name>@string/up_class_database_technologies</name>
+                <description>@string/up_class_database_technologies_description</description>
                 <year>4</year>
                 <semester>2</semester>
                 <ects>6</ects>
@@ -3400,6 +3451,7 @@
             <class>
                 <id>mieic_c52</id>
                 <name>@string/up_class_swe_testing</name>
+                <description>@string/up_class_swe_testing_description</description>
                 <year>4</year>
                 <semester>2</semester>
                 <ects>6</ects>
@@ -3473,6 +3525,7 @@
             <class>
                 <id>mieic_c53</id>
                 <name>@string/up_class_dissertation_preparation</name>
+                <description>@string/up_class_dissertation_preparation_description</description>
                 <year>5</year>
                 <semester>1</semester>
                 <ects>6</ects>
@@ -3503,6 +3556,7 @@
             <class>
                 <id>mieic_c54</id>
                 <name>@string/up_class_investment_analysis</name>
+                <description>@string/up_class_investment_analysis_description</description>
                 <year>5</year>
                 <semester>1</semester>
                 <ects>6</ects>
@@ -3545,6 +3599,7 @@
             <class>
                 <id>mieic_c55</id>
                 <name>@string/up_class_data_warehouses</name>
+                <description>@string/up_class_data_warehouses_description</description>
                 <year>5</year>
                 <semester>1</semester>
                 <ects>6</ects>
@@ -3595,6 +3650,7 @@
             <class>
                 <id>mieic_c56</id>
                 <name>@string/up_class_mobile_computing</name>
+                <description>@string/up_class_mobile_computing_description</description>
                 <year>5</year>
                 <semester>1</semester>
                 <ects>6</ects>
@@ -3689,6 +3745,7 @@
             <class>
                 <id>mieic_c57</id>
                 <name>@string/up_class_information</name>
+                <description>@string/up_class_information_description</description>
                 <year>5</year>
                 <semester>1</semester>
                 <ects>6</ects>
@@ -3735,6 +3792,7 @@
             <class>
                 <id>mieic_c58</id>
                 <name>@string/up_class_data_mining</name>
+                <description>@string/up_class_data_mining_description</description>
                 <year>5</year>
                 <semester>1</semester>
                 <ects>6</ects>
@@ -3781,6 +3839,7 @@
             <class>
                 <id>mieic_c59</id>
                 <name>@string/up_class_interaction_design</name>
+                <description>@string/up_class_interaction_design_description</description>
                 <year>5</year>
                 <semester>1</semester>
                 <ects>6</ects>
@@ -3823,6 +3882,7 @@
             <class>
                 <id>mieic_c60</id>
                 <name>@string/up_class_agile_methods</name>
+                <description>@string/up_class_agile_methods_description</description>
                 <year>5</year>
                 <semester>1</semester>
                 <ects>6</ects>
@@ -3873,6 +3933,7 @@
             <class>
                 <id>mieic_c61</id>
                 <name>@string/up_class_vr_ar</name>
+                <description>@string/up_class_vr_ar_description</description>
                 <year>5</year>
                 <semester>1</semester>
                 <ects>6</ects>
@@ -3963,6 +4024,7 @@
             <class>
                 <id>mieic_c62</id>
                 <name>@string/up_class_robotics</name>
+                <description>@string/up_class_robotics_description</description>
                 <year>5</year>
                 <semester>1</semester>
                 <ects>6</ects>
@@ -4089,6 +4151,7 @@
             <class>
                 <id>mieic_c63</id>
                 <name>@string/up_class_system_security2</name>
+                <description>@string/up_class_system_security2_description</description>
                 <year>5</year>
                 <semester>1</semester>
                 <ects>6</ects>
@@ -4119,6 +4182,7 @@
             <class>
                 <id>mieic_c64</id>
                 <name>@string/up_class_software_seminar</name>
+                <description>@string/up_class_software_seminar_description</description>
                 <year>5</year>
                 <semester>1</semester>
                 <ects>6</ects>
@@ -4141,6 +4205,7 @@
             <class>
                 <id>mieic_c65</id>
                 <name>@string/up_class_intelsystems_seminar</name>
+                <description>@string/up_class_intelsystems_seminar_description</description>
                 <year>5</year>
                 <semester>1</semester>
                 <ects>6</ects>
@@ -4191,6 +4256,7 @@
             <class>
                 <id>mieic_c66</id>
                 <name>@string/up_class_network_services</name>
+                <description>@string/up_class_network_services_description</description>
                 <year>5</year>
                 <semester>1</semester>
                 <ects>6</ects>
@@ -4229,6 +4295,7 @@
             <class>
                 <id>mieic_c67</id>
                 <name>@string/up_class_swe_testing</name>
+                <description>@string/up_class_swe_testing_description</description>
                 <year>5</year>
                 <semester>1</semester>
                 <ects>6</ects>
@@ -4315,6 +4382,7 @@
             <class>
                 <id>mieic_c68</id>
                 <name>@string/up_class_computer_vision</name>
+                <description>@string/up_class_computer_vision_description</description>
                 <year>5</year>
                 <semester>1</semester>
                 <ects>6</ects>
@@ -4377,6 +4445,7 @@
             <class>
                 <id>mieic_c69</id>
                 <name>@string/up_class_dissertation</name>
+                <description>@string/up_class_dissertation_description</description>
                 <year>5</year>
                 <semester>2</semester>
                 <ects>6</ects>

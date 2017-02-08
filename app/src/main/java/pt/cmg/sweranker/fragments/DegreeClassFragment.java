@@ -84,7 +84,17 @@ public class DegreeClassFragment extends Fragment {
         _myView = inflater.inflate(R.layout.degree_class_fragment, container, false);
 
         TextView classDescription = (TextView) _myView.findViewById(R.id.class_description_text);
-        classDescription.setText(getResources().getString(R.string.loren_ipsum));
+        classDescription.setText(getResources().getString(_degreeClass.getDescriptionResource()));
+
+        TextView classYear = (TextView) _myView.findViewById(R.id.year);
+        classYear.setText(getResources().getString(R.string.year) + ": " + _degreeClass.getYear());
+        TextView classSemester = (TextView) _myView.findViewById(R.id.semester);
+        classSemester.setText(getResources().getString(R.string.semester) + ": " + _degreeClass.getSemester());
+        TextView classECTS = (TextView) _myView.findViewById(R.id.ects);
+        classECTS.setText(getResources().getString(R.string.ects) + ": " + _degreeClass.getEctsCredits());
+        TextView classOptional = (TextView) _myView.findViewById(R.id.optional);
+        classOptional.setText(getResources().getString(R.string.optional) + ": " + (_degreeClass.isOptionalClass() ? "No" : "Yes"));
+
 
         RecyclerView curriculumList = (RecyclerView) _myView.findViewById(R.id.degree_program_list);
 

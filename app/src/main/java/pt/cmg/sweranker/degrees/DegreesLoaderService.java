@@ -158,6 +158,9 @@ public class DegreesLoaderService extends Service {
                                 case "name":
                                     degreeClass.setNameResource(getResources().getIdentifier(xmlParser.nextText(), "string", this.getPackageName()));
                                     break;
+                                case "description":
+                                    degreeClass.setDescriptionResource(getResources().getIdentifier(xmlParser.nextText(), "string", this.getPackageName()));
+                                    break;
                                 case "year":
                                     degreeClass.setYear(Integer.valueOf(xmlParser.nextText()));
                                     break;
