@@ -14,8 +14,9 @@
     <string name="info">Information</string>
     <string name="topics">Topics</string>
     <string name="topics_lowercase">tópicos</string>
-    <string name="description">Description</string>
 
+    <string name="description">Description</string>
+    <string name="year">Year</string>
 
     <string name="ka_software_requirements">Software Requirements</string>
     <string name="ka_software_design">Software Design</string>

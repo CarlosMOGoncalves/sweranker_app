@@ -1,7 +1,9 @@
 package pt.cmg.sweranker.fragments;
 
+import android.app.Activity;
 import android.app.Fragment;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.content.ContextCompat;
@@ -21,6 +23,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import pt.cmg.sweranker.DegreeClassActivity;
 import pt.cmg.sweranker.R;
 import pt.cmg.sweranker.degrees.Degree;
 import pt.cmg.sweranker.degrees.DegreeClass;
@@ -120,7 +123,10 @@ public class DegreeDetailsFragment extends Fragment {
         return _myView;
     }
 
-
+    /**
+     * This is literally just a two static pages adapter, one for each of the two tabs of the layout.
+     * Actually using two fragments by now was obviously too m
+     */
     private class TwoStaticPagesAdapter extends PagerAdapter {
 
         private Context _context;
@@ -347,15 +353,20 @@ public class DegreeDetailsFragment extends Fragment {
                     super(view);
                     _degreeClassName = (TextView) view.findViewById(R.id.class_name);
 
-                    //This listener is used to set the visibility of the topic description, it is GONE by default
-//                    view.setOnClickListener(new View.OnClickListener() {
-//                        @Override
-//                        public void onClick(View v) {
-//                            TransitionManager.beginDelayedTransition(_topicList, new Fade());
-//                            boolean isGone = _topicDescritpion.getVisibility() == View.GONE;
-//                            _topicDescritpion.setVisibility(isGone ? View.VISIBLE : View.GONE);
-//                        }
-//                    });
+                    view.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+
+                            int adapterPosition = getAdapterPosition();
+                            // AHA, I knew this array stuff would be useful <3
+                            String degreeClassId = _degreeClasses[adapterPosition].getId();
+
+                            Intent degreeClassDetail = new Intent((Activity) _parentActivity, DegreeClassActivity.class);
+                            degreeClassDetail.putExtra(DegreeClassActivity.DEGREE_CLASS_ID_EXTRA, degreeClassId);
+                            degreeClassDetail.putExtra(DegreeClassActivity.DEGREE_ID, _degreeId);
+                            startActivity(degreeClassDetail);
+                        }
+                    });
                 }
             }
         }

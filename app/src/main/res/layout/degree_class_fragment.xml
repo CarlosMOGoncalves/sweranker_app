@@ -1,0 +1,38 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="pt.cmg.sweranker.fragments.DegreeClassFragment">
+
+    <TextView
+        android:id="@+id/class_description_label"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/description" />
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1">
+
+        <TextView
+            android:id="@+id/class_description_text"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+
+    </android.support.v4.widget.NestedScrollView>
+
+    <TextView
+        android:id="@+id/class_curriculum"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/program" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/degree_program_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="2" />
+</LinearLayout>

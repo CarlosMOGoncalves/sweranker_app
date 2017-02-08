@@ -1,8 +1,10 @@
 package pt.cmg.sweranker.degrees;
 
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 
 public class Degree {
 
@@ -17,6 +19,7 @@ public class Degree {
     private Map<Integer, List<DegreeClass>> _classesByYear;
 
     public Degree() {
+        _classesByYear = new HashMap<>();
     }
 
     public int getId() {
@@ -91,7 +94,19 @@ public class Degree {
         }
 
         return _classesByYear.get(year);
+    }
 
+    public DegreeClass getDegreeClass(String degreeClassId) {
+
+        for (List<DegreeClass> classes : _classesByYear.values()) {
+
+            Optional<DegreeClass> foundIt = classes.stream().filter(dc -> dc.getId().equals(degreeClassId)).findAny();
+            if (foundIt.isPresent()) {
+                return foundIt.get();
+            }
+        }
+
+        return new DegreeClass();
     }
 
     public int getFullNameResource() {
