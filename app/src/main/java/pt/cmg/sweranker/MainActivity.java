@@ -29,7 +29,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import pt.cmg.sweranker.degrees.Degree;
+import pt.cmg.sweranker.degrees.DegreeClass;
 import pt.cmg.sweranker.degrees.DegreesLoaderService;
+import pt.cmg.sweranker.fragments.DegreeClassFragment;
 import pt.cmg.sweranker.fragments.DegreeDetailsFragment;
 import pt.cmg.sweranker.fragments.DegreesFragment;
 import pt.cmg.sweranker.fragments.KADetailsFragment;
@@ -45,7 +47,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         SwebokFragment.OnSwebokFragmentInteractionListener,
         KADetailsFragment.OnKaDetailsFragmentInteractionListener,
         DegreesFragment.DegreesFragmentInteractionListener,
-        DegreeDetailsFragment.DegreeDetailsFragmentInteractionListener {
+        DegreeDetailsFragment.DegreeDetailsFragmentInteractionListener,
+        DegreeClassFragment.DegreeClassFragmentInteractionListener {
 
 
     private SwebokLoaderService _swebokLoaderService;
@@ -312,5 +315,15 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             degree = _degreesLoaderService.getDegree(degreeId);
         }
         return degree;
+    }
+
+    @Override
+    public DegreeClass loadDegreeClass(int degreeId, String degreeClassId) {
+
+        DegreeClass degreeClass = new DegreeClass();
+        if (_isDegreesServiceBound) {
+            degreeClass = _degreesLoaderService.getDegreeClass(degreeId, degreeClassId);
+        }
+        return degreeClass;
     }
 }

@@ -1,9 +1,7 @@
 package pt.cmg.sweranker.fragments;
 
-import android.app.Activity;
 import android.app.Fragment;
 import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.content.ContextCompat;
@@ -23,7 +21,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import pt.cmg.sweranker.DegreeClassActivity;
 import pt.cmg.sweranker.R;
 import pt.cmg.sweranker.degrees.Degree;
 import pt.cmg.sweranker.degrees.DegreeClass;
@@ -361,10 +358,18 @@ public class DegreeDetailsFragment extends Fragment {
                             // AHA, I knew this array stuff would be useful <3
                             String degreeClassId = _degreeClasses[adapterPosition].getId();
 
-                            Intent degreeClassDetail = new Intent((Activity) _parentActivity, DegreeClassActivity.class);
-                            degreeClassDetail.putExtra(DegreeClassActivity.DEGREE_CLASS_ID_EXTRA, degreeClassId);
-                            degreeClassDetail.putExtra(DegreeClassActivity.DEGREE_ID, _degreeId);
-                            startActivity(degreeClassDetail);
+                            Fragment degreeClassFragment = DegreeClassFragment.newInstance(_degreeId, degreeClassId);
+
+                            getFragmentManager()
+                                    .beginTransaction()
+                                    .replace(R.id.content_area, degreeClassFragment, "DegreeClass")
+                                    .addToBackStack(null)
+                                    .commit();
+
+//                            Intent degreeClassDetail = new Intent((Activity) _parentActivity, DegreeClassActivity.class);
+//                            degreeClassDetail.putExtra(DegreeClassActivity.DEGREE_CLASS_ID_EXTRA, degreeClassId);
+//                            degreeClassDetail.putExtra(DegreeClassActivity.DEGREE_ID, _degreeId);
+//                            startActivity(degreeClassDetail);
                         }
                     });
                 }
