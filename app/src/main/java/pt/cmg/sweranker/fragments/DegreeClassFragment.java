@@ -87,13 +87,19 @@ public class DegreeClassFragment extends Fragment {
         classDescription.setText(getResources().getString(_degreeClass.getDescriptionResource()));
 
         TextView classYear = (TextView) _myView.findViewById(R.id.year);
-        classYear.setText(getResources().getString(R.string.year) + ": " + _degreeClass.getYear());
+        classYear.setText(String.valueOf(_degreeClass.getYear()));
         TextView classSemester = (TextView) _myView.findViewById(R.id.semester);
-        classSemester.setText(getResources().getString(R.string.semester) + ": " + _degreeClass.getSemester());
+        classSemester.setText(String.valueOf(_degreeClass.getSemester()));
         TextView classECTS = (TextView) _myView.findViewById(R.id.ects);
-        classECTS.setText(getResources().getString(R.string.ects) + ": " + _degreeClass.getEctsCredits());
+        classECTS.setText(String.valueOf(_degreeClass.getEctsCredits()));
         TextView classOptional = (TextView) _myView.findViewById(R.id.optional);
-        classOptional.setText(getResources().getString(R.string.optional) + ": " + (_degreeClass.isOptionalClass() ? "No" : "Yes"));
+        if (_degreeClass.isOptionalClass()) {
+            classOptional.setText(getString(R.string.yes));
+            classOptional.setTextColor(ContextCompat.getColor(getActivity(), R.color.materialAffirmative));
+        } else {
+            classOptional.setText(getString(R.string.no));
+            classOptional.setTextColor(ContextCompat.getColor(getActivity(), R.color.materialNegative));
+        }
 
 
         RecyclerView curriculumList = (RecyclerView) _myView.findViewById(R.id.degree_program_list);

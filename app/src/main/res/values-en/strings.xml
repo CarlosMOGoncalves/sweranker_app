@@ -17,6 +17,11 @@
 
     <string name="description">Description</string>
     <string name="year">Year</string>
+    <string name="semester">Semestre</string>
+    <string name="ects">ECTS</string>
+    <string name="optional">Optional</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
 
     <string name="ka_software_requirements">Software Requirements</string>
     <string name="ka_software_design">Software Design</string>

@@ -34,7 +34,7 @@
     <dimen name="degree_detail_program_list_line_height">38dp</dimen>
 
     <dimen name="degree_class_title_size">25dp</dimen>
-    <dimen name="degree_class_list_item_size">15dp</dimen>
-    <dimen name="degree_class_list_line_height">25dp</dimen>
+    <dimen name="degree_class_list_item_size">17dp</dimen>
+    <dimen name="degree_class_list_line_height">27dp</dimen>
 
 </resources>

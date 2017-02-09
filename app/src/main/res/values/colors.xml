@@ -5,8 +5,12 @@
     <color name="colorAccent">#ffffff</color>
     <color name="darkerBackground">#eeeeee</color>
     <color name="textColourBrowninsh">#d7ccc8</color>
+    <color name="textColorBold">#000000</color>
     <color name="contrastColour">#03a9f4</color>
     <color name="unselectedTextColor">#9e9e9e</color>
+
+    <color name="materialAffirmative">#03a9f4</color>
+    <color name="materialNegative">#b71c1c</color>
 
     <color name="cardColour1">#ffa726</color>
     <color name="cardColour2">#26A69A</color>
