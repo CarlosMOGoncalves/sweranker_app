@@ -1,4 +1,4 @@
-package pt.cmg.sweranker.fragments;
+package pt.cmg.sweranker.swebok;
 
 import android.app.Fragment;
 import android.content.Context;
@@ -68,14 +68,14 @@ public class SwebokFragment extends Fragment {
     }
 
 
-    private class SlideUnderToolbar extends RecyclerView.OnScrollListener{
+    private class SlideUnderToolbar extends RecyclerView.OnScrollListener {
 
 
         private RecyclerView _grid;
         private LinearLayoutManager _layoutManager;
         private Toolbar _toolBar;
 
-        private SlideUnderToolbar(RecyclerView grid , LinearLayoutManager manager , Toolbar toolbar){
+        private SlideUnderToolbar(RecyclerView grid, LinearLayoutManager manager, Toolbar toolbar) {
             _layoutManager = manager;
             _toolBar = toolbar;
             _grid = grid;
@@ -101,9 +101,6 @@ public class SwebokFragment extends Fragment {
             }
         }
     }
-
-
-
 
 
     @Override

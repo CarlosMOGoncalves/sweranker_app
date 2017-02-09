@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/darkerBackground"
-    tools:context="pt.cmg.sweranker.fragments.DegreesFragment">
+    tools:context="pt.cmg.sweranker.degrees.DegreesFragment">
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/degrees_grid"

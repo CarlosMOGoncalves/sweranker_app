@@ -2,7 +2,9 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="?android:selectableItemBackground"
+    android:clickable="true">
 
     <TextView
         android:id="@+id/class_name"
@@ -11,5 +13,6 @@
         android:paddingLeft="@dimen/degree_detail_program_list_class_name_left_padding"
         android:gravity="center_vertical"
         android:text="Programming in C"
+        android:background="?android:selectableItemBackground"
         android:textSize="@dimen/degree_detail_program_list_class_name_text_size" />
 </LinearLayout>

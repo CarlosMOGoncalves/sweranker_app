@@ -1,4 +1,4 @@
-package pt.cmg.sweranker.fragments;
+package pt.cmg.sweranker.swebok;
 
 import android.app.Fragment;
 import android.content.Context;
@@ -26,7 +26,7 @@ import pt.cmg.sweranker.ui.UnderlineDividerItemDecorator;
  * Created by Carlos on 12/01/2017.
  */
 
-public class KADetailsFragment extends Fragment {
+public class SwebokKADetailsFragment extends Fragment {
 
     private static final String KNOWLEDGE_AREA_ID = "ka_id";
 
@@ -39,7 +39,7 @@ public class KADetailsFragment extends Fragment {
     private KnowledgeArea _knowledgeArea;
 
 
-    public KADetailsFragment() {
+    public SwebokKADetailsFragment() {
     }
 
     /**
@@ -48,8 +48,8 @@ public class KADetailsFragment extends Fragment {
      *
      * @return A new instance of fragment SwebokFragment.
      */
-    public static KADetailsFragment newInstance(int knowledgeAreaId) {
-        KADetailsFragment fragment = new KADetailsFragment();
+    public static SwebokKADetailsFragment newInstance(int knowledgeAreaId) {
+        SwebokKADetailsFragment fragment = new SwebokKADetailsFragment();
         Bundle args = new Bundle();
         args.putInt(KNOWLEDGE_AREA_ID, knowledgeAreaId);
         fragment.setArguments(args);
@@ -223,7 +223,8 @@ public class KADetailsFragment extends Fragment {
                 _topicName = (TextView) view.findViewById(R.id.topic_name);
                 _topicDescritpion = (TextView) view.findViewById(R.id.topic_description);
 
-                //This listener is used to set the visibility of the topic description, it is GONE by default
+//                This listener is used to set the visibility of the topic description, it is GONE by
+//                default
                 view.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -233,6 +234,7 @@ public class KADetailsFragment extends Fragment {
                     }
                 });
             }
+
         }
     }
 

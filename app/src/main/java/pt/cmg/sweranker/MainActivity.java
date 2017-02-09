@@ -18,6 +18,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.transition.Slide;
 import android.transition.Transition;
+import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -30,14 +31,14 @@ import java.util.List;
 
 import pt.cmg.sweranker.degrees.Degree;
 import pt.cmg.sweranker.degrees.DegreeClass;
+import pt.cmg.sweranker.degrees.DegreeClassFragment;
+import pt.cmg.sweranker.degrees.DegreeDetailsFragment;
+import pt.cmg.sweranker.degrees.DegreesFragment;
 import pt.cmg.sweranker.degrees.DegreesLoaderService;
-import pt.cmg.sweranker.fragments.DegreeClassFragment;
-import pt.cmg.sweranker.fragments.DegreeDetailsFragment;
-import pt.cmg.sweranker.fragments.DegreesFragment;
-import pt.cmg.sweranker.fragments.KADetailsFragment;
-import pt.cmg.sweranker.fragments.SwebokFragment;
 import pt.cmg.sweranker.knowledgeareas.KnowledgeArea;
 import pt.cmg.sweranker.knowledgeareas.SwebokLoaderService;
+import pt.cmg.sweranker.swebok.SwebokFragment;
+import pt.cmg.sweranker.swebok.SwebokKADetailsFragment;
 import pt.cmg.sweranker.ui.ImageSizeAndPlaceTransition;
 import pt.cmg.sweranker.ui.OnEndTransitionListener;
 import pt.cmg.sweranker.ui.OnStartTransitionListener;
@@ -45,7 +46,7 @@ import pt.cmg.sweranker.ui.UXUtils;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener,
         SwebokFragment.OnSwebokFragmentInteractionListener,
-        KADetailsFragment.OnKaDetailsFragmentInteractionListener,
+        SwebokKADetailsFragment.OnKaDetailsFragmentInteractionListener,
         DegreesFragment.DegreesFragmentInteractionListener,
         DegreeDetailsFragment.DegreeDetailsFragmentInteractionListener,
         DegreeClassFragment.DegreeClassFragmentInteractionListener {
@@ -182,7 +183,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         long transitionDuration = 500;
 
-        Fragment kaDetailsFragment = KADetailsFragment.newInstance(knowledgeAreaId);
+        Fragment kaDetailsFragment = SwebokKADetailsFragment.newInstance(knowledgeAreaId);
         Activity myActivity = this;
 
         Transition imageEnterTransition = createImageEnterSharedElementTransition(kaDetailsFragment, transitionDuration);
@@ -217,7 +218,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     }
 
     /**
-     * Creates and sets a shared element transition from source fragment {@link SwebokFragment} to the target detailed fragment {@link KADetailsFragment}.
+     * Creates and sets a shared element transition from source fragment {@link SwebokFragment} to the target detailed fragment {@link SwebokKADetailsFragment}.
      * The shared element is the KA decorative image and it will be set on the fragment transaction.
      * This function only creates the Transition animation for the image.
      *
@@ -234,7 +235,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     }
 
     /**
-     * Creates and sets a shared element transition from target fragment {@link KADetailsFragment} BACK TO the source fragment {@link SwebokFragment}.
+     * Creates and sets a shared element transition from target fragment {@link SwebokKADetailsFragment} BACK TO the source fragment {@link SwebokFragment}.
      * The shared element is the KA decorative image and it will be set on the fragment transaction.
      * This function only creates the Transition animation for the image.
      *
@@ -286,7 +287,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         Transition sharedImageExitTransition = createImageExitSharedElementTransition(degreeDetailsFragment, transitionDuration);
 
         // This just creates a transition for the rest of the content, i.e. not shared.
-        Transition contentTransition = new Slide();
+        Transition contentTransition = new Slide(Gravity.RIGHT);
         contentTransition.setDuration(transitionDuration);
         degreeDetailsFragment.setEnterTransition(contentTransition);
         degreeDetailsFragment.setExitTransition(contentTransition);

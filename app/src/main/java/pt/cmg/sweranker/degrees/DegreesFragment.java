@@ -1,4 +1,4 @@
-package pt.cmg.sweranker.fragments;
+package pt.cmg.sweranker.degrees;
 
 import android.app.Fragment;
 import android.content.Context;
@@ -16,7 +16,6 @@ import android.widget.TextView;
 import java.util.List;
 
 import pt.cmg.sweranker.R;
-import pt.cmg.sweranker.degrees.Degree;
 import pt.cmg.sweranker.ui.ConstantSpacingItemDecorator;
 
 

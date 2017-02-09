@@ -1,4 +1,4 @@
-package pt.cmg.sweranker.fragments;
+package pt.cmg.sweranker.degrees;
 
 import android.app.Fragment;
 import android.content.Context;
@@ -17,7 +17,6 @@ import java.util.Map;
 import java.util.Set;
 
 import pt.cmg.sweranker.R;
-import pt.cmg.sweranker.degrees.DegreeClass;
 import pt.cmg.sweranker.ui.ConstantSpacingItemDecorator;
 import pt.cmg.sweranker.ui.UnderlineDividerItemDecorator;
 
@@ -148,9 +147,12 @@ public class DegreeClassFragment extends Fragment {
             _topicDescriptions = new ArrayList<>();
 
             Set<Map.Entry<String, Integer>> topics = degreeClass.getProgram().entrySet();
-            topics.forEach(entry ->
-                    _topicDescriptions.add(entry.getValue())
-            );
+            for (Map.Entry<String, Integer> topic : topics) {
+                _topicDescriptions.add(topic.getValue());
+            }
+//            topics.forEach(entry ->
+//                    _topicDescriptions.add(entry.getValue())
+//            );
         }
 
         @Override

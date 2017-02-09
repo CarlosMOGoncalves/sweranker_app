@@ -4,7 +4,6 @@ package pt.cmg.sweranker.degrees;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Optional;
 
 public class Degree {
 
@@ -84,7 +83,13 @@ public class Degree {
      * @return
      */
     public int getClassesCount() {
-        return _classesByYear.entrySet().stream().mapToInt(entry -> entry.getValue().size()).sum();
+        int count = 0;
+        for (List<DegreeClass> classes : _classesByYear.values()) {
+            count += classes.size();
+        }
+        return count;
+        // Lambdas just screw the Jack compiler, so let's stick without it for a while
+//        return _classesByYear.entrySet().stream().mapToInt(entry -> entry.getValue().size()).sum();
     }
 
 
@@ -98,12 +103,20 @@ public class Degree {
 
     public DegreeClass getDegreeClass(String degreeClassId) {
 
+
         for (List<DegreeClass> classes : _classesByYear.values()) {
 
-            Optional<DegreeClass> foundIt = classes.stream().filter(dc -> dc.getId().equals(degreeClassId)).findAny();
-            if (foundIt.isPresent()) {
-                return foundIt.get();
+
+            for (DegreeClass dClass : classes) {
+                if (dClass.getId().equals(degreeClassId)) {
+                    return dClass;
+                }
             }
+//            Again, Jack compiler screwed this...
+//                Optional<DegreeClass> foundIt = classes.stream().filter(dc -> dc.getId().equals(degreeClassId)).findAny();
+//                if (foundIt.isPresent()) {
+//                    return foundIt.get();
+//                }
         }
 
         return new DegreeClass();
