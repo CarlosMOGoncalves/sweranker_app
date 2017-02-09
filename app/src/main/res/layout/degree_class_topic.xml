@@ -8,8 +8,10 @@
         android:id="@+id/degree_class_topic"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:minHeight="@dimen/degree_class_list_item_size"
+        android:minHeight="@dimen/degree_class_list_item_min_height"
         android:gravity="center_vertical"
         android:text="Topic 1"
+        android:paddingTop="@dimen/degree_class_list_item_padding"
+        android:paddingBottom="@dimen/degree_class_list_item_padding"
         android:textSize="@dimen/degree_class_list_item_size" />
 </LinearLayout>

@@ -124,8 +124,9 @@
     <android.support.v7.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="0px"
-        android:layout_weight="3"
         android:layout_margin="@dimen/card_margin"
+        android:layout_weight="3"
+        android:visibility="gone"
         app:contentPadding="@dimen/card_inner_padding">
 
         <LinearLayout
@@ -138,8 +139,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/description"
-                android:textSize="@dimen/degree_class_title_size"
-                android:textColor="@color/colorPrimary" />
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/degree_class_title_size" />
 
             <android.support.v4.widget.NestedScrollView
                 android:layout_width="match_parent"
@@ -176,6 +177,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/program"
                 android:textSize="@dimen/degree_class_title_size"
+                android:paddingBottom="@dimen/degree_class_title_botttom_padding"
                 android:textColor="@color/colorPrimary" />
 
             <android.support.v7.widget.RecyclerView

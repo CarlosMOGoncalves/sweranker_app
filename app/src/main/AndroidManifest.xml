@@ -23,7 +23,7 @@
 
 
         <service
-            android:name=".knowledgeareas.SwebokLoaderService"
+            android:name=".swebok.SwebokLoaderService"
             android:exported="false" />
         <service
             android:name=".degrees.DegreesLoaderService"

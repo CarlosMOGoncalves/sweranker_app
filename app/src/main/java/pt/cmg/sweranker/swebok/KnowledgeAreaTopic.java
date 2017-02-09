@@ -1,4 +1,4 @@
-package pt.cmg.sweranker.knowledgeareas;
+package pt.cmg.sweranker.swebok;
 
 /**
  * Created by Carlos on 19/12/2016.

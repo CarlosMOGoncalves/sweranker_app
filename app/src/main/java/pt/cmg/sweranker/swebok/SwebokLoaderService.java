@@ -1,4 +1,4 @@
-package pt.cmg.sweranker.knowledgeareas;
+package pt.cmg.sweranker.swebok;
 
 import android.app.Service;
 import android.content.Intent;
