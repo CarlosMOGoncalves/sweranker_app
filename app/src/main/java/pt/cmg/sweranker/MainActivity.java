@@ -200,7 +200,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     }
 
     @Override
-    public List<KnowledgeArea> loadKnowledgeAreasForSwebokFragment() {
+    public List<KnowledgeArea> loadKnowledgeAreas() {
         List<KnowledgeArea> kas = new ArrayList<>();
         if (_isSwebokServiceBound) {
             kas = _swebokLoaderService.getKnowledgeAreas();
@@ -225,12 +225,15 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         Transition imageEnterTransition = createImageEnterSharedElementTransition(kaDetailsFragment, transitionDuration);
 
+        KnowledgeArea knowledgeArea = getKnowledgeArea(knowledgeAreaId);
+
         // Very important! Adding a listener in order to change the Action Bar colour and the Status Bar colour when this transition finishes.
         imageEnterTransition.addListener(new OnEndTransitionListener() {
             @Override
             public void onEndTransition(Transition transition) {
                 UXUtils.animateActionBarColourChange(_toolbar, imageBackgroundColour, 0, 0);
                 UXUtils.animateStatusBarColourChange(myActivity, imageBackgroundColour, 0, 0);
+                changeToolbarIntoBackButton(getResources().getString(knowledgeArea.getNameResource()));
             }
         });
 
@@ -242,6 +245,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             public void onStartTransition(Transition transition) {
                 UXUtils.animateStatusBarColourChange(myActivity, statusBarOriginalColour, 0, 0);
                 UXUtils.animateActionBarColourChange(_toolbar, actionBarOriginalColour, 0, 0);
+                resetToolbar();
             }
         });
 
@@ -298,7 +302,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     }
 
     @Override
-    public List<Degree> loadDegreesForFragment() {
+    public List<Degree> loadDegrees() {
         List<Degree> degrees = new ArrayList<>();
         if (_isDegreesServiceBound) {
             degrees = _degreesLoaderService.getDegrees();
@@ -313,6 +317,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         TextView universityName = (TextView) degreeCard.findViewById(R.id.university_name);
         TextView degreeName = (TextView) degreeCard.findViewById(R.id.degree_name);
 
+        Degree degree = loadDegree(degreeId);
+
 
         long transitionDuration = 500;
 
@@ -321,11 +327,30 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         Transition imageEnterTransition = createImageEnterSharedElementTransition(degreeDetailsFragment, transitionDuration);
         Transition sharedImageExitTransition = createImageExitSharedElementTransition(degreeDetailsFragment, transitionDuration);
 
-        // This just creates a transition for the rest of the content, i.e. not shared.
-        Transition contentTransition = new Slide(Gravity.RIGHT);
-        contentTransition.setDuration(transitionDuration);
-        degreeDetailsFragment.setEnterTransition(contentTransition);
-        degreeDetailsFragment.setExitTransition(contentTransition);
+
+        // This is important. I used a simples transition but the real magic is that I change the
+        // toolbar into a back button toolbar so that it is easier to navigate.
+        Transition enterTransition = new Slide(Gravity.RIGHT);
+        enterTransition.setDuration(transitionDuration);
+        degreeDetailsFragment.setEnterTransition(enterTransition);
+        enterTransition.addListener(new OnStartTransitionListener() {
+            @Override
+            public void onStartTransition(Transition transition) {
+                changeToolbarIntoBackButton(getResources().getString(degree.getNameResource()));
+            }
+        });
+
+        // And when the user presses Back on the toolbar I use a transition listener to change the
+        // toolbar back to its original state. Neat.
+        Transition exitTransition = new Slide(Gravity.RIGHT);
+        exitTransition.setDuration(transitionDuration);
+        degreeDetailsFragment.setReturnTransition(exitTransition);
+        exitTransition.addListener(new OnStartTransitionListener() {
+            @Override
+            public void onStartTransition(Transition transition) {
+                resetToolbar();
+            }
+        });
 
         getFragmentManager()
                 .beginTransaction()
@@ -337,14 +362,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 .commit();
     }
 
-    /**
-     * Loads a Degree passing its id.
-     *
-     * @param degreeId
-     * @return
-     */
     @Override
-    public Degree getDegree(int degreeId) {
+    public Degree loadDegree(int degreeId) {
 
         Degree degree = new Degree();
         if (_isDegreesServiceBound) {
@@ -370,11 +389,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         Fragment degreeClassFragment = DegreeClassFragment.newInstance(degreeId, degreeClassId);
 
-        DegreeClass degreeClass = _degreesLoaderService.getDegreeClass(degreeId, degreeClassId);
+        DegreeClass degreeClass = loadDegreeClass(degreeId, degreeClassId);
+        Degree degree = loadDegree(degreeId);
 
         // This is important. I used a simples transition but the real magic is that I change the
         // toolbar into a back button toolbar so that it is easier to navigate.
-        Transition enterTransition = new Slide(Gravity.LEFT);
+        Transition enterTransition = new Slide(Gravity.RIGHT);
         enterTransition.setDuration(400);
         degreeClassFragment.setEnterTransition(enterTransition);
         enterTransition.addListener(new OnStartTransitionListener() {
@@ -386,13 +406,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         // And when the user presses Back on the toolbar I use a transition listener to change the
         // toolbar back to its original state. Neat.
-        Transition exitTransition = new Slide(Gravity.LEFT);
+        Transition exitTransition = new Slide(Gravity.RIGHT);
         exitTransition.setDuration(400);
         degreeClassFragment.setReturnTransition(exitTransition);
         exitTransition.addListener(new OnStartTransitionListener() {
             @Override
             public void onStartTransition(Transition transition) {
-                resetToolbar();
+                // When we get back, we get back to degree so it is too soon to reset the toolbar
+                changeToolbarIntoBackButton(getResources().getString(degree.getNameResource()));
             }
         });
 

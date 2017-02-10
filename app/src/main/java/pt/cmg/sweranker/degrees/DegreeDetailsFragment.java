@@ -56,12 +56,12 @@ public class DegreeDetailsFragment extends Fragment {
     public interface DegreeDetailsFragmentInteractionListener {
 
         /**
-         * Loads a Degree passing its id.
+         * Loads a Degree from the system passing its id.
          *
          * @param degreeId
          * @return
          */
-        Degree getDegree(int degreeId);
+        Degree loadDegree(int degreeId);
 
         /**
          * Loads the class fragment whose item was chosen.
@@ -88,7 +88,7 @@ public class DegreeDetailsFragment extends Fragment {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
             _degreeId = getArguments().getInt(DEGREE_ID);
-            _degree = _parentActivity.getDegree(_degreeId);
+            _degree = _parentActivity.loadDegree(_degreeId);
         }
 
     }

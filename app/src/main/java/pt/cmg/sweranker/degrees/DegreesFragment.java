@@ -55,7 +55,7 @@ public class DegreesFragment extends Fragment {
          *
          * @return
          */
-        List<Degree> loadDegreesForFragment();
+        List<Degree> loadDegrees();
 
 
         /**
@@ -86,7 +86,7 @@ public class DegreesFragment extends Fragment {
 
         _degreesGrid = (RecyclerView) _myRootView.findViewById(R.id.degrees_grid);
 
-        DegreeAdapter adapter = new DegreeAdapter(this.getActivity(), _parentActivity.loadDegreesForFragment());
+        DegreeAdapter adapter = new DegreeAdapter(this.getActivity(), _parentActivity.loadDegrees());
 
         RecyclerView.LayoutManager mLayoutManager = new GridLayoutManager(this.getActivity(), 2);
         _degreesGrid.setLayoutManager(mLayoutManager);

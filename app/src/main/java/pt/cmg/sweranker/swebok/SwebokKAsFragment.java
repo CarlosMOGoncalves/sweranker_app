@@ -104,7 +104,7 @@ public class SwebokKAsFragment extends Fragment {
 
         _swebokGrid = (RecyclerView) _myView.findViewById(R.id.swebok_grid);
 
-        KnowledgeAreasAdapter adapter = new KnowledgeAreasAdapter(this.getActivity(), _parentActivity.loadKnowledgeAreasForSwebokFragment(), new KnowledgeAreasAdapter.OnKnowledgeAreaClicked() {
+        KnowledgeAreasAdapter adapter = new KnowledgeAreasAdapter(this.getActivity(), _parentActivity.loadKnowledgeAreas(), new KnowledgeAreasAdapter.OnKnowledgeAreaClicked() {
             @Override
             public void onKnowledgeAreaClicked(View cardClicked, int position) {
                 _parentActivity.loadDetailedKnowledgeAreaFragment(cardClicked, position);
@@ -135,8 +135,21 @@ public class SwebokKAsFragment extends Fragment {
      * Communication Interface used to communicate with parent activity
      */
     public interface OnSwebokFragmentInteractionListener {
-        List<KnowledgeArea> loadKnowledgeAreasForSwebokFragment();
 
+        /**
+         * Returns the list of Knowledge Areas from the system
+         *
+         * @return
+         */
+        List<KnowledgeArea> loadKnowledgeAreas();
+
+        /**
+         * Loads the Detailed Knowledge Area fragment.
+         * It passes the View so that any shared elements transitions can be applied to it.
+         *
+         * @param v
+         * @param knowledgeAreaId
+         */
         void loadDetailedKnowledgeAreaFragment(View v, int knowledgeAreaId);
     }
 

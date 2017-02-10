@@ -81,7 +81,7 @@ public class UnderlineDividerItemDecorator extends RecyclerView.ItemDecoration {
         private final int _dividerHeightInPixels;
 
         //Optional Parameters
-        private Class _targetViewHolderClass = null;
+        private Class<?> _targetViewHolderClass = null;
         private int _leftInsetInPixels = 0;
         private int _rightInsetInPixels = 0;
         private int _skippableViews = 0;
@@ -92,7 +92,7 @@ public class UnderlineDividerItemDecorator extends RecyclerView.ItemDecoration {
             _dividerHeightInPixels = SweRankerUtils.convertDpToPixels(_context, dividerHeightInDps);
         }
 
-        public Builder targetViewHolderClass(Class targetViewHolderClass) {
+        public Builder targetViewHolderClass(Class<?> targetViewHolderClass) {
             _targetViewHolderClass = targetViewHolderClass;
             return this;
         }
