@@ -95,8 +95,27 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        resetToolbar();
+
+    }
+
+    /**
+     * Resets the toolbar for this activity to its initial state.
+     * This can be used on onCreate to initialise the toolbar or anytime, in case the toolbar was changed
+     * by any reason.
+     */
+    private void resetToolbar() {
+
         _toolbar = (Toolbar) findViewById(R.id.toolbar);
+
+        // this sets the title. Although it is standard behaviour, in case the title was changed somehow, this is needed
+        // to return to the original title.
+        _toolbar.setTitle(getResources().getString(this.getApplicationInfo().labelRes));
         setSupportActionBar(_toolbar);
+
+        // Also standard, also (probably) needed to reset.
+        getSupportActionBar().setDisplayHomeAsUpEnabled(false);
+        getSupportActionBar().setDisplayShowHomeEnabled(false);
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.nav_drawer);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, _toolbar, R.string.openDrawer, R.string.closeDrawer);
@@ -105,8 +124,26 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.navigation_view);
         navigationView.setNavigationItemSelectedListener(this);
-
     }
+
+    /**
+     * Transforms the standard toolbar into a much loved and simpler "BACK" toolbar with a custom name, if needed.
+     * This is basically the toolbar but with a back arrow instead of the usual menu.
+     *
+     * @param toolbarTitle
+     */
+    private void changeToolbarIntoBackButton(String toolbarTitle) {
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar.setNavigationOnClickListener(view -> getFragmentManager().popBackStack());
+        if (!toolbarTitle.isEmpty()) {
+            toolbar.setTitle(toolbarTitle);
+        }
+    }
+
 
     @Override
     protected void onStart() {
@@ -281,8 +318,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         Fragment degreeDetailsFragment = DegreeDetailsFragment.newInstance(degreeId);
 
-        Activity myActivity = this;
-
         Transition imageEnterTransition = createImageEnterSharedElementTransition(degreeDetailsFragment, transitionDuration);
         Transition sharedImageExitTransition = createImageExitSharedElementTransition(degreeDetailsFragment, transitionDuration);
 
@@ -318,6 +353,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         return degree;
     }
 
+
     @Override
     public DegreeClass loadDegreeClass(int degreeId, String degreeClassId) {
 
@@ -327,4 +363,46 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         }
         return degreeClass;
     }
+
+
+    @Override
+    public void loadDegreeClassFragment(int degreeId, String degreeClassId) {
+
+        Fragment degreeClassFragment = DegreeClassFragment.newInstance(degreeId, degreeClassId);
+
+        DegreeClass degreeClass = _degreesLoaderService.getDegreeClass(degreeId, degreeClassId);
+
+        // This is important. I used a simples transition but the real magic is that I change the
+        // toolbar into a back button toolbar so that it is easier to navigate.
+        Transition enterTransition = new Slide(Gravity.LEFT);
+        enterTransition.setDuration(400);
+        degreeClassFragment.setEnterTransition(enterTransition);
+        enterTransition.addListener(new OnStartTransitionListener() {
+            @Override
+            public void onStartTransition(Transition transition) {
+                changeToolbarIntoBackButton(getResources().getString(degreeClass.getNameResource()));
+            }
+        });
+
+        // And when the user presses Back on the toolbar I use a transition listener to change the
+        // toolbar back to its original state. Neat.
+        Transition exitTransition = new Slide(Gravity.LEFT);
+        exitTransition.setDuration(400);
+        degreeClassFragment.setReturnTransition(exitTransition);
+        exitTransition.addListener(new OnStartTransitionListener() {
+            @Override
+            public void onStartTransition(Transition transition) {
+                resetToolbar();
+            }
+        });
+
+
+        getFragmentManager()
+                .beginTransaction()
+                .replace(R.id.content_area, degreeClassFragment, "DegreeClass")
+                .addToBackStack(null)
+                .commit();
+    }
+
+
 }

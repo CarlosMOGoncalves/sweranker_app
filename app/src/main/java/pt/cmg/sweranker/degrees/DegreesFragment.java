@@ -50,8 +50,20 @@ public class DegreesFragment extends Fragment {
      */
     public interface DegreesFragmentInteractionListener {
 
+        /**
+         * Loads all the Degrees from the system.
+         *
+         * @return
+         */
         List<Degree> loadDegreesForFragment();
 
+
+        /**
+         * Loads and replaces the current fragment with the detailed Degree fragment.
+         *
+         * @param v        The selected view. This is used to create some shared elements transitions.
+         * @param degreeId
+         */
         void loadDetailedDegreeFragment(View v, int degreeId);
 
     }

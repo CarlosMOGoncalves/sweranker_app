@@ -5,9 +5,6 @@ import android.content.Context;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
-import android.transition.Slide;
-import android.transition.Transition;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -65,6 +62,14 @@ public class DegreeDetailsFragment extends Fragment {
          * @return
          */
         Degree getDegree(int degreeId);
+
+        /**
+         * Loads the class fragment whose item was chosen.
+         *
+         * @param degreeId
+         * @param degreeClassId
+         */
+        void loadDegreeClassFragment(int degreeId, String degreeClassId);
     }
 
     @Override
@@ -104,7 +109,7 @@ public class DegreeDetailsFragment extends Fragment {
         viewPager.setAdapter(new DegreeViewPagerAdapter(this.getActivity(), _degree, new DegreeViewPagerAdapter.OnDegreeClassItemSelected() {
             @Override
             public void onDegreeClassClicked(int degreeId, String degreeClassId) {
-                loadDegreeClassFragment(degreeId, degreeClassId);
+                _parentActivity.loadDegreeClassFragment(degreeId, degreeClassId);
             }
         }));
 
@@ -114,20 +119,5 @@ public class DegreeDetailsFragment extends Fragment {
         return _myView;
     }
 
-
-    private void loadDegreeClassFragment(int degreeId, String degreeClassId) {
-        Fragment degreeClassFragment = DegreeClassFragment.newInstance(degreeId, degreeClassId);
-
-        Transition contentTransition = new Slide(Gravity.LEFT);
-        contentTransition.setDuration(500);
-        degreeClassFragment.setEnterTransition(contentTransition);
-        degreeClassFragment.setExitTransition(contentTransition);
-
-        getFragmentManager()
-                .beginTransaction()
-                .replace(R.id.content_area, degreeClassFragment, "DegreeClass")
-                .addToBackStack(null)
-                .commit();
-    }
 
 }
