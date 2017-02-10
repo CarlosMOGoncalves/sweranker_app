@@ -1,191 +1,212 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context="pt.cmg.sweranker.degrees.DegreeClassFragment"
-    android:background="@color/darkerBackground">
+    android:layout_height="match_parent">
 
-    <android.support.v7.widget.CardView
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/floatingActionButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/card_margin"
-        app:contentPadding="@dimen/card_inner_padding">
+        android:clickable="true"
+        android:scaleType="center"
+        app:backgroundTint="@color/colorPrimary"
+        app:elevation="1dp"
+        app:fabSize="normal"
+        app:layout_anchor="@+id/class_list"
+        app:layout_anchorGravity="bottom|right"
+        app:srcCompat="@drawable/swe_ranker_logo_round" />
 
-        <android.support.v7.widget.GridLayout xmlns:grid="http://schemas.android.com/apk/res-auto"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:columnCount="4"
-            app:rowCount="2">
-
-            <TextView
-                android:id="@+id/textView2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:layout_column="0"
-                app:layout_row="0"
-                grid:layout_columnWeight="0"
-                android:text="@string/year"
-                android:textSize="@dimen/degree_class_list_item_size"
-                android:textColor="@color/colorPrimary" />
-
-            <TextView
-                android:id="@+id/year"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentTop="true"
-                android:gravity="center_horizontal"
-                android:text="5"
-                app:layout_column="1"
-                app:layout_row="0"
-                grid:layout_columnWeight="2"
-                android:textSize="@dimen/degree_class_list_item_size"
-                grid:layout_gravity="fill_horizontal" />
-
-            <TextView
-                android:id="@+id/textView3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/semester"
-                app:layout_column="2"
-                app:layout_row="0"
-                grid:layout_columnWeight="0"
-                android:textSize="@dimen/degree_class_list_item_size"
-                android:textColor="@color/colorPrimary" />
-
-            <TextView
-                android:id="@+id/semester"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
-                android:gravity="center_horizontal"
-                android:text="2"
-                app:layout_column="3"
-                app:layout_row="0"
-                grid:layout_columnWeight="2"
-                android:textSize="@dimen/degree_class_list_item_size"
-                grid:layout_gravity="fill_horizontal" />
-
-            <TextView
-                android:id="@+id/textView4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/ects"
-                app:layout_column="0"
-                app:layout_row="1"
-                grid:layout_columnWeight="0"
-                android:textSize="@dimen/degree_class_list_item_size"
-                android:textColor="@color/colorPrimary" />
-
-            <TextView
-                android:id="@+id/ects"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentLeft="true"
-                android:layout_below="@+id/year"
-                android:gravity="center_horizontal"
-                android:text="6"
-                app:layout_column="1"
-                app:layout_row="1"
-                grid:layout_columnWeight="2"
-                android:textSize="@dimen/degree_class_list_item_size"
-                grid:layout_gravity="fill_horizontal" />
-
-            <TextView
-                android:id="@+id/textView5"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/optional"
-                app:layout_column="2"
-                app:layout_row="1"
-                grid:layout_columnWeight="0"
-                android:textSize="@dimen/degree_class_list_item_size"
-                android:textColor="@color/colorPrimary" />
-
-            <TextView
-                android:id="@+id/optional"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
-                android:layout_below="@+id/semester"
-                android:gravity="center_horizontal"
-                android:text="No"
-                app:layout_column="3"
-                app:layout_row="1"
-                grid:layout_columnWeight="2"
-                android:textSize="@dimen/degree_class_list_item_size"
-                grid:layout_gravity="fill_horizontal" />
-
-        </android.support.v7.widget.GridLayout>
-    </android.support.v7.widget.CardView>
-
-    <android.support.v7.widget.CardView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0px"
-        android:layout_margin="@dimen/card_margin"
-        android:layout_weight="3"
-        android:visibility="gone"
-        app:contentPadding="@dimen/card_inner_padding">
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context="pt.cmg.sweranker.degrees.DegreeClassFragment"
+        android:background="@color/darkerBackground">
 
-        <LinearLayout
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/class_list"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_height="0px"
+            android:layout_margin="@dimen/card_margin"
+            android:layout_weight="5"
+            app:contentPadding="@dimen/card_inner_padding">
 
-            <TextView
-                android:id="@+id/class_description_label"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/description"
-                android:textColor="@color/colorPrimary"
-                android:textSize="@dimen/degree_class_title_size" />
-
-            <android.support.v4.widget.NestedScrollView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/class_description_text"
+                    android:id="@+id/class_curriculum"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textSize="@dimen/degree_class_list_item_size" />
+                    android:paddingBottom="@dimen/degree_class_title_botttom_padding"
+                    android:text="@string/program"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/degree_class_title_size" />
 
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/degree_program_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
 
-            </android.support.v4.widget.NestedScrollView>
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
 
-        </LinearLayout>
-
-    </android.support.v7.widget.CardView>
-
-    <android.support.v7.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="0px"
-        android:layout_margin="@dimen/card_margin"
-        android:layout_weight="5"
-        app:contentPadding="@dimen/card_inner_padding">
-
-        <LinearLayout
+        <android.support.v7.widget.CardView
+            android:id="@+id/class_info"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/card_margin"
+            app:contentPadding="@dimen/card_inner_padding">
 
-            <TextView
-                android:id="@+id/class_curriculum"
+            <android.support.v7.widget.GridLayout xmlns:grid="http://schemas.android.com/apk/res-auto"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:columnCount="4"
+                app:rowCount="2">
+
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/year"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/degree_class_subtitle_size"
+                    app:layout_column="0"
+                    app:layout_row="0"
+                    grid:layout_columnWeight="0" />
+
+                <TextView
+                    android:id="@+id/year"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:gravity="center_horizontal"
+                    android:text="5"
+                    android:textSize="@dimen/degree_class_subtitle_size"
+                    app:layout_column="1"
+                    app:layout_row="0"
+                    grid:layout_columnWeight="2"
+                    grid:layout_gravity="fill_horizontal" />
+
+                <TextView
+                    android:id="@+id/textView3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/semester"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/degree_class_subtitle_size"
+                    app:layout_column="2"
+                    app:layout_row="0"
+                    grid:layout_columnWeight="0" />
+
+                <TextView
+                    android:id="@+id/semester"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:gravity="center_horizontal"
+                    android:text="2"
+                    android:textSize="@dimen/degree_class_subtitle_size"
+                    app:layout_column="3"
+                    app:layout_row="0"
+                    grid:layout_columnWeight="2"
+                    grid:layout_gravity="fill_horizontal" />
+
+                <TextView
+                    android:id="@+id/textView4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/ects"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/degree_class_subtitle_size"
+                    app:layout_column="0"
+                    app:layout_row="1"
+                    grid:layout_columnWeight="0" />
+
+                <TextView
+                    android:id="@+id/ects"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_below="@+id/year"
+                    android:gravity="center_horizontal"
+                    android:text="6"
+                    android:textSize="@dimen/degree_class_subtitle_size"
+                    app:layout_column="1"
+                    app:layout_row="1"
+                    grid:layout_columnWeight="2"
+                    grid:layout_gravity="fill_horizontal" />
+
+                <TextView
+                    android:id="@+id/textView5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/optional"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/degree_class_subtitle_size"
+                    app:layout_column="2"
+                    app:layout_row="1"
+                    grid:layout_columnWeight="0" />
+
+                <TextView
+                    android:id="@+id/optional"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_below="@+id/semester"
+                    android:gravity="center_horizontal"
+                    android:text="No"
+                    android:textSize="@dimen/degree_class_subtitle_size"
+                    app:layout_column="3"
+                    app:layout_row="1"
+                    grid:layout_columnWeight="2"
+                    grid:layout_gravity="fill_horizontal" />
+
+            </android.support.v7.widget.GridLayout>
+        </android.support.v7.widget.CardView>
+
+        <!--android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="0px"
+            android:layout_margin="@dimen/card_margin"
+            android:layout_weight="3"
+            android:visibility="gone"
+            app:contentPadding="@dimen/card_inner_padding">
+
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/program"
-                android:textSize="@dimen/degree_class_title_size"
-                android:paddingBottom="@dimen/degree_class_title_botttom_padding"
-                android:textColor="@color/colorPrimary" />
+                android:orientation="vertical">
 
-            <android.support.v7.widget.RecyclerView
-                android:id="@+id/degree_program_list"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+                <TextView
+                    android:id="@+id/class_description_label"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/description"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/degree_class_title_size" />
 
-        </LinearLayout>
-    </android.support.v7.widget.CardView>
+                <android.support.v4.widget.NestedScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
 
-</LinearLayout>
+                    <TextView
+                        android:id="@+id/class_description_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/degree_class_list_item_size" />
+
+
+                </android.support.v4.widget.NestedScrollView>
+
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView-->
+
+    </LinearLayout>
+</android.support.design.widget.CoordinatorLayout>

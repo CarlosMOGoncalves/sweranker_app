@@ -82,8 +82,8 @@ public class DegreeClassFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         _myView = inflater.inflate(R.layout.degree_class_fragment, container, false);
 
-        TextView classDescription = (TextView) _myView.findViewById(R.id.class_description_text);
-        classDescription.setText(getResources().getString(_degreeClass.getDescriptionResource()));
+//        TextView classDescription = (TextView) _myView.findViewById(R.id.class_description_text);
+//        classDescription.setText(getResources().getString(_degreeClass.getDescriptionResource()));
 
         TextView classYear = (TextView) _myView.findViewById(R.id.year);
         classYear.setText(String.valueOf(_degreeClass.getYear()));
