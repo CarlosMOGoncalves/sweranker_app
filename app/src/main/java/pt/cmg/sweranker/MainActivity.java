@@ -33,6 +33,7 @@ import pt.cmg.sweranker.degrees.Degree;
 import pt.cmg.sweranker.degrees.DegreeClass;
 import pt.cmg.sweranker.degrees.DegreeClassFragment;
 import pt.cmg.sweranker.degrees.DegreeDetailsFragment;
+import pt.cmg.sweranker.degrees.DegreeMatcherFragment;
 import pt.cmg.sweranker.degrees.DegreesFragment;
 import pt.cmg.sweranker.degrees.DegreesLoaderService;
 import pt.cmg.sweranker.swebok.KnowledgeArea;
@@ -49,7 +50,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         SwebokKADetailsFragment.OnKaDetailsFragmentInteractionListener,
         DegreesFragment.DegreesFragmentInteractionListener,
         DegreeDetailsFragment.DegreeDetailsFragmentInteractionListener,
-        DegreeClassFragment.DegreeClassFragmentInteractionListener {
+        DegreeClassFragment.DegreeClassFragmentInteractionListener,
+        DegreeMatcherFragment.DegreeMatcherFragmentInteractionListener {
 
 
     private SwebokLoaderService _swebokLoaderService;
@@ -383,6 +385,16 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         return degreeClass;
     }
 
+    @Override
+    public DegreeClass loadDegreeClass(String degreeClassId) {
+
+        DegreeClass degreeClass = new DegreeClass();
+        if (_isDegreesServiceBound) {
+            degreeClass = _degreesLoaderService.getDegreeClass(degreeClassId);
+        }
+        return degreeClass;
+    }
+
 
     @Override
     public void loadDegreeClassFragment(int degreeId, String degreeClassId) {
@@ -423,6 +435,16 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 .replace(R.id.content_area, degreeClassFragment, "DegreeClass")
                 .addToBackStack(null)
                 .commit();
+    }
+
+
+    @Override
+    public void loadDegreeEvaluatorFragment(String degreeClassId) {
+
+        Fragment classEvaluator = DegreeMatcherFragment.newInstance(degreeClassId);
+
+        DegreeClass degreeClass = loadDegreeClass(degreeClassId);
+
     }
 
 

@@ -101,22 +101,39 @@ public class Degree {
         return _classesByYear.get(year);
     }
 
-    public DegreeClass getDegreeClass(String degreeClassId) {
 
+    public boolean hasDegreeClass(String degreeClassId) {
+
+//                Again, Jack compiler screwed this...
+//                Optional<DegreeClass> foundIt = classes.stream().filter(dc -> dc.getId().equals(degreeClassId)).findAny();
+//                if (foundIt.isPresent()) {
+//                    return true;
+//                }
 
         for (List<DegreeClass> classes : _classesByYear.values()) {
-
-
             for (DegreeClass dClass : classes) {
                 if (dClass.getId().equals(degreeClassId)) {
-                    return dClass;
+                    return true;
                 }
             }
+        }
+
+        return false;
+    }
+
+    public DegreeClass getDegreeClass(String degreeClassId) {
+
 //            Again, Jack compiler screwed this...
 //                Optional<DegreeClass> foundIt = classes.stream().filter(dc -> dc.getId().equals(degreeClassId)).findAny();
 //                if (foundIt.isPresent()) {
 //                    return foundIt.get();
 //                }
+        for (List<DegreeClass> classes : _classesByYear.values()) {
+            for (DegreeClass dClass : classes) {
+                if (dClass.getId().equals(degreeClassId)) {
+                    return dClass;
+                }
+            }
         }
 
         return new DegreeClass();

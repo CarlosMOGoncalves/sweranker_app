@@ -41,4 +41,7 @@
     <dimen name="degree_class_list_item_size">17dp</dimen>
     <dimen name="degree_class_list_line_height">27dp</dimen>
 
+    <dimen name="degree_matcher_image_size">30dp</dimen>
+    <dimen name="degree_matcher_topic_name_size">20dp</dimen>
+
 </resources>

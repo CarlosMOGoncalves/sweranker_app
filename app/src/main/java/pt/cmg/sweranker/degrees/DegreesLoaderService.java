@@ -283,6 +283,16 @@ public class DegreesLoaderService extends Service {
         return getDegree(degreeId).getDegreeClass(degreeClassId);
     }
 
+    public DegreeClass getDegreeClass(String degreeClassId) {
+        DegreeClass degreeClass = new DegreeClass();
+        for (Degree degree : _degrees) {
+            if (degree.hasDegreeClass(degreeClassId)) {
+                degreeClass = degree.getDegreeClass(degreeClassId);
+            }
+        }
+        return degreeClass;
+    }
+
     @Override
     public IBinder onBind(Intent intent) {
         return _binder;

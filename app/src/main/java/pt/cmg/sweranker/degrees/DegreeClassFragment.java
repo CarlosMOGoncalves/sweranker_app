@@ -3,6 +3,7 @@ package pt.cmg.sweranker.degrees;
 import android.app.Fragment;
 import android.content.Context;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
@@ -33,6 +34,7 @@ public class DegreeClassFragment extends Fragment {
     private int _degreeId;
     private String _degreeClassId;
     private DegreeClass _degreeClass;
+    private FloatingActionButton _fab;
 
 
     public DegreeClassFragment() {
@@ -118,6 +120,14 @@ public class DegreeClassFragment extends Fragment {
         curriculumList.setItemAnimator(new DefaultItemAnimator());
         curriculumList.setAdapter(adapter);
 
+        _fab = (FloatingActionButton) _myView.findViewById(R.id.evaluateButton);
+        _fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                _parentActivity.loadDegreeEvaluatorFragment(_degreeClassId);
+            }
+        });
+
         return _myView;
     }
 
@@ -129,7 +139,22 @@ public class DegreeClassFragment extends Fragment {
      */
     public interface DegreeClassFragmentInteractionListener {
 
+        /**
+         * Loads a Degree Class from the system.
+         *
+         * @param degreeId
+         * @param degreeClassId
+         * @return
+         */
         DegreeClass loadDegreeClass(int degreeId, String degreeClassId);
+
+
+        /**
+         * Loads the Degree Evaluator fragment for this degreeClass.
+         *
+         * @param degreeClassId
+         */
+        void loadDegreeEvaluatorFragment(String degreeClassId);
 
     }
 
