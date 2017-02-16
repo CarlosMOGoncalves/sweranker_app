@@ -23,6 +23,9 @@
     <string name="yes">Yes</string>
     <string name="no">No</string>
 
+    <string name="confirm">Confirm</string>
+
+
     <string name="ka_software_requirements">Software Requirements</string>
     <string name="ka_software_design">Software Design</string>
     <string name="ka_software_construction">Software Construction</string>

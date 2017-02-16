@@ -14,6 +14,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -211,7 +212,7 @@ public class DegreesLoaderService extends Service {
      */
     private Map<String, Integer> parseClassProgram(XmlPullParser xmlParser) {
 
-        Map<String, Integer> program = new HashMap<>();
+        Map<String, Integer> program = new LinkedHashMap<>();
 
         try {
 

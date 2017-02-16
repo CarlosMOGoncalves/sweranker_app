@@ -110,8 +110,7 @@ public class SwebokKADetailsFragment extends Fragment {
     /**
      * Communication Interface used to load a Knowledge Area from the Activity
      */
-    public interface OnKaDetailsFragmentInteractionListener {
-        KnowledgeArea getKnowledgeArea(int knowledgeAreaIdToLoad);
+    public interface OnKaDetailsFragmentInteractionListener extends KnowledgeAreaLoader {
     }
 
 

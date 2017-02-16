@@ -43,5 +43,6 @@
 
     <dimen name="degree_matcher_image_size">30dp</dimen>
     <dimen name="degree_matcher_topic_name_size">20dp</dimen>
+    <dimen name="degree_matcher_minibutton_size">20dp</dimen>
 
 </resources>

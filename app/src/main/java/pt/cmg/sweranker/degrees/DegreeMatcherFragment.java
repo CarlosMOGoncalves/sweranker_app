@@ -4,11 +4,16 @@ package pt.cmg.sweranker.degrees;
 import android.app.Fragment;
 import android.content.Context;
 import android.os.Bundle;
+import android.support.v7.widget.DefaultItemAnimator;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import pt.cmg.sweranker.R;
+import pt.cmg.sweranker.swebok.KnowledgeAreaLoader;
+import pt.cmg.sweranker.ui.ConstantSpacingItemDecorator;
 
 /**
  * The DegreeMatcherFragment is the class with the business logic to match each topic of a
@@ -18,10 +23,12 @@ public class DegreeMatcherFragment extends Fragment {
 
     private static final String DEGREE_CLASS_ID = "DEGREE_CLASS_ID";
 
-    private DegreeMatcherFragmentInteractionListener _parentActivity;
+    private OnDegreeMatcherFragmentInteraction _parentActivity;
 
     private String _degreeClassId;
     private DegreeClass _degreeClass;
+
+    private View _myView;
 
     public DegreeMatcherFragment() {
     }
@@ -43,8 +50,8 @@ public class DegreeMatcherFragment extends Fragment {
     @Override
     public void onAttach(Context parentActivity) {
         super.onAttach(parentActivity);
-        if (parentActivity instanceof DegreeMatcherFragmentInteractionListener) {
-            _parentActivity = (DegreeMatcherFragmentInteractionListener) parentActivity;
+        if (parentActivity instanceof OnDegreeMatcherFragmentInteraction) {
+            _parentActivity = (OnDegreeMatcherFragmentInteraction) parentActivity;
         } else {
             throw new RuntimeException(parentActivity.toString() + " must implement DegreeClassFragmentInteractionListener");
         }
@@ -63,8 +70,21 @@ public class DegreeMatcherFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.degree_matcher_fragment, container, false);
+        _myView = inflater.inflate(R.layout.degree_matcher_fragment, container, false);
+
+        RecyclerView matcherList = (RecyclerView) _myView.findViewById(R.id.matcher_list);
+        DegreeTopicMatcherAdapter adapter = new DegreeTopicMatcherAdapter(getActivity(), _degreeClass, _parentActivity.getKnowledgeAreas(), new DegreeTopicMatcherAdapter.OnDegreeTopicMatcherListener() {
+
+        });
+
+        RecyclerView.LayoutManager linearLayoutManager = new LinearLayoutManager(this.getActivity(), LinearLayoutManager.VERTICAL, false);
+        matcherList.setLayoutManager(linearLayoutManager);
+
+        matcherList.addItemDecoration(new ConstantSpacingItemDecorator(this.getActivity(), 2, ConstantSpacingItemDecorator.Side.BOTTOM));
+        matcherList.setItemAnimator(new DefaultItemAnimator());
+
+
+        return _myView;
     }
 
 
@@ -73,15 +93,7 @@ public class DegreeMatcherFragment extends Fragment {
      * <p>
      * Write here any method needed to trigger in the Activity
      */
-    public interface DegreeMatcherFragmentInteractionListener {
-
-        /**
-         * Loads a Degree Class from the system.
-         *
-         * @param degreeClassId
-         * @return
-         */
-        DegreeClass loadDegreeClass(String degreeClassId);
+    public interface OnDegreeMatcherFragmentInteraction extends DegreeLoader, KnowledgeAreaLoader {
 
     }
 }

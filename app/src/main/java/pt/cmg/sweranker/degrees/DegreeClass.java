@@ -84,6 +84,10 @@ public class DegreeClass {
         _program.put(topicId, topicDescriptionResource);
     }
 
+    public int getTopicCount() {
+        return _program.keySet().size();
+    }
+
     public boolean isOptionalClass() {
         return _isOptional;
     }

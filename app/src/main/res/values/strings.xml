@@ -23,6 +23,8 @@
     <string name="yes">Sim</string>
     <string name="no">Não</string>
 
+    <string name="confirm">Confirmar</string>
+
     <string name="loren_ipsum">Far away\nAcross the field\nTolling on the iron bell\nCalls the faithful to their knees\nTo hear the softly spoken magic spell</string>
     <string name="loren_ipsum_title">Us and Them</string>
     <string name="loren_ipsum_description">Black and blue\nAnd who knows which is which and who is who.\nUp and down\nAnd in the end it\'s only round and round. And round.</string>

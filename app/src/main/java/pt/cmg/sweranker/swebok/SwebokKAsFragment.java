@@ -12,8 +12,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import java.util.List;
-
 import pt.cmg.sweranker.R;
 import pt.cmg.sweranker.ui.ConstantSpacingItemDecorator;
 
@@ -104,7 +102,7 @@ public class SwebokKAsFragment extends Fragment {
 
         _swebokGrid = (RecyclerView) _myView.findViewById(R.id.swebok_grid);
 
-        KnowledgeAreasAdapter adapter = new KnowledgeAreasAdapter(this.getActivity(), _parentActivity.loadKnowledgeAreas(), new KnowledgeAreasAdapter.OnKnowledgeAreaClicked() {
+        KnowledgeAreasAdapter adapter = new KnowledgeAreasAdapter(this.getActivity(), _parentActivity.getKnowledgeAreas(), new KnowledgeAreasAdapter.OnKnowledgeAreaClicked() {
             @Override
             public void onKnowledgeAreaClicked(View cardClicked, int position) {
                 _parentActivity.loadDetailedKnowledgeAreaFragment(cardClicked, position);
@@ -134,14 +132,8 @@ public class SwebokKAsFragment extends Fragment {
     /**
      * Communication Interface used to communicate with parent activity
      */
-    public interface OnSwebokFragmentInteractionListener {
+    public interface OnSwebokFragmentInteractionListener extends KnowledgeAreaLoader {
 
-        /**
-         * Returns the list of Knowledge Areas from the system
-         *
-         * @return
-         */
-        List<KnowledgeArea> loadKnowledgeAreas();
 
         /**
          * Loads the Detailed Knowledge Area fragment.

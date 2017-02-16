@@ -51,7 +51,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         DegreesFragment.DegreesFragmentInteractionListener,
         DegreeDetailsFragment.DegreeDetailsFragmentInteractionListener,
         DegreeClassFragment.DegreeClassFragmentInteractionListener,
-        DegreeMatcherFragment.DegreeMatcherFragmentInteractionListener {
+        DegreeMatcherFragment.OnDegreeMatcherFragmentInteraction {
 
 
     private SwebokLoaderService _swebokLoaderService;
@@ -202,7 +202,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     }
 
     @Override
-    public List<KnowledgeArea> loadKnowledgeAreas() {
+    public List<KnowledgeArea> getKnowledgeAreas() {
         List<KnowledgeArea> kas = new ArrayList<>();
         if (_isSwebokServiceBound) {
             kas = _swebokLoaderService.getKnowledgeAreas();
