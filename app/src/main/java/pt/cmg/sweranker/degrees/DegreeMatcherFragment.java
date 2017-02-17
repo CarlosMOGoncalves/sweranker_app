@@ -76,6 +76,7 @@ public class DegreeMatcherFragment extends Fragment {
         DegreeTopicMatcherAdapter adapter = new DegreeTopicMatcherAdapter(getActivity(), _degreeClass, _parentActivity.getKnowledgeAreas(), new DegreeTopicMatcherAdapter.OnDegreeTopicMatcherListener() {
 
         });
+        matcherList.setAdapter(adapter);
 
         RecyclerView.LayoutManager linearLayoutManager = new LinearLayoutManager(this.getActivity(), LinearLayoutManager.VERTICAL, false);
         matcherList.setLayoutManager(linearLayoutManager);

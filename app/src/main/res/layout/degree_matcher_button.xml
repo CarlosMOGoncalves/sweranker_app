@@ -14,6 +14,7 @@
         android:background="@color/colorPrimary"
         android:elevation="2dp"
         android:ellipsize="end"
+        android:text="@string/confirm"
         android:textColor="@color/cardview_light_background"
         tools:text="@string/confirm" />
 </android.support.v7.widget.CardView>

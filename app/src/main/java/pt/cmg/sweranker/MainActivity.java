@@ -445,6 +445,38 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         DegreeClass degreeClass = loadDegreeClass(degreeClassId);
 
+        // This is important. I used a simples transition but the real magic is that I change the
+        // toolbar into a back button toolbar so that it is easier to navigate.
+        Transition enterTransition = new Slide(Gravity.RIGHT);
+        enterTransition.setDuration(400);
+        classEvaluator.setEnterTransition(enterTransition);
+        enterTransition.addListener(new OnStartTransitionListener() {
+            @Override
+            public void onStartTransition(Transition transition) {
+                changeToolbarIntoBackButton(getResources().getString(degreeClass.getNameResource()));
+            }
+        });
+
+        // And when the user presses Back on the toolbar I use a transition listener to change the
+        // toolbar back to its original state. Neat.
+        Transition exitTransition = new Slide(Gravity.RIGHT);
+        exitTransition.setDuration(400);
+        classEvaluator.setReturnTransition(exitTransition);
+        exitTransition.addListener(new OnStartTransitionListener() {
+            @Override
+            public void onStartTransition(Transition transition) {
+                // When we get back, we get back to degree so it is too soon to reset the toolbar
+                changeToolbarIntoBackButton(getResources().getString(degreeClass.getNameResource()));
+            }
+        });
+
+
+        getFragmentManager()
+                .beginTransaction()
+                .replace(R.id.content_area, classEvaluator, "ClassEvaluator")
+                .addToBackStack(null)
+                .commit();
+
     }
 
 

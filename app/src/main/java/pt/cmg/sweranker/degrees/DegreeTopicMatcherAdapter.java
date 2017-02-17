@@ -80,6 +80,9 @@ public class DegreeTopicMatcherAdapter extends RecyclerView.Adapter<RecyclerView
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
         if (holder instanceof DegreeClassTopicMatcherViewHolder) {
             ((DegreeClassTopicMatcherViewHolder) holder)._degreeTopicName.setText(_context.getString(_topicNameResources[position]));
+
+        } else {
+
         }
     }
 
@@ -110,12 +113,9 @@ public class DegreeTopicMatcherAdapter extends RecyclerView.Adapter<RecyclerView
             super(view);
             _degreeTopicName = (TextView) view.findViewById(R.id.topic_name);
             _kaTopicSpinner = (Spinner) view.findViewById(R.id.matcher_selector);
-
             KATopicsSpinnerAdapter adapter = new KATopicsSpinnerAdapter(_context, _knowledgeAreas, new KATopicsSpinnerAdapter.OnKATopicsSpinnerAdapterListener() {
             });
             _kaTopicSpinner.setAdapter(adapter);
-
-
         }
     }
 
