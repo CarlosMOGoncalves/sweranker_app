@@ -8,6 +8,7 @@
     <color name="textColorBold">#000000</color>
     <color name="contrastColour">#03a9f4</color>
     <color name="unselectedTextColor">#9e9e9e</color>
+    <color name="hollow">#00ffffff</color>
 
     <color name="materialAffirmative">#03a9f4</color>
     <color name="materialNegative">#b71c1c</color>

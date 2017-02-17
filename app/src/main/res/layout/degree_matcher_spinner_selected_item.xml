@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="vertical">
+    android:layout_height="wrap_content">
 
     <TextView
-        android:id="@+id/ka_name"
+        android:id="@+id/selected_topic"
         android:layout_width="match_parent"
         android:layout_height="@dimen/degree_matcher_spinner_ka_line_height"
-        android:text="KA: Software Requirements"
-        android:gravity="center"
-        android:textSize="@dimen/degree_matcher_spinner_ka_text_size" />
+        android:gravity="center_vertical"
+        android:text="KA: Software Requirements" />
 </LinearLayout>

@@ -44,5 +44,9 @@
     <dimen name="degree_matcher_image_size">30dp</dimen>
     <dimen name="degree_matcher_topic_name_size">20dp</dimen>
     <dimen name="degree_matcher_minibutton_size">20dp</dimen>
+    <dimen name="degree_matcher_spinner_ka_text_size">22dp</dimen>
+    <dimen name="degree_matcher_spinner_ka_line_height">30dp</dimen>
+    <dimen name="degree_matcher_spinner_topic_line_height">35dp</dimen>
+    <dimen name="degree_matcher_spinner_item_interrogation_image_size">30dp</dimen>
 
 </resources>

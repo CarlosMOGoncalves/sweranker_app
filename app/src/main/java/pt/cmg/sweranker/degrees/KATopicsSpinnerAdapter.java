@@ -3,11 +3,12 @@ package pt.cmg.sweranker.degrees;
 
 import android.app.Activity;
 import android.content.Context;
+import android.support.v4.content.ContextCompat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -209,10 +210,12 @@ public class KATopicsSpinnerAdapter extends BaseAdapter {
 
         if (getItemViewType(position) == VIEW_TYPE_KA) {
             kaViewHolder._kaName.setText(_context.getString(_knowledgeAreasAsArray[position].getNameResource()));
+            kaViewHolder._kaName.setTextColor(ContextCompat.getColor(_context, _knowledgeAreasAsArray[position].getColourResource()));
 
         } else {
 
             topicViewHolder._topicName.setText(_context.getString(_kaTopicsAsArray[position].getNameResource()));
+            topicViewHolder._helpButton.setColorFilter(ContextCompat.getColor(_context, R.color.colorPrimary));
             topicViewHolder._helpButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -231,15 +234,14 @@ public class KATopicsSpinnerAdapter extends BaseAdapter {
 
         // inflate the layout
         LayoutInflater inflater = ((Activity) _context).getLayoutInflater();
-        convertView = inflater.inflate(R.layout.degree_matcher_spinner_ka_item, parent, false);
+        convertView = inflater.inflate(R.layout.degree_matcher_spinner_selected_item, parent, false);
 
         // well set up the ViewHolder
-        SelectedTopicViewHolder viewHolder = new SelectedTopicViewHolder();
-        viewHolder._selectedTopic = (TextView) convertView.findViewById(R.id.ka_name);
-        viewHolder._selectedTopic.setText("Allahu akbar!");
+        SelectedTopicViewHolder viewHolder = new SelectedTopicViewHolder(convertView);
+        viewHolder._selectedTopic.setText("(none selected)");
 
         // store the holder with the view.
-        convertView.setTag(viewHolder);
+//        convertView.setTag(viewHolder);
 
 
         return convertView;
@@ -276,19 +278,19 @@ public class KATopicsSpinnerAdapter extends BaseAdapter {
     static class KnowledgeAreaTopicViewHolder {
 
         private TextView _topicName;
-        private Button _helpButton;
+        private ImageButton _helpButton;
 
         public KnowledgeAreaTopicViewHolder(View rootView) {
             _topicName = (TextView) rootView.findViewById(R.id.topic_name);
-            _helpButton = (Button) rootView.findViewById(R.id.info_button);
+            _helpButton = (ImageButton) rootView.findViewById(R.id.info_button);
         }
     }
 
     static class SelectedTopicViewHolder {
         private TextView _selectedTopic;
 
-
-        public SelectedTopicViewHolder() {
+        public SelectedTopicViewHolder(View rootView) {
+            _selectedTopic = (TextView) rootView.findViewById(R.id.selected_topic);
         }
     }
 
