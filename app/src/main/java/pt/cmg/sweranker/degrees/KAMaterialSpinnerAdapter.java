@@ -1,7 +1,13 @@
 package pt.cmg.sweranker.degrees;
 
+import android.app.Activity;
+import android.app.AlertDialog;
+import android.app.Dialog;
+import android.app.DialogFragment;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.res.Configuration;
+import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -19,6 +25,16 @@ import pt.cmg.sweranker.swebok.KnowledgeAreaTopic;
 import pt.cmg.sweranker.ui.materialspinner.MaterialSpinnerBaseAdapter;
 
 /**
+ * This is the adapter that binds all the Knowledge Areas to a Material Spinner.
+ * The idea behind it is to create a Spinner that shows all the possible KA topics
+ * but separated by a KA simples view (painted with its system colour).
+ * Now the topics are selectable, the KA not.
+ * <p>
+ * It is organized in a structure that I've used before whenever I have multiple views separated
+ * but some other view -> I use native arrays with the positions of the separeted views and also
+ * one array for each object type. It is neat, because accesses are easy and fast, but it is kinda
+ * nerd.
+ * <p>
  * Created by Carlos on 21/02/2017.
  */
 
@@ -201,6 +217,23 @@ public class KAMaterialSpinnerAdapter extends MaterialSpinnerBaseAdapter {
     }
 
     @Override
+    public String getItemName(int position) {
+        boolean isKAView = Arrays.binarySearch(_knowledgeAreaViewPositions, position) >= 0 ? true : false;
+
+        if (isKAView) {
+            return _context.getString(_knowledgeAreasAsArray[position].getNameResource());
+        } else {
+            return _context.getString(_kaTopicsAsArray[position].getNameResource());
+        }
+    }
+
+    @Override
+    public boolean isValidPosition(int position) {
+        // Basically it is only valid if it is a topic, although I do have all the data
+        return Arrays.binarySearch(_knowledgeAreaViewPositions, position) >= 0 ? false : true;
+    }
+
+    @Override
     public long getItemId(int position) {
         return position;
     }
@@ -243,7 +276,10 @@ public class KAMaterialSpinnerAdapter extends MaterialSpinnerBaseAdapter {
             _topicName.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    _listener.onTopicViewClicked(_kaTopicsAsArray[getAdapterPosition()]);
+                    if (_onItemSelectedListener != null) {
+                        KnowledgeAreaTopic selectedTopic = _kaTopicsAsArray[getAdapterPosition()];
+                        _onItemSelectedListener.onItemSelected(selectedTopic, _context.getString(selectedTopic.getNameResource()), getAdapterPosition());
+                    }
                 }
             });
 
@@ -251,18 +287,52 @@ public class KAMaterialSpinnerAdapter extends MaterialSpinnerBaseAdapter {
             _helpButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    _listener.onInfoButtonClicked(_kaTopicsAsArray[getAdapterPosition()].getDescriptionResource());
+                    KnowledgeAreaTopic selectedTopic = _kaTopicsAsArray[getAdapterPosition()];
+                    KATopicInformationDialog dialog = KATopicInformationDialog.newInstance(_context.getString(selectedTopic.getDescriptionResource()), _context.getString(R.string.dismiss));
+                    dialog.show(((Activity) _context).getFragmentManager(), "MessageFragment");
                 }
             });
         }
     }
 
 
+    /**
+     * This is just a very simple Dialog that shows some help on what this topic is all about.
+     * It also shows an OK button to dismiss.
+     */
+    public static class KATopicInformationDialog extends DialogFragment {
+
+        private static final String DISMISS_BUTTON_TEXT = "dismiss_button";
+        private static final String MESSAGE = "message";
+
+        public KATopicInformationDialog() {
+        }
+
+        public static KATopicInformationDialog newInstance(String message, String okButtonText) {
+            KATopicInformationDialog fragment = new KATopicInformationDialog();
+            Bundle args = new Bundle();
+            args.putString(MESSAGE, message);
+            args.putString(DISMISS_BUTTON_TEXT, okButtonText);
+            fragment.setArguments(args);
+            return fragment;
+        }
+
+        @Override
+        public Dialog onCreateDialog(Bundle savedInstanceState) {
+            // Use the Builder class for convenient dialog construction
+            AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+
+            builder.setMessage(getArguments().getString(MESSAGE))
+                    .setPositiveButton(getArguments().getString(DISMISS_BUTTON_TEXT), new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int id) {
+                        }
+                    });
+            // Create the AlertDialog object and return it
+            return builder.create();
+        }
+    }
+
+
     public interface OnKATopicsSpinnerAdapterListener {
-
-        void onInfoButtonClicked(int kaTopicDescriptionResource);
-
-        void onTopicViewClicked(KnowledgeAreaTopic kaTopic);
-
     }
 }

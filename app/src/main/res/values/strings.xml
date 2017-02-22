@@ -24,6 +24,9 @@
     <string name="no">Não</string>
 
     <string name="confirm">Confirmar</string>
+    <string name="OK">OK</string>
+    <string name="dismiss">OK</string>
+    <string name="select_topic">Seleccionar um tópico</string>
 
     <string name="loren_ipsum">Far away\nAcross the field\nTolling on the iron bell\nCalls the faithful to their knees\nTo hear the softly spoken magic spell</string>
     <string name="loren_ipsum_title">Us and Them</string>

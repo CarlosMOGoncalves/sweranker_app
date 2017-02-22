@@ -14,7 +14,6 @@ import android.os.Bundle;
 import android.os.Parcelable;
 import android.support.annotation.ColorInt;
 import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
 import android.support.v7.widget.AppCompatTextView;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -27,7 +26,6 @@ import android.view.WindowManager;
 import android.widget.PopupWindow;
 
 import java.lang.reflect.Method;
-import java.util.Arrays;
 import java.util.List;
 
 import pt.cmg.sweranker.R;
@@ -36,11 +34,15 @@ import pt.cmg.sweranker.R;
  * I did almost nothing of this class. I just got it from the internet, liked it and tweaked it
  * to display my list. I have zero clue how he does this, because I can't be bothered to read it
  * since my time is running out. Time constraints, hate them.
+ * <p>
+ * I changed the dropdown view from Listview to RecyclerView as it is much much easier to use
+ * multiple views in the list.
+ * <p>
+ * It still has a lot of rubbish, but the show must go on.
  */
 public class MaterialSpinner extends AppCompatTextView {
 
     private OnNothingSelectedListener _onNothingSelectedListener;
-    private OnItemSelectedListener _onItemSelectedListener;
 
     private Object _selectedObject = null;
     private MaterialSpinnerBaseAdapter _adapter;
@@ -103,14 +105,14 @@ public class MaterialSpinner extends AppCompatTextView {
         setGravity(Gravity.CENTER_VERTICAL | Gravity.START);
         setClickable(true);
         setPadding(left, top, right, bottom);
-        setBackgroundResource(R.drawable.ms_selector);
+        setBackgroundResource(R.drawable.material_spinner_selector);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1 && rtl) {
             setLayoutDirection(View.LAYOUT_DIRECTION_RTL);
             setTextDirection(View.TEXT_DIRECTION_RTL);
         }
 
         if (!_hideArrow) {
-            _arrowDrawable = Utils.getDrawable(context, R.drawable.ms_arrow).mutate();
+            _arrowDrawable = Utils.getDrawable(context, R.drawable.material_spinner_arrow).mutate();
             _arrowDrawable.setColorFilter(_arrowColor, PorterDuff.Mode.SRC_IN);
             if (rtl) {
                 setCompoundDrawablesWithIntrinsicBounds(_arrowDrawable, null, null, null);
@@ -121,32 +123,7 @@ public class MaterialSpinner extends AppCompatTextView {
 
         _listView = new RecyclerView(context);
         _listView.setId(getId());
-        RecyclerView.LayoutManager linearLayoutManager = new LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false);
-        _listView.setLayoutManager(linearLayoutManager);
-
-
-//        _listView = new ListView(context);
-//        _listView.setId(getId());
-//        _listView.setDivider(null);
-//        _listView.setItemsCanFocus(true);
-//        _listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-//
-//            @Override
-//            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-//                if (position >= _selectedIndex && position < _adapter.getCount()) {
-//                    position++;
-//                }
-//                _selectedIndex = position;
-//                _isNothingSelected = false;
-//                Object item = _adapter.get(position);
-//                _adapter.notifyItemSelected(position);
-//                setText(item.toString());
-//                collapse();
-//                if (onItemSelectedListener != null) {
-//                    onItemSelectedListener.onItemSelected(MaterialSpinner.this, position, id, item);
-//                }
-//            }
-//        });
+        _listView.setLayoutManager(new LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false));
 
         _popupWindow = new PopupWindow(context);
         _popupWindow.setContentView(_listView);
@@ -155,9 +132,9 @@ public class MaterialSpinner extends AppCompatTextView {
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             _popupWindow.setElevation(16);
-            _popupWindow.setBackgroundDrawable(Utils.getDrawable(context, R.drawable.ms_drawable));
+            _popupWindow.setBackgroundDrawable(Utils.getDrawable(context, R.drawable.material_spinner_drawable));
         } else {
-            _popupWindow.setBackgroundDrawable(Utils.getDrawable(context, R.drawable.ms__drop_down_shadow));
+            _popupWindow.setBackgroundDrawable(Utils.getDrawable(context, R.drawable.material_spinner_drop_down_shadow));
         }
 
         if (_backgroundColor != Color.WHITE) { // default color is white
@@ -251,7 +228,6 @@ public class MaterialSpinner extends AppCompatTextView {
             _selectedIndex = bundle.getInt("selected_index");
             if (_adapter != null) {
                 setText(_adapter.getItem(_selectedIndex).toString());
-                _adapter.notifyItemSelected(_selectedIndex);
             }
             if (bundle.getBoolean("is_popup_showing")) {
                 if (_popupWindow != null) {
@@ -305,53 +281,21 @@ public class MaterialSpinner extends AppCompatTextView {
      */
     public void setSelectedIndex(int position) {
         if (_adapter != null) {
+
+            if (!_adapter.isValidPosition(position)) {
+                throw new IllegalArgumentException("This is not a valid position for this adapter! Likely a separator view of some sorts.");
+            }
+
             if (position >= 0 && position <= _adapter.getItemCount()) {
-                _adapter.notifyItemSelected(position);
                 _selectedIndex = position;
-                setText(_adapter.getItem(position).toString());
+                _selectedObject = _adapter.getItem(position);
+                setText(_adapter.getItemName(position));
             } else {
                 throw new IllegalArgumentException("Position must be lower than adapter count!");
             }
         }
     }
 
-    /**
-     * Register a callback to be invoked when an item in the dropdown is selected.
-     *
-     * @param onItemSelectedListener The callback that will run
-     */
-    public void setOnItemSelectedListener(@Nullable OnItemSelectedListener onItemSelectedListener) {
-        _onItemSelectedListener = onItemSelectedListener;
-    }
-
-    /**
-     * Register a callback to be invoked when the {@link PopupWindow} is shown but the user didn't select an item.
-     *
-     * @param onNothingSelectedListener the callback that will run
-     */
-    public void setOnNothingSelectedListener(@Nullable OnNothingSelectedListener onNothingSelectedListener) {
-        this._onNothingSelectedListener = onNothingSelectedListener;
-    }
-
-    /**
-     * Set the dropdown items
-     *
-     * @param items A list of items
-     */
-//    public void setItems(@NonNull List<Object> items) {
-//        _numberOfItems = items.size();
-//        _adapter = new MaterialSpinnerAdapter(getContext(), items).setTextColor(_textColor);
-//        setAdapterInternal(_adapter);
-//    }
-
-    /**
-     * Set the dropdown items
-     *
-     * @param items A list of items
-     */
-    public void setItems(@NonNull Object... items) {
-        setItems(Arrays.asList(items));
-    }
 
     /**
      * Get the list of items in the adapter
@@ -366,17 +310,36 @@ public class MaterialSpinner extends AppCompatTextView {
     }
 
 
+    /**
+     * Sets the Adapter for this Spinner. Internally this uses a Recycler View, so it is really the same process
+     * as writing an adapter for a Recycler View.
+     *
+     * @param adapter
+     */
     public void setAdapter(MaterialSpinnerBaseAdapter adapter) {
         _adapter = adapter;
+        adapter.setOnItemSelectedListener(new MaterialSpinnerBaseAdapter.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(Object item, String textToSet, int position) {
+                _selectedObject = item;
+                _selectedIndex = position;
+                setText(textToSet);
+                collapse();
+            }
+        });
         setAdapterInternal(adapter);
     }
 
+
     private void setAdapterInternal(@NonNull MaterialSpinnerBaseAdapter adapter) {
         _listView.setAdapter(adapter);
+
         if (_selectedIndex >= _numberOfItems) {
             _selectedIndex = 0;
         }
-        setText("Select one topic");
+
+        // Initialises the spinner placeholder.
+        setText(getContext().getString(R.string.select_topic));
     }
 
     /**
@@ -469,22 +432,13 @@ public class MaterialSpinner extends AppCompatTextView {
 
     /**
      * Interface definition for a callback to be invoked when an item in this view has been selected.
-     *
-     * @param <T> Adapter item type
      */
-    public interface OnItemSelectedListener<T> {
+    public interface OnItemSelectedListener {
 
         /**
-         * <p>Callback method to be invoked when an item in this view has been selected. This callback is invoked only when
-         * the newly selected position is different from the previously selected position or if there was no selected
-         * item.</p>
-         *
-         * @param view     The {@link MaterialSpinner} view
-         * @param position The position of the view in the adapter
-         * @param id       The row id of the item that is selected
-         * @param item     The selected item
+         * Nothing at the moment.
          */
-        void onItemSelected(MaterialSpinner view, int position, long id, T item);
+        void onItemSelected();
 
     }
 
@@ -494,9 +448,7 @@ public class MaterialSpinner extends AppCompatTextView {
     public interface OnNothingSelectedListener {
 
         /**
-         * Callback method to be invoked when the {@link PopupWindow} is dismissed and no item was selected.
-         *
-         * @param spinner the {@link MaterialSpinner}
+         * Also nothing. If I ever make a library out of this I really should do something interesting here.
          */
         void onNothingSelected(MaterialSpinner spinner);
     }
