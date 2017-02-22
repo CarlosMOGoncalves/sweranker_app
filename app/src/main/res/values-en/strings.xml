@@ -25,7 +25,7 @@
 
     <string name="confirm">Confirm</string>
 
-
+    <string name="ka_other">Other</string>
     <string name="ka_software_requirements">Software Requirements</string>
     <string name="ka_software_design">Software Design</string>
     <string name="ka_software_construction">Software Construction</string>

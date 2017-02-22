@@ -655,4 +655,19 @@
         </topics>
     </knowledge-area>
 
+    <knowledge-area>
+        <name>@string/ka_other</name>
+        <image>@drawable/engineer</image>
+        <imageBackgroundColour>@color/cardColourNone</imageBackgroundColour>
+        <id>16</id>
+        <description>@string/ka_other_description</description>
+        <topics>
+            <topic>
+                <id>102</id>
+                <name>@string/ka16_topic1_name</name>
+                <description>@string/ka16_topic1_description</description>
+            </topic>
+        </topics>
+    </knowledge-area>
+
 </knowledge-areas>

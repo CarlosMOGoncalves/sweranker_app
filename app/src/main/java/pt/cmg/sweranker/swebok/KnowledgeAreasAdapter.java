@@ -36,6 +36,9 @@ public class KnowledgeAreasAdapter extends RecyclerView.Adapter<KnowledgeAreasAd
         _listener = listener;
         _context = context;
         _knowledgAreas = knowledgeAreas;
+
+        // I remove the last one because it is an empty KA to use as black hole for anything unrelated
+//        _knowledgAreas.remove(_knowledgAreas.size() - 1);
     }
 
     @Override
@@ -60,7 +63,7 @@ public class KnowledgeAreasAdapter extends RecyclerView.Adapter<KnowledgeAreasAd
 
     @Override
     public int getItemCount() {
-        return _knowledgAreas.size();
+        return _knowledgAreas.size() - 1;
     }
 
 

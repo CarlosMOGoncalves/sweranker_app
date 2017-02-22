@@ -20,5 +20,6 @@
     <color name="cardColour4">#7E57C2</color>
     <color name="cardColour5">#EF5350</color>
     <color name="cardColour6">#8D6E63</color>
+    <color name="cardColourNone">#757575</color>
 
 </resources>

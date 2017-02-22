@@ -32,7 +32,6 @@
     <string name="loren_ipsum_title">Us and Them</string>
     <string name="loren_ipsum_description">Black and blue\nAnd who knows which is which and who is who.\nUp and down\nAnd in the end it\'s only round and round. And round.</string>
 
-
     <string name="ka_software_requirements">Requisitos de Software</string>
     <string name="ka_software_requirements_description">A AC “Requisitos de Software” trata do levantamento, análise, especificação e validação dos requisitos bem como a gestão dos mesmos durante todo o ciclo de vida de um produto de software.\n\nOs requisitos de software são definidos genericamente como:\na) o conjunto de condições/necessidades que o software deve satisfazer de modo a atingir um determinado objectivo;\nb) as restrições à sua concepção e funcionamento.\n\nOs tópicos desta AC detalham a maneira sistemática como a Engenharia de Software deve tratar os Requisitos. Todos os conceitos que esta área engloba são usados no Processo do Ciclo de Vida do Software chamado “Análise de Requisitos de Software” que, apesar de ser frequentemente associado ao período inicial do desenvolvimento de software é uma actividade que se prolonga ao longo do ciclo de vida de um produto de software.</string>
     <string name="ka1_topic1_name">Fundamentos de Requisitos de Software</string>
@@ -280,6 +279,10 @@
     <string name="ka15_topic7_name">Análise de Causa</string>
     <string name="ka15_topic7_description">Sobre o processo de investigação e identificação de como e porque aconteceu um evento indesejável e sua causa de raíz (i.e. o que deu origem ao evento);\nas principais técnicas para conduzir este tipo de análise (métodos de revisão, diagramas de estado presente vs estado desejável, revisão por terceiros, árvores de falha, etc.);\nas ferramentas de auxílio à análise (diagramas de causa-efeito, histogramas, diagramas de Pareto, etc.).</string>
 
+    <string name="ka_other">Outra</string>
+    <string name="ka_other_description">Nenhuma Área do Conhecimento de Engenharia de Software</string>
+    <string name="ka16_topic1_name">Nenhuma das Áreas do Conhecimento</string>
+    <string name="ka16_topic1_description">Para qualquer tópico do programa que não encaixa em qualquer das Áreas do Conhecimento.</string>
 
     <string name="up_mieic">MIEIC</string>
     <string name="up_mieic_fullname">Mestrado Integrado em Engenharia Informática e Computação</string>
