@@ -5,18 +5,25 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:textColor">@color/textColor</item>
+        <item name="android:textColorPrimary">@color/textColor</item>
+        <!--item name="android:navigationBarColor">@color/cardColour6</item-->
+        <!--item name="android:colorControlNormal">@color/cardColour6</item-->
+        <!--item name="android:colorControlActivated">?attr/colorControlActivated</item-->
+        <!--item name="android:colorControlHighlight">@color/colorPrimary</item-->
+        <!--item name="android:colorButtonNormal">?attr/colorButtonNormal</item-->
     </style>
 
 
     <style name="ToolbarTheme">
         <!-- android:textColorPrimary is the color of the title text in the Toolbar  -->
-        <item name="android:textColorPrimary">@color/colorAccent</item>
+        <item name="android:textColorPrimary">@color/white</item>
         <!-- actionMenuTextColor is the color of the text of action (menu) items  -->
         <item name="actionMenuTextColor">@android:color/holo_green_light</item>
         <!-- Tints the input fields like checkboxes and text fields -->
         <!--item name="colorAccent">@color/test_color</item-->
         <!-- Colour of the menu button-->
-        <item name="colorControlNormal">@color/colorAccent</item>
+        <item name="colorControlNormal">@color/white</item>
     </style>
 
 
@@ -25,7 +32,7 @@
         <item name="tabIndicatorHeight">5dp</item>
         <item name="tabBackground">@color/colorPrimaryDark</item>
         <item name="tabTextAppearance">@style/TextAppearance.Design.Tab</item>
-        <item name="tabSelectedTextColor">@color/colorAccent</item>
+        <item name="tabSelectedTextColor">@color/white</item>
         <!-- This acts basically as the color of the unselected tab -->
         <item name="tabTextColor">@color/unselectedTextColor</item>
     </style>

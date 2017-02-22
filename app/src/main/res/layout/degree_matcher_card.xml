@@ -39,10 +39,11 @@
 
         </LinearLayout>
 
-        <Spinner
-            android:id="@+id/matcher_selector"
+        <pt.cmg.sweranker.ui.materialspinner.MaterialSpinner
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:id="@+id/matcher_selector" />
+
 
         <FrameLayout
             android:layout_width="match_parent"

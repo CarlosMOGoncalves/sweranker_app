@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ka_name"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="start|center_vertical"
+    android:ellipsize="marquee"
+    android:gravity="center_vertical"
+    android:maxLines="1"
+    android:minHeight="@dimen/material_spinner_item_height"
+    android:paddingBottom="@dimen/material_spinner_popup_padding_top"
+    android:paddingLeft="@dimen/material_spinner_popup_padding_left"
+    android:paddingRight="@dimen/material_spinner_popup_padding_left"
+    android:paddingStart="@dimen/material_spinner_popup_padding_left"
+    android:paddingTop="@dimen/material_spinner_popup_padding_top"
+    android:text="This is a View"
+    android:background="@drawable/layout_border" />

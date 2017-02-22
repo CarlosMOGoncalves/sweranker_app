@@ -81,7 +81,7 @@ public class DegreeMatcherFragment extends Fragment {
         RecyclerView.LayoutManager linearLayoutManager = new LinearLayoutManager(this.getActivity(), LinearLayoutManager.VERTICAL, false);
         matcherList.setLayoutManager(linearLayoutManager);
 
-        matcherList.addItemDecoration(new ConstantSpacingItemDecorator(this.getActivity(), 2, ConstantSpacingItemDecorator.Side.BOTTOM));
+        matcherList.addItemDecoration(new ConstantSpacingItemDecorator(this.getActivity(), 2, ConstantSpacingItemDecorator.Side.ALL_SIDES));
         matcherList.setItemAnimator(new DefaultItemAnimator());
 
 

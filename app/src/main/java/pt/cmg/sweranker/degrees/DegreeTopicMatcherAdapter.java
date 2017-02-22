@@ -1,11 +1,15 @@
 package pt.cmg.sweranker.degrees;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.app.Dialog;
+import android.app.DialogFragment;
+import android.content.DialogInterface;
+import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Spinner;
 import android.widget.TextView;
 
 import java.util.List;
@@ -13,6 +17,8 @@ import java.util.Map;
 
 import pt.cmg.sweranker.R;
 import pt.cmg.sweranker.swebok.KnowledgeArea;
+import pt.cmg.sweranker.swebok.KnowledgeAreaTopic;
+import pt.cmg.sweranker.ui.materialspinner.MaterialSpinner;
 
 /**
  * Created by Carlos on 15/02/2017.
@@ -107,15 +113,60 @@ public class DegreeTopicMatcherAdapter extends RecyclerView.Adapter<RecyclerView
     public class DegreeClassTopicMatcherViewHolder extends RecyclerView.ViewHolder {
 
         private TextView _degreeTopicName;
-        private Spinner _kaTopicSpinner;
+        private MaterialSpinner _kaTopicSpinner;
 
         public DegreeClassTopicMatcherViewHolder(View view) {
             super(view);
             _degreeTopicName = (TextView) view.findViewById(R.id.topic_name);
-            _kaTopicSpinner = (Spinner) view.findViewById(R.id.matcher_selector);
-            KATopicsSpinnerAdapter adapter = new KATopicsSpinnerAdapter(_context, _knowledgeAreas, new KATopicsSpinnerAdapter.OnKATopicsSpinnerAdapterListener() {
+            _kaTopicSpinner = (MaterialSpinner) view.findViewById(R.id.matcher_selector);
+
+            KAMaterialSpinnerAdapter adapter = new KAMaterialSpinnerAdapter(_context, _knowledgeAreas, new KAMaterialSpinnerAdapter.OnKATopicsSpinnerAdapterListener() {
+
+                @Override
+                public void onInfoButtonClicked(int kaTopicDescription) {
+                    KATopicInformationDialog dialog = KATopicInformationDialog.newInstance(_context.getString(kaTopicDescription));
+                    dialog.show(_context.getFragmentManager(), "allah");
+                }
+
+                @Override
+                public void onTopicViewClicked(KnowledgeAreaTopic kaTopic) {
+                    _kaTopicSpinner.setSelectedItemText(_context.getString(kaTopic.getNameResource()));
+                    _kaTopicSpinner.setSelectedObject(kaTopic);
+                    _kaTopicSpinner.collapse();
+                }
             });
             _kaTopicSpinner.setAdapter(adapter);
+        }
+    }
+
+    public static class KATopicInformationDialog extends DialogFragment {
+
+        private static final String MESSAGE = "message";
+
+        private String _message;
+
+        public KATopicInformationDialog() {
+        }
+
+        public static KATopicInformationDialog newInstance(String message) {
+            KATopicInformationDialog fragment = new KATopicInformationDialog();
+            Bundle args = new Bundle();
+            args.putString(MESSAGE, message);
+            fragment.setArguments(args);
+            return fragment;
+        }
+
+        @Override
+        public Dialog onCreateDialog(Bundle savedInstanceState) {
+            // Use the Builder class for convenient dialog construction
+            AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+            builder.setMessage(getArguments().getString(MESSAGE))
+                    .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int id) {
+                        }
+                    });
+            // Create the AlertDialog object and return it
+            return builder.create();
         }
     }
 

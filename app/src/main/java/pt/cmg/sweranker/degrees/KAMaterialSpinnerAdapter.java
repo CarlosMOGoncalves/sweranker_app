@@ -1,16 +1,14 @@
 package pt.cmg.sweranker.degrees;
 
-
-import android.app.Activity;
 import android.content.Context;
+import android.content.res.Configuration;
 import android.support.v4.content.ContextCompat;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.BaseAdapter;
 import android.widget.ImageButton;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.Arrays;
 import java.util.List;
@@ -18,11 +16,14 @@ import java.util.List;
 import pt.cmg.sweranker.R;
 import pt.cmg.sweranker.swebok.KnowledgeArea;
 import pt.cmg.sweranker.swebok.KnowledgeAreaTopic;
+import pt.cmg.sweranker.ui.materialspinner.MaterialSpinnerBaseAdapter;
 
-public class KATopicsSpinnerAdapter extends BaseAdapter {
+/**
+ * Created by Carlos on 21/02/2017.
+ */
 
-    private static final int VIEW_TYPE_TAG_KEY = 1;
-    private static final int VIEW_HOLDER_TAG_KEY = 2;
+public class KAMaterialSpinnerAdapter extends MaterialSpinnerBaseAdapter {
+
     private static final int VIEW_TYPE_KA = 10;
     private static final int VIEW_TYPE_TOPIC = 20;
 
@@ -36,7 +37,13 @@ public class KATopicsSpinnerAdapter extends BaseAdapter {
 
     private int _totalItemCount;
 
-    public KATopicsSpinnerAdapter(Context context, List<KnowledgeArea> knowledgeAreas, OnKATopicsSpinnerAdapterListener activity) {
+
+    public KAMaterialSpinnerAdapter(Context context) {
+        super(context);
+    }
+
+    public KAMaterialSpinnerAdapter(Context context, List<KnowledgeArea> knowledgeAreas, OnKATopicsSpinnerAdapterListener activity) {
+        super(context);
         _context = context;
         _listener = activity;
         _knowledgeAreas = knowledgeAreas;
@@ -61,8 +68,6 @@ public class KATopicsSpinnerAdapter extends BaseAdapter {
             total += ka.getTopicsCount();
         }
         total += kas.size();
-        // Because this is freaking Spinner it has a View on position ZERO, the one before the dropdown menu appears...
-//        total++;
 
         return total;
     }
@@ -78,14 +83,11 @@ public class KATopicsSpinnerAdapter extends BaseAdapter {
     private int[] calculateKnowldgeAreasViewPositions() {
         int[] positions = new int[_knowledgeAreas.size()];
 
-        // Again, because this is a Spinner the position 0 will be empty (or with selected View)
-        // and 1 will be the first KA View, so we skip 2.
         int skipViewOffset = 1;
         positions[0] = 0;
         for (int i = 1, ka = 0; i < positions.length; i++, ka++) {
 
             positions[i] = skipViewOffset + _knowledgeAreas.get(ka).getTopicsCount();
-            // Here we skip another KA View, that's where the +1 comes from
             skipViewOffset += _knowledgeAreas.get(ka).getTopicsCount() + 1;
         }
 
@@ -105,7 +107,6 @@ public class KATopicsSpinnerAdapter extends BaseAdapter {
         KnowledgeArea[] knowledgeAreasSparcedArray = new KnowledgeArea[_totalItemCount];
 
         for (int i = 0; i < _knowledgeAreaViewPositions.length; i++) {
-            // Again, the plus one is accounting for the empty view on position 0... this is sad code...
             knowledgeAreasSparcedArray[_knowledgeAreaViewPositions[i]] = _knowledgeAreas.get(i);
         }
 
@@ -136,7 +137,7 @@ public class KATopicsSpinnerAdapter extends BaseAdapter {
                     kaTopicsSparsedArray[i] = topic;
                     i++;
                 }
-                // account for the year view
+                // account for the KA view
                 i++;
             }
 
@@ -144,15 +145,53 @@ public class KATopicsSpinnerAdapter extends BaseAdapter {
         return kaTopicsSparsedArray;
     }
 
+    @Override
+    public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        View itemView;
+
+        if (viewType == VIEW_TYPE_KA) {
+            itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.material_spinner_list_item, parent, false);
+            return new KnowledgeAreaViewHolder(itemView);
+        }
+
+        itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.degree_matcher_spinner_topic_item, parent, false);
+        return new KnowledgeAreaTopicViewHolder(itemView);
+    }
+
 
     @Override
-    public int getCount() {
+    public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
+        if (holder instanceof KnowledgeAreaViewHolder) {
+            ((KnowledgeAreaViewHolder) holder)._kaName.setText(_context.getResources().getString(_knowledgeAreasAsArray[position].getNameResource()));
+            ((KnowledgeAreaViewHolder) holder)._kaName.setTextColor(ContextCompat.getColor(_context, _knowledgeAreasAsArray[position].getColourResource()));
+        } else {
+            ((KnowledgeAreaTopicViewHolder) holder)._topicName.setText(_context.getResources().getString(_kaTopicsAsArray[position].getNameResource()));
+            ((KnowledgeAreaTopicViewHolder) holder)._helpButton.setColorFilter(ContextCompat.getColor(_context, R.color.colorPrimary));
+        }
+    }
+
+
+    @Override
+    public int getItemViewType(int position) {
+
+        boolean isKAView = Arrays.binarySearch(_knowledgeAreaViewPositions, position) >= 0;
+
+        if (isKAView) {
+            return VIEW_TYPE_KA;
+        } else {
+            return VIEW_TYPE_TOPIC;
+        }
+    }
+
+    @Override
+    public int getItemCount() {
         return _totalItemCount;
     }
 
     @Override
     public Object getItem(int position) {
-        boolean isKAView = Arrays.binarySearch(_knowledgeAreaViewPositions, position) > 0 ? true : false;
+
+        boolean isKAView = Arrays.binarySearch(_knowledgeAreaViewPositions, position) >= 0 ? true : false;
 
         if (isKAView) {
             return _knowledgeAreasAsArray[position];
@@ -168,134 +207,62 @@ public class KATopicsSpinnerAdapter extends BaseAdapter {
 
 
     @Override
-    public View getDropDownView(int position, View convertView, ViewGroup parent) {
-
-        KnowledgeAreaViewHolder kaViewHolder = null;
-        KnowledgeAreaTopicViewHolder topicViewHolder = null;
-
-        if (convertView == null || (Integer) convertView.getTag(R.id.view_type_tag) != getItemViewType(position)) {
-
-            if (getItemViewType(position) == VIEW_TYPE_KA) {
-                // inflate the layout
-                LayoutInflater inflater = ((Activity) _context).getLayoutInflater();
-                convertView = inflater.inflate(R.layout.degree_matcher_spinner_ka_item, parent, false);
-
-                // well set up the ViewHolder
-                kaViewHolder = new KnowledgeAreaViewHolder(convertView);
-
-                convertView.setTag(R.id.view_type_tag, getItemViewType(position));
-                convertView.setTag(R.id.view_holder_tag, kaViewHolder);
-
-            } else {
-                // inflate the layout
-                LayoutInflater inflater = ((Activity) _context).getLayoutInflater();
-                convertView = inflater.inflate(R.layout.degree_matcher_spinner_topic_item, parent, false);
-
-                // well set up the ViewHolder
-                topicViewHolder = new KnowledgeAreaTopicViewHolder(convertView);
-
-                convertView.setTag(R.id.view_type_tag, getItemViewType(position));
-                convertView.setTag(R.id.view_holder_tag, topicViewHolder);
-
-            }
-
-
-        } else {
-            if (getItemViewType(position) == VIEW_TYPE_KA) {
-                kaViewHolder = (KnowledgeAreaViewHolder) convertView.getTag(R.id.view_holder_tag);
-            } else {
-                topicViewHolder = (KnowledgeAreaTopicViewHolder) convertView.getTag(R.id.view_holder_tag);
-            }
-        }
-
-        if (getItemViewType(position) == VIEW_TYPE_KA) {
-            kaViewHolder._kaName.setText(_context.getString(_knowledgeAreasAsArray[position].getNameResource()));
-            kaViewHolder._kaName.setTextColor(ContextCompat.getColor(_context, _knowledgeAreasAsArray[position].getColourResource()));
-
-        } else {
-
-            topicViewHolder._topicName.setText(_context.getString(_kaTopicsAsArray[position].getNameResource()));
-            topicViewHolder._helpButton.setColorFilter(ContextCompat.getColor(_context, R.color.colorPrimary));
-            topicViewHolder._helpButton.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Toast.makeText(_context, "Allahu akbar", Toast.LENGTH_SHORT).show();
-                }
-            });
-
-        }
-        return convertView;
-
+    public List<Object> getItems() {
+        return null;
     }
 
-
-    @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
-
-        // inflate the layout
-        LayoutInflater inflater = ((Activity) _context).getLayoutInflater();
-        convertView = inflater.inflate(R.layout.degree_matcher_spinner_selected_item, parent, false);
-
-        // well set up the ViewHolder
-        SelectedTopicViewHolder viewHolder = new SelectedTopicViewHolder(convertView);
-        viewHolder._selectedTopic.setText("(none selected)");
-
-        // store the holder with the view.
-//        convertView.setTag(viewHolder);
-
-
-        return convertView;
-
-    }
-
-    @Override
-    public int getItemViewType(int position) {
-
-        boolean isKAView = Arrays.binarySearch(_knowledgeAreaViewPositions, position) >= 0;
-
-        if (isKAView) {
-            return VIEW_TYPE_KA;
-        } else {
-            return VIEW_TYPE_TOPIC;
-        }
-    }
 
     /**
      * Really just a marker class to be able to inflate the textview
      */
-    static class KnowledgeAreaViewHolder {
+    public class KnowledgeAreaViewHolder extends RecyclerView.ViewHolder {
 
         private TextView _kaName;
 
         public KnowledgeAreaViewHolder(View rootView) {
+            super(rootView);
             _kaName = (TextView) rootView.findViewById(R.id.ka_name);
+            Configuration config = _context.getResources().getConfiguration();
+            if (config.getLayoutDirection() == View.LAYOUT_DIRECTION_RTL) {
+                _kaName.setTextDirection(View.TEXT_DIRECTION_RTL);
+            }
         }
     }
 
     /**
      * ViewHolder pattern to hold one of the cards
      */
-    static class KnowledgeAreaTopicViewHolder {
+    private class KnowledgeAreaTopicViewHolder extends RecyclerView.ViewHolder {
 
         private TextView _topicName;
         private ImageButton _helpButton;
 
         public KnowledgeAreaTopicViewHolder(View rootView) {
-            _topicName = (TextView) rootView.findViewById(R.id.topic_name);
+            super(rootView);
+            _topicName = (TextView) rootView.findViewById(R.id.ka_topic_name);
+            _topicName.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    _listener.onTopicViewClicked(_kaTopicsAsArray[getAdapterPosition()]);
+                }
+            });
+
             _helpButton = (ImageButton) rootView.findViewById(R.id.info_button);
-        }
-    }
-
-    static class SelectedTopicViewHolder {
-        private TextView _selectedTopic;
-
-        public SelectedTopicViewHolder(View rootView) {
-            _selectedTopic = (TextView) rootView.findViewById(R.id.selected_topic);
+            _helpButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    _listener.onInfoButtonClicked(_kaTopicsAsArray[getAdapterPosition()].getDescriptionResource());
+                }
+            });
         }
     }
 
 
     public interface OnKATopicsSpinnerAdapterListener {
+
+        void onInfoButtonClicked(int kaTopicDescriptionResource);
+
+        void onTopicViewClicked(KnowledgeAreaTopic kaTopic);
 
     }
 }

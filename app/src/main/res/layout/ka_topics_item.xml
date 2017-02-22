@@ -20,7 +20,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/loren_ipsum_description"
-        android:textColor="@color/textColourBrowninsh"
         android:textSize="@dimen/ka_detail_text_size"
         android:visibility="gone" />
 

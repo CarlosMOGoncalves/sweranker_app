@@ -27,11 +27,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/darkerBackground"
+            android:textColor="@color/textColorBold"
             android:gravity="center"
             android:padding="@dimen/ka_title_padding"
             android:text="Software Cenas"
             android:textAlignment="viewStart"
-            android:textColor="@android:color/black"
             android:textSize="@dimen/ka_detail_title_size" />
 
 
@@ -39,7 +39,6 @@
             android:id="@+id/ka_details_topics_list"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@color/colorAccent"
             android:paddingBottom="@dimen/ka_detail_list_padding"
             android:clipToPadding="false" />
 

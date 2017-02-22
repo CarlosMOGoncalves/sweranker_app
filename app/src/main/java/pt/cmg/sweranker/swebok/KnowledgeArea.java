@@ -85,6 +85,7 @@ public class KnowledgeArea {
     public void setColourResource(int colourResource) {
         _colourResource = colourResource;
     }
+
 }
 
 

@@ -2,16 +2,29 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="@dimen/degree_matcher_spinner_topic_line_height"
-    android:orientation="horizontal">
+    android:layout_height="wrap_content"
+    android:clickable="true"
+    android:minHeight="@dimen/degree_matcher_spinner_topic_line_height"
+    android:orientation="horizontal"
+    android:descendantFocusability="blocksDescendants">
 
-    <TextView
-        android:id="@+id/topic_name"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:layout_weight="6"
+
+    <TextView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/ka_topic_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start|center_vertical"
+        android:ellipsize="marquee"
         android:gravity="center_vertical"
-        android:text="Program Topic: Functions" />
+        android:layout_weight="6"
+        android:maxLines="1"
+        android:minHeight="@dimen/material_spinner_item_height"
+        android:paddingBottom="@dimen/material_spinner_popup_padding_top"
+        android:paddingLeft="@dimen/material_spinner_popup_padding_left"
+        android:paddingRight="@dimen/material_spinner_popup_padding_left"
+        android:paddingStart="@dimen/material_spinner_popup_padding_left"
+        android:paddingTop="@dimen/material_spinner_popup_padding_top"
+        android:text="This is a View" />
 
     <ImageButton
         android:id="@+id/info_button"
