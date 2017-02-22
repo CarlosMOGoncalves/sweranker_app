@@ -166,11 +166,11 @@ public class KAMaterialSpinnerAdapter extends MaterialSpinnerBaseAdapter {
         View itemView;
 
         if (viewType == VIEW_TYPE_KA) {
-            itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.material_spinner_list_item, parent, false);
+            itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.degree_matcher_spinner_ka_list_item, parent, false);
             return new KnowledgeAreaViewHolder(itemView);
         }
 
-        itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.degree_matcher_spinner_topic_item, parent, false);
+        itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.degree_matcher_spinner_topic_list_item, parent, false);
         return new KnowledgeAreaTopicViewHolder(itemView);
     }
 
@@ -278,7 +278,7 @@ public class KAMaterialSpinnerAdapter extends MaterialSpinnerBaseAdapter {
                 public void onClick(View v) {
                     if (_onItemSelectedListener != null) {
                         KnowledgeAreaTopic selectedTopic = _kaTopicsAsArray[getAdapterPosition()];
-                        _onItemSelectedListener.onItemSelected(selectedTopic, _context.getString(selectedTopic.getNameResource()), getAdapterPosition());
+                        _onItemSelectedListener.onItemSelected(selectedTopic, _context.getString(selectedTopic.getNameResource()), ContextCompat.getColor(_context, selectedTopic.getColorResource()), getAdapterPosition());
                     }
                 }
             });

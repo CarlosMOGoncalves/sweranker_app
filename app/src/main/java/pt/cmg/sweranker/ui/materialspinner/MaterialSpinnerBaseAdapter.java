@@ -61,7 +61,7 @@ public abstract class MaterialSpinnerBaseAdapter extends RecyclerView.Adapter<Re
      * This is just a communication interface so that someone can listen to this adapter whenever an item was chosen.
      */
     public interface OnItemSelectedListener {
-        void onItemSelected(Object selectedObject, String textToSet, int selectedIndex);
+        void onItemSelected(Object selectedObject, String textToSet, int selectedColorResource, int selectedIndex);
     }
 }
 

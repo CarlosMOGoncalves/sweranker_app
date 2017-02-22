@@ -320,10 +320,11 @@ public class MaterialSpinner extends AppCompatTextView {
         _adapter = adapter;
         adapter.setOnItemSelectedListener(new MaterialSpinnerBaseAdapter.OnItemSelectedListener() {
             @Override
-            public void onItemSelected(Object item, String textToSet, int position) {
+            public void onItemSelected(Object item, String textToSet, int colorResource, int position) {
                 _selectedObject = item;
                 _selectedIndex = position;
                 setText(textToSet);
+                setTextColor(colorResource);
                 collapse();
             }
         });

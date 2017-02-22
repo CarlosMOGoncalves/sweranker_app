@@ -33,7 +33,7 @@ import pt.cmg.sweranker.degrees.Degree;
 import pt.cmg.sweranker.degrees.DegreeClass;
 import pt.cmg.sweranker.degrees.DegreeClassFragment;
 import pt.cmg.sweranker.degrees.DegreeDetailsFragment;
-import pt.cmg.sweranker.degrees.DegreeMatcherFragment;
+import pt.cmg.sweranker.degrees.DegreeTopicMatcherFragment;
 import pt.cmg.sweranker.degrees.DegreesFragment;
 import pt.cmg.sweranker.degrees.DegreesLoaderService;
 import pt.cmg.sweranker.swebok.KnowledgeArea;
@@ -51,7 +51,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         DegreesFragment.DegreesFragmentInteractionListener,
         DegreeDetailsFragment.DegreeDetailsFragmentInteractionListener,
         DegreeClassFragment.DegreeClassFragmentInteractionListener,
-        DegreeMatcherFragment.OnDegreeMatcherFragmentInteraction {
+        DegreeTopicMatcherFragment.OnDegreeMatcherFragmentInteraction {
 
 
     private SwebokLoaderService _swebokLoaderService;
@@ -441,7 +441,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     @Override
     public void loadDegreeEvaluatorFragment(String degreeClassId) {
 
-        Fragment classEvaluator = DegreeMatcherFragment.newInstance(degreeClassId);
+        Fragment classEvaluator = DegreeTopicMatcherFragment.newInstance(degreeClassId);
 
         DegreeClass degreeClass = loadDegreeClass(degreeClassId);
 

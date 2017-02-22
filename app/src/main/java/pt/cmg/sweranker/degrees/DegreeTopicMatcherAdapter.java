@@ -1,12 +1,16 @@
 package pt.cmg.sweranker.degrees;
 
 import android.app.Activity;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -107,16 +111,62 @@ public class DegreeTopicMatcherAdapter extends RecyclerView.Adapter<RecyclerView
     public class DegreeClassTopicMatcherViewHolder extends RecyclerView.ViewHolder {
 
         private TextView _degreeTopicName;
-        private MaterialSpinner _kaTopicSpinner;
+        private LinearLayout _selectorContainer;
+        private List<MaterialSpinner> _spinners;
+        private ImageView _addMatcherButton;
+        private ImageView _removeMatherButton;
+
 
         public DegreeClassTopicMatcherViewHolder(View view) {
             super(view);
             _degreeTopicName = (TextView) view.findViewById(R.id.topic_name);
-            _kaTopicSpinner = (MaterialSpinner) view.findViewById(R.id.matcher_selector);
+            _selectorContainer = (LinearLayout) view.findViewById(R.id.selector_container);
+            _spinners = new ArrayList<>();
 
-            KAMaterialSpinnerAdapter adapter = new KAMaterialSpinnerAdapter(_context, _knowledgeAreas, new KAMaterialSpinnerAdapter.OnKATopicsSpinnerAdapterListener() {
+
+            MaterialSpinner originalSpinner = new MaterialSpinner(_context);//(MaterialSpinner) view.findViewById(R.id.matcher_selector);
+            originalSpinner.setAdapter(new KAMaterialSpinnerAdapter(_context, _knowledgeAreas, new KAMaterialSpinnerAdapter.OnKATopicsSpinnerAdapterListener() {
+            }));
+            _spinners.add(originalSpinner);
+
+            _selectorContainer.addView(originalSpinner);
+
+            _addMatcherButton = (ImageView) view.findViewById(R.id.uno_mas);
+            _addMatcherButton.setColorFilter(ContextCompat.getColor(_context, R.color.materialAffirmative));
+            _addMatcherButton.setOnClickListener(new View.OnClickListener() {
+
+                @Override
+                public void onClick(View v) {
+
+                    MaterialSpinner anotherSpinner = new MaterialSpinner(_context);//(MaterialSpinner) view.findViewById(R.id.matcher_selector);
+                    anotherSpinner.setAdapter(new KAMaterialSpinnerAdapter(_context, _knowledgeAreas, new KAMaterialSpinnerAdapter.OnKATopicsSpinnerAdapterListener() {
+                    }));
+                    _spinners.add(anotherSpinner);
+                    _selectorContainer.addView(anotherSpinner);
+
+                    _removeMatherButton.setEnabled(true);
+                    _removeMatherButton.setAlpha(1f);
+                }
             });
-            _kaTopicSpinner.setAdapter(adapter);
+
+            _removeMatherButton = (ImageView) view.findViewById(R.id.uno_menos);
+            _removeMatherButton.setEnabled(false);
+            _removeMatherButton.setAlpha(.3f);
+            _removeMatherButton.setColorFilter(ContextCompat.getColor(_context, R.color.materialNegative));
+            _removeMatherButton.setOnClickListener(new View.OnClickListener() {
+
+                @Override
+                public void onClick(View v) {
+                    _selectorContainer.removeViewAt(_spinners.size() - 1);
+                    _spinners.remove(_spinners.size() - 1);
+
+                    if (_spinners.size() == 1) {
+                        _removeMatherButton.setEnabled(false);
+                        _removeMatherButton.setAlpha(.3f);
+                    }
+                }
+            });
+
         }
     }
 
@@ -126,7 +176,6 @@ public class DegreeTopicMatcherAdapter extends RecyclerView.Adapter<RecyclerView
         public DegreeClassMatcherButton(View view) {
             super(view);
         }
-
     }
 
 

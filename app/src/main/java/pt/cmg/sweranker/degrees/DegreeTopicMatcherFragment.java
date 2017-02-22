@@ -16,10 +16,10 @@ import pt.cmg.sweranker.swebok.KnowledgeAreaLoader;
 import pt.cmg.sweranker.ui.ConstantSpacingItemDecorator;
 
 /**
- * The DegreeMatcherFragment is the class with the business logic to match each topic of a
+ * The DegreeTopicMatcherFragment is the class with the business logic to match each topic of a
  * Degree class with one or more topics of one or more KAs.
  */
-public class DegreeMatcherFragment extends Fragment {
+public class DegreeTopicMatcherFragment extends Fragment {
 
     private static final String DEGREE_CLASS_ID = "DEGREE_CLASS_ID";
 
@@ -30,7 +30,7 @@ public class DegreeMatcherFragment extends Fragment {
 
     private View _myView;
 
-    public DegreeMatcherFragment() {
+    public DegreeTopicMatcherFragment() {
     }
 
     /**
@@ -39,8 +39,8 @@ public class DegreeMatcherFragment extends Fragment {
      *
      * @return A new instance of fragment DegreeDetailsFragment.
      */
-    public static DegreeMatcherFragment newInstance(String degreeClassId) {
-        DegreeMatcherFragment fragment = new DegreeMatcherFragment();
+    public static DegreeTopicMatcherFragment newInstance(String degreeClassId) {
+        DegreeTopicMatcherFragment fragment = new DegreeTopicMatcherFragment();
         Bundle args = new Bundle();
         args.putString(DEGREE_CLASS_ID, degreeClassId);
         fragment.setArguments(args);

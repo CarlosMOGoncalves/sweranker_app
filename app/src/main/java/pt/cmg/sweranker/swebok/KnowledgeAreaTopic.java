@@ -1,5 +1,7 @@
 package pt.cmg.sweranker.swebok;
 
+import pt.cmg.sweranker.R;
+
 /**
  * Created by Carlos on 19/12/2016.
  */
@@ -9,6 +11,7 @@ public class KnowledgeAreaTopic {
     private int _nameResource;
     private int _descriptionResource;
     private int _id;
+    private int _colorResource;
 
 
     public KnowledgeAreaTopic() {
@@ -45,5 +48,16 @@ public class KnowledgeAreaTopic {
 
     public void setId(int id) {
         _id = id;
+    }
+
+    public int getColorResource() {
+        if (_colorResource == 0) {
+            return R.color.textColor;
+        }
+        return _colorResource;
+    }
+
+    public void setColorResource(int colorResource) {
+        _colorResource = colorResource;
     }
 }

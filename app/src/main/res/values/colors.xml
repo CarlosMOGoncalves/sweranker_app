@@ -11,7 +11,7 @@
     <color name="textColor">#616161</color>
     <color name="white">#ffffff</color>
 
-    <color name="materialAffirmative">#03a9f4</color>
+    <color name="materialAffirmative">#CDDC39</color>
     <color name="materialNegative">#b71c1c</color>
 
     <color name="cardColour1">#ffa726</color>

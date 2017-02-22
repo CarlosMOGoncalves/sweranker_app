@@ -39,28 +39,48 @@
 
         </LinearLayout>
 
-        <pt.cmg.sweranker.ui.materialspinner.MaterialSpinner
+        <LinearLayout
+            android:id="@+id/selector_container"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/matcher_selector" />
+            android:orientation="vertical"
+            android:minHeight="40dp">
+
+        </LinearLayout>
+        <!--pt.cmg.sweranker.ui.materialspinner.MaterialSpinner
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/matcher_selector" /-->
 
 
-        <FrameLayout
+        <LinearLayout
+            android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingRight="@dimen/card_inner_padding"
             android:paddingTop="@dimen/card_inner_padding">
 
             <ImageView
-                android:id="@+id/imageView"
+                android:id="@+id/uno_mas"
                 android:layout_width="@dimen/degree_matcher_minibutton_size"
                 android:layout_height="@dimen/degree_matcher_minibutton_size"
-                android:layout_gravity="right"
-                android:background="@color/colorPrimary"
+                android:layout_gravity="center"
+                android:layout_weight="1"
 
+                android:clickable="true"
                 android:scaleType="fitCenter"
-                app:srcCompat="@drawable/plus" />
-        </FrameLayout>
+                app:srcCompat="@drawable/plus_circle" />
+
+            <ImageView
+                android:id="@+id/uno_menos"
+                android:layout_width="@dimen/degree_matcher_minibutton_size"
+                android:layout_height="@dimen/degree_matcher_minibutton_size"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:clickable="true"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/minus_circle" />
+        </LinearLayout>
 
 
     </LinearLayout>

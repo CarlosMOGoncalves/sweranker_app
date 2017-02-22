@@ -84,6 +84,10 @@ public class SwebokLoaderService extends Service {
                     case XmlPullParser.END_TAG:
                         xmlElementName = xmlParser.getName();
                         if (xmlElementName.equalsIgnoreCase("knowledge-area") && knowledgeArea != null) {
+                            //One last colour added so that I can use it in the future
+                            for (KnowledgeAreaTopic topic : knowledgeArea.getTopics()) {
+                                topic.setColorResource(knowledgeArea.getColourResource());
+                            }
                             knowledgeAreas.add(knowledgeArea);
                         }
                         break;
