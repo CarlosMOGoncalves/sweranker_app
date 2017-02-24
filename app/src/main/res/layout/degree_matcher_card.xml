@@ -22,6 +22,7 @@
                 android:layout_gravity="center_vertical"
                 android:layout_weight="3"
                 android:text="Topic Functions"
+                android:textColor="@color/colorPrimary"
                 android:textSize="@dimen/degree_matcher_topic_name_size" />
 
             <FrameLayout

@@ -276,10 +276,14 @@ public class KAMaterialSpinnerAdapter extends MaterialSpinnerBaseAdapter {
             _topicName.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+
+                    KnowledgeAreaTopic selectedTopic = _kaTopicsAsArray[getAdapterPosition()];
+
                     if (_onItemSelectedListener != null) {
-                        KnowledgeAreaTopic selectedTopic = _kaTopicsAsArray[getAdapterPosition()];
                         _onItemSelectedListener.onItemSelected(selectedTopic, _context.getString(selectedTopic.getNameResource()), ContextCompat.getColor(_context, selectedTopic.getColorResource()), getAdapterPosition());
                     }
+
+                    _listener.getSelectedTopicId(selectedTopic.getId());
                 }
             });
 
@@ -333,6 +337,18 @@ public class KAMaterialSpinnerAdapter extends MaterialSpinnerBaseAdapter {
     }
 
 
+    /**
+     * Communication interface used to pass data to any invoker of this spinner.
+     */
     public interface OnKATopicsSpinnerAdapterListener {
+
+        /**
+         * Passes the KnowledgeAreaTopic id that was just selected from the spinner
+         * Triggered on the OnClick callback of the Spinner.
+         *
+         * @param knowledgeAreaTopicId
+         */
+        void getSelectedTopicId(int knowledgeAreaTopicId);
+
     }
 }
