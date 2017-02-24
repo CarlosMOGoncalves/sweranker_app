@@ -12,7 +12,6 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
@@ -188,9 +187,7 @@ public class DegreeTopicMatcherAdapter extends RecyclerView.Adapter<RecyclerView
 
             initialiseRemoveMatchButton(currentHolder, position);
 
-        } else
-
-        {
+        } else {
 
         }
     }
@@ -198,20 +195,21 @@ public class DegreeTopicMatcherAdapter extends RecyclerView.Adapter<RecyclerView
 
     private void initialiseSpinners(DegreeClassTopicMatcherViewHolder holder, int adapterPosition) {
 
-        if (hasTopicsSelected(_degreeTopicIds[adapterPosition])) {
+        String currentDegreeTopicId = _degreeTopicIds[adapterPosition];
 
-            List<Integer> selectedKATopics = _selectedKATopicsByProgramItem.get(_degreeTopicIds[adapterPosition]);
+        // Se tem pelo menos um seleccionado == 1 spinner pelo menos
+        if (hasTopicsSelected(currentDegreeTopicId)) {
+
+            List<Integer> selectedKATopics = _selectedKATopicsByProgramItem.get(currentDegreeTopicId);
             for (int currentIndex = 0; currentIndex < selectedKATopics.size(); currentIndex++) {
-                Integer currentTopicId = selectedKATopics.get(currentIndex);
+                Integer currentKATopicId = selectedKATopics.get(currentIndex);
 
-                MaterialSpinner selectedSpinner = initialiseSelectedSpinner(holder, adapterPosition, _kaTopicsById.get(currentTopicId), currentIndex);
-                holder._spinners.add(selectedSpinner);
+                MaterialSpinner selectedSpinner = initialiseSelectedSpinner(holder, currentDegreeTopicId, _kaTopicsById.get(currentKATopicId), currentIndex);
                 holder._selectorContainer.addView(selectedSpinner);
             }
 
         } else {
-            MaterialSpinner emptySpinner = initialiseEmptySpinner(holder, adapterPosition);
-            holder._spinners.add(emptySpinner);
+            MaterialSpinner emptySpinner = initialiseEmptySpinner(holder, currentDegreeTopicId, 0);
             holder._selectorContainer.addView(emptySpinner);
         }
     }
@@ -227,14 +225,14 @@ public class DegreeTopicMatcherAdapter extends RecyclerView.Adapter<RecyclerView
      * @param selectedKATopic
      * @return
      */
-    private MaterialSpinner initialiseSelectedSpinner(DegreeClassTopicMatcherViewHolder holder, int adapterPosition, KnowledgeAreaTopic selectedKATopic, int selectedTopicIndex) {
+    private MaterialSpinner initialiseSelectedSpinner(DegreeClassTopicMatcherViewHolder holder, String degreeTopicId, KnowledgeAreaTopic selectedKATopic, int selectedTopicIndex) {
 
         MaterialSpinner kaTopicSpinner = new MaterialSpinner(_context);
         kaTopicSpinner.setAdapter(new KAMaterialSpinnerAdapter(_context, _knowledgeAreas, new KAMaterialSpinnerAdapter.OnKATopicsSpinnerAdapterListener() {
             @Override
             public void getSelectedTopicId(int knowledgeTopicId) {
                 // I add the selected item to the matching list, obtained by getting it from the _topicsIds array
-                replaceSelectedTopic(_degreeTopicIds[adapterPosition], knowledgeTopicId, selectedTopicIndex);
+                addSelectedTopic(degreeTopicId, knowledgeTopicId, selectedTopicIndex);
                 holder._addMatcherButton.setAlpha(1f);
                 holder._addMatcherButton.setEnabled(true);
             }
@@ -245,10 +243,6 @@ public class DegreeTopicMatcherAdapter extends RecyclerView.Adapter<RecyclerView
         return kaTopicSpinner;
     }
 
-    private void replaceSelectedTopic(String degreeTopicId, int updatedKaTopicId, int selectedTopicIdIndex) {
-        _selectedKATopicsByProgramItem.get(degreeTopicId).remove(selectedTopicIdIndex);
-        _selectedKATopicsByProgramItem.get(degreeTopicId).add(selectedTopicIdIndex, updatedKaTopicId);
-    }
 
     /**
      * Initialises and returns an empty Material Spinner, i.e. one that has no topic yet selected and thus is in the
@@ -257,16 +251,15 @@ public class DegreeTopicMatcherAdapter extends RecyclerView.Adapter<RecyclerView
      * Additionally this kind has a listener that adds a new selected topic to the internal data structure that handles it
      * so that I can control the KA Topics that were already selected for this Program Topic.
      *
-     * @param adapterPosition
      * @return
      */
-    private MaterialSpinner initialiseEmptySpinner(DegreeClassTopicMatcherViewHolder holder, int adapterPosition) {
+    private MaterialSpinner initialiseEmptySpinner(DegreeClassTopicMatcherViewHolder holder, String degreeTopicId, int positionIndex) {
         MaterialSpinner kaTopicSpinner = new MaterialSpinner(_context);
         kaTopicSpinner.setAdapter(new KAMaterialSpinnerAdapter(_context, _knowledgeAreas, new KAMaterialSpinnerAdapter.OnKATopicsSpinnerAdapterListener() {
             @Override
             public void getSelectedTopicId(int knowledgeTopicId) {
                 // I add the selected item to the matching list, obtained by getting it from the _topicsIds array
-                addSelectedTopic(_degreeTopicIds[adapterPosition], knowledgeTopicId);
+                addSelectedTopic(degreeTopicId, knowledgeTopicId, positionIndex);
                 holder._addMatcherButton.setAlpha(1f);
                 holder._addMatcherButton.setEnabled(true);
             }
@@ -275,8 +268,15 @@ public class DegreeTopicMatcherAdapter extends RecyclerView.Adapter<RecyclerView
     }
 
 
-    private void addSelectedTopic(String degreeTopicId, int kaTopicId) {
-        _selectedKATopicsByProgramItem.get(degreeTopicId).add(kaTopicId);
+    private void addSelectedTopic(String degreeTopicId, int kaTopicId, int positionIndex) {
+
+        if (_selectedKATopicsByProgramItem.get(degreeTopicId).size() == 0) {
+            _selectedKATopicsByProgramItem.get(degreeTopicId).add(kaTopicId);
+        } else if (_selectedKATopicsByProgramItem.get(degreeTopicId).size() == positionIndex) {
+            _selectedKATopicsByProgramItem.get(degreeTopicId).add(kaTopicId);
+        } else {
+            replaceSelectedTopic(degreeTopicId, kaTopicId, positionIndex);
+        }
 
         if (_selectedKATopicsByProgramItem.values().stream().noneMatch(list -> list.isEmpty())) {
             _hasCompleteMatch = true;
@@ -284,19 +284,36 @@ public class DegreeTopicMatcherAdapter extends RecyclerView.Adapter<RecyclerView
             _submitButton.setEnabled(true);
             _submitButton.setAlpha(1f);
         }
+    }
 
+    private void replaceSelectedTopic(String degreeTopicId, int updatedKaTopicId, int selectedTopicIdIndex) {
+        _selectedKATopicsByProgramItem.get(degreeTopicId).remove(selectedTopicIdIndex);
+        _selectedKATopicsByProgramItem.get(degreeTopicId).add(selectedTopicIdIndex, updatedKaTopicId);
     }
 
 
     private void initialiseAddMatchButton(DegreeClassTopicMatcherViewHolder holder, int adapterPosition) {
+
+        String currentDegreeTopicId = _degreeTopicIds[adapterPosition];
+
         holder._addMatcherButton.setColorFilter(ContextCompat.getColor(_context, R.color.materialAffirmative));
+
+        int numberOfSelectedKaTopics = _selectedKATopicsByProgramItem.get(currentDegreeTopicId).size();
+
+        // If there is still no ka topic selected then it is the first one and so there is no need to add more yet.
+        if (numberOfSelectedKaTopics == 0) {
+            holder._addMatcherButton.setAlpha(0.3f);
+            holder._addMatcherButton.setEnabled(false);
+        }
+
         holder._addMatcherButton.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
+                // Basically: how many spinners does this topic already has?
+                int nextSpinnerPositionIndex = _selectedKATopicsByProgramItem.get(currentDegreeTopicId).size();
+                MaterialSpinner anotherSpinner = initialiseEmptySpinner(holder, currentDegreeTopicId, nextSpinnerPositionIndex);
 
-                MaterialSpinner anotherSpinner = initialiseEmptySpinner(holder, adapterPosition);
-                holder._spinners.add(anotherSpinner);
                 holder._selectorContainer.addView(anotherSpinner);
 
                 holder._removeMatherButton.setEnabled(true);
@@ -310,9 +327,11 @@ public class DegreeTopicMatcherAdapter extends RecyclerView.Adapter<RecyclerView
 
     private void initialiseRemoveMatchButton(DegreeClassTopicMatcherViewHolder holder, int adapterPosition) {
 
+        String currentDegreeTopicId = _degreeTopicIds[adapterPosition];
+
         holder._removeMatherButton.setColorFilter(ContextCompat.getColor(_context, R.color.materialNegative));
 
-        if (_selectedKATopicsByProgramItem.get(_degreeTopicIds[adapterPosition]).size() <= 1) {
+        if (_selectedKATopicsByProgramItem.get(currentDegreeTopicId).size() <= 1) {
             holder._removeMatherButton.setEnabled(false);
             holder._removeMatherButton.setAlpha(.3f);
         } else {
@@ -325,16 +344,29 @@ public class DegreeTopicMatcherAdapter extends RecyclerView.Adapter<RecyclerView
 
             @Override
             public void onClick(View v) {
-                // Remove all that it has done, namely the view added to the layout, the spinner and any previously selected topic.
-                holder._selectorContainer.removeViewAt(holder._spinners.size() - 1);
-                holder._spinners.remove(holder._spinners.size() - 1);
-                removeSelectedTopicId(_degreeTopicIds[adapterPosition]);
 
+                int numberOfCurrentSpinners = holder._selectorContainer.getChildCount();
+                int numberOfSelectedKaTopics = _selectedKATopicsByProgramItem.get(currentDegreeTopicId).size();
 
+                // If I have more spinners than actually selected topics then it means it is a still empty spinner (with nothing selected)
+                // In that case I just remove it from the view hierarchy
+                if (numberOfCurrentSpinners > numberOfSelectedKaTopics) {
+                    holder._selectorContainer.removeViewAt(numberOfCurrentSpinners - 1);
+                    numberOfCurrentSpinners--;
+                }
+                // Else it was an already selected spinner which means that more than the view hierarchy I also have
+                // to erase it from the selected ka topics data structure.
+                else {
+                    holder._selectorContainer.removeViewAt(numberOfCurrentSpinners - 1);
+                    numberOfCurrentSpinners--;
+                    removeSelectedTopicId(currentDegreeTopicId);
+                }
+
+                // Then, re-enable the add button because we can add a new topic now
                 holder._addMatcherButton.setEnabled(true);
                 holder._addMatcherButton.setAlpha(1f);
 
-                if (holder._spinners.size() == 1) {
+                if (numberOfCurrentSpinners == 1) {
                     holder._removeMatherButton.setEnabled(false);
                     holder._removeMatherButton.setAlpha(.3f);
                 }
@@ -370,7 +402,6 @@ public class DegreeTopicMatcherAdapter extends RecyclerView.Adapter<RecyclerView
 
         private TextView _degreeTopicName;
         private LinearLayout _selectorContainer;
-        private List<MaterialSpinner> _spinners;
         private ImageView _addMatcherButton;
         private ImageView _removeMatherButton;
 
@@ -379,7 +410,6 @@ public class DegreeTopicMatcherAdapter extends RecyclerView.Adapter<RecyclerView
             super(view);
             _degreeTopicName = (TextView) view.findViewById(R.id.topic_name);
             _selectorContainer = (LinearLayout) view.findViewById(R.id.selector_container);
-            _spinners = new ArrayList<>();
 
             _addMatcherButton = (ImageView) view.findViewById(R.id.uno_mas);
             _removeMatherButton = (ImageView) view.findViewById(R.id.uno_menos);
