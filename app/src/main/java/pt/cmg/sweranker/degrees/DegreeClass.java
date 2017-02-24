@@ -17,7 +17,7 @@ public class DegreeClass {
     private float _ectsCredits;
     private boolean _isOptional;
 
-    // Keys -> topic ID , Values -> topic description Resource
+    // Keys -> program topic ID , Values -> topic description Resource
     private Map<String, Integer> _program;
 
     public DegreeClass() {
