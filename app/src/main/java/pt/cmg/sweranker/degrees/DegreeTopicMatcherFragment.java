@@ -75,6 +75,10 @@ public class DegreeTopicMatcherFragment extends Fragment {
         RecyclerView matcherList = (RecyclerView) _myView.findViewById(R.id.matcher_list);
         DegreeTopicMatcherAdapter adapter = new DegreeTopicMatcherAdapter(getActivity(), _degreeClass, _parentActivity.getKnowledgeAreas(), new DegreeTopicMatcherAdapter.OnDegreeTopicMatcherListener() {
 
+            @Override
+            public void onMatchSubmitted(DegreeClassMatch selectedMatch) {
+
+            }
         });
         matcherList.setAdapter(adapter);
 

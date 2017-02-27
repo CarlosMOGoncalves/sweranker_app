@@ -41,4 +41,9 @@
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
+    <style name="SpinnerDropDownStyle">
+        <item name="paddingStart">30dp</item>
+        <item name="paddingEnd">30dp</item>
+    </style>
+
 </resources>

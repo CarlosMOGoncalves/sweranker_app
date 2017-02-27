@@ -422,7 +422,18 @@ public class DegreeTopicMatcherAdapter extends RecyclerView.Adapter<RecyclerView
     }
 
 
+    /**
+     * Communication interface.
+     * Here are functions to be called whenever something important happens
+     * on this adapter.
+     */
     public interface OnDegreeTopicMatcherListener {
+
+
+        /**
+         * Triggered when a complete match of KA Topics to a Degree Class has been submitted
+         */
+        void onMatchSubmitted(DegreeClassMatch selectedMatch);
 
     }
 
