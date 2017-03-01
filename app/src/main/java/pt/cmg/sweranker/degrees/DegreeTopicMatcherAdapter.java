@@ -10,7 +10,6 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.HashMap;
 import java.util.List;
@@ -415,7 +414,7 @@ public class DegreeTopicMatcherAdapter extends RecyclerView.Adapter<RecyclerView
             _submitButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Toast.makeText(_context, "Allahu akbar", Toast.LENGTH_SHORT).show();
+                    _listener.onMatchSubmitted(_currentMatches);
                 }
             });
         }

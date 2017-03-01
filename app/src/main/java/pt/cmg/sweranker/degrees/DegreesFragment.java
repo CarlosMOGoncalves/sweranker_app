@@ -1,5 +1,6 @@
 package pt.cmg.sweranker.degrees;
 
+import android.app.Activity;
 import android.app.Fragment;
 import android.content.Context;
 import android.os.Bundle;
@@ -45,13 +46,6 @@ public class DegreesFragment extends Fragment {
      */
     public interface DegreesFragmentInteractionListener extends DegreeLoader {
 
-        /**
-         * Loads all the Degrees from the system.
-         *
-         * @return
-         */
-//        List<Degree> loadDegrees();
-
 
         /**
          * Loads and replaces the current fragment with the detailed Degree fragment.
@@ -71,6 +65,17 @@ public class DegreesFragment extends Fragment {
             _parentActivity = (DegreesFragmentInteractionListener) parentActivity;
         } else {
             throw new RuntimeException(parentActivity.toString() + " must implement DegreesFragmentInteractionListener");
+        }
+    }
+
+    // NOTE: this is here because onAttach(Context) was added only on API 23, so as long as Lollipop is min sdk this shall be here
+    @Override
+    public void onAttach(Activity activity) {
+        super.onAttach(activity);
+        if (activity instanceof DegreesFragmentInteractionListener) {
+            _parentActivity = (DegreesFragmentInteractionListener) activity;
+        } else {
+            throw new RuntimeException(activity.toString() + " must implement DegreesFragmentInteractionListener");
         }
     }
 

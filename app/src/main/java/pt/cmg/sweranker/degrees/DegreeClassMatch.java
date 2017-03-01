@@ -13,6 +13,7 @@ import java.util.Set;
 public class DegreeClassMatch {
 
     private DegreeClass _degreeClass;
+    private String _degreeClassId;
 
     /**
      * Keys -> Degree Program Item , Values -> the ids of each KnowledgeAreaTopic matched.
@@ -25,12 +26,21 @@ public class DegreeClassMatch {
 
     public DegreeClassMatch() {
         _degreeClass = new DegreeClass();
+        _degreeClassId = "";
+        _selectedKATopicsByProgramItem = new HashMap<>();
+        _isCompleteMatch = false;
+    }
+
+    public DegreeClassMatch(String degreeClassId) {
+        _degreeClass = new DegreeClass();
+        _degreeClassId = degreeClassId;
         _selectedKATopicsByProgramItem = new HashMap<>();
         _isCompleteMatch = false;
     }
 
     public DegreeClassMatch(DegreeClass degreeClass) {
         _degreeClass = degreeClass;
+        _degreeClassId = degreeClass.getId();
         _selectedKATopicsByProgramItem = initialiseMatchTrackers(_degreeClass);
         _isCompleteMatch = false;
     }
@@ -48,6 +58,15 @@ public class DegreeClassMatch {
         }
 
         return matches;
+    }
+
+    /**
+     * Returns this Degree Class ID.
+     *
+     * @return
+     */
+    public String getDegreeClassId() {
+        return _degreeClassId;
     }
 
 
@@ -76,6 +95,32 @@ public class DegreeClassMatch {
         return _isCompleteMatch;
     }
 
+    public void addDegreeClassTopic(String degreeTopicId) {
+        if (_selectedKATopicsByProgramItem.get(degreeTopicId) == null) {
+            _selectedKATopicsByProgramItem.put(degreeTopicId, new LinkedList<>());
+        }
+    }
+
+
+    public void addAllTopicsToDegreeTopic(String degreeClassTopicId, List<Integer> kaTopicIds) {
+        _selectedKATopicsByProgramItem.get(degreeClassTopicId).addAll(kaTopicIds);
+
+        // Whenever we add we check if none of them have an empty list, if not, they all have at least one match so we are OK
+        boolean isComplete = true;
+        for (LinkedList<Integer> matches : _selectedKATopicsByProgramItem.values()) {
+            if (matches.isEmpty()) {
+                isComplete = false;
+            }
+        }
+        _isCompleteMatch = isComplete;
+
+        // Whenever we add we check if none of them have an empty list, if not, they all have at least one match so we are OK
+        // This stream would be so cool... damn it!
+//        if (_selectedKATopicsByProgramItem.values().stream().noneMatch(List::isEmpty)) {
+//            _isCompleteMatch = true;
+//        }
+    }
+
 
     /**
      * Adds a new KA Topic to a given Degree Class. This represents an association between both, which is the point of this app.
@@ -91,9 +136,19 @@ public class DegreeClassMatch {
         _selectedKATopicsByProgramItem.get(degreeClassTopicId).add(kaTopicId);
 
         // Whenever we add we check if none of them have an empty list, if not, they all have at least one match so we are OK
-        if (_selectedKATopicsByProgramItem.values().stream().noneMatch(List::isEmpty)) {
-            _isCompleteMatch = true;
+        boolean isComplete = true;
+        for (LinkedList<Integer> matches : _selectedKATopicsByProgramItem.values()) {
+            if (matches.isEmpty()) {
+                isComplete = false;
+            }
         }
+        _isCompleteMatch = isComplete;
+
+        // Whenever we add we check if none of them have an empty list, if not, they all have at least one match so we are OK
+        // This stream would be so cool... damn it!
+//        if (_selectedKATopicsByProgramItem.values().stream().noneMatch(List::isEmpty)) {
+//            _isCompleteMatch = true;
+//        }
     }
 
 
@@ -131,6 +186,11 @@ public class DegreeClassMatch {
 
     public LinkedList<Integer> getMatches(String degreeTopicId) {
         return _selectedKATopicsByProgramItem.get(degreeTopicId);
+    }
+
+
+    public Map<String, LinkedList<Integer>> getAllMatches() {
+        return _selectedKATopicsByProgramItem;
     }
 
 }

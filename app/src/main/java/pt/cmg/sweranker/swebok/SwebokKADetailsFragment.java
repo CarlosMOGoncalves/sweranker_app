@@ -1,5 +1,6 @@
 package pt.cmg.sweranker.swebok;
 
+import android.app.Activity;
 import android.app.Fragment;
 import android.content.Context;
 import android.graphics.Color;
@@ -63,6 +64,17 @@ public class SwebokKADetailsFragment extends Fragment {
         }
     }
 
+    // NOTE: this is here because onAttach(Context) was added only on API 23, so as long as Lollipop is min sdk this shall be here
+    @Override
+    public void onAttach(Activity activity) {
+        super.onAttach(activity);
+        if (activity instanceof OnKaDetailsFragmentInteractionListener) {
+            _parentActivity = (OnKaDetailsFragmentInteractionListener) activity;
+        } else {
+            throw new RuntimeException(activity.toString() + " must implement OnKaDetailsFragmentInteractionListener");
+        }
+    }
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -71,6 +83,7 @@ public class SwebokKADetailsFragment extends Fragment {
             _knowledgeArea = _parentActivity.getKnowledgeArea(_knowledgeAreaId);
         }
     }
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,

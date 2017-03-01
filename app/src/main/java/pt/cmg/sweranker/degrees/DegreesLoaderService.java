@@ -277,7 +277,14 @@ public class DegreesLoaderService extends Service {
     }
 
     public Degree getDegree(int degreeId) {
-        return _degrees.stream().filter(degree -> degree.getId() == degreeId).findFirst().orElse(new Degree());
+        Degree result = new Degree();
+        for (Degree degree : _degrees) {
+            if (degree.getId() == degreeId) {
+                result = degree;
+            }
+        }
+        return result;
+//        return _degrees.stream().filter(degree -> degree.getId() == degreeId).findFirst().orElse(new Degree());
     }
 
     public DegreeClass getDegreeClass(int degreeId, String degreeClassId) {

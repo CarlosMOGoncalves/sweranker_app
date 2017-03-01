@@ -1,5 +1,6 @@
 package pt.cmg.sweranker.degrees;
 
+import android.app.Activity;
 import android.app.Fragment;
 import android.content.Context;
 import android.os.Bundle;
@@ -67,6 +68,17 @@ public class DegreeClassFragment extends Fragment {
         }
     }
 
+    // NOTE: this is here because onAttach(Context) was added only on API 23, so as long as Lollipop is min sdk this shall be here
+    @Override
+    public void onAttach(Activity activity) {
+        super.onAttach(activity);
+        if (activity instanceof DegreeClassFragmentInteractionListener) {
+            _parentActivity = (DegreeClassFragmentInteractionListener) activity;
+        } else {
+            throw new RuntimeException(activity.toString() + " must implement DegreeClassFragmentInteractionListener");
+        }
+    }
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -84,9 +96,6 @@ public class DegreeClassFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         _myView = inflater.inflate(R.layout.degree_class_fragment, container, false);
 
-//        TextView classDescription = (TextView) _myView.findViewById(R.id.class_description_text);
-//        classDescription.setText(getResources().getString(_degreeClass.getDescriptionResource()));
-
         TextView classYear = (TextView) _myView.findViewById(R.id.year);
         classYear.setText(String.valueOf(_degreeClass.getYear()));
         TextView classSemester = (TextView) _myView.findViewById(R.id.semester);
@@ -100,6 +109,15 @@ public class DegreeClassFragment extends Fragment {
         } else {
             classOptional.setText(getString(R.string.no));
             classOptional.setTextColor(ContextCompat.getColor(getActivity(), R.color.materialNegative));
+        }
+
+        TextView areMatchesAvailable = (TextView) _myView.findViewById(R.id.is_matched);
+        if (_parentActivity.hasMatch(_degreeClassId)) {
+            areMatchesAvailable.setText("(Matched)");
+            areMatchesAvailable.setTextColor(ContextCompat.getColor(getActivity(), R.color.materialAffirmative));
+        } else {
+            areMatchesAvailable.setText("(Not Matched)");
+            areMatchesAvailable.setTextColor(ContextCompat.getColor(getActivity(), R.color.materialNegative));
         }
 
 
@@ -137,16 +155,7 @@ public class DegreeClassFragment extends Fragment {
      * <p>
      * Write here any method needed to trigger in the Activity
      */
-    public interface DegreeClassFragmentInteractionListener {
-
-        /**
-         * Loads a Degree Class from the system.
-         *
-         * @param degreeId
-         * @param degreeClassId
-         * @return
-         */
-        DegreeClass loadDegreeClass(int degreeId, String degreeClassId);
+    public interface DegreeClassFragmentInteractionListener extends DegreeLoader, DegreeMatcherLoader {
 
 
         /**

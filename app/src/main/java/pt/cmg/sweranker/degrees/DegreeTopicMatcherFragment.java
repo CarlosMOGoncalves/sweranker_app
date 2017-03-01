@@ -1,6 +1,7 @@
 package pt.cmg.sweranker.degrees;
 
 
+import android.app.Activity;
 import android.app.Fragment;
 import android.content.Context;
 import android.os.Bundle;
@@ -57,6 +58,17 @@ public class DegreeTopicMatcherFragment extends Fragment {
         }
     }
 
+    // NOTE: this is here because onAttach(Context) was added only on API 23, so as long as Lollipop is min sdk this shall be here
+    @Override
+    public void onAttach(Activity activity) {
+        super.onAttach(activity);
+        if (activity instanceof OnDegreeMatcherFragmentInteraction) {
+            _parentActivity = (OnDegreeMatcherFragmentInteraction) activity;
+        } else {
+            throw new RuntimeException(activity.toString() + " must implement OnDegreeMatcherFragmentInteraction");
+        }
+    }
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -77,7 +89,7 @@ public class DegreeTopicMatcherFragment extends Fragment {
 
             @Override
             public void onMatchSubmitted(DegreeClassMatch selectedMatch) {
-
+                _parentActivity.saveMatch(selectedMatch);
             }
         });
         matcherList.setAdapter(adapter);
@@ -98,7 +110,7 @@ public class DegreeTopicMatcherFragment extends Fragment {
      * <p>
      * Write here any method needed to trigger in the Activity
      */
-    public interface OnDegreeMatcherFragmentInteraction extends DegreeLoader, KnowledgeAreaLoader {
+    public interface OnDegreeMatcherFragmentInteraction extends DegreeLoader, KnowledgeAreaLoader, DegreeMatcherLoader {
 
     }
 }

@@ -12,7 +12,6 @@
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -21,15 +20,15 @@
             android:label="@string/title_activity_degree_class"
             android:theme="@style/AppTheme" />
 
-
         <service
             android:name=".swebok.SwebokLoaderService"
             android:exported="false" />
         <service
             android:name=".degrees.DegreesLoaderService"
             android:exported="false" />
-
-
+        <service
+            android:name=".degrees.DegreeMatcherService"
+            android:exported="false"></service>
     </application>
 
 </manifest>

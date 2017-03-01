@@ -32,7 +32,9 @@ import java.util.List;
 import pt.cmg.sweranker.degrees.Degree;
 import pt.cmg.sweranker.degrees.DegreeClass;
 import pt.cmg.sweranker.degrees.DegreeClassFragment;
+import pt.cmg.sweranker.degrees.DegreeClassMatch;
 import pt.cmg.sweranker.degrees.DegreeDetailsFragment;
+import pt.cmg.sweranker.degrees.DegreeMatcherService;
 import pt.cmg.sweranker.degrees.DegreeTopicMatcherFragment;
 import pt.cmg.sweranker.degrees.DegreesFragment;
 import pt.cmg.sweranker.degrees.DegreesLoaderService;
@@ -45,7 +47,8 @@ import pt.cmg.sweranker.ui.OnEndTransitionListener;
 import pt.cmg.sweranker.ui.OnStartTransitionListener;
 import pt.cmg.sweranker.ui.UXUtils;
 
-public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener,
+public class MainActivity extends AppCompatActivity implements
+        NavigationView.OnNavigationItemSelectedListener,
         SwebokKAsFragment.OnSwebokFragmentInteractionListener,
         SwebokKADetailsFragment.OnKaDetailsFragmentInteractionListener,
         DegreesFragment.DegreesFragmentInteractionListener,
@@ -56,8 +59,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     private SwebokLoaderService _swebokLoaderService;
     private DegreesLoaderService _degreesLoaderService;
+    private DegreeMatcherService _matcherService;
     boolean _isSwebokServiceBound = false;
     boolean _isDegreesServiceBound = false;
+    boolean _isMatcherServiceBound = false;
     private Toolbar _toolbar;
 
 
@@ -88,6 +93,21 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         public void onServiceDisconnected(ComponentName name) {
             _degreesLoaderService = null;
             _isDegreesServiceBound = false;
+        }
+    };
+
+    private ServiceConnection _matcherServiceConnection = new ServiceConnection() {
+        @Override
+        public void onServiceConnected(ComponentName name, IBinder service) {
+            DegreeMatcherService.DegreeMatcherBinder binder = (DegreeMatcherService.DegreeMatcherBinder) service;
+            _matcherService = binder.getService();
+            _isMatcherServiceBound = true;
+        }
+
+        @Override
+        public void onServiceDisconnected(ComponentName name) {
+            _matcherService = null;
+            _isMatcherServiceBound = false;
         }
     };
 
@@ -157,6 +177,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         Intent startDegreesServiceIntent = new Intent(this, DegreesLoaderService.class);
         startService(startDegreesServiceIntent);
         bindService(startDegreesServiceIntent, _degreesServiceConnection, Context.BIND_AUTO_CREATE);
+
+        Intent startDegreeMatcherService = new Intent(this, DegreeMatcherService.class);
+        startService(startDegreeMatcherService);
+        bindService(startDegreeMatcherService, _matcherServiceConnection, Context.BIND_AUTO_CREATE);
     }
 
     @Override
@@ -480,4 +504,18 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     }
 
 
+    @Override
+    public void saveMatch(DegreeClassMatch newlySubmittedMatch) {
+        _matcherService.saveMatch(newlySubmittedMatch);
+    }
+
+    @Override
+    public boolean hasMatch(String degreeClassId) {
+        return _matcherService.hasMatches(degreeClassId);
+    }
+
+    @Override
+    public DegreeClassMatch getDegreeClassMatches(String degreeClassId) {
+        return _matcherService.getDegreeClassMatches(degreeClassId);
+    }
 }

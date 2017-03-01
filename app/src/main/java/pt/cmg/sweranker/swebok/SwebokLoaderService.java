@@ -174,7 +174,14 @@ public class SwebokLoaderService extends Service {
     }
 
     public KnowledgeArea getKnowledgeArea(final int knowledgeAreaId) {
-        return _knowledgeAreas.stream().filter(ka -> ka.getId() == knowledgeAreaId).findFirst().orElse(new KnowledgeArea());
+        KnowledgeArea result = new KnowledgeArea();
+        for (KnowledgeArea ka : _knowledgeAreas) {
+            if (ka.getId() == knowledgeAreaId) {
+                result = ka;
+            }
+        }
+        return result;
+//        return _knowledgeAreas.stream().filter(ka -> ka.getId() == knowledgeAreaId).findFirst().orElse(new KnowledgeArea());
     }
 
 

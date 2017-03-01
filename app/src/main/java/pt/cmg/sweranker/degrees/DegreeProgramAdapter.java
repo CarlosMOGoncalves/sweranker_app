@@ -75,7 +75,10 @@ public class DegreeProgramAdapter extends RecyclerView.Adapter<RecyclerView.View
      */
     private Map<Integer, Integer> getClassCountByYear() {
         Map<Integer, Integer> counts = new HashMap<>();
-        _degree.getClasses().entrySet().forEach(entry -> counts.put(entry.getKey(), entry.getValue().size()));
+        for (Map.Entry<Integer, List<DegreeClass>> entry : _degree.getClasses().entrySet()) {
+            counts.put(entry.getKey(), entry.getValue().size());
+        }
+//        _degree.getClasses().entrySet().forEach(entry -> counts.put(entry.getKey(), entry.getValue().size()));
         return counts;
     }
 
