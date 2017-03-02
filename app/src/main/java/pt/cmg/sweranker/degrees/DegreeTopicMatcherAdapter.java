@@ -68,7 +68,29 @@ public class DegreeTopicMatcherAdapter extends RecyclerView.Adapter<RecyclerView
         _viewCount = degreeClass.getTopicCount() + EXTRA_VIEW_COUNT;
         _knowledgeAreas = knowledgeAreas;
         _currentMatches = new DegreeClassMatch(_degreeClass);
+        _kaTopicsById = getKATopicsById();
 
+    }
+
+
+    /**
+     * Constructor used whenever there is already a match for this Degree Class.
+     * It is useful because now we are updating and not creating a match.
+     *
+     * @param context
+     * @param degreeClass
+     * @param previousMatch
+     * @param knowledgeAreas
+     * @param listener
+     */
+    public DegreeTopicMatcherAdapter(Activity context, DegreeClass degreeClass, DegreeClassMatch previousMatch, List<KnowledgeArea> knowledgeAreas, OnDegreeTopicMatcherListener listener) {
+        _context = context;
+        _degreeClass = degreeClass;
+        _listener = listener;
+        buildTopicArrays(degreeClass);
+        _viewCount = degreeClass.getTopicCount() + EXTRA_VIEW_COUNT;
+        _knowledgeAreas = knowledgeAreas;
+        _currentMatches = previousMatch;
         _kaTopicsById = getKATopicsById();
 
     }
@@ -255,7 +277,8 @@ public class DegreeTopicMatcherAdapter extends RecyclerView.Adapter<RecyclerView
         }
 
         // After adding, we check whether ALL of them have at least one selected topic and if it has then we
-        if (_currentMatches.isCompleteMatch()) {
+        // enable the submit button, BUT ONLY if it is already visible, as per the functionality of the Recycler View adapter.
+        if (_submitButton != null && _currentMatches.isCompleteMatch()) {
             _submitButton.setEnabled(true);
             _submitButton.setAlpha(1f);
         }
@@ -408,8 +431,16 @@ public class DegreeTopicMatcherAdapter extends RecyclerView.Adapter<RecyclerView
         public DegreeClassMatcherButton(View view) {
             super(view);
             _submitButton = (Button) view.findViewById(R.id.match_button);
-            _submitButton.setEnabled(false);
-            _submitButton.setAlpha(.3f);
+
+            // Enable it or disable the button depending on whether it has matches for every class or not.
+            if (_currentMatches.isCompleteMatch()) {
+                _submitButton.setEnabled(true);
+                _submitButton.setAlpha(1f);
+            } else {
+                _submitButton.setEnabled(false);
+                _submitButton.setAlpha(.3f);
+            }
+
 
             _submitButton.setOnClickListener(new View.OnClickListener() {
                 @Override

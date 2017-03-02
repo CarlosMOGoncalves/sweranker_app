@@ -506,7 +506,9 @@ public class MainActivity extends AppCompatActivity implements
 
     @Override
     public void saveMatch(DegreeClassMatch newlySubmittedMatch) {
-        _matcherService.saveMatch(newlySubmittedMatch);
+        if (_matcherService.saveMatch(newlySubmittedMatch)) {
+            getFragmentManager().popBackStackImmediate();
+        }
     }
 
     @Override

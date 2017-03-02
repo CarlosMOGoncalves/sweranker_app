@@ -182,8 +182,9 @@ public class DegreeMatcherService extends Service {
      * Saves or overwrites a Degree Class Match into the internal storage system.
      *
      * @param classMatch
+     * @return true if saving was successful, false otherwise.
      */
-    public void saveMatch(DegreeClassMatch classMatch) {
+    public boolean saveMatch(DegreeClassMatch classMatch) {
 
         final String xmlFileName = classMatch.getDegreeClassId() + ".xml";
 
@@ -230,10 +231,13 @@ public class DegreeMatcherService extends Service {
             Log.i("DegreeMatcherService", "Successfully saved match for:" + classMatch.getDegreeClassId());
             _currentMatches.put(classMatch.getDegreeClassId(), classMatch);
 
+            return true;
         } catch (FileNotFoundException e) {
             Log.e("DegreeMatcherService", "File " + xmlFileName + " not found.");
+            return false;
         } catch (IOException e) {
             Log.e("DegreeMatcherService", "Couldn't save file due to: ", e);
+            return false;
         }
     }
 

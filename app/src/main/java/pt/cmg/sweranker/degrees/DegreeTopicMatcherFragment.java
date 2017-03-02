@@ -85,14 +85,27 @@ public class DegreeTopicMatcherFragment extends Fragment {
         _myView = inflater.inflate(R.layout.degree_matcher_fragment, container, false);
 
         RecyclerView matcherList = (RecyclerView) _myView.findViewById(R.id.matcher_list);
-        DegreeTopicMatcherAdapter adapter = new DegreeTopicMatcherAdapter(getActivity(), _degreeClass, _parentActivity.getKnowledgeAreas(), new DegreeTopicMatcherAdapter.OnDegreeTopicMatcherListener() {
 
-            @Override
-            public void onMatchSubmitted(DegreeClassMatch selectedMatch) {
-                _parentActivity.saveMatch(selectedMatch);
-            }
-        });
-        matcherList.setAdapter(adapter);
+        if (_parentActivity.hasMatch(_degreeClassId)) {
+            DegreeClassMatch previousMatch = _parentActivity.getDegreeClassMatches(_degreeClassId);
+            DegreeTopicMatcherAdapter adapter = new DegreeTopicMatcherAdapter(getActivity(), _degreeClass, previousMatch, _parentActivity.getKnowledgeAreas(), new DegreeTopicMatcherAdapter.OnDegreeTopicMatcherListener() {
+
+                @Override
+                public void onMatchSubmitted(DegreeClassMatch selectedMatch) {
+                    _parentActivity.saveMatch(selectedMatch);
+                }
+            });
+            matcherList.setAdapter(adapter);
+        } else {
+            DegreeTopicMatcherAdapter adapter = new DegreeTopicMatcherAdapter(getActivity(), _degreeClass, _parentActivity.getKnowledgeAreas(), new DegreeTopicMatcherAdapter.OnDegreeTopicMatcherListener() {
+
+                @Override
+                public void onMatchSubmitted(DegreeClassMatch selectedMatch) {
+                    _parentActivity.saveMatch(selectedMatch);
+                }
+            });
+            matcherList.setAdapter(adapter);
+        }
 
         RecyclerView.LayoutManager linearLayoutManager = new LinearLayoutManager(this.getActivity(), LinearLayoutManager.VERTICAL, false);
         matcherList.setLayoutManager(linearLayoutManager);
