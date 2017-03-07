@@ -16,12 +16,18 @@ public class DegreeClass {
     private int _semester;
     private float _ectsCredits;
     private boolean _isOptional;
+    private int _degreeId;
 
     // Keys -> program topic ID , Values -> topic description Resource
     private Map<String, Integer> _program;
 
     public DegreeClass() {
         _program = new HashMap<>();
+    }
+
+    public DegreeClass(int degreeId) {
+        _program = new HashMap<>();
+        _degreeId = degreeId;
     }
 
     public String getId() {
@@ -78,6 +84,10 @@ public class DegreeClass {
 
     public void setProgram(Map<String, Integer> program) {
         _program = program;
+    }
+
+    public int getDegreeId() {
+        return _degreeId;
     }
 
     public void addProgramTopic(String topicId, int topicDescriptionResource) {

@@ -6,6 +6,7 @@ import android.content.res.Resources;
 import android.os.Binder;
 import android.os.IBinder;
 import android.support.annotation.Nullable;
+import android.util.Log;
 
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
@@ -14,7 +15,9 @@ import org.xmlpull.v1.XmlPullParserFactory;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import pt.cmg.sweranker.R;
 
@@ -23,6 +26,10 @@ public class SwebokLoaderService extends Service {
 
     private List<KnowledgeArea> _knowledgeAreas;
 
+    private Map<Integer, KnowledgeArea> _knowledgeAreasById;
+
+    private Map<Integer, KnowledgeAreaTopic> _knowledgeAreaTopicsByTopicId;
+
     private SwebokLoaderBinder _binder = new SwebokLoaderBinder();
 
 
@@ -30,6 +37,8 @@ public class SwebokLoaderService extends Service {
     public void onCreate() {
         super.onCreate();
         _knowledgeAreas = loadKnowledgeAreasFromXML();
+//        _knowledgeAreasById = createKaByIdView();
+//        _knowledgeAreaTopicsByTopicId = createKaTopicByKaIdView();
 
     }
 
@@ -49,6 +58,7 @@ public class SwebokLoaderService extends Service {
             xmlParser.setInput(reader, null);
             int eventType = xmlParser.getEventType();
             KnowledgeArea knowledgeArea = null;
+            int currentKAId = 0;
 
             while (eventType != XmlPullParser.END_DOCUMENT) {
 
@@ -64,19 +74,28 @@ public class SwebokLoaderService extends Service {
                         if (xmlElementName.equals("knowledge-area")) {
                             knowledgeArea = new KnowledgeArea();
                         } else if (knowledgeArea != null) {
-                            if (xmlElementName.equals("name")) {
-                                knowledgeArea.setNameResource(getResources().getIdentifier(xmlParser.nextText(), "string", this.getPackageName()));
-                            } else if (xmlElementName.equals("image")) {
-                                knowledgeArea.setImageResource(getResources().getIdentifier(xmlParser.nextText(), "drawable", this.getPackageName()));
-                            } else if (xmlElementName.equals("imageBackgroundColour")) {
-                                knowledgeArea.setColourResource(getResources().getIdentifier(xmlParser.nextText(), "color", this.getPackageName()));
-                            } else if (xmlElementName.equals("description")) {
-                                knowledgeArea.setDescriptionResource(getResources().getIdentifier(xmlParser.nextText(), "string", this.getPackageName()));
-                            } else if (xmlElementName.equals("id")) {
-                                knowledgeArea.setId(Integer.valueOf(xmlParser.nextText()));
-                            } else if (xmlElementName.equalsIgnoreCase("topics")) {
-                                List<KnowledgeAreaTopic> topics = parseTopics(xmlParser);
-                                knowledgeArea.setTopics(topics);
+                            switch (xmlElementName) {
+                                case "name":
+                                    knowledgeArea.setNameResource(getResources().getIdentifier(xmlParser.nextText(), "string", this.getPackageName()));
+                                    break;
+                                case "image":
+                                    knowledgeArea.setImageResource(getResources().getIdentifier(xmlParser.nextText(), "drawable", this.getPackageName()));
+                                    break;
+                                case "imageBackgroundColour":
+                                    knowledgeArea.setColourResource(getResources().getIdentifier(xmlParser.nextText(), "color", this.getPackageName()));
+                                    break;
+                                case "description":
+                                    knowledgeArea.setDescriptionResource(getResources().getIdentifier(xmlParser.nextText(), "string", this.getPackageName()));
+                                    break;
+                                // NOTE: since XMLParser is iterator based the id MUST come before topics (in the XML), otherwise this all falls apart
+                                case "id":
+                                    currentKAId = Integer.valueOf(xmlParser.nextText());
+                                    knowledgeArea.setId(currentKAId);
+                                    break;
+                                case "topics":
+                                    List<KnowledgeAreaTopic> topics = parseTopics(currentKAId, xmlParser);
+                                    knowledgeArea.setTopics(topics);
+                                    break;
                             }
                         }
                         break;
@@ -108,7 +127,7 @@ public class SwebokLoaderService extends Service {
      * @param xmlParser
      * @return
      */
-    private List<KnowledgeAreaTopic> parseTopics(XmlPullParser xmlParser) {
+    private List<KnowledgeAreaTopic> parseTopics(int currentKnowledgeAreaId, XmlPullParser xmlParser) {
         List<KnowledgeAreaTopic> topics = new ArrayList<>();
         try {
 
@@ -133,14 +152,20 @@ public class SwebokLoaderService extends Service {
                         xmlElementName = xmlParser.getName();
 
                         if (xmlElementName.equals("topic")) {
-                            topic = new KnowledgeAreaTopic();
+                            topic = new KnowledgeAreaTopic(currentKnowledgeAreaId);
                         } else if (topic != null) {
-                            if (xmlElementName.equals("name")) {
-                                topic.setNameResource(getResources().getIdentifier(xmlParser.nextText(), "string", this.getPackageName()));
-                            } else if (xmlElementName.equals("id")) {
-                                topic.setId(Integer.valueOf(xmlParser.nextText()));
-                            } else if (xmlElementName.equals("description")) {
-                                topic.setDescriptionResource(getResources().getIdentifier(xmlParser.nextText(), "string", this.getPackageName()));
+                            switch (xmlElementName) {
+                                case "name":
+                                    topic.setNameResource(getResources().getIdentifier(xmlParser.nextText(), "string", this.getPackageName()));
+                                    break;
+                                case "id":
+                                    topic.setId(Integer.valueOf(xmlParser.nextText()));
+                                    break;
+                                case "description":
+                                    topic.setDescriptionResource(getResources().getIdentifier(xmlParser.nextText(), "string", this.getPackageName()));
+                                    break;
+                                default:
+                                    Log.e("SwebokLoaderService", "No known element: " + xmlElementName);
                             }
                         }
                         break;
@@ -160,6 +185,40 @@ public class SwebokLoaderService extends Service {
         }
 
         return topics;
+    }
+
+
+    /**
+     * Just gets an HashMap from the List of KAs to that I can access them faster.
+     *
+     * @return
+     */
+    private Map<Integer, KnowledgeArea> createKaByIdView() {
+        Map<Integer, KnowledgeArea> kaById = new HashMap<>();
+
+        for (KnowledgeArea ka : _knowledgeAreas) {
+            kaById.put(ka.getId(), ka);
+        }
+
+        return kaById;
+    }
+
+
+    /**
+     * Returns the HashMap needed to fast access KATopics by it ID.
+     *
+     * @return
+     */
+    private Map<Integer, KnowledgeAreaTopic> createKaTopicByKaIdView() {
+
+        Map<Integer, KnowledgeAreaTopic> kaTopicByTopicId = new HashMap<>();
+
+        for (KnowledgeArea ka : _knowledgeAreas) {
+            for (KnowledgeAreaTopic kaTopic : ka.getTopics()) {
+                kaTopicByTopicId.put(kaTopic.getId(), kaTopic);
+            }
+        }
+        return kaTopicByTopicId;
     }
 
 

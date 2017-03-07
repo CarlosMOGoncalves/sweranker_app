@@ -1,6 +1,7 @@
 package pt.cmg.sweranker.degrees;
 
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -71,6 +72,14 @@ public class Degree {
 
     public Map<Integer, List<DegreeClass>> getClasses() {
         return _classesByYear;
+    }
+
+    public List<DegreeClass> getClassesAsList() {
+        List<DegreeClass> flatClasses = new ArrayList<>();
+        for (List<DegreeClass> classes : _classesByYear.values()) {
+            flatClasses.addAll(classes);
+        }
+        return flatClasses;
     }
 
     public void setClasses(Map<Integer, List<DegreeClass>> classes) {

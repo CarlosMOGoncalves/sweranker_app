@@ -193,4 +193,12 @@ public class DegreeClassMatch {
         return _selectedKATopicsByProgramItem;
     }
 
+    public LinkedList<Integer> getAllMatchesAsList() {
+        LinkedList<Integer> allMatches = new LinkedList<>();
+        for (List<Integer> topicList : _selectedKATopicsByProgramItem.values()) {
+            allMatches.addAll(topicList);
+        }
+        return allMatches;
+    }
+
 }

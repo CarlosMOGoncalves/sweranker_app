@@ -51,6 +51,7 @@ public class DegreesLoaderService extends Service {
             xmlParser.setInput(reader, null);
             int eventType = xmlParser.getEventType();
             Degree degree = null;
+            int currentDegreeId = 0;
 
             while (eventType != XmlPullParser.END_DOCUMENT) {
 
@@ -80,7 +81,8 @@ public class DegreesLoaderService extends Service {
                                     degree.setDescriptionResource(getResources().getIdentifier(xmlParser.nextText(), "string", this.getPackageName()));
                                     break;
                                 case "id":
-                                    degree.setId(Integer.valueOf(xmlParser.nextText()));
+                                    currentDegreeId = Integer.valueOf(xmlParser.nextText());
+                                    degree.setId(currentDegreeId);
                                     break;
                                 case "years":
                                     degree.setYears(Integer.valueOf(xmlParser.nextText()));
@@ -89,7 +91,7 @@ public class DegreesLoaderService extends Service {
                                     degree.setUniversityResource(getResources().getIdentifier(xmlParser.nextText(), "string", this.getPackageName()));
                                     break;
                                 case "classes":
-                                    Map<Integer, List<DegreeClass>> classes = parseClasses(xmlParser);
+                                    Map<Integer, List<DegreeClass>> classes = parseClasses(currentDegreeId, xmlParser);
                                     degree.setClasses(classes);
                                     break;
                                 default:
@@ -123,7 +125,7 @@ public class DegreesLoaderService extends Service {
      * @param xmlParser
      * @return
      */
-    private Map<Integer, List<DegreeClass>> parseClasses(XmlPullParser xmlParser) {
+    private Map<Integer, List<DegreeClass>> parseClasses(int degreeId, XmlPullParser xmlParser) {
         Map<Integer, List<DegreeClass>> classesByYear = new HashMap<>();
         try {
 
@@ -149,7 +151,7 @@ public class DegreesLoaderService extends Service {
                         xmlElementName = xmlParser.getName();
 
                         if (xmlElementName.equals("class")) {
-                            degreeClass = new DegreeClass();
+                            degreeClass = new DegreeClass(degreeId);
 
                         } else if (degreeClass != null) {
                             switch (xmlElementName) {

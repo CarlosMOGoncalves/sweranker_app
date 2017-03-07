@@ -27,7 +27,7 @@
             android:name=".degrees.DegreesLoaderService"
             android:exported="false" />
         <service
-            android:name=".degrees.DegreeMatcherService"
+            android:name=".ranking.RankingService"
             android:exported="false"></service>
     </application>
 

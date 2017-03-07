@@ -1,4 +1,4 @@
-package pt.cmg.sweranker.degrees;
+package pt.cmg.sweranker.ranking;
 
 import android.app.Service;
 import android.content.Context;
@@ -26,17 +26,34 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
-public class DegreeMatcherService extends Service {
+import pt.cmg.sweranker.degrees.Degree;
+import pt.cmg.sweranker.degrees.DegreeClass;
+import pt.cmg.sweranker.degrees.DegreeClassMatch;
+import pt.cmg.sweranker.swebok.KnowledgeArea;
+import pt.cmg.sweranker.swebok.KnowledgeAreaTopic;
+
+public class RankingService extends Service {
 
     private static final String STANDARD_DIRECTORY = "default_matches";
 
-    private DegreeMatcherBinder _binder = new DegreeMatcherBinder();
+    private RankingBinder _binder = new RankingBinder();
 
 
     // Keys -> Degree Class Id , Values -> its current matches
-    private Map<String, DegreeClassMatch> _currentMatches;
+    private Map<String, DegreeClassMatch> _degreeMatches;
 
-    public DegreeMatcherService() {
+    // Keys -> Degree Class Id , Values -> its current ranking
+    private Map<String, ClassRanking> _degreeClassRankings;
+
+    private Map<Integer, KnowledgeArea> _knowledgeAreasById;
+
+    private Map<Integer, KnowledgeAreaTopic> _knowledgeAreaTopicsByTopicId;
+
+    private Map<Integer, Degree> _degreesById;
+
+    private Map<String, DegreeClass> _degreeClassesById;
+
+    public RankingService() {
     }
 
 
@@ -44,8 +61,8 @@ public class DegreeMatcherService extends Service {
     public void onCreate() {
         super.onCreate();
         File rootMatchesDir = createMatchFilesDirectory();
-//        _currentMatches = new HashMap<>();
-        _currentMatches = loadSystemMatches(rootMatchesDir);
+        _degreeMatches = loadSystemMatches(rootMatchesDir);
+
     }
 
 
@@ -131,6 +148,37 @@ public class DegreeMatcherService extends Service {
         return matches;
     }
 
+
+    private Map<String, ClassRanking> loadDefaultRankings() {
+
+        Map<String, ClassRanking> rankings = new HashMap<>();
+        for (DegreeClassMatch match : _degreeMatches.values()) {
+            rankings.put(match.getDegreeClassId(), evaluateClass(match));
+        }
+        return rankings;
+    }
+
+
+    /**
+     * Evaluates a degreeClass based on the matches that were made and saved, finally
+     *
+     * @param classMatch
+     */
+    private ClassRanking evaluateClass(DegreeClassMatch classMatch) {
+
+        ClassRanking ranking = new ClassRanking();
+        KnowledgeAreaTopic currentTopic = null;
+
+
+        for (Integer kaTopicId : classMatch.getAllMatchesAsList()) {
+            currentTopic = _knowledgeAreaTopicsByTopicId.get(kaTopicId);
+            ranking.addTopic(currentTopic.getId(), currentTopic.getKnowledgeAreaId());
+        }
+
+        return ranking;
+    }
+
+
     /**
      * Parses and returns all the ka topic ids of the xml.
      *
@@ -171,7 +219,7 @@ public class DegreeMatcherService extends Service {
             }
 
         } catch (XmlPullParserException | IOException e) {
-            Log.e("DegreeMatcherService", e.getLocalizedMessage());
+            Log.e("RankingService", e.getLocalizedMessage());
         }
 
         return ids;
@@ -228,18 +276,20 @@ public class DegreeMatcherService extends Service {
             String dataWrite = writer.toString();
             outputStream.write(dataWrite.getBytes());
 
-            Log.i("DegreeMatcherService", "Successfully saved match for:" + classMatch.getDegreeClassId());
-            _currentMatches.put(classMatch.getDegreeClassId(), classMatch);
+            Log.i("RankingService", "Successfully saved match for:" + classMatch.getDegreeClassId());
+            _degreeMatches.put(classMatch.getDegreeClassId(), classMatch);
+            _degreeClassRankings.put(classMatch.getDegreeClassId(), evaluateClass(classMatch));
 
             return true;
         } catch (FileNotFoundException e) {
-            Log.e("DegreeMatcherService", "File " + xmlFileName + " not found.");
+            Log.e("RankingService", "File " + xmlFileName + " not found.");
             return false;
         } catch (IOException e) {
-            Log.e("DegreeMatcherService", "Couldn't save file due to: ", e);
+            Log.e("RankingService", "Couldn't save file due to: ", e);
             return false;
         }
     }
+
 
     /**
      * Returns true if the given degree class id has a match (i.e. if its degree class has been already matched, each of its topics
@@ -249,16 +299,90 @@ public class DegreeMatcherService extends Service {
      * @return
      */
     public boolean hasMatches(String degreeClassId) {
-        return _currentMatches.get(degreeClassId) != null;
+        return _degreeMatches.get(degreeClassId) != null;
     }
 
     public DegreeClassMatch getDegreeClassMatches(String degreeClassId) {
-        return _currentMatches.get(degreeClassId);
+        return _degreeMatches.get(degreeClassId);
+    }
+
+
+    public void setKnowledgeAreas(List<KnowledgeArea> knowledgeAreas) {
+        _knowledgeAreasById = createKaByIdView(knowledgeAreas);
+        _knowledgeAreaTopicsByTopicId = createKaTopicByKaIdView(knowledgeAreas);
+    }
+
+    /**
+     * Just gets an HashMap from the List of KAs to that I can access them faster.
+     *
+     * @return
+     */
+    private Map<Integer, KnowledgeArea> createKaByIdView(List<KnowledgeArea> knowledgeAreas) {
+        Map<Integer, KnowledgeArea> kaById = new HashMap<>();
+
+        for (KnowledgeArea ka : knowledgeAreas) {
+            kaById.put(ka.getId(), ka);
+        }
+
+        return kaById;
+    }
+
+
+    /**
+     * Returns the HashMap needed to fast access KATopics by it ID.
+     *
+     * @return
+     */
+    private Map<Integer, KnowledgeAreaTopic> createKaTopicByKaIdView(List<KnowledgeArea> knowledgeAreas) {
+
+        Map<Integer, KnowledgeAreaTopic> kaTopicByTopicId = new HashMap<>();
+
+        for (KnowledgeArea ka : knowledgeAreas) {
+            for (KnowledgeAreaTopic kaTopic : ka.getTopics()) {
+                kaTopicByTopicId.put(kaTopic.getId(), kaTopic);
+            }
+        }
+        return kaTopicByTopicId;
+    }
+
+    public void setDegreeClasses(List<Degree> degrees) {
+        _degreesById = createDegreesByIdView(degrees);
+        _degreeClassesById = createDegreesClassByIdView(degrees);
+        _degreeClassRankings = loadDefaultRankings();
+    }
+
+    /**
+     * Just gets an HashMap from the List of Degrees to that I can access them faster.
+     *
+     * @return
+     */
+    private Map<Integer, Degree> createDegreesByIdView(List<Degree> degrees) {
+        Map<Integer, Degree> degreesById = new HashMap<>();
+        for (Degree degree : degrees) {
+            degreesById.put(degree.getId(), degree);
+        }
+        return degreesById;
+    }
+
+    /**
+     * Returns the HashMap needed to fast access DegreeClasses by it ID.
+     *
+     * @return
+     */
+    private Map<String, DegreeClass> createDegreesClassByIdView(List<Degree> degrees) {
+
+        Map<String, DegreeClass> degreeClassById = new HashMap<>();
+
+        for (Degree degree : degrees) {
+            for (DegreeClass degreeClass : degree.getClassesAsList()) {
+                degreeClassById.put(degreeClass.getId(), degreeClass);
+            }
+        }
+        return degreeClassById;
     }
 
 
     @Override
-
     public IBinder onBind(Intent intent) {
         return _binder;
     }
@@ -267,9 +391,9 @@ public class DegreeMatcherService extends Service {
     /**
      * Interface de comunicação com a Activity ou outro componente que a chamar.
      */
-    public class DegreeMatcherBinder extends Binder {
-        public DegreeMatcherService getService() {
-            return DegreeMatcherService.this;
+    public class RankingBinder extends Binder {
+        public RankingService getService() {
+            return RankingService.this;
         }
     }
 }

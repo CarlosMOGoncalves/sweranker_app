@@ -12,12 +12,14 @@ public class KnowledgeAreaTopic {
     private int _descriptionResource;
     private int _id;
     private int _colorResource;
+    private int _knowledgeAreaId;
 
 
     public KnowledgeAreaTopic() {
-        _nameResource = 0;
-        _descriptionResource = 0;
-        _id = 0;
+    }
+
+    public KnowledgeAreaTopic(int knowledgeAreaId) {
+        _knowledgeAreaId = knowledgeAreaId;
     }
 
     public KnowledgeAreaTopic(int nameResource, int descriptionResource, int id) {
@@ -48,6 +50,14 @@ public class KnowledgeAreaTopic {
 
     public void setId(int id) {
         _id = id;
+    }
+
+    public void setKnowledgeAreaId(int kaId) {
+        _knowledgeAreaId = kaId;
+    }
+
+    public int getKnowledgeAreaId() {
+        return _knowledgeAreaId;
     }
 
     public int getColorResource() {

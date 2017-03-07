@@ -34,10 +34,10 @@ import pt.cmg.sweranker.degrees.DegreeClass;
 import pt.cmg.sweranker.degrees.DegreeClassFragment;
 import pt.cmg.sweranker.degrees.DegreeClassMatch;
 import pt.cmg.sweranker.degrees.DegreeDetailsFragment;
-import pt.cmg.sweranker.degrees.DegreeMatcherService;
 import pt.cmg.sweranker.degrees.DegreeTopicMatcherFragment;
 import pt.cmg.sweranker.degrees.DegreesFragment;
 import pt.cmg.sweranker.degrees.DegreesLoaderService;
+import pt.cmg.sweranker.ranking.RankingService;
 import pt.cmg.sweranker.swebok.KnowledgeArea;
 import pt.cmg.sweranker.swebok.SwebokKADetailsFragment;
 import pt.cmg.sweranker.swebok.SwebokKAsFragment;
@@ -57,26 +57,31 @@ public class MainActivity extends AppCompatActivity implements
         DegreeTopicMatcherFragment.OnDegreeMatcherFragmentInteraction {
 
 
-    private SwebokLoaderService _swebokLoaderService;
-    private DegreesLoaderService _degreesLoaderService;
-    private DegreeMatcherService _matcherService;
+    private SwebokLoaderService _swebokService;
+    private DegreesLoaderService _degreesService;
+    private RankingService _rankingService;
     boolean _isSwebokServiceBound = false;
     boolean _isDegreesServiceBound = false;
-    boolean _isMatcherServiceBound = false;
+    boolean _isRankingServiceBound = false;
     private Toolbar _toolbar;
+
+    private List<KnowledgeArea> _tempKnowledgeAreas;
+    private List<Degree> _tempDegrees;
 
 
     private ServiceConnection _swebokServiceConnection = new ServiceConnection() {
         @Override
         public void onServiceConnected(ComponentName name, IBinder service) {
             SwebokLoaderService.SwebokLoaderBinder binder = (SwebokLoaderService.SwebokLoaderBinder) service;
-            _swebokLoaderService = binder.getService();
+            _swebokService = binder.getService();
             _isSwebokServiceBound = true;
+            _tempKnowledgeAreas = _swebokService.getKnowledgeAreas();
+            startDegreesService();
         }
 
         @Override
         public void onServiceDisconnected(ComponentName name) {
-            _swebokLoaderService = null;
+            _swebokService = null;
             _isSwebokServiceBound = false;
         }
     };
@@ -85,13 +90,16 @@ public class MainActivity extends AppCompatActivity implements
         @Override
         public void onServiceConnected(ComponentName name, IBinder service) {
             DegreesLoaderService.DegreesLoaderBinder binder = (DegreesLoaderService.DegreesLoaderBinder) service;
-            _degreesLoaderService = binder.getService();
+            _degreesService = binder.getService();
             _isDegreesServiceBound = true;
+            _tempDegrees = _degreesService.getDegrees();
+            startRankingService();
+
         }
 
         @Override
         public void onServiceDisconnected(ComponentName name) {
-            _degreesLoaderService = null;
+            _degreesService = null;
             _isDegreesServiceBound = false;
         }
     };
@@ -99,15 +107,20 @@ public class MainActivity extends AppCompatActivity implements
     private ServiceConnection _matcherServiceConnection = new ServiceConnection() {
         @Override
         public void onServiceConnected(ComponentName name, IBinder service) {
-            DegreeMatcherService.DegreeMatcherBinder binder = (DegreeMatcherService.DegreeMatcherBinder) service;
-            _matcherService = binder.getService();
-            _isMatcherServiceBound = true;
+            RankingService.RankingBinder binder = (RankingService.RankingBinder) service;
+            _rankingService = binder.getService();
+            _isRankingServiceBound = true;
+            _rankingService.setKnowledgeAreas(_tempKnowledgeAreas);
+            _rankingService.setDegreeClasses(_tempDegrees);
+            _tempKnowledgeAreas = null;
+            _tempDegrees = null;
+
         }
 
         @Override
         public void onServiceDisconnected(ComponentName name) {
-            _matcherService = null;
-            _isMatcherServiceBound = false;
+            _rankingService = null;
+            _isRankingServiceBound = false;
         }
     };
 
@@ -170,15 +183,23 @@ public class MainActivity extends AppCompatActivity implements
     @Override
     protected void onStart() {
         super.onStart();
+        startSwebokService();
+    }
+
+    private void startSwebokService() {
         Intent startSwebokServiceIntent = new Intent(this, SwebokLoaderService.class);
         startService(startSwebokServiceIntent);
         bindService(startSwebokServiceIntent, _swebokServiceConnection, Context.BIND_AUTO_CREATE);
+    }
 
+    private void startDegreesService() {
         Intent startDegreesServiceIntent = new Intent(this, DegreesLoaderService.class);
         startService(startDegreesServiceIntent);
         bindService(startDegreesServiceIntent, _degreesServiceConnection, Context.BIND_AUTO_CREATE);
+    }
 
-        Intent startDegreeMatcherService = new Intent(this, DegreeMatcherService.class);
+    private void startRankingService() {
+        Intent startDegreeMatcherService = new Intent(this, RankingService.class);
         startService(startDegreeMatcherService);
         bindService(startDegreeMatcherService, _matcherServiceConnection, Context.BIND_AUTO_CREATE);
     }
@@ -229,7 +250,7 @@ public class MainActivity extends AppCompatActivity implements
     public List<KnowledgeArea> getKnowledgeAreas() {
         List<KnowledgeArea> kas = new ArrayList<>();
         if (_isSwebokServiceBound) {
-            kas = _swebokLoaderService.getKnowledgeAreas();
+            kas = _swebokService.getKnowledgeAreas();
         }
         return kas;
     }
@@ -322,7 +343,7 @@ public class MainActivity extends AppCompatActivity implements
     public KnowledgeArea getKnowledgeArea(int knowledgeAreaIdToLoad) {
         KnowledgeArea ka = new KnowledgeArea();
         if (_isSwebokServiceBound) {
-            ka = _swebokLoaderService.getKnowledgeArea(knowledgeAreaIdToLoad);
+            ka = _swebokService.getKnowledgeArea(knowledgeAreaIdToLoad);
         }
         return ka;
     }
@@ -331,7 +352,7 @@ public class MainActivity extends AppCompatActivity implements
     public List<Degree> loadDegrees() {
         List<Degree> degrees = new ArrayList<>();
         if (_isDegreesServiceBound) {
-            degrees = _degreesLoaderService.getDegrees();
+            degrees = _degreesService.getDegrees();
         }
         return degrees;
     }
@@ -393,7 +414,7 @@ public class MainActivity extends AppCompatActivity implements
 
         Degree degree = new Degree();
         if (_isDegreesServiceBound) {
-            degree = _degreesLoaderService.getDegree(degreeId);
+            degree = _degreesService.getDegree(degreeId);
         }
         return degree;
     }
@@ -404,7 +425,7 @@ public class MainActivity extends AppCompatActivity implements
 
         DegreeClass degreeClass = new DegreeClass();
         if (_isDegreesServiceBound) {
-            degreeClass = _degreesLoaderService.getDegreeClass(degreeId, degreeClassId);
+            degreeClass = _degreesService.getDegreeClass(degreeId, degreeClassId);
         }
         return degreeClass;
     }
@@ -414,7 +435,7 @@ public class MainActivity extends AppCompatActivity implements
 
         DegreeClass degreeClass = new DegreeClass();
         if (_isDegreesServiceBound) {
-            degreeClass = _degreesLoaderService.getDegreeClass(degreeClassId);
+            degreeClass = _degreesService.getDegreeClass(degreeClassId);
         }
         return degreeClass;
     }
@@ -506,18 +527,18 @@ public class MainActivity extends AppCompatActivity implements
 
     @Override
     public void saveMatch(DegreeClassMatch newlySubmittedMatch) {
-        if (_matcherService.saveMatch(newlySubmittedMatch)) {
+        if (_rankingService.saveMatch(newlySubmittedMatch)) {
             getFragmentManager().popBackStackImmediate();
         }
     }
 
     @Override
     public boolean hasMatch(String degreeClassId) {
-        return _matcherService.hasMatches(degreeClassId);
+        return _rankingService.hasMatches(degreeClassId);
     }
 
     @Override
     public DegreeClassMatch getDegreeClassMatches(String degreeClassId) {
-        return _matcherService.getDegreeClassMatches(degreeClassId);
+        return _rankingService.getDegreeClassMatches(degreeClassId);
     }
 }

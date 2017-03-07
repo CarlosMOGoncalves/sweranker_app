@@ -44,20 +44,15 @@
             android:id="@+id/selector_container"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:minHeight="40dp">
+            android:minHeight="40dp"
+            android:orientation="vertical">
 
         </LinearLayout>
-        <!--pt.cmg.sweranker.ui.materialspinner.MaterialSpinner
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/matcher_selector" /-->
-
 
         <LinearLayout
-            android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:orientation="horizontal"
             android:paddingRight="@dimen/card_inner_padding"
             android:paddingTop="@dimen/card_inner_padding">
 
