@@ -242,11 +242,11 @@
     <string name="ka14_topic1_name">Conjuntos, Relacionamentos e Funções</string>
     <string name="ka14_topic1_description">Sobre os conceitos matemáticos e lógicos sobre os conjuntos (colecção de elementos), as suas propriedades e as suas operações (intesecção, união, produto cartesiano, etc.);\nsobre relacionamentos (associações entre dois conjuntos de informação);\nsobre funções matemáticas (uma relação de comportamento conhecido que exprime o mapeamento entre elementos de domínios).</string>
     <string name="ka14_topic2_name">Lógica Básica</string>
-    <string name="ka14_topic2_description">Sobre a lógica proposicional, a sua terminologia e leis (Leis de Identidade, Leis Distributivas, Leis de De Morgan, etc.): a lógica de Predicados, as suas propriedades, terminologia e leis.</string>
+    <string name="ka14_topic2_description">Sobre a lógica proposicional, a sua terminologia e leis (variáveis Booleanas, operações booleanas, Leis de Identidade, Leis Distributivas, Leis de De Morgan, etc.): a lógica de Predicados, as suas propriedades, terminologia e leis.</string>
     <string name="ka14_topic3_name">Técnicas de Prova</string>
     <string name="ka14_topic3_description">Sobre os argumentos que estabelecem rigorosamente a verdade de uma afirmação;\nos métodos de prova de um teorema (provas por contradição, provas por indução, etc.).</string>
     <string name="ka14_topic4_name">Bases da Contagem</string>
-    <string name="ka14_topic4_description">Sobre as acções que permitem encontrar o número de elementos num conjunto finito de elementos e suas regras (regra da soma, regra do produto, etc.) e princípios;\n princípio da inclusão-exclusão ;\nrecursividade.</string>
+    <string name="ka14_topic4_description">Sobre as acções que permitem encontrar o número de elementos num conjunto finito de elementos e suas regras (regra da soma, regra do produto, etc.) e princípios;\n princípio da inclusão-exclusão;\ndefinição de recursividade, aleatoriedade, probabilidade, permutação e combinação.</string>
     <string name="ka14_topic5_name">Grafos e Árvores</string>
     <string name="ka14_topic5_description">Sobre os diferentes tipos de grafos (grafos direccionados, grafos não-direccionados, etc.), a sua terminologia (vértices, nós, peso, arestas, etc.) e operações (travessia, conexões, etc.);\nos diferentes tipos de árvores, as suas propriedades e operações (travessias, adições, etc.).</string>
     <string name="ka14_topic6_name">Probabilidade Discreta</string>
@@ -254,11 +254,11 @@
     <string name="ka14_topic7_name">Máquinas de Estado Finitas</string>
     <string name="ka14_topic7_description">Sobre as máquinas de estados finitos (a abstracção matemática composta por um número finito de estados e as transições entre estes), a sua terminologia e operações.</string>
     <string name="ka14_topic8_name">Gramáticas</string>
-    <string name="ka14_topic8_description">Sobre as gramáticas de linguagens formais, a sua terminologia (vocabulário, frase, terminais, símbolo, etc.);\nos tipos de gramáticas existentes (gramática livre de contexto, gramática senível ao contexto, etc.).</string>
+    <string name="ka14_topic8_description">Sobre as gramáticas de linguagens formais, a sua terminologia (vocabulário, frase, terminais, símbolo, etc.);\nos tipos de gramáticas existentes (gramática livre de contexto, gramática sensível ao contexto, etc.).</string>
     <string name="ka14_topic9_name">Precisão numérica, exactidão e erros</string>
     <string name="ka14_topic9_description">Sobre os problemas que recorrem na representação de números;\no carácter finito da precisão de representação de números num computador;\ntécnicas de arredondamentos;\nalgarismos significativos;\ntipos de erros (relativos, absolutos).</string>
     <string name="ka14_topic10_name">Teoria dos Números</string>
-    <string name="ka14_topic10_description">Sobre os números;\nos tipos de números (inteiro, racional, real, complexo, imaginário etc.);\nterminologia e operações;\nos números primos, a sua utilidade a sua aplicação (como criptografia).</string>
+    <string name="ka14_topic10_description">Sobre os números;\nos tipos de números (inteiro, racional, real, complexo, imaginário etc.);\nterminologia e operações (divisão, mod, módulo);\nos números primos, a sua utilidade a sua aplicação (como criptografia).</string>
     <string name="ka14_topic11_name">Estruturas Algébricas</string>
     <string name="ka14_topic11_description">Sobre as estruturas algébricas (definidas como conjuntos sujeitos a algumas operações e que satisfaçam um número de axiomas);\nsobre grupos, as suas propriedades (associação, identidade, fecho, etc.) e tipos (monóide, subgrupo);\nanéis (um conjunto com duas operações binárias - normalmente adição e multiplicação - onde cada operação combina dois elementos para formar um terceiro).</string>
 
