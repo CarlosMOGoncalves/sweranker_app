@@ -779,7 +779,7 @@
     <string name="up_class_ai_topic24">Introdução à Representação do Conhecimento: Lógica de Predicados e Outras Lógicas</string>
     <string name="up_class_ai_topic25">Introdução à Representação do Conhecimento: Raciocínio Inexacto: Modelo Probabilístico e Teorama de Bayes; Factores de Certeza; Modelo Dempster- Schafer; Logica dos Conjuntos Difusos</string>
     <string name="up_class_ai_topic26">Engenharia do Conhecimento: Sistemas Baseados em Conhecimento</string>
-    <string name="up_class_ai_topic27">Engenharia do Conhecimento: Sistemas Periciais: Caraterização; Estrutura; Rep. do Conhecimento e Meta Conhecimento; Motor de Inferência e Geração de Explicações; Casos exemplares de Sistemas periciais.</string>
+    <string name="up_class_ai_topic27">Engenharia do Conhecimento: Sistemas Periciais: Caracterização; Estrutura; Representação do Conhecimento e Meta Conhecimento; Motor de Inferência e Geração de Explicações; Casos exemplares de Sistemas periciais.</string>
     <string name="up_class_ai_topic28">Engenharia do Conhecimento: Demonstrações</string>
     <string name="up_class_ai_topic29">Engenharia do Conhecimento: Sistemas Genéricos: "Shells"</string>
     <string name="up_class_ai_topic30">Introdução à Linguagem Natural Computacional: Objectivos e dificuldades</string>
@@ -790,7 +790,7 @@
     <string name="up_class_ai_topic35">Introdução à Linguagem Natural Computacional: Gramáticas de extraposição</string>
     <string name="up_class_ai_topic36">Introdução à Linguagem Natural Computacional: Abordagem frequencista à Linguagem Natural Computacional</string>
     <string name="up_class_ai_topic37">Aprendizagem Automática (Machine Learning): Tipos de Aprendizagem Automática</string>
-    <string name="up_class_ai_topic38">Aprendizagem Automática (Machine Learning): Aprendizagem de Conceitos; ap. pelo exemplo; ap. por analogia; ap. Baseada em Explicações (EBL): Descrição dos Algorítmos para EBG, mEBG e IOL</string>
+    <string name="up_class_ai_topic38">Aprendizagem Automática (Machine Learning): Aprendizagem de Conceitos; aprendizagem  pelo exemplo; aprendizagem por analogia; aprendizagem Baseada em Explicações (EBL): Descrição dos Algorítmos para EBG, mEBG e IOL</string>
     <string name="up_class_ai_topic39">Aprendizagem Automática (Machine Learning): Aprendizagem Indutiva: Algorítmos ID3 e C4.5</string>
     <string name="up_class_ai_topic40">Aprendizagem Automática (Machine Learning): Exemplos de Aplicação</string>
     <string name="up_class_ai_topic41">Introdução às Redes Neuronais (Machine Learning): Princípios básicos (elemento de processamento; estrutura; leis de aprendizagem)</string>
@@ -1015,7 +1015,7 @@
     <string name="up_class_parallel_computing_topic13">P2P, GRID, CLOUD COMPUTING. Aplicações e características.</string>
 
     <string name="up_class_mobile_communication">Comunicações Móveis</string>
-    <string name="up_class_mobile_communication_description">Nesta UC são discutidos os aspectos fundamentais do funcionamento de redes de comunicações móveis, as tecnologias de comunicações móveis mais importantes, e técnicas de engenharia e de projeto de redes de comunicações móveis.</string>
+    <string name="up_class_mobile_communication_description">Nesta UC são discutidos os aspectos fundamentais do funcionamento de redes de comunicações móveis, as tecnologias de comunicações móveis mais importantes, e técnicas de engenharia e de projecto de redes de comunicações móveis.</string>
     <string name="up_class_mobile_communication_topic1">Características de um sistema de comunicação móvel: aplicações; história; normalização; modelos de referência; atribuição de frequências.</string>
     <string name="up_class_mobile_communication_topic2">Transmissão sem fios: modelos de propagação do sinal; modulações; codificações; técnicas de transmissão canais de banda larga; técnicas adaptativas.</string>
     <string name="up_class_mobile_communication_topic3">Ligações de dados sem fios: técnicas de multiplexagem; técnicas duplex; técnicas ARQ para redes sem fios; técnicas de acesso múltiplo; controlo da ligação rádio.</string>
@@ -1155,7 +1155,7 @@
     <string name="up_class_database_technologies_topic10">Recuperação e replicação</string>
 
     <string name="up_class_integration_technologies">Tecnologias de Distribuição e Integração</string>
-    <string name="up_class_integration_technologies_description">Os objectivos principais da unidade curricular incluem:\n- a aquisição de conhecimento e prática dos conceitos essenciais do projeto e arquitetura de aplicaçãoes distribuídas empresariais;\n- aplicação dos principais padrões e tecnologias, consoante os requisitos e funcionalidades dos cenários finais;\n- conhecimaento detalhado de várias tecnologias, com vista à sua implementação fluente, e à sua interoperabilidade e integração.</string>
+    <string name="up_class_integration_technologies_description">Os objectivos principais da unidade curricular incluem:\n- a aquisição de conhecimento e prática dos conceitos essenciais do projecto e arquitetura de aplicaçãoes distribuídas empresariais;\n- aplicação dos principais padrões e tecnologias, consoante os requisitos e funcionalidades dos cenários finais;\n- conhecimaento detalhado de várias tecnologias, com vista à sua implementação fluente, e à sua interoperabilidade e integração.</string>
     <string name="up_class_integration_technologies_topic1">Os paradigmas distribuídos da passagem de mensagens e invocação remota</string>
     <string name="up_class_integration_technologies_topic2">O mecanismo da invocação remota: RPC</string>
     <string name="up_class_integration_technologies_topic3">Distribuição orientada a objectos e componentes, middleware</string>

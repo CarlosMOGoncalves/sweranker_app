@@ -62,9 +62,73 @@ public class RankingService extends Service {
         super.onCreate();
         File rootMatchesDir = createMatchFilesDirectory();
         _degreeMatches = loadSystemMatches(rootMatchesDir);
+        saveMatchesToSingleFile();
 
     }
 
+
+    private void saveMatchesToSingleFile() {
+        final String xmlFileName = "all_matches.xml";
+
+        File directory = getApplicationContext().getDir(STANDARD_DIRECTORY, Context.MODE_PRIVATE);
+
+        File targetFile = new File(directory, xmlFileName);
+
+        try (FileOutputStream outputStream = new FileOutputStream(targetFile)) {
+
+
+            XmlSerializer xmlSerializer = Xml.newSerializer();
+
+            StringWriter writer = new StringWriter();
+            xmlSerializer.setOutput(writer);
+            xmlSerializer.startDocument("UTF-8", true);
+
+            xmlSerializer.startTag(null, "all_matches");
+
+            for (Map.Entry<String, DegreeClassMatch> singleMatch : _degreeMatches.entrySet()) {
+
+                xmlSerializer.startTag(null, singleMatch.getKey());
+                xmlSerializer.startTag(null, "matches");
+
+                for (Map.Entry<String, LinkedList<Integer>> entry : singleMatch.getValue().getAllMatches().entrySet()) {
+                    xmlSerializer.startTag(null, "match");
+
+                    xmlSerializer.startTag(null, "class_topic_id");
+                    xmlSerializer.text(entry.getKey());
+                    xmlSerializer.endTag(null, "class_topic_id");
+
+                    xmlSerializer.startTag(null, "ka_topics");
+                    for (Integer kaTopicId : entry.getValue()) {
+                        xmlSerializer.startTag(null, "id");
+                        xmlSerializer.text(kaTopicId.toString());
+                        xmlSerializer.endTag(null, "id");
+                    }
+                    xmlSerializer.endTag(null, "ka_topics");
+
+                    xmlSerializer.endTag(null, "match");
+                }
+
+                xmlSerializer.endTag(null, "matches");
+
+                xmlSerializer.endTag(null, singleMatch.getKey());
+//                Log.i("RankingService", "Successfully saved match for:" + singleMatch.getValue().getDegreeClassId());
+//                _degreeMatches.put(singleMatch.getValue().getDegreeClassId(), singleMatch.getValue());
+//                _degreeClassRankings.put(singleMatch.getValue().getDegreeClassId(), evaluateClass(singleMatch.getValue()));
+            }
+
+            xmlSerializer.endTag(null, "all_matches");
+            xmlSerializer.endDocument();
+
+
+            String dataWrite = writer.toString();
+            Log.i("Cenas", dataWrite);
+            outputStream.write(dataWrite.getBytes());
+
+        } catch (Exception e) {
+            Log.e("Cenas", e.getLocalizedMessage());
+        }
+
+    }
 
     /**
      * Creates the root directory for saving the matches.

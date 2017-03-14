@@ -2070,10 +2070,6 @@
                         <id>c29t12</id>
                         <description>@string/up_class_compilers_topic12</description>
                     </topic>
-                    <topic>
-                        <id>c29t13</id>
-                        <description>@string/up_class_compilers_topic14</description>
-                    </topic>
                 </program>
             </class>
             <class>
