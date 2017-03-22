@@ -2672,22 +2672,6 @@
                         <id>c38t8</id>
                         <description>@string/up_class_project_labs_topic8</description>
                     </topic>
-                    <topic>
-                        <id>c38t9</id>
-                        <description>@string/up_class_project_labs_topic9</description>
-                    </topic>
-                    <topic>
-                        <id>c38t10</id>
-                        <description>@string/up_class_project_labs_topic10</description>
-                    </topic>
-                    <topic>
-                        <id>c38t11</id>
-                        <description>@string/up_class_project_labs_topic11</description>
-                    </topic>
-                    <topic>
-                        <id>c38t12</id>
-                        <description>@string/up_class_project_labs_topic12</description>
-                    </topic>
                 </program>
             </class>
             <class>
@@ -2762,14 +2746,6 @@
                     <topic>
                         <id>c39t16</id>
                         <description>@string/up_class_swesys_architecture_topic16</description>
-                    </topic>
-                    <topic>
-                        <id>c39t17</id>
-                        <description>@string/up_class_swesys_architecture_topic17</description>
-                    </topic>
-                    <topic>
-                        <id>c39t18</id>
-                        <description>@string/up_class_swesys_architecture_topic18</description>
                     </topic>
                 </program>
             </class>
@@ -3062,45 +3038,45 @@
                 <optional>true</optional>
                 <program>
                     <topic>
-                        <id>c44t1</id>
+                        <id>c45t1</id>
                         <description>@string/up_class_logistics_topic1</description>
                     </topic>
                     <topic>
-                        <id>c44t2</id>
+                        <id>c45t2</id>
                         <description>@string/up_class_logistics_topic2</description>
                     </topic>
                     <topic>
-                        <id>c44t3</id>
+                        <id>c45t3</id>
                         <description>@string/up_class_logistics_topic3</description>
                     </topic>
                     <topic>
-                        <id>c44t4</id>
+                        <id>c45t4</id>
                         <description>@string/up_class_logistics_topic4</description>
                     </topic>
                     <topic>
-                        <id>c44t5</id>
+                        <id>c45t5</id>
                         <description>@string/up_class_logistics_topic5</description>
                     </topic>
                     <topic>
-                        <id>c44t6</id>
+                        <id>c45t6</id>
                         <description>@string/up_class_logistics_topic6</description>
                     </topic>
                     <topic>
-                        <id>c44t7</id>
+                        <id>c45t7</id>
                         <description>@string/up_class_logistics_topic7</description>
                     </topic>
                     <topic>
-                        <id>c44t8</id>
+                        <id>c45t8</id>
                         <description>@string/up_class_logistics_topic8</description>
                     </topic>
                     <topic>
-                        <id>c44t9</id>
+                        <id>c45t9</id>
                         <description>@string/up_class_logistics_topic9</description>
                     </topic>
                 </program>
             </class>
             <class>
-                <id>mieic_c45</id>
+                <id>mieic_c70</id>
                 <name>@string/up_class_markup_languages</name>
                 <description>@string/up_class_markup_languages_description</description>
                 <year>4</year>
@@ -3109,27 +3085,27 @@
                 <optional>true</optional>
                 <program>
                     <topic>
-                        <id>c45t1</id>
+                        <id>c70t1</id>
                         <description>@string/up_class_markup_languages_topic1</description>
                     </topic>
                     <topic>
-                        <id>c45t2</id>
+                        <id>c70t2</id>
                         <description>@string/up_class_markup_languages_topic2</description>
                     </topic>
                     <topic>
-                        <id>c45t3</id>
+                        <id>c70t3</id>
                         <description>@string/up_class_markup_languages_topic3</description>
                     </topic>
                     <topic>
-                        <id>c45t4</id>
+                        <id>c70t4</id>
                         <description>@string/up_class_markup_languages_topic4</description>
                     </topic>
                     <topic>
-                        <id>c45t5</id>
+                        <id>c70t5</id>
                         <description>@string/up_class_markup_languages_topic5</description>
                     </topic>
                     <topic>
-                        <id>c45t6</id>
+                        <id>c70t6</id>
                         <description>@string/up_class_markup_languages_topic6</description>
                     </topic>
                 </program>

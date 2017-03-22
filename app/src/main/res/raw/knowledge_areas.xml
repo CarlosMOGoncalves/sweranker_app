@@ -48,7 +48,7 @@
     <knowledge-area>
         <name>@string/ka_software_design</name>
         <image>@drawable/design</image>
-        <imageBackgroundColour>@color/cardColour5</imageBackgroundColour>
+        <imageBackgroundColour>@color/cardColour2</imageBackgroundColour>
         <id>2</id>
         <description>@string/ka_software_design_description</description>
         <topics>
@@ -173,7 +173,7 @@
     <knowledge-area>
         <name>@string/ka_software_maintenance</name>
         <image>@drawable/maintenance</image>
-        <imageBackgroundColour>@color/cardColour2</imageBackgroundColour>
+        <imageBackgroundColour>@color/cardColour5</imageBackgroundColour>
         <id>5</id>
         <description>@string/ka_software_maintenance_description</description>
         <topics>
@@ -253,7 +253,7 @@
     <knowledge-area>
         <name>@string/ka_software_engineering_management</name>
         <image>@drawable/management</image>
-        <imageBackgroundColour>@color/cardColour4</imageBackgroundColour>
+        <imageBackgroundColour>@color/cardColour7</imageBackgroundColour>
         <id>7</id>
         <description>@string/ka_software_engineering_management_description</description>
         <topics>
@@ -298,7 +298,7 @@
     <knowledge-area>
         <name>@string/ka_software_engineering_process</name>
         <image>@drawable/process</image>
-        <imageBackgroundColour>@color/cardColour5</imageBackgroundColour>
+        <imageBackgroundColour>@color/cardColour8</imageBackgroundColour>
         <id>8</id>
         <description>@string/ka_software_engineering_process_description</description>
         <topics>
@@ -333,7 +333,7 @@
     <knowledge-area>
         <name>@string/ka_software_models_methods</name>
         <image>@drawable/models</image>
-        <imageBackgroundColour>@color/cardColour6</imageBackgroundColour>
+        <imageBackgroundColour>@color/cardColour9</imageBackgroundColour>
         <id>9</id>
         <description>@string/ka_software_models_methods_description</description>
         <topics>
@@ -363,7 +363,7 @@
     <knowledge-area>
         <name>@string/ka_software_quality</name>
         <image>@drawable/quality</image>
-        <imageBackgroundColour>@color/cardColour1</imageBackgroundColour>
+        <imageBackgroundColour>@color/cardColour10</imageBackgroundColour>
         <id>10</id>
         <description>@string/ka_software_quality_description</description>
         <topics>
@@ -393,7 +393,7 @@
     <knowledge-area>
         <name>@string/ka_software_engineering_professional_practice</name>
         <image>@drawable/professional</image>
-        <imageBackgroundColour>@color/cardColour2</imageBackgroundColour>
+        <imageBackgroundColour>@color/cardColour11</imageBackgroundColour>
         <id>11</id>
         <description>@string/ka_software_engineering_professional_practice_description</description>
         <topics>
@@ -418,7 +418,7 @@
     <knowledge-area>
         <name>@string/ka_software_economics</name>
         <image>@drawable/currency_euro</image>
-        <imageBackgroundColour>@color/cardColour3</imageBackgroundColour>
+        <imageBackgroundColour>@color/cardColour12</imageBackgroundColour>
         <id>12</id>
         <description>@string/ka_software_economics_description</description>
         <topics>
@@ -453,7 +453,7 @@
     <knowledge-area>
         <name>@string/ka_computing_foundations</name>
         <image>@drawable/computer_chip</image>
-        <imageBackgroundColour>@color/cardColour4</imageBackgroundColour>
+        <imageBackgroundColour>@color/cardColour13</imageBackgroundColour>
         <id>13</id>
         <description>@string/ka_computing_foundations_description</description>
         <topics>
@@ -548,7 +548,7 @@
     <knowledge-area>
         <name>@string/ka_mathematical_foundations</name>
         <image>@drawable/function</image>
-        <imageBackgroundColour>@color/cardColour5</imageBackgroundColour>
+        <imageBackgroundColour>@color/cardColour14</imageBackgroundColour>
         <id>14</id>
         <description>@string/ka_mathematical_foundations_description</description>
         <topics>
@@ -613,7 +613,7 @@
     <knowledge-area>
         <name>@string/ka_engineering_foundations</name>
         <image>@drawable/engineer</image>
-        <imageBackgroundColour>@color/cardColour6</imageBackgroundColour>
+        <imageBackgroundColour>@color/cardColour15</imageBackgroundColour>
         <id>15</id>
         <description>@string/ka_engineering_foundations_description</description>
         <topics>

@@ -14,12 +14,21 @@
     <color name="materialAffirmative">#CDDC39</color>
     <color name="materialNegative">#b71c1c</color>
 
-    <color name="cardColour1">#ffa726</color>
-    <color name="cardColour2">#26A69A</color>
-    <color name="cardColour3">#42A5F5</color>
-    <color name="cardColour4">#7E57C2</color>
-    <color name="cardColour5">#EF5350</color>
-    <color name="cardColour6">#8D6E63</color>
+    <color name="cardColour1">#F44336</color>
+    <color name="cardColour2">#2196F3</color>
+    <color name="cardColour3">#FFEB3B</color>
+    <color name="cardColour4">#8BC34A</color>
+    <color name="cardColour5">#03A9F4</color>
+    <color name="cardColour6">#795548</color>
+    <color name="cardColour7">#FF5722</color>
+    <color name="cardColour8">#9C27B0</color>
+    <color name="cardColour9">#4CAF50</color>
+    <color name="cardColour10">#00BCD4</color>
+    <color name="cardColour11">#CDDC39</color>
+    <color name="cardColour12">#E91E63</color>
+    <color name="cardColour13">#673AB7</color>
+    <color name="cardColour14">#FFC107</color>
+    <color name="cardColour15">#009688</color>
     <color name="cardColourNone">#757575</color>
 
 </resources>
