@@ -63,9 +63,8 @@ public class RankingService extends Service {
     public void onCreate() {
         super.onCreate();
         File rootMatchesDir = createMatchFilesDirectory();
-//        _degreeMatches = loadDefaultMatches();
-        _degreeMatches = loadSystemMatches(rootMatchesDir);
-//        saveMatchesToSingleFile();
+        _degreeMatches = loadDefaultMatches();
+//        _degreeMatches = loadSystemMatches(rootMatchesDir);
 
     }
 
@@ -119,7 +118,7 @@ public class RankingService extends Service {
                 xmlSerializer.endTag(null, "match");
 //                Log.i("RankingService", "Successfully saved match for:" + singleMatch.getValue().getDegreeClassId());
 //                _degreeMatches.put(singleMatch.getValue().getDegreeClassId(), singleMatch.getValue());
-//                _degreeClassRankings.put(singleMatch.getValue().getDegreeClassId(), evaluateClass(singleMatch.getValue()));
+                _degreeClassRankings.put(singleMatch.getValue().getDegreeClassId(), evaluateClass(singleMatch.getValue()));
             }
 
             xmlSerializer.endTag(null, "all_matches");
@@ -145,7 +144,7 @@ public class RankingService extends Service {
 
 
     /**
-     * Loads all the matches already saved in the system.
+     * Loads all the default matches of the system. These come with the resources.
      * This function loads it to a class structure so that it acts as a cache.
      *
      * @return
@@ -280,6 +279,7 @@ public class RankingService extends Service {
                         switch (xmlElementName) {
                             case "topic_match":
                                 currentMatch.addAllTopicsToDegreeTopic(classTopicId, kaTopicIds);
+                                kaTopicIds = new ArrayList<>();
                                 break;
                         }
                         break;
