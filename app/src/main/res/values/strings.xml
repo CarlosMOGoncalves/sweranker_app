@@ -1155,7 +1155,7 @@
     <string name="up_class_database_technologies_topic10">Recuperação e replicação</string>
 
     <string name="up_class_integration_technologies">Tecnologias de Distribuição e Integração</string>
-    <string name="up_class_integration_technologies_description">Os objectivos principais da unidade curricular incluem:\n- a aquisição de conhecimento e prática dos conceitos essenciais do projecto e arquitetura de aplicaçãoes distribuídas empresariais;\n- aplicação dos principais padrões e tecnologias, consoante os requisitos e funcionalidades dos cenários finais;\n- conhecimaento detalhado de várias tecnologias, com vista à sua implementação fluente, e à sua interoperabilidade e integração.</string>
+    <string name="up_class_integration_technologies_description">Os objectivos principais da unidade curricular incluem:\n- a aquisição de conhecimento e prática dos conceitos essenciais do projecto e arquitectura de aplicaçãoes distribuídas empresariais;\n- aplicação dos principais padrões e tecnologias, consoante os requisitos e funcionalidades dos cenários finais;\n- conhecimaento detalhado de várias tecnologias, com vista à sua implementação fluente, e à sua interoperabilidade e integração.</string>
     <string name="up_class_integration_technologies_topic1">Os paradigmas distribuídos da passagem de mensagens e invocação remota</string>
     <string name="up_class_integration_technologies_topic2">O mecanismo da invocação remota: RPC</string>
     <string name="up_class_integration_technologies_topic3">Distribuição orientada a objectos e componentes, middleware</string>
@@ -1316,7 +1316,7 @@
     <string name="up_class_robotics_topic4">História, evolução e direcções actuais da Robótica Inteligente</string>
     <string name="up_class_robotics_topic5">Arquitecturas baseadas em Agentes para Robôs: Reactivas, Deliberativas e Híbridas</string>
     <string name="up_class_robotics_topic6">Arquitecturas baseadas em Agentes para Robôs: Arquitecturas Belief, Desire and Intentions (BDI)</string>
-    <string name="up_class_robotics_topic7">Arquitecturas baseadas em Agentes para Robôs: Arquiteturas Cooperativas</string>
+    <string name="up_class_robotics_topic7">Arquitecturas baseadas em Agentes para Robôs: Arquitecturas Cooperativas</string>
     <string name="up_class_robotics_topic8">Percepção Robótica: Hodometria, Rotação e Bússolas</string>
     <string name="up_class_robotics_topic9">Percepção Robótica: Sensores comuns em robótica incluindo visão artificial e profundidade</string>
     <string name="up_class_robotics_topic10">Percepção Robótica: Técnicas de Fusão Sensorial</string>
@@ -1364,7 +1364,7 @@
     <string name="up_class_intelsystems_seminar_topic6">Gestão de Disrupção de planos em Operações de Transporte Aéreo</string>
     <string name="up_class_intelsystems_seminar_topic7">Análise de Redes Sociais</string>
     <string name="up_class_intelsystems_seminar_topic8">\"Cloud Computing\" </string>
-    <string name="up_class_intelsystems_seminar_topic9">Visualização da informação, jogos sérios e HMI</string>
+    <string name="up_class_intelsystems_seminar_topic9">Visualização da informação, jogos sérios e HMI (human-machine interaction)</string>
     <string name="up_class_intelsystems_seminar_topic10">Apresentações dos trabalhos realizados pelos alunos</string>
 
     <string name="up_class_network_services">Serviços de Rede e de Sistema</string>

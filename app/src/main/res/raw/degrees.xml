@@ -3422,8 +3422,8 @@
             </class>
             <class>
                 <id>mieic_c52</id>
-                <name>@string/up_class_swe_testing</name>
-                <description>@string/up_class_swe_testing_description</description>
+                <name>@string/up_class_integration_technologies</name>
+                <description>@string/up_class_integration_technologies_description</description>
                 <year>4</year>
                 <semester>2</semester>
                 <ects>6</ects>
@@ -3431,63 +3431,63 @@
                 <program>
                     <topic>
                         <id>c52t1</id>
-                        <description>@string/up_class_swe_testing_topic1</description>
+                        <description>@string/up_class_integration_technologies_topic1</description>
                     </topic>
                     <topic>
                         <id>c52t2</id>
-                        <description>@string/up_class_swe_testing_topic2</description>
+                        <description>@string/up_class_integration_technologies_topic2</description>
                     </topic>
                     <topic>
                         <id>c52t3</id>
-                        <description>@string/up_class_swe_testing_topic3</description>
+                        <description>@string/up_class_integration_technologies_topic3</description>
                     </topic>
                     <topic>
                         <id>c52t4</id>
-                        <description>@string/up_class_swe_testing_topic4</description>
+                        <description>@string/up_class_integration_technologies_topic4</description>
                     </topic>
                     <topic>
                         <id>c52t5</id>
-                        <description>@string/up_class_swe_testing_topic5</description>
+                        <description>@string/up_class_integration_technologies_topic5</description>
                     </topic>
                     <topic>
                         <id>c52t6</id>
-                        <description>@string/up_class_swe_testing_topic6</description>
+                        <description>@string/up_class_integration_technologies_topic6</description>
                     </topic>
                     <topic>
                         <id>c52t7</id>
-                        <description>@string/up_class_swe_testing_topic7</description>
+                        <description>@string/up_class_integration_technologies_topic7</description>
                     </topic>
                     <topic>
                         <id>c52t8</id>
-                        <description>@string/up_class_swe_testing_topic8</description>
+                        <description>@string/up_class_integration_technologies_topic8</description>
                     </topic>
                     <topic>
                         <id>c52t9</id>
-                        <description>@string/up_class_swe_testing_topic9</description>
+                        <description>@string/up_class_integration_technologies_topic9</description>
                     </topic>
                     <topic>
                         <id>c52t10</id>
-                        <description>@string/up_class_swe_testing_topic10</description>
+                        <description>@string/up_class_integration_technologies_topic10</description>
                     </topic>
                     <topic>
                         <id>c52t11</id>
-                        <description>@string/up_class_swe_testing_topic11</description>
+                        <description>@string/up_class_integration_technologies_topic11</description>
                     </topic>
                     <topic>
                         <id>c52t12</id>
-                        <description>@string/up_class_swe_testing_topic12</description>
+                        <description>@string/up_class_integration_technologies_topic12</description>
                     </topic>
                     <topic>
                         <id>c52t13</id>
-                        <description>@string/up_class_swe_testing_topic13</description>
+                        <description>@string/up_class_integration_technologies_topic13</description>
                     </topic>
                     <topic>
                         <id>c52t14</id>
-                        <description>@string/up_class_swe_testing_topic14</description>
+                        <description>@string/up_class_integration_technologies_topic14</description>
                     </topic>
                     <topic>
                         <id>c52t15</id>
-                        <description>@string/up_class_swe_testing_topic15</description>
+                        <description>@string/up_class_integration_technologies_topic15</description>
                     </topic>
                 </program>
             </class>

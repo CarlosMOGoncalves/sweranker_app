@@ -103,6 +103,11 @@ public class DegreeClassMatch {
 
 
     public void addAllTopicsToDegreeTopic(String degreeClassTopicId, List<Integer> kaTopicIds) {
+
+        if (_selectedKATopicsByProgramItem.get(degreeClassTopicId) == null) {
+            _selectedKATopicsByProgramItem.put(degreeClassTopicId, new LinkedList<>());
+        }
+
         _selectedKATopicsByProgramItem.get(degreeClassTopicId).addAll(kaTopicIds);
 
         // Whenever we add we check if none of them have an empty list, if not, they all have at least one match so we are OK
