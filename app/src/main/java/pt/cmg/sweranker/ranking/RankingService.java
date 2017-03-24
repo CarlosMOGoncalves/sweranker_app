@@ -602,6 +602,10 @@ public class RankingService extends Service {
         return degreeClassById;
     }
 
+    public Map<String, ClassRanking> getAllRankings() {
+        return _degreeClassRankings;
+    }
+
 
     @Override
     public IBinder onBind(Intent intent) {

@@ -9,14 +9,22 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import java.util.Map;
+
 import pt.cmg.sweranker.R;
 
 public class RankingFragment extends Fragment {
+
+
     /**
      * This is a reference to the parent activity that this fragment will be attached to on onAttach()
      * It is used to communicate with it.
      */
     private RankingFragmentInteractionListener _parentActivity;
+
+    // Keys -> Degree Class Ids , Values -> The individual ranking for the class
+    private Map<String, ClassRanking> _degreeClassRankings;
+
 
     private RecyclerView _rankingsGrid;
     private View _myRootView;
@@ -36,6 +44,7 @@ public class RankingFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        _degreeClassRankings = _parentActivity.getAllDegreeClassRankings();
     }
 
     @Override
@@ -73,6 +82,6 @@ public class RankingFragment extends Fragment {
     }
 
 
-    public interface RankingFragmentInteractionListener {
+    public interface RankingFragmentInteractionListener extends RankingLoader {
     }
 }
