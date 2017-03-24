@@ -37,6 +37,7 @@ import pt.cmg.sweranker.degrees.DegreeDetailsFragment;
 import pt.cmg.sweranker.degrees.DegreeTopicMatcherFragment;
 import pt.cmg.sweranker.degrees.DegreesFragment;
 import pt.cmg.sweranker.degrees.DegreesLoaderService;
+import pt.cmg.sweranker.ranking.RankingFragment;
 import pt.cmg.sweranker.ranking.RankingService;
 import pt.cmg.sweranker.swebok.KnowledgeArea;
 import pt.cmg.sweranker.swebok.SwebokKADetailsFragment;
@@ -54,7 +55,8 @@ public class MainActivity extends AppCompatActivity implements
         DegreesFragment.DegreesFragmentInteractionListener,
         DegreeDetailsFragment.DegreeDetailsFragmentInteractionListener,
         DegreeClassFragment.DegreeClassFragmentInteractionListener,
-        DegreeTopicMatcherFragment.OnDegreeMatcherFragmentInteraction {
+        DegreeTopicMatcherFragment.OnDegreeMatcherFragmentInteraction,
+        RankingFragment.RankingFragmentInteractionListener {
 
 
     private SwebokLoaderService _swebokService;
@@ -233,12 +235,11 @@ public class MainActivity extends AppCompatActivity implements
             getFragmentManager().popBackStackImmediate();
             getFragmentManager().beginTransaction().replace(R.id.content_area, SwebokKAsFragment.newInstance(), "Swebok").commit();
         } else if (id == R.id.curricula_nav) {
-            // Careful with his, it is here because of the animations on KA details.
-            // When pressed the menu and selected one item the animations would not run.
             getFragmentManager().popBackStackImmediate();
             getFragmentManager().beginTransaction().replace(R.id.content_area, DegreesFragment.newInstance(), "Degrees").commit();
         } else if (id == R.id.rankings_nav) {
-            Toast.makeText(getApplicationContext(), "Rankings", Toast.LENGTH_LONG).show();
+            getFragmentManager().popBackStackImmediate();
+            getFragmentManager().beginTransaction().replace(R.id.content_area, RankingFragment.newInstance(), "Degrees").commit();
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.nav_drawer);

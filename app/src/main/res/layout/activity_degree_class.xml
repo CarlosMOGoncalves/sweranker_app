@@ -29,7 +29,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center"
-            android:text="Allahu akbar" />
+            android:text="Content here" />
     </FrameLayout>
 
 </android.support.design.widget.CoordinatorLayout>
