@@ -105,4 +105,8 @@ public class DegreeClass {
     public void setOptionalClass(boolean isOptional) {
         _isOptional = isOptional;
     }
+
+    public boolean isMandatoryClass() {
+        return !_isOptional;
+    }
 }

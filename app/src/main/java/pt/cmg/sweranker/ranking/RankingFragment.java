@@ -8,8 +8,6 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Bundle;
 import android.support.v4.content.LocalBroadcastManager;
-import android.support.v7.widget.DefaultItemAnimator;
-import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -21,7 +19,6 @@ import java.util.Arrays;
 import java.util.Map;
 
 import pt.cmg.sweranker.R;
-import pt.cmg.sweranker.ui.ConstantSpacingItemDecorator;
 
 public class RankingFragment extends Fragment {
 
@@ -84,15 +81,15 @@ public class RankingFragment extends Fragment {
 
         _adapter = new RankingsAdapter(this.getActivity(), new ArrayList<>());
 
-        GridLayoutManager mLayoutManager = new GridLayoutManager(this.getActivity(), 2);
-        _rankingsGrid.setLayoutManager(mLayoutManager);
-        _rankingsGrid.addItemDecoration(new ConstantSpacingItemDecorator(this.getActivity(),
-                10,
-                ConstantSpacingItemDecorator.Side.LEFT,
-                ConstantSpacingItemDecorator.Side.RIGHT,
-                ConstantSpacingItemDecorator.Side.ALL_SIDES));
-        _rankingsGrid.setItemAnimator(new DefaultItemAnimator());
-        _rankingsGrid.setAdapter(_adapter);
+//        GridLayoutManager mLayoutManager = new GridLayoutManager(this.getActivity(), 2);
+//        _rankingsGrid.setLayoutManager(mLayoutManager);
+//        _rankingsGrid.addItemDecoration(new ConstantSpacingItemDecorator(this.getActivity(),
+//                10,
+//                ConstantSpacingItemDecorator.Side.LEFT,
+//                ConstantSpacingItemDecorator.Side.RIGHT,
+//                ConstantSpacingItemDecorator.Side.ALL_SIDES));
+//        _rankingsGrid.setItemAnimator(new DefaultItemAnimator());
+//        _rankingsGrid.setAdapter(_adapter);
 
 
         return _myRootView;
@@ -111,6 +108,8 @@ public class RankingFragment extends Fragment {
         LocalBroadcastManager broadcastManager = LocalBroadcastManager.getInstance(this.getActivity());
         IntentFilter intentFilter = new IntentFilter(ACTION_RECEIVER);
         broadcastManager.registerReceiver(_calculationsFinishedReceiver, intentFilter);
+
+        _parentActivity.calculateDegreesRankings();
     }
 
     // NOTE: this is here because onAttach(Context) was added only on API 23, so as long as Lollipop is min sdk this shall be here
@@ -137,5 +136,8 @@ public class RankingFragment extends Fragment {
     }
 
     public interface RankingFragmentInteractionListener extends RankingLoader {
+
+        void calculateDegreesRankings();
+
     }
 }

@@ -6,6 +6,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import pt.cmg.sweranker.ranking.pickingstrategies.ClassPickerStrategy;
+
 public class Degree {
 
     private int _id;
@@ -18,8 +20,11 @@ public class Degree {
 
     private Map<Integer, List<DegreeClass>> _classesByYear;
 
+    private Map<Integer, ClassPickerStrategy> _classPickerByYear;
+
     public Degree() {
         _classesByYear = new HashMap<>();
+        _classPickerByYear = new HashMap<>();
     }
 
     public int getId() {
@@ -70,6 +75,12 @@ public class Degree {
         _universityResource = universityResource;
     }
 
+    /**
+     * Returns a Map where each key is one year of the degree and its values is the total list of
+     * classes for that year.
+     *
+     * @return Keys -> Year of the degree (e.g. 1) , Values -> List of classes for that year
+     */
     public Map<Integer, List<DegreeClass>> getClasses() {
         return _classesByYear;
     }
@@ -154,5 +165,13 @@ public class Degree {
 
     public void setFullNameResource(int fullNameResource) {
         _fullNameResource = fullNameResource;
+    }
+
+    public void addClassCombinator(int year, ClassPickerStrategy combinationStrategy) {
+        _classPickerByYear.put(year, combinationStrategy);
+    }
+
+    public Map<Integer, ClassPickerStrategy> getClassPickerStrategies() {
+        return _classPickerByYear;
     }
 }

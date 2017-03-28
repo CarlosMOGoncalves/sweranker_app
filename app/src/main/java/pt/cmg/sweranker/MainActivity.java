@@ -549,4 +549,9 @@ public class MainActivity extends AppCompatActivity implements
     public Map<String, ClassRanking> getAllDegreeClassRankings() {
         return _rankingService.getAllRankings();
     }
+
+    @Override
+    public void calculateDegreesRankings() {
+        _rankingService.calculateDegreesRankings();
+    }
 }

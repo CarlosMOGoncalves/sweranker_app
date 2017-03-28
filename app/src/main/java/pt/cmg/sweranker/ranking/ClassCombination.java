@@ -24,6 +24,11 @@ public class ClassCombination {
     }
 
 
+    public ClassCombination(List<String> combination) {
+        _currentCombinations = new ArrayList<>();
+        _currentCombinations.add(new ArrayList<>(combination));
+    }
+
     public void setCombinations(List<List<String>> combos) {
 
         _currentCombinations = combos;

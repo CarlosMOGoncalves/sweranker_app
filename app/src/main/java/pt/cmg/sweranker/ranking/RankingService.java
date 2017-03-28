@@ -4,6 +4,7 @@ import android.app.Service;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.Resources;
+import android.os.AsyncTask;
 import android.os.Binder;
 import android.os.IBinder;
 import android.util.Log;
@@ -31,6 +32,7 @@ import pt.cmg.sweranker.R;
 import pt.cmg.sweranker.degrees.Degree;
 import pt.cmg.sweranker.degrees.DegreeClass;
 import pt.cmg.sweranker.degrees.DegreeClassMatch;
+import pt.cmg.sweranker.ranking.pickingstrategies.ClassPickerStrategy;
 import pt.cmg.sweranker.swebok.KnowledgeArea;
 import pt.cmg.sweranker.swebok.KnowledgeAreaTopic;
 
@@ -65,7 +67,6 @@ public class RankingService extends Service {
         File rootMatchesDir = createMatchFilesDirectory();
         _degreeMatches = loadDefaultMatches();
 //        _degreeMatches = loadSystemMatches(rootMatchesDir);
-
     }
 
 
@@ -197,6 +198,20 @@ public class RankingService extends Service {
         return matches;
     }
 
+    /**
+     * Loads the default evaluations for the default matches. It basically executes a ranking calculation
+     * for each degree class that it loaded from the resources.
+     *
+     * @return Keys -> Degree Class Id , Values -> its evaluation
+     */
+    private Map<String, ClassRanking> loadDefaultRankings() {
+
+        Map<String, ClassRanking> rankings = new HashMap<>();
+        for (DegreeClassMatch match : _degreeMatches.values()) {
+            rankings.put(match.getDegreeClassId(), evaluateClass(match));
+        }
+        return rankings;
+    }
 
     private DegreeClassMatch loadDegreeMatch(XmlPullParser xmlParser) {
 
@@ -340,7 +355,7 @@ public class RankingService extends Service {
                                     match.addDegreeClassTopic(currentDegreeTopicId);
                                     break;
                                 case "ka_topics":
-                                    List<Integer> kaTopicIds = getKaTopics(xmlParser);
+                                    List<Integer> kaTopicIds = getKaTopicsFromXml(xmlParser);
                                     match.addAllTopicsToDegreeTopic(currentDegreeTopicId, kaTopicIds);
                                     break;
                                 default:
@@ -365,16 +380,6 @@ public class RankingService extends Service {
         }
 
         return matches;
-    }
-
-
-    private Map<String, ClassRanking> loadDefaultRankings() {
-
-        Map<String, ClassRanking> rankings = new HashMap<>();
-        for (DegreeClassMatch match : _degreeMatches.values()) {
-            rankings.put(match.getDegreeClassId(), evaluateClass(match));
-        }
-        return rankings;
     }
 
 
@@ -405,7 +410,7 @@ public class RankingService extends Service {
      * @param xmlParser
      * @return
      */
-    private List<Integer> getKaTopics(XmlPullParser xmlParser) {
+    private List<Integer> getKaTopicsFromXml(XmlPullParser xmlParser) {
         List<Integer> ids = new LinkedList<>();
 
         try {
@@ -528,9 +533,18 @@ public class RankingService extends Service {
     }
 
 
+    /**
+     * This setter is used so that other data source can put the KAs in this service.
+     * This all needs to be reformulated so that it can be loaded directly to here.
+     *
+     * @param knowledgeAreas
+     */
     public void setKnowledgeAreas(List<KnowledgeArea> knowledgeAreas) {
         _knowledgeAreasById = createKaByIdView(knowledgeAreas);
         _knowledgeAreaTopicsByTopicId = createKaTopicByKaIdView(knowledgeAreas);
+
+        // TODO: this is here because only after the KA are loaded I have info enough to evaluate them. This needs to be reviewed
+        _degreeClassRankings = loadDefaultRankings();
     }
 
     /**
@@ -540,14 +554,11 @@ public class RankingService extends Service {
      */
     private Map<Integer, KnowledgeArea> createKaByIdView(List<KnowledgeArea> knowledgeAreas) {
         Map<Integer, KnowledgeArea> kaById = new HashMap<>();
-
         for (KnowledgeArea ka : knowledgeAreas) {
             kaById.put(ka.getId(), ka);
         }
-
         return kaById;
     }
-
 
     /**
      * Returns the HashMap needed to fast access KATopics by it ID.
@@ -566,11 +577,18 @@ public class RankingService extends Service {
         return kaTopicByTopicId;
     }
 
+
+    /**
+     * This setter is used so that other data source can put the Degrees in this service.
+     * This all needs to be reformulated so that it can be loaded directly to here.
+     *
+     * @param degrees
+     */
     public void setDegreeClasses(List<Degree> degrees) {
         _degreesById = createDegreesByIdView(degrees);
         _degreeClassesById = createDegreesClassByIdView(degrees);
-        _degreeClassRankings = loadDefaultRankings();
     }
+
 
     /**
      * Just gets an HashMap from the List of Degrees to that I can access them faster.
@@ -606,6 +624,35 @@ public class RankingService extends Service {
         return _degreeClassRankings;
     }
 
+
+    public void calculateDegreesRankings() {
+        new YearlyRankingCalculator().execute();
+    }
+
+
+    private class YearlyRankingCalculator extends AsyncTask<Void, Void, Void> {
+
+
+        @Override
+        protected Void doInBackground(Void... params) {
+            Degree degree = _degreesById.get(1);
+            Map<Integer, List<DegreeClass>> classesByYear = degree.getClasses();
+
+            Map<Integer, ClassCombination> combinations = new HashMap<>();
+            for (Map.Entry<Integer, ClassPickerStrategy> entry : degree.getClassPickerStrategies().entrySet()) {
+                combinations.put(entry.getKey(), entry.getValue().getClassCombinations(classesByYear.get(entry.getKey())));
+            }
+
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(Void aVoid) {
+            super.onPostExecute(aVoid);
+
+
+        }
+    }
 
     @Override
     public IBinder onBind(Intent intent) {

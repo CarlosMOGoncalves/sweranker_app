@@ -5,7 +5,9 @@ import android.content.Intent;
 import android.content.res.Resources;
 import android.os.Binder;
 import android.os.IBinder;
+import android.util.Log;
 
+import org.apache.commons.lang3.StringUtils;
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 import org.xmlpull.v1.XmlPullParserFactory;
@@ -19,6 +21,7 @@ import java.util.List;
 import java.util.Map;
 
 import pt.cmg.sweranker.R;
+import pt.cmg.sweranker.ranking.pickingstrategies.ClassPickerStrategy;
 
 public class DegreesLoaderService extends Service {
 
@@ -86,6 +89,9 @@ public class DegreesLoaderService extends Service {
                                     break;
                                 case "years":
                                     degree.setYears(Integer.valueOf(xmlParser.nextText()));
+                                    break;
+                                case "yearly_combinators":
+                                    parseCombinationStrategies(degree, xmlParser);
                                     break;
                                 case "university":
                                     degree.setUniversityResource(getResources().getIdentifier(xmlParser.nextText(), "string", this.getPackageName()));
@@ -272,6 +278,64 @@ public class DegreesLoaderService extends Service {
         }
 
         return program;
+    }
+
+    private void parseCombinationStrategies(Degree degree, XmlPullParser xmlParser) {
+
+        try {
+
+            int eventType = xmlParser.getEventType();
+            String xmlElementName = xmlParser.getName();
+
+            // if it is the first let's just go to next to start iteration
+            if (xmlElementName.equalsIgnoreCase("yearly_combinators") && eventType == XmlPullParser.START_TAG) {
+                eventType = xmlParser.nextTag();
+                xmlElementName = xmlParser.getName();
+            } else {
+                throw new XmlPullParserException("Malformed xml: there is no 'yearly_combinations' element, you screwed up.");
+            }
+
+            String topicId = "";
+            Integer descriptionResource = null;
+
+            while (!xmlElementName.equalsIgnoreCase("yearly_combinators")) {
+
+                switch (eventType) {
+                    case XmlPullParser.START_DOCUMENT:
+                        // this will not happen here because we are no longer at the root of the document but hey... it's 2 a.m.
+                        break;
+                    case XmlPullParser.START_TAG:
+                        xmlElementName = xmlParser.getName();
+
+                        if (xmlElementName.equals("combinator")) {
+                            Integer year;
+                            ClassPickerStrategy pickerStrategy;
+
+                            //Go to next tag = year
+                            xmlParser.nextTag();
+                            //Get year this also puts the parser in the end tag = year
+                            year = Integer.valueOf(xmlParser.nextText());
+
+                            // Go to next tag = class
+                            xmlParser.nextTag();
+
+                            Class<?> strategy = Class.forName(StringUtils.trim(xmlParser.nextText()));
+                            pickerStrategy = (ClassPickerStrategy) strategy.newInstance();
+
+                            degree.addClassCombinator(year, pickerStrategy);
+                        }
+                        break;
+                    case XmlPullParser.END_TAG:
+                        break;
+                }
+                eventType = xmlParser.nextTag();
+                xmlElementName = xmlParser.getName();
+            }
+
+        } catch (XmlPullParserException | IOException | ClassNotFoundException | InstantiationException | IllegalAccessException e) {
+            Log.e("DegreeLoader", e.getLocalizedMessage());
+            e.printStackTrace();
+        }
     }
 
     public List<Degree> getDegrees() {

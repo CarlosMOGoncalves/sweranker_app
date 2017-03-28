@@ -7,6 +7,28 @@
         <id>1</id>
         <description>@string/up_mieic_description</description>
         <years>5</years>
+        <yearly_combinators>
+            <combinator>
+                <year>1</year>
+                <class>pt.cmg.sweranker.ranking.pickingstrategies.AllClasses</class>
+            </combinator>
+            <combinator>
+                <year>2</year>
+                <class>pt.cmg.sweranker.ranking.pickingstrategies.AllClasses</class>
+            </combinator>
+            <combinator>
+                <year>3</year>
+                <class>pt.cmg.sweranker.ranking.pickingstrategies.AllClasses</class>
+            </combinator>
+            <combinator>
+                <year>4</year>
+                <class>pt.cmg.sweranker.ranking.pickingstrategies.AllMandatoryAndThreeOptionals</class>
+            </combinator>
+            <combinator>
+                <year>5</year>
+                <class>pt.cmg.sweranker.ranking.pickingstrategies.AllMandatoryAndFourOptionals</class>
+            </combinator>
+        </yearly_combinators>
         <university>@string/up</university>
         <classes>
             <!-- 1º ANO -->
@@ -4460,6 +4482,28 @@
         <id>2</id>
         <description>@string/uminho_miei_description</description>
         <years>5</years>
+        <yearly_combinators>
+            <combinator>
+                <year>1</year>
+                <class>pt.cmg.sweranker.ranking.pickingstrategies.AllClasses</class>
+            </combinator>
+            <combinator>
+                <year>2</year>
+                <class>pt.cmg.sweranker.ranking.pickingstrategies.AllClasses</class>
+            </combinator>
+            <combinator>
+                <year>3</year>
+                <class>pt.cmg.sweranker.ranking.pickingstrategies.AllClasses</class>
+            </combinator>
+            <combinator>
+                <year>4</year>
+                <class>pt.cmg.sweranker.ranking.pickingstrategies.AllMandatoryAndThreeOptionals</class>
+            </combinator>
+            <combinator>
+                <year>5</year>
+                <class>pt.cmg.sweranker.ranking.pickingstrategies.AllMandatoryAndFourOptionals</class>
+            </combinator>
+        </yearly_combinators>
         <university>@string/uminho</university>
         <classes>
             <class>
@@ -4522,6 +4566,28 @@
         <fullname>@string/uc_mei_fullname</fullname>
         <description>@string/uc_mei_description</description>
         <years>5</years>
+        <yearly_combinators>
+            <combinator>
+                <year>1</year>
+                <class>pt.cmg.sweranker.ranking.pickingstrategies.AllClasses</class>
+            </combinator>
+            <combinator>
+                <year>2</year>
+                <class>pt.cmg.sweranker.ranking.pickingstrategies.AllClasses</class>
+            </combinator>
+            <combinator>
+                <year>3</year>
+                <class>pt.cmg.sweranker.ranking.pickingstrategies.AllClasses</class>
+            </combinator>
+            <combinator>
+                <year>4</year>
+                <class>pt.cmg.sweranker.ranking.pickingstrategies.AllMandatoryAndThreeOptionals</class>
+            </combinator>
+            <combinator>
+                <year>5</year>
+                <class>pt.cmg.sweranker.ranking.pickingstrategies.AllMandatoryAndFourOptionals</class>
+            </combinator>
+        </yearly_combinators>
         <university>@string/uc</university>
         <classes>
             <class>
@@ -4584,6 +4650,28 @@
         <fullname>@string/uav_mei_fullname</fullname>
         <description>@string/uav_mei_description</description>
         <years>5</years>
+        <yearly_combinators>
+            <combinator>
+                <year>1</year>
+                <class>pt.cmg.sweranker.ranking.pickingstrategies.AllClasses</class>
+            </combinator>
+            <combinator>
+                <year>2</year>
+                <class>pt.cmg.sweranker.ranking.pickingstrategies.AllClasses</class>
+            </combinator>
+            <combinator>
+                <year>3</year>
+                <class>pt.cmg.sweranker.ranking.pickingstrategies.AllClasses</class>
+            </combinator>
+            <combinator>
+                <year>4</year>
+                <class>pt.cmg.sweranker.ranking.pickingstrategies.AllMandatoryAndThreeOptionals</class>
+            </combinator>
+            <combinator>
+                <year>5</year>
+                <class>pt.cmg.sweranker.ranking.pickingstrategies.AllMandatoryAndFourOptionals</class>
+            </combinator>
+        </yearly_combinators>
         <university>@string/uav</university>
         <classes>
             <class>
@@ -4646,6 +4734,28 @@
         <fullname>@string/ist_meic_fullname</fullname>
         <description>@string/ist_meic_description</description>
         <years>5</years>
+        <yearly_combinators>
+            <combinator>
+                <year>1</year>
+                <class>pt.cmg.sweranker.ranking.pickingstrategies.AllClasses</class>
+            </combinator>
+            <combinator>
+                <year>2</year>
+                <class>pt.cmg.sweranker.ranking.pickingstrategies.AllClasses</class>
+            </combinator>
+            <combinator>
+                <year>3</year>
+                <class>pt.cmg.sweranker.ranking.pickingstrategies.AllClasses</class>
+            </combinator>
+            <combinator>
+                <year>4</year>
+                <class>pt.cmg.sweranker.ranking.pickingstrategies.AllMandatoryAndThreeOptionals</class>
+            </combinator>
+            <combinator>
+                <year>5</year>
+                <class>pt.cmg.sweranker.ranking.pickingstrategies.AllMandatoryAndFourOptionals</class>
+            </combinator>
+        </yearly_combinators>
         <university>@string/ist</university>
         <classes>
             <class>
