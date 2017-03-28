@@ -50,6 +50,11 @@
     <dimen name="degree_matcher_spinner_topic_line_height">45dp</dimen>
     <dimen name="degree_matcher_spinner_item_interrogation_image_size">30dp</dimen>
 
+    <dimen name="ranking_card_size">170dp</dimen>
+    <dimen name="ranking_image_size">140dp</dimen>
+    <dimen name="ranking_image_padding">5dp</dimen>
+    <dimen name="ranking_name_text_size">20dp</dimen>
+
 
     <dimen name="material_spinner_padding_left">24dp</dimen>
     <dimen name="material_spinner_padding_top">12dp</dimen>
