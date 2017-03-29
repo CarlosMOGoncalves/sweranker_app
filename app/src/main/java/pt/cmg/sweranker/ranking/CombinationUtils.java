@@ -11,31 +11,48 @@ public class CombinationUtils {
 
 
     /**
-     * Calculates and outputs all the possible combinations between two smaller sets of combinations.
-     * It basically expands each element of the first  parameter combination list and appends each combination of the second
-     * parameter combination list, thus effectively multiplying exponentially the possible combinations.
+     * Calculates and outputs all the possible combinations between a collection of ClassCombinations.
+     * <p>
+     * It basically expands each combination list of a ClassCombinationMatrix for every combination list of another
+     * ClassCombinationMatrix and so on until all the ClassCombinations are consumed
      * <p>
      * Note: this is not particularly optimised, using a full ArrayList will likely create many objects but time is an issue
      * so I am not going to optimise this bit unless I find it to be really critical later on.
      *
-     * @param originalCombinations
-     * @param combinationsToAppend
      * @return
      */
-    public static ClassCombination combineCombinations(ClassCombination originalCombinations, ClassCombination combinationsToAppend) {
+    public static ClassCombinationMatrix combineCombinations(ClassCombinationMatrix... combinations) {
 
-        ClassCombination result = new ClassCombination();
+        int combinationsSize = combinations.length;
 
-        for (List<String> combo : originalCombinations.getCombinations()) {
 
-            for (List<String> anotherCombo : combinationsToAppend.getCombinations()) {
+        List<List<String>> accumulatorList = new ArrayList<>();
+        accumulatorList.add(new ArrayList<>());
 
-                List<String> combinedCombo = new ArrayList<>(combo);
-                combinedCombo.addAll(anotherCombo);
+        int counter = 0;
+        while (counter < combinationsSize - 1) {
 
-                result.addCombination(combinedCombo);
+            ClassCombinationMatrix currentClassCombinationsMatrix = combinations[counter];
+
+            List<List<String>> temporary = new ArrayList<>();
+
+            for (int i = 0; i < accumulatorList.size(); i++) {
+
+                for (int j = 0; j < currentClassCombinationsMatrix.getCombinations().size(); j++) {
+                    List<String> appendedList = new ArrayList<>(accumulatorList.get(i));
+                    appendedList.addAll(currentClassCombinationsMatrix.getCombinations().get(j));
+                    temporary.add(appendedList);
+                }
             }
+
+            accumulatorList = temporary;
+
+            counter++;
+
         }
+
+        ClassCombinationMatrix result = new ClassCombinationMatrix();
+        result.setCombinations(accumulatorList);
 
         return result;
     }

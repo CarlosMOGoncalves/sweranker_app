@@ -14,17 +14,31 @@ import java.util.List;
  * <p>
  * Created by Carlos on 27/03/2017.
  */
-public class ClassCombination {
+public class ClassCombinationMatrix {
 
+    /**
+     * This is in practice a Matrix where each element of the list is itself another list with a particular
+     * non-repeatable combination of Degree Class Ids.
+     * <p>
+     * Something like this:
+     * <p></p>
+     * List = {
+     * {class1, class2, class3},
+     * {class1, class2, class4},
+     * {class1, class3, class4},
+     * {class2, class3, class4}
+     * }
+     * </p>
+     */
     private List<List<String>> _currentCombinations;
 
 
-    public ClassCombination() {
+    public ClassCombinationMatrix() {
         _currentCombinations = new ArrayList<>();
     }
 
 
-    public ClassCombination(List<String> combination) {
+    public ClassCombinationMatrix(List<String> combination) {
         _currentCombinations = new ArrayList<>();
         _currentCombinations.add(new ArrayList<>(combination));
     }

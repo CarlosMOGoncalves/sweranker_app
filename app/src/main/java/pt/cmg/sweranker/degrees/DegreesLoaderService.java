@@ -21,7 +21,7 @@ import java.util.List;
 import java.util.Map;
 
 import pt.cmg.sweranker.R;
-import pt.cmg.sweranker.ranking.pickingstrategies.ClassPickerStrategy;
+import pt.cmg.sweranker.ranking.combinationstrategies.ClassCombinationStrategy;
 
 public class DegreesLoaderService extends Service {
 
@@ -309,7 +309,7 @@ public class DegreesLoaderService extends Service {
 
                         if (xmlElementName.equals("combinator")) {
                             Integer year;
-                            ClassPickerStrategy pickerStrategy;
+                            ClassCombinationStrategy pickerStrategy;
 
                             //Go to next tag = year
                             xmlParser.nextTag();
@@ -320,9 +320,9 @@ public class DegreesLoaderService extends Service {
                             xmlParser.nextTag();
 
                             Class<?> strategy = Class.forName(StringUtils.trim(xmlParser.nextText()));
-                            pickerStrategy = (ClassPickerStrategy) strategy.newInstance();
+                            pickerStrategy = (ClassCombinationStrategy) strategy.newInstance();
 
-                            degree.addClassCombinator(year, pickerStrategy);
+                            degree.addClassCombinatonStrategy(year, pickerStrategy);
                         }
                         break;
                     case XmlPullParser.END_TAG:

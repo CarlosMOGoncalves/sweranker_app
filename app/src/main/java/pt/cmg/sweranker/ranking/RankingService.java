@@ -32,7 +32,7 @@ import pt.cmg.sweranker.R;
 import pt.cmg.sweranker.degrees.Degree;
 import pt.cmg.sweranker.degrees.DegreeClass;
 import pt.cmg.sweranker.degrees.DegreeClassMatch;
-import pt.cmg.sweranker.ranking.pickingstrategies.ClassPickerStrategy;
+import pt.cmg.sweranker.ranking.combinationstrategies.ClassCombinationStrategy;
 import pt.cmg.sweranker.swebok.KnowledgeArea;
 import pt.cmg.sweranker.swebok.KnowledgeAreaTopic;
 
@@ -57,6 +57,9 @@ public class RankingService extends Service {
 
     private Map<String, DegreeClass> _degreeClassesById;
 
+    // Keys -> Degree Id , Values -> the ranking information of that degree.
+    private Map<Integer, DegreeRanking> _rankingsByDegree;
+
     public RankingService() {
     }
 
@@ -66,6 +69,7 @@ public class RankingService extends Service {
         super.onCreate();
         File rootMatchesDir = createMatchFilesDirectory();
         _degreeMatches = loadDefaultMatches();
+        _rankingsByDegree = new HashMap<>();
 //        _degreeMatches = loadSystemMatches(rootMatchesDir);
     }
 
@@ -635,13 +639,37 @@ public class RankingService extends Service {
 
         @Override
         protected Void doInBackground(Void... params) {
+
+            // This time only triggers for the available degree.
             Degree degree = _degreesById.get(1);
+
             Map<Integer, List<DegreeClass>> classesByYear = degree.getClasses();
 
-            Map<Integer, ClassCombination> combinations = new HashMap<>();
-            for (Map.Entry<Integer, ClassPickerStrategy> entry : degree.getClassPickerStrategies().entrySet()) {
-                combinations.put(entry.getKey(), entry.getValue().getClassCombinations(classesByYear.get(entry.getKey())));
+            DegreeRanking degreeRanking = new DegreeRanking(degree.getId());
+
+            Map<Integer, ClassCombinationMatrix> combinationsByYear = new HashMap<>();
+
+            for (Map.Entry<Integer, ClassCombinationStrategy> classCombinationStrategy : degree.getClassCombinationStrategies().entrySet()) {
+
+                Integer yearOfDegree = classCombinationStrategy.getKey();
+                ClassCombinationStrategy combinationStrategy = classCombinationStrategy.getValue();
+
+                ClassCombinationMatrix classCombinationsMatrix = combinationStrategy.getClassCombinations(classesByYear.get(yearOfDegree));
+
+                // First use the strategy of each year to calculate the possible combinations for that year and put it in a map
+                combinationsByYear.put(yearOfDegree, classCombinationsMatrix);
+
+                // Also fill the degreeRanking so I can put also put it in a map.
+                degreeRanking.addYearCombination(yearOfDegree, classCombinationsMatrix);
             }
+
+            ClassCombinationMatrix masterCombination = CombinationUtils.combineCombinations(combinationsByYear.values().toArray(new ClassCombinationMatrix[0]));
+
+            degreeRanking.setFullDegreeCombinations(masterCombination);
+
+            _rankingsByDegree.put(degreeRanking.getDegreeId(), degreeRanking);
+
+
 
             return null;
         }
@@ -649,7 +677,7 @@ public class RankingService extends Service {
         @Override
         protected void onPostExecute(Void aVoid) {
             super.onPostExecute(aVoid);
-
+            sendBroadcast(new Intent(RankingFragment.ACTION_RECEIVER));
 
         }
     }

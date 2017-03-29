@@ -10,23 +10,23 @@
         <yearly_combinators>
             <combinator>
                 <year>1</year>
-                <class>pt.cmg.sweranker.ranking.pickingstrategies.AllClasses</class>
+                <class>pt.cmg.sweranker.ranking.combinationstrategies.AllClasses</class>
             </combinator>
             <combinator>
                 <year>2</year>
-                <class>pt.cmg.sweranker.ranking.pickingstrategies.AllClasses</class>
+                <class>pt.cmg.sweranker.ranking.combinationstrategies.AllClasses</class>
             </combinator>
             <combinator>
                 <year>3</year>
-                <class>pt.cmg.sweranker.ranking.pickingstrategies.AllClasses</class>
+                <class>pt.cmg.sweranker.ranking.combinationstrategies.AllClasses</class>
             </combinator>
             <combinator>
                 <year>4</year>
-                <class>pt.cmg.sweranker.ranking.pickingstrategies.AllMandatoryAndThreeOptionals</class>
+                <class>pt.cmg.sweranker.ranking.combinationstrategies.AllMandatoryAndThreeOptionals</class>
             </combinator>
             <combinator>
                 <year>5</year>
-                <class>pt.cmg.sweranker.ranking.pickingstrategies.AllMandatoryAndFourOptionals</class>
+                <class>pt.cmg.sweranker.ranking.combinationstrategies.AllMandatoryAndFourOptionals</class>
             </combinator>
         </yearly_combinators>
         <university>@string/up</university>
@@ -4485,23 +4485,23 @@
         <yearly_combinators>
             <combinator>
                 <year>1</year>
-                <class>pt.cmg.sweranker.ranking.pickingstrategies.AllClasses</class>
+                <class>pt.cmg.sweranker.ranking.combinationstrategies.AllClasses</class>
             </combinator>
             <combinator>
                 <year>2</year>
-                <class>pt.cmg.sweranker.ranking.pickingstrategies.AllClasses</class>
+                <class>pt.cmg.sweranker.ranking.combinationstrategies.AllClasses</class>
             </combinator>
             <combinator>
                 <year>3</year>
-                <class>pt.cmg.sweranker.ranking.pickingstrategies.AllClasses</class>
+                <class>pt.cmg.sweranker.ranking.combinationstrategies.AllClasses</class>
             </combinator>
             <combinator>
                 <year>4</year>
-                <class>pt.cmg.sweranker.ranking.pickingstrategies.AllMandatoryAndThreeOptionals</class>
+                <class>pt.cmg.sweranker.ranking.combinationstrategies.AllMandatoryAndThreeOptionals</class>
             </combinator>
             <combinator>
                 <year>5</year>
-                <class>pt.cmg.sweranker.ranking.pickingstrategies.AllMandatoryAndFourOptionals</class>
+                <class>pt.cmg.sweranker.ranking.combinationstrategies.AllMandatoryAndFourOptionals</class>
             </combinator>
         </yearly_combinators>
         <university>@string/uminho</university>
@@ -4569,23 +4569,23 @@
         <yearly_combinators>
             <combinator>
                 <year>1</year>
-                <class>pt.cmg.sweranker.ranking.pickingstrategies.AllClasses</class>
+                <class>pt.cmg.sweranker.ranking.combinationstrategies.AllClasses</class>
             </combinator>
             <combinator>
                 <year>2</year>
-                <class>pt.cmg.sweranker.ranking.pickingstrategies.AllClasses</class>
+                <class>pt.cmg.sweranker.ranking.combinationstrategies.AllClasses</class>
             </combinator>
             <combinator>
                 <year>3</year>
-                <class>pt.cmg.sweranker.ranking.pickingstrategies.AllClasses</class>
+                <class>pt.cmg.sweranker.ranking.combinationstrategies.AllClasses</class>
             </combinator>
             <combinator>
                 <year>4</year>
-                <class>pt.cmg.sweranker.ranking.pickingstrategies.AllMandatoryAndThreeOptionals</class>
+                <class>pt.cmg.sweranker.ranking.combinationstrategies.AllMandatoryAndThreeOptionals</class>
             </combinator>
             <combinator>
                 <year>5</year>
-                <class>pt.cmg.sweranker.ranking.pickingstrategies.AllMandatoryAndFourOptionals</class>
+                <class>pt.cmg.sweranker.ranking.combinationstrategies.AllMandatoryAndFourOptionals</class>
             </combinator>
         </yearly_combinators>
         <university>@string/uc</university>
@@ -4653,23 +4653,23 @@
         <yearly_combinators>
             <combinator>
                 <year>1</year>
-                <class>pt.cmg.sweranker.ranking.pickingstrategies.AllClasses</class>
+                <class>pt.cmg.sweranker.ranking.combinationstrategies.AllClasses</class>
             </combinator>
             <combinator>
                 <year>2</year>
-                <class>pt.cmg.sweranker.ranking.pickingstrategies.AllClasses</class>
+                <class>pt.cmg.sweranker.ranking.combinationstrategies.AllClasses</class>
             </combinator>
             <combinator>
                 <year>3</year>
-                <class>pt.cmg.sweranker.ranking.pickingstrategies.AllClasses</class>
+                <class>pt.cmg.sweranker.ranking.combinationstrategies.AllClasses</class>
             </combinator>
             <combinator>
                 <year>4</year>
-                <class>pt.cmg.sweranker.ranking.pickingstrategies.AllMandatoryAndThreeOptionals</class>
+                <class>pt.cmg.sweranker.ranking.combinationstrategies.AllMandatoryAndThreeOptionals</class>
             </combinator>
             <combinator>
                 <year>5</year>
-                <class>pt.cmg.sweranker.ranking.pickingstrategies.AllMandatoryAndFourOptionals</class>
+                <class>pt.cmg.sweranker.ranking.combinationstrategies.AllMandatoryAndFourOptionals</class>
             </combinator>
         </yearly_combinators>
         <university>@string/uav</university>
@@ -4737,23 +4737,23 @@
         <yearly_combinators>
             <combinator>
                 <year>1</year>
-                <class>pt.cmg.sweranker.ranking.pickingstrategies.AllClasses</class>
+                <class>pt.cmg.sweranker.ranking.combinationstrategies.AllClasses</class>
             </combinator>
             <combinator>
                 <year>2</year>
-                <class>pt.cmg.sweranker.ranking.pickingstrategies.AllClasses</class>
+                <class>pt.cmg.sweranker.ranking.combinationstrategies.AllClasses</class>
             </combinator>
             <combinator>
                 <year>3</year>
-                <class>pt.cmg.sweranker.ranking.pickingstrategies.AllClasses</class>
+                <class>pt.cmg.sweranker.ranking.combinationstrategies.AllClasses</class>
             </combinator>
             <combinator>
                 <year>4</year>
-                <class>pt.cmg.sweranker.ranking.pickingstrategies.AllMandatoryAndThreeOptionals</class>
+                <class>pt.cmg.sweranker.ranking.combinationstrategies.AllMandatoryAndThreeOptionals</class>
             </combinator>
             <combinator>
                 <year>5</year>
-                <class>pt.cmg.sweranker.ranking.pickingstrategies.AllMandatoryAndFourOptionals</class>
+                <class>pt.cmg.sweranker.ranking.combinationstrategies.AllMandatoryAndFourOptionals</class>
             </combinator>
         </yearly_combinators>
         <university>@string/ist</university>
