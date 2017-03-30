@@ -38,7 +38,8 @@ import pt.cmg.sweranker.degrees.DegreeDetailsFragment;
 import pt.cmg.sweranker.degrees.DegreeTopicMatcherFragment;
 import pt.cmg.sweranker.degrees.DegreesFragment;
 import pt.cmg.sweranker.degrees.DegreesLoaderService;
-import pt.cmg.sweranker.ranking.ClassRanking;
+import pt.cmg.sweranker.ranking.DegreeRanking;
+import pt.cmg.sweranker.ranking.KACalculation;
 import pt.cmg.sweranker.ranking.RankingFragment;
 import pt.cmg.sweranker.ranking.RankingService;
 import pt.cmg.sweranker.swebok.KnowledgeArea;
@@ -546,8 +547,13 @@ public class MainActivity extends AppCompatActivity implements
     }
 
     @Override
-    public Map<String, ClassRanking> getAllDegreeClassRankings() {
-        return _rankingService.getAllRankings();
+    public Map<String, KACalculation> getAllDegreeClassRankings() {
+        return _rankingService.getDegreeClassRankings();
+    }
+
+    @Override
+    public Map<Integer, DegreeRanking> getDegreeRankings() {
+        return _rankingService.getDegreeRankings();
     }
 
     @Override

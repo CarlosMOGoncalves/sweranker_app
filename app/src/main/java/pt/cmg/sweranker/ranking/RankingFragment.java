@@ -14,8 +14,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ProgressBar;
 
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Map;
 
 import pt.cmg.sweranker.R;
@@ -30,7 +28,7 @@ public class RankingFragment extends Fragment {
             _progressBar.setVisibility(View.GONE);
             _rankingsGrid.setVisibility(View.VISIBLE);
 
-            _adapter = new RankingsAdapter(context, Arrays.asList("Get stuff here"));
+            _adapter = new RankingsAdapter(context, null);
             _adapter.notifyDataSetChanged();
         }
     };
@@ -43,7 +41,7 @@ public class RankingFragment extends Fragment {
     private RankingFragmentInteractionListener _parentActivity;
 
     // Keys -> Degree Class Ids , Values -> The individual ranking for the class
-    private Map<String, ClassRanking> _degreeClassRankings;
+    private Map<String, KACalculation> _degreeClassRankings;
 
 
     private RecyclerView _rankingsGrid;
@@ -79,7 +77,7 @@ public class RankingFragment extends Fragment {
 
         _rankingsGrid = (RecyclerView) _myRootView.findViewById(R.id.rankings_grid);
 
-        _adapter = new RankingsAdapter(this.getActivity(), new ArrayList<>());
+        _adapter = new RankingsAdapter(this.getActivity(), null);
 
 //        GridLayoutManager mLayoutManager = new GridLayoutManager(this.getActivity(), 2);
 //        _rankingsGrid.setLayoutManager(mLayoutManager);

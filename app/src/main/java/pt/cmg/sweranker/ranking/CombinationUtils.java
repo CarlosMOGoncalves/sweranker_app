@@ -1,7 +1,11 @@
 package pt.cmg.sweranker.ranking;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+
+import pt.cmg.sweranker.degrees.Degree;
 
 /**
  * Created by Carlos on 27/03/2017.
@@ -21,39 +25,51 @@ public class CombinationUtils {
      *
      * @return
      */
-    public static ClassCombinationMatrix combineCombinations(ClassCombinationMatrix... combinations) {
+    public static Map<String, DegreeClassCombination> generateAllDegreeCombinations(Degree degree, Map<Integer, List<AnnualClassCombination>> combinationsByYear) {
 
-        int combinationsSize = combinations.length;
+        int years = combinationsByYear.size();
 
 
-        List<List<String>> accumulatorList = new ArrayList<>();
-        accumulatorList.add(new ArrayList<>());
+        List<DegreeClassCombination> currentTotalCombinations = new ArrayList<>();
 
-        int counter = 0;
-        while (counter < combinationsSize - 1) {
+        for (AnnualClassCombination firstYearCombination : combinationsByYear.get(1)) {
+            currentTotalCombinations.add(new DegreeClassCombination(firstYearCombination));
+        }
 
-            ClassCombinationMatrix currentClassCombinationsMatrix = combinations[counter];
 
-            List<List<String>> temporary = new ArrayList<>();
+        for (int i = 2; i <= years; i++) {
 
-            for (int i = 0; i < accumulatorList.size(); i++) {
+            List<AnnualClassCombination> currentYearCombinations = combinationsByYear.get(i);
 
-                for (int j = 0; j < currentClassCombinationsMatrix.getCombinations().size(); j++) {
-                    List<String> appendedList = new ArrayList<>(accumulatorList.get(i));
-                    appendedList.addAll(currentClassCombinationsMatrix.getCombinations().get(j));
-                    temporary.add(appendedList);
+            List<DegreeClassCombination> currentExpandedCombinations = new ArrayList<>();
+
+            for (int j = 0; j < currentTotalCombinations.size(); j++) {
+                for (int k = 0; k < currentYearCombinations.size(); k++) {
+                    DegreeClassCombination newCombo = new DegreeClassCombination();
+                    newCombo.setClassCombinationsByYear(currentTotalCombinations.get(j).getClassCombinationsByYear());
+                    newCombo.addAnnualClassCombination(currentYearCombinations.get(k));
+
+                    currentExpandedCombinations.add(newCombo);
                 }
             }
 
-            accumulatorList = temporary;
 
-            counter++;
+            currentTotalCombinations = currentExpandedCombinations;
+
 
         }
 
-        ClassCombinationMatrix result = new ClassCombinationMatrix();
-        result.setCombinations(accumulatorList);
+        String degreeComboIdBase = "degree_" + degree.getId() + "_combo_";
+        int degreeIdCounter = 0;
 
-        return result;
+        Map<String, DegreeClassCombination> finalAllCombinations = new HashMap<>();
+        for (DegreeClassCombination combination : currentTotalCombinations) {
+            combination.setCombinationId(degreeComboIdBase + ++degreeIdCounter);
+            finalAllCombinations.put(combination.getCombinationId(), combination);
+        }
+        currentTotalCombinations = null;
+
+
+        return finalAllCombinations;
     }
 }

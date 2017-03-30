@@ -1,6 +1,7 @@
 package pt.cmg.sweranker.ranking;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -12,24 +13,24 @@ public class DegreeRanking {
     private int _degreeId;
 
     /**
-     * Keys -> the Year of the Degree , Values -> the available class combinations for that year
+     * Keys -> the id of the annual combination , Values -> the annual combination itself
      */
-    private Map<Integer, ClassCombinationMatrix> _combinationsByYear;
+    private Map<String, AnnualClassCombination> _annualCombinations;
 
-    private Map<Integer, String> _calculationsByYear;
+    private Map<Integer, KACalculation> _calculationsByYear;
 
     /**
      * This is the master combination.
      * It is ALL the possible combinations of classes that one can take to complete this Degree.
      */
-    private ClassCombinationMatrix _fullDegreeCombinations;
+    private Map<String, DegreeClassCombination> _fullDegreeCombinations;
 
-    private String _fullDegreeCalculation;
+    private KACalculation _fullDegreeCalculation;
 
     public DegreeRanking(int degreeId) {
         _degreeId = degreeId;
-        _combinationsByYear = new HashMap<>();
-        _fullDegreeCombinations = new ClassCombinationMatrix();
+        _annualCombinations = new HashMap<>();
+        _fullDegreeCombinations = new HashMap<>();
     }
 
 
@@ -37,24 +38,36 @@ public class DegreeRanking {
         return _degreeId;
     }
 
-    public void addYearCombination(int year, ClassCombinationMatrix combinations) {
-        _combinationsByYear.put(year, combinations);
+    public void addYearCombination(String annualComboId, AnnualClassCombination annualCombination) {
+        _annualCombinations.put(annualComboId, annualCombination);
     }
 
 
-    public Map<Integer, ClassCombinationMatrix> getCombinationsByYear() {
-        return _combinationsByYear;
+    public Map<String, AnnualClassCombination> getCombinationsByYear() {
+        return _annualCombinations;
     }
 
-    public void setCombinationsByYear(Map<Integer, ClassCombinationMatrix> combinationsByYear) {
-        _combinationsByYear = combinationsByYear;
+    public void addAnnualCombinations(List<AnnualClassCombination> annualCombinations) {
+        for (AnnualClassCombination combo : annualCombinations) {
+            _annualCombinations.put(combo.getId(), combo);
+        }
     }
 
-    public ClassCombinationMatrix getYearlyCombinations() {
+    public void setAnnualCombinations(List<AnnualClassCombination> annualCombinations) {
+        for (AnnualClassCombination combo : annualCombinations) {
+            _annualCombinations.put(combo.getId(), combo);
+        }
+    }
+
+    public void setAnnualCombinations(Map<String, AnnualClassCombination> combinationsByYear) {
+        _annualCombinations = combinationsByYear;
+    }
+
+    public Map<String, DegreeClassCombination> getFullDegreeCombinations() {
         return _fullDegreeCombinations;
     }
 
-    public void setFullDegreeCombinations(ClassCombinationMatrix fullDegreeCombinations) {
+    public void setFullDegreeCombinations(Map<String, DegreeClassCombination> fullDegreeCombinations) {
         _fullDegreeCombinations = fullDegreeCombinations;
     }
 }

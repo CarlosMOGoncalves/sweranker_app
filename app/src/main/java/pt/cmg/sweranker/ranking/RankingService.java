@@ -47,7 +47,7 @@ public class RankingService extends Service {
     private Map<String, DegreeClassMatch> _degreeMatches;
 
     // Keys -> Degree Class Id , Values -> its current ranking
-    private Map<String, ClassRanking> _degreeClassRankings;
+    private Map<String, KACalculation> _degreeClassRankings;
 
     private Map<Integer, KnowledgeArea> _knowledgeAreasById;
 
@@ -208,9 +208,9 @@ public class RankingService extends Service {
      *
      * @return Keys -> Degree Class Id , Values -> its evaluation
      */
-    private Map<String, ClassRanking> loadDefaultRankings() {
+    private Map<String, KACalculation> loadDefaultRankings() {
 
-        Map<String, ClassRanking> rankings = new HashMap<>();
+        Map<String, KACalculation> rankings = new HashMap<>();
         for (DegreeClassMatch match : _degreeMatches.values()) {
             rankings.put(match.getDegreeClassId(), evaluateClass(match));
         }
@@ -393,9 +393,9 @@ public class RankingService extends Service {
      * @param classMatch
      */
 
-    private ClassRanking evaluateClass(DegreeClassMatch classMatch) {
+    private KACalculation evaluateClass(DegreeClassMatch classMatch) {
 
-        ClassRanking ranking = new ClassRanking();
+        KACalculation ranking = new KACalculation();
         KnowledgeAreaTopic currentTopic = null;
 
 
@@ -624,8 +624,12 @@ public class RankingService extends Service {
         return degreeClassById;
     }
 
-    public Map<String, ClassRanking> getAllRankings() {
+    public Map<String, KACalculation> getDegreeClassRankings() {
         return _degreeClassRankings;
+    }
+
+    public Map<Integer, DegreeRanking> getDegreeRankings() {
+        return _rankingsByDegree;
     }
 
 
@@ -640,12 +644,66 @@ public class RankingService extends Service {
         @Override
         protected Void doInBackground(Void... params) {
 
-            // This time only triggers for the available degree.
-            Degree degree = _degreesById.get(1);
+            //for (Degree degree : _degreesById.values()) {
+            for (int i = 1; i <= 1; i++) {
 
-            Map<Integer, List<DegreeClass>> classesByYear = degree.getClasses();
+                Degree degree = _degreesById.get(i);
 
-            DegreeRanking degreeRanking = new DegreeRanking(degree.getId());
+                Map<Integer, List<AnnualClassCombination>> combinationsByYear = calculateDegreeAnnualCombinations(degree);
+                Map<String, DegreeClassCombination> allDegreeCombinations = calculateAllDegreeClassCombinations(degree, combinationsByYear);
+
+
+                DegreeRanking degreeRanking = new DegreeRanking(degree.getId());
+                for (List<AnnualClassCombination> combos : combinationsByYear.values()) {
+                    degreeRanking.addAnnualCombinations(combos);
+                }
+                degreeRanking.setFullDegreeCombinations(allDegreeCombinations);
+
+
+//                _rankingsByDegree.put(degreeRanking.getDegreeId(), degreeRanking);
+            }
+
+            return null;
+        }
+
+
+        private Map<Integer, List<AnnualClassCombination>> calculateDegreeAnnualCombinations(Degree degree) {
+
+            Map<Integer, List<AnnualClassCombination>> combinationsByYear = new HashMap<>();
+
+            for (Map.Entry<Integer, ClassCombinationStrategy> classCombinationStrategy : degree.getClassCombinationStrategies().entrySet()) {
+
+                Integer yearOfDegree = classCombinationStrategy.getKey();
+                ClassCombinationStrategy combinationStrategy = classCombinationStrategy.getValue();
+
+                // Here, using each year's strategy to unfold all possible combinations for this year
+                List<AnnualClassCombination> classCombinationsMatrix = combinationStrategy.getAnnualClassCombinations(degree.getClasses().get(yearOfDegree));
+
+                combinationsByYear.put(yearOfDegree, classCombinationsMatrix);
+            }
+
+            return combinationsByYear;
+
+        }
+
+        /**
+         * Uses all combinations of all the years that compose a degree to further unfold the class combinations to ALL possible ones.
+         * This is heavy processing method, a good multi-threading strategy must be developed.
+         *
+         * @param degreeCombinationsByYear
+         * @return
+         */
+        private Map<String, DegreeClassCombination> calculateAllDegreeClassCombinations(Degree degree, Map<Integer, List<AnnualClassCombination>> degreeCombinationsByYear) {
+            return CombinationUtils.generateAllDegreeCombinations(degree, degreeCombinationsByYear);
+        }
+
+        /**
+         * Uses each Degree year's Class Combination Strategy to expand the classes that compose each year to all possible combinations of such.
+         *
+         * @param degree
+         * @return
+         */
+        private Map<Integer, ClassCombinationMatrix> calculateDegreeClassCombinationsByYear(Degree degree) {
 
             Map<Integer, ClassCombinationMatrix> combinationsByYear = new HashMap<>();
 
@@ -654,24 +712,14 @@ public class RankingService extends Service {
                 Integer yearOfDegree = classCombinationStrategy.getKey();
                 ClassCombinationStrategy combinationStrategy = classCombinationStrategy.getValue();
 
-                ClassCombinationMatrix classCombinationsMatrix = combinationStrategy.getClassCombinations(classesByYear.get(yearOfDegree));
+                // Here, using each year's strategy to unfold all possible combinations for this year
+                ClassCombinationMatrix classCombinationsMatrix = combinationStrategy.getClassCombinations(degree.getClasses().get(yearOfDegree));
 
-                // First use the strategy of each year to calculate the possible combinations for that year and put it in a map
                 combinationsByYear.put(yearOfDegree, classCombinationsMatrix);
-
-                // Also fill the degreeRanking so I can put also put it in a map.
-                degreeRanking.addYearCombination(yearOfDegree, classCombinationsMatrix);
             }
 
-            ClassCombinationMatrix masterCombination = CombinationUtils.combineCombinations(combinationsByYear.values().toArray(new ClassCombinationMatrix[0]));
+            return combinationsByYear;
 
-            degreeRanking.setFullDegreeCombinations(masterCombination);
-
-            _rankingsByDegree.put(degreeRanking.getDegreeId(), degreeRanking);
-
-
-
-            return null;
         }
 
         @Override

@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import pt.cmg.sweranker.degrees.DegreeClass;
-import pt.cmg.sweranker.ranking.ClassCombinationMatrix;
+import pt.cmg.sweranker.ranking.AnnualClassCombination;
 
 /**
  * This strategy is plainly simple: it basically picks ALL classes of a single year.
@@ -13,14 +13,25 @@ import pt.cmg.sweranker.ranking.ClassCombinationMatrix;
  */
 public class AllClasses implements ClassCombinationStrategy {
 
+
     @Override
-    public ClassCombinationMatrix getClassCombinations(List<DegreeClass> degreeClassesOfYear) {
+    public List<AnnualClassCombination> getAnnualClassCombinations(List<DegreeClass> degreeClassesOfYear) {
 
-        List<String> classCombination = new ArrayList<>();
+
+        // This is a single combination year, then id will be almost static
+        String combinationId = "degree_" + degreeClassesOfYear.get(0).getDegreeId() + "_year_" + degreeClassesOfYear.get(0).getYear() + "_combo_1";
+
+        AnnualClassCombination singleClassCombination = new AnnualClassCombination(combinationId);
+        singleClassCombination.setYear(degreeClassesOfYear.get(0).getYear());
+
         for (DegreeClass degreeClass : degreeClassesOfYear) {
-            classCombination.add(degreeClass.getId());
+            singleClassCombination.addDegreeClass(degreeClass.getId());
         }
-        return new ClassCombinationMatrix(classCombination);
 
+        List<AnnualClassCombination> annualClassCombinations = new ArrayList<>();
+        annualClassCombinations.add(singleClassCombination);
+
+        return annualClassCombinations;
     }
+
 }

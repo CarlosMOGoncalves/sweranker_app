@@ -5,5 +5,7 @@ import java.util.Map;
 
 public interface RankingLoader {
 
-    Map<String, ClassRanking> getAllDegreeClassRankings();
+    Map<String, KACalculation> getAllDegreeClassRankings();
+
+    Map<Integer, DegreeRanking> getDegreeRankings();
 }

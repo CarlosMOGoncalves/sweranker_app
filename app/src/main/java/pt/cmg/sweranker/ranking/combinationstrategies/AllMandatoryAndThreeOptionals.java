@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import pt.cmg.sweranker.degrees.DegreeClass;
-import pt.cmg.sweranker.ranking.ClassCombinationMatrix;
+import pt.cmg.sweranker.ranking.AnnualClassCombination;
 
 /**
  * This strategy creates the combinations of classes obtained by combining all the optional classes, 3 at the time
@@ -18,7 +18,11 @@ public class AllMandatoryAndThreeOptionals implements ClassCombinationStrategy {
 
 
     @Override
-    public ClassCombinationMatrix getClassCombinations(List<DegreeClass> degreeClassesOfYear) {
+    public List<AnnualClassCombination> getAnnualClassCombinations(List<DegreeClass> degreeClassesOfYear) {
+
+        int year = degreeClassesOfYear.get(0).getYear();
+        String combinationIdBase = "degree_" + degreeClassesOfYear.get(0).getDegreeId() + "_year_" + degreeClassesOfYear.get(0).getYear() + "_combo_";
+
         List<String> mandatoryClasses = new ArrayList<>();
         List<String> optionalClasses = new ArrayList<>();
 
@@ -36,16 +40,26 @@ public class AllMandatoryAndThreeOptionals implements ClassCombinationStrategy {
         Generator<String> optionalCombinations = Factory.createSimpleCombinationGenerator(optionalVector, 3);
 
 
-        ClassCombinationMatrix resultingCombinations = new ClassCombinationMatrix();
+        List<AnnualClassCombination> resultingCombinations = new ArrayList<>();
+
+
+        int idCounter = 1;
 
         // Now iterate over all the possible combinations, add them the mandatory classes and add them to the final object.
         for (ICombinatoricsVector<String> comboVector : optionalCombinations.generateAllObjects()) {
-            List<String> combination = new ArrayList<>();
-            combination.addAll(comboVector.getVector());
-            combination.addAll(mandatoryClasses);
 
-            resultingCombinations.addCombination(combination);
+            AnnualClassCombination currentCombination = new AnnualClassCombination(combinationIdBase + idCounter);
+            currentCombination.setYear(year);
+
+            currentCombination.addDegreeClasses(comboVector.getVector());
+            currentCombination.addDegreeClasses(mandatoryClasses);
+
+            resultingCombinations.add(currentCombination);
+
+            // increment counter to create a new ID for this particular combo
+            idCounter++;
         }
+
 
         return resultingCombinations;
     }
