@@ -170,4 +170,30 @@ public class KACalculation {
         }
     }
 
+    @Override
+    public String toString() {
+        StringBuilder s = new StringBuilder();
+        s.append("Total topics: " + _topicCount);
+        s.append("\n");
+        s.append("Topic count: ");
+        s.append("\n");
+        for (Map.Entry<Integer, Integer> topicCount : _kaTopicCounts.entrySet()) {
+            s.append("{" + topicCount.getKey() + "->" + topicCount.getValue() + "}");
+            s.append("\n");
+        }
+        s.append("KA Counts: ");
+        s.append("\n");
+        for (Map.Entry<Integer, Integer> kaPercent : _kaCounts.entrySet()) {
+            s.append("{" + kaPercent.getKey() + "->" + kaPercent.getValue() + "}");
+            s.append("\n");
+        }
+        s.append("KA Percents: ");
+        for (Map.Entry<Integer, Float> kaPercent : _kaPercents.entrySet()) {
+            s.append("{" + kaPercent.getKey() + "->" + kaPercent.getValue() + "}");
+            s.append("\n");
+        }
+
+        return s.toString();
+    }
+
 }

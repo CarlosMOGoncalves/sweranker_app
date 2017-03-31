@@ -4,12 +4,15 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import pt.cmg.sweranker.degrees.Degree;
+
 /**
  * Created by Carlos on 28/03/2017.
  */
 
 public class DegreeRanking {
 
+    private Degree _degree;
     private int _degreeId;
 
     /**
@@ -17,7 +20,10 @@ public class DegreeRanking {
      */
     private Map<String, AnnualClassCombination> _annualCombinations;
 
-    private Map<Integer, KACalculation> _calculationsByYear;
+    /**
+     * Keys -> the id of the annual combination , Values -> its matching calculation
+     */
+    private Map<String, KACalculation> _annualCalculations;
 
     /**
      * This is the master combination.
@@ -25,14 +31,25 @@ public class DegreeRanking {
      */
     private Map<String, DegreeClassCombination> _fullDegreeCombinations;
 
-    private KACalculation _fullDegreeCalculation;
+    /**
+     * Keys -> full degree calculation id , Values -> its matching calculated score
+     */
+    private Map<String, KACalculation> _fullDegreeCalculations;
 
-    public DegreeRanking(int degreeId) {
-        _degreeId = degreeId;
+    public DegreeRanking(Degree degree) {
+        _degree = degree;
+        _degreeId = degree.getId();
         _annualCombinations = new HashMap<>();
         _fullDegreeCombinations = new HashMap<>();
+
+        _annualCalculations = new HashMap<>();
+        _fullDegreeCalculations = new HashMap<>();
     }
 
+
+    public Degree getDegree() {
+        return _degree;
+    }
 
     public int getDegreeId() {
         return _degreeId;
@@ -69,5 +86,22 @@ public class DegreeRanking {
 
     public void setFullDegreeCombinations(Map<String, DegreeClassCombination> fullDegreeCombinations) {
         _fullDegreeCombinations = fullDegreeCombinations;
+    }
+
+
+    public void addAnnualCalculations(Map<String, KACalculation> annualCalculations) {
+        _annualCalculations.putAll(annualCalculations);
+    }
+
+    public void updateCalculation(String annualCombinationId, KACalculation annualCalculation) {
+        _annualCalculations.put(annualCombinationId, annualCalculation);
+    }
+
+    public void addFullDegreeCalculations(Map<String, KACalculation> fullDegreeCalculations) {
+        _fullDegreeCalculations.putAll(fullDegreeCalculations);
+    }
+
+    public void updateFullDegreeCalculation(String degreeCombinationId, KACalculation degreeScore) {
+        _fullDegreeCalculations.put(degreeCombinationId, degreeScore);
     }
 }

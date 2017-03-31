@@ -1,5 +1,6 @@
 package pt.cmg.sweranker.ranking;
 
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -32,7 +33,6 @@ public class DegreeClassCombination {
     public DegreeClassCombination(AnnualClassCombination annualClassCombination) {
         _combinationId = DEFAULT_ID;
         _classCombinationsByYear = new HashMap<>();
-//        AnnualClassCombination newCombination = new AnnualClassCombination(annualClassCombination);
         _classCombinationsByYear.put(annualClassCombination.getYear(), annualClassCombination);
     }
 
@@ -60,5 +60,9 @@ public class DegreeClassCombination {
 
     public AnnualClassCombination getAnnualCombination(int year) {
         return _classCombinationsByYear.get(year);
+    }
+
+    public Collection<AnnualClassCombination> getAnnualCombinations() {
+        return _classCombinationsByYear.values();
     }
 }
