@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import pt.cmg.sweranker.degrees.DegreeClass;
-import pt.cmg.sweranker.ranking.AnnualClassCombination;
+import pt.cmg.sweranker.ranking.RealmAnnualCombination;
 
 /**
  * This strategy creates the combinations of classes obtained by combining all the optional classes, 4 at the time
@@ -18,10 +18,10 @@ public class AllMandatoryAndFourOptionals implements ClassCombinationStrategy {
 
 
     @Override
-    public List<AnnualClassCombination> getAnnualClassCombinations(List<DegreeClass> degreeClassesOfYear) {
+    public List<RealmAnnualCombination> getAnnualClassCombinations(List<DegreeClass> degreeClassesOfYear) {
 
         int year = degreeClassesOfYear.get(0).getYear();
-        String combinationIdBase = "degree_" + degreeClassesOfYear.get(0).getDegreeId() + "_year_" + degreeClassesOfYear.get(0).getYear() + "_combo_";
+        String combinationIdBase = "d_" + degreeClassesOfYear.get(0).getDegreeId() + "_y_" + degreeClassesOfYear.get(0).getYear() + "_c_";
 
         List<String> mandatoryClasses = new ArrayList<>();
         List<String> optionalClasses = new ArrayList<>();
@@ -40,7 +40,7 @@ public class AllMandatoryAndFourOptionals implements ClassCombinationStrategy {
         Generator<String> optionalCombinations = Factory.createSimpleCombinationGenerator(optionalVector, 4);
 
 
-        List<AnnualClassCombination> resultingCombinations = new ArrayList<>();
+        List<RealmAnnualCombination> resultingCombinations = new ArrayList<>();
 
 
         int idCounter = 1;
@@ -48,7 +48,7 @@ public class AllMandatoryAndFourOptionals implements ClassCombinationStrategy {
         // Now iterate over all the possible combinations, add them the mandatory classes and add them to the final object.
         for (ICombinatoricsVector<String> comboVector : optionalCombinations.generateAllObjects()) {
 
-            AnnualClassCombination currentCombination = new AnnualClassCombination(combinationIdBase + idCounter);
+            RealmAnnualCombination currentCombination = new RealmAnnualCombination(combinationIdBase + idCounter);
             currentCombination.setYear(year);
 
             currentCombination.addDegreeClasses(comboVector.getVector());

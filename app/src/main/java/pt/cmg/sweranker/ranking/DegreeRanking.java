@@ -29,12 +29,12 @@ public class DegreeRanking {
      * This is the master combination.
      * It is ALL the possible combinations of classes that one can take to complete this Degree.
      */
-    private Map<String, DegreeClassCombination> _fullDegreeCombinations;
+    private Map<Integer, DegreeClassCombination> _fullDegreeCombinations;
 
     /**
      * Keys -> full degree calculation id , Values -> its matching calculated score
      */
-    private Map<String, KACalculation> _fullDegreeCalculations;
+    private Map<Integer, KACalculation> _fullDegreeCalculations;
 
     public DegreeRanking(Degree degree) {
         _degree = degree;
@@ -80,11 +80,11 @@ public class DegreeRanking {
         _annualCombinations = combinationsByYear;
     }
 
-    public Map<String, DegreeClassCombination> getFullDegreeCombinations() {
+    public Map<Integer, DegreeClassCombination> getFullDegreeCombinations() {
         return _fullDegreeCombinations;
     }
 
-    public void setFullDegreeCombinations(Map<String, DegreeClassCombination> fullDegreeCombinations) {
+    public void setFullDegreeCombinations(Map<Integer, DegreeClassCombination> fullDegreeCombinations) {
         _fullDegreeCombinations = fullDegreeCombinations;
     }
 
@@ -97,11 +97,11 @@ public class DegreeRanking {
         _annualCalculations.put(annualCombinationId, annualCalculation);
     }
 
-    public void addFullDegreeCalculations(Map<String, KACalculation> fullDegreeCalculations) {
+    public void addFullDegreeCalculations(Map<Integer, KACalculation> fullDegreeCalculations) {
         _fullDegreeCalculations.putAll(fullDegreeCalculations);
     }
 
-    public void updateFullDegreeCalculation(String degreeCombinationId, KACalculation degreeScore) {
+    public void updateFullDegreeCalculation(int degreeCombinationId, KACalculation degreeScore) {
         _fullDegreeCalculations.put(degreeCombinationId, degreeScore);
     }
 }

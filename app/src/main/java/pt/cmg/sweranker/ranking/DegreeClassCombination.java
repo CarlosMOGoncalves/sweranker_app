@@ -14,10 +14,10 @@ import java.util.Map;
  */
 public class DegreeClassCombination {
 
-    private static final String DEFAULT_ID = "INCONSISTENT";
+    private static final int DEFAULT_ID = -1;
 
 
-    private String _combinationId;
+    private int _combinationId;
     private Map<Integer, AnnualClassCombination> _classCombinationsByYear;
 
     public DegreeClassCombination() {
@@ -25,7 +25,7 @@ public class DegreeClassCombination {
         _classCombinationsByYear = new HashMap<>();
     }
 
-    public DegreeClassCombination(String combinationId) {
+    public DegreeClassCombination(int combinationId) {
         _combinationId = combinationId;
         _classCombinationsByYear = new HashMap<>();
     }
@@ -36,11 +36,11 @@ public class DegreeClassCombination {
         _classCombinationsByYear.put(annualClassCombination.getYear(), annualClassCombination);
     }
 
-    public String getCombinationId() {
+    public int getCombinationId() {
         return _combinationId;
     }
 
-    public void setCombinationId(String combinationId) {
+    public void setCombinationId(int combinationId) {
         _combinationId = combinationId;
     }
 
@@ -55,7 +55,7 @@ public class DegreeClassCombination {
     }
 
     public void setClassCombinationsByYear(Map<Integer, AnnualClassCombination> classCombinationsByYear) {
-        _classCombinationsByYear = new HashMap<>(classCombinationsByYear);
+        _classCombinationsByYear = classCombinationsByYear;
     }
 
     public AnnualClassCombination getAnnualCombination(int year) {

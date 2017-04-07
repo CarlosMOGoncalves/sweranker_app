@@ -29,6 +29,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
+import io.realm.Realm;
 import pt.cmg.sweranker.R;
 import pt.cmg.sweranker.degrees.Degree;
 import pt.cmg.sweranker.degrees.DegreeClass;
@@ -650,52 +651,100 @@ public class RankingService extends Service {
 
                 Degree degree = _degreesById.get(i);
 
-                Map<Integer, List<AnnualClassCombination>> combinationsByYear = calculateDegreeAnnualCombinations(degree);
-                Map<String, DegreeClassCombination> allDegreeCombinations = calculateAllDegreeClassCombinations(degree, combinationsByYear);
+                Realm realm = Realm.getDefaultInstance();
+
+                List<RealmAnnualCombination> annualCombinations = XcalculateDegreeAnnualCombinations(degree);
+
+                realm.executeTransaction(r -> r.copyToRealmOrUpdate(annualCombinations));
+
+                List<RealmDegreeCombination> allDegreeCombinations = calculateAllDegreeClassCombinations(degree, annualCombinations);
+
+                realm.executeTransaction(r -> r.copyToRealmOrUpdate(allDegreeCombinations));
 
 
-                DegreeRanking degreeRanking = new DegreeRanking(degree);
-                for (List<AnnualClassCombination> combos : combinationsByYear.values()) {
-                    degreeRanking.addAnnualCombinations(combos);
-                }
-                degreeRanking.setFullDegreeCombinations(allDegreeCombinations);
+                allDegreeCombinations.size();
+//                List<RealmDegreeCombination> fetched = realm.where(RealmDegreeCombination.class).findAll();
+//
+//                fetched.size();
+//
+//                Realm realm = Realm.getDefaultInstance();
+//
+//                realm.beginTransaction();
+//
+//                List<RealmAnnualCombination> annualRealm = realm.copyToRealm(annualCombinations);
+//
+//                realm.commitTransaction();
+//
+                realm.close();
 
-
-                Map<String, KACalculation> scoresByAnnualCombination = calculateAnnualScores(combinationsByYear.values());
-                degreeRanking.addAnnualCalculations(scoresByAnnualCombination);
-
-                Map<String, KACalculation> scoresByDegreeCombination = calculateDegreeScores(allDegreeCombinations.values(), scoresByAnnualCombination);
-                degreeRanking.addFullDegreeCalculations(scoresByDegreeCombination);
-
-                _rankingsByDegree.put(degreeRanking.getDegreeId(), degreeRanking);
             }
 
             return null;
         }
 
+        private List<RealmDegreeCombination> calculateAllDegreeClassCombinations(Degree degree, List<RealmAnnualCombination> annualCombinations) {
+            return CombinationUtils.generateAllDegreeCombinations(degree, annualCombinations);
+        }
 
-        private Map<String, KACalculation> calculateDegreeScores(Collection<DegreeClassCombination> degreeCombinations, Map<String, KACalculation> annualScores) {
-            Map<String, KACalculation> scoresByDegreeCombination = new HashMap<>();
-            List<KACalculation> annualCalculations = new ArrayList<>();
-            try {
-                for (DegreeClassCombination degreeCombination : degreeCombinations) {
 
-                    annualCalculations = new ArrayList<>();
-                    for (AnnualClassCombination annualCombination : degreeCombination.getAnnualCombinations()) {
-                        annualCalculations.add(annualScores.get(annualCombination.getId()));
-                    }
+        private List<RealmAnnualCombination> XcalculateDegreeAnnualCombinations(Degree degree) {
+            List<RealmAnnualCombination> annualCombinations = new ArrayList<>();
 
-                    scoresByDegreeCombination.put(degreeCombination.getCombinationId(), CalculationUtils.calculateAccumulatedRankings(annualCalculations));
+            for (Map.Entry<Integer, ClassCombinationStrategy> classCombinationStrategy : degree.getClassCombinationStrategies().entrySet()) {
+
+                Integer yearOfDegree = classCombinationStrategy.getKey();
+                ClassCombinationStrategy combinationStrategy = classCombinationStrategy.getValue();
+
+                // Here, using each year's strategy to unfold all possible combinations for this year
+                annualCombinations.addAll(combinationStrategy.getAnnualClassCombinations(degree.getClasses().get(yearOfDegree)));
+
+            }
+
+            return annualCombinations;
+        }
+
+//        private void dummy(Degree degree) {
+//
+//            Map<Integer, List<AnnualClassCombination>> combinationsByYear = calculateDegreeAnnualCombinations(degree);
+//            Map<Integer, DegreeClassCombination> allDegreeCombinations = calculateAllDegreeClassCombinations(degree, combinationsByYear);
+//
+//
+//            DegreeRanking degreeRanking = new DegreeRanking(degree);
+//            for (List<AnnualClassCombination> combos : combinationsByYear.values()) {
+//                degreeRanking.addAnnualCombinations(combos);
+//            }
+//            degreeRanking.setFullDegreeCombinations(allDegreeCombinations);
+//
+//
+//            Map<String, KACalculation> scoresByAnnualCombination = calculateAnnualScores(combinationsByYear.values());
+//            degreeRanking.addAnnualCalculations(scoresByAnnualCombination);
+//
+//            Map<Integer, KACalculation> scoresByDegreeCombination = calculateDegreeScores(allDegreeCombinations.values(), scoresByAnnualCombination);
+//            degreeRanking.addFullDegreeCalculations(scoresByDegreeCombination);
+//
+//            _rankingsByDegree.put(degreeRanking.getDegreeId(), degreeRanking);
+//        }
+
+
+        private Map<Integer, KACalculation> calculateDegreeScores
+                (Collection<DegreeClassCombination> degreeCombinations, Map<String, KACalculation> annualScores) {
+            Map<Integer, KACalculation> scoresByDegreeCombination = new HashMap<>();
+
+            for (DegreeClassCombination degreeCombination : degreeCombinations) {
+
+                List<KACalculation> annualCalculations = new ArrayList<>();
+                for (AnnualClassCombination annualCombination : degreeCombination.getAnnualCombinations()) {
+                    annualCalculations.add(annualScores.get(annualCombination.getId()));
                 }
-            } catch (OutOfMemoryError e) {
-                Log.e("CalcScores", "Size calculated: " + scoresByDegreeCombination.size());
-                Log.e("CalcScores", "Last calculation: " + annualCalculations.toString());
+
+                scoresByDegreeCombination.put(degreeCombination.getCombinationId(), CalculationUtils.calculateAccumulatedRankings(annualCalculations));
             }
 
             return scoresByDegreeCombination;
         }
 
-        private Map<String, KACalculation> calculateAnnualScores(Collection<List<AnnualClassCombination>> classCombinations) {
+        private Map<String, KACalculation> calculateAnnualScores
+                (Collection<List<AnnualClassCombination>> classCombinations) {
 
             Map<String, KACalculation> scoresByAnnualCombination = new HashMap<>();
 
@@ -728,24 +777,24 @@ public class RankingService extends Service {
          * @param degree
          * @return
          */
-        private Map<Integer, List<AnnualClassCombination>> calculateDegreeAnnualCombinations(Degree degree) {
-
-            Map<Integer, List<AnnualClassCombination>> combinationsByYear = new HashMap<>();
-
-            for (Map.Entry<Integer, ClassCombinationStrategy> classCombinationStrategy : degree.getClassCombinationStrategies().entrySet()) {
-
-                Integer yearOfDegree = classCombinationStrategy.getKey();
-                ClassCombinationStrategy combinationStrategy = classCombinationStrategy.getValue();
-
-                // Here, using each year's strategy to unfold all possible combinations for this year
-                List<AnnualClassCombination> classCombinationsMatrix = combinationStrategy.getAnnualClassCombinations(degree.getClasses().get(yearOfDegree));
-
-                combinationsByYear.put(yearOfDegree, classCombinationsMatrix);
-            }
-
-            return combinationsByYear;
-
-        }
+//        private Map<Integer, List<AnnualClassCombination>> calculateDegreeAnnualCombinations(Degree degree) {
+//
+//            Map<Integer, List<AnnualClassCombination>> combinationsByYear = new HashMap<>();
+//
+//            for (Map.Entry<Integer, ClassCombinationStrategy> classCombinationStrategy : degree.getClassCombinationStrategies().entrySet()) {
+//
+//                Integer yearOfDegree = classCombinationStrategy.getKey();
+//                ClassCombinationStrategy combinationStrategy = classCombinationStrategy.getValue();
+//
+//                // Here, using each year's strategy to unfold all possible combinations for this year
+//                List<AnnualClassCombination> annualCombinations = combinationStrategy.getAnnualClassCombinations(degree.getClasses().get(yearOfDegree));
+//
+//                combinationsByYear.put(yearOfDegree, annualCombinations);
+//            }
+//
+//            return combinationsByYear;
+//
+//        }
 
         /**
          * Uses all combinations of all the years that compose a degree to further unfold the class combinations to ALL possible ones.
@@ -759,8 +808,9 @@ public class RankingService extends Service {
          * @param degreeCombinationsByYear
          * @return
          */
-        private Map<String, DegreeClassCombination> calculateAllDegreeClassCombinations(Degree degree, Map<Integer, List<AnnualClassCombination>> degreeCombinationsByYear) {
-            return CombinationUtils.generateAllDegreeCombinations(degree, degreeCombinationsByYear);
+        private Map<Integer, DegreeClassCombination> calculateAllDegreeClassCombinations(Degree
+                                                                                                 degree, Map<Integer, List<AnnualClassCombination>> degreeCombinationsByYear) {
+            return CombinationUtils.generateAndSaveAllDegreeCombinations(degree, degreeCombinationsByYear);
         }
 
 

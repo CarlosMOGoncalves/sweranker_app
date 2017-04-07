@@ -3,7 +3,7 @@ package pt.cmg.sweranker.ranking.combinationstrategies;
 import java.util.List;
 
 import pt.cmg.sweranker.degrees.DegreeClass;
-import pt.cmg.sweranker.ranking.AnnualClassCombination;
+import pt.cmg.sweranker.ranking.RealmAnnualCombination;
 
 /**
  * This is the contract interface to be used in picking class combinations for a given year.
@@ -20,6 +20,7 @@ public interface ClassCombinationStrategy {
      * @param degreeClassesOfYear
      * @return
      */
-    List<AnnualClassCombination> getAnnualClassCombinations(List<DegreeClass> degreeClassesOfYear);
+    List<RealmAnnualCombination> getAnnualClassCombinations(List<DegreeClass> degreeClassesOfYear);
+
 
 }

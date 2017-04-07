@@ -20,7 +20,10 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
+import io.realm.Realm;
+import io.realm.RealmList;
 import pt.cmg.sweranker.R;
+import pt.cmg.sweranker.ranking.RealmDegreeClassId;
 import pt.cmg.sweranker.ranking.combinationstrategies.ClassCombinationStrategy;
 
 public class DegreesLoaderService extends Service {
@@ -36,7 +39,48 @@ public class DegreesLoaderService extends Service {
     public void onCreate() {
         super.onCreate();
         _degrees = loadDegreesFromXML();
+
+        storeDegreeClassesToDatabase();
     }
+
+    private void storeDegreeClassesToDatabase() {
+
+        Realm realm = Realm.getDefaultInstance();
+
+        for (int i = 0; i < 1; i++) {
+
+            List<DegreeClass> degreeClasses = _degrees.get(i).getClassesAsList();
+            List<String> degreeClassIds = new ArrayList<>();
+
+            for (DegreeClass degreeClass : degreeClasses) {
+                degreeClassIds.add(degreeClass.getId());
+            }
+
+
+            List<RealmDegreeClassId> persistedClasses = realm
+                    .where(RealmDegreeClassId.class)
+                    .in("degreeClassId", degreeClassIds.toArray(new String[degreeClassIds.size()]))
+                    .findAll();
+
+            if (degreeClassIds.size() != persistedClasses.size()) {
+
+                List<RealmDegreeClassId> toInsert = new RealmList<>();
+
+
+                for (String degreeClassId : degreeClassIds) {
+                    toInsert.add(new RealmDegreeClassId(degreeClassId));
+                }
+
+                realm.executeTransaction(r -> r.copyToRealmOrUpdate(toInsert));
+
+            }
+
+
+        }
+
+
+    }
+
 
     /**
      * Loads all the Degrees from an xml file located at res/raw.
