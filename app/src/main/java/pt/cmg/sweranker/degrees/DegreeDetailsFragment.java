@@ -16,15 +16,15 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.ListIterator;
 import java.util.Map;
 
 import io.realm.Realm;
+import io.realm.RealmObject;
 import pt.cmg.sweranker.R;
 import pt.cmg.sweranker.ranking.AnnualClassCombination;
 import pt.cmg.sweranker.ranking.CombinationUtils;
 import pt.cmg.sweranker.ranking.DegreeClassCombination;
-import pt.cmg.sweranker.ranking.RealmAnnualCombination;
-import pt.cmg.sweranker.ranking.RealmDegreeCombination;
 import pt.cmg.sweranker.ranking.combinationstrategies.ClassCombinationStrategy;
 
 /**
@@ -153,47 +153,41 @@ public class DegreeDetailsFragment extends Fragment {
     private class YearlyRankingCalculator extends AsyncTask<Void, Void, Void> {
 
 
+        private Realm databaseConnection;
+
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+            databaseConnection = Realm.getDefaultInstance();
+        }
+
         @Override
         protected Void doInBackground(Void... params) {
 
 
-            Realm realm = Realm.getDefaultInstance();
+            List<AnnualClassCombination> annualCombinations = calculateAnnualCombinations(_degree);
 
-            List<RealmAnnualCombination> annualCombinations = calculateAnnualCombinations(_degree);
+            saveObjectsByBatch(databaseConnection, annualCombinations);
 
-            realm.executeTransaction(r -> r.copyToRealmOrUpdate(annualCombinations));
+            List<AnnualClassCombination> savedAnnualCombinations = databaseConnection.where(AnnualClassCombination.class).equalTo("degreeId", _degreeId).findAll();
 
-            List<RealmDegreeCombination> allDegreeCombinations = calculateAllDegreeClassCombinations(_degree, annualCombinations);
+            List<DegreeClassCombination> allDegreeCombinations = calculateAllDegreeClassCombinations(_degree, savedAnnualCombinations);
 
-//            realm.executeTransaction(r -> r.copyToRealmOrUpdate(allDegreeCombinations));
+            saveObjectsByBatch(databaseConnection, allDegreeCombinations);
 
-
-//            allDegreeCombinations.size();
-//                List<RealmDegreeCombination> fetched = realm.where(RealmDegreeCombination.class).findAll();
-//
-//                fetched.size();
-//
-//                Realm realm = Realm.getDefaultInstance();
-//
-//                realm.beginTransaction();
-//
-//                List<RealmAnnualCombination> annualRealm = realm.copyToRealm(annualCombinations);
-//
-//                realm.commitTransaction();
-//
-            realm.close();
-
+            List<DegreeClassCombination> savedCombination = databaseConnection.where(DegreeClassCombination.class).equalTo("degreeId", _degreeId).findAll();
 
             return null;
+
         }
 
-        private List<RealmDegreeCombination> calculateAllDegreeClassCombinations(Degree degree, List<RealmAnnualCombination> annualCombinations) {
+        private List<DegreeClassCombination> calculateAllDegreeClassCombinations(Degree degree, List<AnnualClassCombination> annualCombinations) {
             return CombinationUtils.generateAllDegreeCombinations(degree, annualCombinations);
         }
 
 
-        private List<RealmAnnualCombination> calculateAnnualCombinations(Degree degree) {
-            List<RealmAnnualCombination> annualCombinations = new ArrayList<>();
+        private List<AnnualClassCombination> calculateAnnualCombinations(Degree degree) {
+            List<AnnualClassCombination> annualCombinations = new ArrayList<>();
 
             for (Map.Entry<Integer, ClassCombinationStrategy> classCombinationStrategy : degree.getClassCombinationStrategies().entrySet()) {
 
@@ -205,7 +199,41 @@ public class DegreeDetailsFragment extends Fragment {
 
             }
 
+            // Last pass to set the degree id
+            for (AnnualClassCombination annualCombination : annualCombinations) {
+                annualCombination.setDegreeId(_degreeId);
+            }
+
             return annualCombinations;
+        }
+
+
+        private <E extends RealmObject> void saveObjectsByBatch(Realm realmInstance, List<E> realmObjects) {
+            int batchSize = 10000;
+            ListIterator<E> iterator = realmObjects.listIterator(realmObjects.size());
+            List<E> batch = new ArrayList<>(batchSize);
+
+            while (iterator.hasPrevious()) {
+
+                // Add 10000 to batch
+                for (int i = 0; i < batchSize && iterator.hasPrevious(); i++) {
+                    batch.add(iterator.previous());
+                    iterator.set(null);
+                }
+
+                realmInstance.executeTransaction(realm -> realm.copyToRealmOrUpdate(batch));
+
+                // This part is just a small sleep to give some time to trigger the GC and clean the mess it is creating.
+                try {
+                    Thread.sleep(200);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+
+                batch.clear();
+            }
+
+
         }
 
         /**
@@ -228,6 +256,7 @@ public class DegreeDetailsFragment extends Fragment {
         @Override
         protected void onPostExecute(Void aVoid) {
             super.onPostExecute(aVoid);
+            databaseConnection.close();
         }
     }
 

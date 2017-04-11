@@ -100,17 +100,17 @@ public class CombinationUtils {
      *
      * @return
      */
-    public static List<RealmDegreeCombination> generateAllDegreeCombinations(Degree degree, List<RealmAnnualCombination> allAnnualCombinations) {
+    public static List<DegreeClassCombination> generateAllDegreeCombinations(Degree degree, List<AnnualClassCombination> allAnnualCombinations) {
 
-        Map<Integer, List<RealmAnnualCombination>> combinationsByYear = new HashMap<>();
+        Map<Integer, List<AnnualClassCombination>> combinationsByYear = new HashMap<>();
 
-        for (RealmAnnualCombination annualCombo : allAnnualCombinations) {
+        for (AnnualClassCombination annualCombo : allAnnualCombinations) {
             Integer comboYear = annualCombo.getYear();
 
             if (combinationsByYear.containsKey(comboYear)) {
                 combinationsByYear.get(comboYear).add(annualCombo);
             } else {
-                List<RealmAnnualCombination> annualComboList = new ArrayList<>();
+                List<AnnualClassCombination> annualComboList = new ArrayList<>();
                 annualComboList.add(annualCombo);
                 combinationsByYear.put(comboYear, annualComboList);
             }
@@ -120,11 +120,11 @@ public class CombinationUtils {
         int years = combinationsByYear.size();
 
         //First I create the list that will be UPDATED on each calculation of a new years combinations
-        List<RealmDegreeCombination> currentTotalCombinations = new ArrayList<>();
+        List<DegreeClassCombination> currentTotalCombinations = new ArrayList<>();
 
         // And I use the first year as a base for combinations, any year would do, just following some logic here
-        for (RealmAnnualCombination firstYearCombination : combinationsByYear.get(1)) {
-            currentTotalCombinations.add(new RealmDegreeCombination(firstYearCombination));
+        for (AnnualClassCombination firstYearCombination : combinationsByYear.get(1)) {
+            currentTotalCombinations.add(new DegreeClassCombination(firstYearCombination));
         }
 
 
@@ -132,9 +132,9 @@ public class CombinationUtils {
         for (int i = 2; i <= years; i++) {
 
             // I get the available combinations of classes for THAT year...
-            List<RealmAnnualCombination> currentYearCombinations = combinationsByYear.get(i);
+            List<AnnualClassCombination> currentYearCombinations = combinationsByYear.get(i);
 
-            List<RealmDegreeCombination> currentExpandedCombinations = new ArrayList<>();
+            List<DegreeClassCombination> currentExpandedCombinations = new ArrayList<>();
 
             // Then I iterate over my temporary structure, this will naturally grow as I add more year combinations.
             // Because for each of those combinations I am going to create a new number of new combinations which are ALL
@@ -145,7 +145,7 @@ public class CombinationUtils {
                 for (int k = 0; k < currentYearCombinations.size(); k++) {
 
                     // I create a new Degree combination..
-                    RealmDegreeCombination newCombo = new RealmDegreeCombination();
+                    DegreeClassCombination newCombo = new DegreeClassCombination();
 
                     // That has all the combinations it already has...
                     newCombo.setClassCombinationsByYear(currentTotalCombinations.get(j).getClassCombinationsByYear());
@@ -163,11 +163,12 @@ public class CombinationUtils {
 
         // Now all the combinations have been calculated, it is time to put an ID on it.
         // I used an integer because a string, albeit nice, was heavy on memory (since I have so many combinations...)
-        int degreeIdCounter = 1;
+        int combinationId = 1;
 
         // This is one last pass to add an ID to all the combinations
-        for (RealmDegreeCombination combination : currentTotalCombinations) {
-            combination.setCombinationId(++degreeIdCounter);
+        for (DegreeClassCombination combination : currentTotalCombinations) {
+            combination.setCombinationId(++combinationId);
+            combination.setDegreeId(degree.getId());
         }
 
 

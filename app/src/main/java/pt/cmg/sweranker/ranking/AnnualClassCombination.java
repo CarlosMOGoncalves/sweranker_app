@@ -1,61 +1,91 @@
 package pt.cmg.sweranker.ranking;
 
-import java.util.ArrayList;
 import java.util.List;
 
+import io.realm.RealmList;
+import io.realm.RealmObject;
+import io.realm.annotations.PrimaryKey;
+
 /**
- * This class represents an annual combination of classes.
- * It is a collection of degree class ids plus an id that (hopefully) uniquely identifies this
- * combination itself.
+ * Created by Carlos on 05/04/2017.
  */
-public class AnnualClassCombination {
 
+public class AnnualClassCombination extends RealmObject {
 
-    private String _annualCombinationId;
-    private int _year;
-    private List<String> _degreeClassIds;
+    @PrimaryKey
+    private String annualCombinationId;
 
-    public AnnualClassCombination(String annualCombinationId) {
-        _annualCombinationId = annualCombinationId;
-        _year = 0;
-        _degreeClassIds = new ArrayList<>();
+    private int year;
+
+    private int degreeId;
+
+    private RealmList<DegreeClassId> degreeClassIds;
+
+    public AnnualClassCombination() {
+        this.annualCombinationId = "";
+        year = 0;
+        degreeClassIds = new RealmList<>();
+        degreeId = 0;
     }
 
-    public AnnualClassCombination(AnnualClassCombination annualCombination) {
-        _annualCombinationId = new String(annualCombination.getId());
-        _year = annualCombination.getYear();
-        _degreeClassIds = new ArrayList<>(annualCombination.getDegreeClassIds());
+    public AnnualClassCombination(String annualCombinationId) {
+        this.annualCombinationId = annualCombinationId;
+        year = 0;
+        degreeClassIds = new RealmList<>();
+        degreeId = 0;
     }
 
     public String getId() {
-        return _annualCombinationId;
+        return annualCombinationId;
     }
 
     public void setId(String annualCombinationId) {
-        _annualCombinationId = annualCombinationId;
+        this.annualCombinationId = annualCombinationId;
     }
 
     public int getYear() {
-        return _year;
+        return year;
     }
 
     public void setYear(int year) {
-        _year = year;
+        this.year = year;
     }
 
-    public List<String> getDegreeClassIds() {
-        return _degreeClassIds;
+    public RealmList<DegreeClassId> getDegreeClassIds() {
+        return degreeClassIds;
     }
 
-    public void setDegreeClasses(List<String> degreeClassIds) {
-        _degreeClassIds = degreeClassIds;
+    public void setDegreeClasses(RealmList<DegreeClassId> degreeClassIds) {
+        this.degreeClassIds = degreeClassIds;
+    }
+
+    public void addDegreeClasses(RealmList<DegreeClassId> degreeClassIds) {
+        this.degreeClassIds.addAll(degreeClassIds);
     }
 
     public void addDegreeClasses(List<String> degreeClassIds) {
-        _degreeClassIds.addAll(degreeClassIds);
+        RealmList<DegreeClassId> classIds = new RealmList<>();
+
+        for (String id : degreeClassIds) {
+            classIds.add(new DegreeClassId(id));
+        }
+
+        this.degreeClassIds.addAll(classIds);
     }
 
     public void addDegreeClass(String degreeClassId) {
-        _degreeClassIds.add(degreeClassId);
+        degreeClassIds.add(new DegreeClassId(degreeClassId));
+    }
+
+    public void addDegreeClass(DegreeClassId degreeClassId) {
+        degreeClassIds.add(degreeClassId);
+    }
+
+    public int getDegreeId() {
+        return degreeId;
+    }
+
+    public void setDegreeId(int degreeId) {
+        this.degreeId = degreeId;
     }
 }

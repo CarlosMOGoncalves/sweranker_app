@@ -6,16 +6,16 @@ import io.realm.annotations.PrimaryKey;
 /**
  * Realm-ready class to wrap a String... pathetic.
  */
-public class RealmDegreeClassId extends RealmObject {
+public class DegreeClassId extends RealmObject {
 
     @PrimaryKey
     private String degreeClassId;
 
-    public RealmDegreeClassId() {
+    public DegreeClassId() {
         degreeClassId = "";
     }
 
-    public RealmDegreeClassId(String degreeClassId) {
+    public DegreeClassId(String degreeClassId) {
         this.degreeClassId = degreeClassId;
     }
 

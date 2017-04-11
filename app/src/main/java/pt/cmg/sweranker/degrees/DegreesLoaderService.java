@@ -23,7 +23,7 @@ import java.util.Map;
 import io.realm.Realm;
 import io.realm.RealmList;
 import pt.cmg.sweranker.R;
-import pt.cmg.sweranker.ranking.RealmDegreeClassId;
+import pt.cmg.sweranker.ranking.DegreeClassId;
 import pt.cmg.sweranker.ranking.combinationstrategies.ClassCombinationStrategy;
 
 public class DegreesLoaderService extends Service {
@@ -57,18 +57,18 @@ public class DegreesLoaderService extends Service {
             }
 
 
-            List<RealmDegreeClassId> persistedClasses = realm
-                    .where(RealmDegreeClassId.class)
+            List<DegreeClassId> persistedClasses = realm
+                    .where(DegreeClassId.class)
                     .in("degreeClassId", degreeClassIds.toArray(new String[degreeClassIds.size()]))
                     .findAll();
 
             if (degreeClassIds.size() != persistedClasses.size()) {
 
-                List<RealmDegreeClassId> toInsert = new RealmList<>();
+                List<DegreeClassId> toInsert = new RealmList<>();
 
 
                 for (String degreeClassId : degreeClassIds) {
-                    toInsert.add(new RealmDegreeClassId(degreeClassId));
+                    toInsert.add(new DegreeClassId(degreeClassId));
                 }
 
                 realm.executeTransaction(r -> r.copyToRealmOrUpdate(toInsert));
