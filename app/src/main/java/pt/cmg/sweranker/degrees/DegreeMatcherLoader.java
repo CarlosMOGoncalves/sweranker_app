@@ -29,4 +29,14 @@ public interface DegreeMatcherLoader {
      */
     void saveMatch(DegreeClassMatch newlySubmittedMatch);
 
+
+    /**
+     * Returns true if the parameter degree has ALL of its classes already matched.
+     * False if at least one of them is not matched.
+     *
+     * @param degreeId
+     * @return
+     */
+    boolean isDegreeMatched(int degreeId);
+
 }

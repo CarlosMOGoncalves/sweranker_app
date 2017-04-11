@@ -23,6 +23,9 @@
     <string name="yes">Sim</string>
     <string name="no">Não</string>
 
+    <string name="matched">Correspondido</string>
+    <string name="notMatched">Não correspondido</string>
+
     <string name="confirm">Confirmar</string>
     <string name="OK">OK</string>
     <string name="dismiss">OK</string>

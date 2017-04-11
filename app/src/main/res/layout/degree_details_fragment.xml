@@ -6,7 +6,8 @@
     android:orientation="vertical">
 
 
-    <RelativeLayout
+    <LinearLayout
+        android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
@@ -14,39 +15,81 @@
             android:id="@+id/degree_image"
             android:layout_width="@dimen/degree_detail_image_size"
             android:layout_height="@dimen/degree_detail_image_size"
-            android:layout_alignParentStart="true"
             android:background="@android:color/background_light"
             android:scaleType="fitCenter"
             android:transitionName="degree_image"
             app:srcCompat="@drawable/feup_logo" />
 
-        <TextView
-            android:id="@+id/university_name"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_toRightOf="@+id/degree_image"
-            android:background="@android:color/background_light"
-            android:gravity="center"
-            android:padding="@dimen/ka_title_padding"
-            android:text="Universidade do Minho"
-            android:textAlignment="viewStart"
-            android:textColor="@android:color/black"
-            android:textSize="@dimen/ka_detail_title_size"
-            android:transitionName="university_name" />
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/degree_name"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/university_name"
-            android:layout_toRightOf="@+id/degree_image"
-            android:background="@android:color/background_light"
-            android:padding="@dimen/ka_title_padding"
-            android:textAlignment="viewStart"
-            android:textColor="@color/colorPrimaryDark"
-            android:transitionName="degree_name" />
+            <TextView
+                android:id="@+id/degree_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/background_light"
+                android:padding="@dimen/ka_title_padding"
+                android:text="Mestrado em Engenharia Informática"
+                android:textAlignment="viewStart"
+                android:textColor="@color/colorPrimaryDark"
+                android:transitionName="degree_name" />
 
-    </RelativeLayout>
+            <TextView
+                android:id="@+id/university_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/background_light"
+                android:gravity="center"
+                android:paddingLeft="@dimen/ka_title_padding"
+                android:paddingRight="@dimen/ka_title_padding"
+                android:paddingBottom="@dimen/ka_title_padding"
+                android:text="Universidade do Minho"
+                android:textAlignment="viewStart"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/ka_detail_title_size"
+                android:transitionName="university_name" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/evaluated_status"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:background="@android:color/background_light"
+                    android:gravity="center_vertical"
+                    android:padding="@dimen/ka_title_padding"
+                    android:text="Evaluated"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/cardColour14" />
+
+                <Button
+                    android:id="@+id/init_calculation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@color/colorPrimary"
+                    android:elevation="2dp"
+                    android:ellipsize="end"
+                    android:textColor="@color/cardview_light_background"
+                    android:clickable="true"
+                    android:focusable="true"
+                    app:srcCompat="@drawable/evaluate"
+                    android:text="Calculate"
+                    android:layout_alignBaseline="@+id/evaluated_status"
+                    android:layout_alignBottom="@+id/evaluated_status"
+                    android:layout_alignParentEnd="true" />
+            </RelativeLayout>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -68,7 +111,6 @@
             android:layout_height="match_parent">
 
         </android.support.v4.view.ViewPager>
-
     </LinearLayout>
 
 

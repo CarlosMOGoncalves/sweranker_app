@@ -540,6 +540,11 @@ public class MainActivity extends AppCompatActivity implements
     }
 
     @Override
+    public boolean isDegreeMatched(int degreeId) {
+        return _rankingService.hasCompleteMatch(degreeId);
+    }
+
+    @Override
     public boolean hasMatch(String degreeClassId) {
         return _rankingService.hasMatches(degreeClassId);
     }

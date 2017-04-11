@@ -59,6 +59,9 @@ public class RankingService extends Service {
 
     private Map<String, DegreeClass> _degreeClassesById;
 
+    // Keys -> Degree Id , Values -> true if completely matched, false otherwise
+    private Map<Integer, Boolean> _matchedDegrees;
+
     // Keys -> Degree Id , Values -> the ranking information of that degree.
     private Map<Integer, DegreeRanking> _rankingsByDegree;
 
@@ -593,6 +596,9 @@ public class RankingService extends Service {
     public void setDegreeClasses(List<Degree> degrees) {
         _degreesById = createDegreesByIdView(degrees);
         _degreeClassesById = createDegreesClassByIdView(degrees);
+
+
+        _matchedDegrees = calculateMatchedDegrees();
     }
 
 
@@ -626,12 +632,49 @@ public class RankingService extends Service {
         return degreeClassById;
     }
 
+
+    /**
+     * Calculates the degrees that have complete matches.
+     * <p>
+     * NOTE: This is awful. It may be a good idea to be in this service, but it
+     * suffers from the fact that the data for the degrees have to be put here
+     * by another service in an ugly ugly trick in the activity. If not for the time
+     * constraints this MUST be changed.
+     *
+     * @return
+     */
+    private Map<Integer, Boolean> calculateMatchedDegrees() {
+
+        Map<Integer, Boolean> matchedDegrees = new HashMap<>(_degreesById.values().size());
+
+        for (Map.Entry<Integer, Degree> degree : _degreesById.entrySet()) {
+
+            matchedDegrees.put(degree.getKey(), true);
+
+            for (DegreeClass degreeClass : degree.getValue().getClassesAsList()) {
+
+                if (!_degreeMatches.containsKey(degreeClass.getId())) {
+                    matchedDegrees.put(degree.getKey(), false);
+                    break; // found one not matched, jump to next degree
+                }
+            }
+
+        }
+
+        return matchedDegrees;
+
+    }
+
     public Map<String, KACalculation> getDegreeClassRankings() {
         return _degreeClassRankings;
     }
 
     public Map<Integer, DegreeRanking> getDegreeRankings() {
         return _rankingsByDegree;
+    }
+
+    public boolean hasCompleteMatch(int degreeId) {
+        return _matchedDegrees.get(degreeId);
     }
 
 

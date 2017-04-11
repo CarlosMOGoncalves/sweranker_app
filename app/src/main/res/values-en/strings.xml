@@ -22,6 +22,8 @@
     <string name="optional">Optional</string>
     <string name="yes">Yes</string>
     <string name="no">No</string>
+    <string name="matched">Matched</string>
+    <string name="notMatched">Not matched</string>
 
     <string name="confirm">Confirm</string>
 

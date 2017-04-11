@@ -3,16 +3,29 @@ package pt.cmg.sweranker.degrees;
 import android.app.Activity;
 import android.app.Fragment;
 import android.content.Context;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+
+import io.realm.Realm;
 import pt.cmg.sweranker.R;
+import pt.cmg.sweranker.ranking.AnnualClassCombination;
+import pt.cmg.sweranker.ranking.CombinationUtils;
+import pt.cmg.sweranker.ranking.DegreeClassCombination;
+import pt.cmg.sweranker.ranking.RealmAnnualCombination;
+import pt.cmg.sweranker.ranking.RealmDegreeCombination;
+import pt.cmg.sweranker.ranking.combinationstrategies.ClassCombinationStrategy;
 
 /**
  * Created by Carlos on 25/01/2017.
@@ -54,15 +67,8 @@ public class DegreeDetailsFragment extends Fragment {
      * <p>
      * Write here any method needed to trigger in the Activity
      */
-    public interface DegreeDetailsFragmentInteractionListener {
+    public interface DegreeDetailsFragmentInteractionListener extends DegreeLoader, DegreeMatcherLoader {
 
-        /**
-         * Loads a Degree from the system passing its id.
-         *
-         * @param degreeId
-         * @return
-         */
-        Degree loadDegree(int degreeId);
 
         /**
          * Loads the class fragment whose item was chosen.
@@ -112,10 +118,22 @@ public class DegreeDetailsFragment extends Fragment {
         ImageView degreeImage = (ImageView) _myView.findViewById(R.id.degree_image);
         TextView universityName = (TextView) _myView.findViewById(R.id.university_name);
         TextView degreeName = (TextView) _myView.findViewById(R.id.degree_name);
+        TextView isDegreeEvaluated = (TextView) _myView.findViewById(R.id.evaluated_status);
+        Button calculateScoreButton = (Button) _myView.findViewById(R.id.init_calculation);
 
         degreeImage.setImageDrawable(this.getResources().getDrawable(_degree.getImageResource(), null));
         universityName.setText(this.getResources().getText(_degree.getUniversityResource()));
         degreeName.setText(this.getResources().getText(_degree.getFullNameResource()));
+
+        if (_parentActivity.isDegreeMatched(_degreeId)) {
+            isDegreeEvaluated.setText(R.string.matched);
+            isDegreeEvaluated.setTextColor((this.getResources().getColor(R.color.materialAffirmative)));
+        } else {
+            isDegreeEvaluated.setText(R.string.notMatched);
+            isDegreeEvaluated.setTextColor((this.getResources().getColor(R.color.materialNegative)));
+        }
+
+        calculateScoreButton.setOnClickListener(view -> new YearlyRankingCalculator().execute());
 
         ViewPager viewPager = (ViewPager) _myView.findViewById(R.id.degree_viewPager);
         viewPager.setAdapter(new DegreeViewPagerAdapter(this.getActivity(), _degree, new DegreeViewPagerAdapter.OnDegreeClassItemSelected() {
@@ -129,6 +147,88 @@ public class DegreeDetailsFragment extends Fragment {
         tabLayout.setupWithViewPager(viewPager);
 
         return _myView;
+    }
+
+
+    private class YearlyRankingCalculator extends AsyncTask<Void, Void, Void> {
+
+
+        @Override
+        protected Void doInBackground(Void... params) {
+
+
+            Realm realm = Realm.getDefaultInstance();
+
+            List<RealmAnnualCombination> annualCombinations = calculateAnnualCombinations(_degree);
+
+            realm.executeTransaction(r -> r.copyToRealmOrUpdate(annualCombinations));
+
+            List<RealmDegreeCombination> allDegreeCombinations = calculateAllDegreeClassCombinations(_degree, annualCombinations);
+
+//            realm.executeTransaction(r -> r.copyToRealmOrUpdate(allDegreeCombinations));
+
+
+//            allDegreeCombinations.size();
+//                List<RealmDegreeCombination> fetched = realm.where(RealmDegreeCombination.class).findAll();
+//
+//                fetched.size();
+//
+//                Realm realm = Realm.getDefaultInstance();
+//
+//                realm.beginTransaction();
+//
+//                List<RealmAnnualCombination> annualRealm = realm.copyToRealm(annualCombinations);
+//
+//                realm.commitTransaction();
+//
+            realm.close();
+
+
+            return null;
+        }
+
+        private List<RealmDegreeCombination> calculateAllDegreeClassCombinations(Degree degree, List<RealmAnnualCombination> annualCombinations) {
+            return CombinationUtils.generateAllDegreeCombinations(degree, annualCombinations);
+        }
+
+
+        private List<RealmAnnualCombination> calculateAnnualCombinations(Degree degree) {
+            List<RealmAnnualCombination> annualCombinations = new ArrayList<>();
+
+            for (Map.Entry<Integer, ClassCombinationStrategy> classCombinationStrategy : degree.getClassCombinationStrategies().entrySet()) {
+
+                Integer yearOfDegree = classCombinationStrategy.getKey();
+                ClassCombinationStrategy combinationStrategy = classCombinationStrategy.getValue();
+
+                // Here, using each year's strategy to unfold all possible combinations for this year
+                annualCombinations.addAll(combinationStrategy.getAnnualClassCombinations(degree.getClasses().get(yearOfDegree)));
+
+            }
+
+            return annualCombinations;
+        }
+
+        /**
+         * Uses all combinations of all the years that compose a degree to further unfold the class combinations to ALL possible ones.
+         * This is heavy processing method, a good multi-threading strategy must be developed.
+         * <br/>
+         * Returns a Map where:
+         * <p>
+         * Keys -> A generated unique degree combination ID , Values -> a single complete combination of classes of all years that compose the degree
+         * </p>
+         *
+         * @param degreeCombinationsByYear
+         * @return
+         */
+        private Map<Integer, DegreeClassCombination> calculateAllDegreeClassCombinations(Degree degree, Map<Integer, List<AnnualClassCombination>> degreeCombinationsByYear) {
+            return CombinationUtils.generateAndSaveAllDegreeCombinations(degree, degreeCombinationsByYear);
+        }
+
+
+        @Override
+        protected void onPostExecute(Void aVoid) {
+            super.onPostExecute(aVoid);
+        }
     }
 
 

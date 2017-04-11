@@ -122,11 +122,11 @@ public class DegreeProgramAdapter extends RecyclerView.Adapter<RecyclerView.View
         View itemView;
 
         if (viewType == TYPE_HEADER) {
-            itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.degree_program_list_item_year, parent, false);
+            itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.degree_details_class_list_item_year, parent, false);
             return new DegreeYearViewHolder(itemView);
         }
 
-        itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.degree_program_list_item_class, parent, false);
+        itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.degree_details_class_list_item_class, parent, false);
         return new DegreeClassViewHolder(itemView);
     }
 

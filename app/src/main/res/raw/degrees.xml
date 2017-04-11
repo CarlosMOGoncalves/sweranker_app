@@ -22,11 +22,14 @@
             </combinator>
             <combinator>
                 <year>4</year>
-                <class>pt.cmg.sweranker.ranking.combinationstrategies.AllMandatoryAndThreeOptionals</class>
+                <class>
+                    pt.cmg.sweranker.ranking.combinationstrategies.AllMandatoryAndThreeOptionals
+                </class>
             </combinator>
             <combinator>
                 <year>5</year>
-                <class>pt.cmg.sweranker.ranking.combinationstrategies.AllMandatoryAndFourOptionals</class>
+                <class>pt.cmg.sweranker.ranking.combinationstrategies.AllMandatoryAndFourOptionals
+                </class>
             </combinator>
         </yearly_combinators>
         <university>@string/up</university>
@@ -4497,17 +4500,20 @@
             </combinator>
             <combinator>
                 <year>4</year>
-                <class>pt.cmg.sweranker.ranking.combinationstrategies.AllMandatoryAndThreeOptionals</class>
+                <class>
+                    pt.cmg.sweranker.ranking.combinationstrategies.AllMandatoryAndThreeOptionals
+                </class>
             </combinator>
             <combinator>
                 <year>5</year>
-                <class>pt.cmg.sweranker.ranking.combinationstrategies.AllMandatoryAndFourOptionals</class>
+                <class>pt.cmg.sweranker.ranking.combinationstrategies.AllMandatoryAndFourOptionals
+                </class>
             </combinator>
         </yearly_combinators>
         <university>@string/uminho</university>
         <classes>
             <class>
-                <id>mieic_c1</id>
+                <id>uminho_miei_c1</id>
                 <name>@string/up_class_discrete_mathematics</name>
                 <year>1</year>
                 <semester>1</semester>
@@ -4553,6 +4559,186 @@
                     <topic>
                         <id>c1t10</id>
                         <description>@string/up_class_discrete_mathematics_topic10</description>
+                    </topic>
+                </program>
+            </class>
+            <class>
+                <id>uminho_miei_c18</id>
+                <name>@string/up_class_algorithm_analysis</name>
+                <description>@string/up_class_algorithm_analysis_description</description>
+                <year>2</year>
+                <semester>2</semester>
+                <ects>6</ects>
+                <optional>false</optional>
+                <program>
+                    <topic>
+                        <id>c18t1</id>
+                        <description>@string/up_class_algorithm_analysis_topic1</description>
+                    </topic>
+                    <topic>
+                        <id>c18t2</id>
+                        <description>@string/up_class_algorithm_analysis_topic2</description>
+                    </topic>
+                    <topic>
+                        <id>c18t3</id>
+                        <description>@string/up_class_algorithm_analysis_topic3</description>
+                    </topic>
+                    <topic>
+                        <id>c18t4</id>
+                        <description>@string/up_class_algorithm_analysis_topic4</description>
+                    </topic>
+                    <topic>
+                        <id>c18t5</id>
+                        <description>@string/up_class_algorithm_analysis_topic5</description>
+                    </topic>
+                    <topic>
+                        <id>c18t6</id>
+                        <description>@string/up_class_algorithm_analysis_topic6</description>
+                    </topic>
+                    <topic>
+                        <id>c18t7</id>
+                        <description>@string/up_class_algorithm_analysis_topic7</description>
+                    </topic>
+                    <topic>
+                        <id>c18t8</id>
+                        <description>@string/up_class_algorithm_analysis_topic8</description>
+                    </topic>
+                    <topic>
+                        <id>c18t9</id>
+                        <description>@string/up_class_algorithm_analysis_topic9</description>
+                    </topic>
+                    <topic>
+                        <id>c18t10</id>
+                        <description>@string/up_class_algorithm_analysis_topic10</description>
+                    </topic>
+                    <topic>
+                        <id>c18t11</id>
+                        <description>@string/up_class_algorithm_analysis_topic11</description>
+                    </topic>
+                    <topic>
+                        <id>c18t12</id>
+                        <description>@string/up_class_algorithm_analysis_topic12</description>
+                    </topic>
+                    <topic>
+                        <id>c18t13</id>
+                        <description>@string/up_class_algorithm_analysis_topic13</description>
+                    </topic>
+                </program>
+            </class>
+            <class>
+                <id>uminho_miei_c26</id>
+                <name>@string/up_class_web_tech</name>
+                <description>@string/up_class_web_tech_description</description>
+                <year>3</year>
+                <semester>2</semester>
+                <ects>7.5</ects>
+                <optional>false</optional>
+                <program>
+                    <topic>
+                        <id>c26t1</id>
+                        <description>@string/up_class_web_tech_topic1</description>
+                    </topic>
+                    <topic>
+                        <id>c26t2</id>
+                        <description>@string/up_class_web_tech_topic2</description>
+                    </topic>
+                    <topic>
+                        <id>c26t3</id>
+                        <description>@string/up_class_web_tech_topic3</description>
+                    </topic>
+                    <topic>
+                        <id>c26t4</id>
+                        <description>@string/up_class_web_tech_topic4</description>
+                    </topic>
+                    <topic>
+                        <id>c26t5</id>
+                        <description>@string/up_class_web_tech_topic5</description>
+                    </topic>
+                    <topic>
+                        <id>c26t6</id>
+                        <description>@string/up_class_web_tech_topic6</description>
+                    </topic>
+                    <topic>
+                        <id>c26t7</id>
+                        <description>@string/up_class_web_tech_topic7</description>
+                    </topic>
+                    <topic>
+                        <id>c26t8</id>
+                        <description>@string/up_class_web_tech_topic8</description>
+                    </topic>
+                    <topic>
+                        <id>c26t9</id>
+                        <description>@string/up_class_web_tech_topic9</description>
+                    </topic>
+                </program>
+            </class>
+            <class>
+                <id>uminho_miei_c70</id>
+                <name>@string/up_class_markup_languages</name>
+                <description>@string/up_class_markup_languages_description</description>
+                <year>4</year>
+                <semester>2</semester>
+                <ects>6</ects>
+                <optional>true</optional>
+                <program>
+                    <topic>
+                        <id>c70t1</id>
+                        <description>@string/up_class_markup_languages_topic1</description>
+                    </topic>
+                    <topic>
+                        <id>c70t2</id>
+                        <description>@string/up_class_markup_languages_topic2</description>
+                    </topic>
+                    <topic>
+                        <id>c70t3</id>
+                        <description>@string/up_class_markup_languages_topic3</description>
+                    </topic>
+                    <topic>
+                        <id>c70t4</id>
+                        <description>@string/up_class_markup_languages_topic4</description>
+                    </topic>
+                    <topic>
+                        <id>c70t5</id>
+                        <description>@string/up_class_markup_languages_topic5</description>
+                    </topic>
+                    <topic>
+                        <id>c70t6</id>
+                        <description>@string/up_class_markup_languages_topic6</description>
+                    </topic>
+                </program>
+            </class>
+            <class>
+                <id>uminho_miei_c69</id>
+                <name>@string/up_class_dissertation</name>
+                <description>@string/up_class_dissertation_description</description>
+                <year>5</year>
+                <semester>2</semester>
+                <ects>6</ects>
+                <optional>false</optional>
+                <program>
+                    <topic>
+                        <id>c69t1</id>
+                        <description>@string/up_class_dissertation_topic1</description>
+                    </topic>
+                    <topic>
+                        <id>c69t2</id>
+                        <description>@string/up_class_dissertation_topic2</description>
+                    </topic>
+                    <topic>
+                        <id>c69t3</id>
+                        <description>@string/up_class_dissertation_topic3</description>
+                    </topic>
+                    <topic>
+                        <id>c69t4</id>
+                        <description>@string/up_class_dissertation_topic4</description>
+                    </topic>
+                    <topic>
+                        <id>c69t5</id>
+                        <description>@string/up_class_dissertation_topic5</description>
+                    </topic>
+                    <topic>
+                        <id>c69t6</id>
+                        <description>@string/up_class_dissertation_topic6</description>
                     </topic>
                 </program>
             </class>
@@ -4581,17 +4767,20 @@
             </combinator>
             <combinator>
                 <year>4</year>
-                <class>pt.cmg.sweranker.ranking.combinationstrategies.AllMandatoryAndThreeOptionals</class>
+                <class>
+                    pt.cmg.sweranker.ranking.combinationstrategies.AllMandatoryAndThreeOptionals
+                </class>
             </combinator>
             <combinator>
                 <year>5</year>
-                <class>pt.cmg.sweranker.ranking.combinationstrategies.AllMandatoryAndFourOptionals</class>
+                <class>pt.cmg.sweranker.ranking.combinationstrategies.AllMandatoryAndFourOptionals
+                </class>
             </combinator>
         </yearly_combinators>
         <university>@string/uc</university>
         <classes>
             <class>
-                <id>mieic_c1</id>
+                <id>uc_mei_c1</id>
                 <name>@string/up_class_discrete_mathematics</name>
                 <year>1</year>
                 <semester>1</semester>
@@ -4637,6 +4826,186 @@
                     <topic>
                         <id>c1t10</id>
                         <description>@string/up_class_discrete_mathematics_topic10</description>
+                    </topic>
+                </program>
+            </class>
+            <class>
+                <id>uc_mei_c18</id>
+                <name>@string/up_class_algorithm_analysis</name>
+                <description>@string/up_class_algorithm_analysis_description</description>
+                <year>2</year>
+                <semester>2</semester>
+                <ects>6</ects>
+                <optional>false</optional>
+                <program>
+                    <topic>
+                        <id>c18t1</id>
+                        <description>@string/up_class_algorithm_analysis_topic1</description>
+                    </topic>
+                    <topic>
+                        <id>c18t2</id>
+                        <description>@string/up_class_algorithm_analysis_topic2</description>
+                    </topic>
+                    <topic>
+                        <id>c18t3</id>
+                        <description>@string/up_class_algorithm_analysis_topic3</description>
+                    </topic>
+                    <topic>
+                        <id>c18t4</id>
+                        <description>@string/up_class_algorithm_analysis_topic4</description>
+                    </topic>
+                    <topic>
+                        <id>c18t5</id>
+                        <description>@string/up_class_algorithm_analysis_topic5</description>
+                    </topic>
+                    <topic>
+                        <id>c18t6</id>
+                        <description>@string/up_class_algorithm_analysis_topic6</description>
+                    </topic>
+                    <topic>
+                        <id>c18t7</id>
+                        <description>@string/up_class_algorithm_analysis_topic7</description>
+                    </topic>
+                    <topic>
+                        <id>c18t8</id>
+                        <description>@string/up_class_algorithm_analysis_topic8</description>
+                    </topic>
+                    <topic>
+                        <id>c18t9</id>
+                        <description>@string/up_class_algorithm_analysis_topic9</description>
+                    </topic>
+                    <topic>
+                        <id>c18t10</id>
+                        <description>@string/up_class_algorithm_analysis_topic10</description>
+                    </topic>
+                    <topic>
+                        <id>c18t11</id>
+                        <description>@string/up_class_algorithm_analysis_topic11</description>
+                    </topic>
+                    <topic>
+                        <id>c18t12</id>
+                        <description>@string/up_class_algorithm_analysis_topic12</description>
+                    </topic>
+                    <topic>
+                        <id>c18t13</id>
+                        <description>@string/up_class_algorithm_analysis_topic13</description>
+                    </topic>
+                </program>
+            </class>
+            <class>
+                <id>uc_mei_c26</id>
+                <name>@string/up_class_web_tech</name>
+                <description>@string/up_class_web_tech_description</description>
+                <year>3</year>
+                <semester>2</semester>
+                <ects>7.5</ects>
+                <optional>false</optional>
+                <program>
+                    <topic>
+                        <id>c26t1</id>
+                        <description>@string/up_class_web_tech_topic1</description>
+                    </topic>
+                    <topic>
+                        <id>c26t2</id>
+                        <description>@string/up_class_web_tech_topic2</description>
+                    </topic>
+                    <topic>
+                        <id>c26t3</id>
+                        <description>@string/up_class_web_tech_topic3</description>
+                    </topic>
+                    <topic>
+                        <id>c26t4</id>
+                        <description>@string/up_class_web_tech_topic4</description>
+                    </topic>
+                    <topic>
+                        <id>c26t5</id>
+                        <description>@string/up_class_web_tech_topic5</description>
+                    </topic>
+                    <topic>
+                        <id>c26t6</id>
+                        <description>@string/up_class_web_tech_topic6</description>
+                    </topic>
+                    <topic>
+                        <id>c26t7</id>
+                        <description>@string/up_class_web_tech_topic7</description>
+                    </topic>
+                    <topic>
+                        <id>c26t8</id>
+                        <description>@string/up_class_web_tech_topic8</description>
+                    </topic>
+                    <topic>
+                        <id>c26t9</id>
+                        <description>@string/up_class_web_tech_topic9</description>
+                    </topic>
+                </program>
+            </class>
+            <class>
+                <id>uc_mei_c70</id>
+                <name>@string/up_class_markup_languages</name>
+                <description>@string/up_class_markup_languages_description</description>
+                <year>4</year>
+                <semester>2</semester>
+                <ects>6</ects>
+                <optional>true</optional>
+                <program>
+                    <topic>
+                        <id>c70t1</id>
+                        <description>@string/up_class_markup_languages_topic1</description>
+                    </topic>
+                    <topic>
+                        <id>c70t2</id>
+                        <description>@string/up_class_markup_languages_topic2</description>
+                    </topic>
+                    <topic>
+                        <id>c70t3</id>
+                        <description>@string/up_class_markup_languages_topic3</description>
+                    </topic>
+                    <topic>
+                        <id>c70t4</id>
+                        <description>@string/up_class_markup_languages_topic4</description>
+                    </topic>
+                    <topic>
+                        <id>c70t5</id>
+                        <description>@string/up_class_markup_languages_topic5</description>
+                    </topic>
+                    <topic>
+                        <id>c70t6</id>
+                        <description>@string/up_class_markup_languages_topic6</description>
+                    </topic>
+                </program>
+            </class>
+            <class>
+                <id>uc_mei_c69</id>
+                <name>@string/up_class_dissertation</name>
+                <description>@string/up_class_dissertation_description</description>
+                <year>5</year>
+                <semester>2</semester>
+                <ects>6</ects>
+                <optional>false</optional>
+                <program>
+                    <topic>
+                        <id>c69t1</id>
+                        <description>@string/up_class_dissertation_topic1</description>
+                    </topic>
+                    <topic>
+                        <id>c69t2</id>
+                        <description>@string/up_class_dissertation_topic2</description>
+                    </topic>
+                    <topic>
+                        <id>c69t3</id>
+                        <description>@string/up_class_dissertation_topic3</description>
+                    </topic>
+                    <topic>
+                        <id>c69t4</id>
+                        <description>@string/up_class_dissertation_topic4</description>
+                    </topic>
+                    <topic>
+                        <id>c69t5</id>
+                        <description>@string/up_class_dissertation_topic5</description>
+                    </topic>
+                    <topic>
+                        <id>c69t6</id>
+                        <description>@string/up_class_dissertation_topic6</description>
                     </topic>
                 </program>
             </class>
@@ -4665,17 +5034,20 @@
             </combinator>
             <combinator>
                 <year>4</year>
-                <class>pt.cmg.sweranker.ranking.combinationstrategies.AllMandatoryAndThreeOptionals</class>
+                <class>
+                    pt.cmg.sweranker.ranking.combinationstrategies.AllMandatoryAndThreeOptionals
+                </class>
             </combinator>
             <combinator>
                 <year>5</year>
-                <class>pt.cmg.sweranker.ranking.combinationstrategies.AllMandatoryAndFourOptionals</class>
+                <class>pt.cmg.sweranker.ranking.combinationstrategies.AllMandatoryAndFourOptionals
+                </class>
             </combinator>
         </yearly_combinators>
         <university>@string/uav</university>
         <classes>
             <class>
-                <id>mieic_c1</id>
+                <id>uav_mei_c1</id>
                 <name>@string/up_class_discrete_mathematics</name>
                 <year>1</year>
                 <semester>1</semester>
@@ -4724,6 +5096,186 @@
                     </topic>
                 </program>
             </class>
+            <class>
+                <id>uav_mei_c18</id>
+                <name>@string/up_class_algorithm_analysis</name>
+                <description>@string/up_class_algorithm_analysis_description</description>
+                <year>2</year>
+                <semester>2</semester>
+                <ects>6</ects>
+                <optional>false</optional>
+                <program>
+                    <topic>
+                        <id>c18t1</id>
+                        <description>@string/up_class_algorithm_analysis_topic1</description>
+                    </topic>
+                    <topic>
+                        <id>c18t2</id>
+                        <description>@string/up_class_algorithm_analysis_topic2</description>
+                    </topic>
+                    <topic>
+                        <id>c18t3</id>
+                        <description>@string/up_class_algorithm_analysis_topic3</description>
+                    </topic>
+                    <topic>
+                        <id>c18t4</id>
+                        <description>@string/up_class_algorithm_analysis_topic4</description>
+                    </topic>
+                    <topic>
+                        <id>c18t5</id>
+                        <description>@string/up_class_algorithm_analysis_topic5</description>
+                    </topic>
+                    <topic>
+                        <id>c18t6</id>
+                        <description>@string/up_class_algorithm_analysis_topic6</description>
+                    </topic>
+                    <topic>
+                        <id>c18t7</id>
+                        <description>@string/up_class_algorithm_analysis_topic7</description>
+                    </topic>
+                    <topic>
+                        <id>c18t8</id>
+                        <description>@string/up_class_algorithm_analysis_topic8</description>
+                    </topic>
+                    <topic>
+                        <id>c18t9</id>
+                        <description>@string/up_class_algorithm_analysis_topic9</description>
+                    </topic>
+                    <topic>
+                        <id>c18t10</id>
+                        <description>@string/up_class_algorithm_analysis_topic10</description>
+                    </topic>
+                    <topic>
+                        <id>c18t11</id>
+                        <description>@string/up_class_algorithm_analysis_topic11</description>
+                    </topic>
+                    <topic>
+                        <id>c18t12</id>
+                        <description>@string/up_class_algorithm_analysis_topic12</description>
+                    </topic>
+                    <topic>
+                        <id>c18t13</id>
+                        <description>@string/up_class_algorithm_analysis_topic13</description>
+                    </topic>
+                </program>
+            </class>
+            <class>
+                <id>uav_mei_c26</id>
+                <name>@string/up_class_web_tech</name>
+                <description>@string/up_class_web_tech_description</description>
+                <year>3</year>
+                <semester>2</semester>
+                <ects>7.5</ects>
+                <optional>false</optional>
+                <program>
+                    <topic>
+                        <id>c26t1</id>
+                        <description>@string/up_class_web_tech_topic1</description>
+                    </topic>
+                    <topic>
+                        <id>c26t2</id>
+                        <description>@string/up_class_web_tech_topic2</description>
+                    </topic>
+                    <topic>
+                        <id>c26t3</id>
+                        <description>@string/up_class_web_tech_topic3</description>
+                    </topic>
+                    <topic>
+                        <id>c26t4</id>
+                        <description>@string/up_class_web_tech_topic4</description>
+                    </topic>
+                    <topic>
+                        <id>c26t5</id>
+                        <description>@string/up_class_web_tech_topic5</description>
+                    </topic>
+                    <topic>
+                        <id>c26t6</id>
+                        <description>@string/up_class_web_tech_topic6</description>
+                    </topic>
+                    <topic>
+                        <id>c26t7</id>
+                        <description>@string/up_class_web_tech_topic7</description>
+                    </topic>
+                    <topic>
+                        <id>c26t8</id>
+                        <description>@string/up_class_web_tech_topic8</description>
+                    </topic>
+                    <topic>
+                        <id>c26t9</id>
+                        <description>@string/up_class_web_tech_topic9</description>
+                    </topic>
+                </program>
+            </class>
+            <class>
+                <id>uav_mei_c70</id>
+                <name>@string/up_class_markup_languages</name>
+                <description>@string/up_class_markup_languages_description</description>
+                <year>4</year>
+                <semester>2</semester>
+                <ects>6</ects>
+                <optional>true</optional>
+                <program>
+                    <topic>
+                        <id>c70t1</id>
+                        <description>@string/up_class_markup_languages_topic1</description>
+                    </topic>
+                    <topic>
+                        <id>c70t2</id>
+                        <description>@string/up_class_markup_languages_topic2</description>
+                    </topic>
+                    <topic>
+                        <id>c70t3</id>
+                        <description>@string/up_class_markup_languages_topic3</description>
+                    </topic>
+                    <topic>
+                        <id>c70t4</id>
+                        <description>@string/up_class_markup_languages_topic4</description>
+                    </topic>
+                    <topic>
+                        <id>c70t5</id>
+                        <description>@string/up_class_markup_languages_topic5</description>
+                    </topic>
+                    <topic>
+                        <id>c70t6</id>
+                        <description>@string/up_class_markup_languages_topic6</description>
+                    </topic>
+                </program>
+            </class>
+            <class>
+                <id>uav_mei_c69</id>
+                <name>@string/up_class_dissertation</name>
+                <description>@string/up_class_dissertation_description</description>
+                <year>5</year>
+                <semester>2</semester>
+                <ects>6</ects>
+                <optional>false</optional>
+                <program>
+                    <topic>
+                        <id>c69t1</id>
+                        <description>@string/up_class_dissertation_topic1</description>
+                    </topic>
+                    <topic>
+                        <id>c69t2</id>
+                        <description>@string/up_class_dissertation_topic2</description>
+                    </topic>
+                    <topic>
+                        <id>c69t3</id>
+                        <description>@string/up_class_dissertation_topic3</description>
+                    </topic>
+                    <topic>
+                        <id>c69t4</id>
+                        <description>@string/up_class_dissertation_topic4</description>
+                    </topic>
+                    <topic>
+                        <id>c69t5</id>
+                        <description>@string/up_class_dissertation_topic5</description>
+                    </topic>
+                    <topic>
+                        <id>c69t6</id>
+                        <description>@string/up_class_dissertation_topic6</description>
+                    </topic>
+                </program>
+            </class>
         </classes>
     </degree>
 
@@ -4749,17 +5301,20 @@
             </combinator>
             <combinator>
                 <year>4</year>
-                <class>pt.cmg.sweranker.ranking.combinationstrategies.AllMandatoryAndThreeOptionals</class>
+                <class>
+                    pt.cmg.sweranker.ranking.combinationstrategies.AllMandatoryAndThreeOptionals
+                </class>
             </combinator>
             <combinator>
                 <year>5</year>
-                <class>pt.cmg.sweranker.ranking.combinationstrategies.AllMandatoryAndFourOptionals</class>
+                <class>pt.cmg.sweranker.ranking.combinationstrategies.AllMandatoryAndFourOptionals
+                </class>
             </combinator>
         </yearly_combinators>
         <university>@string/ist</university>
         <classes>
             <class>
-                <id>mieic_c1</id>
+                <id>ist_meic_c1</id>
                 <name>@string/up_class_discrete_mathematics</name>
                 <year>1</year>
                 <semester>1</semester>
@@ -4805,6 +5360,186 @@
                     <topic>
                         <id>c1t10</id>
                         <description>@string/up_class_discrete_mathematics_topic10</description>
+                    </topic>
+                </program>
+            </class>
+            <class>
+                <id>ist_meic_c18</id>
+                <name>@string/up_class_algorithm_analysis</name>
+                <description>@string/up_class_algorithm_analysis_description</description>
+                <year>2</year>
+                <semester>2</semester>
+                <ects>6</ects>
+                <optional>false</optional>
+                <program>
+                    <topic>
+                        <id>c18t1</id>
+                        <description>@string/up_class_algorithm_analysis_topic1</description>
+                    </topic>
+                    <topic>
+                        <id>c18t2</id>
+                        <description>@string/up_class_algorithm_analysis_topic2</description>
+                    </topic>
+                    <topic>
+                        <id>c18t3</id>
+                        <description>@string/up_class_algorithm_analysis_topic3</description>
+                    </topic>
+                    <topic>
+                        <id>c18t4</id>
+                        <description>@string/up_class_algorithm_analysis_topic4</description>
+                    </topic>
+                    <topic>
+                        <id>c18t5</id>
+                        <description>@string/up_class_algorithm_analysis_topic5</description>
+                    </topic>
+                    <topic>
+                        <id>c18t6</id>
+                        <description>@string/up_class_algorithm_analysis_topic6</description>
+                    </topic>
+                    <topic>
+                        <id>c18t7</id>
+                        <description>@string/up_class_algorithm_analysis_topic7</description>
+                    </topic>
+                    <topic>
+                        <id>c18t8</id>
+                        <description>@string/up_class_algorithm_analysis_topic8</description>
+                    </topic>
+                    <topic>
+                        <id>c18t9</id>
+                        <description>@string/up_class_algorithm_analysis_topic9</description>
+                    </topic>
+                    <topic>
+                        <id>c18t10</id>
+                        <description>@string/up_class_algorithm_analysis_topic10</description>
+                    </topic>
+                    <topic>
+                        <id>c18t11</id>
+                        <description>@string/up_class_algorithm_analysis_topic11</description>
+                    </topic>
+                    <topic>
+                        <id>c18t12</id>
+                        <description>@string/up_class_algorithm_analysis_topic12</description>
+                    </topic>
+                    <topic>
+                        <id>c18t13</id>
+                        <description>@string/up_class_algorithm_analysis_topic13</description>
+                    </topic>
+                </program>
+            </class>
+            <class>
+                <id>ist_meic_c26</id>
+                <name>@string/up_class_web_tech</name>
+                <description>@string/up_class_web_tech_description</description>
+                <year>3</year>
+                <semester>2</semester>
+                <ects>7.5</ects>
+                <optional>false</optional>
+                <program>
+                    <topic>
+                        <id>c26t1</id>
+                        <description>@string/up_class_web_tech_topic1</description>
+                    </topic>
+                    <topic>
+                        <id>c26t2</id>
+                        <description>@string/up_class_web_tech_topic2</description>
+                    </topic>
+                    <topic>
+                        <id>c26t3</id>
+                        <description>@string/up_class_web_tech_topic3</description>
+                    </topic>
+                    <topic>
+                        <id>c26t4</id>
+                        <description>@string/up_class_web_tech_topic4</description>
+                    </topic>
+                    <topic>
+                        <id>c26t5</id>
+                        <description>@string/up_class_web_tech_topic5</description>
+                    </topic>
+                    <topic>
+                        <id>c26t6</id>
+                        <description>@string/up_class_web_tech_topic6</description>
+                    </topic>
+                    <topic>
+                        <id>c26t7</id>
+                        <description>@string/up_class_web_tech_topic7</description>
+                    </topic>
+                    <topic>
+                        <id>c26t8</id>
+                        <description>@string/up_class_web_tech_topic8</description>
+                    </topic>
+                    <topic>
+                        <id>c26t9</id>
+                        <description>@string/up_class_web_tech_topic9</description>
+                    </topic>
+                </program>
+            </class>
+            <class>
+                <id>ist_meic_c70</id>
+                <name>@string/up_class_markup_languages</name>
+                <description>@string/up_class_markup_languages_description</description>
+                <year>4</year>
+                <semester>2</semester>
+                <ects>6</ects>
+                <optional>true</optional>
+                <program>
+                    <topic>
+                        <id>c70t1</id>
+                        <description>@string/up_class_markup_languages_topic1</description>
+                    </topic>
+                    <topic>
+                        <id>c70t2</id>
+                        <description>@string/up_class_markup_languages_topic2</description>
+                    </topic>
+                    <topic>
+                        <id>c70t3</id>
+                        <description>@string/up_class_markup_languages_topic3</description>
+                    </topic>
+                    <topic>
+                        <id>c70t4</id>
+                        <description>@string/up_class_markup_languages_topic4</description>
+                    </topic>
+                    <topic>
+                        <id>c70t5</id>
+                        <description>@string/up_class_markup_languages_topic5</description>
+                    </topic>
+                    <topic>
+                        <id>c70t6</id>
+                        <description>@string/up_class_markup_languages_topic6</description>
+                    </topic>
+                </program>
+            </class>
+            <class>
+                <id>ist_meic_c69</id>
+                <name>@string/up_class_dissertation</name>
+                <description>@string/up_class_dissertation_description</description>
+                <year>5</year>
+                <semester>2</semester>
+                <ects>6</ects>
+                <optional>false</optional>
+                <program>
+                    <topic>
+                        <id>c69t1</id>
+                        <description>@string/up_class_dissertation_topic1</description>
+                    </topic>
+                    <topic>
+                        <id>c69t2</id>
+                        <description>@string/up_class_dissertation_topic2</description>
+                    </topic>
+                    <topic>
+                        <id>c69t3</id>
+                        <description>@string/up_class_dissertation_topic3</description>
+                    </topic>
+                    <topic>
+                        <id>c69t4</id>
+                        <description>@string/up_class_dissertation_topic4</description>
+                    </topic>
+                    <topic>
+                        <id>c69t5</id>
+                        <description>@string/up_class_dissertation_topic5</description>
+                    </topic>
+                    <topic>
+                        <id>c69t6</id>
+                        <description>@string/up_class_dissertation_topic6</description>
                     </topic>
                 </program>
             </class>
