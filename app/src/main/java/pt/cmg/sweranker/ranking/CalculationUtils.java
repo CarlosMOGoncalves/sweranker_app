@@ -12,15 +12,15 @@ public class CalculationUtils {
     /**
      * Aggregates the calculations os a list of rankings in a single, aggregated ranking.
      *
-     * @param kaCalculations
+     * @param sweScores
      * @return
      */
-    public static KACalculation calculateAccumulatedRankings(List<KACalculation> kaCalculations) {
+    public static SweScore calculateAccumulatedRankings(List<SweScore> sweScores) {
 
-        KACalculation result = new KACalculation();
+        SweScore result = new SweScore();
 
-        for (int i = 0; i < kaCalculations.size(); i++) {
-            result.addCounters(kaCalculations.get(i).getKaTopicCounters(), kaCalculations.get(i).getKaCounters());
+        for (int i = 0; i < sweScores.size(); i++) {
+            result.addCounters(sweScores.get(i).getKaTopicCounters(), sweScores.get(i).getKaCounters());
         }
 
         result.resetPercentCalculations();

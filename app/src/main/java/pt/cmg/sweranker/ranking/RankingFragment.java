@@ -41,7 +41,7 @@ public class RankingFragment extends Fragment {
     private RankingFragmentInteractionListener _parentActivity;
 
     // Keys -> Degree Class Ids , Values -> The individual ranking for the class
-    private Map<String, KACalculation> _degreeClassRankings;
+    private Map<String, SweScore> _degreeClassRankings;
 
 
     private RecyclerView _rankingsGrid;

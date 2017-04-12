@@ -48,7 +48,7 @@ public class RankingService extends Service {
     private Map<String, DegreeClassMatch> _degreeMatches;
 
     // Keys -> Degree Class Id , Values -> its current ranking
-    private Map<String, KACalculation> _degreeClassRankings;
+    private Map<String, SweScore> _degreeClassRankings;
 
     private Map<Integer, KnowledgeArea> _knowledgeAreasById;
 
@@ -61,8 +61,6 @@ public class RankingService extends Service {
     // Keys -> Degree Id , Values -> true if completely matched, false otherwise
     private Map<Integer, Boolean> _matchedDegrees;
 
-    // Keys -> Degree Id , Values -> the ranking information of that degree.
-    private Map<Integer, DegreeRanking> _rankingsByDegree;
 
     public RankingService() {
     }
@@ -73,8 +71,6 @@ public class RankingService extends Service {
         super.onCreate();
         File rootMatchesDir = createMatchFilesDirectory();
         _degreeMatches = loadDefaultMatches();
-        _rankingsByDegree = new HashMap<>();
-//        _degreeMatches = loadSystemMatches(rootMatchesDir);
     }
 
 
@@ -212,9 +208,9 @@ public class RankingService extends Service {
      *
      * @return Keys -> Degree Class Id , Values -> its evaluation
      */
-    private Map<String, KACalculation> loadDefaultRankings() {
+    private Map<String, SweScore> loadDefaultRankings() {
 
-        Map<String, KACalculation> rankings = new HashMap<>();
+        Map<String, SweScore> rankings = new HashMap<>();
         for (DegreeClassMatch match : _degreeMatches.values()) {
             rankings.put(match.getDegreeClassId(), evaluateClass(match));
         }
@@ -317,6 +313,29 @@ public class RankingService extends Service {
     }
 
     /**
+     * Evaluates a degreeClass based on the matches that were made and saved, finally
+     *
+     * @param classMatch
+     */
+
+    private SweScore evaluateClass(DegreeClassMatch classMatch) {
+
+        SweScore ranking = new SweScore(SweScore.TYPE_CLASS_SCORE);
+        KnowledgeAreaTopic currentTopic = null;
+
+
+        for (Integer kaTopicId : classMatch.getAllMatchesAsList()) {
+            currentTopic = _knowledgeAreaTopicsByTopicId.get(kaTopicId);
+            ranking.addTopic(currentTopic.getId(), currentTopic.getKnowledgeAreaId());
+        }
+
+        ranking.resetPercentCalculations();
+
+        return ranking;
+    }
+
+
+    /**
      * Loads all the matches already saved in the system.
      * This function loads it to a class structure so that it acts as a cache.
      *
@@ -388,27 +407,6 @@ public class RankingService extends Service {
         }
 
         return matches;
-    }
-
-
-    /**
-     * Evaluates a degreeClass based on the matches that were made and saved, finally
-     *
-     * @param classMatch
-     */
-
-    private KACalculation evaluateClass(DegreeClassMatch classMatch) {
-
-        KACalculation ranking = new KACalculation();
-        KnowledgeAreaTopic currentTopic = null;
-
-
-        for (Integer kaTopicId : classMatch.getAllMatchesAsList()) {
-            currentTopic = _knowledgeAreaTopicsByTopicId.get(kaTopicId);
-            ranking.addTopic(currentTopic.getId(), currentTopic.getKnowledgeAreaId());
-        }
-
-        return ranking;
     }
 
 
@@ -664,13 +662,10 @@ public class RankingService extends Service {
 
     }
 
-    public Map<String, KACalculation> getDegreeClassRankings() {
+    public Map<String, SweScore> getDegreeClassRankings() {
         return _degreeClassRankings;
     }
 
-    public Map<Integer, DegreeRanking> getDegreeRankings() {
-        return _rankingsByDegree;
-    }
 
     public boolean hasCompleteMatch(int degreeId) {
         return _matchedDegrees.get(degreeId);
@@ -758,23 +753,23 @@ public class RankingService extends Service {
 //            degreeRanking.setFullDegreeCombinations(allDegreeCombinations);
 //
 //
-//            Map<String, KACalculation> scoresByAnnualCombination = calculateAnnualScores(combinationsByYear.values());
+//            Map<String, SweScore> scoresByAnnualCombination = calculateAnnualScores(combinationsByYear.values());
 //            degreeRanking.addAnnualCalculations(scoresByAnnualCombination);
 //
-//            Map<Integer, KACalculation> scoresByDegreeCombination = calculateDegreeScores(allDegreeCombinations.values(), scoresByAnnualCombination);
+//            Map<Integer, SweScore> scoresByDegreeCombination = calculateDegreeScores(allDegreeCombinations.values(), scoresByAnnualCombination);
 //            degreeRanking.addFullDegreeCalculations(scoresByDegreeCombination);
 //
 //            _rankingsByDegree.put(degreeRanking.getDegreeId(), degreeRanking);
 //        }
 
 //
-//        private Map<Integer, KACalculation> calculateDegreeScores
-//                (Collection<DegreeClassCombination> degreeCombinations, Map<String, KACalculation> annualScores) {
-//            Map<Integer, KACalculation> scoresByDegreeCombination = new HashMap<>();
+//        private Map<Integer, SweScore> calculateDegreeScores
+//                (Collection<DegreeClassCombination> degreeCombinations, Map<String, SweScore> annualScores) {
+//            Map<Integer, SweScore> scoresByDegreeCombination = new HashMap<>();
 //
 //            for (DegreeClassCombination degreeCombination : degreeCombinations) {
 //
-//                List<KACalculation> annualCalculations = new ArrayList<>();
+//                List<SweScore> annualCalculations = new ArrayList<>();
 //                for (AnnualClassCombination annualCombination : degreeCombination.getAnnualClassCombinations()) {
 //                    annualCalculations.add(annualScores.get(annualCombination.getId()));
 //                }
@@ -785,16 +780,16 @@ public class RankingService extends Service {
 //            return scoresByDegreeCombination;
 //        }
 
-//        private Map<String, KACalculation> calculateAnnualScores(Collection<List<AnnualClassCombination>> classCombinations) {
+//        private Map<String, SweScore> calculateAnnualScores(Collection<List<AnnualClassCombination>> classCombinations) {
 //
-//            Map<String, KACalculation> scoresByAnnualCombination = new HashMap<>();
+//            Map<String, SweScore> scoresByAnnualCombination = new HashMap<>();
 //
 //            for (List<AnnualClassCombination> annualCombinations : classCombinations) {
 //                // Isto calcula para um ano inteiro
 //                for (AnnualClassCombination annualCombination : annualCombinations) {
 //                    List<String> degreeClassIds = annualCombination.getDegreeClassIds();
 //
-//                    List<KACalculation> degreeClassScore = new ArrayList<>();
+//                    List<SweScore> degreeClassScore = new ArrayList<>();
 //                    for (String degreeClassId : degreeClassIds) {
 //                        degreeClassScore.add(_degreeClassRankings.get(degreeClassId));
 //                    }
@@ -805,55 +800,6 @@ public class RankingService extends Service {
 //
 //            return scoresByAnnualCombination;
 //        }
-
-        /**
-         * Returns a Map with all the different possible annual combinations of classes for each year of a degree.
-         * <p></p>
-         * <br/>
-         * This Maps has the form of:
-         * <p>
-         * Keys -> The numerical Year (e.g. 3) , Values -> A list with all possible combinations of classes for that year.
-         * </p>
-         *
-         * @param degree
-         * @return
-         */
-//        private Map<Integer, List<AnnualClassCombination>> calculateDegreeAnnualCombinations(Degree degree) {
-//
-//            Map<Integer, List<AnnualClassCombination>> combinationsByYear = new HashMap<>();
-//
-//            for (Map.Entry<Integer, ClassCombinationStrategy> classCombinationStrategy : degree.getClassCombinationStrategies().entrySet()) {
-//
-//                Integer yearOfDegree = classCombinationStrategy.getKey();
-//                ClassCombinationStrategy combinationStrategy = classCombinationStrategy.getValue();
-//
-//                // Here, using each year's strategy to unfold all possible combinations for this year
-//                List<AnnualClassCombination> annualCombinations = combinationStrategy.getAnnualClassCombinations(degree.getClasses().get(yearOfDegree));
-//
-//                combinationsByYear.put(yearOfDegree, annualCombinations);
-//            }
-//
-//            return combinationsByYear;
-//
-//        }
-
-        /**
-         * Uses all combinations of all the years that compose a degree to further unfold the class combinations to ALL possible ones.
-         * This is heavy processing method, a good multi-threading strategy must be developed.
-         * <br/>
-         * Returns a Map where:
-         * <p>
-         * Keys -> A generated unique degree combination ID , Values -> a single complete combination of classes of all years that compose the degree
-         * </p>
-         *
-         * @param degreeCombinationsByYear
-         * @return
-         */
-        private Map<Integer, DegreeClassCombination> calculateAllDegreeClassCombinations(Degree
-                                                                                                 degree, Map<Integer, List<AnnualClassCombination>> degreeCombinationsByYear) {
-            return CombinationUtils.generateAndSaveAllDegreeCombinations(degree, degreeCombinationsByYear);
-        }
-
 
         @Override
         protected void onPostExecute(Void aVoid) {
