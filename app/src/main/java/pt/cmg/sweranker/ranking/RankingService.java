@@ -73,6 +73,13 @@ public class RankingService extends Service {
         _degreeMatches = loadDefaultMatches();
     }
 
+    /**
+     * Creates the root directory for saving the matches.
+     */
+    public File createMatchFilesDirectory() {
+        return getApplicationContext().getDir(STANDARD_DIRECTORY, Context.MODE_PRIVATE);
+    }
+
 
     private void saveMatchesToSingleFile() {
         final String xmlFileName = "all_matches.xml";
@@ -98,6 +105,10 @@ public class RankingService extends Service {
                 xmlSerializer.startTag(null, "degree_class_id");
                 xmlSerializer.text(singleMatch.getKey());
                 xmlSerializer.endTag(null, "degree_class_id");
+
+                xmlSerializer.startTag(null, "degree_id");
+                xmlSerializer.text(String.valueOf(singleMatch.getValue().getDegreeId()));
+                xmlSerializer.endTag(null, "degree_id");
 
                 xmlSerializer.startTag(null, "topic_matches");
                 for (Map.Entry<String, LinkedList<Integer>> entry : singleMatch.getValue().getAllMatches().entrySet()) {
@@ -138,13 +149,6 @@ public class RankingService extends Service {
             Log.e("Cenas", e.getLocalizedMessage());
         }
 
-    }
-
-    /**
-     * Creates the root directory for saving the matches.
-     */
-    public File createMatchFilesDirectory() {
-        return getApplicationContext().getDir(STANDARD_DIRECTORY, Context.MODE_PRIVATE);
     }
 
 
@@ -203,20 +207,11 @@ public class RankingService extends Service {
     }
 
     /**
-     * Loads the default evaluations for the default matches. It basically executes a ranking calculation
-     * for each degree class that it loaded from the resources.
+     * Loads an individual degree match from its XML. This is used by loadDefaultMatches.
      *
-     * @return Keys -> Degree Class Id , Values -> its evaluation
+     * @param xmlParser
+     * @return
      */
-    private Map<String, SweScore> loadDefaultRankings() {
-
-        Map<String, SweScore> rankings = new HashMap<>();
-        for (DegreeClassMatch match : _degreeMatches.values()) {
-            rankings.put(match.getDegreeClassId(), evaluateClass(match));
-        }
-        return rankings;
-    }
-
     private DegreeClassMatch loadDegreeMatch(XmlPullParser xmlParser) {
 
         DegreeClassMatch currentMatch = new DegreeClassMatch();
@@ -237,6 +232,9 @@ public class RankingService extends Service {
                         switch (xmlElementName) {
                             case "degree_class_id":
                                 currentMatch = new DegreeClassMatch(xmlParser.nextText());
+                                break;
+                            case "degree_id":
+                                currentMatch.setDegreeId(Integer.valueOf(xmlParser.nextText()));
                                 break;
                             case "topic_matches":
                                 loadTopicMatches(currentMatch, xmlParser);
@@ -259,6 +257,12 @@ public class RankingService extends Service {
         return currentMatch;
     }
 
+    /**
+     * Loads the set of topic matches from the XML and appends it to the currently loading DegreeClassMatch.
+     *
+     * @param currentMatch
+     * @param xmlParser
+     */
     private void loadTopicMatches(DegreeClassMatch currentMatch, XmlPullParser xmlParser) {
 
         try {
@@ -313,29 +317,6 @@ public class RankingService extends Service {
     }
 
     /**
-     * Evaluates a degreeClass based on the matches that were made and saved, finally
-     *
-     * @param classMatch
-     */
-
-    private SweScore evaluateClass(DegreeClassMatch classMatch) {
-
-        SweScore ranking = new SweScore(SweScore.TYPE_CLASS_SCORE);
-        KnowledgeAreaTopic currentTopic = null;
-
-
-        for (Integer kaTopicId : classMatch.getAllMatchesAsList()) {
-            currentTopic = _knowledgeAreaTopicsByTopicId.get(kaTopicId);
-            ranking.addTopic(currentTopic.getId(), currentTopic.getKnowledgeAreaId());
-        }
-
-        ranking.resetPercentCalculations();
-
-        return ranking;
-    }
-
-
-    /**
      * Loads all the matches already saved in the system.
      * This function loads it to a class structure so that it acts as a cache.
      *
@@ -376,6 +357,9 @@ public class RankingService extends Service {
                                 case "matches":
                                     break;
                                 case "match":
+                                    break;
+                                case "degree_id":
+                                    match.setDegreeId(Integer.valueOf(xmlParser.nextText()));
                                     break;
                                 case "class_topic_id":
                                     currentDegreeTopicId = xmlParser.nextText();
@@ -480,10 +464,14 @@ public class RankingService extends Service {
             xmlSerializer.setOutput(writer);
             xmlSerializer.startDocument("UTF-8", true);
 
+            xmlSerializer.startTag(null, "degree_id");
+            xmlSerializer.text(String.valueOf(classMatch.getDegreeId()));
+            xmlSerializer.endTag(null, "degree_id");
+
             xmlSerializer.startTag(null, "matches");
 
             for (Map.Entry<String, LinkedList<Integer>> entry : classMatch.getAllMatches().entrySet()) {
-                xmlSerializer.startTag(null, "match");
+                xmlSerializer.startTag(null, "topic_match");
 
                 xmlSerializer.startTag(null, "class_topic_id");
                 xmlSerializer.text(entry.getKey());
@@ -497,7 +485,7 @@ public class RankingService extends Service {
                 }
                 xmlSerializer.endTag(null, "ka_topics");
 
-                xmlSerializer.endTag(null, "match");
+                xmlSerializer.endTag(null, "topic_match");
             }
 
             xmlSerializer.endTag(null, "matches");
@@ -509,7 +497,7 @@ public class RankingService extends Service {
 
             Log.i("RankingService", "Successfully saved match for:" + classMatch.getDegreeClassId());
             _degreeMatches.put(classMatch.getDegreeClassId(), classMatch);
-            _degreeClassRankings.put(classMatch.getDegreeClassId(), evaluateClass(classMatch));
+//            _degreeClassRankings.put(classMatch.getDegreeClassId(), evaluateClass(classMatch));
 
             saveMatchesToSingleFile();
             return true;
@@ -520,6 +508,26 @@ public class RankingService extends Service {
             Log.e("RankingService", "Couldn't save file due to: ", e);
             return false;
         }
+    }
+
+    /**
+     * Evaluates a degreeClass based on the matches that were made and saved, finally
+     *
+     * @param classMatch
+     */
+    private SweScore evaluateClass(DegreeClassMatch classMatch) {
+
+        SweScore ranking = new SweScore(classMatch.getDegreeClassId(), classMatch.getDegreeId(), SweScore.TYPE_CLASS_SCORE);
+        KnowledgeAreaTopic currentTopic = null;
+
+        for (Integer kaTopicId : classMatch.getAllMatchesAsList()) {
+            currentTopic = _knowledgeAreaTopicsByTopicId.get(kaTopicId);
+            ranking.addTopic(currentTopic.getId(), currentTopic.getKnowledgeAreaId());
+        }
+
+        ranking.calculateScores();
+
+        return ranking;
     }
 
 
@@ -551,6 +559,9 @@ public class RankingService extends Service {
 
         // TODO: this is here because only after the KA are loaded I have info enough to evaluate them. This needs to be reviewed
         _degreeClassRankings = loadDefaultRankings();
+
+//        saveIndividualClassScores();
+
     }
 
     /**
@@ -581,6 +592,34 @@ public class RankingService extends Service {
             }
         }
         return kaTopicByTopicId;
+    }
+
+
+    /**
+     * Loads the default evaluations for the default matches. It basically executes a ranking calculation
+     * for each degree class that it loaded from the resources.
+     *
+     * @return Keys -> Degree Class Id , Values -> its evaluation
+     */
+    private Map<String, SweScore> loadDefaultRankings() {
+
+        Map<String, SweScore> rankings = new HashMap<>();
+        for (DegreeClassMatch match : _degreeMatches.values()) {
+            rankings.put(match.getDegreeClassId(), evaluateClass(match));
+        }
+        return rankings;
+    }
+
+    /**
+     * Saves all the current degree class rankings that were calculated using the degree class matches as their base.
+     */
+    private void saveIndividualClassScores() {
+
+        Realm realmInstance = Realm.getDefaultInstance();
+
+        realmInstance.executeTransaction(realm -> realm.copyToRealm(_degreeClassRankings.values()));
+
+        realmInstance.close();
     }
 
 
@@ -763,8 +802,7 @@ public class RankingService extends Service {
 //        }
 
 //
-//        private Map<Integer, SweScore> calculateDegreeScores
-//                (Collection<DegreeClassCombination> degreeCombinations, Map<String, SweScore> annualScores) {
+//        private Map<Integer, SweScore> calculateDegreeScores(Collection<DegreeClassCombination> degreeCombinations, Map<String, SweScore> annualScores) {
 //            Map<Integer, SweScore> scoresByDegreeCombination = new HashMap<>();
 //
 //            for (DegreeClassCombination degreeCombination : degreeCombinations) {

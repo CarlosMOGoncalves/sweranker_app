@@ -15,16 +15,22 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 import java.util.ListIterator;
 import java.util.Map;
 
 import io.realm.Realm;
+import io.realm.RealmList;
 import io.realm.RealmObject;
 import pt.cmg.sweranker.R;
 import pt.cmg.sweranker.ranking.AnnualClassCombination;
+import pt.cmg.sweranker.ranking.CalculationUtils;
 import pt.cmg.sweranker.ranking.CombinationUtils;
 import pt.cmg.sweranker.ranking.DegreeClassCombination;
+import pt.cmg.sweranker.ranking.DegreeClassId;
+import pt.cmg.sweranker.ranking.SweScore;
 import pt.cmg.sweranker.ranking.combinationstrategies.ClassCombinationStrategy;
 
 /**
@@ -158,12 +164,13 @@ public class DegreeDetailsFragment extends Fragment {
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
-            databaseConnection = Realm.getDefaultInstance();
+
         }
 
         @Override
         protected Void doInBackground(Void... params) {
 
+            databaseConnection = Realm.getDefaultInstance();
 
             List<AnnualClassCombination> annualCombinations = calculateAnnualCombinations(_degree);
 
@@ -171,11 +178,17 @@ public class DegreeDetailsFragment extends Fragment {
 
             List<AnnualClassCombination> savedAnnualCombinations = databaseConnection.where(AnnualClassCombination.class).equalTo("degreeId", _degreeId).findAll();
 
-            List<DegreeClassCombination> allDegreeCombinations = calculateAllDegreeClassCombinations(_degree, savedAnnualCombinations);
+            calculateAndSaveAnnualScores(databaseConnection, savedAnnualCombinations);
 
-            saveObjectsByBatch(databaseConnection, allDegreeCombinations);
+            List<SweScore> savedAnnualScores = databaseConnection.where(SweScore.class).equalTo("scoreType", SweScore.TYPE_ANNUAL_SCORE).equalTo("degreeId", _degreeId).findAll();
 
-            List<DegreeClassCombination> savedCombination = databaseConnection.where(DegreeClassCombination.class).equalTo("degreeId", _degreeId).findAll();
+//            List<DegreeClassCombination> allDegreeCombinations = calculateAllDegreeClassCombinations(_degree, savedAnnualCombinations);
+//
+//            saveObjectsByBatch(databaseConnection, allDegreeCombinations);
+//
+//            List<DegreeClassCombination> savedCombination = databaseConnection.where(DegreeClassCombination.class).equalTo("degreeId", _degreeId).findAll();
+
+            databaseConnection.close();
 
             return null;
 
@@ -208,6 +221,60 @@ public class DegreeDetailsFragment extends Fragment {
         }
 
 
+        private void calculateAndSaveAnnualScores(Realm databaseConnection, List<AnnualClassCombination> annualClassCombinations) {
+
+            int batchsize = 10000;
+            int degreeId = annualClassCombinations.get(0).getDegreeId();
+
+
+            // First get the saved Scores for the classes of this degree
+            List<SweScore> individualClassScores = databaseConnection.where(SweScore.class)
+                    .equalTo("scoreType", SweScore.TYPE_CLASS_SCORE)
+                    .equalTo("degreeId", degreeId)
+                    .findAll();
+
+
+            // Now turn it into something easier to work with. As a Map I won't have to traverse the list whenever I want a value.
+            Map<String, SweScore> scoresByDegreeClassId = new HashMap<>(individualClassScores.size());
+            for (SweScore score : individualClassScores) {
+                scoresByDegreeClassId.put(score.getId(), score);
+            }
+
+
+            // I am saving in batches to alleviate memory
+            List<SweScore> batch = new ArrayList<>(batchsize);
+
+            Iterator<AnnualClassCombination> iterator = annualClassCombinations.iterator();
+            while (iterator.hasNext()) {
+
+                for (int i = 0; i < batchsize && iterator.hasNext(); i++) {
+
+                    AnnualClassCombination currentAnnualCombination = iterator.next();
+                    // First fetch the class ids of the annual combo
+                    RealmList<DegreeClassId> degreeClassIds = currentAnnualCombination.getDegreeClassIds();
+
+                    // Then gets their individual that was fetched up there
+                    List<SweScore> degreeClassScore = new ArrayList<>();
+                    for (DegreeClassId degreeClassId : degreeClassIds) {
+                        degreeClassScore.add(scoresByDegreeClassId.get(degreeClassId.getDegreeClassId()));
+                    }
+
+                    // And now calculate its combined score
+                    SweScore calculatedScore = CalculationUtils.calculateAccumulatedScore(degreeClassScore);
+                    calculatedScore.setDegreeId(degreeId);
+                    calculatedScore.setScoreType(SweScore.TYPE_ANNUAL_SCORE);
+                    calculatedScore.setId(currentAnnualCombination.getId());
+
+                    batch.add(calculatedScore);
+
+                }
+
+                databaseConnection.executeTransaction(r -> r.copyToRealmOrUpdate(batch));
+            }
+
+        }
+
+
         private <E extends RealmObject> void saveObjectsByBatch(Realm realmInstance, List<E> realmObjects) {
             int batchSize = 10000;
             ListIterator<E> iterator = realmObjects.listIterator(realmObjects.size());
@@ -236,27 +303,10 @@ public class DegreeDetailsFragment extends Fragment {
 
         }
 
-        /**
-         * Uses all combinations of all the years that compose a degree to further unfold the class combinations to ALL possible ones.
-         * This is heavy processing method, a good multi-threading strategy must be developed.
-         * <br/>
-         * Returns a Map where:
-         * <p>
-         * Keys -> A generated unique degree combination ID , Values -> a single complete combination of classes of all years that compose the degree
-         * </p>
-         *
-         * @param degreeCombinationsByYear
-         * @return
-         */
-        private Map<Integer, DegreeClassCombination> calculateAllDegreeClassCombinations(Degree degree, Map<Integer, List<AnnualClassCombination>> degreeCombinationsByYear) {
-            return CombinationUtils.generateAndSaveAllDegreeCombinations(degree, degreeCombinationsByYear);
-        }
-
 
         @Override
         protected void onPostExecute(Void aVoid) {
             super.onPostExecute(aVoid);
-            databaseConnection.close();
         }
     }
 

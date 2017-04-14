@@ -20,10 +20,10 @@ import pt.cmg.sweranker.R;
 public class RankingsAdapter extends RecyclerView.Adapter<RankingsAdapter.RankingViewHolder> {
 
     private Context _context;
-    private Map<Integer, DegreeRanking> _allDegreeRankings;
+    private Map<Integer, SweScore> _allDegreeRankings;
 
 
-    public RankingsAdapter(Context context, Map<Integer, DegreeRanking> degreeRanings) {
+    public RankingsAdapter(Context context, Map<Integer, SweScore> degreeRanings) {
         _context = context;
         _allDegreeRankings = degreeRanings;
     }

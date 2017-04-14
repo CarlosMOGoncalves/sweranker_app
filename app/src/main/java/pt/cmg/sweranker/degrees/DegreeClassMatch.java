@@ -15,6 +15,8 @@ public class DegreeClassMatch {
     private DegreeClass _degreeClass;
     private String _degreeClassId;
 
+    private int _degreeId;
+
     /**
      * Keys -> Degree Program Item , Values -> the ids of each KnowledgeAreaTopic matched.
      * I used the LinkedList because it is easier to remove the last element, which will be done
@@ -27,6 +29,7 @@ public class DegreeClassMatch {
     public DegreeClassMatch() {
         _degreeClass = new DegreeClass();
         _degreeClassId = "";
+        _degreeId = 0;
         _selectedKATopicsByProgramItem = new HashMap<>();
         _isCompleteMatch = false;
     }
@@ -41,6 +44,7 @@ public class DegreeClassMatch {
     public DegreeClassMatch(DegreeClass degreeClass) {
         _degreeClass = degreeClass;
         _degreeClassId = degreeClass.getId();
+        _degreeId = degreeClass.getDegreeId();
         _selectedKATopicsByProgramItem = initialiseMatchTrackers(_degreeClass);
         _isCompleteMatch = false;
     }
@@ -69,6 +73,14 @@ public class DegreeClassMatch {
         return _degreeClassId;
     }
 
+
+    public int getDegreeId() {
+        return _degreeId;
+    }
+
+    public void setDegreeId(int degreeId) {
+        _degreeId = degreeId;
+    }
 
     /**
      * Returns true if there is at least one KA Topic already selected for the given Degree topic

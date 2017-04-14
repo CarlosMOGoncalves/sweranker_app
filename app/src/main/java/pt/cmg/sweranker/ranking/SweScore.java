@@ -22,10 +22,17 @@ public class SweScore extends RealmObject {
     private static final int PERCENT = 100;
 
 
+    /**
+     * Very important -> this id is the Degree Class Id if this is a Degree Class Score,
+     * the Annual Combination Id if this is an Annual Combination Score or
+     * the Degree Combination Id if this is a Degree Combination Score.
+     */
     @PrimaryKey
     private String id;
 
     private String scoreType;
+
+    private int degreeId;
 
     // Keys -> KA Topic ids, Values -> number of times this ka topic was matched in this Degree Class
     @Ignore
@@ -37,13 +44,13 @@ public class SweScore extends RealmObject {
 
     // Keys -> KA ids , Values -> the percent that KA appears in matches on the overall Degree Class
     @Ignore
-    private Map<Integer, Double> _kaPercents;
+    public Map<Integer, Double> _kaPercents;
 
 
     // These are for storing the values in Realm
     private RealmList<KATopicCount> topicCounters;
     private RealmList<KACount> kaCounters;
-    private RealmList<KAPercent> kaPercents;
+    public RealmList<KAPercent> kaPercents;
 
     // Used to calculate the percents
     private int totalTopicCount;
@@ -59,6 +66,19 @@ public class SweScore extends RealmObject {
 
     public SweScore(String scoreType) {
         this.scoreType = scoreType;
+        degreeId = 0;
+        _kaTopicCounts = new HashMap<>();
+        _kaPercents = new HashMap<>();
+        _kaCounts = new HashMap<>();
+        topicCounters = new RealmList<>();
+        kaCounters = new RealmList<>();
+        kaPercents = new RealmList<>();
+    }
+
+    public SweScore(String id, int degreeId, String scoreType) {
+        this.id = id;
+        this.scoreType = scoreType;
+        this.degreeId = degreeId;
         _kaTopicCounts = new HashMap<>();
         _kaPercents = new HashMap<>();
         _kaCounts = new HashMap<>();
@@ -89,22 +109,52 @@ public class SweScore extends RealmObject {
 
     public void setTopicCounters(RealmList<KATopicCount> topicCounters) {
         this.topicCounters = topicCounters;
+        for (KATopicCount topicCount : this.topicCounters) {
+            _kaTopicCounts.put(topicCount.getTopicId(), topicCount.getTopicCount());
+        }
+    }
+
+    public void addKATopicCounter(KATopicCount topicCounter) {
+        topicCounters.add(topicCounter);
+    }
+
+    public int getDegreeId() {
+        return degreeId;
+    }
+
+    public void setDegreeId(int degreeId) {
+        this.degreeId = degreeId;
     }
 
     public RealmList<KACount> getKaCounters() {
         return this.kaCounters;
     }
 
+
     public void setKaCounters(RealmList<KACount> kaCounters) {
         this.kaCounters = kaCounters;
+        for (KACount kaCount : this.kaCounters) {
+            _kaCounts.put(kaCount.getKaId(), kaCount.getKaCount());
+        }
+    }
+
+    public void addKaCounter(KACount kaCounter) {
+        kaCounters.add(kaCounter);
     }
 
     public RealmList<KAPercent> getKaPercents() {
         return this.kaPercents;
     }
 
+    public void addKAPercent(KAPercent kaPercent) {
+        kaPercents.add(kaPercent);
+    }
+
     public void setKaPercents(RealmList<KAPercent> kaPercents) {
         this.kaPercents = kaPercents;
+        for (KAPercent kaPercent : this.kaPercents) {
+            _kaPercents.put(kaPercent.getKaId(), kaPercent.getKaPercent());
+        }
     }
 
     public Map<Integer, Integer> getKaTopicCountersByTopicId() {
@@ -115,13 +165,12 @@ public class SweScore extends RealmObject {
         return _kaCounts;
     }
 
-
     public Map<Integer, Double> getKaPercentsByKaId() {
         return _kaPercents;
     }
 
-    public void setKaPercent(Map<Integer, Double> kaPercent) {
-        _kaPercents = kaPercent;
+    public void setKaPercent(Map<Integer, Double> kaPercents) {
+        _kaPercents = kaPercents;
     }
 
     /**
@@ -170,7 +219,7 @@ public class SweScore extends RealmObject {
 
         // For performance reasons this will be left out of here and must be called separately so that it
         // does not hurt even more the performance of this
-        // resetPercentCalculations();
+        // calculateScores();
 
     }
 
@@ -208,7 +257,7 @@ public class SweScore extends RealmObject {
         // then global topic counter
         totalTopicCount++;
 
-        // I can't calculate them here, it was being used in a cycle, by God. I will call resetPercentCalculations instead
+        // I can't calculate them here, it was being used in a cycle, by God. I will call calculateScores instead
         //calculateNewPercents(knowledgeAreaId);
     }
 
@@ -233,7 +282,7 @@ public class SweScore extends RealmObject {
      * This resets the percent calculations. Only really useful after every counter has been put into place and
      * no further data will be added.
      */
-    public void resetPercentCalculations() {
+    public void calculateScores() {
 
         _kaPercents.clear();
         for (Map.Entry<Integer, Integer> entry : _kaCounts.entrySet()) {

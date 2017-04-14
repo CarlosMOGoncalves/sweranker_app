@@ -40,4 +40,5 @@ public class KACount extends RealmObject {
     public void incrementCounter(int increment) {
         kaCount += increment;
     }
+
 }
