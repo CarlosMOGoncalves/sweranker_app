@@ -172,21 +172,24 @@ public class DegreeDetailsFragment extends Fragment {
 
             databaseConnection = Realm.getDefaultInstance();
 
-            List<AnnualClassCombination> annualCombinations = calculateAnnualCombinations(_degree);
-
-            saveObjectsByBatch(databaseConnection, annualCombinations);
-
+//            List<AnnualClassCombination> annualCombinations = calculateAnnualCombinations(_degree);
+//
+//            saveObjectsByBatch(databaseConnection, annualCombinations);
+//            annualCombinations.clear();
+//
             List<AnnualClassCombination> savedAnnualCombinations = databaseConnection.where(AnnualClassCombination.class).equalTo("degreeId", _degreeId).findAll();
-
-            calculateAndSaveAnnualScores(databaseConnection, savedAnnualCombinations);
-
-            List<SweScore> savedAnnualScores = databaseConnection.where(SweScore.class).equalTo("scoreType", SweScore.TYPE_ANNUAL_SCORE).equalTo("degreeId", _degreeId).findAll();
-
-//            List<DegreeClassCombination> allDegreeCombinations = calculateAllDegreeClassCombinations(_degree, savedAnnualCombinations);
 //
-//            saveObjectsByBatch(databaseConnection, allDegreeCombinations);
+//            calculateAndSaveAnnualScores(databaseConnection, savedAnnualCombinations);
 //
-//            List<DegreeClassCombination> savedCombination = databaseConnection.where(DegreeClassCombination.class).equalTo("degreeId", _degreeId).findAll();
+            List<DegreeClassCombination> allDegreeCombinations = calculateAllDegreeClassCombinations(_degree, savedAnnualCombinations);
+
+            saveObjectsByBatch(databaseConnection, allDegreeCombinations);
+
+            calculateAndSaveDegreeScores(databaseConnection);
+
+//            List<SweScore> savedScores = databaseConnection.where(SweScore.class).equalTo("scoreType", SweScore.TYPE_DEGREE_SCORE).equalTo("degreeId", _degreeId).findAll();
+//
+//            savedScores.size();
 
             databaseConnection.close();
 
@@ -224,13 +227,12 @@ public class DegreeDetailsFragment extends Fragment {
         private void calculateAndSaveAnnualScores(Realm databaseConnection, List<AnnualClassCombination> annualClassCombinations) {
 
             int batchsize = 10000;
-            int degreeId = annualClassCombinations.get(0).getDegreeId();
 
 
             // First get the saved Scores for the classes of this degree
             List<SweScore> individualClassScores = databaseConnection.where(SweScore.class)
                     .equalTo("scoreType", SweScore.TYPE_CLASS_SCORE)
-                    .equalTo("degreeId", degreeId)
+                    .equalTo("degreeId", _degreeId)
                     .findAll();
 
 
@@ -261,7 +263,7 @@ public class DegreeDetailsFragment extends Fragment {
 
                     // And now calculate its combined score
                     SweScore calculatedScore = CalculationUtils.calculateAccumulatedScore(degreeClassScore);
-                    calculatedScore.setDegreeId(degreeId);
+                    calculatedScore.setDegreeId(_degreeId);
                     calculatedScore.setScoreType(SweScore.TYPE_ANNUAL_SCORE);
                     calculatedScore.setId(currentAnnualCombination.getId());
 
@@ -270,6 +272,82 @@ public class DegreeDetailsFragment extends Fragment {
                 }
 
                 databaseConnection.executeTransaction(r -> r.copyToRealmOrUpdate(batch));
+                batch.clear();
+
+                // This part is just a small sleep to give some time to trigger the GC and clean the mess it is creating.
+                try {
+                    Thread.sleep(200);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+
+
+            }
+
+        }
+
+        private void calculateAndSaveDegreeScores(Realm databaseConnection) {
+
+            int batchSize = 10000;
+
+            List<SweScore> annualScores = databaseConnection.where(SweScore.class)
+                    .equalTo("scoreType", SweScore.TYPE_ANNUAL_SCORE)
+                    .equalTo("degreeId", _degreeId)
+                    .findAll();
+
+
+            // Now turn it into something easier to work with. As a Map I won't have to traverse the list whenever I want a value.
+            // This map has Keys ->
+            Map<String, SweScore> scoresByAnnualCombination = new HashMap<>(annualScores.size());
+            for (SweScore score : annualScores) {
+                scoresByAnnualCombination.put(score.getId(), score);
+            }
+
+
+            List<DegreeClassCombination> degreeCombinations = databaseConnection.where(DegreeClassCombination.class)
+                    .equalTo("degreeId", _degreeId)
+                    .findAll();
+
+
+            Iterator<DegreeClassCombination> iterator = degreeCombinations.iterator();
+
+            //I am saving in batches to alleviate memory
+            List<SweScore> batch = new ArrayList<>(batchSize);
+            while (iterator.hasNext()) {
+
+
+                for (int i = 0; i < batchSize && iterator.hasNext(); i++) {
+
+                    DegreeClassCombination currentDegreeCombination = iterator.next();
+                    // First fetch the class ids of the annual combo
+                    RealmList<AnnualClassCombination> degreeAnnualCombinations = currentDegreeCombination.getAnnualClassCombinations();
+
+                    // Then gets their individual that was fetched up there
+                    List<SweScore> currentAnnualScores = new ArrayList<>();
+                    for (AnnualClassCombination annualCombo : degreeAnnualCombinations) {
+                        currentAnnualScores.add(scoresByAnnualCombination.get(annualCombo.getId()));
+                    }
+
+                    // And now calculate its combined score
+                    SweScore calculatedScore = CalculationUtils.calculateAccumulatedScore(currentAnnualScores);
+                    calculatedScore.setDegreeId(_degreeId);
+                    calculatedScore.setScoreType(SweScore.TYPE_DEGREE_SCORE);
+                    calculatedScore.setId(currentDegreeCombination.getCombinationId());
+
+                    batch.add(calculatedScore);
+
+                }
+                databaseConnection.executeTransaction(r -> r.copyToRealmOrUpdate(batch));
+                batch.clear();
+
+                // This part is just a small sleep to give some time to trigger the GC and clean the mess it is creating.
+                try {
+                    Thread.sleep(200);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+
+
             }
 
         }
@@ -289,6 +367,7 @@ public class DegreeDetailsFragment extends Fragment {
                 }
 
                 realmInstance.executeTransaction(realm -> realm.copyToRealmOrUpdate(batch));
+                batch.clear();
 
                 // This part is just a small sleep to give some time to trigger the GC and clean the mess it is creating.
                 try {
@@ -297,7 +376,7 @@ public class DegreeDetailsFragment extends Fragment {
                     e.printStackTrace();
                 }
 
-                batch.clear();
+
             }
 
 

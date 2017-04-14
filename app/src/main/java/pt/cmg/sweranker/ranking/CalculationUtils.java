@@ -45,20 +45,20 @@ public class CalculationUtils {
             RealmList<KACount> currentKaCounters = currentScore.getKaCounters();
             for (KACount kaCounter : currentKaCounters) {
                 if (kaCounters.containsKey(kaCounter.getKaId())) {
-                    kaCounters.put(kaCounter.getKaId(), kaCounters.get(kaCounter.getKaId()) + 1);
+                    kaCounters.put(kaCounter.getKaId(), kaCounters.get(kaCounter.getKaId()) + kaCounter.getKaCount());
                 } else {
-                    kaCounters.put(kaCounter.getKaId(), 1);
+                    kaCounters.put(kaCounter.getKaId(), kaCounter.getKaCount());
                 }
             }
 
             // Then update ALL the KA Topic counters AND the total counter
             RealmList<KATopicCount> currentTopicCounters = currentScore.getTopicCounters();
             for (KATopicCount topicCounter : currentTopicCounters) {
-                totalTopicCount++;
+                totalTopicCount += topicCounter.getTopicCount();
                 if (kaTopicCounters.containsKey(topicCounter.getTopicId())) {
-                    kaTopicCounters.put(topicCounter.getTopicId(), kaTopicCounters.get(topicCounter.getTopicId()) + 1);
+                    kaTopicCounters.put(topicCounter.getTopicId(), kaTopicCounters.get(topicCounter.getTopicId()) + topicCounter.getTopicCount());
                 } else {
-                    kaTopicCounters.put(topicCounter.getTopicId(), 1);
+                    kaTopicCounters.put(topicCounter.getTopicId(), topicCounter.getTopicCount());
                 }
             }
         }

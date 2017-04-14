@@ -14,10 +14,8 @@ import io.realm.annotations.PrimaryKey;
 
 public class DegreeClassCombination extends RealmObject {
 
-    private static final int DEFAULT_ID = -1;
-
     @PrimaryKey
-    private int combinationId;
+    private String combinationId;
 
     private int degreeId;
 
@@ -28,29 +26,31 @@ public class DegreeClassCombination extends RealmObject {
 
 
     public DegreeClassCombination() {
-        combinationId = DEFAULT_ID;
+        combinationId = "Inv";
         annualClassCombinations = new RealmList<>();
+        classCombinationsByYear = new HashMap<>();
     }
 
 
-    public DegreeClassCombination(int combinationId) {
+    public DegreeClassCombination(String combinationId) {
         this.combinationId = combinationId;
         annualClassCombinations = new RealmList<>();
+        classCombinationsByYear = new HashMap<>();
     }
 
     public DegreeClassCombination(AnnualClassCombination annualClassCombination) {
-        combinationId = DEFAULT_ID;
+        combinationId = "Inv";
         annualClassCombinations = new RealmList<>();
         annualClassCombinations.add(annualClassCombination);
         classCombinationsByYear = new HashMap<>();
         classCombinationsByYear.put(annualClassCombination.getYear(), annualClassCombination);
     }
 
-    public int getCombinationId() {
+    public String getCombinationId() {
         return combinationId;
     }
 
-    public void setCombinationId(int combinationId) {
+    public void setCombinationId(String combinationId) {
         this.combinationId = combinationId;
     }
 
@@ -79,7 +79,9 @@ public class DegreeClassCombination extends RealmObject {
     }
 
     public void setClassCombinationsByYear(Map<Integer, AnnualClassCombination> classCombinationsByYear) {
-        this.classCombinationsByYear = classCombinationsByYear;
+        for (Map.Entry<Integer, AnnualClassCombination> entry : classCombinationsByYear.entrySet()) {
+            this.classCombinationsByYear.put(entry.getKey(), entry.getValue());
+        }
         for (AnnualClassCombination annualCombo : classCombinationsByYear.values()) {
             annualClassCombinations.add(annualCombo);
         }

@@ -91,8 +91,9 @@ public class CombinationUtils {
         int combinationId = 1;
 
         // This is one last pass to add an ID to all the combinations
+        String combinationIdBase = "d" + degree.getId() + "c";
         for (DegreeClassCombination combination : currentTotalCombinations) {
-            combination.setCombinationId(++combinationId);
+            combination.setCombinationId(combinationIdBase + (++combinationId));
             combination.setDegreeId(degree.getId());
         }
 

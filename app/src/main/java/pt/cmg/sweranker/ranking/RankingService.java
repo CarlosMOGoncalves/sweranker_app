@@ -33,7 +33,6 @@ import pt.cmg.sweranker.R;
 import pt.cmg.sweranker.degrees.Degree;
 import pt.cmg.sweranker.degrees.DegreeClass;
 import pt.cmg.sweranker.degrees.DegreeClassMatch;
-import pt.cmg.sweranker.ranking.combinationstrategies.ClassCombinationStrategy;
 import pt.cmg.sweranker.swebok.KnowledgeArea;
 import pt.cmg.sweranker.swebok.KnowledgeAreaTopic;
 
@@ -722,122 +721,9 @@ public class RankingService extends Service {
         @Override
         protected Void doInBackground(Void... params) {
 
-            //for (Degree degree : _degreesById.values()) {
-            for (int i = 1; i <= 1; i++) {
-
-                Degree degree = _degreesById.get(i);
-
-                Realm realm = Realm.getDefaultInstance();
-
-                List<AnnualClassCombination> annualCombinations = XcalculateDegreeAnnualCombinations(degree);
-
-                realm.executeTransaction(r -> r.copyToRealmOrUpdate(annualCombinations));
-
-                List<DegreeClassCombination> allDegreeCombinations = calculateAllDegreeClassCombinations(degree, annualCombinations);
-
-                realm.executeTransaction(r -> r.copyToRealmOrUpdate(allDegreeCombinations));
-
-
-                allDegreeCombinations.size();
-//                List<DegreeClassCombination> fetched = realm.where(DegreeClassCombination.class).findAll();
-//
-//                fetched.size();
-//
-//                Realm realm = Realm.getDefaultInstance();
-//
-//                realm.beginTransaction();
-//
-//                List<AnnualClassCombination> annualRealm = realm.copyToRealm(annualCombinations);
-//
-//                realm.commitTransaction();
-//
-                realm.close();
-
-            }
 
             return null;
         }
-
-        private List<DegreeClassCombination> calculateAllDegreeClassCombinations(Degree degree, List<AnnualClassCombination> annualCombinations) {
-            return CombinationUtils.generateAllDegreeCombinations(degree, annualCombinations);
-        }
-
-
-        private List<AnnualClassCombination> XcalculateDegreeAnnualCombinations(Degree degree) {
-            List<AnnualClassCombination> annualCombinations = new ArrayList<>();
-
-            for (Map.Entry<Integer, ClassCombinationStrategy> classCombinationStrategy : degree.getClassCombinationStrategies().entrySet()) {
-
-                Integer yearOfDegree = classCombinationStrategy.getKey();
-                ClassCombinationStrategy combinationStrategy = classCombinationStrategy.getValue();
-
-                // Here, using each year's strategy to unfold all possible combinations for this year
-                annualCombinations.addAll(combinationStrategy.getAnnualClassCombinations(degree.getClasses().get(yearOfDegree)));
-
-            }
-
-            return annualCombinations;
-        }
-
-//        private void dummy(Degree degree) {
-//
-//            Map<Integer, List<AnnualClassCombination>> combinationsByYear = calculateDegreeAnnualCombinations(degree);
-//            Map<Integer, DegreeClassCombination> allDegreeCombinations = calculateAllDegreeClassCombinations(degree, combinationsByYear);
-//
-//
-//            DegreeRanking degreeRanking = new DegreeRanking(degree);
-//            for (List<AnnualClassCombination> combos : combinationsByYear.values()) {
-//                degreeRanking.addAnnualCombinations(combos);
-//            }
-//            degreeRanking.setFullDegreeCombinations(allDegreeCombinations);
-//
-//
-//            Map<String, SweScore> scoresByAnnualCombination = calculateAnnualScores(combinationsByYear.values());
-//            degreeRanking.addAnnualCalculations(scoresByAnnualCombination);
-//
-//            Map<Integer, SweScore> scoresByDegreeCombination = calculateDegreeScores(allDegreeCombinations.values(), scoresByAnnualCombination);
-//            degreeRanking.addFullDegreeCalculations(scoresByDegreeCombination);
-//
-//            _rankingsByDegree.put(degreeRanking.getDegreeId(), degreeRanking);
-//        }
-
-//
-//        private Map<Integer, SweScore> calculateDegreeScores(Collection<DegreeClassCombination> degreeCombinations, Map<String, SweScore> annualScores) {
-//            Map<Integer, SweScore> scoresByDegreeCombination = new HashMap<>();
-//
-//            for (DegreeClassCombination degreeCombination : degreeCombinations) {
-//
-//                List<SweScore> annualCalculations = new ArrayList<>();
-//                for (AnnualClassCombination annualCombination : degreeCombination.getAnnualClassCombinations()) {
-//                    annualCalculations.add(annualScores.get(annualCombination.getId()));
-//                }
-//
-//                scoresByDegreeCombination.put(degreeCombination.getCombinationId(), CalculationUtils.calculateAccumulatedRankings(annualCalculations));
-//            }
-//
-//            return scoresByDegreeCombination;
-//        }
-
-//        private Map<String, SweScore> calculateAnnualScores(Collection<List<AnnualClassCombination>> classCombinations) {
-//
-//            Map<String, SweScore> scoresByAnnualCombination = new HashMap<>();
-//
-//            for (List<AnnualClassCombination> annualCombinations : classCombinations) {
-//                // Isto calcula para um ano inteiro
-//                for (AnnualClassCombination annualCombination : annualCombinations) {
-//                    List<String> degreeClassIds = annualCombination.getDegreeClassIds();
-//
-//                    List<SweScore> degreeClassScore = new ArrayList<>();
-//                    for (String degreeClassId : degreeClassIds) {
-//                        degreeClassScore.add(_degreeClassRankings.get(degreeClassId));
-//                    }
-//
-//                    scoresByAnnualCombination.put(annualCombination.getId(), CalculationUtils.calculateAccumulatedRankings(degreeClassScore));
-//                }
-//            }
-//
-//            return scoresByAnnualCombination;
-//        }
 
         @Override
         protected void onPostExecute(Void aVoid) {
