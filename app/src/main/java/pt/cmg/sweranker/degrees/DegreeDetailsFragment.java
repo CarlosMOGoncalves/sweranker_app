@@ -7,6 +7,7 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -27,7 +28,6 @@ import io.realm.RealmObject;
 import pt.cmg.sweranker.R;
 import pt.cmg.sweranker.ranking.AnnualClassCombination;
 import pt.cmg.sweranker.ranking.CalculationUtils;
-import pt.cmg.sweranker.ranking.CombinationUtils;
 import pt.cmg.sweranker.ranking.DegreeClassCombination;
 import pt.cmg.sweranker.ranking.DegreeClassId;
 import pt.cmg.sweranker.ranking.SweScore;
@@ -45,6 +45,10 @@ public class DegreeDetailsFragment extends Fragment {
 
     private int _degreeId;
     private Degree _degree;
+
+    private String _degreeCombinationIdBase;
+    private int _combinationIdCounter;
+    private int _totalPossibleCombinations = 1;
 
     private DegreeDetailsFragmentInteractionListener _parentActivity;
 
@@ -170,35 +174,32 @@ public class DegreeDetailsFragment extends Fragment {
         @Override
         protected Void doInBackground(Void... params) {
 
+            _degreeCombinationIdBase = "d" + _degreeId + "c";
+            _combinationIdCounter = 1;
+
             databaseConnection = Realm.getDefaultInstance();
 
-//            List<AnnualClassCombination> annualCombinations = calculateAnnualCombinations(_degree);
-//
-//            saveObjectsByBatch(databaseConnection, annualCombinations);
-//            annualCombinations.clear();
-//
-            List<AnnualClassCombination> savedAnnualCombinations = databaseConnection.where(AnnualClassCombination.class).equalTo("degreeId", _degreeId).findAll();
-//
-//            calculateAndSaveAnnualScores(databaseConnection, savedAnnualCombinations);
-//
-            List<DegreeClassCombination> allDegreeCombinations = calculateAllDegreeClassCombinations(_degree, savedAnnualCombinations);
+            List<AnnualClassCombination> annualCombinations = calculateAnnualCombinations(_degree);
 
-            saveObjectsByBatch(databaseConnection, allDegreeCombinations);
+            saveObjectsByBatch(databaseConnection, annualCombinations);
+            annualCombinations.clear();
 
-            calculateAndSaveDegreeScores(databaseConnection);
+            calculateAndSaveAnnualScores(databaseConnection);
 
-//            List<SweScore> savedScores = databaseConnection.where(SweScore.class).equalTo("scoreType", SweScore.TYPE_DEGREE_SCORE).equalTo("degreeId", _degreeId).findAll();
-//
-//            savedScores.size();
+            calculateAndSaveDegreeClassCombinations(databaseConnection, _degree);
+
+//            calculateAndSaveDegreeScores(databaseConnection);
+
+            List<DegreeClassCombination> savedCombos = databaseConnection.where(DegreeClassCombination.class)
+                    .equalTo("degreeId", _degreeId)
+                    .findAll();
+
+            Log.i("Realm", "Found " + savedCombos.size() + " saved degree combinations. We are live Houston.");
 
             databaseConnection.close();
 
             return null;
 
-        }
-
-        private List<DegreeClassCombination> calculateAllDegreeClassCombinations(Degree degree, List<AnnualClassCombination> annualCombinations) {
-            return CombinationUtils.generateAllDegreeCombinations(degree, annualCombinations);
         }
 
 
@@ -220,16 +221,30 @@ public class DegreeDetailsFragment extends Fragment {
                 annualCombination.setDegreeId(_degreeId);
             }
 
+            Log.i("Realm", "Found " + annualCombinations.size() + " annual combinations for degree " + _degreeId);
+
             return annualCombinations;
         }
 
-
-        private void calculateAndSaveAnnualScores(Realm databaseConnection, List<AnnualClassCombination> annualClassCombinations) {
+        /**
+         * This does a lot. It calculates the scores for each annual combination of this degree by aggregating the scores
+         * of all the classes that compose the annual combination.
+         * <p>
+         * Then saves each calculation on a batch level because Realm is seriously pathetic at inserting data in bulk.
+         *
+         * @param databaseConnection
+         */
+        private void calculateAndSaveAnnualScores(Realm databaseConnection) {
 
             int batchsize = 10000;
 
+            // First get the saved annual combinations for this degree
+            List<AnnualClassCombination> savedAnnualClassCombinations = databaseConnection.where(AnnualClassCombination.class)
+                    .equalTo("degreeId", _degreeId)
+                    .findAll();
 
-            // First get the saved Scores for the classes of this degree
+
+            // Then get the saved Scores for the classes of this degree
             List<SweScore> individualClassScores = databaseConnection.where(SweScore.class)
                     .equalTo("scoreType", SweScore.TYPE_CLASS_SCORE)
                     .equalTo("degreeId", _degreeId)
@@ -246,7 +261,7 @@ public class DegreeDetailsFragment extends Fragment {
             // I am saving in batches to alleviate memory
             List<SweScore> batch = new ArrayList<>(batchsize);
 
-            Iterator<AnnualClassCombination> iterator = annualClassCombinations.iterator();
+            Iterator<AnnualClassCombination> iterator = savedAnnualClassCombinations.iterator();
             while (iterator.hasNext()) {
 
                 for (int i = 0; i < batchsize && iterator.hasNext(); i++) {
@@ -285,6 +300,84 @@ public class DegreeDetailsFragment extends Fragment {
             }
 
         }
+
+
+        private void calculateAndSaveDegreeClassCombinations(Realm database, Degree degree) {
+
+            List<AnnualClassCombination> allAnnualCombinations = database.where(AnnualClassCombination.class)
+                    .equalTo("degreeId", _degreeId)
+                    .findAll();
+
+            // This part just transforms the List into something easier to access, namely a Map where Keys -> Year , Values -> all annual combinations for that particular year
+            Map<Integer, List<AnnualClassCombination>> combinationsByYear = new HashMap<>();
+
+            for (AnnualClassCombination annualCombo : allAnnualCombinations) {
+                Integer comboYear = annualCombo.getYear();
+
+                if (combinationsByYear.containsKey(comboYear)) {
+                    combinationsByYear.get(comboYear).add(annualCombo);
+                } else {
+                    List<AnnualClassCombination> annualComboList = new ArrayList<>();
+                    annualComboList.add(annualCombo);
+                    combinationsByYear.put(comboYear, annualComboList);
+                }
+            }
+
+            List<List<AnnualClassCombination>> combinationPool = new ArrayList<>();
+            for (int i = 1; i <= combinationsByYear.size(); i++) {
+                combinationPool.add(combinationsByYear.get(i));
+                _totalPossibleCombinations *= combinationsByYear.get(i).size();
+            }
+
+
+            List<DegreeClassCombination> results = new ArrayList<>();
+
+            generateAndSaveRecursively(database, combinationPool, results, 0, new ArrayList<>());
+
+            results.size();
+        }
+
+        private void generateAndSaveRecursively(Realm database,
+                                                List<List<AnnualClassCombination>> combinationPool,
+                                                List<DegreeClassCombination> result,
+                                                int depth,
+                                                List<AnnualClassCombination> current) {
+
+            // This is the stopping condition.
+            // It stops the recursive call when we have reached a depth = max number of years
+            // which in turn means we already have a new list of annual combinations ready (i.e. a new Degree Class Combination).
+            if (depth == combinationPool.size()) {
+
+                // There it is, the new one. One must calculate its id
+                DegreeClassCombination newCombination = new DegreeClassCombination(_degreeId, _degreeCombinationIdBase + _combinationIdCounter);
+                newCombination.setAnnualClassCombinations(current);
+                result.add(newCombination);
+
+                // Now if this object has reached the batch size OR it is the last bunch I will save it and empty it (to save memory).
+                if ((_combinationIdCounter == _totalPossibleCombinations) || result.size() == 10000) {
+                    databaseConnection.executeTransaction(r -> r.copyToRealmOrUpdate(result));
+                    result.clear();
+
+                    // This part is just a small sleep to give some time to trigger the GC and clean the mess it is creating.
+                    try {
+                        Thread.sleep(100);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                }
+
+                _combinationIdCounter++;
+                return;
+            }
+
+            for (int i = 0; i < combinationPool.get(depth).size(); ++i) {
+                List<AnnualClassCombination> currentAnnual = new ArrayList<>(current);
+                currentAnnual.add(combinationPool.get(depth).get(i));
+                generateAndSaveRecursively(database, combinationPool, result, depth + 1, currentAnnual);
+            }
+
+        }
+
 
         private void calculateAndSaveDegreeScores(Realm databaseConnection) {
 
@@ -367,6 +460,7 @@ public class DegreeDetailsFragment extends Fragment {
                 }
 
                 realmInstance.executeTransaction(realm -> realm.copyToRealmOrUpdate(batch));
+
                 batch.clear();
 
                 // This part is just a small sleep to give some time to trigger the GC and clean the mess it is creating.

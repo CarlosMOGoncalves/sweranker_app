@@ -1,95 +1,113 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/cardview_light_background"
     android:orientation="vertical">
 
 
-    <LinearLayout
-        android:orientation="horizontal"
+    <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp">
 
         <ImageView
             android:id="@+id/degree_image"
             android:layout_width="@dimen/degree_detail_image_size"
             android:layout_height="@dimen/degree_detail_image_size"
+            android:layout_marginLeft="6dp"
+            android:layout_marginTop="16dp"
             android:background="@android:color/background_light"
             android:scaleType="fitCenter"
             android:transitionName="degree_image"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/feup_logo" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
+        <TextView
+            android:id="@+id/degree_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:background="@android:color/background_light"
+            android:padding="@dimen/ka_title_padding"
+            android:text="Mestrado em Engenharia Informática"
+            android:textAlignment="viewStart"
+            android:textColor="@color/colorPrimaryDark"
+            android:transitionName="degree_name"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/degree_image"
+            tools:layout_editor_absoluteY="8dp" />
 
-            <TextView
-                android:id="@+id/degree_name"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@android:color/background_light"
-                android:padding="@dimen/ka_title_padding"
-                android:text="Mestrado em Engenharia Informática"
-                android:textAlignment="viewStart"
-                android:textColor="@color/colorPrimaryDark"
-                android:transitionName="degree_name" />
+        <TextView
+            android:id="@+id/university_name"
+            android:layout_width="0dp"
+            android:layout_height="39dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginTop="0dp"
+            android:background="@android:color/background_light"
+            android:gravity="center"
+            android:paddingBottom="@dimen/ka_title_padding"
+            android:paddingLeft="@dimen/ka_title_padding"
+            android:paddingRight="@dimen/ka_title_padding"
+            android:text="Universidade do Minho"
+            android:textAlignment="viewStart"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/ka_detail_title_size"
+            android:transitionName="university_name"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/degree_name"
+            app:layout_constraintTop_toBottomOf="@+id/degree_name" />
 
-            <TextView
-                android:id="@+id/university_name"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@android:color/background_light"
-                android:gravity="center"
-                android:paddingLeft="@dimen/ka_title_padding"
-                android:paddingRight="@dimen/ka_title_padding"
-                android:paddingBottom="@dimen/ka_title_padding"
-                android:text="Universidade do Minho"
-                android:textAlignment="viewStart"
-                android:textColor="@android:color/black"
-                android:textSize="@dimen/ka_detail_title_size"
-                android:transitionName="university_name" />
+        <TextView
+            android:id="@+id/evaluated_status"
+            android:layout_width="0dp"
+            android:layout_height="41dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:background="@android:color/background_light"
+            android:gravity="center_vertical"
+            android:padding="@dimen/ka_title_padding"
+            android:text="Evaluated"
+            android:textAlignment="viewStart"
+            android:textColor="@color/cardColour14"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/degree_image"
+            app:layout_constraintTop_toBottomOf="@+id/university_name" />
 
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <TextView
-                    android:id="@+id/evaluated_status"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_alignParentStart="true"
-                    android:layout_alignParentTop="true"
-                    android:background="@android:color/background_light"
-                    android:gravity="center_vertical"
-                    android:padding="@dimen/ka_title_padding"
-                    android:text="Evaluated"
-                    android:textAlignment="viewStart"
-                    android:textColor="@color/cardColour14" />
-
-                <Button
-                    android:id="@+id/init_calculation"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:background="@color/colorPrimary"
-                    android:elevation="2dp"
-                    android:ellipsize="end"
-                    android:textColor="@color/cardview_light_background"
-                    android:clickable="true"
-                    android:focusable="true"
-                    app:srcCompat="@drawable/evaluate"
-                    android:text="Calculate"
-                    android:layout_alignBaseline="@+id/evaluated_status"
-                    android:layout_alignBottom="@+id/evaluated_status"
-                    android:layout_alignParentEnd="true" />
-            </RelativeLayout>
-
-        </LinearLayout>
+        <Button
+            android:id="@+id/init_calculation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/evaluated_status"
+            android:layout_alignBottom="@+id/evaluated_status"
+            android:layout_alignParentEnd="true"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginEnd="8dp"
+            android:layout_marginTop="6dp"
+            android:background="@color/colorPrimary"
+            android:clickable="true"
+            android:elevation="2dp"
+            android:ellipsize="end"
+            android:focusable="true"
+            android:text="Calculate"
+            android:textColor="@color/cardview_light_background"
+            android:visibility="visible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/evaluated_status"
+            app:srcCompat="@drawable/evaluate" />
 
 
-    </LinearLayout>
+    </android.support.constraint.ConstraintLayout>
 
     <LinearLayout
         android:layout_width="match_parent"

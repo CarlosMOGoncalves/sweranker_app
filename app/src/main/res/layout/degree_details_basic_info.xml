@@ -1,8 +1,6 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- I used a Nested ScrollView here because this View will be used inside a scrollable Coordinator Layout
+<?xml version="1.0" encoding="utf-8"?><!-- I used a Nested ScrollView here because this View will be used inside a scrollable Coordinator Layout
  which caused this ScrollView not to scroll properly in the Degree Details fragment -->
-<android.support.v4.widget.NestedScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 

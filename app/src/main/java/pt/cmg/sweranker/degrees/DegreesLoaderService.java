@@ -43,10 +43,23 @@ public class DegreesLoaderService extends Service {
         storeDegreeClassesToDatabase();
     }
 
+    /**
+     * Stores the Degree Class Ids immediately.
+     * This is a temporary fix to the general problem of the persistence
+     * of this app data.
+     * <p>
+     * The truth is that most objects need to be remodeled to be saved entirely in the
+     * database.
+     * At this moment only a String object that represents the ID of the Degree Classes
+     * are being saved. This is enough for now, but frankly it is ugly.
+     * It happened only because the decision to use a Realm database was taken near the end
+     * of the development due to the massive amount of objects needed to save degree combinations - thanks a lot FEUP...
+     */
     private void storeDegreeClassesToDatabase() {
 
         Realm realm = Realm.getDefaultInstance();
 
+        // TODO: as soon as more degrees are available increment this.
         for (int i = 0; i < 1; i++) {
 
             List<DegreeClass> degreeClasses = _degrees.get(i).getClassesAsList();
@@ -56,7 +69,7 @@ public class DegreesLoaderService extends Service {
                 degreeClassIds.add(degreeClass.getId());
             }
 
-
+            // this is used just as a check so that no degree class is inserted if they are already inserted.
             List<DegreeClassId> persistedClasses = realm
                     .where(DegreeClassId.class)
                     .in("degreeClassId", degreeClassIds.toArray(new String[degreeClassIds.size()]))
@@ -65,19 +78,26 @@ public class DegreesLoaderService extends Service {
             if (degreeClassIds.size() != persistedClasses.size()) {
 
                 List<DegreeClassId> toInsert = new RealmList<>();
-
-
                 for (String degreeClassId : degreeClassIds) {
                     toInsert.add(new DegreeClassId(degreeClassId));
                 }
-
                 realm.executeTransaction(r -> r.copyToRealmOrUpdate(toInsert));
 
+                List<DegreeClassId> savedIds = realm.where(DegreeClassId.class)
+                        .findAll();
+
+                Log.i("Realm", "Saved " + savedIds.size() + " degree class ids.");
+            } else {
+                List<DegreeClassId> savedIds = realm.where(DegreeClassId.class)
+                        .findAll();
+
+                Log.i("Realm", "Database has " + savedIds.size() + " degree class ids. No need to save them again.");
             }
 
 
         }
 
+        realm.close();
 
     }
 

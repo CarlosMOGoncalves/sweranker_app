@@ -14,8 +14,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ProgressBar;
 
-import java.util.Map;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
 
+import io.realm.Realm;
+import io.realm.RealmResults;
+import io.realm.Sort;
 import pt.cmg.sweranker.R;
 
 public class RankingFragment extends Fragment {
@@ -40,14 +45,11 @@ public class RankingFragment extends Fragment {
      */
     private RankingFragmentInteractionListener _parentActivity;
 
-    // Keys -> Degree Class Ids , Values -> The individual ranking for the class
-    private Map<String, SweScore> _degreeClassRankings;
-
-
     private RecyclerView _rankingsGrid;
     private View _myRootView;
     private ProgressBar _progressBar;
     private RankingsAdapter _adapter;
+    private List<SweScore> _sampleScores;
 
 
     public RankingFragment() {
@@ -65,8 +67,45 @@ public class RankingFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        _degreeClassRankings = _parentActivity.getAllDegreeClassRankings();
+        _sampleScores = loadSampleScores();
     }
+
+
+    private List<SweScore> loadSampleScores() {
+
+        Realm database = Realm.getDefaultInstance();
+
+        // Starting with them ordered descending from KA = 3
+        RealmResults<KAPercent> sortedPercents = database.where(KAPercent.class)
+                .equalTo("kaId", 3)
+                .findAllSorted("kaPercent", Sort.DESCENDING);
+
+        RealmResults<SweScore> scores = database.where(SweScore.class)
+                .equalTo("scoreType", SweScore.TYPE_DEGREE_SCORE)
+                .findAll();
+
+        RealmResults<SweScore> ascores = database.where(SweScore.class)
+                .equalTo("scoreType", SweScore.TYPE_ANNUAL_SCORE)
+                .findAll();
+
+        RealmResults<SweScore> dscores = database.where(SweScore.class)
+                .findAll();
+
+        List<SweScore> resultingScores = new ArrayList<>();
+
+        int counter = 0;
+
+        Iterator<KAPercent> iterator = sortedPercents.iterator();
+        for (int i = 0; i < 40; i++) {
+            resultingScores.add(sortedPercents.get(i).getScore());
+            counter++;
+        }
+
+        database.close();
+        return resultingScores;
+
+    }
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -79,7 +118,7 @@ public class RankingFragment extends Fragment {
 
         _adapter = new RankingsAdapter(this.getActivity(), null);
 
-//        GridLayoutManager mLayoutManager = new GridLayoutManager(this.getActivity(), 2);
+//        GridLayoutManager mLayoutManager = new GridLayoutManager(this.getActivity(), 4);
 //        _rankingsGrid.setLayoutManager(mLayoutManager);
 //        _rankingsGrid.addItemDecoration(new ConstantSpacingItemDecorator(this.getActivity(),
 //                10,
@@ -107,7 +146,6 @@ public class RankingFragment extends Fragment {
         IntentFilter intentFilter = new IntentFilter(ACTION_RECEIVER);
         broadcastManager.registerReceiver(_calculationsFinishedReceiver, intentFilter);
 
-        _parentActivity.calculateDegreesRankings();
     }
 
     // NOTE: this is here because onAttach(Context) was added only on API 23, so as long as Lollipop is min sdk this shall be here
@@ -129,13 +167,11 @@ public class RankingFragment extends Fragment {
     public void onDetach() {
         super.onDetach();
         _parentActivity = null;
-
         LocalBroadcastManager.getInstance(this.getActivity()).unregisterReceiver(_calculationsFinishedReceiver);
     }
 
     public interface RankingFragmentInteractionListener extends RankingLoader {
 
-        void calculateDegreesRankings();
 
     }
 }

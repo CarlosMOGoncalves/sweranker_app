@@ -9,6 +9,17 @@ import io.realm.annotations.Ignore;
 import io.realm.annotations.PrimaryKey;
 
 /**
+ * This class represents a single score for a complete Degree program or part of it (a Degree Class
+ * or an Annual Combination of classes).
+ * <p>
+ * It is not overly complicated. It basically has a counter for the number of time a given Degree
+ * Class Topic has appeared, a counter for the number of times any topic for a given KA has appeared
+ * (meaning that if Topic 1 and Topic 3 are both related to KA 1 then the KA will have the number of times
+ * the Topic 1 has appeared plus the number of time Topic 3 has appeared) and an average percentage
+ * calculation for the KAs in the whole of the calculation.
+ * <p>
+ * More info on the class comments.
+ * <p>
  * Created by Carlos on 07/03/2017.
  */
 
@@ -23,13 +34,18 @@ public class SweScore extends RealmObject {
 
 
     /**
-     * Very important -> this id is the Degree Class Id if this is a Degree Class Score,
+     * Very important -> this id is:
+     * the Degree Class Id if this is a Degree Class Score,
      * the Annual Combination Id if this is an Annual Combination Score or
      * the Degree Combination Id if this is a Degree Combination Score.
      */
     @PrimaryKey
     private String id;
 
+    /**
+     * Either TYPE_CLASS_SCORE, TYPE_ANNUAL_SCORE or TYPE_DEGREE_SCORE.
+     * It should be an Enum if Realm supported it.
+     */
     private String scoreType;
 
     private int degreeId;

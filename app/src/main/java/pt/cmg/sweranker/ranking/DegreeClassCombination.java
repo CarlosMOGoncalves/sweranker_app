@@ -1,11 +1,11 @@
 package pt.cmg.sweranker.ranking;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import io.realm.RealmList;
 import io.realm.RealmObject;
-import io.realm.annotations.Ignore;
 import io.realm.annotations.PrimaryKey;
 
 /**
@@ -21,29 +21,28 @@ public class DegreeClassCombination extends RealmObject {
 
     private RealmList<AnnualClassCombination> annualClassCombinations;
 
-    @Ignore
-    private Map<Integer, AnnualClassCombination> classCombinationsByYear;
-
 
     public DegreeClassCombination() {
         combinationId = "Inv";
         annualClassCombinations = new RealmList<>();
-        classCombinationsByYear = new HashMap<>();
     }
 
 
     public DegreeClassCombination(String combinationId) {
         this.combinationId = combinationId;
         annualClassCombinations = new RealmList<>();
-        classCombinationsByYear = new HashMap<>();
+    }
+
+    public DegreeClassCombination(int degreeId, String combinationId) {
+        this.degreeId = degreeId;
+        this.combinationId = combinationId;
+        annualClassCombinations = new RealmList<>();
     }
 
     public DegreeClassCombination(AnnualClassCombination annualClassCombination) {
         combinationId = "Inv";
         annualClassCombinations = new RealmList<>();
         annualClassCombinations.add(annualClassCombination);
-        classCombinationsByYear = new HashMap<>();
-        classCombinationsByYear.put(annualClassCombination.getYear(), annualClassCombination);
     }
 
     public String getCombinationId() {
@@ -58,37 +57,36 @@ public class DegreeClassCombination extends RealmObject {
         return annualClassCombinations;
     }
 
-    public void setAnnualClassCombinations(RealmList<AnnualClassCombination> annualClassCombinations) {
-        this.annualClassCombinations = annualClassCombinations;
+    public void setAnnualClassCombinations(List<AnnualClassCombination> annualClassCombinations) {
+        for (AnnualClassCombination combo : annualClassCombinations) {
+            this.annualClassCombinations.add(combo);
+        }
 
     }
 
     public Map<Integer, AnnualClassCombination> getClassCombinationsByYear() {
 
-        if (classCombinationsByYear.isEmpty()) {
-            for (AnnualClassCombination annualCombination : annualClassCombinations) {
-                classCombinationsByYear.put(annualCombination.getYear(), annualCombination);
-            }
+        Map<Integer, AnnualClassCombination> classCombinationsByYear = new HashMap<>();
+
+        for (AnnualClassCombination annualCombination : annualClassCombinations) {
+            classCombinationsByYear.put(annualCombination.getYear(), annualCombination);
         }
         return classCombinationsByYear;
     }
 
     public void addAnnualClassCombination(AnnualClassCombination newAnnualClassCombination) {
         annualClassCombinations.add(newAnnualClassCombination);
-        classCombinationsByYear.put(newAnnualClassCombination.getYear(), newAnnualClassCombination);
-    }
-
-    public void setClassCombinationsByYear(Map<Integer, AnnualClassCombination> classCombinationsByYear) {
-        for (Map.Entry<Integer, AnnualClassCombination> entry : classCombinationsByYear.entrySet()) {
-            this.classCombinationsByYear.put(entry.getKey(), entry.getValue());
-        }
-        for (AnnualClassCombination annualCombo : classCombinationsByYear.values()) {
-            annualClassCombinations.add(annualCombo);
-        }
     }
 
     public AnnualClassCombination getAnnualCombination(int year) {
-        return classCombinationsByYear.get(year);
+        AnnualClassCombination result = null;
+        for (AnnualClassCombination annualCombo : annualClassCombinations) {
+            if (annualCombo.getYear() == year) {
+                result = annualCombo;
+            }
+        }
+
+        return result;
     }
 
     public int getDegreeId() {

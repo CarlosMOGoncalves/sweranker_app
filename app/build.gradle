@@ -3,7 +3,7 @@ apply plugin: 'realm-android'
 
 android {
     compileSdkVersion 25
-    buildToolsVersion "25.0.2"
+    buildToolsVersion "26.0.0-rc1"
     defaultConfig {
         applicationId "pt.cmg.sweranker"
         minSdkVersion 21
@@ -47,4 +47,5 @@ dependencies {
     compile 'org.apache.commons:commons-lang3:3.5'
 
     testCompile 'junit:junit:4.12'
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
 }

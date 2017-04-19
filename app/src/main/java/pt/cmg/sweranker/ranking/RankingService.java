@@ -559,7 +559,7 @@ public class RankingService extends Service {
         // TODO: this is here because only after the KA are loaded I have info enough to evaluate them. This needs to be reviewed
         _degreeClassRankings = loadDefaultRankings();
 
-//        saveIndividualClassScores();
+        saveIndividualClassScores();
 
     }
 
@@ -616,7 +616,13 @@ public class RankingService extends Service {
 
         Realm realmInstance = Realm.getDefaultInstance();
 
-        realmInstance.executeTransaction(realm -> realm.copyToRealm(_degreeClassRankings.values()));
+        realmInstance.executeTransaction(realm -> realm.copyToRealmOrUpdate(_degreeClassRankings.values()));
+
+        List<SweScore> savedScores = realmInstance.where(SweScore.class)
+                .equalTo("scoreType", SweScore.TYPE_CLASS_SCORE)
+                .findAll();
+
+        Log.i("Realm", "Saved or updated " + savedScores.size() + " individual Class scores.");
 
         realmInstance.close();
     }

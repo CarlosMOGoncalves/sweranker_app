@@ -559,8 +559,4 @@ public class MainActivity extends AppCompatActivity implements
     }
 
 
-    @Override
-    public void calculateDegreesRankings() {
-        _rankingService.calculateDegreesRankings();
-    }
 }

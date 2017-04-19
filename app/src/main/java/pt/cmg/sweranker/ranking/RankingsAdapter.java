@@ -9,7 +9,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.util.Map;
+import java.util.List;
 
 import pt.cmg.sweranker.R;
 
@@ -20,12 +20,12 @@ import pt.cmg.sweranker.R;
 public class RankingsAdapter extends RecyclerView.Adapter<RankingsAdapter.RankingViewHolder> {
 
     private Context _context;
-    private Map<Integer, SweScore> _allDegreeRankings;
+    private List<SweScore> _allScores;
 
 
-    public RankingsAdapter(Context context, Map<Integer, SweScore> degreeRanings) {
+    public RankingsAdapter(Context context, List<SweScore> scores) {
         _context = context;
-        _allDegreeRankings = degreeRanings;
+        _allScores = scores;
     }
 
 
@@ -42,7 +42,7 @@ public class RankingsAdapter extends RecyclerView.Adapter<RankingsAdapter.Rankin
 
     @Override
     public int getItemCount() {
-        return _allDegreeRankings.size();
+        return _allScores.size();
     }
 
 
