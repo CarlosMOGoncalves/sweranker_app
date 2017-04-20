@@ -1,6 +1,8 @@
 package pt.cmg.sweranker.ranking;
 
+import java.util.Collection;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import io.realm.RealmList;
@@ -123,15 +125,17 @@ public class SweScore extends RealmObject {
         return topicCounters;
     }
 
-    public void setTopicCounters(RealmList<KATopicCount> topicCounters) {
-        this.topicCounters = topicCounters;
-        for (KATopicCount topicCount : this.topicCounters) {
-            _kaTopicCounts.put(topicCount.getTopicId(), topicCount.getTopicCount());
+    public void setTopicCounters(Collection<KATopicCount> topicCounters) {
+        for (KATopicCount topicCounter : topicCounters) {
+            this.topicCounters.add(topicCounter);
+            totalTopicCount += topicCounter.getTopicCount();
         }
     }
 
+
     public void addKATopicCounter(KATopicCount topicCounter) {
         topicCounters.add(topicCounter);
+        totalTopicCount++;
     }
 
     public int getDegreeId() {
@@ -147,11 +151,12 @@ public class SweScore extends RealmObject {
     }
 
 
-    public void setKaCounters(RealmList<KACount> kaCounters) {
-        this.kaCounters = kaCounters;
-        for (KACount kaCount : this.kaCounters) {
-            _kaCounts.put(kaCount.getKaId(), kaCount.getKaCount());
-        }
+    public void setKaCounters(List<KACount> kaCounters) {
+        this.kaCounters.addAll(kaCounters);
+    }
+
+    public void setKaCounters(Collection<KACount> kaCounters) {
+        this.kaCounters.addAll(kaCounters);
     }
 
     public void addKaCounter(KACount kaCounter) {
@@ -294,33 +299,14 @@ public class SweScore extends RealmObject {
         }
     }
 
+
     /**
      * This resets the percent calculations. Only really useful after every counter has been put into place and
      * no further data will be added.
      */
-    public void calculateScores() {
-
-        _kaPercents.clear();
-        for (Map.Entry<Integer, Integer> entry : _kaCounts.entrySet()) {
-            _kaPercents.put(entry.getKey(), (double) _kaCounts.get(entry.getKey()) / totalTopicCount * PERCENT);
-        }
-
-        // Now update the realm object view...
-        kaPercents.clear();
-        for (Map.Entry<Integer, Double> kaPercent : _kaPercents.entrySet()) {
-            kaPercents.add(new KAPercent(kaPercent.getKey(), kaPercent.getValue()));
-        }
-
-        // This is pathetic...
-        topicCounters.clear();
-        for (Map.Entry<Integer, Integer> kaTopicCounter : _kaTopicCounts.entrySet()) {
-            topicCounters.add(new KATopicCount(kaTopicCounter.getKey(), kaTopicCounter.getValue()));
-        }
-
-        // Also this...
-        kaCounters.clear();
-        for (Map.Entry<Integer, Integer> kaCounter : _kaCounts.entrySet()) {
-            kaCounters.add(new KACount(kaCounter.getKey(), kaCounter.getValue()));
+    public void calculateScores2() {
+        for (KACount kaCount : kaCounters) {
+            kaPercents.add(new KAPercent(kaCount.getKaId(), (double) kaCount.getKaCount() / totalTopicCount * PERCENT));
         }
     }
 

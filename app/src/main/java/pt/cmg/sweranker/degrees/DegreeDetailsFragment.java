@@ -181,20 +181,13 @@ public class DegreeDetailsFragment extends Fragment {
 
             List<AnnualClassCombination> annualCombinations = calculateAnnualCombinations(_degree);
 
-            saveObjectsByBatch(databaseConnection, annualCombinations);
-            annualCombinations.clear();
+            saveObjectsByBatch(annualCombinations);
 
-            calculateAndSaveAnnualScores(databaseConnection);
+            calculateAndSaveAnnualScores();
 
             calculateAndSaveDegreeClassCombinations(databaseConnection, _degree);
 
 //            calculateAndSaveDegreeScores(databaseConnection);
-
-            List<DegreeClassCombination> savedCombos = databaseConnection.where(DegreeClassCombination.class)
-                    .equalTo("degreeId", _degreeId)
-                    .findAll();
-
-            Log.i("Realm", "Found " + savedCombos.size() + " saved degree combinations. We are live Houston.");
 
             databaseConnection.close();
 
@@ -231,10 +224,8 @@ public class DegreeDetailsFragment extends Fragment {
          * of all the classes that compose the annual combination.
          * <p>
          * Then saves each calculation on a batch level because Realm is seriously pathetic at inserting data in bulk.
-         *
-         * @param databaseConnection
          */
-        private void calculateAndSaveAnnualScores(Realm databaseConnection) {
+        private void calculateAndSaveAnnualScores() {
 
             int batchsize = 10000;
 
@@ -252,6 +243,7 @@ public class DegreeDetailsFragment extends Fragment {
 
 
             // Now turn it into something easier to work with. As a Map I won't have to traverse the list whenever I want a value.
+            // Keys -> the score ID which here is also the degree class id , Values -> the actual score
             Map<String, SweScore> scoresByDegreeClassId = new HashMap<>(individualClassScores.size());
             for (SweScore score : individualClassScores) {
                 scoresByDegreeClassId.put(score.getId(), score);
@@ -291,7 +283,7 @@ public class DegreeDetailsFragment extends Fragment {
 
                 // This part is just a small sleep to give some time to trigger the GC and clean the mess it is creating.
                 try {
-                    Thread.sleep(200);
+                    Thread.sleep(100);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
@@ -302,6 +294,20 @@ public class DegreeDetailsFragment extends Fragment {
         }
 
 
+        /**
+         * This function will load all the annual combinations for this degree and then will calculate all the possible combinations
+         * between those throughout the years that compose this degree.
+         * <p>
+         * As this are combinations that means the final number of possible ways to complete a degree are calculated as
+         * AnnualCombinationsOfYear1 x AnnualCombinationsOfYear2 x AnnualCombinationsOfYear3 x ...
+         * <p>
+         * Since this is usually a big number a recursive algorithm was used to save memory. Furthermore, everytime a complete batch
+         * of X combinations was found they were immediately saved to the Realm database freeing up the memory ASAP.
+         * <p>
+         *
+         * @param database
+         * @param degree
+         */
         private void calculateAndSaveDegreeClassCombinations(Realm database, Degree degree) {
 
             List<AnnualClassCombination> allAnnualCombinations = database.where(AnnualClassCombination.class)
@@ -309,6 +315,8 @@ public class DegreeDetailsFragment extends Fragment {
                     .findAll();
 
             // This part just transforms the List into something easier to access, namely a Map where Keys -> Year , Values -> all annual combinations for that particular year
+            // This step was unnecessary as a good stream could aggregate them for me, but for one I can't use streams in this API and also this was a legacy bit of code that
+            // was actually useful anyway
             Map<Integer, List<AnnualClassCombination>> combinationsByYear = new HashMap<>();
 
             for (AnnualClassCombination annualCombo : allAnnualCombinations) {
@@ -323,6 +331,7 @@ public class DegreeDetailsFragment extends Fragment {
                 }
             }
 
+            // Now I for a List of Lists, where each element (A List<AnnualCombination> are the possible combinations for a given year.
             List<List<AnnualClassCombination>> combinationPool = new ArrayList<>();
             for (int i = 1; i <= combinationsByYear.size(); i++) {
                 combinationPool.add(combinationsByYear.get(i));
@@ -330,21 +339,43 @@ public class DegreeDetailsFragment extends Fragment {
             }
 
 
-            List<DegreeClassCombination> results = new ArrayList<>();
+            // Now it is the recursive call, this one is very very tricky so I will explain it in the comments
+            generateAndSaveRecursively(combinationPool, new ArrayList<>(), 0, new ArrayList<>());
 
-            generateAndSaveRecursively(database, combinationPool, results, 0, new ArrayList<>());
-
-            results.size();
         }
 
-        private void generateAndSaveRecursively(Realm database,
-                                                List<List<AnnualClassCombination>> combinationPool,
+        /**
+         * Recursive function that will calculate all the combinations for a Degree based on the Annual Combinations it has.
+         * Every time a certain number of combinations is calculated I will save them immediately to Realm so that I can free
+         * memory for another batch and no massive amount of memory is spent when the full combinations collection is completely calculated.
+         * <p>
+         * This is hard to get it, thanks Internet.<br/>
+         * Each time is enters this part it means that I am getting an element on a further year.<br/>
+         * To better explain: let's imagine 3 lists<br/>
+         * List 1 = [A,B] , List 2 = [D,E] and List 3 = [F,G]<br/><br/>
+         * These lists are put into a List of Lists like this ListFinal = [[A,B].[C,D].[E,F]]<br/><br/>
+         * 1) This starts by getting [A], then another iteration it gets [A,C] and then another iteration it get [A,C,E]<br/>
+         * 2) Now it matches the stopping condition (depth = 3 = ListFinal.size())<br/>
+         * 3) So it enters the stop condition part and collects the result [A,C,E] and then returns<br/>
+         * 4) And returns to the recursive call which is still on [A,C] but now incremented in i = 1, so it collects [A,C,F]<br/>
+         * 5) Again it reaches stop condition and returns<br/>
+         * 6) But now it also completes the recursive condition because it has reached its limit on the last list [E,F], so it jumps to the previous recursive call
+         * that is still on [A]. So it now gets it i = 1 and collects D, so it has [A,D]<br/>
+         * 7) It does another recursive iteration and gets [A,D,E], and in the next it gets [A,D,F]<br/>
+         * 8) And it goes like this until it has passed all the elements<br/>
+         *
+         * @param combinationPool
+         * @param result
+         * @param depth
+         * @param current
+         */
+        private void generateAndSaveRecursively(List<List<AnnualClassCombination>> combinationPool,
                                                 List<DegreeClassCombination> result,
                                                 int depth,
                                                 List<AnnualClassCombination> current) {
 
             // This is the stopping condition.
-            // It stops the recursive call when we have reached a depth = max number of years
+            // It stops the recursive call when we have reached a depth (= max number of years)
             // which in turn means we already have a new list of annual combinations ready (i.e. a new Degree Class Combination).
             if (depth == combinationPool.size()) {
 
@@ -354,7 +385,7 @@ public class DegreeDetailsFragment extends Fragment {
                 result.add(newCombination);
 
                 // Now if this object has reached the batch size OR it is the last bunch I will save it and empty it (to save memory).
-                if ((_combinationIdCounter == _totalPossibleCombinations) || result.size() == 10000) {
+                if ((_combinationIdCounter == _totalPossibleCombinations) || result.size() == 5000) {
                     databaseConnection.executeTransaction(r -> r.copyToRealmOrUpdate(result));
                     result.clear();
 
@@ -370,10 +401,11 @@ public class DegreeDetailsFragment extends Fragment {
                 return;
             }
 
+            // This is the recursive call.
             for (int i = 0; i < combinationPool.get(depth).size(); ++i) {
                 List<AnnualClassCombination> currentAnnual = new ArrayList<>(current);
                 currentAnnual.add(combinationPool.get(depth).get(i));
-                generateAndSaveRecursively(database, combinationPool, result, depth + 1, currentAnnual);
+                generateAndSaveRecursively(combinationPool, result, depth + 1, currentAnnual);
             }
 
         }
@@ -445,10 +477,19 @@ public class DegreeDetailsFragment extends Fragment {
 
         }
 
-
-        private <E extends RealmObject> void saveObjectsByBatch(Realm realmInstance, List<E> realmObjects) {
+        /**
+         * Saves a really long list of objects in smaller batches to Realm.
+         * This is needed because Realm sucks so much at inserting in bulk so a batch strategy had to be developed.
+         * I hope this guys fix this... it is really a bottleneck.
+         * <p>
+         * NOTE: this function WILL CONSUME the parameter list. You have been warned.
+         *
+         * @param objectsToSave
+         * @param <E>
+         */
+        private <E extends RealmObject> void saveObjectsByBatch(List<E> objectsToSave) {
             int batchSize = 10000;
-            ListIterator<E> iterator = realmObjects.listIterator(realmObjects.size());
+            ListIterator<E> iterator = objectsToSave.listIterator(objectsToSave.size());
             List<E> batch = new ArrayList<>(batchSize);
 
             while (iterator.hasPrevious()) {
@@ -459,7 +500,7 @@ public class DegreeDetailsFragment extends Fragment {
                     iterator.set(null);
                 }
 
-                realmInstance.executeTransaction(realm -> realm.copyToRealmOrUpdate(batch));
+                databaseConnection.executeTransaction(realm -> realm.copyToRealmOrUpdate(batch));
 
                 batch.clear();
 

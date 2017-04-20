@@ -509,22 +509,45 @@ public class RankingService extends Service {
         }
     }
 
+
     /**
-     * Evaluates a degreeClass based on the matches that were made and saved, finally
+     * Calculates the SweScore for a given DegreeClassMatch.
+     * This will basically sweep the match for all its topic that were matched and pretty much count them
+     * discretely so that in the end a percentage can be calculated
      *
      * @param classMatch
+     * @return
      */
     private SweScore evaluateClass(DegreeClassMatch classMatch) {
 
-        SweScore ranking = new SweScore(classMatch.getDegreeClassId(), classMatch.getDegreeId(), SweScore.TYPE_CLASS_SCORE);
-        KnowledgeAreaTopic currentTopic = null;
+        Map<Integer, KATopicCount> kaTopicCounters = new HashMap<>();
+        Map<Integer, KACount> kaCounters = new HashMap<>();
+
+
+        int currentKnowledgeAreaId = 0;
 
         for (Integer kaTopicId : classMatch.getAllMatchesAsList()) {
-            currentTopic = _knowledgeAreaTopicsByTopicId.get(kaTopicId);
-            ranking.addTopic(currentTopic.getId(), currentTopic.getKnowledgeAreaId());
+
+            currentKnowledgeAreaId = _knowledgeAreaTopicsByTopicId.get(kaTopicId).getKnowledgeAreaId();
+
+            if (kaCounters.containsKey(currentKnowledgeAreaId)) {
+                kaCounters.get(currentKnowledgeAreaId).incrementCounter(1);
+            } else {
+                kaCounters.put(currentKnowledgeAreaId, new KACount(currentKnowledgeAreaId));
+            }
+
+            if (kaTopicCounters.containsKey(kaTopicId)) {
+                kaTopicCounters.get(kaTopicId).incrementCounter(1);
+            } else {
+                kaTopicCounters.put(kaTopicId, new KATopicCount(kaTopicId));
+            }
         }
 
-        ranking.calculateScores();
+        SweScore ranking = new SweScore(classMatch.getDegreeClassId(), classMatch.getDegreeId(), SweScore.TYPE_CLASS_SCORE);
+        ranking.setKaCounters(kaCounters.values());
+        ranking.setTopicCounters(kaTopicCounters.values());
+
+        ranking.calculateScores2();
 
         return ranking;
     }

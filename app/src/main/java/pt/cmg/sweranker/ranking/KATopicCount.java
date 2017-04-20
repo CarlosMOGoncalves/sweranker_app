@@ -16,6 +16,11 @@ public class KATopicCount extends RealmObject {
         this.topicId = 0;
     }
 
+    public KATopicCount(int topicId) {
+        this.topicId = topicId;
+        this.topicCount = 1;
+    }
+
     public KATopicCount(int topicId, int topicCount) {
         this.topicId = topicId;
         this.topicCount = topicCount;

@@ -16,6 +16,11 @@ public class KACount extends RealmObject {
         this.kaId = 0;
     }
 
+    public KACount(int kaId) {
+        this.kaId = kaId;
+        this.kaCount = 1;
+    }
+
     public KACount(int kaId, int kaCount) {
         this.kaId = kaId;
         this.kaCount = kaCount;
