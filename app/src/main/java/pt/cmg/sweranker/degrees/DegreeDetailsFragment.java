@@ -21,6 +21,9 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.ListIterator;
 import java.util.Map;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.TimeUnit;
 
 import io.realm.Realm;
 import io.realm.RealmList;
@@ -179,15 +182,15 @@ public class DegreeDetailsFragment extends Fragment {
 
             databaseConnection = Realm.getDefaultInstance();
 
-            List<AnnualClassCombination> annualCombinations = calculateAnnualCombinations(_degree);
+//            List<AnnualClassCombination> annualCombinations = calculateAnnualCombinations(_degree);
+//
+//            saveObjectsByBatch(annualCombinations);
+//
+//            calculateAndSaveAnnualScores();
+//
+//            calculateAndSaveDegreeClassCombinations(_degree);
 
-            saveObjectsByBatch(annualCombinations);
-
-            calculateAndSaveAnnualScores();
-
-            calculateAndSaveDegreeClassCombinations(databaseConnection, _degree);
-
-//            calculateAndSaveDegreeScores(databaseConnection);
+            calculateAndSaveDegreeScores2();
 
             databaseConnection.close();
 
@@ -214,7 +217,7 @@ public class DegreeDetailsFragment extends Fragment {
                 annualCombination.setDegreeId(_degreeId);
             }
 
-            Log.i("Realm", "Found " + annualCombinations.size() + " annual combinations for degree " + _degreeId);
+            Log.i("Calculation", "Found " + annualCombinations.size() + " annual combinations for degree " + _degreeId);
 
             return annualCombinations;
         }
@@ -305,12 +308,11 @@ public class DegreeDetailsFragment extends Fragment {
          * of X combinations was found they were immediately saved to the Realm database freeing up the memory ASAP.
          * <p>
          *
-         * @param database
          * @param degree
          */
-        private void calculateAndSaveDegreeClassCombinations(Realm database, Degree degree) {
+        private void calculateAndSaveDegreeClassCombinations(Degree degree) {
 
-            List<AnnualClassCombination> allAnnualCombinations = database.where(AnnualClassCombination.class)
+            List<AnnualClassCombination> allAnnualCombinations = databaseConnection.where(AnnualClassCombination.class)
                     .equalTo("degreeId", _degreeId)
                     .findAll();
 
@@ -339,8 +341,18 @@ public class DegreeDetailsFragment extends Fragment {
             }
 
 
+            // Logging
+            long startTime = System.currentTimeMillis();
+            Log.i("Calculation", "Started the calculation of Degree combinations.");
+
             // Now it is the recursive call, this one is very very tricky so I will explain it in the comments
             generateAndSaveRecursively(combinationPool, new ArrayList<>(), 0, new ArrayList<>());
+
+            // Logging
+            long endtime = System.currentTimeMillis();
+            Log.i("Calculation", "Ended at the calculation of Degree combinations.");
+            Log.i("Calculation", "Found " + _combinationIdCounter + " degree combinations!");
+            Log.i("Calculation", "Took " + ((endtime - startTime) / 1000) + " seconds to calculate and save combinations");
 
         }
 
@@ -386,7 +398,10 @@ public class DegreeDetailsFragment extends Fragment {
 
                 // Now if this object has reached the batch size OR it is the last bunch I will save it and empty it (to save memory).
                 if ((_combinationIdCounter == _totalPossibleCombinations) || result.size() == 5000) {
+
                     databaseConnection.executeTransaction(r -> r.copyToRealmOrUpdate(result));
+                    Log.i("Calculation", "Saved a batch of " + result.size() + " combinations.");
+
                     result.clear();
 
                     // This part is just a small sleep to give some time to trigger the GC and clean the mess it is creating.
@@ -411,9 +426,9 @@ public class DegreeDetailsFragment extends Fragment {
         }
 
 
-        private void calculateAndSaveDegreeScores(Realm databaseConnection) {
+        private void calculateAndSaveDegreeScores() {
 
-            int batchSize = 10000;
+            int batchSize = 500;
 
             List<SweScore> annualScores = databaseConnection.where(SweScore.class)
                     .equalTo("scoreType", SweScore.TYPE_ANNUAL_SCORE)
@@ -436,18 +451,22 @@ public class DegreeDetailsFragment extends Fragment {
 
             Iterator<DegreeClassCombination> iterator = degreeCombinations.iterator();
 
+            long startTime = System.currentTimeMillis();
+            Log.i("Calculation", "Started calculation of degree scoring.");
+
             //I am saving in batches to alleviate memory
             List<SweScore> batch = new ArrayList<>(batchSize);
+            int batchesAviated = 0;
             while (iterator.hasNext()) {
 
 
                 for (int i = 0; i < batchSize && iterator.hasNext(); i++) {
 
                     DegreeClassCombination currentDegreeCombination = iterator.next();
-                    // First fetch the class ids of the annual combo
+                    // First fetch annual combinations for this particular degree combination
                     RealmList<AnnualClassCombination> degreeAnnualCombinations = currentDegreeCombination.getAnnualClassCombinations();
 
-                    // Then gets their individual that was fetched up there
+                    // Then gets their individual score
                     List<SweScore> currentAnnualScores = new ArrayList<>();
                     for (AnnualClassCombination annualCombo : degreeAnnualCombinations) {
                         currentAnnualScores.add(scoresByAnnualCombination.get(annualCombo.getId()));
@@ -462,8 +481,12 @@ public class DegreeDetailsFragment extends Fragment {
                     batch.add(calculatedScore);
 
                 }
-                databaseConnection.executeTransaction(r -> r.copyToRealmOrUpdate(batch));
+                batchesAviated++;
+                Log.i("Calculation", "Started to save a batch number " + batchesAviated + " of degre scores.");
+                databaseConnection.executeTransaction(r -> r.copyToRealm(batch));
+                Log.i("Calculation", "Ended saving a batch: " + batchesAviated);
                 batch.clear();
+
 
                 // This part is just a small sleep to give some time to trigger the GC and clean the mess it is creating.
                 try {
@@ -475,7 +498,127 @@ public class DegreeDetailsFragment extends Fragment {
 
             }
 
+            long endTime = System.currentTimeMillis();
+            Log.i("Calculation", "Ended calculation of degree scoring.");
+            Log.i("Calculation", "Took " + ((endTime - startTime) / 1000) + " seconds to calculate and save " + _combinationIdCounter + " Degree combinations");
+
         }
+
+        private void calculateAndSaveDegreeScores2() {
+
+
+            List<SweScore> annualScores = databaseConnection.where(SweScore.class)
+                    .equalTo("scoreType", SweScore.TYPE_ANNUAL_SCORE)
+                    .equalTo("degreeId", _degreeId)
+                    .findAll();
+
+
+            // Now turn it into something easier to work with. As a Map I won't have to traverse the list whenever I want a value.
+            // This map has Keys ->
+            Map<String, SweScore> scoresByAnnualCombination = new HashMap<>(annualScores.size());
+            for (SweScore score : annualScores) {
+                SweScore copiedScore = new SweScore(score);
+                scoresByAnnualCombination.put(copiedScore.getId(), copiedScore);
+            }
+
+
+            long startTime = System.currentTimeMillis();
+            Log.i("Calculation", "Started calculation of degree scoring.");
+
+            int allCombinationsCount = databaseConnection.where(DegreeClassCombination.class)
+                    .equalTo("degreeId", _degreeId)
+                    .findAll()
+                    .size();
+
+            ExecutorService executorService = Executors.newFixedThreadPool(2);
+            int executionId = 1;
+            int startPosition = 0;
+            int endPosition = 5000;
+            while (startPosition < allCombinationsCount) {
+
+                // If by adding the default window surpasses the total size of the collection
+                if (startPosition + endPosition >= allCombinationsCount) {
+                    // Then the end position will be the last element
+                    endPosition = allCombinationsCount;
+                }
+
+                executorService.submit(new DegreeScoreCalculator(executionId, scoresByAnnualCombination, startPosition, endPosition));
+                executionId++;
+                startPosition += endPosition;
+
+            }
+
+            executorService.shutdown();
+            try {
+                executorService.awaitTermination(Long.MAX_VALUE, TimeUnit.NANOSECONDS);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+
+            long endTime = System.currentTimeMillis();
+            Log.i("Calculation", "Ended calculation of degree scoring.");
+            Log.i("Calculation", "Took " + ((endTime - startTime) / 1000) + " seconds");
+
+        }
+
+        private class DegreeScoreCalculator implements Runnable {
+
+            private int _id;
+            private Map<String, SweScore> _scoresByAnnualCombination;
+            private int _startPosition;
+            private int _endPosition;
+
+            DegreeScoreCalculator(int id, Map<String, SweScore> scoresByAnnualCombination, int startPosition, int batchSize) {
+                _id = id;
+                _scoresByAnnualCombination = scoresByAnnualCombination;
+                _startPosition = startPosition;
+                _endPosition = startPosition + batchSize;
+            }
+
+            @Override
+            public void run() {
+
+                Realm database = Realm.getDefaultInstance();
+
+                List<DegreeClassCombination> allCombinations = database.where(DegreeClassCombination.class)
+                        .equalTo("degreeId", _degreeId)
+                        .findAll();
+
+                List<SweScore> results = new ArrayList<>();
+                Log.i("Calculation", "Started calculation of batch of Degree Scores with id: " + _id);
+                for (int i = _startPosition; i < _endPosition; i++) {
+
+                    DegreeClassCombination currentDegreeCombination = allCombinations.get(i);
+                    // First fetch annual combinations for this particular degree combination
+                    RealmList<AnnualClassCombination> degreeAnnualCombinations = currentDegreeCombination.getAnnualClassCombinations();
+
+                    // Then gets their individual score
+                    List<SweScore> currentAnnualScores = new ArrayList<>();
+                    for (AnnualClassCombination annualCombo : degreeAnnualCombinations) {
+                        currentAnnualScores.add(_scoresByAnnualCombination.get(annualCombo.getId()));
+                    }
+
+                    // And now calculate its combined score
+                    SweScore calculatedScore = CalculationUtils.calculateAccumulatedScore(currentAnnualScores);
+                    calculatedScore.setDegreeId(_degreeId);
+                    calculatedScore.setScoreType(SweScore.TYPE_DEGREE_SCORE);
+                    calculatedScore.setId(currentDegreeCombination.getCombinationId());
+
+                    results.add(calculatedScore);
+
+                }
+                Log.i("Calculation", "Ended calculation of batch of Degree Scores with id " + _id);
+
+
+                Log.i("Calculation", "Started to save a batch of Degree Scores with id: " + _id);
+                database.executeTransaction(r -> r.insertOrUpdate(results));
+                Log.i("Calculation", "Ended saving a batch of Degree Scores with id: " + _id);
+                results.clear();
+
+                database.close();
+            }
+        }
+
 
         /**
          * Saves a really long list of objects in smaller batches to Realm.
@@ -487,6 +630,7 @@ public class DegreeDetailsFragment extends Fragment {
          * @param objectsToSave
          * @param <E>
          */
+
         private <E extends RealmObject> void saveObjectsByBatch(List<E> objectsToSave) {
             int batchSize = 10000;
             ListIterator<E> iterator = objectsToSave.listIterator(objectsToSave.size());

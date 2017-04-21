@@ -23,7 +23,7 @@ public class SweRankerApplication extends Application {
         RealmConfiguration defaultConfiguration = new RealmConfiguration.Builder()
                 .name("sweranker.realm")
                 .deleteRealmIfMigrationNeeded()
-                .schemaVersion(13)
+                .schemaVersion(18)
                 .build();
 
         Realm.setDefaultConfiguration(defaultConfiguration);
