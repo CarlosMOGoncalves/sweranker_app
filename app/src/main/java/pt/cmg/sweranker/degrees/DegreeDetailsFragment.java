@@ -166,8 +166,6 @@ public class DegreeDetailsFragment extends Fragment {
     private class YearlyRankingCalculator extends AsyncTask<Void, Void, Void> {
 
 
-        private Realm databaseConnection;
-
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
@@ -180,8 +178,6 @@ public class DegreeDetailsFragment extends Fragment {
             _degreeCombinationIdBase = "d" + _degreeId + "c";
             _combinationIdCounter = 1;
 
-            databaseConnection = Realm.getDefaultInstance();
-
 //            List<AnnualClassCombination> annualCombinations = calculateAnnualCombinations(_degree);
 //
 //            saveObjectsByBatch(annualCombinations);
@@ -190,15 +186,23 @@ public class DegreeDetailsFragment extends Fragment {
 //
 //            calculateAndSaveDegreeClassCombinations(_degree);
 
-            calculateAndSaveDegreeScores2();
+            calculateAndSaveDegreeScores();
 
-            databaseConnection.close();
 
             return null;
 
         }
 
 
+        /**
+         * This will calculate all the possible annual combinations for a given degree.
+         * After executing this will return a list that is composed by a set of degree classes
+         * that is possible to take in a given year and it calculates the combinations for each
+         * year by using a calculation strategy that must be defined by each degree for each year.
+         *
+         * @param degree
+         * @return
+         */
         private List<AnnualClassCombination> calculateAnnualCombinations(Degree degree) {
             List<AnnualClassCombination> annualCombinations = new ArrayList<>();
 
@@ -232,16 +236,18 @@ public class DegreeDetailsFragment extends Fragment {
 
             int batchsize = 10000;
 
+            Realm databaseConnection = Realm.getDefaultInstance();
+
             // First get the saved annual combinations for this degree
             List<AnnualClassCombination> savedAnnualClassCombinations = databaseConnection.where(AnnualClassCombination.class)
-                    .equalTo("degreeId", _degreeId)
+                    .equalTo("degreeId", (byte) _degreeId)
                     .findAll();
 
 
             // Then get the saved Scores for the classes of this degree
             List<SweScore> individualClassScores = databaseConnection.where(SweScore.class)
                     .equalTo("scoreType", SweScore.TYPE_CLASS_SCORE)
-                    .equalTo("degreeId", _degreeId)
+                    .equalTo("degreeId", (byte) _degreeId)
                     .findAll();
 
 
@@ -294,6 +300,8 @@ public class DegreeDetailsFragment extends Fragment {
 
             }
 
+            databaseConnection.close();
+
         }
 
 
@@ -311,6 +319,8 @@ public class DegreeDetailsFragment extends Fragment {
          * @param degree
          */
         private void calculateAndSaveDegreeClassCombinations(Degree degree) {
+
+            Realm databaseConnection = Realm.getDefaultInstance();
 
             List<AnnualClassCombination> allAnnualCombinations = databaseConnection.where(AnnualClassCombination.class)
                     .equalTo("degreeId", _degreeId)
@@ -346,7 +356,7 @@ public class DegreeDetailsFragment extends Fragment {
             Log.i("Calculation", "Started the calculation of Degree combinations.");
 
             // Now it is the recursive call, this one is very very tricky so I will explain it in the comments
-            generateAndSaveRecursively(combinationPool, new ArrayList<>(), 0, new ArrayList<>());
+            generateAndSaveRecursively(databaseConnection, combinationPool, new ArrayList<>(), 0, new ArrayList<>());
 
             // Logging
             long endtime = System.currentTimeMillis();
@@ -354,6 +364,8 @@ public class DegreeDetailsFragment extends Fragment {
             Log.i("Calculation", "Found " + _combinationIdCounter + " degree combinations!");
             Log.i("Calculation", "Took " + ((endtime - startTime) / 1000) + " seconds to calculate and save combinations");
 
+
+            databaseConnection.close();
         }
 
         /**
@@ -381,7 +393,8 @@ public class DegreeDetailsFragment extends Fragment {
          * @param depth
          * @param current
          */
-        private void generateAndSaveRecursively(List<List<AnnualClassCombination>> combinationPool,
+        private void generateAndSaveRecursively(Realm databaseConnection,
+                                                List<List<AnnualClassCombination>> combinationPool,
                                                 List<DegreeClassCombination> result,
                                                 int depth,
                                                 List<AnnualClassCombination> current) {
@@ -397,10 +410,12 @@ public class DegreeDetailsFragment extends Fragment {
                 result.add(newCombination);
 
                 // Now if this object has reached the batch size OR it is the last bunch I will save it and empty it (to save memory).
-                if ((_combinationIdCounter == _totalPossibleCombinations) || result.size() == 5000) {
+                if ((_combinationIdCounter == _totalPossibleCombinations) || result.size() == 10000) {
 
-                    databaseConnection.executeTransaction(r -> r.copyToRealmOrUpdate(result));
-                    Log.i("Calculation", "Saved a batch of " + result.size() + " combinations.");
+                    long sMillis = System.currentTimeMillis();
+                    databaseConnection.executeTransaction(r -> r.insertOrUpdate(result));
+                    long endMillis = System.currentTimeMillis();
+                    Log.i("Calculation", "Saved a batch of " + result.size() + " combinations in " + ((endMillis - sMillis) / 1000) + " seconds");
 
                     result.clear();
 
@@ -420,7 +435,7 @@ public class DegreeDetailsFragment extends Fragment {
             for (int i = 0; i < combinationPool.get(depth).size(); ++i) {
                 List<AnnualClassCombination> currentAnnual = new ArrayList<>(current);
                 currentAnnual.add(combinationPool.get(depth).get(i));
-                generateAndSaveRecursively(combinationPool, result, depth + 1, currentAnnual);
+                generateAndSaveRecursively(databaseConnection, combinationPool, result, depth + 1, currentAnnual);
             }
 
         }
@@ -428,84 +443,7 @@ public class DegreeDetailsFragment extends Fragment {
 
         private void calculateAndSaveDegreeScores() {
 
-            int batchSize = 500;
-
-            List<SweScore> annualScores = databaseConnection.where(SweScore.class)
-                    .equalTo("scoreType", SweScore.TYPE_ANNUAL_SCORE)
-                    .equalTo("degreeId", _degreeId)
-                    .findAll();
-
-
-            // Now turn it into something easier to work with. As a Map I won't have to traverse the list whenever I want a value.
-            // This map has Keys ->
-            Map<String, SweScore> scoresByAnnualCombination = new HashMap<>(annualScores.size());
-            for (SweScore score : annualScores) {
-                scoresByAnnualCombination.put(score.getId(), score);
-            }
-
-
-            List<DegreeClassCombination> degreeCombinations = databaseConnection.where(DegreeClassCombination.class)
-                    .equalTo("degreeId", _degreeId)
-                    .findAll();
-
-
-            Iterator<DegreeClassCombination> iterator = degreeCombinations.iterator();
-
-            long startTime = System.currentTimeMillis();
-            Log.i("Calculation", "Started calculation of degree scoring.");
-
-            //I am saving in batches to alleviate memory
-            List<SweScore> batch = new ArrayList<>(batchSize);
-            int batchesAviated = 0;
-            while (iterator.hasNext()) {
-
-
-                for (int i = 0; i < batchSize && iterator.hasNext(); i++) {
-
-                    DegreeClassCombination currentDegreeCombination = iterator.next();
-                    // First fetch annual combinations for this particular degree combination
-                    RealmList<AnnualClassCombination> degreeAnnualCombinations = currentDegreeCombination.getAnnualClassCombinations();
-
-                    // Then gets their individual score
-                    List<SweScore> currentAnnualScores = new ArrayList<>();
-                    for (AnnualClassCombination annualCombo : degreeAnnualCombinations) {
-                        currentAnnualScores.add(scoresByAnnualCombination.get(annualCombo.getId()));
-                    }
-
-                    // And now calculate its combined score
-                    SweScore calculatedScore = CalculationUtils.calculateAccumulatedScore(currentAnnualScores);
-                    calculatedScore.setDegreeId(_degreeId);
-                    calculatedScore.setScoreType(SweScore.TYPE_DEGREE_SCORE);
-                    calculatedScore.setId(currentDegreeCombination.getCombinationId());
-
-                    batch.add(calculatedScore);
-
-                }
-                batchesAviated++;
-                Log.i("Calculation", "Started to save a batch number " + batchesAviated + " of degre scores.");
-                databaseConnection.executeTransaction(r -> r.copyToRealm(batch));
-                Log.i("Calculation", "Ended saving a batch: " + batchesAviated);
-                batch.clear();
-
-
-                // This part is just a small sleep to give some time to trigger the GC and clean the mess it is creating.
-                try {
-                    Thread.sleep(200);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-
-
-            }
-
-            long endTime = System.currentTimeMillis();
-            Log.i("Calculation", "Ended calculation of degree scoring.");
-            Log.i("Calculation", "Took " + ((endTime - startTime) / 1000) + " seconds to calculate and save " + _combinationIdCounter + " Degree combinations");
-
-        }
-
-        private void calculateAndSaveDegreeScores2() {
-
+            Realm databaseConnection = Realm.getDefaultInstance();
 
             List<SweScore> annualScores = databaseConnection.where(SweScore.class)
                     .equalTo("scoreType", SweScore.TYPE_ANNUAL_SCORE)
@@ -530,7 +468,7 @@ public class DegreeDetailsFragment extends Fragment {
                     .findAll()
                     .size();
 
-            ExecutorService executorService = Executors.newFixedThreadPool(2);
+            ExecutorService executorService = Executors.newFixedThreadPool(1);
             int executionId = 1;
             int startPosition = 0;
             int endPosition = 5000;
@@ -559,6 +497,8 @@ public class DegreeDetailsFragment extends Fragment {
             Log.i("Calculation", "Ended calculation of degree scoring.");
             Log.i("Calculation", "Took " + ((endTime - startTime) / 1000) + " seconds");
 
+            databaseConnection.close();
+
         }
 
         private class DegreeScoreCalculator implements Runnable {
@@ -585,6 +525,7 @@ public class DegreeDetailsFragment extends Fragment {
                         .findAll();
 
                 List<SweScore> results = new ArrayList<>();
+                long startMillis = System.currentTimeMillis();
                 Log.i("Calculation", "Started calculation of batch of Degree Scores with id: " + _id);
                 for (int i = _startPosition; i < _endPosition; i++) {
 
@@ -607,12 +548,15 @@ public class DegreeDetailsFragment extends Fragment {
                     results.add(calculatedScore);
 
                 }
-                Log.i("Calculation", "Ended calculation of batch of Degree Scores with id " + _id);
+                long endMillis = System.currentTimeMillis();
+                Log.i("Calculation", "Ended calculation of batch of Degree Scores with id " + _id + ", took " + ((endMillis - startMillis) / 1000) + " seconds");
 
 
+                startMillis = System.currentTimeMillis();
                 Log.i("Calculation", "Started to save a batch of Degree Scores with id: " + _id);
-                database.executeTransaction(r -> r.insertOrUpdate(results));
-                Log.i("Calculation", "Ended saving a batch of Degree Scores with id: " + _id);
+                database.executeTransaction(r -> r.insert(results));
+                endMillis = System.currentTimeMillis();
+                Log.i("Calculation", "Ended saving a batch of Degree Scores with id: " + _id + ", took " + ((endMillis - startMillis) / 1000) + " seconds");
                 results.clear();
 
                 database.close();
@@ -633,6 +577,9 @@ public class DegreeDetailsFragment extends Fragment {
 
         private <E extends RealmObject> void saveObjectsByBatch(List<E> objectsToSave) {
             int batchSize = 10000;
+
+            Realm database = Realm.getDefaultInstance();
+
             ListIterator<E> iterator = objectsToSave.listIterator(objectsToSave.size());
             List<E> batch = new ArrayList<>(batchSize);
 
@@ -644,7 +591,7 @@ public class DegreeDetailsFragment extends Fragment {
                     iterator.set(null);
                 }
 
-                databaseConnection.executeTransaction(realm -> realm.copyToRealmOrUpdate(batch));
+                database.executeTransaction(realm -> realm.copyToRealmOrUpdate(batch));
 
                 batch.clear();
 
@@ -657,6 +604,8 @@ public class DegreeDetailsFragment extends Fragment {
 
 
             }
+
+            database.close();
 
 
         }

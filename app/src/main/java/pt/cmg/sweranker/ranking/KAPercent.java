@@ -10,35 +10,35 @@ import io.realm.annotations.LinkingObjects;
 
 public class KAPercent extends RealmObject {
 
-    private int kaId;
-    private double kaPercent;
+    private byte kaId;
+    private float kaPercent;
 
     @LinkingObjects("kaPercents")
     private final RealmResults<SweScore> score = null;
 
     public KAPercent() {
         this.kaId = 0;
-        this.kaPercent = 0.0;
+        this.kaPercent = 0.0f;
     }
 
-    public KAPercent(int kaId, double kaPercent) {
+    public KAPercent(byte kaId, float kaPercent) {
         this.kaId = kaId;
         this.kaPercent = kaPercent;
     }
 
-    public int getKaId() {
+    public byte getKaId() {
         return kaId;
     }
 
-    public void setKaId(int kaId) {
+    public void setKaId(byte kaId) {
         this.kaId = kaId;
     }
 
-    public double getKaPercent() {
+    public float getKaPercent() {
         return kaPercent;
     }
 
-    public void setKaPercent(double kaPercent) {
+    public void setKaPercent(float kaPercent) {
         this.kaPercent = kaPercent;
     }
 

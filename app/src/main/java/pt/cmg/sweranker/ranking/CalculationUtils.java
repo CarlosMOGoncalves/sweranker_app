@@ -15,8 +15,8 @@ public class CalculationUtils {
 
     public static SweScore calculateAccumulatedScore(List<SweScore> sweScores) {
 
-        Map<Integer, KATopicCount> kaTopicCounters = new HashMap<>();
-        Map<Integer, KACount> kaCounters = new HashMap<>();
+        Map<Byte, KATopicCount> kaTopicCounters = new HashMap<>();
+        Map<Byte, KACount> kaCounters = new HashMap<>();
 
         for (SweScore currentScore : sweScores) {
 
@@ -53,7 +53,7 @@ public class CalculationUtils {
         SweScore result = new SweScore();
         result.setKaCounters(kaCounters.values());
         result.setTopicCounters(kaTopicCounters.values());
-        result.calculateScores2();
+        result.calculateScores();
 
         return result;
     }

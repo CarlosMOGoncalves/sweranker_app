@@ -24,9 +24,9 @@ import io.realm.annotations.PrimaryKey;
 
 public class SweScore extends RealmObject {
 
-    public static final String TYPE_CLASS_SCORE = "degreeClassScore";
-    public static final String TYPE_ANNUAL_SCORE = "annualCombinationScore";
-    public static final String TYPE_DEGREE_SCORE = "degreeCombinationScore";
+    public static final String TYPE_CLASS_SCORE = "C";
+    public static final String TYPE_ANNUAL_SCORE = "A";
+    public static final String TYPE_DEGREE_SCORE = "D";
 
     private static final int PERCENT = 100;
 
@@ -43,18 +43,25 @@ public class SweScore extends RealmObject {
     /**
      * Either TYPE_CLASS_SCORE, TYPE_ANNUAL_SCORE or TYPE_DEGREE_SCORE.
      * It should be an Enum if Realm supported it.
+     * Update: actually a char will be just fine because of memory concerns.
      */
     private String scoreType;
 
-    private int degreeId;
+    /**
+     * A lot of attention here, this is a byte to save space and because this ID will NEVER
+     * be higher than 127 (which the max range for a positive byte).
+     * If I ever have more than 120 degrees this needs to be changed... but realistically if I ever
+     * get over 10 this will have to be converted to a web app anyway.
+     */
+    private byte degreeId;
 
     // These are for storing the values in Realm
     private RealmList<KATopicCount> topicCounters;
     private RealmList<KACount> kaCounters;
     public RealmList<KAPercent> kaPercents;
 
-    // Used to calculate the percents
-    private int totalTopicCount;
+    // Used to calculate the percents, SHORT will do just fine
+    private short totalTopicCount;
 
     public SweScore() {
         topicCounters = new RealmList<>();
@@ -70,7 +77,7 @@ public class SweScore extends RealmObject {
         kaPercents = new RealmList<>();
     }
 
-    public SweScore(String id, int degreeId, String scoreType) {
+    public SweScore(String id, byte degreeId, String scoreType) {
         this.id = id;
         this.scoreType = scoreType;
         this.degreeId = degreeId;
@@ -110,11 +117,11 @@ public class SweScore extends RealmObject {
         this.scoreType = scoreType;
     }
 
-    public int getTotalTopicCount() {
+    public short getTotalTopicCount() {
         return totalTopicCount;
     }
 
-    public void setTotalTopicCount(int topicCount) {
+    public void setTotalTopicCount(short topicCount) {
         totalTopicCount = topicCount;
     }
 
@@ -135,12 +142,13 @@ public class SweScore extends RealmObject {
         totalTopicCount++;
     }
 
-    public int getDegreeId() {
+    // Note that this works because an implicit conversion to an int is OK from a byte
+    public byte getDegreeId() {
         return degreeId;
     }
 
     public void setDegreeId(int degreeId) {
-        this.degreeId = degreeId;
+        this.degreeId = (byte) degreeId;
     }
 
     public RealmList<KACount> getKaCounters() {
@@ -177,9 +185,9 @@ public class SweScore extends RealmObject {
      * This resets the percent calculations. Only really useful after every counter has been put into place and
      * no further data will be added.
      */
-    public void calculateScores2() {
+    public void calculateScores() {
         for (KACount kaCount : kaCounters) {
-            kaPercents.add(new KAPercent(kaCount.getKaId(), (double) kaCount.getKaCount() / totalTopicCount * PERCENT));
+            kaPercents.add(new KAPercent(kaCount.getKaId(), (float) kaCount.getKaCount() / totalTopicCount * PERCENT));
         }
     }
 

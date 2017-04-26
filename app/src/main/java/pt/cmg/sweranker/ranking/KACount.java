@@ -8,41 +8,41 @@ import io.realm.RealmObject;
 
 public class KACount extends RealmObject {
 
-    private int kaId;
-    private int kaCount;
+    private byte kaId;
+    private short kaCount;
 
     public KACount() {
         this.kaCount = 0;
         this.kaId = 0;
     }
 
-    public KACount(int kaId) {
+    public KACount(byte kaId) {
         this.kaId = kaId;
         this.kaCount = 1;
     }
 
-    public KACount(int kaId, int kaCount) {
+    public KACount(byte kaId, short kaCount) {
         this.kaId = kaId;
         this.kaCount = kaCount;
     }
 
-    public int getKaId() {
+    public byte getKaId() {
         return kaId;
     }
 
-    public void setKaId(int kaId) {
+    public void setKaId(byte kaId) {
         this.kaId = kaId;
     }
 
-    public int getKaCount() {
+    public short getKaCount() {
         return kaCount;
     }
 
-    public void setKaCount(int kaCount) {
+    public void setKaCount(short kaCount) {
         this.kaCount = kaCount;
     }
 
-    public void incrementCounter(int increment) {
+    public void incrementCounter(short increment) {
         kaCount += increment;
     }
 

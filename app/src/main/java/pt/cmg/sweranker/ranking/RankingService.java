@@ -520,34 +520,34 @@ public class RankingService extends Service {
      */
     private SweScore evaluateClass(DegreeClassMatch classMatch) {
 
-        Map<Integer, KATopicCount> kaTopicCounters = new HashMap<>();
-        Map<Integer, KACount> kaCounters = new HashMap<>();
+        Map<Byte, KATopicCount> kaTopicCounters = new HashMap<>();
+        Map<Byte, KACount> kaCounters = new HashMap<>();
 
 
-        int currentKnowledgeAreaId = 0;
+        byte currentKnowledgeAreaId = 0;
 
         for (Integer kaTopicId : classMatch.getAllMatchesAsList()) {
 
-            currentKnowledgeAreaId = _knowledgeAreaTopicsByTopicId.get(kaTopicId).getKnowledgeAreaId();
+            currentKnowledgeAreaId = (byte) _knowledgeAreaTopicsByTopicId.get(kaTopicId).getKnowledgeAreaId();
 
             if (kaCounters.containsKey(currentKnowledgeAreaId)) {
-                kaCounters.get(currentKnowledgeAreaId).incrementCounter(1);
+                kaCounters.get(currentKnowledgeAreaId).incrementCounter((short) 1);
             } else {
                 kaCounters.put(currentKnowledgeAreaId, new KACount(currentKnowledgeAreaId));
             }
 
-            if (kaTopicCounters.containsKey(kaTopicId)) {
-                kaTopicCounters.get(kaTopicId).incrementCounter(1);
+            if (kaTopicCounters.containsKey(kaTopicId.byteValue())) {
+                kaTopicCounters.get(kaTopicId.byteValue()).incrementCounter((short) 1);
             } else {
-                kaTopicCounters.put(kaTopicId, new KATopicCount(kaTopicId));
+                kaTopicCounters.put(kaTopicId.byteValue(), new KATopicCount(kaTopicId.byteValue()));
             }
         }
 
-        SweScore ranking = new SweScore(classMatch.getDegreeClassId(), classMatch.getDegreeId(), SweScore.TYPE_CLASS_SCORE);
+        SweScore ranking = new SweScore(classMatch.getDegreeClassId(), (byte) classMatch.getDegreeId(), SweScore.TYPE_CLASS_SCORE);
         ranking.setKaCounters(kaCounters.values());
         ranking.setTopicCounters(kaTopicCounters.values());
 
-        ranking.calculateScores2();
+        ranking.calculateScores();
 
         return ranking;
     }
