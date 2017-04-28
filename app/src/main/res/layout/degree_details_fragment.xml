@@ -101,7 +101,7 @@
             android:focusable="true"
             android:text="Calculate"
             android:textColor="@color/cardview_light_background"
-            android:visibility="visible"
+            android:visibility="gone"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/evaluated_status"
             app:srcCompat="@drawable/evaluate" />

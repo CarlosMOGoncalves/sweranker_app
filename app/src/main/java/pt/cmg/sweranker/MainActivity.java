@@ -28,7 +28,6 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 import pt.cmg.sweranker.degrees.Degree;
 import pt.cmg.sweranker.degrees.DegreeClass;
@@ -40,7 +39,6 @@ import pt.cmg.sweranker.degrees.DegreesFragment;
 import pt.cmg.sweranker.degrees.DegreesLoaderService;
 import pt.cmg.sweranker.ranking.RankingFragment;
 import pt.cmg.sweranker.ranking.RankingService;
-import pt.cmg.sweranker.ranking.SweScore;
 import pt.cmg.sweranker.swebok.KnowledgeArea;
 import pt.cmg.sweranker.swebok.SwebokKADetailsFragment;
 import pt.cmg.sweranker.swebok.SwebokKAsFragment;
@@ -550,11 +548,6 @@ public class MainActivity extends AppCompatActivity implements
     @Override
     public DegreeClassMatch getDegreeClassMatches(String degreeClassId) {
         return _rankingService.getDegreeClassMatches(degreeClassId);
-    }
-
-    @Override
-    public Map<String, SweScore> getAllDegreeClassRankings() {
-        return _rankingService.getDegreeClassRankings();
     }
 
 

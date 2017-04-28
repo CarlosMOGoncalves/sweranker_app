@@ -9,7 +9,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.util.List;
+import java.util.Map;
 
 import pt.cmg.sweranker.R;
 
@@ -17,41 +17,44 @@ import pt.cmg.sweranker.R;
  * Created by Carlos on 28/03/2017.
  */
 
-public class RankingsAdapter extends RecyclerView.Adapter<RankingsAdapter.RankingViewHolder> {
+public class ScoresAndImagesAdapter extends RecyclerView.Adapter<ScoresAndImagesAdapter.ScoreImageViewHolder> {
 
     private Context _context;
-    private List<SweScore> _allScores;
+    private Map<String, Integer> _scoresAndImages;
+    private String[] _indexes;
 
 
-    public RankingsAdapter(Context context, List<SweScore> scores) {
+    public ScoresAndImagesAdapter(Context context, Map<String, Integer> scoresAndImages) {
         _context = context;
-        _allScores = scores;
+        _scoresAndImages = scoresAndImages;
+        _indexes = _scoresAndImages.keySet().toArray(new String[_scoresAndImages.size()]);
     }
 
 
     @Override
-    public RankingsAdapter.RankingViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public ScoreImageViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.ranking_card, parent, false);
-        return new RankingViewHolder(itemView);
+        return new ScoreImageViewHolder(itemView);
     }
 
     @Override
-    public void onBindViewHolder(RankingsAdapter.RankingViewHolder holder, int position) {
-
+    public void onBindViewHolder(ScoreImageViewHolder holder, int position) {
+        holder._degreeLogo.setImageDrawable(_context.getDrawable(_scoresAndImages.get(_indexes[position])));
+        holder._rankingName.setText(_indexes[position]);
     }
 
     @Override
     public int getItemCount() {
-        return _allScores.size();
+        return _scoresAndImages.size();
     }
 
 
-    public class RankingViewHolder extends RecyclerView.ViewHolder {
+    public class ScoreImageViewHolder extends RecyclerView.ViewHolder {
 
         private ImageView _degreeLogo;
         private TextView _rankingName;
 
-        public RankingViewHolder(View itemView) {
+        public ScoreImageViewHolder(View itemView) {
             super(itemView);
 
             _degreeLogo = (ImageView) itemView.findViewById(R.id.ranking_logo);
@@ -60,7 +63,7 @@ public class RankingsAdapter extends RecyclerView.Adapter<RankingsAdapter.Rankin
             _degreeLogo.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Toast.makeText(_context, _rankingName.getText(), Toast.LENGTH_SHORT);
+                    Toast.makeText(_context, _rankingName.getText(), Toast.LENGTH_SHORT).show();
                 }
             });
 

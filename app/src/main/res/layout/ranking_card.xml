@@ -12,12 +12,13 @@
 
         <ImageView
             android:id="@+id/ranking_logo"
-            android:layout_width="@dimen/ranking_image_size"
-            android:layout_height="@dimen/ranking_image_size"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
             android:layout_weight="1"
+            android:maxHeight="100dp"
             android:padding="@dimen/ranking_image_padding"
-            android:scaleType="fitXY"
-            app:srcCompat="@drawable/logo_eng_uminho" />
+            android:scaleType="centerCrop"
+            app:srcCompat="@drawable/feup_logo" />
 
         <TextView
             android:id="@+id/ranking_name"

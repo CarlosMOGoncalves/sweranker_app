@@ -8,15 +8,24 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Bundle;
 import android.support.v4.content.LocalBroadcastManager;
+import android.support.v7.widget.DefaultItemAnimator;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ProgressBar;
 
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
 
+import io.realm.Realm;
+import io.realm.Sort;
 import pt.cmg.sweranker.R;
+import pt.cmg.sweranker.degrees.Degree;
+import pt.cmg.sweranker.degrees.DegreeLoader;
+import pt.cmg.sweranker.ui.ConstantSpacingItemDecorator;
 
 public class RankingFragment extends Fragment {
 
@@ -28,7 +37,7 @@ public class RankingFragment extends Fragment {
             _progressBar.setVisibility(View.GONE);
             _rankingsGrid.setVisibility(View.VISIBLE);
 
-            _adapter = new RankingsAdapter(context, null);
+            _adapter = new ScoresAndImagesAdapter(context, null);
             _adapter.notifyDataSetChanged();
         }
     };
@@ -43,9 +52,12 @@ public class RankingFragment extends Fragment {
     private RecyclerView _rankingsGrid;
     private View _myRootView;
     private ProgressBar _progressBar;
-    private RankingsAdapter _adapter;
-    private List<SweScore> _sampleScores;
+    private ScoresAndImagesAdapter _adapter;
 
+    private Map<Integer, Degree> _degrees;
+    private Realm _database;
+    private List<SweScore> _sampleScores;
+    private LinkedHashMap<String, Integer> _combinationNameAndImage;
 
     public RankingFragment() {
         // Required empty public constructor
@@ -58,38 +70,6 @@ public class RankingFragment extends Fragment {
         fragment.setArguments(args);
         return fragment;
     }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-    }
-
-
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-
-        _myRootView = inflater.inflate(R.layout.ranking_fragment, container, false);
-
-        _progressBar = (ProgressBar) _myRootView.findViewById(R.id.progress_bar);
-
-        _rankingsGrid = (RecyclerView) _myRootView.findViewById(R.id.rankings_grid);
-
-        _adapter = new RankingsAdapter(this.getActivity(), null);
-
-//        GridLayoutManager mLayoutManager = new GridLayoutManager(this.getActivity(), 4);
-//        _rankingsGrid.setLayoutManager(mLayoutManager);
-//        _rankingsGrid.addItemDecoration(new ConstantSpacingItemDecorator(this.getActivity(),
-//                10,
-//                ConstantSpacingItemDecorator.Side.LEFT,
-//                ConstantSpacingItemDecorator.Side.RIGHT,
-//                ConstantSpacingItemDecorator.Side.ALL_SIDES));
-//        _rankingsGrid.setItemAnimator(new DefaultItemAnimator());
-//        _rankingsGrid.setAdapter(_adapter);
-
-
-        return _myRootView;
-    }
-
 
     @Override
     public void onAttach(Context parentActivity) {
@@ -122,13 +102,71 @@ public class RankingFragment extends Fragment {
     }
 
     @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        List<Degree> degrees = _parentActivity.loadDegrees();
+        _degrees = new LinkedHashMap<>();
+        for (Degree d : degrees) {
+            _degrees.put(d.getId(), d);
+        }
+
+        _database = Realm.getDefaultInstance();
+        _sampleScores = _database.where(SweScore.class)
+                .equalTo(SweScoreFields.SCORE_TYPE, SweScore.TYPE_DEGREE_SCORE)
+                .equalTo(SweScoreFields.DEGREE_ID, 1)
+                .findAllSorted(SweScoreFields.KA_PERCENT1, Sort.DESCENDING);
+
+        _combinationNameAndImage = new LinkedHashMap<>();
+        for (int i = 0; i < 10; i++) {
+            SweScore currentScore = _sampleScores.get(i);
+            _combinationNameAndImage.put(new String(currentScore.getId()), _degrees.get((int) currentScore.getDegreeId()).getImageResource());
+        }
+
+    }
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+
+
+        _myRootView = inflater.inflate(R.layout.ranking_fragment, container, false);
+
+        _progressBar = (ProgressBar) _myRootView.findViewById(R.id.progress_bar);
+        _progressBar.setVisibility(View.INVISIBLE);
+
+        _rankingsGrid = (RecyclerView) _myRootView.findViewById(R.id.rankings_grid);
+
+        _adapter = new ScoresAndImagesAdapter(this.getActivity(), _combinationNameAndImage);
+
+        GridLayoutManager mLayoutManager = new GridLayoutManager(this.getActivity(), 4);
+        _rankingsGrid.setLayoutManager(mLayoutManager);
+        _rankingsGrid.addItemDecoration(new ConstantSpacingItemDecorator(this.getActivity(),
+                2,
+                ConstantSpacingItemDecorator.Side.LEFT,
+                ConstantSpacingItemDecorator.Side.RIGHT,
+                ConstantSpacingItemDecorator.Side.ALL_SIDES));
+        _rankingsGrid.setItemAnimator(new DefaultItemAnimator());
+        _rankingsGrid.setAdapter(_adapter);
+
+
+        return _myRootView;
+    }
+
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        _database.close();
+    }
+
+    @Override
     public void onDetach() {
         super.onDetach();
         _parentActivity = null;
         LocalBroadcastManager.getInstance(this.getActivity()).unregisterReceiver(_calculationsFinishedReceiver);
     }
 
-    public interface RankingFragmentInteractionListener extends RankingLoader {
+    public interface RankingFragmentInteractionListener extends DegreeLoader {
 
 
     }
