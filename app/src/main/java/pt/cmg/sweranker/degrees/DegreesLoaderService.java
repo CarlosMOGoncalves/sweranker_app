@@ -81,17 +81,17 @@ public class DegreesLoaderService extends Service {
                 for (String degreeClassId : degreeClassIds) {
                     toInsert.add(new DegreeClassId(degreeClassId));
                 }
-                realm.executeTransaction(r -> r.copyToRealmOrUpdate(toInsert));
+                realm.executeTransaction(r -> r.insertOrUpdate(toInsert));
 
                 List<DegreeClassId> savedIds = realm.where(DegreeClassId.class)
                         .findAll();
 
-                Log.i("Realm", "Saved " + savedIds.size() + " degree class ids.");
+                Log.i("Realm", "Saved " + savedIds.size() + " Degree Class IDs.");
             } else {
                 List<DegreeClassId> savedIds = realm.where(DegreeClassId.class)
                         .findAll();
 
-                Log.i("Realm", "Database has " + savedIds.size() + " degree class ids. No need to save them again.");
+                Log.i("Realm", "Database has " + savedIds.size() + " Degree Class IDs. No need to save them again.");
             }
 
 

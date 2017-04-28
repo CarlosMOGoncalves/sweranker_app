@@ -1,10 +1,6 @@
 package pt.cmg.sweranker.ranking;
 
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
-
-import io.realm.RealmList;
 
 /**
  * Created by Carlos on 29/03/2017.
@@ -13,46 +9,42 @@ import io.realm.RealmList;
 public class CalculationUtils {
 
 
+    /**
+     * Calculates an aggregate SweScore with many other scores as base.
+     * This is simpler than it looks, it mostly just sums the values on all the scores.
+     *
+     * @param sweScores
+     * @return
+     */
     public static SweScore calculateAccumulatedScore(List<SweScore> sweScores) {
 
-        Map<Byte, KATopicCount> kaTopicCounters = new HashMap<>();
-        Map<Byte, KACount> kaCounters = new HashMap<>();
+        short[] kaTopicCounters = new short[102];
+        short[] kaCounters = new short[16];
+        short totalTopicCounter = 0;
 
         for (SweScore currentScore : sweScores) {
 
-            // First increment ALL the KA counters
-            RealmList<KACount> currentKaCounters = currentScore.getKaCounters();
-            for (KACount kaCounter : currentKaCounters) {
-
-                if (kaCounters.containsKey(kaCounter.getKaId())) {
-                    kaCounters.get(kaCounter.getKaId()).incrementCounter(kaCounter.getKaCount());
-                } else {
-                    KACount newCounter = new KACount(kaCounter.getKaId());
-                    newCounter.setKaCount(kaCounter.getKaCount());
-                    kaCounters.put(kaCounter.getKaId(), newCounter);
-                }
+            short[] currentScoreTopicCounters = currentScore.getTopicCounters();
+            for (int i = 0; i < currentScoreTopicCounters.length; i++) {
+                kaTopicCounters[i] += currentScoreTopicCounters[i];
+                totalTopicCounter += currentScoreTopicCounters[i];
             }
 
-            // Then update ALL the KA Topic counters AND the total counter
-            RealmList<KATopicCount> currentTopicCounters = currentScore.getTopicCounters();
-            for (KATopicCount topicCounter : currentTopicCounters) {
-
-
-                if (kaTopicCounters.containsKey(topicCounter.getTopicId())) {
-                    kaTopicCounters.get(topicCounter.getTopicId()).incrementCounter(topicCounter.getTopicCount());
-                } else {
-                    KATopicCount newCounter = new KATopicCount(topicCounter.getTopicId());
-                    newCounter.setTopicCount(topicCounter.getTopicCount());
-                    kaTopicCounters.put(topicCounter.getTopicId(), newCounter);
-                }
+            short[] currentScoreKaCounters = currentScore.getKaCounters();
+            for (int i = 0; i < currentScoreKaCounters.length; i++) {
+                kaCounters[i] += currentScoreKaCounters[i];
             }
         }
 
 
         // And finally build the resulting score object
         SweScore result = new SweScore();
-        result.setKaCounters(kaCounters.values());
-        result.setTopicCounters(kaTopicCounters.values());
+        result.setKaCounters(kaCounters);
+        result.setTopicCounters(kaTopicCounters);
+        result.setTotalTopicCount(totalTopicCounter);
+
+        // I am starting to think this method should be outside the SweScore class and be directly here
+        // The SweScore would just be the class holding the data and not calculating it. To review.
         result.calculateScores();
 
         return result;

@@ -14,13 +14,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ProgressBar;
 
-import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
-import io.realm.Realm;
-import io.realm.RealmResults;
-import io.realm.Sort;
 import pt.cmg.sweranker.R;
 
 public class RankingFragment extends Fragment {
@@ -67,43 +62,6 @@ public class RankingFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        _sampleScores = loadSampleScores();
-    }
-
-
-    private List<SweScore> loadSampleScores() {
-
-        Realm database = Realm.getDefaultInstance();
-
-        // Starting with them ordered descending from KA = 3
-        RealmResults<KAPercent> sortedPercents = database.where(KAPercent.class)
-                .equalTo("kaId", 3)
-                .findAllSorted("kaPercent", Sort.DESCENDING);
-
-        RealmResults<SweScore> scores = database.where(SweScore.class)
-                .equalTo("scoreType", SweScore.TYPE_DEGREE_SCORE)
-                .findAll();
-
-        RealmResults<SweScore> ascores = database.where(SweScore.class)
-                .equalTo("scoreType", SweScore.TYPE_ANNUAL_SCORE)
-                .findAll();
-
-        RealmResults<SweScore> dscores = database.where(SweScore.class)
-                .findAll();
-
-        List<SweScore> resultingScores = new ArrayList<>();
-
-        int counter = 0;
-
-        Iterator<KAPercent> iterator = sortedPercents.iterator();
-        for (int i = 0; i < 40; i++) {
-            resultingScores.add(sortedPercents.get(i).getScore());
-            counter++;
-        }
-
-        database.close();
-        return resultingScores;
-
     }
 
 

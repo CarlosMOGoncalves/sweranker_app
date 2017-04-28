@@ -146,6 +146,7 @@ public class DegreeDetailsFragment extends Fragment {
             isDegreeEvaluated.setTextColor((this.getResources().getColor(R.color.materialNegative)));
         }
 
+        // This button is a case to review. It probably should not be here. Most of the time is hidden as it triggers BIG processing.
         calculateScoreButton.setOnClickListener(view -> new YearlyRankingCalculator().execute());
 
         ViewPager viewPager = (ViewPager) _myView.findViewById(R.id.degree_viewPager);
@@ -163,6 +164,10 @@ public class DegreeDetailsFragment extends Fragment {
     }
 
 
+    /**
+     * This is a background thread whose purpose is to calculate and save all the degree combinations and its scores.
+     * It is heavy stuff although I am still debating if I need it to be here (which I don't think I do).
+     */
     private class YearlyRankingCalculator extends AsyncTask<Void, Void, Void> {
 
 
@@ -178,13 +183,13 @@ public class DegreeDetailsFragment extends Fragment {
             _degreeCombinationIdBase = "d" + _degreeId + "c";
             _combinationIdCounter = 1;
 
-//            List<AnnualClassCombination> annualCombinations = calculateAnnualCombinations(_degree);
-//
-//            saveObjectsByBatch(annualCombinations);
-//
-//            calculateAndSaveAnnualScores();
-//
-//            calculateAndSaveDegreeClassCombinations(_degree);
+            List<AnnualClassCombination> annualCombinations = calculateAnnualCombinations(_degree);
+
+            saveObjectsByBatch(annualCombinations);
+
+            calculateAndSaveAnnualScores();
+
+            calculateAndSaveDegreeClassCombinations(_degree);
 
             calculateAndSaveDegreeScores();
 
@@ -287,7 +292,7 @@ public class DegreeDetailsFragment extends Fragment {
 
                 }
 
-                databaseConnection.executeTransaction(r -> r.copyToRealmOrUpdate(batch));
+                databaseConnection.executeTransaction(r -> r.insertOrUpdate(batch));
                 batch.clear();
 
                 // This part is just a small sleep to give some time to trigger the GC and clean the mess it is creating.
@@ -427,7 +432,10 @@ public class DegreeDetailsFragment extends Fragment {
                     }
                 }
 
-                _combinationIdCounter++;
+                // This is only a small escape so I won't increment the value of the combination counter at the end of calculation
+                if (_combinationIdCounter != _totalPossibleCombinations) {
+                    _combinationIdCounter++;
+                }
                 return;
             }
 
@@ -441,6 +449,26 @@ public class DegreeDetailsFragment extends Fragment {
         }
 
 
+        /**
+         * This one is tough.<br/>
+         * This function does the heavy lifting job of calculating the SweScores for ALL the possible combinations
+         * of this degree.<br/>
+         * Naturally this is a hard work so I use some multi-threading to speed up things.<br/>
+         * <p>
+         * Whenever in the future I look back at this application THIS is where I spent at the very least one month, from March to April, 2017.
+         * Here I realised that I needed a DB to save the calculations because it was too much to keep in memory so I spent at least one
+         * week researching what to use. After I decided it would be Realm I took some more time to learn how the hell that worked and how
+         * green it still was. Then, when I finally organised this stuff I understood that the way the objects were programmed was still too much
+         * for the mobile to handle in a realistic time (first time it took nearly two hours and the phone battery died out).
+         * So I took some more time refactoring the objects until I came up with an ugly ugly solution but that worked.
+         * There it is, end of April 2017.
+         * </p>
+         * <p>
+         * If, anytime in the future you come here with your new Google Pixel 5000 (or whatever shit they call it these days, I liked Nexus name better),
+         * with your fancy 1TB of RAM, remember these old days when, with a Nexus 5X of 2Gb of RAM and 16Gb of disk size these calculations humiliated
+         * that piece of hardware and forced the performance Engineer ou of you. Peace bro.
+         * </p>
+         */
         private void calculateAndSaveDegreeScores() {
 
             Realm databaseConnection = Realm.getDefaultInstance();
@@ -468,24 +496,35 @@ public class DegreeDetailsFragment extends Fragment {
                     .findAll()
                     .size();
 
-            ExecutorService executorService = Executors.newFixedThreadPool(1);
+            // Funny this, AS SOON as an intance of Realm is not needed anymore, just close it
+            // Previously this was on the end of the method. As a result the memory would explode with uncollected objects
+            // when calling the below executor each with its own Realm instance.
+            databaseConnection.close();
+
+            // This is a long debate that I had with myself.
+            // After several samples I reached the conclusion that a batch size of 7500 and two threads are the best option
+            // This is because Realm can only save in one Thread at the same time so a lot of threads would be pointless.
+            // Therefore I just use two so that whenever Realm is free to insert a new batch I already have the calculation ready.
+            ExecutorService executorService = Executors.newFixedThreadPool(2);
             int executionId = 1;
             int startPosition = 0;
-            int endPosition = 5000;
+            int batchSize = 7500;
+
             while (startPosition < allCombinationsCount) {
 
                 // If by adding the default window surpasses the total size of the collection
-                if (startPosition + endPosition >= allCombinationsCount) {
-                    // Then the end position will be the last element
-                    endPosition = allCombinationsCount;
+                if (startPosition + batchSize >= allCombinationsCount) {
+                    // Then the batch size will have the size of what is left, hence the difference here
+                    batchSize = allCombinationsCount - startPosition;
                 }
 
-                executorService.submit(new DegreeScoreCalculator(executionId, scoresByAnnualCombination, startPosition, endPosition));
+                executorService.submit(new DegreeScoreCalculator(executionId, scoresByAnnualCombination, startPosition, batchSize));
                 executionId++;
-                startPosition += endPosition;
+                startPosition += batchSize;
 
             }
 
+            // Now I just wait for the results. I am keeping it waiting, I am outside of the main thread anyway.
             executorService.shutdown();
             try {
                 executorService.awaitTermination(Long.MAX_VALUE, TimeUnit.NANOSECONDS);
@@ -497,10 +536,14 @@ public class DegreeDetailsFragment extends Fragment {
             Log.i("Calculation", "Ended calculation of degree scoring.");
             Log.i("Calculation", "Took " + ((endTime - startTime) / 1000) + " seconds");
 
-            databaseConnection.close();
 
         }
 
+        /**
+         * This class is used to calculate and save a batch of calculations from the same batch of combinations.
+         * Since it works on a finite window it will never mess with other thread's work, which is nice.
+         * This was inspired on my previous job when I worked at IB. Yuck...
+         */
         private class DegreeScoreCalculator implements Runnable {
 
             private int _id;
@@ -525,8 +568,8 @@ public class DegreeDetailsFragment extends Fragment {
                         .findAll();
 
                 List<SweScore> results = new ArrayList<>();
-                long startMillis = System.currentTimeMillis();
-                Log.i("Calculation", "Started calculation of batch of Degree Scores with id: " + _id);
+//                long startMillis = System.currentTimeMillis();
+//                Log.i("Calculation", "Started calculation of batch of Degree Scores with id: " + _id);
                 for (int i = _startPosition; i < _endPosition; i++) {
 
                     DegreeClassCombination currentDegreeCombination = allCombinations.get(i);
@@ -548,19 +591,21 @@ public class DegreeDetailsFragment extends Fragment {
                     results.add(calculatedScore);
 
                 }
-                long endMillis = System.currentTimeMillis();
-                Log.i("Calculation", "Ended calculation of batch of Degree Scores with id " + _id + ", took " + ((endMillis - startMillis) / 1000) + " seconds");
+//                long endMillis = System.currentTimeMillis();
+//                Log.i("Calculation", "Ended calculation of batch of Degree Scores with id " + _id + ", took " + ((endMillis - startMillis) / 1000) + " seconds");
 
 
-                startMillis = System.currentTimeMillis();
-                Log.i("Calculation", "Started to save a batch of Degree Scores with id: " + _id);
-                database.executeTransaction(r -> r.insert(results));
-                endMillis = System.currentTimeMillis();
-                Log.i("Calculation", "Ended saving a batch of Degree Scores with id: " + _id + ", took " + ((endMillis - startMillis) / 1000) + " seconds");
+//                startMillis = System.currentTimeMillis();
+//                Log.i("Calculation", "Started to save a batch of Degree Scores with id: " + _id);
+                database.executeTransaction(r -> r.insertOrUpdate(results));
+//                endMillis = System.currentTimeMillis();
+                Log.i("Calculation", "Ended saving a batch of Degree Scores with id: " + _id);
+//                Log.i("Calculation", "Ended saving a batch of Degree Scores with id: " + _id + ", took " + ((endMillis - startMillis) / 1000) + " seconds");
                 results.clear();
 
                 database.close();
             }
+
         }
 
 
@@ -591,7 +636,7 @@ public class DegreeDetailsFragment extends Fragment {
                     iterator.set(null);
                 }
 
-                database.executeTransaction(realm -> realm.copyToRealmOrUpdate(batch));
+                database.executeTransaction(realm -> realm.insertOrUpdate(batch));
 
                 batch.clear();
 
@@ -611,10 +656,6 @@ public class DegreeDetailsFragment extends Fragment {
         }
 
 
-        @Override
-        protected void onPostExecute(Void aVoid) {
-            super.onPostExecute(aVoid);
-        }
     }
 
 

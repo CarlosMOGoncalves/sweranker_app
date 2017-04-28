@@ -511,49 +511,6 @@ public class RankingService extends Service {
 
 
     /**
-     * Calculates the SweScore for a given DegreeClassMatch.
-     * This will basically sweep the match for all its topic that were matched and pretty much count them
-     * discretely so that in the end a percentage can be calculated
-     *
-     * @param classMatch
-     * @return
-     */
-    private SweScore evaluateClass(DegreeClassMatch classMatch) {
-
-        Map<Byte, KATopicCount> kaTopicCounters = new HashMap<>();
-        Map<Byte, KACount> kaCounters = new HashMap<>();
-
-
-        byte currentKnowledgeAreaId = 0;
-
-        for (Integer kaTopicId : classMatch.getAllMatchesAsList()) {
-
-            currentKnowledgeAreaId = (byte) _knowledgeAreaTopicsByTopicId.get(kaTopicId).getKnowledgeAreaId();
-
-            if (kaCounters.containsKey(currentKnowledgeAreaId)) {
-                kaCounters.get(currentKnowledgeAreaId).incrementCounter((short) 1);
-            } else {
-                kaCounters.put(currentKnowledgeAreaId, new KACount(currentKnowledgeAreaId));
-            }
-
-            if (kaTopicCounters.containsKey(kaTopicId.byteValue())) {
-                kaTopicCounters.get(kaTopicId.byteValue()).incrementCounter((short) 1);
-            } else {
-                kaTopicCounters.put(kaTopicId.byteValue(), new KATopicCount(kaTopicId.byteValue()));
-            }
-        }
-
-        SweScore ranking = new SweScore(classMatch.getDegreeClassId(), (byte) classMatch.getDegreeId(), SweScore.TYPE_CLASS_SCORE);
-        ranking.setKaCounters(kaCounters.values());
-        ranking.setTopicCounters(kaTopicCounters.values());
-
-        ranking.calculateScores();
-
-        return ranking;
-    }
-
-
-    /**
      * Returns true if the given degree class id has a match (i.e. if its degree class has been already matched, each of its topics
      * to one or more KnowledgeArea Topics)
      *
@@ -632,6 +589,46 @@ public class RankingService extends Service {
         return rankings;
     }
 
+
+    /**
+     * Calculates the SweScore for a given DegreeClassMatch.
+     * This will basically sweep the match for all its topic that were matched and pretty much count them
+     * discretely so that in the end a percentage can be calculated
+     * <p>
+     * TODO: this is the basis of the calculation. This should be in CalculationUtils. It is here because here I have access to the Knowledge Areas which I need in order to caculate stuff. Which also means that the KAs should not be here as well...
+     *
+     * @param classMatch
+     * @return
+     */
+    private SweScore evaluateClass(DegreeClassMatch classMatch) {
+
+        short[] kaTopicCounters = new short[102];
+        short[] kaCounters = new short[16];
+
+
+        int currentKnowledgeAreaId = 0;
+        short totalTopicCounters = 0;
+
+        for (Integer kaTopicId : classMatch.getAllMatchesAsList()) {
+
+            currentKnowledgeAreaId = _knowledgeAreaTopicsByTopicId.get(kaTopicId).getKnowledgeAreaId();
+
+            kaCounters[currentKnowledgeAreaId - 1]++;
+            kaTopicCounters[kaTopicId - 1]++;
+            totalTopicCounters++;
+        }
+
+        SweScore ranking = new SweScore(classMatch.getDegreeClassId(), (byte) classMatch.getDegreeId(), SweScore.TYPE_CLASS_SCORE);
+        ranking.setKaCounters(kaCounters);
+        ranking.setTopicCounters(kaTopicCounters);
+        ranking.setTotalTopicCount(totalTopicCounters);
+
+        ranking.calculateScores();
+
+        return ranking;
+    }
+
+
     /**
      * Saves all the current degree class rankings that were calculated using the degree class matches as their base.
      */
@@ -639,13 +636,13 @@ public class RankingService extends Service {
 
         Realm realmInstance = Realm.getDefaultInstance();
 
-        realmInstance.executeTransaction(realm -> realm.copyToRealmOrUpdate(_degreeClassRankings.values()));
+        realmInstance.executeTransaction(realm -> realm.insertOrUpdate(_degreeClassRankings.values()));
 
         List<SweScore> savedScores = realmInstance.where(SweScore.class)
                 .equalTo("scoreType", SweScore.TYPE_CLASS_SCORE)
                 .findAll();
 
-        Log.i("Realm", "Saved or updated " + savedScores.size() + " individual Class scores.");
+        Log.i("Realm", "Saved or updated " + savedScores.size() + " individual Class Scores.");
 
         realmInstance.close();
     }
