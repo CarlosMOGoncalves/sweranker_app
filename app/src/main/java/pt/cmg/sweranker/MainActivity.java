@@ -39,6 +39,7 @@ import pt.cmg.sweranker.degrees.DegreesFragment;
 import pt.cmg.sweranker.degrees.DegreesLoaderService;
 import pt.cmg.sweranker.ranking.RankingFragment;
 import pt.cmg.sweranker.ranking.RankingService;
+import pt.cmg.sweranker.ranking.ScoreChartFragment;
 import pt.cmg.sweranker.swebok.KnowledgeArea;
 import pt.cmg.sweranker.swebok.SwebokKADetailsFragment;
 import pt.cmg.sweranker.swebok.SwebokKAsFragment;
@@ -56,7 +57,8 @@ public class MainActivity extends AppCompatActivity implements
         DegreeDetailsFragment.DegreeDetailsFragmentInteractionListener,
         DegreeClassFragment.DegreeClassFragmentInteractionListener,
         DegreeTopicMatcherFragment.OnDegreeMatcherFragmentInteraction,
-        RankingFragment.RankingFragmentInteractionListener {
+        RankingFragment.RankingFragmentInteractionListener,
+        ScoreChartFragment.OnScoreChartFragmentInteractionListener {
 
 
     private SwebokLoaderService _swebokService;
@@ -551,4 +553,15 @@ public class MainActivity extends AppCompatActivity implements
     }
 
 
+    @Override
+    public void loadChartFragment(View v, String degreeScoreId) {
+
+        Fragment chartFragment = ScoreChartFragment.newInstance(degreeScoreId);
+
+        getFragmentManager()
+                .beginTransaction()
+                .replace(R.id.content_area, chartFragment, "ChartFragment")
+                .addToBackStack(null)
+                .commit();
+    }
 }

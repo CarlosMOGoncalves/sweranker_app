@@ -51,7 +51,7 @@ public class SwebokKAsFragment extends Fragment {
         if (parentActivity instanceof OnSwebokFragmentInteractionListener) {
             _parentActivity = (OnSwebokFragmentInteractionListener) parentActivity;
         } else {
-            throw new RuntimeException(parentActivity.toString() + " must implement OnFragmentInteractionListener");
+            throw new RuntimeException(parentActivity.toString() + " must implement OnScoreChartFragmentInteractionListener");
         }
     }
 
@@ -62,7 +62,7 @@ public class SwebokKAsFragment extends Fragment {
         if (activity instanceof OnSwebokFragmentInteractionListener) {
             _parentActivity = (OnSwebokFragmentInteractionListener) activity;
         } else {
-            throw new RuntimeException(activity.toString() + " must implement OnFragmentInteractionListener");
+            throw new RuntimeException(activity.toString() + " must implement OnScoreChartFragmentInteractionListener");
         }
     }
 

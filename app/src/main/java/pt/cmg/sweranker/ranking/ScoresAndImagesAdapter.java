@@ -7,7 +7,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.Map;
 
@@ -20,14 +19,20 @@ import pt.cmg.sweranker.R;
 public class ScoresAndImagesAdapter extends RecyclerView.Adapter<ScoresAndImagesAdapter.ScoreImageViewHolder> {
 
     private Context _context;
+
+    // Keys -> The degree score Id , Values -> the integer that is the resourced of this degree image
     private Map<String, Integer> _scoresAndImages;
-    private String[] _indexes;
+
+    // These indexes are just another view on the above Map, it is merely the degree score id in an array to use the indexes for positions
+    private String[] _degreeCombinationIds;
+    private OnScoresGridAdapterListener _listener;
 
 
-    public ScoresAndImagesAdapter(Context context, Map<String, Integer> scoresAndImages) {
+    public ScoresAndImagesAdapter(Context context, Map<String, Integer> scoresAndImages, OnScoresGridAdapterListener listener) {
         _context = context;
         _scoresAndImages = scoresAndImages;
-        _indexes = _scoresAndImages.keySet().toArray(new String[_scoresAndImages.size()]);
+        _degreeCombinationIds = _scoresAndImages.keySet().toArray(new String[_scoresAndImages.size()]);
+        _listener = listener;
     }
 
 
@@ -39,8 +44,8 @@ public class ScoresAndImagesAdapter extends RecyclerView.Adapter<ScoresAndImages
 
     @Override
     public void onBindViewHolder(ScoreImageViewHolder holder, int position) {
-        holder._degreeLogo.setImageDrawable(_context.getDrawable(_scoresAndImages.get(_indexes[position])));
-        holder._rankingName.setText(_indexes[position]);
+        holder._degreeLogo.setImageDrawable(_context.getDrawable(_scoresAndImages.get(_degreeCombinationIds[position])));
+        holder._rankingName.setText(_degreeCombinationIds[position]);
     }
 
     @Override
@@ -60,13 +65,20 @@ public class ScoresAndImagesAdapter extends RecyclerView.Adapter<ScoresAndImages
             _degreeLogo = (ImageView) itemView.findViewById(R.id.ranking_logo);
             _rankingName = (TextView) itemView.findViewById(R.id.ranking_name);
 
-            _degreeLogo.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Toast.makeText(_context, _rankingName.getText(), Toast.LENGTH_SHORT).show();
-                }
-            });
+            _degreeLogo.setOnClickListener(view -> _listener.loadDegreeChartsFragment(view, _degreeCombinationIds[getAdapterPosition()]));
 
         }
+    }
+
+
+    public interface OnScoresGridAdapterListener {
+
+        /**
+         * Loads the Chart Fragment for this Degree Combination
+         *
+         * @param rootView
+         * @param degreeCombinationId
+         */
+        void loadDegreeChartsFragment(View rootView, String degreeCombinationId);
     }
 }

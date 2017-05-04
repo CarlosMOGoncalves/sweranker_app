@@ -5,7 +5,7 @@ import java.util.List;
 /**
  * This interface is meant to be implemented by an Activity to facilitate communication with any
  * of its child components (such as fragments), or more likely to be extended by any
- * OnFragmentInteractionListener according to the data that it needs from the activity.
+ * OnScoreChartFragmentInteractionListener according to the data that it needs from the activity.
  */
 public interface DegreeLoader {
 

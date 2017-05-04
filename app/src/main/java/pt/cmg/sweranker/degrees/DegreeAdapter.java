@@ -74,13 +74,7 @@ public class DegreeAdapter extends RecyclerView.Adapter<DegreeAdapter.DegreeView
             _degreeName = (TextView) view.findViewById(R.id.degree_name);
             _universityName = (TextView) view.findViewById(R.id.university_name);
 
-            view.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    int pos = getAdapterPosition();
-                    _listener.loadDetailedDegreeFragment(v, _degrees.get(pos).getId());
-                }
-            });
+            view.setOnClickListener(v -> _listener.loadDetailedDegreeFragment(v, _degrees.get(getAdapterPosition()).getId()));
         }
     }
 

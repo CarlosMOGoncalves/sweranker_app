@@ -60,7 +60,7 @@ public class SwebokKADetailsFragment extends Fragment {
         if (parentActivity instanceof OnKaDetailsFragmentInteractionListener) {
             _parentActivity = (OnKaDetailsFragmentInteractionListener) parentActivity;
         } else {
-            throw new RuntimeException(parentActivity.toString() + " must implement OnFragmentInteractionListener");
+            throw new RuntimeException(parentActivity.toString() + " must implement OnScoreChartFragmentInteractionListener");
         }
     }
 
