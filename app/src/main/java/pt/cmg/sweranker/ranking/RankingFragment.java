@@ -89,6 +89,7 @@ public class RankingFragment extends Fragment {
             _degrees.put(d.getId(), d);
         }
 
+
     }
 
     @Override
@@ -98,14 +99,40 @@ public class RankingFragment extends Fragment {
         _myRootView = inflater.inflate(R.layout.ranking_fragment, container, false);
 
         _progressBar = (ProgressBar) _myRootView.findViewById(R.id.progress_bar);
-        _progressBar.setVisibility(View.VISIBLE);
 
         _rankingsGrid = (RecyclerView) _myRootView.findViewById(R.id.rankings_grid);
-        _rankingsGrid.setVisibility(View.GONE);
 
-        new DegreeComboQueryLoader().execute();
+
+        // This is needed so it doesn't load new images every time this fragment is made visible.
+        if (_combinationNameAndImage == null) {
+            _progressBar.setVisibility(View.VISIBLE);
+            _rankingsGrid.setVisibility(View.GONE);
+            new DegreeComboQueryLoader().execute();
+        } else {
+            initialiseRankingGrid();
+        }
 
         return _myRootView;
+    }
+
+
+    private void initialiseRankingGrid() {
+
+
+        _adapter = new ScoresAndImagesAdapter(getActivity(),
+                _combinationNameAndImage,
+                (rootView, degreeCombinationId) -> _parentActivity.loadChartFragment(rootView, degreeCombinationId));
+
+        GridLayoutManager mLayoutManager = new GridLayoutManager(getActivity(), 4);
+        _rankingsGrid.setLayoutManager(mLayoutManager);
+        _rankingsGrid.addItemDecoration(new ConstantSpacingItemDecorator(getActivity(),
+                2,
+                ConstantSpacingItemDecorator.Side.ALL_SIDES));
+        _rankingsGrid.setItemAnimator(new DefaultItemAnimator());
+        _rankingsGrid.setAdapter(_adapter);
+
+        _progressBar.setVisibility(View.INVISIBLE);
+        _rankingsGrid.setVisibility(View.VISIBLE);
     }
 
 
@@ -120,7 +147,7 @@ public class RankingFragment extends Fragment {
             List<SweScore> sampleScores = databaseConnection.where(SweScore.class)
                     .equalTo(SweScoreFields.SCORE_TYPE, SweScore.TYPE_DEGREE_SCORE)
                     .equalTo(SweScoreFields.DEGREE_ID, 1)
-                    .findAllSorted(SweScoreFields.KA_PERCENT1, Sort.DESCENDING);
+                    .findAllSorted(SweScoreFields.KA_PERCENT3, Sort.DESCENDING);
 
             _combinationNameAndImage = new LinkedHashMap<>();
             for (int i = 0; i < 10; i++) {
@@ -136,24 +163,7 @@ public class RankingFragment extends Fragment {
         @Override
         protected void onPostExecute(Void aVoid) {
             super.onPostExecute(aVoid);
-            _progressBar.setVisibility(View.INVISIBLE);
-
-            _adapter = new ScoresAndImagesAdapter(getContext(),
-                    _combinationNameAndImage,
-                    (rootView, degreeCombinationId) -> _parentActivity.loadChartFragment(rootView, degreeCombinationId));
-
-            GridLayoutManager mLayoutManager = new GridLayoutManager(getContext(), 4);
-            _rankingsGrid.setLayoutManager(mLayoutManager);
-            _rankingsGrid.addItemDecoration(new ConstantSpacingItemDecorator(getContext(),
-                    2,
-                    ConstantSpacingItemDecorator.Side.LEFT,
-                    ConstantSpacingItemDecorator.Side.RIGHT,
-                    ConstantSpacingItemDecorator.Side.ALL_SIDES));
-            _rankingsGrid.setItemAnimator(new DefaultItemAnimator());
-            _rankingsGrid.setAdapter(_adapter);
-
-            _rankingsGrid.setVisibility(View.VISIBLE);
-
+            initialiseRankingGrid();
         }
     }
 

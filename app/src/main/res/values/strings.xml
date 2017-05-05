@@ -31,6 +31,9 @@
     <string name="dismiss">OK</string>
     <string name="select_topic">Seleccionar um tópico</string>
 
+    <string name="chart_subtitle">Legenda</string>
+    <string name="ka_distribution">Distribuição de Áreas de Conhecimento</string>
+
     <string name="loren_ipsum">Far away\nAcross the field\nTolling on the iron bell\nCalls the faithful to their knees\nTo hear the softly spoken magic spell</string>
     <string name="loren_ipsum_title">Us and Them</string>
     <string name="loren_ipsum_description">Black and blue\nAnd who knows which is which and who is who.\nUp and down\nAnd in the end it\'s only round and round. And round.</string>
@@ -1438,8 +1441,5 @@
     <string name="ist_meic_description">Licenciatura em Engenheria Informatica e de Computadores seguida de Mestrado em Engenharia Informática e de Computadores do Insituto Superio Técnico da Universidade de Lisboa. 3 + 2 anos de estudo.</string>
     <string name="ist">Instituto Superior Técnico</string>
     <string name="title_activity_degree_class">DegreeClassActivity</string>
-
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>

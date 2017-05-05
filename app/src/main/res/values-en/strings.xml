@@ -27,6 +27,9 @@
 
     <string name="confirm">Confirm</string>
 
+    <string name="chart_subtitle">Subtitle</string>
+    <string name="ka_distribution">Knowledge Area Distribution</string>
+
     <string name="ka_other">Other</string>
     <string name="ka_software_requirements">Software Requirements</string>
     <string name="ka_software_design">Software Design</string>
