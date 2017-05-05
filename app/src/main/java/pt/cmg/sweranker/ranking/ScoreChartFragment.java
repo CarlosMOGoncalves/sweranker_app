@@ -18,14 +18,20 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.github.mikephil.charting.charts.HorizontalBarChart;
 import com.github.mikephil.charting.charts.PieChart;
+import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.data.PieData;
 import com.github.mikephil.charting.data.PieDataSet;
 import com.github.mikephil.charting.data.PieEntry;
 import com.github.mikephil.charting.formatter.PercentFormatter;
+import com.github.mikephil.charting.highlight.Highlight;
+import com.github.mikephil.charting.listener.OnChartValueSelectedListener;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
+import java.util.TreeMap;
 
 import io.realm.Realm;
 import pt.cmg.sweranker.R;
@@ -33,6 +39,9 @@ import pt.cmg.sweranker.swebok.KnowledgeArea;
 import pt.cmg.sweranker.swebok.KnowledgeAreaLoader;
 
 public class ScoreChartFragment extends Fragment {
+
+    private static final int SUBTITLE_COLUMN_COUNT = 2;
+    private static final int SUBTITLE_ROW_COUNT = 8;
 
     private static final String SCORE_ID = "degreeScoreId";
 
@@ -58,6 +67,7 @@ public class ScoreChartFragment extends Fragment {
     private PieChart _kaPercentDistributionChart;
 
     private ProgressBar _topKaProgressBar;
+    private HorizontalBarChart _topKaChart;
 
     private SweScore _currentScore;
 
@@ -115,16 +125,17 @@ public class ScoreChartFragment extends Fragment {
         _overviewButton = (ImageButton) _myRootView.findViewById(R.id.overview_button);
         _overviewButton.setOnClickListener(view -> Toast.makeText(getActivity(), "Allahu akbar", Toast.LENGTH_SHORT).show());
 
-        _percentProgressBar = (ProgressBar) _myRootView.findViewById(R.id.percent_chart_progress);
-        _percentProgressBar.setVisibility(View.VISIBLE);
-
         _legendTable = (GridLayout) _myRootView.findViewById(R.id.chart_legend_table);
 
+        _percentProgressBar = (ProgressBar) _myRootView.findViewById(R.id.percent_chart_progress);
+        _percentProgressBar.setVisibility(View.VISIBLE);
         _kaPercentDistributionChart = (PieChart) _myRootView.findViewById(R.id.ka_distribution_chart);
         _kaPercentDistributionChart.setVisibility(View.INVISIBLE);
 
         _topKaProgressBar = (ProgressBar) _myRootView.findViewById(R.id.top_kas_chart_progress);
         _topKaProgressBar.setVisibility(View.VISIBLE);
+        _topKaChart = (HorizontalBarChart) _myRootView.findViewById(R.id.top_kas_chart);
+
 
         return _myRootView;
     }
@@ -133,14 +144,14 @@ public class ScoreChartFragment extends Fragment {
     private void updateChartLegend() {
 
         _legendTable.setAlignmentMode(GridLayout.ALIGN_BOUNDS);
-        _legendTable.setColumnCount(2);
-        _legendTable.setRowCount(8);
+        _legendTable.setColumnCount(SUBTITLE_COLUMN_COUNT);
+        _legendTable.setRowCount(SUBTITLE_ROW_COUNT);
 
         Drawable squareIcon = ContextCompat.getDrawable(getActivity(), R.drawable.square);
 
         for (int i = 0, column = 0, row = 0; i < _knowledgeAreas.length; i++, column++) {
 
-            if (column == 2) {
+            if (column == SUBTITLE_COLUMN_COUNT) {
                 column = 0;
                 row++;
             }
@@ -150,7 +161,7 @@ public class ScoreChartFragment extends Fragment {
             kaName.setTextSize(10.0f);
             kaName.setCompoundDrawables(calculateSideDrawable(squareIcon, kaName, _knowledgeAreaColours[i]), null, null, null);
 
-
+            // All of this here below is just needed to set the alignment of the subtitles. Thank you stackoverflow.
             GridLayout.LayoutParams layoutParams = new GridLayout.LayoutParams();
             layoutParams.width = GridLayout.LayoutParams.WRAP_CONTENT;
             layoutParams.height = GridLayout.LayoutParams.WRAP_CONTENT;
@@ -168,7 +179,7 @@ public class ScoreChartFragment extends Fragment {
 
 
     /**
-     * This function, which I basically got online just creates a shape size and colour based on the subtitle TextView size.
+     * This function, which I got online, just creates a shape size and colour based on the subtitle TextView size.
      * Tricky, but works wonders.
      *
      * @param shapeToDraw
@@ -199,11 +210,17 @@ public class ScoreChartFragment extends Fragment {
 
         float[] kaPercents = _currentScore.getKaPercents();
 
+        // The Entries of this chart basically get all the values for each different "Entity" that we are measuring
         List<PieEntry> entries = new ArrayList<>();
-        for (int i = 0; i < _knowledgeAreas.length; i++) {
-            // again the ids are zero-based but the damn KA ids are one-based to this trick is needed in the '_knowledgeAreas[i].getId() -1'
-            entries.add(new PieEntry(kaPercents[_knowledgeAreas[i].getId() - 1], new String(getActivity().getApplicationContext().getString(_knowledgeAreas[i].getNameResource()))));
+        for (int knowledgeAreaIndex = 0; knowledgeAreaIndex < _knowledgeAreas.length; knowledgeAreaIndex++) {
+            // Again the ids are zero-based but the damn KA ids are one-based to this trick is needed in the '_knowledgeAreas[i].getId() -1'
+            // Also, I am passing an integer index object to the Entry so that I can use it later on the chart to write the KA name in the centre of the chart.
+            PieEntry newEntry = new PieEntry(kaPercents[_knowledgeAreas[knowledgeAreaIndex].getId() - 1], knowledgeAreaIndex);
+            newEntry.setLabel(new String(getActivity().getApplicationContext().getString(_knowledgeAreas[knowledgeAreaIndex].getNameResource())));
+
+            entries.add(newEntry);
         }
+
 
         PieDataSet dataSet = new PieDataSet(entries, "KA Percentiles");
         dataSet.setValueTextSize(10f);
@@ -216,13 +233,42 @@ public class ScoreChartFragment extends Fragment {
         // Both description and subtitle will be displayed apart so I am disabling them both
         _kaPercentDistributionChart.getDescription().setEnabled(false);
         _kaPercentDistributionChart.getLegend().setEnabled(false);
-        // Also labels, in a smartphone they would likely be useless. I will try to find another way to display it.
+        // Also labels, in a smart phone they would likely be useless. I will try to find another way to display it.
         _kaPercentDistributionChart.setDrawEntryLabels(false);
 
         _kaPercentDistributionChart.setHoleRadius(40f);
         _kaPercentDistributionChart.setTransparentCircleRadius(45f);
-
         _kaPercentDistributionChart.invalidate();
+
+        _kaPercentDistributionChart.setTouchEnabled(true);
+        _kaPercentDistributionChart.setOnChartValueSelectedListener(new OnChartValueSelectedListener() {
+            @Override
+            public void onValueSelected(Entry entry, Highlight highlight) {
+                _kaPercentDistributionChart.setCenterText(((PieEntry) entry).getLabel());
+                _kaPercentDistributionChart.setCenterTextColor(_knowledgeAreaColours[(Integer) entry.getData()]);
+            }
+
+            @Override
+            public void onNothingSelected() {
+                _kaPercentDistributionChart.setCenterText("");
+            }
+        });
+
+        // Now hide the progress bar and show the chart in all its glory
+        _percentProgressBar.setVisibility(View.INVISIBLE);
+        _kaPercentDistributionChart.setVisibility(View.VISIBLE);
+    }
+
+
+    private void updateTopKaChart() {
+
+        short[] kaCounters = _currentScore.getKaCounters();
+
+        Map<Integer, Integer> countersAndKaIds = new TreeMap<>();
+        for (int i = 0; i < kaCounters.length; i++) {
+            
+        }
+
     }
 
 
@@ -285,8 +331,7 @@ public class ScoreChartFragment extends Fragment {
             super.onPostExecute(aVoid);
             updateKADistributionChart();
             updateChartLegend();
-            _percentProgressBar.setVisibility(View.INVISIBLE);
-            _kaPercentDistributionChart.setVisibility(View.VISIBLE);
+
         }
     }
 

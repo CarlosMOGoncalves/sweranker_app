@@ -61,9 +61,10 @@
                     android:id="@+id/legend_label"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:background="@drawable/border_below"
                     android:text="@string/chart_subtitle"
                     android:textAlignment="center"
-                    android:layout_marginBottom="8dp"
+                    android:paddingBottom="5dp"
                     android:textSize="@dimen/ranking_name_text_size"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -71,6 +72,10 @@
 
                 <GridLayout
                     android:id="@+id/chart_legend_table"
+                    android:paddingBottom="5dp"
+                    android:paddingTop="5dp"
+                    android:paddingStart="5dp"
+                    android:paddingEnd="5dp"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
@@ -82,7 +87,7 @@
         <android.support.v7.widget.CardView
             android:id="@+id/percentile_chart_area"
             android:layout_width="0dp"
-            android:layout_height="500dp"
+            android:layout_height="wrap_content"
             android:layout_marginEnd="5dp"
             android:layout_marginStart="5dp"
             android:layout_marginTop="8dp"
@@ -103,7 +108,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/ka_distribution"
+                    android:background="@drawable/border_below"
                     android:textAlignment="center"
+                    android:paddingBottom="5dp"
                     android:textSize="@dimen/ranking_name_text_size"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintLeft_toLeftOf="parent"
@@ -112,7 +119,8 @@
                 <com.github.mikephil.charting.charts.PieChart
                     android:id="@+id/ka_distribution_chart"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="400dp"
+                    android:paddingTop="5dp"
                     android:background="@color/hollow" />
             </LinearLayout>
 
@@ -149,22 +157,25 @@
                     android:id="@+id/top_ka_label"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Top Knowledge Areas"
+                    android:text="@string/top_kas"
+                    android:background="@drawable/border_below"
                     android:textAlignment="center"
+                    android:paddingBottom="5dp"
                     android:textSize="@dimen/ranking_name_text_size"
                     app:layout_constraintRight_toRightOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/percentile_chart_area" />
 
 
-                <!--com.github.mikephil.charting.charts.PieChart
+                <com.github.mikephil.charting.charts.HorizontalBarChart
                     android:id="@+id/top_kas_chart"
                     android:layout_width="match_parent"
                     android:layout_height="500dp"
                     android:layout_gravity="center"
+                    android:paddingTop="5dp"
                     android:background="@color/hollow">
 
-                </com.github.mikephil.charting.charts.PieChart-->
+                </com.github.mikephil.charting.charts.HorizontalBarChart>
 
 
             </LinearLayout>
