@@ -8,6 +8,7 @@ import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.support.annotation.IntRange;
 import android.support.v4.content.ContextCompat;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -167,8 +168,8 @@ public class ScoreChartFragment extends Fragment {
             }
 
             TextView kaName = new TextView(getActivity());
-            kaName.setText(getActivity().getApplicationContext().getString(_knowledgeAreas[i].getNameResource()));
-            kaName.setTextSize(10.0f);
+            kaName.setText(getResources().getString(_knowledgeAreas[i].getNameResource()));
+            kaName.setTextSize(getResources().getDimension(R.dimen.chart_subtitle));
             kaName.setCompoundDrawables(calculateSideDrawable(squareIcon, kaName, _knowledgeAreaColours[i]), null, null, null);
 
             // All of this here below is just needed to set the alignment of the subtitles. Thank you stackoverflow.
@@ -226,14 +227,14 @@ public class ScoreChartFragment extends Fragment {
             // Again the ids are zero-based but the damn KA ids are one-based to this trick is needed in the '_knowledgeAreas[i].getId() -1'
             // Also, I am passing an integer index object to the Entry so that I can use it later on the chart to write the KA name in the centre of the chart.
             PieEntry newEntry = new PieEntry(kaPercents[_knowledgeAreas[knowledgeAreaIndex].getId() - 1], knowledgeAreaIndex);
-            newEntry.setLabel(new String(getActivity().getApplicationContext().getString(_knowledgeAreas[knowledgeAreaIndex].getNameResource())));
+            newEntry.setLabel(new String(getResources().getString(_knowledgeAreas[knowledgeAreaIndex].getNameResource())));
 
             entries.add(newEntry);
         }
 
 
         PieDataSet dataSet = new PieDataSet(entries, "KA Percentiles");
-        dataSet.setValueTextSize(10f);
+        dataSet.setValueTextSize(getResources().getDimension(R.dimen.chart_ka_distribution_values_text_size));
         dataSet.setColors(_knowledgeAreaColours);
         dataSet.setValueFormatter(new PercentFormatter());
 
@@ -248,6 +249,9 @@ public class ScoreChartFragment extends Fragment {
 
         _kaPercentDistributionChart.setHoleRadius(40f);
         _kaPercentDistributionChart.setTransparentCircleRadius(45f);
+
+        _kaPercentDistributionChart.animateX(1000);
+
         _kaPercentDistributionChart.invalidate();
 
         _kaPercentDistributionChart.setTouchEnabled(true);
@@ -270,24 +274,37 @@ public class ScoreChartFragment extends Fragment {
     }
 
 
-    private void updateTopKaChart() {
+    /**
+     * Feeds data and draws an Horizontal Bar Chart with a Top X KAs
+     */
+    private void updateTopKaChart(@IntRange(from = 0, to = 15) int nummberOfKasToDisplay) {
 
-        int topKALimit = 5;
+        int topKALimit = nummberOfKasToDisplay;
 
         short[] kaCounters = _currentScore.getKaCounters();
 
+        // This part is tricky, I am getting a TreeMap to take advantage of the ordering it makes
+        // So now I have a Map where keys are the actual values ORDERED and the values are the array indexes which are equivalent
+        // to the KA ids minus 1. Dear future me, don't hate me, remember that this native array stuff was implemented for performance reasons
+        // as well as simplicity because of the Realm database.
         TreeMap<Integer, Integer> countersAndKaIds = new TreeMap<>();
         for (int i = 0; i < kaCounters.length; i++) {
             countersAndKaIds.put((int) kaCounters[i], i);
         }
 
+        // These two variables are meant to fill subtitles and colours in the chart
         String[] topKaNames = new String[topKALimit];
         int[] topKaColours = new int[topKALimit];
 
+        // Now tricking intensifies. I am iterating in the reverse order (where the bigger numbers are).
+        // Yes I could simply have implemented a comparator to order them in reverse when inserting in the TreeMap, there are millions of solutions
         Iterator<Integer> iterator = countersAndKaIds.descendingKeySet().iterator();
         int currentKeyWhichIsActuallyAValue;
         int currentKaId;
         List<BarEntry> entries = new ArrayList<>();
+
+        // Now to fill these variables I am iterating from the TOP to the BOTTOM because in the chart greater values of XAxis are in the top
+        // of the chart, which is what I wanted in the first place. Yes, it's ugly. Yes, it is very confusing. Yes, I hate myself for doing it like this.
         for (int i = topKALimit - 1, j = 0; i >= 0; i--, j++) {
             currentKeyWhichIsActuallyAValue = iterator.next();
             currentKaId = countersAndKaIds.get(currentKeyWhichIsActuallyAValue);
@@ -310,26 +327,29 @@ public class ScoreChartFragment extends Fragment {
 
 
         _topKaChart.setDrawBorders(false);
+
+        // This description part uses a formatted string that reads something along the lines of 'From a total of  X topics'
         Description chartDescription = new Description();
-        // Here resources. Not now, it's 3am
-        chartDescription.setText("From a total of " + _currentScore.getTotalTopicCount() + " topics.");
+        chartDescription.setText(String.format(getResources().getString(R.string.bar_chart_description), _currentScore.getTotalTopicCount()));
         chartDescription.setTextAlign(Paint.Align.RIGHT);
-        // Here no hardcode, get a from DP to Pixels function
-        chartDescription.setTextSize(12f);
+        chartDescription.setTextSize((int) getResources().getDimension(R.dimen.chart_top_ka_description_text_size));
         _topKaChart.setDescription(chartDescription);
 
         _topKaChart.setFitBars(true);
 
+        // All the gibberish below simply deactivates most of the grid lines to get the effect I wanted
         _topKaChart.getXAxis().setEnabled(true);
-//        _topKaChart.getXAxis().setDrawAxisLine(false);
-//        _topKaChart.getXAxis().setDrawLabels(true);
+        //_topKaChart.getXAxis().setDrawAxisLine(false);
+        //_topKaChart.getXAxis().setDrawLabels(true);
         _topKaChart.getXAxis().setDrawAxisLine(false);
         _topKaChart.getXAxis().setDrawGridLines(false);
+        // This puts the text to the LEFT of the chart
         _topKaChart.getXAxis().setPosition(XAxis.XAxisPosition.BOTTOM);
+        // And this part replaces the X values by actual labels
         _topKaChart.getXAxis().setValueFormatter(new IndexAxisValueFormatter(topKaNames));
 
         _topKaChart.getAxisLeft().setEnabled(false);
-//        _topKaChart.getAxisLeft().setDrawAxisLine(false);
+        //_topKaChart.getAxisLeft().setDrawAxisLine(false);
         _topKaChart.getAxisLeft().setDrawGridLines(false);
         _topKaChart.getAxisLeft().setDrawZeroLine(true);
         _topKaChart.getAxisLeft().setDrawLabels(false);
@@ -337,8 +357,11 @@ public class ScoreChartFragment extends Fragment {
 
         _topKaChart.getAxisRight().setEnabled(false);
         _topKaChart.getAxisRight().setDrawLabels(false);
-//        _topKaChart.getAxisRight().setDrawZeroLine(true);
+        //_topKaChart.getAxisRight().setDrawZeroLine(true);
         _topKaChart.getAxisRight().setDrawGridLines(false);
+
+        _topKaChart.animateY(2000);
+
 
         _topKaChart.setData(data);
 
@@ -423,7 +446,7 @@ public class ScoreChartFragment extends Fragment {
             super.onPostExecute(aVoid);
             updateKADistributionChart();
             updateChartLegend();
-            updateTopKaChart();
+            updateTopKaChart(5);
 
         }
     }

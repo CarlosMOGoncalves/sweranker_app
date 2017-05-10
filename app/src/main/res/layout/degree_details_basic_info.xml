@@ -2,7 +2,8 @@
  which caused this ScrollView not to scroll properly in the Degree Details fragment -->
 <android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:padding="5dp">
 
     <TextView
         android:id="@+id/degree_description"

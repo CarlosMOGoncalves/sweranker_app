@@ -25,11 +25,13 @@
     <string name="matched">Matched</string>
     <string name="notMatched">Not matched</string>
 
+
     <string name="confirm">Confirm</string>
 
     <string name="chart_subtitle">Subtitle</string>
     <string name="ka_distribution">Knowledge Area Distribution</string>
     <string name="top_kas">Top Knowledge Areas</string>
+    <string name="bar_chart_description">From a total of %1$d topics matched</string>
 
     <string name="ka_other">Other</string>
     <string name="ka_software_requirements">Software Requirements</string>

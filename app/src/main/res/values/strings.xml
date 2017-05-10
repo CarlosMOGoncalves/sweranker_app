@@ -34,6 +34,7 @@
     <string name="chart_subtitle">Legenda</string>
     <string name="ka_distribution">Distribuição de Áreas de Conhecimento</string>
     <string name="top_kas">Top Áreas de Conhecimento</string>
+    <string name="bar_chart_description">De um total de %1$d tópicos correspondidos</string>
 
     <string name="loren_ipsum">Far away\nAcross the field\nTolling on the iron bell\nCalls the faithful to their knees\nTo hear the softly spoken magic spell</string>
     <string name="loren_ipsum_title">Us and Them</string>

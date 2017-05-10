@@ -26,7 +26,7 @@
     <dimen name="ka_detail_topic_title">18dp</dimen>
     <dimen name="ka_detail_text_size">15dp</dimen>
 
-    <dimen name="degree_detail_image_size">100dp</dimen>
+    <dimen name="degree_detail_image_size">70dp</dimen>
     <dimen name="degree_detail_program_list_year_label_text_size">20dp</dimen>
     <dimen name="degree_detail_program_list_year_label_line_height">42dp</dimen>
     <dimen name="degree_detail_program_list_class_name_text_size">15dp</dimen>
@@ -55,6 +55,11 @@
     <dimen name="ranking_image_padding">5dp</dimen>
     <dimen name="ranking_name_text_size">20dp</dimen>
 
+    <dimen name="chart_subtitle">3.5dp</dimen>
+
+    <dimen name="chart_ka_distribution_values_text_size">4dp</dimen>
+
+    <dimen name="chart_top_ka_description_text_size">4.5dp</dimen>
 
     <dimen name="material_spinner_padding_left">24dp</dimen>
     <dimen name="material_spinner_padding_top">12dp</dimen>
