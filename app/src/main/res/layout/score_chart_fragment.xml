@@ -139,7 +139,6 @@
             android:layout_marginEnd="5dp"
             android:layout_marginStart="5dp"
             android:layout_marginTop="8dp"
-            android:minHeight="500dp"
             app:contentPadding="@dimen/card_inner_padding"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
@@ -170,10 +169,10 @@
                 <com.github.mikephil.charting.charts.HorizontalBarChart
                     android:id="@+id/top_kas_chart"
                     android:layout_width="match_parent"
-                    android:layout_height="500dp"
+                    android:layout_height="300dp"
                     android:layout_gravity="center"
-                    android:paddingTop="5dp"
-                    android:background="@color/hollow">
+                    android:background="@color/hollow"
+                    android:paddingTop="5dp">
 
                 </com.github.mikephil.charting.charts.HorizontalBarChart>
 

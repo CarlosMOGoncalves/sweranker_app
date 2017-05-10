@@ -18,7 +18,6 @@ import java.util.List;
 import java.util.Map;
 
 import io.realm.Realm;
-import io.realm.Sort;
 import pt.cmg.sweranker.R;
 import pt.cmg.sweranker.degrees.Degree;
 import pt.cmg.sweranker.degrees.DegreeLoader;
@@ -147,7 +146,8 @@ public class RankingFragment extends Fragment {
             List<SweScore> sampleScores = databaseConnection.where(SweScore.class)
                     .equalTo(SweScoreFields.SCORE_TYPE, SweScore.TYPE_DEGREE_SCORE)
                     .equalTo(SweScoreFields.DEGREE_ID, 1)
-                    .findAllSorted(SweScoreFields.KA_PERCENT3, Sort.DESCENDING);
+                    .findAll();
+//                    .findAllSorted(SweScoreFields.KA_PERCENT3, Sort.DESCENDING);
 
             _combinationNameAndImage = new LinkedHashMap<>();
             for (int i = 0; i < 10; i++) {

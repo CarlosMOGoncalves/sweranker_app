@@ -3,6 +3,7 @@ package pt.cmg.sweranker.ranking;
 import android.app.Activity;
 import android.app.Fragment;
 import android.content.Context;
+import android.graphics.Paint;
 import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
 import android.os.AsyncTask;
@@ -20,17 +21,26 @@ import android.widget.Toast;
 
 import com.github.mikephil.charting.charts.HorizontalBarChart;
 import com.github.mikephil.charting.charts.PieChart;
+import com.github.mikephil.charting.components.Description;
+import com.github.mikephil.charting.components.XAxis;
+import com.github.mikephil.charting.data.BarData;
+import com.github.mikephil.charting.data.BarDataSet;
+import com.github.mikephil.charting.data.BarEntry;
 import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.data.PieData;
 import com.github.mikephil.charting.data.PieDataSet;
 import com.github.mikephil.charting.data.PieEntry;
+import com.github.mikephil.charting.formatter.IValueFormatter;
+import com.github.mikephil.charting.formatter.IndexAxisValueFormatter;
 import com.github.mikephil.charting.formatter.PercentFormatter;
 import com.github.mikephil.charting.highlight.Highlight;
 import com.github.mikephil.charting.listener.OnChartValueSelectedListener;
+import com.github.mikephil.charting.utils.ViewPortHandler;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
-import java.util.Map;
 import java.util.TreeMap;
 
 import io.realm.Realm;
@@ -262,15 +272,97 @@ public class ScoreChartFragment extends Fragment {
 
     private void updateTopKaChart() {
 
+        int topKALimit = 5;
+
         short[] kaCounters = _currentScore.getKaCounters();
 
-        Map<Integer, Integer> countersAndKaIds = new TreeMap<>();
+        TreeMap<Integer, Integer> countersAndKaIds = new TreeMap<>();
         for (int i = 0; i < kaCounters.length; i++) {
-            
+            countersAndKaIds.put((int) kaCounters[i], i);
         }
 
+        String[] topKaNames = new String[topKALimit];
+        int[] topKaColours = new int[topKALimit];
+
+        Iterator<Integer> iterator = countersAndKaIds.descendingKeySet().iterator();
+        int currentKeyWhichIsActuallyAValue;
+        int currentKaId;
+        List<BarEntry> entries = new ArrayList<>();
+        for (int i = topKALimit - 1, j = 0; i >= 0; i--, j++) {
+            currentKeyWhichIsActuallyAValue = iterator.next();
+            currentKaId = countersAndKaIds.get(currentKeyWhichIsActuallyAValue);
+
+            entries.add(new BarEntry((float) i, (float) currentKeyWhichIsActuallyAValue));
+            topKaNames[i] = getResources().getString(_knowledgeAreas[currentKaId].getNameResource());
+
+            // For some reason the colours are fed to the chart in the opposite indexing as the values, go figure...
+            topKaColours[j] = ContextCompat.getColor(getActivity(), _knowledgeAreas[currentKaId].getColourResource());
+
+        }
+
+
+        BarDataSet dataSet = new BarDataSet(entries, "Top5KA");
+        dataSet.setValueFormatter(new TopicValueFormatter());
+        dataSet.setColors(topKaColours);
+
+        BarData data = new BarData(dataSet);
+        data.setBarWidth(0.9f);
+
+
+        _topKaChart.setDrawBorders(false);
+        Description chartDescription = new Description();
+        // Here resources. Not now, it's 3am
+        chartDescription.setText("From a total of " + _currentScore.getTotalTopicCount() + " topics.");
+        chartDescription.setTextAlign(Paint.Align.RIGHT);
+        // Here no hardcode, get a from DP to Pixels function
+        chartDescription.setTextSize(12f);
+        _topKaChart.setDescription(chartDescription);
+
+        _topKaChart.setFitBars(true);
+
+        _topKaChart.getXAxis().setEnabled(true);
+//        _topKaChart.getXAxis().setDrawAxisLine(false);
+//        _topKaChart.getXAxis().setDrawLabels(true);
+        _topKaChart.getXAxis().setDrawAxisLine(false);
+        _topKaChart.getXAxis().setDrawGridLines(false);
+        _topKaChart.getXAxis().setPosition(XAxis.XAxisPosition.BOTTOM);
+        _topKaChart.getXAxis().setValueFormatter(new IndexAxisValueFormatter(topKaNames));
+
+        _topKaChart.getAxisLeft().setEnabled(false);
+//        _topKaChart.getAxisLeft().setDrawAxisLine(false);
+        _topKaChart.getAxisLeft().setDrawGridLines(false);
+        _topKaChart.getAxisLeft().setDrawZeroLine(true);
+        _topKaChart.getAxisLeft().setDrawLabels(false);
+        _topKaChart.getAxisLeft().setAxisMinimum(0f);
+
+        _topKaChart.getAxisRight().setEnabled(false);
+        _topKaChart.getAxisRight().setDrawLabels(false);
+//        _topKaChart.getAxisRight().setDrawZeroLine(true);
+        _topKaChart.getAxisRight().setDrawGridLines(false);
+
+        _topKaChart.setData(data);
+
+        _topKaChart.invalidate();
+
+
+        _topKaProgressBar.setVisibility(View.INVISIBLE);
+        _topKaChart.setVisibility(View.VISIBLE);
     }
 
+
+    /**
+     * This is just a simple formatter that appends the resource 'topics' at the end of the value.
+     * It uses a Decimal Formatter because the values are floats by default.
+     */
+    private class TopicValueFormatter implements IValueFormatter {
+
+        private DecimalFormat _formatter = new DecimalFormat("###,###,###,##0");
+
+        @Override
+        public String getFormattedValue(float v, Entry entry, int i, ViewPortHandler viewPortHandler) {
+            return _formatter.format(v) + " " + getActivity().getString(R.string.topics_lowercase);
+        }
+    }
 
     @Override
     public void onDetach() {
@@ -331,6 +423,7 @@ public class ScoreChartFragment extends Fragment {
             super.onPostExecute(aVoid);
             updateKADistributionChart();
             updateChartLegend();
+            updateTopKaChart();
 
         }
     }
