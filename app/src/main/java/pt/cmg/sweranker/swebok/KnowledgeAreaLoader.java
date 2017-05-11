@@ -25,4 +25,12 @@ public interface KnowledgeAreaLoader {
     KnowledgeArea getKnowledgeArea(int knowledgeAreaIdToLoad);
 
 
+    /**
+     * Loads from system ALL the found Knowledge Area Topics.
+     *
+     * @return
+     */
+    List<KnowledgeAreaTopic> getAllKnowledgeAreaTopics();
+
+
 }

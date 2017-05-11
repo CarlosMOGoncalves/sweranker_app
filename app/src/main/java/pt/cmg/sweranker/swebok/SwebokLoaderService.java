@@ -25,6 +25,7 @@ import pt.cmg.sweranker.R;
 public class SwebokLoaderService extends Service {
 
     private List<KnowledgeArea> _knowledgeAreas;
+    private List<KnowledgeAreaTopic> _knowledgeAreaTopics;
 
     private Map<Integer, KnowledgeArea> _knowledgeAreasById;
 
@@ -37,6 +38,7 @@ public class SwebokLoaderService extends Service {
     public void onCreate() {
         super.onCreate();
         _knowledgeAreas = loadKnowledgeAreasFromXML();
+        _knowledgeAreaTopics = loadKnowledgeAreaTopics();
 //        _knowledgeAreasById = createKaByIdView();
 //        _knowledgeAreaTopicsByTopicId = createKaTopicByKaIdView();
 
@@ -222,6 +224,22 @@ public class SwebokLoaderService extends Service {
     }
 
 
+    /**
+     * Loads all KnowledgeAreaTopics from the previously load KnowledgeAreas.
+     * This will be used mostly as an accelerator for future data questioning.
+     *
+     * @return
+     */
+    private List<KnowledgeAreaTopic> loadKnowledgeAreaTopics() {
+        List<KnowledgeAreaTopic> allTopics = new ArrayList<>();
+        for (KnowledgeArea ka : _knowledgeAreas) {
+            allTopics.addAll(ka.getTopics());
+        }
+
+        return allTopics;
+    }
+
+
     @Nullable
     @Override
     public IBinder onBind(Intent intent) {
@@ -230,6 +248,10 @@ public class SwebokLoaderService extends Service {
 
     public List<KnowledgeArea> getKnowledgeAreas() {
         return _knowledgeAreas;
+    }
+
+    public List<KnowledgeAreaTopic> getKnowledgeAreaTopics() {
+        return _knowledgeAreaTopics;
     }
 
     public KnowledgeArea getKnowledgeArea(final int knowledgeAreaId) {

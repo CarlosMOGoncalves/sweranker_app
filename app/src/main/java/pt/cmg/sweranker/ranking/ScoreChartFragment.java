@@ -48,6 +48,7 @@ import io.realm.Realm;
 import pt.cmg.sweranker.R;
 import pt.cmg.sweranker.swebok.KnowledgeArea;
 import pt.cmg.sweranker.swebok.KnowledgeAreaLoader;
+import pt.cmg.sweranker.swebok.KnowledgeAreaTopic;
 
 public class ScoreChartFragment extends Fragment {
 
@@ -67,6 +68,7 @@ public class ScoreChartFragment extends Fragment {
 
 
     private KnowledgeArea[] _knowledgeAreas;
+    private KnowledgeAreaTopic[] _knowledgeAreaTopics;
 
 
     private View _myRootView;
@@ -79,6 +81,9 @@ public class ScoreChartFragment extends Fragment {
 
     private ProgressBar _topKaProgressBar;
     private HorizontalBarChart _topKaChart;
+
+    private ProgressBar _topcKaTopicsProgressBar;
+    private HorizontalBarChart _topKaTopicsChart;
 
     private SweScore _currentScore;
 
@@ -147,11 +152,18 @@ public class ScoreChartFragment extends Fragment {
         _topKaProgressBar.setVisibility(View.VISIBLE);
         _topKaChart = (HorizontalBarChart) _myRootView.findViewById(R.id.top_kas_chart);
 
+        _topcKaTopicsProgressBar = (ProgressBar) _myRootView.findViewById(R.id.top_ka_topics_chart_progress);
+        _topcKaTopicsProgressBar.setVisibility(View.VISIBLE);
+        _topKaTopicsChart = (HorizontalBarChart) _myRootView.findViewById(R.id.top_ka_topics_chart);
+
 
         return _myRootView;
     }
 
 
+    /**
+     * This initialises and draws a simple subtitle graphic layout that displays the colours and names of all KAs.
+     */
     private void updateChartLegend() {
 
         _legendTable.setAlignmentMode(GridLayout.ALIGN_BOUNDS);
@@ -318,8 +330,8 @@ public class ScoreChartFragment extends Fragment {
         }
 
 
-        BarDataSet dataSet = new BarDataSet(entries, "Top5KA");
-        dataSet.setValueFormatter(new TopicValueFormatter());
+        BarDataSet dataSet = new BarDataSet(entries, "TopKA");
+        dataSet.setValueFormatter(new KATopicValueFormatter());
         dataSet.setColors(topKaColours);
 
         BarData data = new BarData(dataSet);
@@ -327,6 +339,7 @@ public class ScoreChartFragment extends Fragment {
 
 
         _topKaChart.setDrawBorders(false);
+        _topKaChart.getLegend().setEnabled(false);
 
         // This description part uses a formatted string that reads something along the lines of 'From a total of  X topics'
         Description chartDescription = new Description();
@@ -362,6 +375,8 @@ public class ScoreChartFragment extends Fragment {
 
         _topKaChart.animateY(2000);
 
+        // This will disable zooming in the scale which pretty much destroys the chart
+        _topKaChart.setScaleEnabled(false);
 
         _topKaChart.setData(data);
 
@@ -372,6 +387,126 @@ public class ScoreChartFragment extends Fragment {
         _topKaChart.setVisibility(View.VISIBLE);
     }
 
+    /**
+     * Feeds data and draws an Horizontal Bar Chart with a Top X KAs
+     */
+    private void updateTopKaTopicsChart(@IntRange(from = 0, to = 102) int nummberOfTopicsToDisplay) {
+
+        int topicLimit = nummberOfTopicsToDisplay;
+
+        short[] topicCounter = _currentScore.getTopicCounters();
+
+        // This part is tricky, I am getting a TreeMap to take advantage of the ordering it makes
+        // So now I have a Map where keys are the actual values ORDERED and the values are the array indexes which are equivalent
+        // to the KA ids minus 1. Dear future me, don't hate me, remember that this native array stuff was implemented for performance reasons
+        // as well as simplicity because of the Realm database.
+        TreeMap<Integer, Integer> countersAndKaTopicIds = new TreeMap<>();
+        for (int i = 0; i < topicCounter.length; i++) {
+            countersAndKaTopicIds.put((int) topicCounter[i], i);
+        }
+
+        // These two variables are meant to fill subtitles and colours in the chart
+        String[] topKaTopicNames = new String[topicLimit];
+        int[] topKaTopicColours = new int[topicLimit];
+
+        // Now tricking intensifies. I am iterating in the reverse order (where the bigger numbers are).
+        // Yes I could simply have implemented a comparator to order them in reverse when inserting in the TreeMap, there are millions of solutions
+        Iterator<Integer> iterator = countersAndKaTopicIds.descendingKeySet().iterator();
+        int currentKeyWhichIsActuallyAValue;
+        int currentKATopicId;
+        List<BarEntry> entries = new ArrayList<>();
+
+        // Now to fill these variables I am iterating from the TOP to the BOTTOM because in the chart greater values of XAxis are in the top
+        // of the chart, which is what I wanted in the first place. Yes, it's ugly. Yes, it is very confusing. Yes, I hate myself for doing it like this.
+        for (int i = topicLimit - 1, j = 0; i >= 0; i--, j++) {
+            currentKeyWhichIsActuallyAValue = iterator.next();
+            currentKATopicId = countersAndKaTopicIds.get(currentKeyWhichIsActuallyAValue);
+
+            entries.add(new BarEntry((float) i, (float) currentKeyWhichIsActuallyAValue));
+            topKaTopicNames[i] = getResources().getString(_knowledgeAreaTopics[currentKATopicId].getNameResource());
+
+            // For some reason the colours are fed to the chart in the opposite indexing as the values, go figure...
+            topKaTopicColours[j] = ContextCompat.getColor(getActivity(), _knowledgeAreas[_knowledgeAreaTopics[currentKATopicId].getKnowledgeAreaId() - 1].getColourResource());
+
+        }
+
+
+        BarDataSet dataSet = new BarDataSet(entries, "TopKATopics");
+        dataSet.setValueFormatter(new TopicValueFormatter());
+        dataSet.setValueTextColor(ContextCompat.getColor(getActivity(), R.color.white));
+        dataSet.setColors(topKaTopicColours);
+
+        BarData data = new BarData(dataSet);
+        data.setBarWidth(0.8f);
+
+
+        _topKaTopicsChart.setDrawBorders(false);
+
+        _topKaTopicsChart.getLegend().setEnabled(false);
+
+        // This description part uses a formatted string that reads something along the lines of 'From a total of  X topics'
+        Description chartDescription = new Description();
+        chartDescription.setText(String.format(getResources().getString(R.string.bar_chart_description), _currentScore.getTotalTopicCount()));
+        chartDescription.setTextAlign(Paint.Align.RIGHT);
+        chartDescription.setTextSize((int) getResources().getDimension(R.dimen.chart_top_ka_description_text_size));
+        _topKaTopicsChart.setDescription(chartDescription);
+
+        _topKaTopicsChart.setFitBars(true);
+
+        _topKaTopicsChart.setDrawValueAboveBar(false);
+
+        // All the gibberish below simply deactivates most of the grid lines to get the effect I wanted
+        _topKaTopicsChart.getXAxis().setEnabled(true);
+        //_topKaTopicsChart.getXAxis().setDrawAxisLine(false);
+        //_topKaTopicsChart.getXAxis().setDrawLabels(true);
+        _topKaTopicsChart.getXAxis().setDrawAxisLine(false);
+        _topKaTopicsChart.getXAxis().setDrawGridLines(false);
+        // This puts the text to the LEFT of the chart
+        _topKaTopicsChart.getXAxis().setPosition(XAxis.XAxisPosition.BOTTOM);
+        // And this part replaces the X values by actual labels
+        _topKaTopicsChart.getXAxis().setValueFormatter(new IndexAxisValueFormatter(topKaTopicNames));
+        _topKaTopicsChart.getXAxis().setLabelCount(topKaTopicNames.length);
+
+        _topKaTopicsChart.getAxisLeft().setEnabled(false);
+        //_topKaTopicsChart.getAxisLeft().setDrawAxisLine(false);
+        _topKaTopicsChart.getAxisLeft().setDrawGridLines(false);
+        _topKaTopicsChart.getAxisLeft().setDrawZeroLine(true);
+        _topKaTopicsChart.getAxisLeft().setDrawLabels(false);
+        _topKaTopicsChart.getAxisLeft().setAxisMinimum(0f);
+
+        _topKaTopicsChart.getAxisRight().setEnabled(false);
+        _topKaTopicsChart.getAxisRight().setDrawLabels(false);
+        //_topKaTopicsChart.getAxisRight().setDrawZeroLine(true);
+        _topKaTopicsChart.getAxisRight().setDrawGridLines(false);
+
+        _topKaTopicsChart.animateY(2000);
+
+        // This will disable zooming in the scale which pretty much destroys the chart
+        _topKaTopicsChart.setScaleEnabled(false);
+
+        _topKaTopicsChart.setData(data);
+
+        _topKaTopicsChart.invalidate();
+
+
+        _topcKaTopicsProgressBar.setVisibility(View.INVISIBLE);
+        _topKaTopicsChart.setVisibility(View.VISIBLE);
+    }
+
+
+    /**
+     * This is just a simple formatter that appends the resource 'topics' at the end of the value.
+     * It uses a Decimal Formatter because the values are floats by default.
+     */
+    private class KATopicValueFormatter implements IValueFormatter {
+
+        private DecimalFormat _formatter = new DecimalFormat("###,###,###,##0");
+
+        @Override
+        public String getFormattedValue(float v, Entry entry, int i, ViewPortHandler viewPortHandler) {
+            return _formatter.format(v) + " " + getActivity().getString(R.string.topics_lowercase);
+        }
+    }
 
     /**
      * This is just a simple formatter that appends the resource 'topics' at the end of the value.
@@ -383,7 +518,7 @@ public class ScoreChartFragment extends Fragment {
 
         @Override
         public String getFormattedValue(float v, Entry entry, int i, ViewPortHandler viewPortHandler) {
-            return _formatter.format(v) + " " + getActivity().getString(R.string.topics_lowercase);
+            return _formatter.format(v) + " " + getActivity().getString(R.string.times_matched);
         }
     }
 
@@ -406,22 +541,27 @@ public class ScoreChartFragment extends Fragment {
 
 
         /**
-         * Creates two useful views on the KnowledgeAreas data that will be used throughout this fragment.
+         * Loads all the useful variables for this fragment. This basically means all the data of the Knowledge Areas.
          */
         private void loadKnowledgeAreasVariables() {
 
             List<KnowledgeArea> kas = _parentActivity.getKnowledgeAreas();
 
+            _knowledgeAreas = new KnowledgeArea[kas.size()];
             _knowledgeAreaColours = new int[kas.size()];
             for (KnowledgeArea knowledgeArea : kas) {
                 // index is zero-based but KAs are 1-based so... there it goes
+                _knowledgeAreas[knowledgeArea.getId() - 1] = knowledgeArea;
                 _knowledgeAreaColours[knowledgeArea.getId() - 1] = ContextCompat.getColor(getActivity().getApplicationContext(), knowledgeArea.getColourResource());
             }
 
-            _knowledgeAreas = new KnowledgeArea[kas.size()];
-            for (KnowledgeArea knowledgeArea : kas) {
-                _knowledgeAreas[knowledgeArea.getId() - 1] = knowledgeArea;
+            List<KnowledgeAreaTopic> allTopics = _parentActivity.getAllKnowledgeAreaTopics();
+            _knowledgeAreaTopics = new KnowledgeAreaTopic[allTopics.size()];
+            for (KnowledgeAreaTopic kaTopic : allTopics) {
+                _knowledgeAreaTopics[kaTopic.getId() - 1] = kaTopic;
             }
+
+
         }
 
         /**
@@ -447,6 +587,7 @@ public class ScoreChartFragment extends Fragment {
             updateKADistributionChart();
             updateChartLegend();
             updateTopKaChart(5);
+            updateTopKaTopicsChart(10);
 
         }
     }

@@ -41,6 +41,7 @@ import pt.cmg.sweranker.ranking.RankingFragment;
 import pt.cmg.sweranker.ranking.RankingService;
 import pt.cmg.sweranker.ranking.ScoreChartFragment;
 import pt.cmg.sweranker.swebok.KnowledgeArea;
+import pt.cmg.sweranker.swebok.KnowledgeAreaTopic;
 import pt.cmg.sweranker.swebok.SwebokKADetailsFragment;
 import pt.cmg.sweranker.swebok.SwebokKAsFragment;
 import pt.cmg.sweranker.swebok.SwebokLoaderService;
@@ -351,6 +352,15 @@ public class MainActivity extends AppCompatActivity implements
             ka = _swebokService.getKnowledgeArea(knowledgeAreaIdToLoad);
         }
         return ka;
+    }
+
+    @Override
+    public List<KnowledgeAreaTopic> getAllKnowledgeAreaTopics() {
+        List<KnowledgeAreaTopic> allTopics = new ArrayList<>();
+        if (_isSwebokServiceBound) {
+            allTopics = _swebokService.getKnowledgeAreaTopics();
+        }
+        return allTopics;
     }
 
     @Override
