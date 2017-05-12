@@ -364,7 +364,7 @@ public class MainActivity extends AppCompatActivity implements
     }
 
     @Override
-    public List<Degree> loadDegrees() {
+    public List<Degree> getAllDegrees() {
         List<Degree> degrees = new ArrayList<>();
         if (_isDegreesServiceBound) {
             degrees = _degreesService.getDegrees();
@@ -379,7 +379,7 @@ public class MainActivity extends AppCompatActivity implements
         TextView universityName = (TextView) degreeCard.findViewById(R.id.university_name);
         TextView degreeName = (TextView) degreeCard.findViewById(R.id.degree_name);
 
-        Degree degree = loadDegree(degreeId);
+        Degree degree = getDegree(degreeId);
 
 
         long transitionDuration = 500;
@@ -425,7 +425,7 @@ public class MainActivity extends AppCompatActivity implements
     }
 
     @Override
-    public Degree loadDegree(int degreeId) {
+    public Degree getDegree(int degreeId) {
 
         Degree degree = new Degree();
         if (_isDegreesServiceBound) {
@@ -436,7 +436,7 @@ public class MainActivity extends AppCompatActivity implements
 
 
     @Override
-    public DegreeClass loadDegreeClass(int degreeId, String degreeClassId) {
+    public DegreeClass getDegreeClass(int degreeId, String degreeClassId) {
 
         DegreeClass degreeClass = new DegreeClass();
         if (_isDegreesServiceBound) {
@@ -446,7 +446,7 @@ public class MainActivity extends AppCompatActivity implements
     }
 
     @Override
-    public DegreeClass loadDegreeClass(String degreeClassId) {
+    public DegreeClass getDegreeClass(String degreeClassId) {
 
         DegreeClass degreeClass = new DegreeClass();
         if (_isDegreesServiceBound) {
@@ -461,8 +461,8 @@ public class MainActivity extends AppCompatActivity implements
 
         Fragment degreeClassFragment = DegreeClassFragment.newInstance(degreeId, degreeClassId);
 
-        DegreeClass degreeClass = loadDegreeClass(degreeId, degreeClassId);
-        Degree degree = loadDegree(degreeId);
+        DegreeClass degreeClass = getDegreeClass(degreeId, degreeClassId);
+        Degree degree = getDegree(degreeId);
 
         // This is important. I used a simples transition but the real magic is that I change the
         // toolbar into a back button toolbar so that it is easier to navigate.
@@ -503,7 +503,7 @@ public class MainActivity extends AppCompatActivity implements
 
         Fragment classEvaluator = DegreeTopicMatcherFragment.newInstance(degreeClassId);
 
-        DegreeClass degreeClass = loadDegreeClass(degreeClassId);
+        DegreeClass degreeClass = getDegreeClass(degreeClassId);
 
         // This is important. I used a simples transition but the real magic is that I change the
         // toolbar into a back button toolbar so that it is easier to navigate.

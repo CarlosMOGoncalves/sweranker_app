@@ -10,15 +10,16 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.IntRange;
 import android.support.v4.content.ContextCompat;
+import android.support.v7.widget.DefaultItemAnimator;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.GridLayout;
-import android.widget.ImageButton;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.github.mikephil.charting.charts.HorizontalBarChart;
 import com.github.mikephil.charting.charts.PieChart;
@@ -53,9 +54,13 @@ import java.util.TreeMap;
 
 import io.realm.Realm;
 import pt.cmg.sweranker.R;
+import pt.cmg.sweranker.degrees.DegreeClass;
+import pt.cmg.sweranker.degrees.DegreeLoader;
 import pt.cmg.sweranker.swebok.KnowledgeArea;
 import pt.cmg.sweranker.swebok.KnowledgeAreaLoader;
 import pt.cmg.sweranker.swebok.KnowledgeAreaTopic;
+import pt.cmg.sweranker.ui.ConstantSpacingItemDecorator;
+import pt.cmg.sweranker.ui.UnderlineDividerItemDecorator;
 
 public class ScoreChartFragment extends Fragment {
 
@@ -79,7 +84,9 @@ public class ScoreChartFragment extends Fragment {
 
 
     private View _myRootView;
-    private ImageButton _overviewButton;
+
+    private TextView _degreeOverviewLabel;
+    private RecyclerView _degreeOverviewList;
 
     private GridLayout _legendTable;
 
@@ -95,7 +102,8 @@ public class ScoreChartFragment extends Fragment {
     private ProgressBar _coverageChartProgressBar;
     private RadarChart _coverageChart;
 
-    private SweScore _currentScore;
+    private SweScore _degreeScore;
+    private DegreeClassCombination _degreeCombination;
 
     private OnScoreChartFragmentInteractionListener _parentActivity;
 
@@ -148,8 +156,16 @@ public class ScoreChartFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
         _myRootView = inflater.inflate(R.layout.score_chart_fragment, container, false);
-        _overviewButton = (ImageButton) _myRootView.findViewById(R.id.overview_button);
-        _overviewButton.setOnClickListener(view -> Toast.makeText(getActivity(), "Allahu akbar", Toast.LENGTH_SHORT).show());
+
+        _degreeOverviewLabel = (TextView) _myRootView.findViewById(R.id.degree_overview_label);
+        _degreeOverviewLabel.setOnClickListener(view -> {
+            if (_degreeOverviewList.getVisibility() == View.GONE) {
+                _degreeOverviewList.setVisibility(View.VISIBLE);
+            } else {
+                _degreeOverviewList.setVisibility(View.GONE);
+            }
+        });
+        _degreeOverviewList = (RecyclerView) _myRootView.findViewById(R.id.degree_class_list);
 
         _legendTable = (GridLayout) _myRootView.findViewById(R.id.chart_legend_table);
 
@@ -173,6 +189,38 @@ public class ScoreChartFragment extends Fragment {
         return _myRootView;
     }
 
+    private void initialiseProgramList() {
+
+        List<DegreeClass> degreeCombinationClasses = getDegreeClasses();
+
+        RecyclerView.LayoutManager linearLayoutManager = new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false);
+        _degreeOverviewList.setLayoutManager(linearLayoutManager);
+
+        _degreeOverviewList.addItemDecoration(new ConstantSpacingItemDecorator(getActivity(), 2, ConstantSpacingItemDecorator.Side.BOTTOM));
+        _degreeOverviewList.addItemDecoration(new UnderlineDividerItemDecorator.Builder(getActivity(),
+                ContextCompat.getColor(getActivity(), R.color.darkerBackground),
+                1)
+                .targetViewHolderClass(DegreeOverviewAdapter.DegreeClassViewHolder.class)
+                .build());
+        _degreeOverviewList.setItemAnimator(new DefaultItemAnimator());
+
+        DegreeOverviewAdapter adapter = new DegreeOverviewAdapter(getActivity(), degreeCombinationClasses);
+        _degreeOverviewList.setAdapter(adapter);
+    }
+
+
+    private List<DegreeClass> getDegreeClasses() {
+
+        List<DegreeClass> degreeClasses = new ArrayList<>();
+
+        for (AnnualClassCombination annualCombination : _degreeCombination.getAnnualClassCombinations()) {
+            for (DegreeClassId degreeId : annualCombination.getDegreeClassIds()) {
+                degreeClasses.add(_parentActivity.getDegreeClass(degreeId.getDegreeClassId()));
+            }
+        }
+
+        return degreeClasses;
+    }
 
     private void updateCoverageChart() {
 
@@ -235,6 +283,7 @@ public class ScoreChartFragment extends Fragment {
         _coverageChart.getXAxis().setTextColor(getResources().getColor(R.color.radarChartMaterialBrown600));
 
         _coverageChart.setData(radarData);
+        _coverageChart.animateY(2000);
 
         _coverageChart.invalidate();
 
@@ -296,7 +345,7 @@ public class ScoreChartFragment extends Fragment {
             result.put(_knowledgeAreas[i].getId(), 0);
         }
 
-        short[] topicCounters = _currentScore.getTopicCounters();
+        short[] topicCounters = _degreeScore.getTopicCounters();
         for (int i = 0; i < topicCounters.length; i++) {
 
             // Last one gets out
@@ -383,7 +432,7 @@ public class ScoreChartFragment extends Fragment {
      */
     private void updateKADistributionChart() {
 
-        float[] kaPercents = _currentScore.getKaPercents();
+        float[] kaPercents = _degreeScore.getKaPercents();
 
         // The Entries of this chart basically get all the values for each different "Entity" that we are measuring
         List<PieEntry> entries = new ArrayList<>();
@@ -444,7 +493,7 @@ public class ScoreChartFragment extends Fragment {
     private void updateTopKaChart(@IntRange(from = 0, to = 15) int nummberOfKasToDisplay) {
 
 
-        short[] kaCounters = _currentScore.getKaCounters();
+        short[] kaCounters = _degreeScore.getKaCounters();
 
         // This part is tricky, I am getting a TreeMap to take advantage of the ordering it makes
         // So now I have a Map where keys are the actual values ORDERED and the values are the array indexes which are equivalent
@@ -494,7 +543,7 @@ public class ScoreChartFragment extends Fragment {
 
         // This description part uses a formatted string that reads something along the lines of 'From a total of  X topics'
         Description chartDescription = new Description();
-        chartDescription.setText(String.format(getResources().getString(R.string.bar_chart_description), _currentScore.getTotalTopicCount()));
+        chartDescription.setText(String.format(getResources().getString(R.string.bar_chart_description), _degreeScore.getTotalTopicCount()));
         chartDescription.setTextAlign(Paint.Align.RIGHT);
         chartDescription.setTextSize((int) getResources().getDimension(R.dimen.chart_top_ka_description_text_size));
         _topKaChart.setDescription(chartDescription);
@@ -544,7 +593,7 @@ public class ScoreChartFragment extends Fragment {
     private void updateTopKaTopicsChart(@IntRange(from = 0, to = 102) int nummberOfTopicsToDisplay) {
 
 
-        short[] topicCounter = _currentScore.getTopicCounters();
+        short[] topicCounter = _degreeScore.getTopicCounters();
 
         // This part is tricky, I am getting a TreeMap to take advantage of the ordering it makes
         // So now I have a Map where keys are the actual values ORDERED and the values are the array indexes which are equivalent
@@ -596,7 +645,7 @@ public class ScoreChartFragment extends Fragment {
 
         // This description part uses a formatted string that reads something along the lines of 'From a total of  X topics'
         Description chartDescription = new Description();
-        chartDescription.setText(String.format(getResources().getString(R.string.bar_chart_description), _currentScore.getTotalTopicCount()));
+        chartDescription.setText(String.format(getResources().getString(R.string.bar_chart_description), _degreeScore.getTotalTopicCount()));
         chartDescription.setTextAlign(Paint.Align.RIGHT);
         chartDescription.setTextSize((int) getResources().getDimension(R.dimen.chart_top_ka_description_text_size));
         _topKaTopicsChart.setDescription(chartDescription);
@@ -726,7 +775,13 @@ public class ScoreChartFragment extends Fragment {
                     .equalTo(SweScoreFields.ID, _degreeScoreId)
                     .findFirst();
 
-            _currentScore = new SweScore(currentScore);
+            _degreeScore = new SweScore(currentScore);
+
+            DegreeClassCombination degreeCombination = database.where(DegreeClassCombination.class)
+                    .equalTo(DegreeClassCombinationFields.COMBINATION_ID, _degreeScoreId)
+                    .findFirst();
+
+            _degreeCombination = database.copyFromRealm(degreeCombination);
 
             database.close();
         }
@@ -734,6 +789,7 @@ public class ScoreChartFragment extends Fragment {
         @Override
         protected void onPostExecute(Void aVoid) {
             super.onPostExecute(aVoid);
+            initialiseProgramList();
             updateCoverageChart();
             updateKADistributionChart();
             updateSubtitleChart();
@@ -744,6 +800,6 @@ public class ScoreChartFragment extends Fragment {
         }
     }
 
-    public interface OnScoreChartFragmentInteractionListener extends KnowledgeAreaLoader {
+    public interface OnScoreChartFragmentInteractionListener extends KnowledgeAreaLoader, DegreeLoader {
     }
 }

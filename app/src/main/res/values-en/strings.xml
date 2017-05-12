@@ -28,6 +28,7 @@
 
     <string name="confirm">Confirm</string>
 
+    <string name="chart_degree_overview_label">Degree Overview</string>
     <string name="chart_subtitle">Subtitle</string>
     <string name="ka_distribution">Knowledge Area Distribution</string>
     <string name="top_kas">Top Knowledge Areas</string>

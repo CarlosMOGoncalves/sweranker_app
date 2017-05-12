@@ -18,7 +18,7 @@ import pt.cmg.sweranker.R;
  * Created by Carlos on 09/02/2017.
  */
 
-public class DegreeProgramAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
+public class DegreeOverViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     private static final int TYPE_HEADER = 10;
     private static final int TYPE_DEGREE_CLASS_ITEM = 20;
@@ -32,7 +32,7 @@ public class DegreeProgramAdapter extends RecyclerView.Adapter<RecyclerView.View
     private DegreeViewPagerAdapter.OnDegreeClassItemSelected _onDegreeClassSelectedListener;
 
 
-    public DegreeProgramAdapter(Context context, Degree degree, DegreeViewPagerAdapter.OnDegreeClassItemSelected listener) {
+    public DegreeOverViewAdapter(Context context, Degree degree, DegreeViewPagerAdapter.OnDegreeClassItemSelected listener) {
 
         _context = context;
         _degree = degree;

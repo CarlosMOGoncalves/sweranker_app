@@ -82,7 +82,7 @@ public class RankingFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        List<Degree> degrees = _parentActivity.loadDegrees();
+        List<Degree> degrees = _parentActivity.getAllDegrees();
         _degrees = new LinkedHashMap<>();
         for (Degree d : degrees) {
             _degrees.put(d.getId(), d);

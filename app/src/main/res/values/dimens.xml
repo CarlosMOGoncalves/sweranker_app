@@ -56,10 +56,11 @@
     <dimen name="ranking_name_text_size">20dp</dimen>
 
     <dimen name="chart_subtitle">3dp</dimen>
-
     <dimen name="chart_ka_distribution_values_text_size">4dp</dimen>
-
     <dimen name="chart_top_ka_description_text_size">4.5dp</dimen>
+    <dimen name="chart_degree_info_item_size">12dp</dimen>
+    <dimen name="chart_degree_info_item_text_size">10dp</dimen>
+    <dimen name="chart_degree_info_item_class_text_size">10dp</dimen>
 
     <dimen name="material_spinner_padding_left">24dp</dimen>
     <dimen name="material_spinner_padding_top">12dp</dimen>

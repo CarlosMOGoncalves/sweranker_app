@@ -70,11 +70,11 @@ public class DegreeViewPagerAdapter extends PagerAdapter {
         degreeProgramList.addItemDecoration(new UnderlineDividerItemDecorator.Builder(_context,
                 ContextCompat.getColor(_context, R.color.darkerBackground),
                 1)
-                .targetViewHolderClass(DegreeProgramAdapter.DegreeClassViewHolder.class)
+                .targetViewHolderClass(DegreeOverViewAdapter.DegreeClassViewHolder.class)
                 .build());
         degreeProgramList.setItemAnimator(new DefaultItemAnimator());
 
-        DegreeProgramAdapter adapter = new DegreeProgramAdapter(_context, _degree, _itemClickedListener);
+        DegreeOverViewAdapter adapter = new DegreeOverViewAdapter(_context, _degree, _itemClickedListener);
         degreeProgramList.setAdapter(adapter);
     }
 

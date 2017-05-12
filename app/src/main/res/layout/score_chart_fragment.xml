@@ -11,36 +11,46 @@
         android:layout_height="wrap_content"
         tools:context="pt.cmg.sweranker.ranking.ScoreChartFragment">
 
-        <TextView
-            android:id="@+id/degree_overview_label"
-            android:layout_width="wrap_content"
+        <android.support.v7.widget.CardView
+            android:id="@+id/degree_overview_area"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="0dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginStart="8dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginStart="5dp"
             android:layout_marginTop="8dp"
-            android:text="Degree Overview"
-            android:textAlignment="center"
-            android:textSize="@dimen/ranking_name_text_size"
+            app:contentPadding="@dimen/card_inner_padding"
             app:layout_constraintBottom_toTopOf="@+id/coverage_area"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent">
 
-        <ImageButton
-            android:id="@+id/overview_button"
-            android:layout_width="@dimen/ranking_name_text_size"
-            android:layout_height="@dimen/ranking_name_text_size"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:background="@color/cardview_light_background"
-            android:scaleType="centerCrop"
-            android:src="@drawable/interrogation"
-            android:tint="@color/cardColour2"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/degree_overview_label"
-            app:layout_constraintBottom_toTopOf="@+id/coverage_area"
-            app:layout_constraintTop_toTopOf="parent" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/degree_overview_label"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border_below"
+                    android:paddingBottom="5dp"
+                    android:text="@string/chart_degree_overview_label"
+                    android:textAlignment="center"
+                    android:textSize="@dimen/ranking_name_text_size" />
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/degree_class_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    tools:listitem="@+id/score_chart_list_item_degree_class">
+
+                </android.support.v7.widget.RecyclerView>
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
 
         <android.support.v7.widget.CardView
             android:id="@+id/coverage_area"
@@ -53,7 +63,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintBottom_toTopOf="@+id/chart_legend"
-            app:layout_constraintTop_toBottomOf="@+id/degree_overview_label">
+            app:layout_constraintTop_toBottomOf="@+id/degree_overview_area">
 
             <LinearLayout
                 android:layout_width="match_parent"

@@ -31,6 +31,7 @@
     <string name="dismiss">OK</string>
     <string name="select_topic">Seleccionar um tópico</string>
 
+    <string name="chart_degree_overview_label">Curso Completo</string>
     <string name="chart_subtitle">Legenda</string>
     <string name="ka_distribution">Distribuição de Áreas de Conhecimento</string>
     <string name="top_kas">Top Áreas de Conhecimento</string>

@@ -86,7 +86,7 @@ public class DegreeClassFragment extends Fragment {
         if (getArguments() != null) {
             _degreeId = getArguments().getInt(DEGREE_ID);
             _degreeClassId = getArguments().getString(DEGREE_CLASS_ID);
-            _degreeClass = _parentActivity.loadDegreeClass(_degreeId, _degreeClassId);
+            _degreeClass = _parentActivity.getDegreeClass(_degreeId, _degreeClassId);
         }
 
     }

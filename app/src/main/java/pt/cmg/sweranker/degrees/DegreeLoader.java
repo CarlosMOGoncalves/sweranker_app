@@ -14,7 +14,7 @@ public interface DegreeLoader {
      *
      * @return
      */
-    List<Degree> loadDegrees();
+    List<Degree> getAllDegrees();
 
 
     /**
@@ -23,7 +23,7 @@ public interface DegreeLoader {
      * @param degreeId
      * @return
      */
-    Degree loadDegree(int degreeId);
+    Degree getDegree(int degreeId);
 
     /**
      * Loads a Degree Class from the system.
@@ -32,7 +32,7 @@ public interface DegreeLoader {
      * @param degreeClassId
      * @return
      */
-    DegreeClass loadDegreeClass(int degreeId, String degreeClassId);
+    DegreeClass getDegreeClass(int degreeId, String degreeClassId);
 
 
     /**
@@ -41,5 +41,5 @@ public interface DegreeLoader {
      * @param degreeClassId
      * @return
      */
-    DegreeClass loadDegreeClass(String degreeClassId);
+    DegreeClass getDegreeClass(String degreeClassId);
 }

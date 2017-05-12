@@ -74,7 +74,7 @@ public class DegreeTopicMatcherFragment extends Fragment {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
             _degreeClassId = getArguments().getString(DEGREE_CLASS_ID);
-            _degreeClass = _parentActivity.loadDegreeClass(_degreeClassId);
+            _degreeClass = _parentActivity.getDegreeClass(_degreeClassId);
         }
 
     }

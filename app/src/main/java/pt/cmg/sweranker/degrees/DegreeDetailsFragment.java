@@ -119,7 +119,7 @@ public class DegreeDetailsFragment extends Fragment {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
             _degreeId = getArguments().getInt(DEGREE_ID);
-            _degree = _parentActivity.loadDegree(_degreeId);
+            _degree = _parentActivity.getDegree(_degreeId);
         }
 
     }
