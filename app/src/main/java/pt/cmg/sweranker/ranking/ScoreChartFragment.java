@@ -22,8 +22,10 @@ import android.widget.Toast;
 
 import com.github.mikephil.charting.charts.HorizontalBarChart;
 import com.github.mikephil.charting.charts.PieChart;
+import com.github.mikephil.charting.charts.RadarChart;
 import com.github.mikephil.charting.components.Description;
 import com.github.mikephil.charting.components.XAxis;
+import com.github.mikephil.charting.components.YAxis;
 import com.github.mikephil.charting.data.BarData;
 import com.github.mikephil.charting.data.BarDataSet;
 import com.github.mikephil.charting.data.BarEntry;
@@ -31,6 +33,9 @@ import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.data.PieData;
 import com.github.mikephil.charting.data.PieDataSet;
 import com.github.mikephil.charting.data.PieEntry;
+import com.github.mikephil.charting.data.RadarData;
+import com.github.mikephil.charting.data.RadarDataSet;
+import com.github.mikephil.charting.data.RadarEntry;
 import com.github.mikephil.charting.formatter.IValueFormatter;
 import com.github.mikephil.charting.formatter.IndexAxisValueFormatter;
 import com.github.mikephil.charting.formatter.PercentFormatter;
@@ -40,8 +45,10 @@ import com.github.mikephil.charting.utils.ViewPortHandler;
 
 import java.text.DecimalFormat;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 import java.util.TreeMap;
 
 import io.realm.Realm;
@@ -84,6 +91,9 @@ public class ScoreChartFragment extends Fragment {
 
     private ProgressBar _topcKaTopicsProgressBar;
     private HorizontalBarChart _topKaTopicsChart;
+
+    private ProgressBar _coverageChartProgressBar;
+    private RadarChart _coverageChart;
 
     private SweScore _currentScore;
 
@@ -156,15 +166,157 @@ public class ScoreChartFragment extends Fragment {
         _topcKaTopicsProgressBar.setVisibility(View.VISIBLE);
         _topKaTopicsChart = (HorizontalBarChart) _myRootView.findViewById(R.id.top_ka_topics_chart);
 
+        _coverageChartProgressBar = (ProgressBar) _myRootView.findViewById(R.id.coverage_chart_progress);
+        _coverageChartProgressBar.setVisibility(View.VISIBLE);
+        _coverageChart = (RadarChart) _myRootView.findViewById(R.id.coverage_chart);
 
         return _myRootView;
+    }
+
+
+    private void updateCoverageChart() {
+
+        Map<Integer, Integer> totalTopicsByKa = createTotalTopicByKaView();
+        Map<Integer, Integer> coveredTopics = createCoveredTopicsByKaView();
+        String[] kas = new String[15];
+        kas[0] = "KA1";
+        kas[1] = "KA2";
+        kas[2] = "KA3";
+        kas[3] = "KA4";
+        kas[4] = "KA5";
+        kas[5] = "KA6";
+        kas[6] = "KA7";
+        kas[7] = "KA8";
+        kas[8] = "KA9";
+        kas[9] = "KA10";
+        kas[10] = "KA11";
+        kas[11] = "KA12";
+        kas[12] = "KA13";
+        kas[13] = "KA14";
+        kas[14] = "KA15";
+
+        float percentCovered;
+        List<RadarEntry> entries = new ArrayList<>();
+        for (int i = 0; i < totalTopicsByKa.size(); i++) {
+            percentCovered = (float) coveredTopics.get(i + 1) / (float) totalTopicsByKa.get(i + 1) * 100;
+            entries.add(new RadarEntry(percentCovered));
+        }
+
+
+        RadarDataSet dataSet = new RadarDataSet(entries, "KA Coverage");
+        dataSet.setColor(getResources().getColor(R.color.radarChartMaterialGreenA400));
+        dataSet.setDrawFilled(true);
+        dataSet.setFillColor(getResources().getColor(R.color.radarChartMaterialGreen50));
+
+        // Isto é a cor das linhas que aparecem quando se carrega no chart
+        //dataSet.setHighLightColor(getResources().getColor(R.color.cardColour3));
+        // Não faço ideia destes aqui abaixo...
+        //dataSet.setHighlightCircleStrokeColor(getResources().getColor(R.color.cardColour5));
+        //dataSet.setHighlightCircleFillColor(getResources().getColor(R.color.cardColour7));
+
+        RadarData radarData = new RadarData(dataSet);
+        radarData.setValueTextColor(getResources().getColor(R.color.radarChartMaterialRed500));
+        radarData.setValueFormatter(new RadarDataValuesFormatter());
+
+        _coverageChart.getDescription().setEnabled(false);
+        _coverageChart.getLegend().setEnabled(false);
+
+
+        _coverageChart.getYAxis().setAxisMinimum(0f);
+        _coverageChart.getYAxis().setAxisMaximum(90f);
+        _coverageChart.getYAxis().setDrawLabels(true);
+        _coverageChart.getYAxis().setPosition(YAxis.YAxisLabelPosition.INSIDE_CHART);
+        _coverageChart.getYAxis().setCenterAxisLabels(true);
+        _coverageChart.getYAxis().setGranularityEnabled(true);
+        _coverageChart.getYAxis().setGranularity(25f);
+
+        _coverageChart.getXAxis().setPosition(XAxis.XAxisPosition.TOP);
+        _coverageChart.getXAxis().setValueFormatter(new IndexAxisValueFormatter(kas));
+        _coverageChart.getXAxis().setTextColor(getResources().getColor(R.color.radarChartMaterialBrown600));
+
+        _coverageChart.setData(radarData);
+
+        _coverageChart.invalidate();
+
+        _coverageChartProgressBar.setVisibility(View.INVISIBLE);
+        _coverageChart.setVisibility(View.VISIBLE);
+    }
+
+
+    /**
+     * Simple percent formatter that omits the 100% value because it messes the chart UI.
+     */
+    private class RadarDataValuesFormatter implements IValueFormatter {
+        private DecimalFormat _formatter = new DecimalFormat("##0.00");
+
+        @Override
+        public String getFormattedValue(float v, Entry entry, int i, ViewPortHandler viewPortHandler) {
+            if (v == 100f) {
+                return "";
+            }
+            return _formatter.format(v) + "%";
+        }
+    }
+
+    /**
+     * Returns a Map view of Knowledge Areas data where each pair represents the KA id and the number of topics it has.
+     *
+     * @return
+     */
+    private Map<Integer, Integer> createTotalTopicByKaView() {
+        Map<Integer, Integer> result = new HashMap<>();
+
+        for (int i = 0; i < _knowledgeAreas.length; i++) {
+
+            // The last KA is irrelevant because it is the OTHER
+            if (_knowledgeAreas[i].getId() == 16) {
+                continue;
+            }
+            result.put(_knowledgeAreas[i].getId(), _knowledgeAreas[i].getTopics().size());
+        }
+        return result;
+    }
+
+
+    /**
+     * Similar to the above function but this one counts the total amount of topics that
+     * were actually covered by the degree. This will be useful to find a percent of coverage.
+     *
+     * @return
+     */
+    private Map<Integer, Integer> createCoveredTopicsByKaView() {
+        Map<Integer, Integer> result = new HashMap<>();
+
+        for (int i = 0; i < _knowledgeAreas.length; i++) {
+
+            // The last KA is irrelevant because it is the OTHER
+            if (_knowledgeAreas[i].getId() == 16) {
+                continue;
+            }
+            result.put(_knowledgeAreas[i].getId(), 0);
+        }
+
+        short[] topicCounters = _currentScore.getTopicCounters();
+        for (int i = 0; i < topicCounters.length; i++) {
+
+            // Last one gets out
+            if (i == 101) {
+                continue;
+            }
+            if (topicCounters[i] > 0) {
+                int currentTotal = result.get(_knowledgeAreaTopics[i].getKnowledgeAreaId());
+                result.put(_knowledgeAreaTopics[i].getKnowledgeAreaId(), ++currentTotal);
+            }
+        }
+
+        return result;
     }
 
 
     /**
      * This initialises and draws a simple subtitle graphic layout that displays the colours and names of all KAs.
      */
-    private void updateChartLegend() {
+    private void updateSubtitleChart() {
 
         _legendTable.setAlignmentMode(GridLayout.ALIGN_BOUNDS);
         _legendTable.setColumnCount(SUBTITLE_COLUMN_COUNT);
@@ -180,7 +332,7 @@ public class ScoreChartFragment extends Fragment {
             }
 
             TextView kaName = new TextView(getActivity());
-            kaName.setText(getResources().getString(_knowledgeAreas[i].getNameResource()));
+            kaName.setText("KA" + _knowledgeAreas[i].getId() + "-" + getResources().getString(_knowledgeAreas[i].getNameResource()));
             kaName.setTextSize(getResources().getDimension(R.dimen.chart_subtitle));
             kaName.setCompoundDrawables(calculateSideDrawable(squareIcon, kaName, _knowledgeAreaColours[i]), null, null, null);
 
@@ -239,7 +391,7 @@ public class ScoreChartFragment extends Fragment {
             // Again the ids are zero-based but the damn KA ids are one-based to this trick is needed in the '_knowledgeAreas[i].getId() -1'
             // Also, I am passing an integer index object to the Entry so that I can use it later on the chart to write the KA name in the centre of the chart.
             PieEntry newEntry = new PieEntry(kaPercents[_knowledgeAreas[knowledgeAreaIndex].getId() - 1], knowledgeAreaIndex);
-            newEntry.setLabel(new String(getResources().getString(_knowledgeAreas[knowledgeAreaIndex].getNameResource())));
+            newEntry.setLabel(getResources().getString(_knowledgeAreas[knowledgeAreaIndex].getNameResource()));
 
             entries.add(newEntry);
         }
@@ -291,7 +443,6 @@ public class ScoreChartFragment extends Fragment {
      */
     private void updateTopKaChart(@IntRange(from = 0, to = 15) int nummberOfKasToDisplay) {
 
-        int topKALimit = nummberOfKasToDisplay;
 
         short[] kaCounters = _currentScore.getKaCounters();
 
@@ -305,8 +456,8 @@ public class ScoreChartFragment extends Fragment {
         }
 
         // These two variables are meant to fill subtitles and colours in the chart
-        String[] topKaNames = new String[topKALimit];
-        int[] topKaColours = new int[topKALimit];
+        String[] topKaNames = new String[nummberOfKasToDisplay];
+        int[] topKaColours = new int[nummberOfKasToDisplay];
 
         // Now tricking intensifies. I am iterating in the reverse order (where the bigger numbers are).
         // Yes I could simply have implemented a comparator to order them in reverse when inserting in the TreeMap, there are millions of solutions
@@ -317,7 +468,7 @@ public class ScoreChartFragment extends Fragment {
 
         // Now to fill these variables I am iterating from the TOP to the BOTTOM because in the chart greater values of XAxis are in the top
         // of the chart, which is what I wanted in the first place. Yes, it's ugly. Yes, it is very confusing. Yes, I hate myself for doing it like this.
-        for (int i = topKALimit - 1, j = 0; i >= 0; i--, j++) {
+        for (int i = nummberOfKasToDisplay - 1, j = 0; i >= 0; i--, j++) {
             currentKeyWhichIsActuallyAValue = iterator.next();
             currentKaId = countersAndKaIds.get(currentKeyWhichIsActuallyAValue);
 
@@ -392,7 +543,6 @@ public class ScoreChartFragment extends Fragment {
      */
     private void updateTopKaTopicsChart(@IntRange(from = 0, to = 102) int nummberOfTopicsToDisplay) {
 
-        int topicLimit = nummberOfTopicsToDisplay;
 
         short[] topicCounter = _currentScore.getTopicCounters();
 
@@ -406,8 +556,8 @@ public class ScoreChartFragment extends Fragment {
         }
 
         // These two variables are meant to fill subtitles and colours in the chart
-        String[] topKaTopicNames = new String[topicLimit];
-        int[] topKaTopicColours = new int[topicLimit];
+        String[] topKaTopicNames = new String[nummberOfTopicsToDisplay];
+        int[] topKaTopicColours = new int[nummberOfTopicsToDisplay];
 
         // Now tricking intensifies. I am iterating in the reverse order (where the bigger numbers are).
         // Yes I could simply have implemented a comparator to order them in reverse when inserting in the TreeMap, there are millions of solutions
@@ -418,7 +568,7 @@ public class ScoreChartFragment extends Fragment {
 
         // Now to fill these variables I am iterating from the TOP to the BOTTOM because in the chart greater values of XAxis are in the top
         // of the chart, which is what I wanted in the first place. Yes, it's ugly. Yes, it is very confusing. Yes, I hate myself for doing it like this.
-        for (int i = topicLimit - 1, j = 0; i >= 0; i--, j++) {
+        for (int i = nummberOfTopicsToDisplay - 1, j = 0; i >= 0; i--, j++) {
             currentKeyWhichIsActuallyAValue = iterator.next();
             currentKATopicId = countersAndKaTopicIds.get(currentKeyWhichIsActuallyAValue);
 
@@ -584,10 +734,12 @@ public class ScoreChartFragment extends Fragment {
         @Override
         protected void onPostExecute(Void aVoid) {
             super.onPostExecute(aVoid);
+            updateCoverageChart();
             updateKADistributionChart();
-            updateChartLegend();
+            updateSubtitleChart();
             updateTopKaChart(5);
             updateTopKaTopicsChart(10);
+
 
         }
     }

@@ -31,4 +31,9 @@
     <color name="cardColour15">#009688</color>
     <color name="cardColourNone">#757575</color>
 
+    <color name="radarChartMaterialGreen50">#E8F5E9</color>
+    <color name="radarChartMaterialGreenA400">#00E676</color>
+    <color name="radarChartMaterialRed500">#F44336</color>
+    <color name="radarChartMaterialBrown600">#6D4C41</color>
+
 </resources>

@@ -55,7 +55,7 @@
     <dimen name="ranking_image_padding">5dp</dimen>
     <dimen name="ranking_name_text_size">20dp</dimen>
 
-    <dimen name="chart_subtitle">3.5dp</dimen>
+    <dimen name="chart_subtitle">3dp</dimen>
 
     <dimen name="chart_ka_distribution_values_text_size">4dp</dimen>
 
