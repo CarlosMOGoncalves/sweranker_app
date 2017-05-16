@@ -11,6 +11,7 @@
         android:layout_height="wrap_content"
         tools:context="pt.cmg.sweranker.ranking.ScoreChartFragment">
 
+
         <android.support.v7.widget.CardView
             android:id="@+id/degree_overview_area"
             android:layout_width="0dp"
@@ -18,36 +19,104 @@
             android:layout_marginEnd="5dp"
             android:layout_marginStart="5dp"
             android:layout_marginTop="8dp"
+            app:cardElevation="1dp"
             app:contentPadding="@dimen/card_inner_padding"
             app:layout_constraintBottom_toTopOf="@+id/coverage_area"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="spread">
 
-            <LinearLayout
+            <android.support.constraint.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:orientation="vertical">
 
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/degree_image_area"
+                    android:layout_width="@dimen/chart_degree_overview_image_size"
+                    android:layout_height="@dimen/chart_degree_overview_image_size"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    app:layout_constraintLeft_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <ImageView
+                        android:id="@+id/degree_image"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        tools:src="@drawable/feup_logo" />
+                </android.support.v7.widget.CardView>
+
+
                 <TextView
-                    android:id="@+id/degree_overview_label"
-                    android:layout_width="match_parent"
+                    android:id="@+id/degree_overview_name"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/border_below"
-                    android:paddingBottom="5dp"
-                    android:text="@string/chart_degree_overview_label"
+                    android:layout_marginEnd="8dp"
+                    tools:text="MiEIC"
                     android:textAlignment="center"
-                    android:textSize="@dimen/ranking_name_text_size" />
+                    android:textSize="@dimen/chart_degree_overview_name_text_size"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintLeft_toRightOf="@id/degree_image_area"
+                    app:layout_constraintTop_toTopOf="parent" />
 
-                <android.support.v7.widget.RecyclerView
-                    android:id="@+id/degree_class_list"
-                    android:layout_width="match_parent"
+                <TextView
+                    android:id="@+id/degree_overview_university"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:visibility="gone"
-                    tools:listitem="@+id/score_chart_list_item_degree_class">
+                    android:layout_marginEnd="8dp"
+                    tools:text="Universidade do Porto"
+                    android:textAlignment="center"
+                    android:textSize="@dimen/chart_degree_overview_university_text_size"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintLeft_toRightOf="@id/degree_image_area"
+                    app:layout_constraintTop_toBottomOf="@id/degree_overview_name" />
 
-                </android.support.v7.widget.RecyclerView>
-            </LinearLayout>
+                <TextView
+                    android:id="@+id/degree_overview_combo_name"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginTop="2dp"
+                    tools:text="Combination 620075"
+                    android:textAlignment="center"
+                    android:textSize="@dimen/chart_degree_overview_combo_name"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintLeft_toRightOf="@id/degree_image_area"
+                    app:layout_constraintTop_toBottomOf="@id/degree_overview_university" />
+
+                <TextView
+                    android:id="@+id/show_overview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginBottom="0dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/rounded_shape"
+                    android:padding="8dp"
+                    android:text="@string/show_degree_overview"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/chart_degree_overview_button_text_size"
+                    android:textStyle="bold"
+                    android:clickable="true"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintLeft_toRightOf="@id/degree_image_area"
+                    app:layout_constraintTop_toBottomOf="@id/degree_overview_combo_name" />
+
+            </android.support.constraint.ConstraintLayout>
+
+            <ProgressBar
+                android:id="@+id/overview_progress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:indeterminate="true" />
 
         </android.support.v7.widget.CardView>
 
@@ -292,6 +361,7 @@
                 android:layout_gravity="center"
                 android:indeterminate="true" />
         </android.support.v7.widget.CardView>
+
 
     </android.support.constraint.ConstraintLayout>
 </ScrollView>

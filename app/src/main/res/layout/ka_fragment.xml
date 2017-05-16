@@ -2,7 +2,8 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools">
 
 
     <ImageView
@@ -30,7 +31,7 @@
             android:textColor="@color/textColorBold"
             android:gravity="center"
             android:padding="@dimen/ka_title_padding"
-            android:text="Software Cenas"
+            tools:text="Software Cenas"
             android:textAlignment="viewStart"
             android:textSize="@dimen/ka_detail_title_size" />
 

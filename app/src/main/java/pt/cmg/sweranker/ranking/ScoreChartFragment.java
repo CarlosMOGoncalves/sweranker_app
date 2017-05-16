@@ -10,14 +10,12 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.IntRange;
 import android.support.v4.content.ContextCompat;
-import android.support.v7.widget.DefaultItemAnimator;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.GridLayout;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
@@ -59,9 +57,16 @@ import pt.cmg.sweranker.degrees.DegreeLoader;
 import pt.cmg.sweranker.swebok.KnowledgeArea;
 import pt.cmg.sweranker.swebok.KnowledgeAreaLoader;
 import pt.cmg.sweranker.swebok.KnowledgeAreaTopic;
-import pt.cmg.sweranker.ui.ConstantSpacingItemDecorator;
-import pt.cmg.sweranker.ui.UnderlineDividerItemDecorator;
 
+/**
+ * This massive Fragment is one of the most important ones, probably the most important.
+ * This Fragment loads ONE score that was selected in the Master and display multiple graphical charts
+ * with its score from different, yet complimentary, points of view.
+ * <p>
+ * With this, it is possible to finally understand the strengths and weaknesses of each degree combination,
+ * the way they are structured, what to expect of them and their completeness in relation to SWEBOK.
+ * In simple words, this is the graphical tool that is the point of this application.
+ */
 public class ScoreChartFragment extends Fragment {
 
     private static final int SUBTITLE_COLUMN_COUNT = 2;
@@ -85,8 +90,12 @@ public class ScoreChartFragment extends Fragment {
 
     private View _myRootView;
 
-    private TextView _degreeOverviewLabel;
-    private RecyclerView _degreeOverviewList;
+    private ImageView _degreeImage;
+    private TextView _overviewDegreeName;
+    private TextView _overviewUniversityName;
+    private TextView _overviewCombinationName;
+    private TextView _showOverview;
+    private ProgressBar _overviewProgressBar;
 
     private GridLayout _legendTable;
 
@@ -157,15 +166,14 @@ public class ScoreChartFragment extends Fragment {
 
         _myRootView = inflater.inflate(R.layout.score_chart_fragment, container, false);
 
-        _degreeOverviewLabel = (TextView) _myRootView.findViewById(R.id.degree_overview_label);
-        _degreeOverviewLabel.setOnClickListener(view -> {
-            if (_degreeOverviewList.getVisibility() == View.GONE) {
-                _degreeOverviewList.setVisibility(View.VISIBLE);
-            } else {
-                _degreeOverviewList.setVisibility(View.GONE);
-            }
-        });
-        _degreeOverviewList = (RecyclerView) _myRootView.findViewById(R.id.degree_class_list);
+
+        _degreeImage = (ImageView) _myRootView.findViewById(R.id.degree_image);
+        _overviewDegreeName = (TextView) _myRootView.findViewById(R.id.degree_overview_name);
+        _overviewUniversityName = (TextView) _myRootView.findViewById(R.id.degree_overview_university);
+        _overviewCombinationName = (TextView) _myRootView.findViewById(R.id.degree_overview_combo_name);
+        _overviewProgressBar = (ProgressBar) _myRootView.findViewById(R.id.overview_progress);
+        _showOverview = (TextView) _myRootView.findViewById(R.id.show_overview);
+
 
         _legendTable = (GridLayout) _myRootView.findViewById(R.id.chart_legend_table);
 
@@ -189,26 +197,28 @@ public class ScoreChartFragment extends Fragment {
         return _myRootView;
     }
 
-    private void initialiseProgramList() {
+    private void updateDegreeOverViewInfo() {
 
-        List<DegreeClass> degreeCombinationClasses = getDegreeClasses();
+        int combinationNumber = Integer.valueOf(_degreeScore.getId().substring(3, _degreeScore.getId().length()));
 
-        RecyclerView.LayoutManager linearLayoutManager = new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false);
-        _degreeOverviewList.setLayoutManager(linearLayoutManager);
+        _degreeImage.setImageDrawable(ContextCompat.getDrawable(getActivity(), _parentActivity.getDegree(_degreeScore.getDegreeId()).getImageResource()));
+        _overviewDegreeName.setText(getResources().getString(_parentActivity.getDegree(_degreeScore.getDegreeId()).getNameResource()));
+        _overviewUniversityName.setText(getResources().getString(_parentActivity.getDegree(_degreeScore.getDegreeId()).getUniversityResource()));
+        _overviewCombinationName.setText(String.format(getResources().getString(R.string.degree_overview_combination), combinationNumber));
+        _showOverview.setOnClickListener(view ->
+                DegreeOverviewDialog.newInstance(combinationNumber, getDegreeClasses()).show(getFragmentManager(), "")
+        );
 
-        _degreeOverviewList.addItemDecoration(new ConstantSpacingItemDecorator(getActivity(), 2, ConstantSpacingItemDecorator.Side.BOTTOM));
-        _degreeOverviewList.addItemDecoration(new UnderlineDividerItemDecorator.Builder(getActivity(),
-                ContextCompat.getColor(getActivity(), R.color.darkerBackground),
-                1)
-                .targetViewHolderClass(DegreeOverviewAdapter.DegreeClassViewHolder.class)
-                .build());
-        _degreeOverviewList.setItemAnimator(new DefaultItemAnimator());
-
-        DegreeOverviewAdapter adapter = new DegreeOverviewAdapter(getActivity(), degreeCombinationClasses);
-        _degreeOverviewList.setAdapter(adapter);
+        _overviewProgressBar.setVisibility(View.INVISIBLE);
     }
 
 
+    /**
+     * This helper function simply loads from the parent activity ALL the classes that compos THIS particular
+     * degree. This function is used to construct the parameters that will be sent to the DegreeOverviewDialog.
+     *
+     * @return
+     */
     private List<DegreeClass> getDegreeClasses() {
 
         List<DegreeClass> degreeClasses = new ArrayList<>();
@@ -222,26 +232,22 @@ public class ScoreChartFragment extends Fragment {
         return degreeClasses;
     }
 
+    /**
+     * Composes and styles the Coverage Radar Chart.
+     * This Chart shows how much of each Knowledge Area was achieved at the end of a particular degree combination.
+     * It a graphical Radar chart where each Area can be covered from 0% to 100%.
+     * Naturally the more, the better, although a complete coverage of a certain Knowledge Area doesn't tell the whole picture.
+     * You can have an Area covered at 100% but its topics were mentioned only once during the whole degree.
+     * That's what the other charts are for.
+     */
     private void updateCoverageChart() {
 
         Map<Integer, Integer> totalTopicsByKa = createTotalTopicByKaView();
         Map<Integer, Integer> coveredTopics = createCoveredTopicsByKaView();
         String[] kas = new String[15];
-        kas[0] = "KA1";
-        kas[1] = "KA2";
-        kas[2] = "KA3";
-        kas[3] = "KA4";
-        kas[4] = "KA5";
-        kas[5] = "KA6";
-        kas[6] = "KA7";
-        kas[7] = "KA8";
-        kas[8] = "KA9";
-        kas[9] = "KA10";
-        kas[10] = "KA11";
-        kas[11] = "KA12";
-        kas[12] = "KA13";
-        kas[13] = "KA14";
-        kas[14] = "KA15";
+        for (int i = 0; i < 15; i++) {
+            kas[i] = "KA" + _knowledgeAreas[i].getId();
+        }
 
         float percentCovered;
         List<RadarEntry> entries = new ArrayList<>();
@@ -789,7 +795,10 @@ public class ScoreChartFragment extends Fragment {
         @Override
         protected void onPostExecute(Void aVoid) {
             super.onPostExecute(aVoid);
-            initialiseProgramList();
+
+            // Very important. Now that all the variables are loaded I can start filling those charts
+            // That's what each of these functions to. Only after the data that feeds the charts is available.
+            updateDegreeOverViewInfo();
             updateCoverageChart();
             updateKADistributionChart();
             updateSubtitleChart();

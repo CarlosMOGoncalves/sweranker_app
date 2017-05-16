@@ -9,7 +9,7 @@
     <TextView
         android:id="@+id/class_name"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/chart_degree_info_item_size"
+        android:layout_height="wrap_content"
         android:gravity="center_vertical"
         android:text="Programming in C"
         android:textSize="@dimen/chart_degree_info_item_class_text_size" />

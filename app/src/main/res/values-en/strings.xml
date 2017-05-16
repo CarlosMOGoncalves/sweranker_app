@@ -36,6 +36,8 @@
     <string name="top_ka_topics">Top Knowledge Area Topics</string>
     <string name="times_matched">times matched</string>
     <string name="coverage_chart_label">SWEBOK Coverage</string>
+    <string name="degree_overview_combination">Combination %1$d</string>
+    <string name="show_degree_overview">SHOW DEGREE OVERVIEW</string>
 
     <string name="ka_other">Other</string>
     <string name="ka_software_requirements">Software Requirements</string>
