@@ -54,6 +54,9 @@
     <dimen name="ranking_image_size">140dp</dimen>
     <dimen name="ranking_image_padding">5dp</dimen>
     <dimen name="ranking_name_text_size">20dp</dimen>
+    <dimen name="ranking_dialog_title_size">22sp</dimen>
+    <dimen name="ranking_dialog_item_line_size">30sp</dimen>
+    <dimen name="ranking_dialog_item_option_text_size">18sp</dimen>
 
     <dimen name="chart_subtitle">3dp</dimen>
     <dimen name="chart_degree_overview_image_size">85dp</dimen>

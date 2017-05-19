@@ -9,6 +9,7 @@
     <string name="closeDrawer">Fechar</string>
 
     <string name="action_settings">Definições</string>
+    <string name="action_filter">Filtrar</string>
 
     <string name="program">Programa</string>
     <string name="info">Informação</string>
@@ -26,7 +27,14 @@
     <string name="matched">Correspondido</string>
     <string name="notMatched">Não correspondido</string>
 
+    <string name="knowledge_area">Área do Conhecimento</string>
+    <string name="order">Ordem</string>
+    <string name="degree">Curso</string>
     <string name="confirm">Confirmar</string>
+    <string name="order_ascending">ASC</string>
+    <string name="order_descending">DESC</string>
+    <string name="filter_all_label">(Todos)</string>
+
     <string name="OK">OK</string>
     <string name="dismiss">OK</string>
     <string name="select_topic">Seleccionar um tópico</string>

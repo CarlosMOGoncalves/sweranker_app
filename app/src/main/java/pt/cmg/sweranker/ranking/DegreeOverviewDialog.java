@@ -16,22 +16,21 @@ import pt.cmg.sweranker.degrees.DegreeClass;
 import pt.cmg.sweranker.ui.ConstantSpacingItemDecorator;
 import pt.cmg.sweranker.ui.UnderlineDividerItemDecorator;
 
-/**
- * Created by Carlos on 16/05/2017.
- */
 
+/**
+ * This Dialog class is used to show all the Degree Classes used by a given Degree Combination.
+ * It is a simple Dialog that just shows the formatted classes as a list with a dismiss button.
+ */
 public class DegreeOverviewDialog extends DialogFragment {
 
-    private int _combinationId;
     private List<DegreeClass> _combinationClasses;
 
     public DegreeOverviewDialog() {
     }
 
 
-    public static DegreeOverviewDialog newInstance(int combinationNumber, List<DegreeClass> combinationClasses) {
+    public static DegreeOverviewDialog newInstance(List<DegreeClass> combinationClasses) {
         DegreeOverviewDialog fragment = new DegreeOverviewDialog();
-        fragment._combinationId = combinationNumber;
         fragment._combinationClasses = combinationClasses;
         return fragment;
     }
@@ -48,9 +47,13 @@ public class DegreeOverviewDialog extends DialogFragment {
         return dialogBuilder.create();
     }
 
+
+    /**
+     * Looks like much, but it just creates a Recycler View List that will show all the degree classes selected.
+     * That, however is work for the Adapter, so this is mostly styling.
+     */
     private RecyclerView createOverViewList() {
         RecyclerView _overviewList = (RecyclerView) getActivity().getLayoutInflater().inflate(R.layout.score_chart_degree_overview_dialog, null);
-
 
         RecyclerView.LayoutManager linearLayoutManager = new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false);
         _overviewList.setLayoutManager(linearLayoutManager);

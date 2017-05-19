@@ -4,8 +4,9 @@
 
     <item
         android:id="@+id/action_settings"
-        android:icon="@mipmap/ic_settings_white_24dp"
+        android:icon="@drawable/dots"
         android:title="@string/action_settings"
+        android:orderInCategory="9999"
         app:showAsAction="always" />
 
 </menu>

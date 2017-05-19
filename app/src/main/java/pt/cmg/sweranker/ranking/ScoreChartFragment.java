@@ -164,8 +164,8 @@ public class ScoreChartFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
-        _myRootView = inflater.inflate(R.layout.score_chart_fragment, container, false);
 
+        _myRootView = inflater.inflate(R.layout.score_chart_fragment, container, false);
 
         _degreeImage = (ImageView) _myRootView.findViewById(R.id.degree_image);
         _overviewDegreeName = (TextView) _myRootView.findViewById(R.id.degree_overview_name);
@@ -206,7 +206,7 @@ public class ScoreChartFragment extends Fragment {
         _overviewUniversityName.setText(getResources().getString(_parentActivity.getDegree(_degreeScore.getDegreeId()).getUniversityResource()));
         _overviewCombinationName.setText(String.format(getResources().getString(R.string.degree_overview_combination), combinationNumber));
         _showOverview.setOnClickListener(view ->
-                DegreeOverviewDialog.newInstance(combinationNumber, getDegreeClasses()).show(getFragmentManager(), "")
+                DegreeOverviewDialog.newInstance(getDegreeClasses()).show(getFragmentManager(), "")
         );
 
         _overviewProgressBar.setVisibility(View.INVISIBLE);
@@ -216,8 +216,6 @@ public class ScoreChartFragment extends Fragment {
     /**
      * This helper function simply loads from the parent activity ALL the classes that compos THIS particular
      * degree. This function is used to construct the parameters that will be sent to the DegreeOverviewDialog.
-     *
-     * @return
      */
     private List<DegreeClass> getDegreeClasses() {
 
@@ -299,24 +297,7 @@ public class ScoreChartFragment extends Fragment {
 
 
     /**
-     * Simple percent formatter that omits the 100% value because it messes the chart UI.
-     */
-    private class RadarDataValuesFormatter implements IValueFormatter {
-        private DecimalFormat _formatter = new DecimalFormat("##0.00");
-
-        @Override
-        public String getFormattedValue(float v, Entry entry, int i, ViewPortHandler viewPortHandler) {
-            if (v == 100f) {
-                return "";
-            }
-            return _formatter.format(v) + "%";
-        }
-    }
-
-    /**
      * Returns a Map view of Knowledge Areas data where each pair represents the KA id and the number of topics it has.
-     *
-     * @return
      */
     private Map<Integer, Integer> createTotalTopicByKaView() {
         Map<Integer, Integer> result = new HashMap<>();
@@ -537,7 +518,7 @@ public class ScoreChartFragment extends Fragment {
 
 
         BarDataSet dataSet = new BarDataSet(entries, "TopKA");
-        dataSet.setValueFormatter(new KATopicValueFormatter());
+        dataSet.setValueFormatter(new PrefixedNonDecimalValueFormatter(getActivity().getString(R.string.topics_lowercase)));
         dataSet.setColors(topKaColours);
 
         BarData data = new BarData(dataSet);
@@ -637,7 +618,7 @@ public class ScoreChartFragment extends Fragment {
 
 
         BarDataSet dataSet = new BarDataSet(entries, "TopKATopics");
-        dataSet.setValueFormatter(new TopicValueFormatter());
+        dataSet.setValueFormatter(new PrefixedNonDecimalValueFormatter(getActivity().getString(R.string.times_matched)));
         dataSet.setValueTextColor(ContextCompat.getColor(getActivity(), R.color.white));
         dataSet.setColors(topKaTopicColours);
 
@@ -699,34 +680,6 @@ public class ScoreChartFragment extends Fragment {
     }
 
 
-    /**
-     * This is just a simple formatter that appends the resource 'topics' at the end of the value.
-     * It uses a Decimal Formatter because the values are floats by default.
-     */
-    private class KATopicValueFormatter implements IValueFormatter {
-
-        private DecimalFormat _formatter = new DecimalFormat("###,###,###,##0");
-
-        @Override
-        public String getFormattedValue(float v, Entry entry, int i, ViewPortHandler viewPortHandler) {
-            return _formatter.format(v) + " " + getActivity().getString(R.string.topics_lowercase);
-        }
-    }
-
-    /**
-     * This is just a simple formatter that appends the resource 'topics' at the end of the value.
-     * It uses a Decimal Formatter because the values are floats by default.
-     */
-    private class TopicValueFormatter implements IValueFormatter {
-
-        private DecimalFormat _formatter = new DecimalFormat("###,###,###,##0");
-
-        @Override
-        public String getFormattedValue(float v, Entry entry, int i, ViewPortHandler viewPortHandler) {
-            return _formatter.format(v) + " " + getActivity().getString(R.string.times_matched);
-        }
-    }
-
     @Override
     public void onDetach() {
         super.onDetach();
@@ -734,6 +687,9 @@ public class ScoreChartFragment extends Fragment {
     }
 
 
+    /**
+     * All the heavier loading work is done here.
+     */
     private class SweScoreLoader extends AsyncTask<Void, Void, Void> {
 
         @Override
@@ -809,6 +765,45 @@ public class ScoreChartFragment extends Fragment {
         }
     }
 
+
+    /**
+     * This is just a simple formatter that appends a String at the end of the value.
+     * It uses a Decimal Formatter with zero decimal values because target values are all integers.
+     */
+    private class PrefixedNonDecimalValueFormatter implements IValueFormatter {
+
+        private String _prefix;
+        private DecimalFormat _formatter = new DecimalFormat("###,###,###,##0");
+
+        private PrefixedNonDecimalValueFormatter(String prefix) {
+            _prefix = prefix;
+        }
+
+        @Override
+        public String getFormattedValue(float v, Entry entry, int i, ViewPortHandler viewPortHandler) {
+            return _formatter.format(v) + " " + _prefix;
+        }
+    }
+
+    /**
+     * Simple percent formatter that omits the 100% value because it messes the chart UI.
+     */
+    private class RadarDataValuesFormatter implements IValueFormatter {
+        private DecimalFormat _formatter = new DecimalFormat("##0.00");
+
+        @Override
+        public String getFormattedValue(float v, Entry entry, int i, ViewPortHandler viewPortHandler) {
+            if (v == 100f) {
+                return "";
+            }
+            return _formatter.format(v) + "%";
+        }
+    }
+
+
+    /**
+     * This is the standard communication interface used to pass data from and to this fragment.
+     */
     public interface OnScoreChartFragmentInteractionListener extends KnowledgeAreaLoader, DegreeLoader {
     }
 }
