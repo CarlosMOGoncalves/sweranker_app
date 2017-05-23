@@ -31,7 +31,10 @@
     <string name="confirm">Confirm</string>
     <string name="order_ascending">ASC</string>
     <string name="order_descending">DESC</string>
-    <string name="filter_all_label">(All)</string>
+    <string name="filter_all_label">(ALL)</string>
+    <string name="result_count">Result Limit (per degree)</string>
+    <string name="apply">Apply</string>
+    <string name="dismiss">Dismiss</string>
 
     <string name="chart_degree_overview_label">Degree Overview</string>
     <string name="chart_subtitle">Subtitle</string>

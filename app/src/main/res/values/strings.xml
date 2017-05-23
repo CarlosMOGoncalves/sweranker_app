@@ -33,10 +33,12 @@
     <string name="confirm">Confirmar</string>
     <string name="order_ascending">ASC</string>
     <string name="order_descending">DESC</string>
-    <string name="filter_all_label">(Todos)</string>
+    <string name="filter_all_label">(TODOS)</string>
+    <string name="result_count">Limite de Resultados</string>
+    <string name="apply">Aplicar</string>
 
     <string name="OK">OK</string>
-    <string name="dismiss">OK</string>
+    <string name="dismiss">Fechar</string>
     <string name="select_topic">Seleccionar um tópico</string>
 
     <string name="chart_degree_overview_label">Curso Completo</string>

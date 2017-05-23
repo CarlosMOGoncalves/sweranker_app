@@ -51,6 +51,7 @@ public class RankingFragment extends Fragment {
     private Spinner _filterDialogSelectedKA;
     private Spinner _filterDialogSelectedOrder;
     private Spinner _filterDialogSelectedDegree;
+    private Spinner _filterDialogLimitSpinner;
 
     private ProgressBar _progressBar;
     private ScoresAndImagesAdapter _adapter;
@@ -124,36 +125,50 @@ public class RankingFragment extends Fragment {
     }
 
 
-    private void createAndShowFilterDialog(){
+    private void createAndShowFilterDialog() {
         AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(getActivity());
 
 
         dialogBuilder.setView(createFilterDialogView())
-                .setCustomTitle(getActivity().getLayoutInflater().inflate(R.layout.ranking_fragment_filter_dialog_title,null))
-                .setPositiveButton("Apply" , (dialog, which) -> {
-                    int kaId = (int)_filterDialogSelectedKA.getSelectedItemId();
-                    int order = (int)_filterDialogSelectedOrder.getSelectedItemId();
-                    int degreeId = (int)_filterDialogSelectedDegree.getSelectedItemId();
-                    new DegreeComboQueryLoader(kaId,order,degreeId).execute();
+                .setCustomTitle(getActivity().getLayoutInflater().inflate(R.layout.ranking_fragment_filter_dialog_title, null))
+                .setPositiveButton(getResources().getString(R.string.apply), (dialog, which) -> {
+
+                    // In the adapter this is the same
+                    int kaId = (int) _filterDialogSelectedKA.getSelectedItemId();
+                    // This conversion is inferred by the below Array Adapter.
+                    Sort order = _filterDialogSelectedOrder.getSelectedItemId() == 0 ? Sort.ASCENDING : Sort.DESCENDING;
+                    // In the Adapter this is also the same
+                    int degreeId = (int) _filterDialogSelectedDegree.getSelectedItemId();
+                    // Also inferred from below, ain't nobody got time for parameterization.
+                    int limit = _filterDialogLimitSpinner.getSelectedItemId() == 3 ? 0 : Integer.valueOf((String) _filterDialogLimitSpinner.getSelectedItem());
+
+                    // The positive button launches a new search with new parameters
+                    new DegreeComboQueryLoader(kaId, order, degreeId, limit).execute();
+
                     dialog.cancel();
 
                 })
-                .setNegativeButton("Dismiss", (dialog, id) ->
+                .setNegativeButton(getResources().getString(R.string.dismiss), (dialog, id) ->
                         dialog.cancel()
                 );
 
-         dialogBuilder.create().show();
+        dialogBuilder.create().show();
     }
 
     private View createFilterDialogView() {
-        _filterDialog= getActivity().getLayoutInflater().inflate(R.layout.ranking_fragment_filter_dialog, null);
+        _filterDialog = getActivity().getLayoutInflater().inflate(R.layout.ranking_fragment_filter_dialog, null);
 
         _filterDialogSelectedKA = (Spinner) _filterDialog.findViewById(R.id.knowledge_area_spinner);
         _filterDialogSelectedKA.setAdapter(new KASpinnerAdapter());
 
-        String[] orders = new String[]{getActivity().getString(R.string.order_ascending) ,getActivity().getString(R.string.order_descending)};
+        String[] orders = new String[]{getActivity().getString(R.string.order_ascending), getActivity().getString(R.string.order_descending)};
         _filterDialogSelectedOrder = (Spinner) _filterDialog.findViewById(R.id.order_spinner);
-        _filterDialogSelectedOrder.setAdapter(new ArrayAdapter<>(getActivity(), R.layout.ranking_fragment_filter_dialog_spinner_item , orders));
+        _filterDialogSelectedOrder.setAdapter(new ArrayAdapter<>(getActivity(), R.layout.ranking_fragment_filter_dialog_spinner_item, orders));
+
+        String[] limits = new String[]{"1", "10", "50", getActivity().getString(R.string.filter_all_label)};
+        _filterDialogLimitSpinner = (Spinner) _filterDialog.findViewById(R.id.results_number_spinner);
+        _filterDialogLimitSpinner.setAdapter(new ArrayAdapter<>(getActivity(), R.layout.ranking_fragment_filter_dialog_spinner_item, limits));
+        _filterDialogLimitSpinner.setSelection(1);
 
         _filterDialogSelectedDegree = (Spinner) _filterDialog.findViewById(R.id.degree_spinner);
         _filterDialogSelectedDegree.setAdapter(new DegreeSpinnerAdapter());
@@ -199,50 +214,85 @@ public class RankingFragment extends Fragment {
                 ConstantSpacingItemDecorator.Side.ALL_SIDES));
         _rankingsGrid.setItemAnimator(new DefaultItemAnimator());
         _rankingsGrid.setAdapter(_adapter);
+        _adapter.notifyDataSetChanged();
 
         _progressBar.setVisibility(View.INVISIBLE);
         _rankingsGrid.setVisibility(View.VISIBLE);
     }
 
 
+    /**
+     * This AsyncTask's job is to load the scores from the system to finally show them in an ordered way.
+     * It executes a parameterised query against the Realm database.
+     * These parameters are passed by the Filter Dialog where the user can set how many results he wants
+     * from the system, as well as their order in relation to a specific Knowledge Area.
+     */
     private class DegreeComboQueryLoader extends AsyncTask<Void, Void, Void> {
 
         private String _kaFieldName;
         private Sort _sortOrder;
         private int _degreeid;
+        private int _limit;
 
 
-        private DegreeComboQueryLoader(){
+        private DegreeComboQueryLoader() {
             _kaFieldName = SweScoreFields.KA_PERCENT1;
-            _sortOrder = Sort.valueOf("DESCENDING");
+            _sortOrder = Sort.DESCENDING;
             _degreeid = 0;
+            _limit = 10;
         }
 
-        private DegreeComboQueryLoader(int kaId , int order , int degreeId){
+        private DegreeComboQueryLoader(int kaId, Sort order, int degreeId, int limit) {
             _kaFieldName = getKaFieldName(kaId);
-            _sortOrder = order == 0 ? Sort.ASCENDING : Sort.DESCENDING;
+            _sortOrder = order;
             _degreeid = degreeId;
+            _limit = limit;
         }
 
-        private String getKaFieldName(int kaId){
-            switch (kaId){
-                case 1 : return SweScoreFields.KA_PERCENT1;
-                case 2 : return SweScoreFields.KA_PERCENT2;
-                case 3 : return SweScoreFields.KA_PERCENT3;
-                case 4 : return SweScoreFields.KA_PERCENT4;
-                case 5 : return SweScoreFields.KA_PERCENT5;
-                case 6 : return SweScoreFields.KA_PERCENT6;
-                case 7 : return SweScoreFields.KA_PERCENT7;
-                case 8 : return SweScoreFields.KA_PERCENT8;
-                case 9 : return SweScoreFields.KA_PERCENT9;
-                case 10 : return SweScoreFields.KA_PERCENT10;
-                case 11 : return SweScoreFields.KA_PERCENT11;
-                case 12 : return SweScoreFields.KA_PERCENT12;
-                case 13 : return SweScoreFields.KA_PERCENT13;
-                case 14 : return SweScoreFields.KA_PERCENT14;
-                case 15 : return SweScoreFields.KA_PERCENT15;
-                case 16 : return SweScoreFields.KA_PERCENT16;
-                default: return SweScoreFields.KA_PERCENT1;
+        /**
+         * Just translates an ID to a specific field name used for the query.
+         *
+         * @param kaId
+         * @return
+         */
+        private String getKaFieldName(int kaId) {
+            // This is ugly and most likely shouldn't be here. However I am almost finished with this and
+            // I won't spend my time now organising this.
+            switch (kaId) {
+                case 1:
+                    return SweScoreFields.KA_PERCENT1;
+                case 2:
+                    return SweScoreFields.KA_PERCENT2;
+                case 3:
+                    return SweScoreFields.KA_PERCENT3;
+                case 4:
+                    return SweScoreFields.KA_PERCENT4;
+                case 5:
+                    return SweScoreFields.KA_PERCENT5;
+                case 6:
+                    return SweScoreFields.KA_PERCENT6;
+                case 7:
+                    return SweScoreFields.KA_PERCENT7;
+                case 8:
+                    return SweScoreFields.KA_PERCENT8;
+                case 9:
+                    return SweScoreFields.KA_PERCENT9;
+                case 10:
+                    return SweScoreFields.KA_PERCENT10;
+                case 11:
+                    return SweScoreFields.KA_PERCENT11;
+                case 12:
+                    return SweScoreFields.KA_PERCENT12;
+                case 13:
+                    return SweScoreFields.KA_PERCENT13;
+                case 14:
+                    return SweScoreFields.KA_PERCENT14;
+                case 15:
+                    return SweScoreFields.KA_PERCENT15;
+                case 16:
+                    return SweScoreFields.KA_PERCENT16;
+                default:
+                    return SweScoreFields.KA_PERCENT1;
             }
         }
 
@@ -260,12 +310,13 @@ public class RankingFragment extends Fragment {
 
             List<SweScore> sampleScores = databaseConnection.where(SweScore.class)
                     .equalTo(SweScoreFields.SCORE_TYPE, SweScore.TYPE_DEGREE_SCORE)
-                    .equalTo(SweScoreFields.DEGREE_ID, _degreeid==0?1:_degreeid)
-                    .findAllSorted(_kaFieldName,_sortOrder);
+                    .equalTo(SweScoreFields.DEGREE_ID, _degreeid == 0 ? 1 : _degreeid)
+                    .findAllSorted(_kaFieldName, _sortOrder);
 
             _combinationNameAndImage = new LinkedHashMap<>();
-            if(!sampleScores.isEmpty()){
-                for (int i = 0; i < 10; i++) {
+            int resultsLimit = _limit == 0 ? sampleScores.size() : _limit;
+            if (!sampleScores.isEmpty()) {
+                for (int i = 0; i < resultsLimit; i++) {
                     SweScore currentScore = sampleScores.get(i);
                     _combinationNameAndImage.put(new String(currentScore.getId()), _degrees.get((int) currentScore.getDegreeId()).getImageResource());
                 }
@@ -295,12 +346,12 @@ public class RankingFragment extends Fragment {
     }
 
 
-    private class KASpinnerAdapter extends BaseAdapter{
+    private class KASpinnerAdapter extends BaseAdapter {
 
         private List<KnowledgeArea> _knowledgeAreas;
         private Context _context;
 
-        private KASpinnerAdapter(){
+        private KASpinnerAdapter() {
             _context = getActivity();
             _knowledgeAreas = _parentActivity.getKnowledgeAreas();
         }
@@ -322,50 +373,50 @@ public class RankingFragment extends Fragment {
 
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
-            convertView = LayoutInflater.from(_context).inflate(R.layout.ranking_fragment_filter_dialog_spinner_item , null);
-            ((TextView)convertView.findViewById(R.id.list_item)).setText(_context.getString(_knowledgeAreas.get(position).getNameResource()));
+            convertView = LayoutInflater.from(_context).inflate(R.layout.ranking_fragment_filter_dialog_spinner_item, null);
+            ((TextView) convertView.findViewById(R.id.list_item)).setText(_context.getString(_knowledgeAreas.get(position).getNameResource()));
             return convertView;
         }
     }
 
 
-    private class DegreeSpinnerAdapter extends BaseAdapter{
+    private class DegreeSpinnerAdapter extends BaseAdapter {
         private List<Degree> _degrees;
         private Context _context;
 
-        private DegreeSpinnerAdapter(){
+        private DegreeSpinnerAdapter() {
             _context = getActivity();
             _degrees = _parentActivity.getAllDegrees();
         }
 
         @Override
         public int getCount() {
-            return _degrees.size() + 1 ;
+            return _degrees.size() + 1;
         }
 
         @Override
         public Object getItem(int position) {
-            if(position == 0){
+            if (position == 0) {
                 return null;
             }
-            return _degrees.get(position-1);
+            return _degrees.get(position - 1);
         }
 
         @Override
         public long getItemId(int position) {
-            if(position == 0 ){
+            if (position == 0) {
                 return 0L;
             }
-            return _degrees.get(position-1).getId();
+            return _degrees.get(position - 1).getId();
         }
 
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
-            convertView = LayoutInflater.from(_context).inflate(R.layout.ranking_fragment_filter_dialog_spinner_item , null);
-            if(position == 0 ){
-                ((TextView)convertView.findViewById(R.id.list_item)).setText(R.string.filter_all_label);
-            }else{
-                ((TextView)convertView.findViewById(R.id.list_item)).setText(_context.getString(_degrees.get(position-1).getNameResource())  +" (" +  _context.getString(_degrees.get(position-1).getUniversityResource()) + ")");
+            convertView = LayoutInflater.from(_context).inflate(R.layout.ranking_fragment_filter_dialog_spinner_item, null);
+            if (position == 0) {
+                ((TextView) convertView.findViewById(R.id.list_item)).setText(R.string.filter_all_label);
+            } else {
+                ((TextView) convertView.findViewById(R.id.list_item)).setText(_context.getString(_degrees.get(position - 1).getNameResource()) + " (" + _context.getString(_degrees.get(position - 1).getUniversityResource()) + ")");
             }
 
             return convertView;
