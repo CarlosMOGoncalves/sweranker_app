@@ -16,11 +16,11 @@ import pt.cmg.sweranker.R;
  * Created by Carlos on 28/03/2017.
  */
 
-public class ScoresAndImagesAdapter extends RecyclerView.Adapter<ScoresAndImagesAdapter.ScoreImageViewHolder> {
+public class ScoresAndImagesAdapter extends MultiSelectableAdapter<ScoresAndImagesAdapter.ScoreImageViewHolder> {
 
     private Context _context;
 
-    // Keys -> The degree score Id , Values -> the integer that is the resourced of this degree image
+    // Keys -> The degree score Id , Values -> the integer that is the resource of this degree image
     private Map<String, Integer> _scoresAndImages;
 
     // These indexes are just another view on the above Map, it is merely the degree score id in an array to use the indexes for positions
@@ -29,6 +29,7 @@ public class ScoresAndImagesAdapter extends RecyclerView.Adapter<ScoresAndImages
 
 
     public ScoresAndImagesAdapter(Context context, Map<String, Integer> scoresAndImages, OnScoresGridAdapterListener listener) {
+        super();
         _context = context;
         _scoresAndImages = scoresAndImages;
         _degreeCombinationIds = _scoresAndImages.keySet().toArray(new String[_scoresAndImages.size()]);
@@ -46,6 +47,7 @@ public class ScoresAndImagesAdapter extends RecyclerView.Adapter<ScoresAndImages
     public void onBindViewHolder(ScoreImageViewHolder holder, int position) {
         holder._degreeLogo.setImageDrawable(_context.getDrawable(_scoresAndImages.get(_degreeCombinationIds[position])));
         holder._rankingName.setText(_degreeCombinationIds[position]);
+        holder._selectedOverlay.setVisibility(isSelected(position) ? View.VISIBLE : View.INVISIBLE);
     }
 
     @Override
@@ -58,15 +60,43 @@ public class ScoresAndImagesAdapter extends RecyclerView.Adapter<ScoresAndImages
 
         private ImageView _degreeLogo;
         private TextView _rankingName;
+        private View _selectedOverlay;
 
         public ScoreImageViewHolder(View itemView) {
             super(itemView);
 
             _degreeLogo = (ImageView) itemView.findViewById(R.id.ranking_logo);
             _rankingName = (TextView) itemView.findViewById(R.id.ranking_name);
+            _selectedOverlay = itemView.findViewById(R.id.selected_overlay);
 
-            _degreeLogo.setOnClickListener(view -> _listener.loadDegreeChartsFragment(view, _degreeCombinationIds[getAdapterPosition()]));
+            // On click, either we open a new fragment with the detailed score or we add a new element to the multi select Action Mode
+            _degreeLogo.setOnClickListener(view -> {
+                if (isInSelectedMode()) {
 
+                    if (isSelected(getAdapterPosition())) {
+                        toggleSelection(getAdapterPosition());
+                        _listener.onItemUnselectedInActionMode(view, getSelectedItemCount());
+                    } else {
+                        toggleSelection(getAdapterPosition());
+                        _listener.onItemSelectedInActionMode(view, getSelectedItemCount());
+                    }
+
+                } else {
+                    _listener.loadDegreeChartsFragment(view, _degreeCombinationIds[getAdapterPosition()]);
+                }
+            });
+
+            // In long click however we either enter Action Mode (if it's not active yet) or we do nothing.
+            _degreeLogo.setOnLongClickListener(view -> {
+
+                if (isInSelectedMode()) {
+                    // If we're in select mode, there is really nothing to do.
+                } else {
+                    toggleSelection(getAdapterPosition());
+                    _listener.startActionMode(view, _degreeCombinationIds[getAdapterPosition()]);
+                }
+                return true;
+            });
         }
     }
 
@@ -80,5 +110,12 @@ public class ScoresAndImagesAdapter extends RecyclerView.Adapter<ScoresAndImages
          * @param degreeCombinationId
          */
         void loadDegreeChartsFragment(View rootView, String degreeCombinationId);
+
+
+        void startActionMode(View selectedCardView, String degreeCombinationId);
+
+        void onItemSelectedInActionMode(View selectedCardView, int numberOfItemsSelected);
+
+        void onItemUnselectedInActionMode(View selectedCardView, int numberOfItemsSelected);
     }
 }

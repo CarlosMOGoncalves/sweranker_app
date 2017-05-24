@@ -9,6 +9,8 @@
 
     <string name="action_settings">Settings</string>
     <string name="action_filter">Filter</string>
+    <string name="action_close">Close</string>
+    <string name="action_apply">Apply</string>
 
     <string name="program">Curriculum</string>
     <string name="info">Information</string>
@@ -35,6 +37,7 @@
     <string name="result_count">Result Limit (per degree)</string>
     <string name="apply">Apply</string>
     <string name="dismiss">Dismiss</string>
+    <string name="action_mode_title">%1$d selected</string>
 
     <string name="chart_degree_overview_label">Degree Overview</string>
     <string name="chart_subtitle">Subtitle</string>

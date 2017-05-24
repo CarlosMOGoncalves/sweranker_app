@@ -6,6 +6,7 @@ import android.app.Fragment;
 import android.content.Context;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.support.v7.view.ActionMode;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -20,6 +21,7 @@ import android.widget.BaseAdapter;
 import android.widget.ProgressBar;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -27,6 +29,7 @@ import java.util.Map;
 
 import io.realm.Realm;
 import io.realm.Sort;
+import pt.cmg.sweranker.MainActivity;
 import pt.cmg.sweranker.R;
 import pt.cmg.sweranker.degrees.Degree;
 import pt.cmg.sweranker.degrees.DegreeLoader;
@@ -53,11 +56,13 @@ public class RankingFragment extends Fragment {
     private Spinner _filterDialogSelectedDegree;
     private Spinner _filterDialogLimitSpinner;
 
+    // This is useful to create visual effects when this fragment enters Action Mode
+    private ActionMode _actionMode;
+
     private ProgressBar _progressBar;
     private ScoresAndImagesAdapter _adapter;
 
     private Map<Integer, Degree> _degrees;
-    private List<SweScore> _sampleScores;
     private LinkedHashMap<String, Integer> _combinationNameAndImage;
 
     public RankingFragment() {
@@ -204,11 +209,9 @@ public class RankingFragment extends Fragment {
     private void initialiseRankingGrid() {
 
         _adapter = new ScoresAndImagesAdapter(getActivity(),
-                _combinationNameAndImage,
-                (rootView, degreeCombinationId) -> _parentActivity.loadChartFragment(rootView, degreeCombinationId));
+                _combinationNameAndImage, new ScoresGridListener());
 
-        GridLayoutManager mLayoutManager = new GridLayoutManager(getActivity(), 4);
-        _rankingsGrid.setLayoutManager(mLayoutManager);
+        _rankingsGrid.setLayoutManager(new GridLayoutManager(getActivity(), 4));
         _rankingsGrid.addItemDecoration(new ConstantSpacingItemDecorator(getActivity(),
                 2,
                 ConstantSpacingItemDecorator.Side.ALL_SIDES));
@@ -220,6 +223,69 @@ public class RankingFragment extends Fragment {
         _rankingsGrid.setVisibility(View.VISIBLE);
     }
 
+
+    private class ScoresGridListener implements ScoresAndImagesAdapter.OnScoresGridAdapterListener {
+
+        @Override
+        public void loadDegreeChartsFragment(View rootView, String degreeCombinationId) {
+            _parentActivity.loadChartFragment(rootView, degreeCombinationId);
+        }
+
+        @Override
+        public void startActionMode(View selectedCardView, String degreeCombinationId) {
+            _actionMode = ((MainActivity) getActivity()).startSupportActionMode(new ScoresGridMultiSelectCallback());
+            onItemSelectedInActionMode(selectedCardView, 1);
+        }
+
+        @Override
+        public void onItemSelectedInActionMode(View selectedCardView, int numberOfSelectedItems) {
+            _actionMode.setTitle(String.format(getResources().getString(R.string.action_mode_title), numberOfSelectedItems));
+        }
+
+        @Override
+        public void onItemUnselectedInActionMode(View selectedCardView, int numberOfSelectedItems) {
+            if (numberOfSelectedItems == 0) {
+                _actionMode.setTitle("");
+                _actionMode.finish();
+            } else {
+                _actionMode.setTitle(String.format(getResources().getString(R.string.action_mode_title), numberOfSelectedItems));
+            }
+        }
+
+    }
+
+    private class ScoresGridMultiSelectCallback implements ActionMode.Callback {
+
+        @Override
+        public boolean onCreateActionMode(ActionMode mode, Menu menu) {
+            mode.getMenuInflater().inflate(R.menu.multi_select_menu, menu);
+            return true;
+        }
+
+        @Override
+        public boolean onPrepareActionMode(ActionMode mode, Menu menu) {
+            return false;
+        }
+
+        @Override
+        public boolean onActionItemClicked(ActionMode mode, MenuItem item) {
+            switch (item.getItemId()) {
+                case R.id.erase_selection:
+                    mode.finish();
+                    return true;
+                case R.id.apply_selection:
+                    Toast.makeText(getActivity(), "Comparing X elements", Toast.LENGTH_SHORT).show();
+                    return true;
+                default:
+                    return false;
+            }
+        }
+
+        @Override
+        public void onDestroyActionMode(ActionMode mode) {
+//                    ((MainActivity) getActivity()).showToolBar();
+        }
+    }
 
     /**
      * This AsyncTask's job is to load the scores from the system to finally show them in an ordered way.

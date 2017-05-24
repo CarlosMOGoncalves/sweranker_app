@@ -10,6 +10,8 @@
 
     <string name="action_settings">Definições</string>
     <string name="action_filter">Filtrar</string>
+    <string name="action_close">Fechar</string>
+    <string name="action_apply">Aceitar</string>
 
     <string name="program">Programa</string>
     <string name="info">Informação</string>
@@ -36,6 +38,7 @@
     <string name="filter_all_label">(TODOS)</string>
     <string name="result_count">Limite de Resultados</string>
     <string name="apply">Aplicar</string>
+    <string name="action_mode_title">%1$d seleccionados</string>
 
     <string name="OK">OK</string>
     <string name="dismiss">Fechar</string>

@@ -7,6 +7,10 @@
         <item name="colorAccent">@color/colorAccent</item>
         <item name="android:textColor">@color/textColor</item>
         <item name="android:textColorPrimary">@color/textColor</item>
+        <item name="windowActionModeOverlay">true</item>
+        <item name="actionMenuTextColor">@color/cardColour1</item>
+        <item name="actionModeBackground">@color/colorAccent</item>
+        <item name="actionModeSplitBackground">@color/cardColour5</item>
         <!--item name="android:navigationBarColor">@color/cardColour6</item-->
         <!--item name="android:colorControlNormal">@color/cardColour6</item-->
         <!--item name="android:colorControlActivated">?attr/colorControlActivated</item-->
@@ -19,7 +23,7 @@
         <!-- android:textColorPrimary is the color of the title text in the Toolbar  -->
         <item name="android:textColorPrimary">@color/white</item>
         <!-- actionMenuTextColor is the color of the text of action (menu) items  -->
-        <item name="actionMenuTextColor">@android:color/holo_green_light</item>
+        <item name="actionMenuTextColor">@color/cardColour1</item>
         <!-- Tints the input fields like checkboxes and text fields -->
         <!--item name="colorAccent">@color/test_color</item-->
         <!-- Colour of the menu button-->

@@ -69,7 +69,6 @@ public class MainActivity extends AppCompatActivity implements
     boolean _isDegreesServiceBound = false;
     boolean _isRankingServiceBound = false;
 
-    private Menu _toolbarMenu;
     private Toolbar _toolbar;
 
     private List<KnowledgeArea> _tempKnowledgeAreas;
@@ -187,6 +186,14 @@ public class MainActivity extends AppCompatActivity implements
     }
 
 
+    public void hideToolBar() {
+        _toolbar.setElevation(-1f);
+    }
+
+    public void showToolBar() {
+        _toolbar.setElevation(4f);
+    }
+
     @Override
     protected void onStart() {
         super.onStart();
@@ -214,7 +221,6 @@ public class MainActivity extends AppCompatActivity implements
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.app_bar_menu, menu);
-        _toolbarMenu = menu;
         return true;
     }
 
