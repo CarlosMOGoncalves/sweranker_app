@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import java.util.Map;
@@ -47,7 +48,13 @@ public class ScoresAndImagesAdapter extends MultiSelectableAdapter<ScoresAndImag
     public void onBindViewHolder(ScoreImageViewHolder holder, int position) {
         holder._degreeLogo.setImageDrawable(_context.getDrawable(_scoresAndImages.get(_degreeCombinationIds[position])));
         holder._rankingName.setText(_degreeCombinationIds[position]);
-        holder._selectedOverlay.setVisibility(isSelected(position) ? View.VISIBLE : View.INVISIBLE);
+
+        if (isSelected(position)) {
+            holder._scoreContainer.setBackground(_context.getDrawable(R.drawable.border_around));
+        } else {
+            holder._scoreContainer.setBackground(null);
+        }
+
     }
 
     @Override
@@ -58,6 +65,7 @@ public class ScoresAndImagesAdapter extends MultiSelectableAdapter<ScoresAndImag
 
     public class ScoreImageViewHolder extends RecyclerView.ViewHolder {
 
+        private LinearLayout _scoreContainer;
         private ImageView _degreeLogo;
         private TextView _rankingName;
         private View _selectedOverlay;
@@ -65,9 +73,9 @@ public class ScoresAndImagesAdapter extends MultiSelectableAdapter<ScoresAndImag
         public ScoreImageViewHolder(View itemView) {
             super(itemView);
 
+            _scoreContainer = (LinearLayout) itemView.findViewById(R.id.score_container);
             _degreeLogo = (ImageView) itemView.findViewById(R.id.ranking_logo);
             _rankingName = (TextView) itemView.findViewById(R.id.ranking_name);
-            _selectedOverlay = itemView.findViewById(R.id.selected_overlay);
 
             // On click, either we open a new fragment with the detailed score or we add a new element to the multi select Action Mode
             _degreeLogo.setOnClickListener(view -> {
@@ -82,6 +90,7 @@ public class ScoresAndImagesAdapter extends MultiSelectableAdapter<ScoresAndImag
                     }
 
                 } else {
+                    notifyItemChanged(getAdapterPosition());
                     _listener.loadDegreeChartsFragment(view, _degreeCombinationIds[getAdapterPosition()]);
                 }
             });

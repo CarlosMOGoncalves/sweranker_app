@@ -283,7 +283,7 @@ public class RankingFragment extends Fragment {
 
         @Override
         public void onDestroyActionMode(ActionMode mode) {
-//                    ((MainActivity) getActivity()).showToolBar();
+            _actionMode = null;
         }
     }
 
