@@ -21,7 +21,6 @@ import android.widget.BaseAdapter;
 import android.widget.ProgressBar;
 import android.widget.Spinner;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -234,12 +233,14 @@ public class RankingFragment extends Fragment {
         @Override
         public void startActionMode(View selectedCardView, String degreeCombinationId) {
             _actionMode = ((MainActivity) getActivity()).startSupportActionMode(new ScoresGridMultiSelectCallback());
-            onItemSelectedInActionMode(selectedCardView, 1);
+            _actionMode.setTitle(getResources().getString(R.string.action_mode_title));
+            _actionMode.getMenu().getItem(0).setVisible(false);
         }
 
         @Override
         public void onItemSelectedInActionMode(View selectedCardView, int numberOfSelectedItems) {
-            _actionMode.setTitle(String.format(getResources().getString(R.string.action_mode_title), numberOfSelectedItems));
+            _actionMode.setTitle(getResources().getString(R.string.action_mode_title_complete));
+            _actionMode.getMenu().getItem(0).setVisible(true);
         }
 
         @Override
@@ -248,7 +249,8 @@ public class RankingFragment extends Fragment {
                 _actionMode.setTitle("");
                 _actionMode.finish();
             } else {
-                _actionMode.setTitle(String.format(getResources().getString(R.string.action_mode_title), numberOfSelectedItems));
+                _actionMode.setTitle(getResources().getString(R.string.action_mode_title));
+                _actionMode.getMenu().getItem(0).setVisible(false);
             }
         }
 
@@ -271,10 +273,12 @@ public class RankingFragment extends Fragment {
         public boolean onActionItemClicked(ActionMode mode, MenuItem item) {
             switch (item.getItemId()) {
                 case R.id.erase_selection:
+                    _adapter.clearSelection();
                     mode.finish();
                     return true;
                 case R.id.apply_selection:
-                    Toast.makeText(getActivity(), "Comparing X elements", Toast.LENGTH_SHORT).show();
+                    _parentActivity.loadCompareScoresFragment(_adapter.getSelectedDegreeIds());
+                    mode.finish();
                     return true;
                 default:
                     return false;
@@ -283,6 +287,7 @@ public class RankingFragment extends Fragment {
 
         @Override
         public void onDestroyActionMode(ActionMode mode) {
+            _adapter.clearSelection();
             _actionMode = null;
         }
     }
@@ -501,6 +506,9 @@ public class RankingFragment extends Fragment {
          * @param degreeScoreId
          */
         void loadChartFragment(View v, String degreeScoreId);
+
+
+        void loadCompareScoresFragment(List<String> degreeScoreIds);
 
     }
 }

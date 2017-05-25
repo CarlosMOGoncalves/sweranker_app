@@ -37,7 +37,8 @@
     <string name="result_count">Result Limit (per degree)</string>
     <string name="apply">Apply</string>
     <string name="dismiss">Dismiss</string>
-    <string name="action_mode_title">%1$d selected</string>
+    <string name="action_mode_title">Compare to...</string>
+    <string name="action_mode_title_complete">Compare</string>
 
     <string name="chart_degree_overview_label">Degree Overview</string>
     <string name="chart_subtitle">Subtitle</string>
@@ -48,6 +49,7 @@
     <string name="times_matched">times matched</string>
     <string name="coverage_chart_label">SWEBOK Coverage</string>
     <string name="degree_overview_combination">Combination %1$d</string>
+    <string name="show_overview">OVERVIEW</string>
     <string name="show_degree_overview">SHOW DEGREE OVERVIEW</string>
 
     <string name="ka_other">Other</string>

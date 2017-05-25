@@ -6,14 +6,14 @@
         android:id="@+id/apply_selection"
         android:icon="@drawable/apply"
         android:title="@string/action_apply"
-        android:orderInCategory="11"
+        android:orderInCategory="10"
         app:showAsAction="always" />
 
     <item
         android:id="@+id/erase_selection"
         android:icon="@drawable/close"
         android:title="@string/action_close"
-        android:orderInCategory="10"
+        android:orderInCategory="11"
         app:showAsAction="always" />
 
 </menu>

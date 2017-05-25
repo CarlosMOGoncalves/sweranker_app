@@ -37,6 +37,7 @@ import pt.cmg.sweranker.degrees.DegreeDetailsFragment;
 import pt.cmg.sweranker.degrees.DegreeTopicMatcherFragment;
 import pt.cmg.sweranker.degrees.DegreesFragment;
 import pt.cmg.sweranker.degrees.DegreesLoaderService;
+import pt.cmg.sweranker.ranking.MultiScoreChartFragment;
 import pt.cmg.sweranker.ranking.RankingFragment;
 import pt.cmg.sweranker.ranking.RankingService;
 import pt.cmg.sweranker.ranking.ScoreChartFragment;
@@ -59,7 +60,8 @@ public class MainActivity extends AppCompatActivity implements
         DegreeClassFragment.DegreeClassFragmentInteractionListener,
         DegreeTopicMatcherFragment.OnDegreeMatcherFragmentInteraction,
         RankingFragment.RankingFragmentInteractionListener,
-        ScoreChartFragment.OnScoreChartFragmentInteractionListener {
+        ScoreChartFragment.OnScoreChartFragmentInteractionListener,
+        MultiScoreChartFragment.OnMultiScoreChartFragmentInteractionListener {
 
 
     private SwebokLoaderService _swebokService;
@@ -604,6 +606,42 @@ public class MainActivity extends AppCompatActivity implements
         getFragmentManager()
                 .beginTransaction()
                 .replace(R.id.content_area, chartFragment, "ChartFragment")
+                .addToBackStack(null)
+                .commit();
+    }
+
+    @Override
+    public void loadCompareScoresFragment(List<String> degreeScoreIds) {
+
+        Fragment chartFragment = MultiScoreChartFragment.newInstance(degreeScoreIds.get(0), degreeScoreIds.get(1));
+
+        // This is important. I used a simples transition but the real magic is that I change the
+        // toolbar into a back button toolbar so that it is easier to navigate.
+        Transition enterTransition = new Slide(Gravity.RIGHT);
+        enterTransition.setDuration(400);
+        chartFragment.setEnterTransition(enterTransition);
+        enterTransition.addListener(new OnStartTransitionListener() {
+            @Override
+            public void onStartTransition(Transition transition) {
+                changeToolbarIntoBackButton("Comparator");
+            }
+        });
+
+        // And when the user presses Back on the toolbar I use a transition listener to change the
+        // toolbar back to its original state. Neat.
+        Transition exitTransition = new Slide(Gravity.RIGHT);
+        exitTransition.setDuration(300);
+        chartFragment.setReturnTransition(exitTransition);
+        exitTransition.addListener(new OnStartTransitionListener() {
+            @Override
+            public void onStartTransition(Transition transition) {
+                resetToolbar();
+            }
+        });
+
+        getFragmentManager()
+                .beginTransaction()
+                .replace(R.id.content_area, chartFragment, "MultiChartFragment")
                 .addToBackStack(null)
                 .commit();
     }

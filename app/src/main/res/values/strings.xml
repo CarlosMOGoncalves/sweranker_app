@@ -38,7 +38,8 @@
     <string name="filter_all_label">(TODOS)</string>
     <string name="result_count">Limite de Resultados</string>
     <string name="apply">Aplicar</string>
-    <string name="action_mode_title">%1$d seleccionados</string>
+    <string name="action_mode_title">Comparar com...</string>
+    <string name="action_mode_title_complete">Comparar</string>
 
     <string name="OK">OK</string>
     <string name="dismiss">Fechar</string>
@@ -53,6 +54,7 @@
     <string name="times_matched">vezes correspondido</string>
     <string name="coverage_chart_label">Cobertura SWEBOK</string>
     <string name="degree_overview_combination">Combinação %1$d</string>
+    <string name="show_overview">DETALHES</string>
     <string name="show_degree_overview">MOSTRAR DETALHES</string>
 
     <string name="loren_ipsum">Far away\nAcross the field\nTolling on the iron bell\nCalls the faithful to their knees\nTo hear the softly spoken magic spell</string>
@@ -1462,5 +1464,8 @@
     <string name="ist_meic_description">Licenciatura em Engenheria Informatica e de Computadores seguida de Mestrado em Engenharia Informática e de Computadores do Insituto Superio Técnico da Universidade de Lisboa. 3 + 2 anos de estudo.</string>
     <string name="ist">Instituto Superior Técnico</string>
     <string name="title_activity_degree_class">DegreeClassActivity</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>

@@ -9,6 +9,8 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 import pt.cmg.sweranker.R;
@@ -18,6 +20,8 @@ import pt.cmg.sweranker.R;
  */
 
 public class ScoresAndImagesAdapter extends MultiSelectableAdapter<ScoresAndImagesAdapter.ScoreImageViewHolder> {
+
+    public static final int MAX_COMPARE_ITEMS = 2;
 
     private Context _context;
 
@@ -62,13 +66,24 @@ public class ScoresAndImagesAdapter extends MultiSelectableAdapter<ScoresAndImag
         return _scoresAndImages.size();
     }
 
+    /**
+     * Returns a list with the degree combination ids that were multi-selected in action mode.
+     *
+     * @return
+     */
+    public List<String> getSelectedDegreeIds() {
+        List<String> selectedIds = new ArrayList<>();
+        for (Integer adapterPosition : getSelectedItems()) {
+            selectedIds.add(_degreeCombinationIds[adapterPosition]);
+        }
+        return selectedIds;
+    }
 
     public class ScoreImageViewHolder extends RecyclerView.ViewHolder {
 
         private LinearLayout _scoreContainer;
         private ImageView _degreeLogo;
         private TextView _rankingName;
-        private View _selectedOverlay;
 
         public ScoreImageViewHolder(View itemView) {
             super(itemView);
@@ -80,15 +95,16 @@ public class ScoresAndImagesAdapter extends MultiSelectableAdapter<ScoresAndImag
             // On click, either we open a new fragment with the detailed score or we add a new element to the multi select Action Mode
             _degreeLogo.setOnClickListener(view -> {
                 if (isInSelectedMode()) {
-
                     if (isSelected(getAdapterPosition())) {
                         toggleSelection(getAdapterPosition());
                         _listener.onItemUnselectedInActionMode(view, getSelectedItemCount());
                     } else {
-                        toggleSelection(getAdapterPosition());
-                        _listener.onItemSelectedInActionMode(view, getSelectedItemCount());
+                        // If there are already 2 items to compare, I won't allow another one, this is an auto imposed limitation
+                        if (getSelectedItemCount() < MAX_COMPARE_ITEMS) {
+                            toggleSelection(getAdapterPosition());
+                            _listener.onItemSelectedInActionMode(view, getSelectedItemCount());
+                        }
                     }
-
                 } else {
                     notifyItemChanged(getAdapterPosition());
                     _listener.loadDegreeChartsFragment(view, _degreeCombinationIds[getAdapterPosition()]);
