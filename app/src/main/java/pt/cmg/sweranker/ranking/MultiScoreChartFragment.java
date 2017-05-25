@@ -20,7 +20,6 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.github.mikephil.charting.charts.HorizontalBarChart;
-import com.github.mikephil.charting.charts.PieChart;
 import com.github.mikephil.charting.charts.RadarChart;
 import com.github.mikephil.charting.components.Description;
 import com.github.mikephil.charting.components.XAxis;
@@ -96,9 +95,6 @@ public class MultiScoreChartFragment extends Fragment {
     private ProgressBar _overviewProgressBar;
 
     private GridLayout _subtitleTable;
-
-    private ProgressBar _percentProgressBar;
-    private PieChart _kaPercentDistributionChart;
 
     private ProgressBar _topKaProgressBar;
     private HorizontalBarChart _topKaChart;
@@ -177,11 +173,6 @@ public class MultiScoreChartFragment extends Fragment {
         _overviewProgressBar = (ProgressBar) _myRootView.findViewById(R.id.overview_progress);
 
         _subtitleTable = (GridLayout) _myRootView.findViewById(R.id.chart_legend_table);
-
-        _percentProgressBar = (ProgressBar) _myRootView.findViewById(R.id.percent_chart_progress);
-        _percentProgressBar.setVisibility(View.VISIBLE);
-        _kaPercentDistributionChart = (PieChart) _myRootView.findViewById(R.id.ka_distribution_chart);
-        _kaPercentDistributionChart.setVisibility(View.INVISIBLE);
 
         _topKaProgressBar = (ProgressBar) _myRootView.findViewById(R.id.top_kas_chart_progress);
         _topKaProgressBar.setVisibility(View.VISIBLE);
