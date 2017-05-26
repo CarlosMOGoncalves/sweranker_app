@@ -111,8 +111,9 @@ public class MultiScoreChartFragment extends Fragment {
     private TabLayout _topKaTabs;
     private ViewPager _topKaViewPager;
 
-    private ProgressBar _topcKaTopicsProgressBar;
-    private HorizontalBarChart _topKaTopicsChart;
+    private ProgressBar _topKaTopicsProgressBar;
+    private TabLayout _topKaTopicsTabs;
+    private ViewPager _topKaTopicsViewPager;
 
     private ProgressBar _coverageChartProgressBar;
     private RadarChart _coverageChart;
@@ -191,9 +192,10 @@ public class MultiScoreChartFragment extends Fragment {
         _topKaTabs = (TabLayout) _myRootView.findViewById(R.id.top_ka_tabs);
         _topKaViewPager = (ViewPager) _myRootView.findViewById(R.id.top_ka_viewpager);
 
-        _topcKaTopicsProgressBar = (ProgressBar) _myRootView.findViewById(R.id.top_ka_topics_chart_progress);
-        _topcKaTopicsProgressBar.setVisibility(View.VISIBLE);
-        _topKaTopicsChart = (HorizontalBarChart) _myRootView.findViewById(R.id.top_ka_topics_chart);
+        _topKaTopicsProgressBar = (ProgressBar) _myRootView.findViewById(R.id.top_ka_topics_chart_progress);
+        _topKaTopicsProgressBar.setVisibility(View.VISIBLE);
+        _topKaTopicsTabs = (TabLayout) _myRootView.findViewById(R.id.top_ka_topics_tabs);
+        _topKaTopicsViewPager = (ViewPager) _myRootView.findViewById(R.id.top_ka_topics_viewpager);
 
         _coverageChartProgressBar = (ProgressBar) _myRootView.findViewById(R.id.coverage_chart_progress);
         _coverageChartProgressBar.setVisibility(View.VISIBLE);
@@ -461,7 +463,6 @@ public class MultiScoreChartFragment extends Fragment {
 
         _topKaViewPager.setAdapter(new TopKaComparisonAdapter(numberOfKasToDisplay));
         _topKaTabs.setupWithViewPager(_topKaViewPager);
-
         _topKaProgressBar.setVisibility(View.INVISIBLE);
     }
 
@@ -700,106 +701,162 @@ public class MultiScoreChartFragment extends Fragment {
     /**
      * Feeds data and draws an Horizontal Bar Chart with a Top X KAs
      */
-    private void updateTopKaTopicsChart(@IntRange(from = 0, to = 102) int nummberOfTopicsToDisplay) {
+    private void updateTopKaTopicsChart(@IntRange(from = 0, to = 102) int numberOfTopicsToDisplay) {
 
+        _topKaTopicsViewPager.setAdapter(new TopKaTopicsComparisonAdapter(numberOfTopicsToDisplay));
+        _topKaTopicsTabs.setupWithViewPager(_topKaViewPager);
+        _topKaTopicsProgressBar.setVisibility(View.INVISIBLE);
 
-        short[] topicCounter = _degreeScore1.getTopicCounters();
+    }
 
-        // This part is tricky, I am getting a TreeMap to take advantage of the ordering it makes
-        // So now I have a Map where keys are the actual values ORDERED and the values are the array indexes which are equivalent
-        // to the KA ids minus 1. Dear future me, don't hate me, remember that this native array stuff was implemented for performance reasons
-        // as well as simplicity because of the Realm database.
-        TreeMap<Integer, Integer> countersAndKaTopicIds = new TreeMap<>();
-        for (int i = 0; i < topicCounter.length; i++) {
-            countersAndKaTopicIds.put((int) topicCounter[i], i);
+    private class TopKaTopicsComparisonAdapter extends PagerAdapter {
+
+        private int _numberOfKaTopicsToDisplay;
+
+        private TopKaTopicsComparisonAdapter(int numberOfKaTopicsToDisplay) {
+            _numberOfKaTopicsToDisplay = numberOfKaTopicsToDisplay;
         }
 
-        // These two variables are meant to fill subtitles and colours in the chart
-        String[] topKaTopicNames = new String[nummberOfTopicsToDisplay];
-        int[] topKaTopicColours = new int[nummberOfTopicsToDisplay];
+        @Override
+        public Object instantiateItem(ViewGroup collection, int position) {
 
-        // Now tricking intensifies. I am iterating in the reverse order (where the bigger numbers are).
-        // Yes I could simply have implemented a comparator to order them in reverse when inserting in the TreeMap, there are millions of solutions
-        Iterator<Integer> iterator = countersAndKaTopicIds.descendingKeySet().iterator();
-        int currentKeyWhichIsActuallyAValue;
-        int currentKATopicId;
-        List<BarEntry> entries = new ArrayList<>();
+            HorizontalBarChart horizontalBarChart;
+            if (position == 0) {
+                horizontalBarChart = createTopKaTopicsChart(_degreeScore1, _numberOfKaTopicsToDisplay);
+                collection.addView(horizontalBarChart);
+            } else {
+                horizontalBarChart = createTopKaTopicsChart(_degreeScore2, _numberOfKaTopicsToDisplay);
 
-        // Now to fill these variables I am iterating from the TOP to the BOTTOM because in the chart greater values of XAxis are in the top
-        // of the chart, which is what I wanted in the first place. Yes, it's ugly. Yes, it is very confusing. Yes, I hate myself for doing it like this.
-        for (int i = nummberOfTopicsToDisplay - 1, j = 0; i >= 0; i--, j++) {
-            currentKeyWhichIsActuallyAValue = iterator.next();
-            currentKATopicId = countersAndKaTopicIds.get(currentKeyWhichIsActuallyAValue);
+                collection.addView(horizontalBarChart);
+            }
 
-            entries.add(new BarEntry((float) i, (float) currentKeyWhichIsActuallyAValue));
-            topKaTopicNames[i] = getResources().getString(_knowledgeAreaTopics[currentKATopicId].getNameResource());
-
-            // For some reason the colours are fed to the chart in the opposite indexing as the values, go figure...
-            topKaTopicColours[j] = ContextCompat.getColor(getActivity(), _knowledgeAreas[_knowledgeAreaTopics[currentKATopicId].getKnowledgeAreaId() - 1].getColourResource());
-
+            return horizontalBarChart;
         }
 
 
-        BarDataSet dataSet = new BarDataSet(entries, "TopKATopics");
-        dataSet.setValueFormatter(new PrefixedNonDecimalValueFormatter(getActivity().getString(R.string.times_matched)));
-        dataSet.setValueTextColor(ContextCompat.getColor(getActivity(), R.color.white));
-        dataSet.setColors(topKaTopicColours);
+        private HorizontalBarChart createTopKaTopicsChart(SweScore degreeScore, int numberOfKaTopicsToDisplay) {
 
-        BarData data = new BarData(dataSet);
-        data.setBarWidth(0.8f);
+            HorizontalBarChart topKaTopicsChart = new HorizontalBarChart(getActivity());
 
+            ViewGroup.LayoutParams layoutParams = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, (int) Utils.convertDpToPixel(800f));
+            topKaTopicsChart.setLayoutParams(layoutParams);
 
-        _topKaTopicsChart.setDrawBorders(false);
+            short[] topicCounter = degreeScore.getTopicCounters();
 
-        _topKaTopicsChart.getLegend().setEnabled(false);
+            // This part is tricky, I am getting a TreeMap to take advantage of the ordering it makes
+            // So now I have a Map where keys are the actual values ORDERED and the values are the array indexes which are equivalent
+            // to the KA ids minus 1. Dear future me, don't hate me, remember that this native array stuff was implemented for performance reasons
+            // as well as simplicity because of the Realm database.
+            TreeMap<Integer, Integer> countersAndKaTopicIds = new TreeMap<>();
+            for (int i = 0; i < topicCounter.length; i++) {
+                countersAndKaTopicIds.put((int) topicCounter[i], i);
+            }
 
-        // This description part uses a formatted string that reads something along the lines of 'From a total of  X topics'
-        Description chartDescription = new Description();
-        chartDescription.setText(String.format(getResources().getString(R.string.bar_chart_description), _degreeScore1.getTotalTopicCount()));
-        chartDescription.setTextAlign(Paint.Align.RIGHT);
-        chartDescription.setTextSize((int) getResources().getDimension(R.dimen.chart_top_ka_description_text_size));
-        _topKaTopicsChart.setDescription(chartDescription);
+            // These two variables are meant to fill subtitles and colours in the chart
+            String[] topKaTopicNames = new String[numberOfKaTopicsToDisplay];
+            int[] topKaTopicColours = new int[numberOfKaTopicsToDisplay];
 
-        _topKaTopicsChart.setFitBars(true);
+            // Now tricking intensifies. I am iterating in the reverse order (where the bigger numbers are).
+            // Yes I could simply have implemented a comparator to order them in reverse when inserting in the TreeMap, there are millions of solutions
+            Iterator<Integer> iterator = countersAndKaTopicIds.descendingKeySet().iterator();
+            int currentKeyWhichIsActuallyAValue;
+            int currentKATopicId;
+            List<BarEntry> entries = new ArrayList<>();
 
-        _topKaTopicsChart.setDrawValueAboveBar(false);
+            // Now to fill these variables I am iterating from the TOP to the BOTTOM because in the chart greater values of XAxis are in the top
+            // of the chart, which is what I wanted in the first place. Yes, it's ugly. Yes, it is very confusing. Yes, I hate myself for doing it like this.
+            for (int i = numberOfKaTopicsToDisplay - 1, j = 0; i >= 0; i--, j++) {
+                currentKeyWhichIsActuallyAValue = iterator.next();
+                currentKATopicId = countersAndKaTopicIds.get(currentKeyWhichIsActuallyAValue);
 
-        // All the gibberish below simply deactivates most of the grid lines to get the effect I wanted
-        _topKaTopicsChart.getXAxis().setEnabled(true);
-        //_topKaTopicsChart.getXAxis().setDrawAxisLine(false);
-        //_topKaTopicsChart.getXAxis().setDrawLabels(true);
-        _topKaTopicsChart.getXAxis().setDrawAxisLine(false);
-        _topKaTopicsChart.getXAxis().setDrawGridLines(false);
-        // This puts the text to the LEFT of the chart
-        _topKaTopicsChart.getXAxis().setPosition(XAxis.XAxisPosition.BOTTOM);
-        // And this part replaces the X values by actual labels
-        _topKaTopicsChart.getXAxis().setValueFormatter(new IndexAxisValueFormatter(topKaTopicNames));
-        _topKaTopicsChart.getXAxis().setLabelCount(topKaTopicNames.length);
+                entries.add(new BarEntry((float) i, (float) currentKeyWhichIsActuallyAValue));
+                topKaTopicNames[i] = getResources().getString(_knowledgeAreaTopics[currentKATopicId].getNameResource());
 
-        _topKaTopicsChart.getAxisLeft().setEnabled(false);
-        //_topKaTopicsChart.getAxisLeft().setDrawAxisLine(false);
-        _topKaTopicsChart.getAxisLeft().setDrawGridLines(false);
-        _topKaTopicsChart.getAxisLeft().setDrawZeroLine(true);
-        _topKaTopicsChart.getAxisLeft().setDrawLabels(false);
-        _topKaTopicsChart.getAxisLeft().setAxisMinimum(0f);
+                // For some reason the colours are fed to the chart in the opposite indexing as the values, go figure...
+                topKaTopicColours[j] = ContextCompat.getColor(getActivity(), _knowledgeAreas[_knowledgeAreaTopics[currentKATopicId].getKnowledgeAreaId() - 1].getColourResource());
 
-        _topKaTopicsChart.getAxisRight().setEnabled(false);
-        _topKaTopicsChart.getAxisRight().setDrawLabels(false);
-        //_topKaTopicsChart.getAxisRight().setDrawZeroLine(true);
-        _topKaTopicsChart.getAxisRight().setDrawGridLines(false);
-
-        _topKaTopicsChart.animateY(2000);
-
-        // This will disable zooming in the scale which pretty much destroys the chart
-        _topKaTopicsChart.setScaleEnabled(false);
-
-        _topKaTopicsChart.setData(data);
-
-        _topKaTopicsChart.invalidate();
+            }
 
 
-        _topcKaTopicsProgressBar.setVisibility(View.INVISIBLE);
-        _topKaTopicsChart.setVisibility(View.VISIBLE);
+            BarDataSet dataSet = new BarDataSet(entries, "TopKATopics");
+            dataSet.setValueFormatter(new PrefixedNonDecimalValueFormatter(getActivity().getString(R.string.times_matched)));
+            dataSet.setValueTextColor(ContextCompat.getColor(getActivity(), R.color.white));
+            dataSet.setColors(topKaTopicColours);
+
+            BarData data = new BarData(dataSet);
+            data.setBarWidth(0.8f);
+
+
+            topKaTopicsChart.setDrawBorders(false);
+
+            topKaTopicsChart.getLegend().setEnabled(false);
+
+            // This description part uses a formatted string that reads something along the lines of 'From a total of  X topics'
+            Description chartDescription = new Description();
+            chartDescription.setText(String.format(getResources().getString(R.string.bar_chart_description), degreeScore.getTotalTopicCount()));
+            chartDescription.setTextAlign(Paint.Align.RIGHT);
+            chartDescription.setTextSize((int) getResources().getDimension(R.dimen.chart_top_ka_description_text_size));
+            topKaTopicsChart.setDescription(chartDescription);
+
+            topKaTopicsChart.setFitBars(true);
+
+            topKaTopicsChart.setDrawValueAboveBar(false);
+
+            // All the gibberish below simply deactivates most of the grid lines to get the effect I wanted
+            topKaTopicsChart.getXAxis().setEnabled(true);
+            //_topKaTopicsChart.getXAxis().setDrawAxisLine(false);
+            //_topKaTopicsChart.getXAxis().setDrawLabels(true);
+            topKaTopicsChart.getXAxis().setDrawAxisLine(false);
+            topKaTopicsChart.getXAxis().setDrawGridLines(false);
+            // This puts the text to the LEFT of the chart
+            topKaTopicsChart.getXAxis().setPosition(XAxis.XAxisPosition.BOTTOM);
+            // And this part replaces the X values by actual labels
+            topKaTopicsChart.getXAxis().setValueFormatter(new IndexAxisValueFormatter(topKaTopicNames));
+            topKaTopicsChart.getXAxis().setLabelCount(topKaTopicNames.length);
+
+            topKaTopicsChart.getAxisLeft().setEnabled(false);
+            //_topKaTopicsChart.getAxisLeft().setDrawAxisLine(false);
+            topKaTopicsChart.getAxisLeft().setDrawGridLines(false);
+            topKaTopicsChart.getAxisLeft().setDrawZeroLine(true);
+            topKaTopicsChart.getAxisLeft().setDrawLabels(false);
+            topKaTopicsChart.getAxisLeft().setAxisMinimum(0f);
+
+            topKaTopicsChart.getAxisRight().setEnabled(false);
+            topKaTopicsChart.getAxisRight().setDrawLabels(false);
+            //_topKaTopicsChart.getAxisRight().setDrawZeroLine(true);
+            topKaTopicsChart.getAxisRight().setDrawGridLines(false);
+
+            topKaTopicsChart.animateY(2000);
+
+            // This will disable zooming in the scale which pretty much destroys the chart
+            topKaTopicsChart.setScaleEnabled(false);
+
+            topKaTopicsChart.setData(data);
+
+            topKaTopicsChart.invalidate();
+
+            return topKaTopicsChart;
+        }
+
+
+        @Override
+        public int getCount() {
+            return 2;
+        }
+
+        @Override
+        public boolean isViewFromObject(View view, Object object) {
+            return view == object;
+        }
+
+        @Override
+        public CharSequence getPageTitle(int position) {
+            if (position == 0) {
+                return getString(_degree1.getNameResource()) + " 1";
+            }
+
+            return getString(_degree2.getNameResource()) + " 2";
+        }
     }
 
 
@@ -896,7 +953,7 @@ public class MultiScoreChartFragment extends Fragment {
             updateCoverageChart();
             updateSubtitleChart();
             updateTopKaChart(5);
-//            updateTopKaTopicsChart(10);
+            updateTopKaTopicsChart(10);
 
 
         }

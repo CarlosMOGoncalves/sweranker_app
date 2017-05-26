@@ -319,7 +319,7 @@
                 <android.support.v4.view.ViewPager
                     android:id="@+id/top_ka_viewpager"
                     android:layout_width="0dp"
-                    android:layout_height="300dp"
+                    android:layout_height="500dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/top_ka_label">
@@ -355,11 +355,11 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/top_ka_chart_area">
 
-            <LinearLayout
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/top_ka_topics_chart_container"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:paddingBottom="10dp">
+                android:orientation="vertical">
 
                 <TextView
                     android:id="@+id/top_ka_topics_label"
@@ -369,19 +369,26 @@
                     android:paddingBottom="5dp"
                     android:text="@string/top_ka_topics"
                     android:textAlignment="center"
-                    android:textSize="@dimen/ranking_name_text_size" />
+                    android:textSize="@dimen/ranking_name_text_size"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent" />
 
-
-                <com.github.mikephil.charting.charts.HorizontalBarChart
-                    android:id="@+id/top_ka_topics_chart"
-                    android:layout_width="match_parent"
+                <android.support.v4.view.ViewPager
+                    android:id="@+id/top_ka_topics_viewpager"
+                    android:layout_width="0dp"
                     android:layout_height="500dp"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="5dp"
-                    android:background="@color/hollow">
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/top_ka_topics_label">
 
-                </com.github.mikephil.charting.charts.HorizontalBarChart>
-            </LinearLayout>
+                    <android.support.design.widget.TabLayout
+                        android:id="@+id/top_ka_topics_tabs"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"></android.support.design.widget.TabLayout>
+                </android.support.v4.view.ViewPager>
+
+            </android.support.constraint.ConstraintLayout>
 
             <ProgressBar
                 android:id="@+id/top_ka_topics_chart_progress"
