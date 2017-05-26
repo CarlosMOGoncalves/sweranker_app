@@ -33,8 +33,8 @@
 
     <color name="radarChartMaterialGreen50">#E8F5E9</color>
     <color name="radarChartMaterialGreenA400">#00E676</color>
-    <color name="radarChartMaterialBlue500">#2196F3</color>
-    <color name="radarChartMaterialRed500">#f44336</color>
+    <color name="scoreComparisonMaterialBlue500">#2196F3</color>
+    <color name="scoreComparisonMaterialRed500">#f44336</color>
     <color name="radarChartMaterialBrown600">#6D4C41</color>
 
 </resources>

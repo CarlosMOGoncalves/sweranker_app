@@ -267,7 +267,7 @@ public class ScoreChartFragment extends Fragment {
         //dataSet.setHighlightCircleFillColor(getResources().getColor(R.color.cardColour7));
 
         RadarData radarData = new RadarData(dataSet);
-        radarData.setValueTextColor(getResources().getColor(R.color.radarChartMaterialRed500));
+        radarData.setValueTextColor(getResources().getColor(R.color.scoreComparisonMaterialRed500));
         radarData.setValueFormatter(new RadarDataValuesFormatter());
 
         _coverageChart.getDescription().setEnabled(false);

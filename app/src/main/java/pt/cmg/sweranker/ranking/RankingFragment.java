@@ -307,8 +307,8 @@ public class RankingFragment extends Fragment {
 
 
         private DegreeComboQueryLoader() {
-            _kaFieldName = SweScoreFields.KA_PERCENT1;
-            _sortOrder = Sort.DESCENDING;
+            _kaFieldName = "";
+            _sortOrder = null;
             _degreeid = 0;
             _limit = 10;
         }
@@ -379,16 +379,26 @@ public class RankingFragment extends Fragment {
 
             Realm databaseConnection = Realm.getDefaultInstance();
 
-            List<SweScore> sampleScores = databaseConnection.where(SweScore.class)
-                    .equalTo(SweScoreFields.SCORE_TYPE, SweScore.TYPE_DEGREE_SCORE)
-                    .equalTo(SweScoreFields.DEGREE_ID, _degreeid == 0 ? 1 : _degreeid)
-                    .findAllSorted(_kaFieldName, _sortOrder);
+            List<SweScore> results;
+            // If no sort order was input, I don't care the order, so the default will be fine
+            if (_sortOrder == null) {
+                results = databaseConnection.where(SweScore.class)
+                        .equalTo(SweScoreFields.SCORE_TYPE, SweScore.TYPE_DEGREE_SCORE)
+                        .equalTo(SweScoreFields.DEGREE_ID, _degreeid == 0 ? 1 : _degreeid)
+                        .findAll();
+            } else {
+                results = databaseConnection.where(SweScore.class)
+                        .equalTo(SweScoreFields.SCORE_TYPE, SweScore.TYPE_DEGREE_SCORE)
+                        .equalTo(SweScoreFields.DEGREE_ID, _degreeid == 0 ? 1 : _degreeid)
+                        .findAllSorted(_kaFieldName, _sortOrder);
+            }
+
 
             _combinationNameAndImage = new LinkedHashMap<>();
-            int resultsLimit = _limit == 0 ? sampleScores.size() : _limit;
-            if (!sampleScores.isEmpty()) {
+            int resultsLimit = _limit == 0 ? results.size() : _limit;
+            if (!results.isEmpty()) {
                 for (int i = 0; i < resultsLimit; i++) {
-                    SweScore currentScore = sampleScores.get(i);
+                    SweScore currentScore = results.get(i);
                     _combinationNameAndImage.put(new String(currentScore.getId()), _degrees.get((int) currentScore.getDegreeId()).getImageResource());
                 }
             }

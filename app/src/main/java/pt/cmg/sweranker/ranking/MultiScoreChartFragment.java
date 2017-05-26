@@ -23,6 +23,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.github.mikephil.charting.charts.HorizontalBarChart;
+import com.github.mikephil.charting.charts.PieChart;
 import com.github.mikephil.charting.charts.RadarChart;
 import com.github.mikephil.charting.components.Description;
 import com.github.mikephil.charting.components.XAxis;
@@ -31,11 +32,17 @@ import com.github.mikephil.charting.data.BarData;
 import com.github.mikephil.charting.data.BarDataSet;
 import com.github.mikephil.charting.data.BarEntry;
 import com.github.mikephil.charting.data.Entry;
+import com.github.mikephil.charting.data.PieData;
+import com.github.mikephil.charting.data.PieDataSet;
+import com.github.mikephil.charting.data.PieEntry;
 import com.github.mikephil.charting.data.RadarData;
 import com.github.mikephil.charting.data.RadarDataSet;
 import com.github.mikephil.charting.data.RadarEntry;
 import com.github.mikephil.charting.formatter.IValueFormatter;
 import com.github.mikephil.charting.formatter.IndexAxisValueFormatter;
+import com.github.mikephil.charting.formatter.PercentFormatter;
+import com.github.mikephil.charting.highlight.Highlight;
+import com.github.mikephil.charting.listener.OnChartValueSelectedListener;
 import com.github.mikephil.charting.utils.Utils;
 import com.github.mikephil.charting.utils.ViewPortHandler;
 
@@ -101,11 +108,13 @@ public class MultiScoreChartFragment extends Fragment {
     private TextView _overviewUniversityName2;
     private TextView _overviewCombinationName2;
     private TextView _showOverview2;
-
-
     private ProgressBar _overviewProgressBar;
 
     private GridLayout _subtitleTable;
+
+    private ProgressBar _percentProgressBar;
+    private TabLayout _percentTabs;
+    private ViewPager _percentViewPager;
 
     private ProgressBar _topKaProgressBar;
     private TabLayout _topKaTabs;
@@ -186,6 +195,11 @@ public class MultiScoreChartFragment extends Fragment {
         _overviewProgressBar = (ProgressBar) _myRootView.findViewById(R.id.overview_progress);
 
         _subtitleTable = (GridLayout) _myRootView.findViewById(R.id.chart_legend_table);
+
+        _percentProgressBar = (ProgressBar) _myRootView.findViewById(R.id.ka_percent_chart_progress);
+        _percentProgressBar.setVisibility(View.VISIBLE);
+        _percentTabs = (TabLayout) _myRootView.findViewById(R.id.ka_percentile_tabs);
+        _percentViewPager = (ViewPager) _myRootView.findViewById(R.id.ka_percentile_viewpager);
 
         _topKaProgressBar = (ProgressBar) _myRootView.findViewById(R.id.top_kas_chart_progress);
         _topKaProgressBar.setVisibility(View.VISIBLE);
@@ -282,24 +296,18 @@ public class MultiScoreChartFragment extends Fragment {
         }
 
         RadarDataSet dataSet = new RadarDataSet(entries, "KACoverage");
-        dataSet.setColor(getResources().getColor(R.color.radarChartMaterialBlue500));
+        dataSet.setColor(getResources().getColor(R.color.scoreComparisonMaterialBlue500));
 
         // IMPORTANT: using a slight larger line with these two colours allows for the appearance of the line to become another colour: purple
         // which is nice to distinguish where the radar lines intertwine
         dataSet.setLineWidth(1.5f);
 
         RadarDataSet dataSet2 = new RadarDataSet(entries2, "KACoverage2");
-        dataSet2.setColor(getResources().getColor(R.color.radarChartMaterialRed500));
-
-        // Isto é a cor das linhas que aparecem quando se carrega no chart
-        //dataSet.setHighLightColor(getResources().getColor(R.color.cardColour3));
-        // Não faço ideia destes aqui abaixo...
-        //dataSet.setHighlightCircleStrokeColor(getResources().getColor(R.color.cardColour5));
-        //dataSet.setHighlightCircleFillColor(getResources().getColor(R.color.cardColour7));
+        dataSet2.setColor(getResources().getColor(R.color.scoreComparisonMaterialRed500));
 
         RadarData radarData = new RadarData(dataSet);
         radarData.addDataSet(dataSet2);
-        radarData.setValueTextColor(getResources().getColor(R.color.radarChartMaterialRed500));
+        radarData.setValueTextColor(getResources().getColor(R.color.scoreComparisonMaterialRed500));
         radarData.setValueFormatter(new RadarDataValuesFormatter());
 
         _coverageChart.getDescription().setEnabled(false);
@@ -457,16 +465,185 @@ public class MultiScoreChartFragment extends Fragment {
 
 
     /**
+     * This function creates the data set to be displayed on the KA Distribution chart and styles it.
+     * It follows closely the API of the MPAndroidChart to that end.
+     */
+    private void updateKADistributionChart() {
+
+        _percentViewPager.setAdapter(new KaDistributionComparisonAdapter());
+        _percentTabs.setupWithViewPager(_percentViewPager);
+        // Initial colouring
+        _percentTabs.setTabTextColors(getResources().getColor(R.color.unselectedTextColor), getResources().getColor(R.color.scoreComparisonMaterialBlue500));
+        _percentTabs.setSelectedTabIndicatorColor(getResources().getColor(R.color.scoreComparisonMaterialBlue500));
+        // On selected tab colouring
+        _percentTabs.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+            @Override
+            public void onTabSelected(TabLayout.Tab tab) {
+                _percentViewPager.setCurrentItem(tab.getPosition());
+                if (tab.getPosition() == 0) {
+                    _percentTabs.setSelectedTabIndicatorColor(getResources().getColor(R.color.scoreComparisonMaterialBlue500));
+                    _percentTabs.setTabTextColors(getResources().getColor(R.color.unselectedTextColor), getResources().getColor(R.color.scoreComparisonMaterialBlue500));
+                } else {
+                    _percentTabs.setSelectedTabIndicatorColor(getResources().getColor(R.color.scoreComparisonMaterialRed500));
+                    _percentTabs.setTabTextColors(getResources().getColor(R.color.unselectedTextColor), getResources().getColor(R.color.scoreComparisonMaterialRed500));
+                }
+            }
+
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {
+
+            }
+
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) {
+
+            }
+        });
+        _percentProgressBar.setVisibility(View.INVISIBLE);
+    }
+
+
+    /**
+     * This adapter is needed because I am using a Page Viewer and avoiding the common Fragment approach.
+     */
+    private class KaDistributionComparisonAdapter extends PagerAdapter {
+
+        @Override
+        public Object instantiateItem(ViewGroup collection, int position) {
+
+            PieChart pieChart;
+            if (position == 0) {
+                pieChart = createKADistributionChart(_degreeScore1);
+                collection.addView(pieChart);
+            } else {
+                pieChart = createKADistributionChart(_degreeScore2);
+                collection.addView(pieChart);
+            }
+            return pieChart;
+        }
+
+
+        private PieChart createKADistributionChart(SweScore degreeScore) {
+            PieChart kaDistributionChart = new PieChart(getActivity());
+
+            ViewGroup.LayoutParams layoutParams = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
+            kaDistributionChart.setLayoutParams(layoutParams);
+
+            float[] kaPercents = degreeScore.getKaPercents();
+
+            // The Entries of this chart basically get all the values for each different "Entity" that we are measuring
+            List<PieEntry> entries = new ArrayList<>();
+            for (int knowledgeAreaIndex = 0; knowledgeAreaIndex < _knowledgeAreas.length; knowledgeAreaIndex++) {
+                // Again the ids are zero-based but the damn KA ids are one-based to this trick is needed in the '_knowledgeAreas[i].getId() -1'
+                // Also, I am passing an integer index object to the Entry so that I can use it later on the chart to write the KA name in the centre of the chart.
+                PieEntry newEntry = new PieEntry(kaPercents[_knowledgeAreas[knowledgeAreaIndex].getId() - 1], knowledgeAreaIndex);
+                newEntry.setLabel(getResources().getString(_knowledgeAreas[knowledgeAreaIndex].getNameResource()));
+
+                entries.add(newEntry);
+            }
+
+
+            PieDataSet dataSet = new PieDataSet(entries, "KA Percentiles");
+            dataSet.setValueTextSize(getResources().getDimension(R.dimen.chart_ka_distribution_values_text_size));
+            dataSet.setColors(_knowledgeAreaColours);
+            dataSet.setValueFormatter(new PercentFormatter());
+
+            PieData pieChartData = new PieData(dataSet);
+            kaDistributionChart.setData(pieChartData);
+
+            // Both description and subtitle will be displayed apart so I am disabling them both
+            kaDistributionChart.getDescription().setEnabled(false);
+            kaDistributionChart.getLegend().setEnabled(false);
+            // Also labels, in a smart phone they would likely be useless. I will try to find another way to display it.
+            kaDistributionChart.setDrawEntryLabels(false);
+
+            kaDistributionChart.setHoleRadius(40f);
+            kaDistributionChart.setTransparentCircleRadius(45f);
+
+            kaDistributionChart.animateX(1000);
+
+            kaDistributionChart.invalidate();
+
+            kaDistributionChart.setTouchEnabled(true);
+            kaDistributionChart.setOnChartValueSelectedListener(new OnChartValueSelectedListener() {
+                @Override
+                public void onValueSelected(Entry entry, Highlight highlight) {
+                    kaDistributionChart.setCenterText(((PieEntry) entry).getLabel());
+                    kaDistributionChart.setCenterTextColor(_knowledgeAreaColours[(Integer) entry.getData()]);
+                }
+
+                @Override
+                public void onNothingSelected() {
+                    kaDistributionChart.setCenterText("");
+                }
+            });
+
+            return kaDistributionChart;
+        }
+
+
+        @Override
+        public int getCount() {
+            return 2;
+        }
+
+        @Override
+        public boolean isViewFromObject(View view, Object object) {
+            return view == object;
+        }
+
+        @Override
+        public CharSequence getPageTitle(int position) {
+            if (position == 0) {
+                return getString(_degree1.getNameResource()) + " 1";
+            }
+
+            return getString(_degree2.getNameResource()) + " 2";
+        }
+    }
+
+
+    /**
      * Feeds data and draws an Horizontal Bar Chart with a Top X KAs
      */
     private void updateTopKaChart(@IntRange(from = 0, to = 15) int numberOfKasToDisplay) {
 
         _topKaViewPager.setAdapter(new TopKaComparisonAdapter(numberOfKasToDisplay));
         _topKaTabs.setupWithViewPager(_topKaViewPager);
+
+        //Initial colouring - defaults
+        _topKaTabs.setTabTextColors(getResources().getColor(R.color.unselectedTextColor), getResources().getColor(R.color.scoreComparisonMaterialBlue500));
+        _topKaTabs.setSelectedTabIndicatorColor(getResources().getColor(R.color.scoreComparisonMaterialBlue500));
+        // On selected tab colouring
+        _topKaTabs.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+            @Override
+            public void onTabSelected(TabLayout.Tab tab) {
+                _topKaViewPager.setCurrentItem(tab.getPosition());
+                if (tab.getPosition() == 0) {
+                    _topKaTabs.setSelectedTabIndicatorColor(getResources().getColor(R.color.scoreComparisonMaterialBlue500));
+                    _topKaTabs.setTabTextColors(getResources().getColor(R.color.unselectedTextColor), getResources().getColor(R.color.scoreComparisonMaterialBlue500));
+                } else {
+                    _topKaTabs.setSelectedTabIndicatorColor(getResources().getColor(R.color.scoreComparisonMaterialRed500));
+                    _topKaTabs.setTabTextColors(getResources().getColor(R.color.unselectedTextColor), getResources().getColor(R.color.scoreComparisonMaterialRed500));
+                }
+            }
+
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {
+
+            }
+
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) {
+
+            }
+        });
         _topKaProgressBar.setVisibility(View.INVISIBLE);
     }
 
-
+    /**
+     * This adapter is needed because I am using a Page Viewer and avoiding the common Fragment approach.
+     */
     private class TopKaComparisonAdapter extends PagerAdapter {
 
         private int _numberOfKasToDisplay;
@@ -480,199 +657,114 @@ public class MultiScoreChartFragment extends Fragment {
 
             HorizontalBarChart horizontalBarChart;
             if (position == 0) {
-                horizontalBarChart = new HorizontalBarChart(getActivity());
-
-                ViewGroup.LayoutParams layoutParams = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, (int) Utils.convertDpToPixel(500f));
-                horizontalBarChart.setLayoutParams(layoutParams);
-
-                short[] kaCounters = _degreeScore1.getKaCounters();
-
-                // This part is tricky, I am getting a TreeMap to take advantage of the ordering it makes
-                // So now I have a Map where keys are the actual values ORDERED and the values are the array indexes which are equivalent
-                // to the KA ids minus 1. Dear future me, don't hate me, remember that this native array stuff was implemented for performance reasons
-                // as well as simplicity because of the Realm database.
-                TreeMap<Integer, Integer> countersAndKaIds = new TreeMap<>();
-                for (int i = 0; i < kaCounters.length; i++) {
-                    countersAndKaIds.put((int) kaCounters[i], i);
-                }
-
-                // These two variables are meant to fill subtitles and colours in the chart
-                String[] topKaNames = new String[_numberOfKasToDisplay];
-                int[] topKaColours = new int[_numberOfKasToDisplay];
-
-                // Now tricking intensifies. I am iterating in the reverse order (where the bigger numbers are).
-                // Yes I could simply have implemented a comparator to order them in reverse when inserting in the TreeMap, there are millions of solutions
-                Iterator<Integer> iterator = countersAndKaIds.descendingKeySet().iterator();
-                int currentKeyWhichIsActuallyAValue;
-                int currentKaId;
-                List<BarEntry> entries = new ArrayList<>();
-
-                // Now to fill these variables I am iterating from the TOP to the BOTTOM because in the chart greater values of XAxis are in the top
-                // of the chart, which is what I wanted in the first place. Yes, it's ugly. Yes, it is very confusing. Yes, I hate myself for doing it like this.
-                for (int i = _numberOfKasToDisplay - 1, j = 0; i >= 0; i--, j++) {
-                    currentKeyWhichIsActuallyAValue = iterator.next();
-                    currentKaId = countersAndKaIds.get(currentKeyWhichIsActuallyAValue);
-
-                    entries.add(new BarEntry((float) i, (float) currentKeyWhichIsActuallyAValue));
-                    topKaNames[i] = getResources().getString(_knowledgeAreas[currentKaId].getNameResource());
-
-                    // For some reason the colours are fed to the chart in the opposite indexing as the values, go figure...
-                    topKaColours[j] = ContextCompat.getColor(getActivity(), _knowledgeAreas[currentKaId].getColourResource());
-
-                }
-
-
-                BarDataSet dataSet = new BarDataSet(entries, "TopKA");
-                dataSet.setValueFormatter(new PrefixedNonDecimalValueFormatter(getActivity().getString(R.string.topics_lowercase)));
-                dataSet.setColors(topKaColours);
-
-                BarData data = new BarData(dataSet);
-                data.setBarWidth(0.9f);
-
-
-                horizontalBarChart.setDrawBorders(false);
-                horizontalBarChart.getLegend().setEnabled(false);
-
-                // This description part uses a formatted string that reads something along the lines of 'From a total of  X topics'
-                Description chartDescription = new Description();
-                chartDescription.setText(String.format(getResources().getString(R.string.bar_chart_description), _degreeScore1.getTotalTopicCount()));
-                chartDescription.setTextAlign(Paint.Align.RIGHT);
-                chartDescription.setTextSize((int) getResources().getDimension(R.dimen.chart_top_ka_description_text_size));
-                horizontalBarChart.setDescription(chartDescription);
-
-                horizontalBarChart.setFitBars(true);
-
-                // All the gibberish below simply deactivates most of the grid lines to get the effect I wanted
-                horizontalBarChart.getXAxis().setEnabled(true);
-                //_topKaChart.getXAxis().setDrawAxisLine(false);
-                //_topKaChart.getXAxis().setDrawLabels(true);
-                horizontalBarChart.getXAxis().setDrawAxisLine(false);
-                horizontalBarChart.getXAxis().setDrawGridLines(false);
-                // This puts the text to the LEFT of the chart
-                horizontalBarChart.getXAxis().setPosition(XAxis.XAxisPosition.BOTTOM);
-                // And this part replaces the X values by actual labels
-                horizontalBarChart.getXAxis().setValueFormatter(new IndexAxisValueFormatter(topKaNames));
-
-                horizontalBarChart.getAxisLeft().setEnabled(false);
-                //_topKaChart.getAxisLeft().setDrawAxisLine(false);
-                horizontalBarChart.getAxisLeft().setDrawGridLines(false);
-                horizontalBarChart.getAxisLeft().setDrawZeroLine(true);
-                horizontalBarChart.getAxisLeft().setDrawLabels(false);
-                horizontalBarChart.getAxisLeft().setAxisMinimum(0f);
-
-                horizontalBarChart.getAxisRight().setEnabled(false);
-                horizontalBarChart.getAxisRight().setDrawLabels(false);
-                //_topKaChart.getAxisRight().setDrawZeroLine(true);
-                horizontalBarChart.getAxisRight().setDrawGridLines(false);
-
-                horizontalBarChart.animateY(2000);
-
-                // This will disable zooming in the scale which pretty much destroys the chart
-                horizontalBarChart.setScaleEnabled(false);
-
-                horizontalBarChart.setData(data);
-
-                horizontalBarChart.invalidate();
-
+                horizontalBarChart = createTopKAChart(_degreeScore1, _numberOfKasToDisplay);
                 collection.addView(horizontalBarChart);
             } else {
-                horizontalBarChart = new HorizontalBarChart(getActivity());
-
-                ViewGroup.LayoutParams layoutParams = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, (int) Utils.convertDpToPixel(300f));
-                horizontalBarChart.setLayoutParams(layoutParams);
-
-                short[] kaCounters = _degreeScore2.getKaCounters();
-
-                // This part is tricky, I am getting a TreeMap to take advantage of the ordering it makes
-                // So now I have a Map where keys are the actual values ORDERED and the values are the array indexes which are equivalent
-                // to the KA ids minus 1. Dear future me, don't hate me, remember that this native array stuff was implemented for performance reasons
-                // as well as simplicity because of the Realm database.
-                TreeMap<Integer, Integer> countersAndKaIds = new TreeMap<>();
-                for (int i = 0; i < kaCounters.length; i++) {
-                    countersAndKaIds.put((int) kaCounters[i], i);
-                }
-
-                // These two variables are meant to fill subtitles and colours in the chart
-                String[] topKaNames = new String[_numberOfKasToDisplay];
-                int[] topKaColours = new int[_numberOfKasToDisplay];
-
-                // Now tricking intensifies. I am iterating in the reverse order (where the bigger numbers are).
-                // Yes I could simply have implemented a comparator to order them in reverse when inserting in the TreeMap, there are millions of solutions
-                Iterator<Integer> iterator = countersAndKaIds.descendingKeySet().iterator();
-                int currentKeyWhichIsActuallyAValue;
-                int currentKaId;
-                List<BarEntry> entries = new ArrayList<>();
-
-                // Now to fill these variables I am iterating from the TOP to the BOTTOM because in the chart greater values of XAxis are in the top
-                // of the chart, which is what I wanted in the first place. Yes, it's ugly. Yes, it is very confusing. Yes, I hate myself for doing it like this.
-                for (int i = _numberOfKasToDisplay - 1, j = 0; i >= 0; i--, j++) {
-                    currentKeyWhichIsActuallyAValue = iterator.next();
-                    currentKaId = countersAndKaIds.get(currentKeyWhichIsActuallyAValue);
-
-                    entries.add(new BarEntry((float) i, (float) currentKeyWhichIsActuallyAValue));
-                    topKaNames[i] = getResources().getString(_knowledgeAreas[currentKaId].getNameResource());
-
-                    // For some reason the colours are fed to the chart in the opposite indexing as the values, go figure...
-                    topKaColours[j] = ContextCompat.getColor(getActivity(), _knowledgeAreas[currentKaId].getColourResource());
-
-                }
-
-
-                BarDataSet dataSet = new BarDataSet(entries, "TopKA");
-                dataSet.setValueFormatter(new PrefixedNonDecimalValueFormatter(getActivity().getString(R.string.topics_lowercase)));
-                dataSet.setColors(topKaColours);
-
-                BarData data = new BarData(dataSet);
-                data.setBarWidth(0.9f);
-
-
-                horizontalBarChart.setDrawBorders(false);
-                horizontalBarChart.getLegend().setEnabled(false);
-
-                // This description part uses a formatted string that reads something along the lines of 'From a total of  X topics'
-                Description chartDescription = new Description();
-                chartDescription.setText(String.format(getResources().getString(R.string.bar_chart_description), _degreeScore2.getTotalTopicCount()));
-                chartDescription.setTextAlign(Paint.Align.RIGHT);
-                chartDescription.setTextSize((int) getResources().getDimension(R.dimen.chart_top_ka_description_text_size));
-                horizontalBarChart.setDescription(chartDescription);
-
-                horizontalBarChart.setFitBars(true);
-
-                // All the gibberish below simply deactivates most of the grid lines to get the effect I wanted
-                horizontalBarChart.getXAxis().setEnabled(true);
-                //_topKaChart.getXAxis().setDrawAxisLine(false);
-                //_topKaChart.getXAxis().setDrawLabels(true);
-                horizontalBarChart.getXAxis().setDrawAxisLine(false);
-                horizontalBarChart.getXAxis().setDrawGridLines(false);
-                // This puts the text to the LEFT of the chart
-                horizontalBarChart.getXAxis().setPosition(XAxis.XAxisPosition.BOTTOM);
-                // And this part replaces the X values by actual labels
-                horizontalBarChart.getXAxis().setValueFormatter(new IndexAxisValueFormatter(topKaNames));
-
-                horizontalBarChart.getAxisLeft().setEnabled(false);
-                //_topKaChart.getAxisLeft().setDrawAxisLine(false);
-                horizontalBarChart.getAxisLeft().setDrawGridLines(false);
-                horizontalBarChart.getAxisLeft().setDrawZeroLine(true);
-                horizontalBarChart.getAxisLeft().setDrawLabels(false);
-                horizontalBarChart.getAxisLeft().setAxisMinimum(0f);
-
-                horizontalBarChart.getAxisRight().setEnabled(false);
-                horizontalBarChart.getAxisRight().setDrawLabels(false);
-                //_topKaChart.getAxisRight().setDrawZeroLine(true);
-                horizontalBarChart.getAxisRight().setDrawGridLines(false);
-
-                horizontalBarChart.animateY(2000);
-
-                // This will disable zooming in the scale which pretty much destroys the chart
-                horizontalBarChart.setScaleEnabled(false);
-
-                horizontalBarChart.setData(data);
-
-                horizontalBarChart.invalidate();
-
+                horizontalBarChart = createTopKAChart(_degreeScore2, _numberOfKasToDisplay);
                 collection.addView(horizontalBarChart);
             }
+            return horizontalBarChart;
+        }
 
+        /**
+         * This has the actual work of creating the Horizontal Bar Chart, adapting it to the screen sizing, filling it with data and
+         * finally styling it. It is a single function because it is needed multiple times, one for each Degree Combination Score being compared.
+         *
+         * @param degreeScore
+         * @param numberOfKasToDisplay The number of bars that will be displayed. The higher the more complete picture of the KA  distribution,
+         *                             but also the more difficult to see in the screen.
+         * @return
+         */
+        private HorizontalBarChart createTopKAChart(SweScore degreeScore, int numberOfKasToDisplay) {
+            HorizontalBarChart horizontalBarChart = new HorizontalBarChart(getActivity());
+
+            ViewGroup.LayoutParams layoutParams = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, (int) Utils.convertDpToPixel(500f));
+            horizontalBarChart.setLayoutParams(layoutParams);
+
+            short[] kaCounters = degreeScore.getKaCounters();
+
+            // This part is tricky, I am getting a TreeMap to take advantage of the ordering it makes
+            // So now I have a Map where keys are the actual values ORDERED and the values are the array indexes which are equivalent
+            // to the KA ids minus 1. Dear future me, don't hate me, remember that this native array stuff was implemented for performance reasons
+            // as well as simplicity because of the Realm database.
+            TreeMap<Integer, Integer> countersAndKaIds = new TreeMap<>();
+            for (int i = 0; i < kaCounters.length; i++) {
+                countersAndKaIds.put((int) kaCounters[i], i);
+            }
+
+            // These two variables are meant to fill subtitles and colours in the chart
+            String[] topKaNames = new String[numberOfKasToDisplay];
+            int[] topKaColours = new int[numberOfKasToDisplay];
+
+            // Now tricking intensifies. I am iterating in the reverse order (where the bigger numbers are).
+            // Yes I could simply have implemented a comparator to order them in reverse when inserting in the TreeMap, there are millions of solutions
+            Iterator<Integer> iterator = countersAndKaIds.descendingKeySet().iterator();
+            int currentKeyWhichIsActuallyAValue;
+            int currentKaId;
+            List<BarEntry> entries = new ArrayList<>();
+
+            // Now to fill these variables I am iterating from the TOP to the BOTTOM because in the chart greater values of XAxis are in the top
+            // of the chart, which is what I wanted in the first place. Yes, it's ugly. Yes, it is very confusing. Yes, I hate myself for doing it like this.
+            for (int i = numberOfKasToDisplay - 1, j = 0; i >= 0; i--, j++) {
+                currentKeyWhichIsActuallyAValue = iterator.next();
+                currentKaId = countersAndKaIds.get(currentKeyWhichIsActuallyAValue);
+
+                entries.add(new BarEntry((float) i, (float) currentKeyWhichIsActuallyAValue));
+                topKaNames[i] = getResources().getString(_knowledgeAreas[currentKaId].getNameResource());
+
+                // For some reason the colours are fed to the chart in the opposite indexing as the values, go figure...
+                topKaColours[j] = ContextCompat.getColor(getActivity(), _knowledgeAreas[currentKaId].getColourResource());
+
+            }
+
+
+            BarDataSet dataSet = new BarDataSet(entries, "TopKA");
+            dataSet.setValueFormatter(new PrefixedNonDecimalValueFormatter(getActivity().getString(R.string.topics_lowercase)));
+            dataSet.setColors(topKaColours);
+
+            BarData data = new BarData(dataSet);
+            data.setBarWidth(0.9f);
+
+
+            horizontalBarChart.setDrawBorders(false);
+            horizontalBarChart.getLegend().setEnabled(false);
+
+            // This description part uses a formatted string that reads something along the lines of 'From a total of  X topics'
+            Description chartDescription = new Description();
+            chartDescription.setText(String.format(getResources().getString(R.string.bar_chart_description), degreeScore.getTotalTopicCount()));
+            chartDescription.setTextAlign(Paint.Align.RIGHT);
+            chartDescription.setTextSize((int) getResources().getDimension(R.dimen.chart_top_ka_description_text_size));
+            horizontalBarChart.setDescription(chartDescription);
+
+            horizontalBarChart.setFitBars(true);
+
+            // All the gibberish below simply deactivates most of the grid lines to get the effect I wanted
+            horizontalBarChart.getXAxis().setEnabled(true);
+            horizontalBarChart.getXAxis().setDrawAxisLine(false);
+            horizontalBarChart.getXAxis().setDrawGridLines(false);
+            // This puts the text to the LEFT of the chart
+            horizontalBarChart.getXAxis().setPosition(XAxis.XAxisPosition.BOTTOM);
+            // And this part replaces the X values by actual labels
+            horizontalBarChart.getXAxis().setValueFormatter(new IndexAxisValueFormatter(topKaNames));
+
+            horizontalBarChart.getAxisLeft().setEnabled(false);
+            horizontalBarChart.getAxisLeft().setDrawGridLines(false);
+            horizontalBarChart.getAxisLeft().setDrawZeroLine(true);
+            horizontalBarChart.getAxisLeft().setDrawLabels(false);
+            horizontalBarChart.getAxisLeft().setAxisMinimum(0f);
+
+            horizontalBarChart.getAxisRight().setEnabled(false);
+            horizontalBarChart.getAxisRight().setDrawLabels(false);
+            horizontalBarChart.getAxisRight().setDrawGridLines(false);
+
+            horizontalBarChart.animateY(2000);
+
+            // This will disable zooming in the scale which pretty much destroys the chart
+            horizontalBarChart.setScaleEnabled(false);
+
+            horizontalBarChart.setData(data);
+
+            horizontalBarChart.invalidate();
 
             return horizontalBarChart;
         }
@@ -699,16 +791,50 @@ public class MultiScoreChartFragment extends Fragment {
     }
 
     /**
-     * Feeds data and draws an Horizontal Bar Chart with a Top X KAs
+     * Creates the dual Top KA Topics Horizontal chart that is used to compare two degree combination scores
+     * concerning their most matched KA Topics.
      */
     private void updateTopKaTopicsChart(@IntRange(from = 0, to = 102) int numberOfTopicsToDisplay) {
 
         _topKaTopicsViewPager.setAdapter(new TopKaTopicsComparisonAdapter(numberOfTopicsToDisplay));
-        _topKaTopicsTabs.setupWithViewPager(_topKaViewPager);
+        _topKaTopicsTabs.setupWithViewPager(_topKaTopicsViewPager);
+
+        //Initial colouring - defaults
+        _topKaTopicsTabs.setTabTextColors(getResources().getColor(R.color.unselectedTextColor), getResources().getColor(R.color.scoreComparisonMaterialBlue500));
+        _topKaTopicsTabs.setSelectedTabIndicatorColor(getResources().getColor(R.color.scoreComparisonMaterialBlue500));
+        // On selected tab colouring
+        _topKaTopicsTabs.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+            @Override
+            public void onTabSelected(TabLayout.Tab tab) {
+                _topKaTopicsViewPager.setCurrentItem(tab.getPosition());
+                if (tab.getPosition() == 0) {
+                    _topKaTopicsTabs.setSelectedTabIndicatorColor(getResources().getColor(R.color.scoreComparisonMaterialBlue500));
+                    _topKaTopicsTabs.setTabTextColors(getResources().getColor(R.color.unselectedTextColor), getResources().getColor(R.color.scoreComparisonMaterialBlue500));
+                } else {
+                    _topKaTopicsTabs.setSelectedTabIndicatorColor(getResources().getColor(R.color.scoreComparisonMaterialRed500));
+                    _topKaTopicsTabs.setTabTextColors(getResources().getColor(R.color.unselectedTextColor), getResources().getColor(R.color.scoreComparisonMaterialRed500));
+                }
+            }
+
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {
+
+            }
+
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) {
+
+            }
+        });
+
         _topKaTopicsProgressBar.setVisibility(View.INVISIBLE);
 
     }
 
+
+    /**
+     * This adapter is needed because I am using a Page Viewer and avoiding the common Fragment approach.
+     */
     private class TopKaTopicsComparisonAdapter extends PagerAdapter {
 
         private int _numberOfKaTopicsToDisplay;
@@ -734,10 +860,20 @@ public class MultiScoreChartFragment extends Fragment {
         }
 
 
+        /**
+         * This has the actual work of creating the Horizontal Bar Chart, adapting it to the screen sizing, filling ti with data and
+         * finally styling it. It is a single function because it is needed multiple times, one for each Degree Combination Score being compared.
+         *
+         * @param degreeScore
+         * @param numberOfKaTopicsToDisplay The number of bars that will be displayed. The higher the more complete picture of the KA topics distribution,
+         *                                  but also the more difficult to see in the screen.
+         * @return
+         */
         private HorizontalBarChart createTopKaTopicsChart(SweScore degreeScore, int numberOfKaTopicsToDisplay) {
 
             HorizontalBarChart topKaTopicsChart = new HorizontalBarChart(getActivity());
 
+            // NOTE: this hardcoded value should actually be calculated. But alas, I will just call this BETA like Google.
             ViewGroup.LayoutParams layoutParams = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, (int) Utils.convertDpToPixel(800f));
             topKaTopicsChart.setLayoutParams(layoutParams);
 
@@ -804,8 +940,6 @@ public class MultiScoreChartFragment extends Fragment {
 
             // All the gibberish below simply deactivates most of the grid lines to get the effect I wanted
             topKaTopicsChart.getXAxis().setEnabled(true);
-            //_topKaTopicsChart.getXAxis().setDrawAxisLine(false);
-            //_topKaTopicsChart.getXAxis().setDrawLabels(true);
             topKaTopicsChart.getXAxis().setDrawAxisLine(false);
             topKaTopicsChart.getXAxis().setDrawGridLines(false);
             // This puts the text to the LEFT of the chart
@@ -823,7 +957,6 @@ public class MultiScoreChartFragment extends Fragment {
 
             topKaTopicsChart.getAxisRight().setEnabled(false);
             topKaTopicsChart.getAxisRight().setDrawLabels(false);
-            //_topKaTopicsChart.getAxisRight().setDrawZeroLine(true);
             topKaTopicsChart.getAxisRight().setDrawGridLines(false);
 
             topKaTopicsChart.animateY(2000);
@@ -952,6 +1085,7 @@ public class MultiScoreChartFragment extends Fragment {
             updateDegreeOverViewInfo();
             updateCoverageChart();
             updateSubtitleChart();
+            updateKADistributionChart();
             updateTopKaChart(5);
             updateTopKaTopicsChart(10);
 
