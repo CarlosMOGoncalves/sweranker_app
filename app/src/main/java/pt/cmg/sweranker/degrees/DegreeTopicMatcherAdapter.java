@@ -442,12 +442,7 @@ public class DegreeTopicMatcherAdapter extends RecyclerView.Adapter<RecyclerView
             }
 
 
-            _submitButton.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    _listener.onMatchSubmitted(_currentMatches);
-                }
-            });
+            _submitButton.setOnClickListener(v -> _listener.onMatchSubmitted(_currentMatches));
         }
     }
 

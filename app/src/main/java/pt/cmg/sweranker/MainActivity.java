@@ -112,7 +112,7 @@ public class MainActivity extends AppCompatActivity implements
         }
     };
 
-    private ServiceConnection _matcherServiceConnection = new ServiceConnection() {
+    private ServiceConnection _rankingServiceConnection = new ServiceConnection() {
         @Override
         public void onServiceConnected(ComponentName name, IBinder service) {
             RankingService.RankingBinder binder = (RankingService.RankingBinder) service;
@@ -136,7 +136,7 @@ public class MainActivity extends AppCompatActivity implements
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.global_layout);
         resetToolbar();
 
 
@@ -173,7 +173,7 @@ public class MainActivity extends AppCompatActivity implements
      * Transforms the standard toolbar into a much loved and simpler "BACK" toolbar with a custom name, if needed.
      * This is basically the toolbar but with a back arrow instead of the usual menu.
      *
-     * @param toolbarTitle
+     * @param toolbarTitle The title to be displayed in the Back-only toolbar
      */
     private void changeToolbarIntoBackButton(String toolbarTitle) {
 
@@ -187,14 +187,6 @@ public class MainActivity extends AppCompatActivity implements
         }
     }
 
-
-    public void hideToolBar() {
-        _toolbar.setElevation(-1f);
-    }
-
-    public void showToolBar() {
-        _toolbar.setElevation(4f);
-    }
 
     @Override
     protected void onStart() {
@@ -217,7 +209,7 @@ public class MainActivity extends AppCompatActivity implements
     private void startRankingService() {
         Intent startDegreeMatcherService = new Intent(this, RankingService.class);
         startService(startDegreeMatcherService);
-        bindService(startDegreeMatcherService, _matcherServiceConnection, Context.BIND_AUTO_CREATE);
+        bindService(startDegreeMatcherService, _rankingServiceConnection, Context.BIND_AUTO_CREATE);
     }
 
     @Override
@@ -326,9 +318,6 @@ public class MainActivity extends AppCompatActivity implements
      * Creates and sets a shared element transition from source fragment {@link SwebokKAsFragment} to the target detailed fragment {@link SwebokKADetailsFragment}.
      * The shared element is the KA decorative image and it will be set on the fragment transaction.
      * This function only creates the Transition animation for the image.
-     *
-     * @param targetFragment
-     * @param transitionDuration
      */
     private Transition createImageEnterSharedElementTransition(Fragment targetFragment, long transitionDuration) {
 
@@ -343,9 +332,6 @@ public class MainActivity extends AppCompatActivity implements
      * Creates and sets a shared element transition from target fragment {@link SwebokKADetailsFragment} BACK TO the source fragment {@link SwebokKAsFragment}.
      * The shared element is the KA decorative image and it will be set on the fragment transaction.
      * This function only creates the Transition animation for the image.
-     *
-     * @param targetFragment
-     * @param transitionDuration
      */
     private Transition createImageExitSharedElementTransition(Fragment targetFragment, long transitionDuration) {
 
@@ -396,10 +382,6 @@ public class MainActivity extends AppCompatActivity implements
         long transitionDuration = 500;
 
         Fragment degreeDetailsFragment = DegreeDetailsFragment.newInstance(degreeId);
-
-        Transition imageEnterTransition = createImageEnterSharedElementTransition(degreeDetailsFragment, transitionDuration);
-        Transition sharedImageExitTransition = createImageExitSharedElementTransition(degreeDetailsFragment, transitionDuration);
-
 
         // This is important. I used a simples transition but the real magic is that I change the
         // toolbar into a back button toolbar so that it is easier to navigate.
@@ -645,5 +627,26 @@ public class MainActivity extends AppCompatActivity implements
                 .addToBackStack(null)
                 .commit();
     }
+
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        stopServices();
+    }
+
+    private void stopServices() {
+        if (_isRankingServiceBound) {
+            unbindService(_rankingServiceConnection);
+        }
+        if (_isDegreesServiceBound) {
+            unbindService(_degreesServiceConnection);
+        }
+        if (_isSwebokServiceBound) {
+            unbindService(_swebokServiceConnection);
+        }
+
+    }
+
 
 }

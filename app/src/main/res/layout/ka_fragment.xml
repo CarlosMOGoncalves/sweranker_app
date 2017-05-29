@@ -40,8 +40,9 @@
             android:id="@+id/ka_details_topics_list"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:paddingBottom="@dimen/ka_detail_list_padding"
-            android:clipToPadding="false" />
+            android:background="@color/cardview_light_background"
+            android:clipToPadding="false"
+            android:paddingBottom="@dimen/ka_detail_list_padding" />
 
     </LinearLayout>
 

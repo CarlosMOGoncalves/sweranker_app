@@ -496,7 +496,6 @@ public class RankingService extends Service {
 
             Log.i("RankingService", "Successfully saved match for:" + classMatch.getDegreeClassId());
             _degreeMatches.put(classMatch.getDegreeClassId(), classMatch);
-//            _degreeClassRankings.put(classMatch.getDegreeClassId(), evaluateClass(classMatch));
 
             saveMatchesToSingleFile();
             return true;
