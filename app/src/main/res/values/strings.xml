@@ -1446,26 +1446,59 @@
 
     <string name="uminho_miei">MiEI</string>
     <string name="uminho_miei_fullname">Mestrado Integrado em Engenharia Informática</string>
-    <string name="uminho_miei_description">Mestrado Integrado em Engenharia Informática da Universidade do Minho. 5 anos de estudo.</string>
+    <string name="uminho_miei_description">O Mestrado Integrado em Engenharia Informática (MiEI) é um curso integrado do primeiro e segundo ciclo de estudos do ensino superior, ministrado na Universidade do Minho, com a duração de 5 anos lectivos, 10 semestres lectivos, a 40 semanas de estudo a tempo inteiro por ano e a um total de 300 ECTS.\n\nO MiEI tem por objectivo preparar engenheiros informáticos, aptos em todas as fases actualmente reconhecidas no rigoroso processo de análise, concepção e implementação de soluções informáticas. Os seus licenciados devem adquirir durante o curso grande experiência teórica e prática na análise de sistemas de software, na especificação dos requisitos desses mesmos sistemas, nas técnicas de construção de protótipos e em todas as fases da sua instalação, na gestão de projectos informáticos, no teste, instalação e manutenção de aplicações informáticas, e, consequentemente, dos sistemas ou redes que as suportam.\n\nO MiEI tem como objectivo básico providenciar durante o curso aos seus alunos a perícia e o conhecimento (teórico e prático) necessários para:\n
+        - a análise e especificação de requisitos de sistemas de software a implementar;\n
+        - a aplicação de técnicas de construção de protótipos;\n
+        - o projecto, concepção, desenvolvimento, teste e manutenção de aplicações informáticas;\n
+        - a implementação de redes de comunicação por computador e infra-estruturas de suporte;\n
+        - a gestão e implementação de projectos informáticos, incluindo o projecto e implementação de sistemas de computação.\n\nComo futuros engenheiros deverão, também, ter sempre a preocupação do rigor, quer na execução quer na gestão do projecto, avaliando a sua qualidade, custos e impacto económico, bem como nas preocupações de implementação dos seus produtos nas organizações destino.</string>
     <string name="uminho">Universidade do Minho</string>
 
-    <string name="uc_mei">MEI</string>
-    <string name="uc_mei_fullname">Mestrado em Engenharia Informática</string>
-    <string name="uc_mei_description">Mestrado em Engenharia Informática da Universidade de Coimbra. 5 anos de estudo.</string>
+    <string name="uc_mei">LEI + MEI</string>
+    <string name="uc_mei_fullname">Licenciatura em Engenheria Informatica e Mestrado em Engenharia Informática</string>
+    <string name="uc_mei_description">O curso de licenciatura em Engenharia Informática tem como objectivo principal fornecer aos futuros licenciados os princípios básicos, teorias, métodos e práticas da Engenharia Informática e da Computação de forma a que possam dominar todos os conceitos para a sua intervenção na sociedade ou complementar a sua formação com o 2º ciclo seguindo a vida prática ou a carreira científica. Para a concretização deste objectivo geral, o ciclo de estudos pretende conciliar os seguintes objectivos específicos: instrumentais, sistémicas e interpessoais.\n\n
+    - No plano instrumental, procura-se que os licenciados em Engenharia Informática adquiram competências para articular de forma harmoniosa a complementaridade entre análise e síntese, que interiorizem as dinâmicas da resolução de problemas, que apreendam as lógicas e as práticas da gestão de informação e que perspectivem o exercício dessas competências segundo abordagens de planeamento organizacional centradas na construção de valor para o cliente e na transformação da complexidade em desempenho.\n
+    - Ao nível sistémico, procura-se, reforçar a sua autonomia e capacidade para aprender, a sua adaptabilidade a situações novas, o seu sentido projectivo na aplicação dos saberes e competências e a sua aculturação para a qualidade e a excelência.\n
+    - Finalmente, ao nível interpessoal, procura-se que os estudantes adquiram outro tipo de competências, que contribuam para o desenvolvimento da vertente pessoal e cívica, da capacidade de adquirir conhecimentos autonomamente, de sentido crítico e de responsabilidade, de gestão de informação, de trabalho em grupo e em equipas interdisciplinares, da aprendizagem colectiva e o sentido de corpo na construção de sucesso, etc.\n\nO Mestrado em Engenharia Informática (MEI) propõe quatro áreas de especialização de acordo com as últimas recomendações curriculares da Association for Computer Machinery (ACM) e do Institute for Electrical and Electronic Engineers (IEEE):\n
+        - Comunicações, Serviços e Infra-estrtuturas\n
+        - Sistemas Inteligentes\n
+        - Sistemas de Informação\n
+        - Engenharia de Software.\n\nPropõe-se assim a criação de especializações para dar resposta às necessidades do mercado, tanto a nível da indústria e serviços, como a nível da investigação, ambicionando um impacto internacional a médio prazo.
+    </string>
     <string name="uc">Universidade de Coimbra</string>
 
     <string name="uav_mei">LEI + MEI</string>
     <string name="uav_mei_fullname">Licenciatura em Engenheria Informatica + Mestrado em Engenharia Informática</string>
-    <string name="uav_mei_description">Licenciatura em Engenheria Informatica seguida de Mestrado em Engenharia Informática da Universidade de Aveiro. 3 + 2 anos de estudo.</string>
+    <string name="uav_mei_description">A Licenciatura em Engenharia Informática da Universidade de Aveiro tem por finalidade fornecer uma formação sólida em engenharia informática, área que se tem vindo a revelar como o principal motor de desenvolvimento nas economias avançadas.\n\nMais concretamente, esta licenciatura pretende fornecer as seguintes competências:\n
+- Compreender e utilizar metodologias de desenvolvimento de software em projectos de pequena e larga escala.\n
+- Planear e escrever programas correctos, robustos, eficientes, bem organizados e bem documentados.\n
+- Compreender e utilizar modelos e abstracções na concepção, implementação e utilização de sistemas computacionais e de informação.\n
+- Entender os aspectos fundamentais em arquitectura de computadores e sistemas operativos, e a sua importância no desenvolvimento e execução de aplicações informáticas.\n
+- Aplicar conhecimento nas áreas de cálculo, probabilidades, estatística e matemática discreta em problemas da área da informática.\n
+- Aplicar técnicas de avaliação e gestão de qualidade em projectos de Engenharia Informática.\n
+- Comunicar eficazmente e saber trabalhar em equipas multidisciplinares.\n
+- Reconhecer a necessidade de, e ter a capacidade para, se envolver activamente num processo contínuo de aprendizagem ao longo da vida.\n\nOs objectivos do Mestrado em Engenharia Informática estão alinhados com esta estratégia e com as necessidades do mercado, procurando-se:\n
+- Dotar o tecido empresarial da região, nacional e internacional de quadros superiores habilitados;\n
+- omentar uma formação avançada centrada em inovação, desenvolvimento e investigação em engenharia informática</string>
     <string name="uav">Universidade de Aveiro</string>
 
     <string name="ist_meic">LEIC + MEIC</string>
     <string name="ist_meic_fullname">Licenciatura em Engenheria Informatica e de Computadores e Mestrado em Engenharia Informática e de Computadores</string>
-    <string name="ist_meic_description">Licenciatura em Engenheria Informatica e de Computadores seguida de Mestrado em Engenharia Informática e de Computadores do Insituto Superio Técnico da Universidade de Lisboa. 3 + 2 anos de estudo.</string>
+    <string name="ist_meic_description">A licenciatura em Engenharia Informática e de Computadores (LEIC) é uma das maiores licenciaturas do Técnico e tem já provas dadas de sucesso no mercado de emprego, tanto a nível nacional como internacional. Os diplomados da LEIC são reconhecidos como profissionais competentes com conhecimentos sólidos a nível da engenharia informática e fácil adaptabilidade à evolução constante das tecnologias de informação.\n\nNo final da LEIC o aluno poderá especializar-se numa das áreas oferecidas no  Mestrado em Engenharia Informática e Computadores do Técnico, num outro curso afim, ou ainda entrar no mercado de trabalho.\n\nO Mestrado em Eng. Informática e de Computadores está alicerçado na forte formação de base dada pelo primeiro ciclo, oferece especializações atractivas para os alunos e para o mercado servindo ainda como base para os alunos que pretendam ingressar num Programa de Doutoramento, e cria uma base sólida para a intervenção do Departamento de Engenharia Informática do IST na formação ao longo da vida, que representará uma componente cada vez mais importante do mercado da educação avançada.\n\nNo final do Mestrado em Engenharia Informática e de Computadores os alunos poderão entrar no mercado de trabalho. Tendo em conta as especializações acima indicadas, os alunos têm uma gama alargada de competências profissionais específicas, das quais se destacam:\n
+        - Análise e projecto de sistemas complexos\n
+        - Técnicas de gestão de projecto de sistemas\n
+        - Modelação e uso de dados em sistemas informáticos\n
+        - Desenvolvimento de aplicações em sistemas distribuídos\n
+        - Gestão, configuração e operação de sistemas de computadores\n
+        - Técnicas avançadas de resolução de problemas\n
+        - Projecto de sistemas adaptáveis, para resolução de problemas complexos\n
+        - Projecto de sistemas que interajam com seres humanos usando interfaces naturais\n
+        - Controlo e robótica\n
+        - Modelação e controlo de sistemas industriais\n
+        - Técnicas genéricas de optimização\n\nOs empregadores típicos para engenheiros que tenham efectuado o curso de Mestrado em Engenharia Informática e de Computadores no IST, campus da Alameda, são os seguintes: empresas de serviços da área da banca e seguros, empresas fornecedoras de serviços informáticos, empresas de telecomunicações, empresas de desenvolvimento de software.
+    </string>
     <string name="ist">Instituto Superior Técnico</string>
     <string name="title_activity_degree_class">DegreeClassActivity</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>
