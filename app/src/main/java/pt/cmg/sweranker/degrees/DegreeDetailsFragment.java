@@ -1,6 +1,7 @@
 package pt.cmg.sweranker.degrees;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.app.Fragment;
 import android.content.Context;
 import android.os.AsyncTask;
@@ -9,6 +10,9 @@ import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -122,6 +126,46 @@ public class DegreeDetailsFragment extends Fragment {
             _degree = _parentActivity.getDegree(_degreeId);
         }
 
+        setHasOptionsMenu(true);
+    }
+
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        inflater.inflate(R.menu.app_bar_degree_calculate_menu, menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+
+        switch (id) {
+            case R.id.action_calculate:
+                createAndShowFilterDialog();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
+
+
+    private void createAndShowFilterDialog() {
+        AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(getActivity());
+
+
+        dialogBuilder
+                .setTitle(getResources().getString(R.string.warning))
+                .setMessage(getResources().getString(R.string.calculation_dialog_message))
+                .setPositiveButton(getResources().getString(R.string.proceed), (dialog, which) -> {
+                    // The positive button launches a calculation
+                    new CombinationCalculator().execute();
+                    dialog.cancel();
+
+                })
+                .setNegativeButton(getResources().getString(R.string.cancel), (dialog, id) ->
+                        dialog.cancel()
+                );
+
+        dialogBuilder.create().show();
     }
 
     @Override
@@ -147,7 +191,7 @@ public class DegreeDetailsFragment extends Fragment {
         }
 
         // This button is a case to review. It probably should not be here. Most of the time is hidden as it triggers BIG processing.
-        calculateScoreButton.setOnClickListener(view -> new YearlyRankingCalculator().execute());
+        calculateScoreButton.setOnClickListener(view -> new CombinationCalculator().execute());
 
         ViewPager viewPager = (ViewPager) _myView.findViewById(R.id.degree_viewPager);
         viewPager.setAdapter(new DegreeViewPagerAdapter(this.getActivity(), _degree, new DegreeViewPagerAdapter.OnDegreeClassItemSelected() {
@@ -168,7 +212,7 @@ public class DegreeDetailsFragment extends Fragment {
      * This is a background thread whose purpose is to calculate and save all the degree combinations and its scores.
      * It is heavy stuff although I am still debating if I need it to be here (which I don't think I do).
      */
-    private class YearlyRankingCalculator extends AsyncTask<Void, Void, Void> {
+    private class CombinationCalculator extends AsyncTask<Void, Void, Void> {
 
 
         @Override

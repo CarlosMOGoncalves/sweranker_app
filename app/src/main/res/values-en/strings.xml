@@ -39,6 +39,13 @@
     <string name="dismiss">Dismiss</string>
     <string name="action_mode_title">Compare to...</string>
     <string name="action_mode_title_complete">Compare</string>
+    <string name="action_calculate">Calculate</string>
+
+    <string name="warning">Warning!</string>
+    <string name="proceed">Do it!</string>
+    <string name="cancel">Cancel</string>
+    <string name="calculation_dialog_message">You are about to trigger a demanding action that may take several minutes to complete. Are you sure you wish to proceed?</string>
+
 
     <string name="chart_degree_overview_label">Degree Overview</string>
     <string name="chart_subtitle">Subtitle</string>
