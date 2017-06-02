@@ -612,8 +612,6 @@ public class DegreeDetailsFragment extends Fragment {
                         .findAll();
 
                 List<SweScore> results = new ArrayList<>();
-//                long startMillis = System.currentTimeMillis();
-//                Log.i("Calculation", "Started calculation of batch of Degree Scores with id: " + _id);
                 for (int i = _startPosition; i < _endPosition; i++) {
 
                     DegreeClassCombination currentDegreeCombination = allCombinations.get(i);
@@ -635,16 +633,8 @@ public class DegreeDetailsFragment extends Fragment {
                     results.add(calculatedScore);
 
                 }
-//                long endMillis = System.currentTimeMillis();
-//                Log.i("Calculation", "Ended calculation of batch of Degree Scores with id " + _id + ", took " + ((endMillis - startMillis) / 1000) + " seconds");
-
-
-//                startMillis = System.currentTimeMillis();
-//                Log.i("Calculation", "Started to save a batch of Degree Scores with id: " + _id);
                 database.executeTransaction(r -> r.insertOrUpdate(results));
-//                endMillis = System.currentTimeMillis();
                 Log.i("Calculation", "Ended saving a batch of Degree Scores with id: " + _id);
-//                Log.i("Calculation", "Ended saving a batch of Degree Scores with id: " + _id + ", took " + ((endMillis - startMillis) / 1000) + " seconds");
                 results.clear();
 
                 database.close();

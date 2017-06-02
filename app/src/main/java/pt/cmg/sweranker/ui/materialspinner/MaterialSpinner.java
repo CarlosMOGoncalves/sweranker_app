@@ -45,10 +45,13 @@ public class MaterialSpinner extends AppCompatTextView {
     private OnNothingSelectedListener _onNothingSelectedListener;
 
     private Object _selectedObject = null;
+
     private MaterialSpinnerBaseAdapter _adapter;
+
     private PopupWindow _popupWindow;
-    private RecyclerView _listView;
+    private RecyclerView _recyclerView;
     private Drawable _arrowDrawable;
+
     private boolean _hideArrow;
     private boolean _isNothingSelected;
     private int _popupWindowMaxHeight;
@@ -78,8 +81,10 @@ public class MaterialSpinner extends AppCompatTextView {
 
     private void init(Context context, AttributeSet attrs) {
         TypedArray styledAttributes = context.obtainStyledAttributes(attrs, R.styleable.MaterialSpinner);
+
         int defaultColor = getTextColors().getDefaultColor();
-        boolean rtl = Utils.isRtl(context);
+
+        boolean isRightToLeft = Utils.isRtl(context);
 
         try {
             _backgroundColor = styledAttributes.getColor(R.styleable.MaterialSpinner_materialspinner_background_color, Color.WHITE);
@@ -96,7 +101,7 @@ public class MaterialSpinner extends AppCompatTextView {
         Resources resources = getResources();
         int left, right, bottom, top;
         left = right = bottom = top = resources.getDimensionPixelSize(R.dimen.material_spinner_padding_top);
-        if (rtl) {
+        if (isRightToLeft) {
             right = resources.getDimensionPixelSize(R.dimen.material_spinner_padding_left);
         } else {
             left = resources.getDimensionPixelSize(R.dimen.material_spinner_padding_left);
@@ -106,7 +111,7 @@ public class MaterialSpinner extends AppCompatTextView {
         setClickable(true);
         setPadding(left, top, right, bottom);
         setBackgroundResource(R.drawable.material_spinner_selector);
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1 && rtl) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1 && isRightToLeft) {
             setLayoutDirection(View.LAYOUT_DIRECTION_RTL);
             setTextDirection(View.TEXT_DIRECTION_RTL);
         }
@@ -114,19 +119,19 @@ public class MaterialSpinner extends AppCompatTextView {
         if (!_hideArrow) {
             _arrowDrawable = Utils.getDrawable(context, R.drawable.material_spinner_arrow).mutate();
             _arrowDrawable.setColorFilter(_arrowColor, PorterDuff.Mode.SRC_IN);
-            if (rtl) {
+            if (isRightToLeft) {
                 setCompoundDrawablesWithIntrinsicBounds(_arrowDrawable, null, null, null);
             } else {
                 setCompoundDrawablesWithIntrinsicBounds(null, null, _arrowDrawable, null);
             }
         }
 
-        _listView = new RecyclerView(context);
-        _listView.setId(getId());
-        _listView.setLayoutManager(new LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false));
+        _recyclerView = new RecyclerView(context);
+        _recyclerView.setId(getId());
+        _recyclerView.setLayoutManager(new LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false));
 
         _popupWindow = new PopupWindow(context);
-        _popupWindow.setContentView(_listView);
+        _popupWindow.setContentView(_recyclerView);
         _popupWindow.setOutsideTouchable(true);
         _popupWindow.setFocusable(true);
 
@@ -333,7 +338,7 @@ public class MaterialSpinner extends AppCompatTextView {
 
 
     private void setAdapterInternal(@NonNull MaterialSpinnerBaseAdapter adapter) {
-        _listView.setAdapter(adapter);
+        _recyclerView.setAdapter(adapter);
 
         if (_selectedIndex >= _numberOfItems) {
             _selectedIndex = 0;
