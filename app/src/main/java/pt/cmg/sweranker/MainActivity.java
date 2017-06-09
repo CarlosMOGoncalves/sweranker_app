@@ -2,6 +2,7 @@ package pt.cmg.sweranker;
 
 import android.app.Activity;
 import android.app.Fragment;
+import android.arch.lifecycle.ViewModelProviders;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
@@ -72,6 +73,7 @@ public class MainActivity extends AppCompatActivity implements
     boolean _isRankingServiceBound = false;
 
     private Toolbar _toolbar;
+    private MainActivityViewModel _viewModel;
 
     private List<KnowledgeArea> _tempKnowledgeAreas;
     private List<Degree> _tempDegrees;
@@ -133,10 +135,16 @@ public class MainActivity extends AppCompatActivity implements
     };
 
 
+    private ActivityComponent _component;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.global_layout);
+        _component = DaggerActivityComponent.builder().standardDatamodelModule(new StandardDatamodelModule(this)).build();
+        _component.inject(this);
+
+        _viewModel = ViewModelProviders.of(this).get(MainActivityViewModel.class);
         resetToolbar();
 
 
@@ -191,7 +199,7 @@ public class MainActivity extends AppCompatActivity implements
     @Override
     protected void onStart() {
         super.onStart();
-        startSwebokService();
+//        startSwebokService();
     }
 
     private void startSwebokService() {
