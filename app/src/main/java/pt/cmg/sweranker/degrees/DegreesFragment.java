@@ -2,20 +2,38 @@ package pt.cmg.sweranker.degrees;
 
 import android.app.Activity;
 import android.app.Fragment;
+import android.arch.lifecycle.LifecycleRegistry;
+import android.arch.lifecycle.LifecycleRegistryOwner;
+import android.arch.lifecycle.ViewModelProviders;
 import android.content.Context;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ProgressBar;
 
+import java.util.List;
+
+import pt.cmg.sweranker.MainActivity;
+import pt.cmg.sweranker.MainActivityViewModel;
 import pt.cmg.sweranker.R;
 import pt.cmg.sweranker.ui.ConstantSpacingItemDecorator;
 
 
-public class DegreesFragment extends Fragment {
+public class DegreesFragment extends Fragment implements LifecycleRegistryOwner {
+
+
+    LifecycleRegistry lifecycleRegistry = new LifecycleRegistry(this);
+
+    @Override
+    public LifecycleRegistry getLifecycle() {
+        return lifecycleRegistry;
+    }
+
 
     /**
      * This is a reference to the parent activity that this fragment will be attached to on onAttach()
@@ -25,7 +43,8 @@ public class DegreesFragment extends Fragment {
 
     private RecyclerView _degreesGrid;
     private View _myRootView;
-
+    private ProgressBar _progressBar;
+    private MainActivityViewModel _sharedViewModel;
 
     public DegreesFragment() {
     }
@@ -57,6 +76,12 @@ public class DegreesFragment extends Fragment {
 
     }
 
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        _sharedViewModel = ViewModelProviders.of((MainActivity) this.getActivity()).get(MainActivityViewModel.class);
+    }
 
     @Override
     public void onAttach(Context parentActivity) {
@@ -83,10 +108,24 @@ public class DegreesFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         _myRootView = inflater.inflate(R.layout.degrees_grid_fragment, container, false);
+        _progressBar = (ProgressBar) _myRootView.findViewById(R.id.degrees_progress_bar);
+        _progressBar.setVisibility(View.VISIBLE);
 
         _degreesGrid = (RecyclerView) _myRootView.findViewById(R.id.degrees_grid);
+        _degreesGrid.setVisibility(View.INVISIBLE);
 
-        DegreeAdapter adapter = new DegreeAdapter(this.getActivity(), _parentActivity.getAllDegrees(), new DegreeAdapter.OnDegreeAdapterListener() {
+        if (!_sharedViewModel.getDegrees().getValue().isEmpty()) {
+            fillDegreesGrid(_sharedViewModel.getDegrees().getValue());
+        }
+        _sharedViewModel.getDegrees().observe(this, degrees -> fillDegreesGrid(degrees));
+
+
+        return _myRootView;
+    }
+
+    private void fillDegreesGrid(List<Degree> allDegrees) {
+
+        DegreeAdapter adapter = new DegreeAdapter(this.getActivity(), allDegrees, new DegreeAdapter.OnDegreeAdapterListener() {
 
             @Override
             public void loadDetailedDegreeFragment(View rootView, int degreeId) {
@@ -104,7 +143,9 @@ public class DegreesFragment extends Fragment {
         _degreesGrid.setItemAnimator(new DefaultItemAnimator());
         _degreesGrid.setAdapter(adapter);
 
-        return _myRootView;
+        _progressBar.setVisibility(View.INVISIBLE);
+        _degreesGrid.setVisibility(View.VISIBLE);
+
     }
 
 

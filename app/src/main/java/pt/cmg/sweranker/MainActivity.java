@@ -2,6 +2,9 @@ package pt.cmg.sweranker;
 
 import android.app.Activity;
 import android.app.Fragment;
+import android.arch.lifecycle.LifecycleRegistry;
+import android.arch.lifecycle.LifecycleRegistryOwner;
+import android.arch.lifecycle.ViewModelProvider;
 import android.arch.lifecycle.ViewModelProviders;
 import android.content.ComponentName;
 import android.content.Context;
@@ -30,6 +33,8 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.inject.Inject;
+
 import pt.cmg.sweranker.degrees.Degree;
 import pt.cmg.sweranker.degrees.DegreeClass;
 import pt.cmg.sweranker.degrees.DegreeClassFragment;
@@ -38,24 +43,28 @@ import pt.cmg.sweranker.degrees.DegreeDetailsFragment;
 import pt.cmg.sweranker.degrees.DegreeTopicMatcherFragment;
 import pt.cmg.sweranker.degrees.DegreesFragment;
 import pt.cmg.sweranker.degrees.DegreesLoaderService;
+import pt.cmg.sweranker.dependencies.DaggerMainActivityComponent;
+import pt.cmg.sweranker.dependencies.MainActivityComponent;
+import pt.cmg.sweranker.dependencies.MainActivityModule;
 import pt.cmg.sweranker.ranking.MultiScoreChartFragment;
 import pt.cmg.sweranker.ranking.RankingFragment;
 import pt.cmg.sweranker.ranking.RankingService;
 import pt.cmg.sweranker.ranking.ScoreChartFragment;
 import pt.cmg.sweranker.swebok.KnowledgeArea;
 import pt.cmg.sweranker.swebok.KnowledgeAreaTopic;
-import pt.cmg.sweranker.swebok.SwebokKADetailsFragment;
-import pt.cmg.sweranker.swebok.SwebokKAsFragment;
+import pt.cmg.sweranker.swebok.SwebokDetailedFragment;
 import pt.cmg.sweranker.swebok.SwebokLoaderService;
+import pt.cmg.sweranker.swebok.SwebokMasterFragment;
 import pt.cmg.sweranker.ui.ImageSizeAndPlaceTransition;
 import pt.cmg.sweranker.ui.OnEndTransitionListener;
 import pt.cmg.sweranker.ui.OnStartTransitionListener;
 import pt.cmg.sweranker.ui.UXUtils;
 
 public class MainActivity extends AppCompatActivity implements
+        LifecycleRegistryOwner,
         NavigationView.OnNavigationItemSelectedListener,
-        SwebokKAsFragment.OnSwebokFragmentInteractionListener,
-        SwebokKADetailsFragment.OnKaDetailsFragmentInteractionListener,
+        SwebokMasterFragment.OnSwebokFragmentInteractionListener,
+        SwebokDetailedFragment.OnKaDetailsFragmentInteractionListener,
         DegreesFragment.DegreesFragmentInteractionListener,
         DegreeDetailsFragment.DegreeDetailsFragmentInteractionListener,
         DegreeClassFragment.DegreeClassFragmentInteractionListener,
@@ -73,8 +82,6 @@ public class MainActivity extends AppCompatActivity implements
     boolean _isRankingServiceBound = false;
 
     private Toolbar _toolbar;
-    private MainActivityViewModel _viewModel;
-
     private List<KnowledgeArea> _tempKnowledgeAreas;
     private List<Degree> _tempDegrees;
 
@@ -135,16 +142,29 @@ public class MainActivity extends AppCompatActivity implements
     };
 
 
-    private ActivityComponent _component;
+    private MainActivityComponent _component;
+
+    @Inject
+    ViewModelProvider.Factory viewmodelFactory;
+
+    private MainActivityViewModel _viewModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.global_layout);
-        _component = DaggerActivityComponent.builder().standardDatamodelModule(new StandardDatamodelModule(this)).build();
+
+        _component = DaggerMainActivityComponent.builder()
+                .applicationComponent(SweRankerApplication.get(this).getComponent())
+                .mainActivityModule(new MainActivityModule(this))
+                .build();
+
         _component.inject(this);
 
-        _viewModel = ViewModelProviders.of(this).get(MainActivityViewModel.class);
+        _viewModel = ViewModelProviders.of(this, viewmodelFactory).get(MainActivityViewModel.class);
+
+        _viewModel.init();
+
         resetToolbar();
 
 
@@ -249,7 +269,7 @@ public class MainActivity extends AppCompatActivity implements
             // Careful with his, it is here because of the animations on KA details.
             // When pressed the menu and selected one item the animations would not run.
             getFragmentManager().popBackStackImmediate();
-            getFragmentManager().beginTransaction().replace(R.id.content_area, SwebokKAsFragment.newInstance(), "Swebok").commit();
+            getFragmentManager().beginTransaction().replace(R.id.content_area, SwebokMasterFragment.newInstance(), "Swebok").commit();
         } else if (id == R.id.curricula_nav) {
             getFragmentManager().popBackStackImmediate();
             getFragmentManager().beginTransaction().replace(R.id.content_area, DegreesFragment.newInstance(), "Degrees").commit();
@@ -273,7 +293,7 @@ public class MainActivity extends AppCompatActivity implements
     }
 
     @Override
-    public void loadDetailedKnowledgeAreaFragment(View knowledgeAreaCardView, int knowledgeAreaId) {
+    public void loadDetailedKnowledgeAreaFragment(View knowledgeAreaCardView, KnowledgeArea knowledgeArea) {
         ImageView image = (ImageView) knowledgeAreaCardView.findViewById(R.id.ka_image);
 
         // Gets the colour that will be changed between fragments, the source, which is the KA decorative colour
@@ -284,12 +304,10 @@ public class MainActivity extends AppCompatActivity implements
 
         long transitionDuration = 500;
 
-        Fragment kaDetailsFragment = SwebokKADetailsFragment.newInstance(knowledgeAreaId);
+        Fragment kaDetailsFragment = SwebokDetailedFragment.newInstance();
         Activity myActivity = this;
 
         Transition imageEnterTransition = createImageEnterSharedElementTransition(kaDetailsFragment, transitionDuration);
-
-        KnowledgeArea knowledgeArea = getKnowledgeArea(knowledgeAreaId);
 
         // Very important! Adding a listener in order to change the Action Bar colour and the Status Bar colour when this transition finishes.
         imageEnterTransition.addListener(new OnEndTransitionListener() {
@@ -323,7 +341,7 @@ public class MainActivity extends AppCompatActivity implements
     }
 
     /**
-     * Creates and sets a shared element transition from source fragment {@link SwebokKAsFragment} to the target detailed fragment {@link SwebokKADetailsFragment}.
+     * Creates and sets a shared element transition from source fragment {@link SwebokMasterFragment} to the target detailed fragment {@link SwebokDetailedFragment}.
      * The shared element is the KA decorative image and it will be set on the fragment transaction.
      * This function only creates the Transition animation for the image.
      */
@@ -337,7 +355,7 @@ public class MainActivity extends AppCompatActivity implements
     }
 
     /**
-     * Creates and sets a shared element transition from target fragment {@link SwebokKADetailsFragment} BACK TO the source fragment {@link SwebokKAsFragment}.
+     * Creates and sets a shared element transition from target fragment {@link SwebokDetailedFragment} BACK TO the source fragment {@link SwebokMasterFragment}.
      * The shared element is the KA decorative image and it will be set on the fragment transaction.
      * This function only creates the Transition animation for the image.
      */
@@ -657,4 +675,10 @@ public class MainActivity extends AppCompatActivity implements
     }
 
 
+    LifecycleRegistry lifecycleRegistry = new LifecycleRegistry(this);
+
+    @Override
+    public LifecycleRegistry getLifecycle() {
+        return lifecycleRegistry;
+    }
 }

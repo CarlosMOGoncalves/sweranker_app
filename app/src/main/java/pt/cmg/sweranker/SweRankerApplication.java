@@ -1,18 +1,22 @@
 package pt.cmg.sweranker;
 
+import android.app.Activity;
 import android.app.Application;
 
 import io.realm.Realm;
 import io.realm.RealmConfiguration;
+import pt.cmg.sweranker.dependencies.ApplicationComponent;
+import pt.cmg.sweranker.dependencies.ContextModule;
+import pt.cmg.sweranker.dependencies.DaggerApplicationComponent;
 
 /**
  * This class is used mainly to initialise and configure he Realm database.
  * Yes, Realm, like the Netherealm from Mortal Kombat.
- * <p>
- * Created by Carlos on 06/04/2017.
  */
-
 public class SweRankerApplication extends Application {
+
+    private ApplicationComponent _component;
+
 
     @Override
     public void onCreate() {
@@ -27,6 +31,18 @@ public class SweRankerApplication extends Application {
                 .build();
 
         Realm.setDefaultConfiguration(defaultConfiguration);
+
+        _component = DaggerApplicationComponent.builder()
+                .contextModule(new ContextModule(this))
+                .build();
+    }
+
+    public static SweRankerApplication get(Activity activity) {
+        return (SweRankerApplication) activity.getApplication();
+    }
+
+    public ApplicationComponent getComponent() {
+        return _component;
     }
 
 }

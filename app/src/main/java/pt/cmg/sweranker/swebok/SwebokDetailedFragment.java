@@ -1,7 +1,9 @@
 package pt.cmg.sweranker.swebok;
 
-import android.app.Activity;
 import android.app.Fragment;
+import android.arch.lifecycle.LifecycleRegistry;
+import android.arch.lifecycle.LifecycleRegistryOwner;
+import android.arch.lifecycle.ViewModelProviders;
 import android.content.Context;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -15,6 +17,8 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import pt.cmg.sweranker.MainActivity;
+import pt.cmg.sweranker.MainActivityViewModel;
 import pt.cmg.sweranker.R;
 import pt.cmg.sweranker.ui.ConstantSpacingItemDecorator;
 import pt.cmg.sweranker.ui.UnderlineDividerItemDecorator;
@@ -23,65 +27,52 @@ import pt.cmg.sweranker.ui.UnderlineDividerItemDecorator;
  * Created by Carlos on 12/01/2017.
  */
 
-public class SwebokKADetailsFragment extends Fragment {
+public class SwebokDetailedFragment extends Fragment implements LifecycleRegistryOwner {
 
-    private static final String KNOWLEDGE_AREA_ID = "ka_id";
+
+    LifecycleRegistry lifecycleRegistry = new LifecycleRegistry(this);
+
+    @Override
+    public LifecycleRegistry getLifecycle() {
+        return lifecycleRegistry;
+    }
+
+    private MainActivityViewModel _viewModel;
 
 
     private RecyclerView _topicList;
     private View _myView;
-    private OnKaDetailsFragmentInteractionListener _parentActivity;
 
     private int _knowledgeAreaId;
     private KnowledgeArea _knowledgeArea;
 
 
-    public SwebokKADetailsFragment() {
+    public SwebokDetailedFragment() {
     }
 
     /**
      * Use this factory method to create a new instance of
      * this fragment using the provided parameters.
      *
-     * @return A new instance of fragment SwebokKAsFragment.
+     * @return A new instance of fragment SwebokMasterFragment.
      */
-    public static SwebokKADetailsFragment newInstance(int knowledgeAreaId) {
-        SwebokKADetailsFragment fragment = new SwebokKADetailsFragment();
-        Bundle args = new Bundle();
-        args.putInt(KNOWLEDGE_AREA_ID, knowledgeAreaId);
-        fragment.setArguments(args);
-        return fragment;
+    public static SwebokDetailedFragment newInstance() {
+        return new SwebokDetailedFragment();
     }
 
 
     @Override
     public void onAttach(Context parentActivity) {
         super.onAttach(parentActivity);
-        if (parentActivity instanceof OnKaDetailsFragmentInteractionListener) {
-            _parentActivity = (OnKaDetailsFragmentInteractionListener) parentActivity;
-        } else {
-            throw new RuntimeException(parentActivity.toString() + " must implement OnScoreChartFragmentInteractionListener");
-        }
-    }
-
-    // NOTE: this is here because onAttach(Context) was added only on API 23, so as long as Lollipop is min sdk this shall be here
-    @Override
-    public void onAttach(Activity activity) {
-        super.onAttach(activity);
-        if (activity instanceof OnKaDetailsFragmentInteractionListener) {
-            _parentActivity = (OnKaDetailsFragmentInteractionListener) activity;
-        } else {
-            throw new RuntimeException(activity.toString() + " must implement OnKaDetailsFragmentInteractionListener");
-        }
     }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            _knowledgeAreaId = getArguments().getInt(KNOWLEDGE_AREA_ID);
-            _knowledgeArea = _parentActivity.getKnowledgeArea(_knowledgeAreaId);
-        }
+
+        _viewModel = ViewModelProviders.of((MainActivity) this.getActivity()).get(MainActivityViewModel.class);
+        _knowledgeArea = _viewModel.getSelectedKnowledgeArea().getValue();
+
     }
 
 
@@ -94,7 +85,7 @@ public class SwebokKADetailsFragment extends Fragment {
         TextView kaTitle = (TextView) _myView.findViewById(R.id.ka_details_name);
 
         kaImage.setImageDrawable(this.getResources().getDrawable(_knowledgeArea.getImageResource(), null));
-        kaImage.setBackgroundColor(ContextCompat.getColor((Context) _parentActivity, _knowledgeArea.getColourResource()));
+        kaImage.setBackgroundColor(ContextCompat.getColor(getActivity(), _knowledgeArea.getColourResource()));
         kaImage.setColorFilter(Color.parseColor("#ffffff"));
         kaTitle.setText(this.getResources().getText(_knowledgeArea.getNameResource()));
 
@@ -105,7 +96,7 @@ public class SwebokKADetailsFragment extends Fragment {
         _topicList.setLayoutManager(linearLayoutManager);
 
         _topicList.addItemDecoration(new ConstantSpacingItemDecorator(this.getActivity(), 20, ConstantSpacingItemDecorator.Side.BOTTOM));
-        _topicList.addItemDecoration(new UnderlineDividerItemDecorator.Builder(this.getActivity(), ContextCompat.getColor((Context) _parentActivity, R.color.darkerBackground), 1)
+        _topicList.addItemDecoration(new UnderlineDividerItemDecorator.Builder(this.getActivity(), ContextCompat.getColor(getActivity(), R.color.darkerBackground), 1)
                 .targetViewHolderClass(KnowledgeAreaDetailAdapter.KATopicsViewHolder.class)
                 .skipViews(2)
                 .rightInset(20)

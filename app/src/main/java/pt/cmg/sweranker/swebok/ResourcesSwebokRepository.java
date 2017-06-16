@@ -1,4 +1,4 @@
-package pt.cmg.sweranker;
+package pt.cmg.sweranker.swebok;
 
 import android.arch.lifecycle.LiveData;
 import android.arch.lifecycle.MutableLiveData;
@@ -17,20 +17,22 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.inject.Inject;
-import javax.inject.Singleton;
 
-import pt.cmg.sweranker.swebok.KnowledgeArea;
-import pt.cmg.sweranker.swebok.KnowledgeAreaTopic;
+import pt.cmg.sweranker.R;
+
 
 /**
- * Created by Carlos on 08/06/2017.
+ * This is a concrete SWEBOK loader repository class.
+ * This one in particular loads the Knowledge Areas from the Resources in the application.
+ * That means it reads a XML file in the resources/raw to load the Knowldge Areas from SWEBOK
+ * instead of any other solution such as webservice or a database.
+ * <p>
+ * It loads data asynchronously using an AsyncTask for that matter. This probably breaks a little
+ * that nice observation thing from ViewModel.
  */
-@Singleton
 public class ResourcesSwebokRepository implements SwebokRepository {
 
     private Context _context;
-    private MutableLiveData<List<KnowledgeArea>> _knowledgeAreas;
-    private MutableLiveData<List<KnowledgeAreaTopic>> _knowledgeAreaTopics;
 
     @Inject
     public ResourcesSwebokRepository(Context context) {
@@ -40,6 +42,7 @@ public class ResourcesSwebokRepository implements SwebokRepository {
 
     @Override
     public LiveData<List<KnowledgeArea>> loadKnowledgeAreas() {
+        MutableLiveData<List<KnowledgeArea>> _knowledgeAreas = new MutableLiveData<>();
 
         new AsyncTask<Void, Void, List<KnowledgeArea>>() {
 
@@ -61,8 +64,6 @@ public class ResourcesSwebokRepository implements SwebokRepository {
 
     /**
      * Loads all the Knowledge Areas from an xml file located at res/raw.
-     *
-     * @return
      */
     private List<KnowledgeArea> loadKnowledgeAreasFromXML() {
 
@@ -140,9 +141,6 @@ public class ResourcesSwebokRepository implements SwebokRepository {
 
     /**
      * Parses and returns each topic on a knowledge area of an xml file kept in res/raw
-     *
-     * @param xmlParser
-     * @return
      */
     private List<KnowledgeAreaTopic> parseTopics(int currentKnowledgeAreaId, XmlPullParser xmlParser) {
         List<KnowledgeAreaTopic> topics = new ArrayList<>();
@@ -204,19 +202,5 @@ public class ResourcesSwebokRepository implements SwebokRepository {
         return topics;
     }
 
-    /**
-     * Loads all KnowledgeAreaTopics from the previously load KnowledgeAreas.
-     * This will be used mostly as an accelerator for future data questioning.
-     *
-     * @return
-     */
-    private List<KnowledgeAreaTopic> loadKnowledgeAreaTopics() {
-        List<KnowledgeAreaTopic> allTopics = new ArrayList<>();
-        for (KnowledgeArea ka : _knowledgeAreas.getValue()) {
-            allTopics.addAll(ka.getTopics());
-        }
-
-        return allTopics;
-    }
 
 }

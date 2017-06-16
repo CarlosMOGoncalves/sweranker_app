@@ -29,7 +29,7 @@ public class KnowledgeAreasAdapter extends RecyclerView.Adapter<KnowledgeAreasAd
      * Implement this interface if you want to listen to any selected item on the degree class listener
      */
     public interface OnKnowledgeAreaClicked {
-        void onKnowledgeAreaClicked(View v, int position);
+        void onKnowledgeAreaClicked(View v, KnowledgeArea knowledgeArea);
     }
 
     public KnowledgeAreasAdapter(Context context, List<KnowledgeArea> knowledgeAreas, OnKnowledgeAreaClicked listener) {
@@ -88,7 +88,7 @@ public class KnowledgeAreasAdapter extends RecyclerView.Adapter<KnowledgeAreasAd
                     int pos = getAdapterPosition();
 
                     // VERY IMPORTANT - The delay is needed because the ripple effect was being triggered too late, as in not triggered at all.
-                    v.postDelayed(() -> _listener.onKnowledgeAreaClicked(v, _knowledgAreas.get(pos).getId()), 300);
+                    v.postDelayed(() -> _listener.onKnowledgeAreaClicked(v, _knowledgAreas.get(pos)), 300);
                 }
             });
         }
