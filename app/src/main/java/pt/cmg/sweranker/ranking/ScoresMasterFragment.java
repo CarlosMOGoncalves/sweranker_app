@@ -3,6 +3,9 @@ package pt.cmg.sweranker.ranking;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Fragment;
+import android.arch.lifecycle.LifecycleRegistry;
+import android.arch.lifecycle.LifecycleRegistryOwner;
+import android.arch.lifecycle.ViewModelProviders;
 import android.content.Context;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -29,6 +32,7 @@ import java.util.Map;
 import io.realm.Realm;
 import io.realm.Sort;
 import pt.cmg.sweranker.MainActivity;
+import pt.cmg.sweranker.MainActivityViewModel;
 import pt.cmg.sweranker.R;
 import pt.cmg.sweranker.degrees.Degree;
 import pt.cmg.sweranker.degrees.DegreeLoader;
@@ -36,9 +40,16 @@ import pt.cmg.sweranker.swebok.KnowledgeArea;
 import pt.cmg.sweranker.swebok.KnowledgeAreaLoader;
 import pt.cmg.sweranker.ui.ConstantSpacingItemDecorator;
 
-public class RankingFragment extends Fragment {
+public class ScoresMasterFragment extends Fragment implements LifecycleRegistryOwner {
 
-    public static final String ACTION_RECEIVER = "pt.cmg.sweranker.CALCULATION_FINISHED";
+
+    LifecycleRegistry lifecycleRegistry = new LifecycleRegistry(this);
+
+    @Override
+    public LifecycleRegistry getLifecycle() {
+        return lifecycleRegistry;
+    }
+
 
     /**
      * This is a reference to the parent activity that this fragment will be attached to on onAttach()
@@ -64,16 +75,15 @@ public class RankingFragment extends Fragment {
     private Map<Integer, Degree> _degrees;
     private LinkedHashMap<String, Integer> _combinationNameAndImage;
 
-    public RankingFragment() {
+    private MainActivityViewModel _sharedViewModel;
+
+    public ScoresMasterFragment() {
         // Required empty public constructor
     }
 
 
-    public static RankingFragment newInstance() {
-        RankingFragment fragment = new RankingFragment();
-        Bundle args = new Bundle();
-        fragment.setArguments(args);
-        return fragment;
+    public static ScoresMasterFragment newInstance() {
+        return new ScoresMasterFragment();
     }
 
     @Override
@@ -84,6 +94,8 @@ public class RankingFragment extends Fragment {
         } else {
             throw new RuntimeException(parentActivity.toString() + " must implement RankingFragmentInteractionListener");
         }
+
+        _sharedViewModel = ViewModelProviders.of((MainActivity) getActivity()).get(MainActivityViewModel.class);
     }
 
     // NOTE: this is here because onAttach(Context) was added only on API 23, so as long as Lollipop is min sdk this shall be here
@@ -95,13 +107,15 @@ public class RankingFragment extends Fragment {
         } else {
             throw new RuntimeException(activity.toString() + " must implement RankingFragmentInteractionListener");
         }
+
+        _sharedViewModel = ViewModelProviders.of((MainActivity) getActivity()).get(MainActivityViewModel.class);
     }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        List<Degree> degrees = _parentActivity.getAllDegrees();
+        List<Degree> degrees = _sharedViewModel.getDegrees().getValue();
         _degrees = new LinkedHashMap<>();
         for (Degree d : degrees) {
             _degrees.put(d.getId(), d);

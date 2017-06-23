@@ -27,18 +27,19 @@ public class ResourcesMatchesRepository implements MatchesRepository {
 
 
     private Context _context;
+    private MutableLiveData<Map<String, DegreeClassMatch>> _systemMatches;
 
     @Inject
     public ResourcesMatchesRepository(Context context) {
         _context = context;
+        _systemMatches = new MutableLiveData<>();
     }
 
 
     @Override
     public LiveData<Map<String, DegreeClassMatch>> loadMatches() {
 
-        MutableLiveData<Map<String, DegreeClassMatch>> systemMatches = new MutableLiveData<>();
-
+        // E que tal um null-check no _systemMatches para não forçar o carregamento?
         new AsyncTask<Void, Void, Map<String, DegreeClassMatch>>() {
             @Override
             protected Map<String, DegreeClassMatch> doInBackground(Void... voids) {
@@ -47,11 +48,11 @@ public class ResourcesMatchesRepository implements MatchesRepository {
 
             @Override
             protected void onPostExecute(Map<String, DegreeClassMatch> loadedMatches) {
-                systemMatches.setValue(loadedMatches);
+                _systemMatches.setValue(loadedMatches);
             }
         }.execute();
 
-        return systemMatches;
+        return _systemMatches;
     }
 
     /**

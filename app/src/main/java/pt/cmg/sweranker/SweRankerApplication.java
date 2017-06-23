@@ -6,7 +6,6 @@ import android.app.Application;
 import io.realm.Realm;
 import io.realm.RealmConfiguration;
 import pt.cmg.sweranker.dependencies.ApplicationComponent;
-import pt.cmg.sweranker.dependencies.ContextModule;
 import pt.cmg.sweranker.dependencies.DaggerApplicationComponent;
 
 /**
@@ -27,15 +26,14 @@ public class SweRankerApplication extends Application {
         RealmConfiguration defaultConfiguration = new RealmConfiguration.Builder()
                 .name("sweranker.realm")
                 .deleteRealmIfMigrationNeeded()
-                .schemaVersion(26)
+                .schemaVersion(1)
                 .build();
 
         Realm.setDefaultConfiguration(defaultConfiguration);
 
-        _component = DaggerApplicationComponent.builder()
-                .contextModule(new ContextModule(this))
-                .build();
+        _component = DaggerApplicationComponent.builder().build();
     }
+
 
     public static SweRankerApplication get(Activity activity) {
         return (SweRankerApplication) activity.getApplication();

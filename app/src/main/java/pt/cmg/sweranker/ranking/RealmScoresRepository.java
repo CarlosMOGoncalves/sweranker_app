@@ -111,6 +111,22 @@ public class RealmScoresRepository implements ScoresRepository {
     }
 
     @Override
+    public List<SweScore> getScoresOfDegree(int degreeId) {
+        return getRealmnstanceOfThread().where(SweScore.class)
+                .equalTo(SweScoreFields.SCORE_TYPE, SweScore.TYPE_DEGREE_SCORE)
+                .equalTo(SweScoreFields.DEGREE_ID, degreeId)
+                .findAll();
+    }
+
+    @Override
+    public List<SweScore> getScoresOfDegreeOrderedBy(int degreeId, String orderedFieldName, Sort order) {
+        return getRealmnstanceOfThread().where(SweScore.class)
+                .equalTo(SweScoreFields.SCORE_TYPE, SweScore.TYPE_DEGREE_SCORE)
+                .equalTo(SweScoreFields.DEGREE_ID, degreeId)
+                .findAllSorted(orderedFieldName, io.realm.Sort.valueOf(order.name()));
+    }
+
+    @Override
     public int countAllCombinationsOfDegree(int degreeId) {
         return getRealmnstanceOfThread().where(DegreeClassCombination.class)
                 .equalTo("degreeId", degreeId)

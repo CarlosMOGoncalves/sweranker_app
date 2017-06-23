@@ -755,6 +755,7 @@ public class MainActivityViewModel extends ViewModel {
 
     }
 
+
     // BELOW IS FRAGMENT INTERACTION ZONE
 
     public void setSelectedKnowledgeArea(KnowledgeArea knowledgeArea) {

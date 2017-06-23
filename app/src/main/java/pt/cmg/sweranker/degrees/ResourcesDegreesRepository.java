@@ -30,18 +30,19 @@ public class ResourcesDegreesRepository implements DegreesRepository {
 
 
     private Context _context;
+    private MutableLiveData<List<Degree>> _degrees;
 
     @Inject
     public ResourcesDegreesRepository(Context context) {
         _context = context;
+        _degrees = new MutableLiveData<>();
     }
 
 
     @Override
     public LiveData<List<Degree>> loadDegrees() {
 
-        MutableLiveData<List<Degree>> degrees = new MutableLiveData<>();
-
+        // E que tal um null-check no _degrees.getValue() para não carregar sempre?
         new AsyncTask<Void, Void, List<Degree>>() {
 
             @Override
@@ -52,11 +53,11 @@ public class ResourcesDegreesRepository implements DegreesRepository {
 
             @Override
             protected void onPostExecute(List<Degree> returnedDegrees) {
-                degrees.setValue(returnedDegrees);
+                _degrees.postValue(returnedDegrees);
             }
         }.execute();
 
-        return degrees;
+        return _degrees;
     }
 
 

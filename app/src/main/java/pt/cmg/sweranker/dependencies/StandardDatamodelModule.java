@@ -13,30 +13,30 @@ import pt.cmg.sweranker.ranking.ScoresRepository;
 import pt.cmg.sweranker.swebok.ResourcesSwebokRepository;
 import pt.cmg.sweranker.swebok.SwebokRepository;
 
-@Module(includes = ContextModule.class)
+@Module
 public class StandardDatamodelModule {
 
     @Provides
-    @SweRankerApplicationScope
+    @MainActivityScope
     public SwebokRepository swebokRepository(Context context) {
         return new ResourcesSwebokRepository(context);
     }
 
 
     @Provides
-    @SweRankerApplicationScope
+    @MainActivityScope
     public DegreesRepository degreesRepository(Context context) {
         return new ResourcesDegreesRepository(context);
     }
 
     @Provides
-    @SweRankerApplicationScope
+    @MainActivityScope
     public MatchesRepository matchesRepository(Context context) {
         return new ResourcesMatchesRepository(context);
     }
 
     @Provides
-    @SweRankerApplicationScope
+    @MainActivityScope
     public ScoresRepository scoresRepository() {
         return new RealmScoresRepository();
     }

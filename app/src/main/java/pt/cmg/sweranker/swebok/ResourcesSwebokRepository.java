@@ -34,11 +34,12 @@ public class ResourcesSwebokRepository implements SwebokRepository {
 
     private Context _context;
 
-    private MutableLiveData<List<KnowledgeArea>> _knowledgeAreas = new MutableLiveData<>();
+    private MutableLiveData<List<KnowledgeArea>> _knowledgeAreas;
 
     @Inject
     public ResourcesSwebokRepository(Context context) {
         _context = context;
+        _knowledgeAreas = new MutableLiveData<>();
     }
 
 
