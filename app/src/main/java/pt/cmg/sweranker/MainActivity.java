@@ -41,8 +41,8 @@ import pt.cmg.sweranker.degrees.DegreeClassFragment;
 import pt.cmg.sweranker.degrees.DegreeClassMatch;
 import pt.cmg.sweranker.degrees.DegreeDetailsFragment;
 import pt.cmg.sweranker.degrees.DegreeTopicMatcherFragment;
-import pt.cmg.sweranker.degrees.DegreesFragment;
 import pt.cmg.sweranker.degrees.DegreesLoaderService;
+import pt.cmg.sweranker.degrees.DegreesMasterFragment;
 import pt.cmg.sweranker.dependencies.DaggerMainActivityComponent;
 import pt.cmg.sweranker.dependencies.MainActivityComponent;
 import pt.cmg.sweranker.dependencies.MainActivityModule;
@@ -65,7 +65,7 @@ public class MainActivity extends AppCompatActivity implements
         NavigationView.OnNavigationItemSelectedListener,
         SwebokMasterFragment.OnSwebokFragmentInteractionListener,
         SwebokDetailedFragment.OnKaDetailsFragmentInteractionListener,
-        DegreesFragment.DegreesFragmentInteractionListener,
+        DegreesMasterFragment.DegreesFragmentInteractionListener,
         DegreeDetailsFragment.DegreeDetailsFragmentInteractionListener,
         DegreeClassFragment.DegreeClassFragmentInteractionListener,
         DegreeTopicMatcherFragment.OnDegreeMatcherFragmentInteraction,
@@ -272,7 +272,7 @@ public class MainActivity extends AppCompatActivity implements
             getFragmentManager().beginTransaction().replace(R.id.content_area, SwebokMasterFragment.newInstance(), "Swebok").commit();
         } else if (id == R.id.curricula_nav) {
             getFragmentManager().popBackStackImmediate();
-            getFragmentManager().beginTransaction().replace(R.id.content_area, DegreesFragment.newInstance(), "Degrees").commit();
+            getFragmentManager().beginTransaction().replace(R.id.content_area, DegreesMasterFragment.newInstance(), "Degrees").commit();
         } else if (id == R.id.rankings_nav) {
             getFragmentManager().popBackStackImmediate();
             getFragmentManager().beginTransaction().replace(R.id.content_area, RankingFragment.newInstance(), "Degrees").commit();
@@ -293,7 +293,7 @@ public class MainActivity extends AppCompatActivity implements
     }
 
     @Override
-    public void loadDetailedKnowledgeAreaFragment(View knowledgeAreaCardView, KnowledgeArea knowledgeArea) {
+    public void loadDetailedKnowledgeAreaFragment(View knowledgeAreaCardView) {
         ImageView image = (ImageView) knowledgeAreaCardView.findViewById(R.id.ka_image);
 
         // Gets the colour that will be changed between fragments, the source, which is the KA decorative colour
@@ -305,6 +305,7 @@ public class MainActivity extends AppCompatActivity implements
         long transitionDuration = 500;
 
         Fragment kaDetailsFragment = SwebokDetailedFragment.newInstance();
+        KnowledgeArea knowledgeArea = _viewModel.getSelectedKnowledgeArea();
         Activity myActivity = this;
 
         Transition imageEnterTransition = createImageEnterSharedElementTransition(kaDetailsFragment, transitionDuration);
@@ -396,18 +397,18 @@ public class MainActivity extends AppCompatActivity implements
     }
 
     @Override
-    public void loadDetailedDegreeFragment(View degreeCard, int degreeId) {
+    public void loadDetailedDegreeFragment(View degreeCard) {
 
         ImageView image = (ImageView) degreeCard.findViewById(R.id.university_image);
         TextView universityName = (TextView) degreeCard.findViewById(R.id.university_name);
         TextView degreeName = (TextView) degreeCard.findViewById(R.id.degree_name);
 
-        Degree degree = getDegree(degreeId);
+        Degree degree = _viewModel.getSelectedDegree();
 
 
         long transitionDuration = 500;
 
-        Fragment degreeDetailsFragment = DegreeDetailsFragment.newInstance(degreeId);
+        Fragment degreeDetailsFragment = DegreeDetailsFragment.newInstance();
 
         // This is important. I used a simples transition but the real magic is that I change the
         // toolbar into a back button toolbar so that it is easier to navigate.
@@ -476,12 +477,11 @@ public class MainActivity extends AppCompatActivity implements
 
 
     @Override
-    public void loadDegreeClassFragment(int degreeId, String degreeClassId) {
+    public void loadDegreeClassFragment(View selectedView, DegreeClass degreeClass) {
 
-        Fragment degreeClassFragment = DegreeClassFragment.newInstance(degreeId, degreeClassId);
+        Fragment degreeClassFragment = DegreeClassFragment.newInstance();
 
-        DegreeClass degreeClass = getDegreeClass(degreeId, degreeClassId);
-        Degree degree = getDegree(degreeId);
+        Degree degree = _viewModel.getDegree(degreeClass.getDegreeId()).getValue();
 
         // This is important. I used a simples transition but the real magic is that I change the
         // toolbar into a back button toolbar so that it is easier to navigate.

@@ -191,19 +191,14 @@ public class DegreeOverViewAdapter extends RecyclerView.Adapter<RecyclerView.Vie
             super(view);
             _degreeClassName = (TextView) view.findViewById(R.id.class_name);
 
-            view.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    // VERY IMPORTANT - The delay is needed because the ripple effect was being triggered too late, as in not triggered at all.
-                    v.postDelayed(() -> {
+            view.setOnClickListener(v -> {
+                // VERY IMPORTANT - The delay is needed because the ripple effect was being triggered too late, as in not triggered at all.
+                v.postDelayed(() -> {
 
-                        int adapterPosition = getAdapterPosition();
-
-                        // AHA, I knew this array stuff would be useful <3
-                        String degreeClassId = _degreeClasses[adapterPosition].getId();
-                        _onDegreeClassSelectedListener.onDegreeClassClicked(_degreeId, degreeClassId);
-                    }, 400);
-                }
+                    int adapterPosition = getAdapterPosition();
+                    // AHA, I knew this array stuff would be useful <3
+                    _onDegreeClassSelectedListener.onDegreeClassClicked(v, _degreeClasses[adapterPosition]);
+                }, 400);
             });
         }
 

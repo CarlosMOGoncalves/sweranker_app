@@ -2,6 +2,7 @@ package pt.cmg.sweranker.degrees;
 
 import android.app.Activity;
 import android.app.Fragment;
+import android.arch.lifecycle.ViewModelProviders;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -18,6 +19,8 @@ import java.util.ArrayList;
 import java.util.Map;
 import java.util.Set;
 
+import pt.cmg.sweranker.MainActivity;
+import pt.cmg.sweranker.MainActivityViewModel;
 import pt.cmg.sweranker.R;
 import pt.cmg.sweranker.ui.ConstantSpacingItemDecorator;
 import pt.cmg.sweranker.ui.UnderlineDividerItemDecorator;
@@ -37,6 +40,8 @@ public class DegreeClassFragment extends Fragment {
     private DegreeClass _degreeClass;
     private FloatingActionButton _fab;
 
+    private MainActivityViewModel _sharedViewModel;
+
 
     public DegreeClassFragment() {
     }
@@ -48,13 +53,8 @@ public class DegreeClassFragment extends Fragment {
      *
      * @return A new instance of fragment DegreeDetailsFragment.
      */
-    public static DegreeClassFragment newInstance(int degreeId, String degreeClassId) {
-        DegreeClassFragment fragment = new DegreeClassFragment();
-        Bundle args = new Bundle();
-        args.putInt(DEGREE_ID, degreeId);
-        args.putString(DEGREE_CLASS_ID, degreeClassId);
-        fragment.setArguments(args);
-        return fragment;
+    public static DegreeClassFragment newInstance() {
+        return new DegreeClassFragment();
     }
 
 
@@ -66,6 +66,7 @@ public class DegreeClassFragment extends Fragment {
         } else {
             throw new RuntimeException(parentActivity.toString() + " must implement DegreeClassFragmentInteractionListener");
         }
+        _sharedViewModel = ViewModelProviders.of((MainActivity) getActivity()).get(MainActivityViewModel.class);
     }
 
     // NOTE: this is here because onAttach(Context) was added only on API 23, so as long as Lollipop is min sdk this shall be here
@@ -77,18 +78,16 @@ public class DegreeClassFragment extends Fragment {
         } else {
             throw new RuntimeException(activity.toString() + " must implement DegreeClassFragmentInteractionListener");
         }
+        _sharedViewModel = ViewModelProviders.of((MainActivity) getActivity()).get(MainActivityViewModel.class);
     }
 
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            _degreeId = getArguments().getInt(DEGREE_ID);
-            _degreeClassId = getArguments().getString(DEGREE_CLASS_ID);
-            _degreeClass = _parentActivity.getDegreeClass(_degreeId, _degreeClassId);
-        }
-
+        _degreeId = _sharedViewModel.getSelectedDegreeClass().getDegreeId();
+        _degreeClass = _sharedViewModel.getSelectedDegreeClass();
+        _degreeClassId = _degreeClass.getId();
     }
 
 
@@ -103,6 +102,7 @@ public class DegreeClassFragment extends Fragment {
         TextView classECTS = (TextView) _myView.findViewById(R.id.ects);
         classECTS.setText(String.valueOf(_degreeClass.getEctsCredits()));
         TextView classOptional = (TextView) _myView.findViewById(R.id.optional);
+
         if (_degreeClass.isOptionalClass()) {
             classOptional.setText(getString(R.string.yes));
             classOptional.setTextColor(ContextCompat.getColor(getActivity(), R.color.materialAffirmative));
@@ -112,7 +112,9 @@ public class DegreeClassFragment extends Fragment {
         }
 
         TextView areMatchesAvailable = (TextView) _myView.findViewById(R.id.is_matched);
-        if (_parentActivity.hasMatch(_degreeClassId)) {
+
+        
+        if (_sharedViewModel.hasMatches(_degreeClassId)) {
             areMatchesAvailable.setText("(Matched)");
             areMatchesAvailable.setTextColor(ContextCompat.getColor(getActivity(), R.color.materialAffirmative));
         } else {

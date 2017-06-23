@@ -26,13 +26,13 @@ import javax.inject.Inject;
 import pt.cmg.sweranker.R;
 import pt.cmg.sweranker.ranking.combinationstrategies.ClassCombinationStrategy;
 
-public class ResourcesDegreeRepository implements DegreesRepository {
+public class ResourcesDegreesRepository implements DegreesRepository {
 
 
     private Context _context;
 
     @Inject
-    public ResourcesDegreeRepository(Context context) {
+    public ResourcesDegreesRepository(Context context) {
         _context = context;
     }
 

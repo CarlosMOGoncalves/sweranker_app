@@ -32,7 +32,7 @@ public class DegreeViewPagerAdapter extends PagerAdapter {
      * Implement this interface if you want to listen to any selected item on the degree class listener
      */
     public interface OnDegreeClassItemSelected {
-        void onDegreeClassClicked(int degreeId, String degreeClassId);
+        void onDegreeClassClicked(View selectedView, DegreeClass degreeClass);
     }
 
     public DegreeViewPagerAdapter(Context context, Degree degree, OnDegreeClassItemSelected listener) {

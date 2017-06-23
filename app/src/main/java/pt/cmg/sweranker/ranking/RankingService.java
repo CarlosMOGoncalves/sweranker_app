@@ -4,7 +4,6 @@ import android.app.Service;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.Resources;
-import android.os.AsyncTask;
 import android.os.Binder;
 import android.os.IBinder;
 import android.util.Log;
@@ -54,8 +53,6 @@ public class RankingService extends Service {
     private Map<Integer, KnowledgeAreaTopic> _knowledgeAreaTopicsByTopicId;
 
     private Map<Integer, Degree> _degreesById;
-
-    private Map<String, DegreeClass> _degreeClassesById;
 
     // Keys -> Degree Id , Values -> true if completely matched, false otherwise
     private Map<Integer, Boolean> _matchedDegrees;
@@ -655,9 +652,6 @@ public class RankingService extends Service {
      */
     public void setDegreeClasses(List<Degree> degrees) {
         _degreesById = createDegreesByIdView(degrees);
-        _degreeClassesById = createDegreesClassByIdView(degrees);
-
-
         _matchedDegrees = calculateMatchedDegrees();
     }
 
@@ -673,23 +667,6 @@ public class RankingService extends Service {
             degreesById.put(degree.getId(), degree);
         }
         return degreesById;
-    }
-
-    /**
-     * Returns the HashMap needed to fast access DegreeClasses by it ID.
-     *
-     * @return
-     */
-    private Map<String, DegreeClass> createDegreesClassByIdView(List<Degree> degrees) {
-
-        Map<String, DegreeClass> degreeClassById = new HashMap<>();
-
-        for (Degree degree : degrees) {
-            for (DegreeClass degreeClass : degree.getClassesAsList()) {
-                degreeClassById.put(degreeClass.getId(), degreeClass);
-            }
-        }
-        return degreeClassById;
     }
 
 
@@ -720,43 +697,13 @@ public class RankingService extends Service {
             }
 
         }
-
         return matchedDegrees;
-
     }
-
-    public Map<String, SweScore> getDegreeClassRankings() {
-        return _degreeClassRankings;
-    }
-
 
     public boolean hasCompleteMatch(int degreeId) {
         return _matchedDegrees.get(degreeId);
     }
 
-
-    public void calculateDegreesRankings() {
-        new YearlyRankingCalculator().execute();
-    }
-
-
-    private class YearlyRankingCalculator extends AsyncTask<Void, Void, Void> {
-
-
-        @Override
-        protected Void doInBackground(Void... params) {
-
-
-            return null;
-        }
-
-        @Override
-        protected void onPostExecute(Void aVoid) {
-            super.onPostExecute(aVoid);
-            sendBroadcast(new Intent(RankingFragment.ACTION_RECEIVER));
-
-        }
-    }
 
     @Override
     public IBinder onBind(Intent intent) {

@@ -3,6 +3,8 @@ package pt.cmg.sweranker.dependencies;
 import dagger.Component;
 import pt.cmg.sweranker.SweRankerApplication;
 import pt.cmg.sweranker.degrees.DegreesRepository;
+import pt.cmg.sweranker.ranking.MatchesRepository;
+import pt.cmg.sweranker.ranking.ScoresRepository;
 import pt.cmg.sweranker.swebok.SwebokRepository;
 
 /**
@@ -19,5 +21,9 @@ public interface ApplicationComponent {
     SwebokRepository swebokRepository();
 
     DegreesRepository degreesRepository();
+
+    MatchesRepository matchesRepository();
+
+    ScoresRepository scoresRepository();
 
 }

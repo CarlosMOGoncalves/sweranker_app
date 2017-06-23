@@ -71,7 +71,7 @@ public class SwebokDetailedFragment extends Fragment implements LifecycleRegistr
         super.onCreate(savedInstanceState);
 
         _viewModel = ViewModelProviders.of((MainActivity) this.getActivity()).get(MainActivityViewModel.class);
-        _knowledgeArea = _viewModel.getSelectedKnowledgeArea().getValue();
+        _knowledgeArea = _viewModel.getSelectedKnowledgeArea();
 
     }
 

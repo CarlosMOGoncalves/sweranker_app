@@ -24,7 +24,7 @@ import pt.cmg.sweranker.R;
 import pt.cmg.sweranker.ui.ConstantSpacingItemDecorator;
 
 
-public class DegreesFragment extends Fragment implements LifecycleRegistryOwner {
+public class DegreesMasterFragment extends Fragment implements LifecycleRegistryOwner {
 
 
     LifecycleRegistry lifecycleRegistry = new LifecycleRegistry(this);
@@ -46,18 +46,17 @@ public class DegreesFragment extends Fragment implements LifecycleRegistryOwner 
     private ProgressBar _progressBar;
     private MainActivityViewModel _sharedViewModel;
 
-    public DegreesFragment() {
+    public DegreesMasterFragment() {
     }
 
     /**
      * Use this factory method to create a new instance of
      * this fragment using the provided parameters.
      *
-     * @return A new instance of fragment DegreesFragment.
+     * @return A new instance of fragment DegreesMasterFragment.
      */
-    public static DegreesFragment newInstance() {
-        DegreesFragment fragment = new DegreesFragment();
-        return fragment;
+    public static DegreesMasterFragment newInstance() {
+        return new DegreesMasterFragment();
     }
 
     /**
@@ -69,17 +68,15 @@ public class DegreesFragment extends Fragment implements LifecycleRegistryOwner 
         /**
          * Loads and replaces the current fragment with the detailed Degree fragment.
          *
-         * @param v        The selected view. This is used to create some shared elements transitions.
-         * @param degreeId
+         * @param v The selected view. This is used to create some shared elements transitions.
          */
-        void loadDetailedDegreeFragment(View v, int degreeId);
+        void loadDetailedDegreeFragment(View v);
 
     }
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         _sharedViewModel = ViewModelProviders.of((MainActivity) this.getActivity()).get(MainActivityViewModel.class);
     }
 
@@ -89,7 +86,7 @@ public class DegreesFragment extends Fragment implements LifecycleRegistryOwner 
         if (parentActivity instanceof DegreesFragmentInteractionListener) {
             _parentActivity = (DegreesFragmentInteractionListener) parentActivity;
         } else {
-            throw new RuntimeException(parentActivity.toString() + " must implement DegreesFragmentInteractionListener");
+            throw new RuntimeException(parentActivity.toString() + " must implement OnScoreChartFragmentInteractionListener");
         }
     }
 
@@ -100,9 +97,10 @@ public class DegreesFragment extends Fragment implements LifecycleRegistryOwner 
         if (activity instanceof DegreesFragmentInteractionListener) {
             _parentActivity = (DegreesFragmentInteractionListener) activity;
         } else {
-            throw new RuntimeException(activity.toString() + " must implement DegreesFragmentInteractionListener");
+            throw new RuntimeException(activity.toString() + " must implement OnScoreChartFragmentInteractionListener");
         }
     }
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -125,13 +123,12 @@ public class DegreesFragment extends Fragment implements LifecycleRegistryOwner 
 
     private void fillDegreesGrid(List<Degree> allDegrees) {
 
-        DegreeAdapter adapter = new DegreeAdapter(this.getActivity(), allDegrees, new DegreeAdapter.OnDegreeAdapterListener() {
-
-            @Override
-            public void loadDetailedDegreeFragment(View rootView, int degreeId) {
-                _parentActivity.loadDetailedDegreeFragment(rootView, degreeId);
-            }
-        });
+        DegreeAdapter adapter = new DegreeAdapter(this.getActivity(),
+                allDegrees,
+                (rootView, degree) -> {
+                    _sharedViewModel.setSelectedDegree(degree);
+                    _parentActivity.loadDetailedDegreeFragment(rootView);
+                });
 
         RecyclerView.LayoutManager mLayoutManager = new GridLayoutManager(this.getActivity(), 2);
         _degreesGrid.setLayoutManager(mLayoutManager);

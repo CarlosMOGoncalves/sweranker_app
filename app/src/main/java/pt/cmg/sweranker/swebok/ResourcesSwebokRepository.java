@@ -34,6 +34,8 @@ public class ResourcesSwebokRepository implements SwebokRepository {
 
     private Context _context;
 
+    private MutableLiveData<List<KnowledgeArea>> _knowledgeAreas = new MutableLiveData<>();
+
     @Inject
     public ResourcesSwebokRepository(Context context) {
         _context = context;
@@ -42,164 +44,164 @@ public class ResourcesSwebokRepository implements SwebokRepository {
 
     @Override
     public LiveData<List<KnowledgeArea>> loadKnowledgeAreas() {
-        MutableLiveData<List<KnowledgeArea>> _knowledgeAreas = new MutableLiveData<>();
-
-        new AsyncTask<Void, Void, List<KnowledgeArea>>() {
-
-            @Override
-            protected List<KnowledgeArea> doInBackground(Void... voids) {
-                return loadKnowledgeAreasFromXML();
-            }
-
-
-            @Override
-            protected void onPostExecute(List<KnowledgeArea> knowledgeAreas) {
-                _knowledgeAreas.setValue(knowledgeAreas);
-            }
-        }.execute();
-
+        new KnowledgeAreasLoader().execute();
         return _knowledgeAreas;
     }
 
 
-    /**
-     * Loads all the Knowledge Areas from an xml file located at res/raw.
-     */
-    private List<KnowledgeArea> loadKnowledgeAreasFromXML() {
+    private class KnowledgeAreasLoader extends AsyncTask<Void, Void, List<KnowledgeArea>> {
 
-        List<KnowledgeArea> knowledgeAreas = new ArrayList<>();
-
-        try {
-            XmlPullParser xmlParser = XmlPullParserFactory.newInstance().newPullParser();
-            InputStream reader = _context.getResources().openRawResource(R.raw.knowledge_areas);
-
-            xmlParser.setInput(reader, null);
-            int eventType = xmlParser.getEventType();
-            KnowledgeArea knowledgeArea = null;
-            int currentKAId = 0;
-
-            while (eventType != XmlPullParser.END_DOCUMENT) {
-
-
-                String xmlElementName;
-                switch (eventType) {
-                    case XmlPullParser.START_DOCUMENT:
-                        // Just do your stuff
-                        break;
-                    case XmlPullParser.START_TAG:
-                        xmlElementName = xmlParser.getName();
-
-                        if (xmlElementName.equals("knowledge-area")) {
-                            knowledgeArea = new KnowledgeArea();
-                        } else if (knowledgeArea != null) {
-                            switch (xmlElementName) {
-                                case "name":
-                                    knowledgeArea.setNameResource(_context.getResources().getIdentifier(xmlParser.nextText(), "string", _context.getPackageName()));
-                                    break;
-                                case "image":
-                                    knowledgeArea.setImageResource(_context.getResources().getIdentifier(xmlParser.nextText(), "drawable", _context.getPackageName()));
-                                    break;
-                                case "imageBackgroundColour":
-                                    knowledgeArea.setColourResource(_context.getResources().getIdentifier(xmlParser.nextText(), "color", _context.getPackageName()));
-                                    break;
-                                case "description":
-                                    knowledgeArea.setDescriptionResource(_context.getResources().getIdentifier(xmlParser.nextText(), "string", _context.getPackageName()));
-                                    break;
-                                // NOTE: since XMLParser is iterator based the id MUST come before topics (in the XML), otherwise this all falls apart
-                                case "id":
-                                    currentKAId = Integer.valueOf(xmlParser.nextText());
-                                    knowledgeArea.setId(currentKAId);
-                                    break;
-                                case "topics":
-                                    List<KnowledgeAreaTopic> topics = parseTopics(currentKAId, xmlParser);
-                                    knowledgeArea.setTopics(topics);
-                                    break;
-                            }
-                        }
-                        break;
-
-                    case XmlPullParser.END_TAG:
-                        xmlElementName = xmlParser.getName();
-                        if (xmlElementName.equalsIgnoreCase("knowledge-area") && knowledgeArea != null) {
-                            //One last colour added so that I can use it in the future
-                            for (KnowledgeAreaTopic topic : knowledgeArea.getTopics()) {
-                                topic.setColorResource(knowledgeArea.getColourResource());
-                            }
-                            knowledgeAreas.add(knowledgeArea);
-                        }
-                        break;
-                }
-                eventType = xmlParser.next();
-            }
-
-        } catch (XmlPullParserException | Resources.NotFoundException | IOException e) {
-            e.printStackTrace();
+        @Override
+        protected List<KnowledgeArea> doInBackground(Void... voids) {
+            return loadKnowledgeAreasFromXML();
         }
 
-        return knowledgeAreas;
-    }
+        /**
+         * Loads all the Knowledge Areas from an xml file located at res/raw.
+         */
+        private List<KnowledgeArea> loadKnowledgeAreasFromXML() {
 
-    /**
-     * Parses and returns each topic on a knowledge area of an xml file kept in res/raw
-     */
-    private List<KnowledgeAreaTopic> parseTopics(int currentKnowledgeAreaId, XmlPullParser xmlParser) {
-        List<KnowledgeAreaTopic> topics = new ArrayList<>();
-        try {
+            List<KnowledgeArea> knowledgeAreas = new ArrayList<>();
 
-            int eventType = xmlParser.getEventType();
-            String xmlElementName = xmlParser.getName();
-            KnowledgeAreaTopic topic = null;
+            try {
+                XmlPullParser xmlParser = XmlPullParserFactory.newInstance().newPullParser();
+                InputStream reader = _context.getResources().openRawResource(R.raw.knowledge_areas);
 
-            // if it is the first let's just go to next to start iteration
-            if (xmlElementName.equalsIgnoreCase("topics") && eventType == XmlPullParser.START_TAG) {
-                eventType = xmlParser.nextTag();
-                xmlElementName = xmlParser.getName();
-            } else {
-                throw new XmlPullParserException("Malformed xml: there is no topics element, you screwed up.");
-            }
+                xmlParser.setInput(reader, null);
+                int eventType = xmlParser.getEventType();
+                KnowledgeArea knowledgeArea = null;
+                int currentKAId = 0;
 
-            while (!xmlElementName.equalsIgnoreCase("topics")) {
+                while (eventType != XmlPullParser.END_DOCUMENT) {
 
-                switch (eventType) {
-                    case XmlPullParser.START_DOCUMENT:
-                        break;
-                    case XmlPullParser.START_TAG:
-                        xmlElementName = xmlParser.getName();
 
-                        if (xmlElementName.equals("topic")) {
-                            topic = new KnowledgeAreaTopic(currentKnowledgeAreaId);
-                        } else if (topic != null) {
-                            switch (xmlElementName) {
-                                case "name":
-                                    topic.setNameResource(_context.getResources().getIdentifier(xmlParser.nextText(), "string", _context.getPackageName()));
-                                    break;
-                                case "id":
-                                    topic.setId(Integer.valueOf(xmlParser.nextText()));
-                                    break;
-                                case "description":
-                                    topic.setDescriptionResource(_context.getResources().getIdentifier(xmlParser.nextText(), "string", _context.getPackageName()));
-                                    break;
-                                default:
-                                    Log.e("SwebokLoaderService", "No known element: " + xmlElementName);
+                    String xmlElementName;
+                    switch (eventType) {
+                        case XmlPullParser.START_DOCUMENT:
+                            // Just do your stuff
+                            break;
+                        case XmlPullParser.START_TAG:
+                            xmlElementName = xmlParser.getName();
+
+                            if (xmlElementName.equals("knowledge-area")) {
+                                knowledgeArea = new KnowledgeArea();
+                            } else if (knowledgeArea != null) {
+                                switch (xmlElementName) {
+                                    case "name":
+                                        knowledgeArea.setNameResource(_context.getResources().getIdentifier(xmlParser.nextText(), "string", _context.getPackageName()));
+                                        break;
+                                    case "image":
+                                        knowledgeArea.setImageResource(_context.getResources().getIdentifier(xmlParser.nextText(), "drawable", _context.getPackageName()));
+                                        break;
+                                    case "imageBackgroundColour":
+                                        knowledgeArea.setColourResource(_context.getResources().getIdentifier(xmlParser.nextText(), "color", _context.getPackageName()));
+                                        break;
+                                    case "description":
+                                        knowledgeArea.setDescriptionResource(_context.getResources().getIdentifier(xmlParser.nextText(), "string", _context.getPackageName()));
+                                        break;
+                                    // NOTE: since XMLParser is iterator based the id MUST come before topics (in the XML), otherwise this all falls apart
+                                    case "id":
+                                        currentKAId = Integer.valueOf(xmlParser.nextText());
+                                        knowledgeArea.setId(currentKAId);
+                                        break;
+                                    case "topics":
+                                        List<KnowledgeAreaTopic> topics = parseTopics(currentKAId, xmlParser);
+                                        knowledgeArea.setTopics(topics);
+                                        break;
+                                }
                             }
-                        }
-                        break;
-                    case XmlPullParser.END_TAG:
-                        xmlElementName = xmlParser.getName();
-                        if (xmlElementName.equalsIgnoreCase("topic") && topic != null) {
-                            topics.add(topic);
-                        }
-                        break;
+                            break;
+
+                        case XmlPullParser.END_TAG:
+                            xmlElementName = xmlParser.getName();
+                            if (xmlElementName.equalsIgnoreCase("knowledge-area") && knowledgeArea != null) {
+                                //One last colour added so that I can use it in the future
+                                for (KnowledgeAreaTopic topic : knowledgeArea.getTopics()) {
+                                    topic.setColorResource(knowledgeArea.getColourResource());
+                                }
+                                knowledgeAreas.add(knowledgeArea);
+                            }
+                            break;
+                    }
+                    eventType = xmlParser.next();
                 }
 
-                eventType = xmlParser.next();
+            } catch (XmlPullParserException | Resources.NotFoundException | IOException e) {
+                e.printStackTrace();
             }
 
-        } catch (XmlPullParserException | IOException e) {
-            e.printStackTrace();
+            return knowledgeAreas;
         }
 
-        return topics;
+        /**
+         * Parses and returns each topic on a knowledge area of an xml file kept in res/raw
+         */
+        private List<KnowledgeAreaTopic> parseTopics(int currentKnowledgeAreaId, XmlPullParser xmlParser) {
+            List<KnowledgeAreaTopic> topics = new ArrayList<>();
+            try {
+
+                int eventType = xmlParser.getEventType();
+                String xmlElementName = xmlParser.getName();
+                KnowledgeAreaTopic topic = null;
+
+                // if it is the first let's just go to next to start iteration
+                if (xmlElementName.equalsIgnoreCase("topics") && eventType == XmlPullParser.START_TAG) {
+                    eventType = xmlParser.nextTag();
+                    xmlElementName = xmlParser.getName();
+                } else {
+                    throw new XmlPullParserException("Malformed xml: there is no topics element, you screwed up.");
+                }
+
+                while (!xmlElementName.equalsIgnoreCase("topics")) {
+
+                    switch (eventType) {
+                        case XmlPullParser.START_DOCUMENT:
+                            break;
+                        case XmlPullParser.START_TAG:
+                            xmlElementName = xmlParser.getName();
+
+                            if (xmlElementName.equals("topic")) {
+                                topic = new KnowledgeAreaTopic(currentKnowledgeAreaId);
+                            } else if (topic != null) {
+                                switch (xmlElementName) {
+                                    case "name":
+                                        topic.setNameResource(_context.getResources().getIdentifier(xmlParser.nextText(), "string", _context.getPackageName()));
+                                        break;
+                                    case "id":
+                                        topic.setId(Integer.valueOf(xmlParser.nextText()));
+                                        break;
+                                    case "description":
+                                        topic.setDescriptionResource(_context.getResources().getIdentifier(xmlParser.nextText(), "string", _context.getPackageName()));
+                                        break;
+                                    default:
+                                        Log.e("SwebokLoaderService", "No known element: " + xmlElementName);
+                                }
+                            }
+                            break;
+                        case XmlPullParser.END_TAG:
+                            xmlElementName = xmlParser.getName();
+                            if (xmlElementName.equalsIgnoreCase("topic") && topic != null) {
+                                topics.add(topic);
+                            }
+                            break;
+                    }
+
+                    eventType = xmlParser.next();
+                }
+
+            } catch (XmlPullParserException | IOException e) {
+                e.printStackTrace();
+            }
+
+            return topics;
+        }
+
+
+        @Override
+        protected void onPostExecute(List<KnowledgeArea> knowledgeAreas) {
+            _knowledgeAreas.postValue(knowledgeAreas);
+        }
+
     }
 
 

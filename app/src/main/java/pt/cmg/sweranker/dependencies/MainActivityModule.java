@@ -10,6 +10,8 @@ import pt.cmg.sweranker.MainActivity;
 import pt.cmg.sweranker.MainActivityViewModel;
 import pt.cmg.sweranker.MainActivityViewModelFactory;
 import pt.cmg.sweranker.degrees.DegreesRepository;
+import pt.cmg.sweranker.ranking.MatchesRepository;
+import pt.cmg.sweranker.ranking.ScoresRepository;
 import pt.cmg.sweranker.swebok.SwebokRepository;
 
 @Module
@@ -35,8 +37,8 @@ public class MainActivityModule {
 
     @Provides
     @MainActivityScope
-    ViewModel viewModel(SwebokRepository swebokRepository, DegreesRepository degreesRepository) {
-        return new MainActivityViewModel(swebokRepository, degreesRepository);
+    ViewModel viewModel(SwebokRepository swebokRepository, DegreesRepository degreesRepository, MatchesRepository matchesRepository, ScoresRepository scoresRepository) {
+        return new MainActivityViewModel(swebokRepository, degreesRepository, matchesRepository, scoresRepository);
     }
 
 

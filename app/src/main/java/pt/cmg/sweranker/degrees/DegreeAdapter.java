@@ -74,7 +74,9 @@ public class DegreeAdapter extends RecyclerView.Adapter<DegreeAdapter.DegreeView
             _degreeName = (TextView) view.findViewById(R.id.degree_name);
             _universityName = (TextView) view.findViewById(R.id.university_name);
 
-            view.setOnClickListener(v -> _listener.loadDetailedDegreeFragment(v, _degrees.get(getAdapterPosition()).getId()));
+            view.setOnClickListener(v -> {
+                _listener.loadDetailedDegreeFragment(v, _degrees.get(getAdapterPosition()));
+            });
         }
     }
 
@@ -83,10 +85,7 @@ public class DegreeAdapter extends RecyclerView.Adapter<DegreeAdapter.DegreeView
 
         /**
          * Loads the detail degree fragment of the given Degree id.
-         *
-         * @param rootView
-         * @param degreeId
          */
-        void loadDetailedDegreeFragment(View rootView, int degreeId);
+        void loadDetailedDegreeFragment(View rootView, Degree degree);
     }
 }

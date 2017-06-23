@@ -210,6 +210,14 @@ public class DegreeClassMatch {
         return _selectedKATopicsByProgramItem;
     }
 
+
+    /**
+     * Returns the complete list of ALL the KA Topics that were matched in this Class.
+     * I care not for the specific Program Item that matched whichever topic or topics,
+     * I just get a list with all that were matched.
+     *
+     * @return
+     */
     public LinkedList<Integer> getAllMatchesAsList() {
         LinkedList<Integer> allMatches = new LinkedList<>();
         for (List<Integer> topicList : _selectedKATopicsByProgramItem.values()) {

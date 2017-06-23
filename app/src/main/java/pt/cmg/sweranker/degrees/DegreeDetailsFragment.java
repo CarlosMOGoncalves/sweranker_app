@@ -3,6 +3,9 @@ package pt.cmg.sweranker.degrees;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Fragment;
+import android.arch.lifecycle.LifecycleRegistry;
+import android.arch.lifecycle.LifecycleRegistryOwner;
+import android.arch.lifecycle.ViewModelProviders;
 import android.content.Context;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -15,7 +18,6 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -32,6 +34,8 @@ import java.util.concurrent.TimeUnit;
 import io.realm.Realm;
 import io.realm.RealmList;
 import io.realm.RealmObject;
+import pt.cmg.sweranker.MainActivity;
+import pt.cmg.sweranker.MainActivityViewModel;
 import pt.cmg.sweranker.R;
 import pt.cmg.sweranker.ranking.AnnualClassCombination;
 import pt.cmg.sweranker.ranking.CalculationUtils;
@@ -44,7 +48,15 @@ import pt.cmg.sweranker.ranking.combinationstrategies.ClassCombinationStrategy;
  * Created by Carlos on 25/01/2017.
  */
 
-public class DegreeDetailsFragment extends Fragment {
+public class DegreeDetailsFragment extends Fragment implements LifecycleRegistryOwner {
+
+
+    LifecycleRegistry lifecycleRegistry = new LifecycleRegistry(this);
+
+    @Override
+    public LifecycleRegistry getLifecycle() {
+        return lifecycleRegistry;
+    }
 
     private static final String DEGREE_ID = "degree_id";
 
@@ -56,6 +68,8 @@ public class DegreeDetailsFragment extends Fragment {
     private String _degreeCombinationIdBase;
     private int _combinationIdCounter;
     private int _totalPossibleCombinations = 1;
+
+    private MainActivityViewModel _sharedViewModel;
 
     private DegreeDetailsFragmentInteractionListener _parentActivity;
 
@@ -70,12 +84,8 @@ public class DegreeDetailsFragment extends Fragment {
      *
      * @return A new instance of fragment DegreeDetailsFragment.
      */
-    public static DegreeDetailsFragment newInstance(int degreeId) {
-        DegreeDetailsFragment fragment = new DegreeDetailsFragment();
-        Bundle args = new Bundle();
-        args.putInt(DEGREE_ID, degreeId);
-        fragment.setArguments(args);
-        return fragment;
+    public static DegreeDetailsFragment newInstance() {
+        return new DegreeDetailsFragment();
     }
 
 
@@ -89,11 +99,8 @@ public class DegreeDetailsFragment extends Fragment {
 
         /**
          * Loads the class fragment whose item was chosen.
-         *
-         * @param degreeId
-         * @param degreeClassId
          */
-        void loadDegreeClassFragment(int degreeId, String degreeClassId);
+        void loadDegreeClassFragment(View selectedView, DegreeClass degreeClass);
     }
 
     @Override
@@ -104,28 +111,28 @@ public class DegreeDetailsFragment extends Fragment {
         } else {
             throw new RuntimeException(parentActivity.toString() + " must implement DegreeDetailsFragmentInteractionListener");
         }
+        _sharedViewModel = ViewModelProviders.of((MainActivity) getActivity()).get(MainActivityViewModel.class);
+        _degree = _sharedViewModel.getSelectedDegree();
+        _degreeId = _degree.getId();
     }
 
-    // NOTE: this is here because onAttach(Context) was added only on API 23, so as long as Lollipop is min sdk this shall be here
     @Override
-    public void onAttach(Activity activity) {
-        super.onAttach(activity);
-        if (activity instanceof DegreeDetailsFragmentInteractionListener) {
-            _parentActivity = (DegreeDetailsFragmentInteractionListener) activity;
+    public void onAttach(Activity parentActivity) {
+        super.onAttach(parentActivity);
+        if (parentActivity instanceof DegreeDetailsFragmentInteractionListener) {
+            _parentActivity = (DegreeDetailsFragmentInteractionListener) parentActivity;
         } else {
-            throw new RuntimeException(activity.toString() + " must implement DegreeDetailsFragmentInteractionListener");
+            throw new RuntimeException(parentActivity.toString() + " must implement DegreeDetailsFragmentInteractionListener");
         }
+        _sharedViewModel = ViewModelProviders.of((MainActivity) getActivity()).get(MainActivityViewModel.class);
+        _degree = _sharedViewModel.getSelectedDegree();
+        _degreeId = _degree.getId();
     }
 
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            _degreeId = getArguments().getInt(DEGREE_ID);
-            _degree = _parentActivity.getDegree(_degreeId);
-        }
-
         setHasOptionsMenu(true);
     }
 
@@ -148,6 +155,14 @@ public class DegreeDetailsFragment extends Fragment {
     }
 
 
+    /**
+     * Creates and displays the Calculation Prompt Dialog.
+     * This is a very very important functionality that launches a load of background processing
+     * that will crunch the matching data and calculate a score for each degree class, then
+     * for each yearly combination and finally for every possible degree combination.
+     * <p>
+     * TODO: a way to inform the user that processing is taking place, namely using notifications.
+     */
     private void createAndShowFilterDialog() {
         AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(getActivity());
 
@@ -157,7 +172,7 @@ public class DegreeDetailsFragment extends Fragment {
                 .setMessage(getResources().getString(R.string.calculation_dialog_message))
                 .setPositiveButton(getResources().getString(R.string.proceed), (dialog, which) -> {
                     // The positive button launches a calculation
-                    new CombinationCalculator().execute();
+                    _sharedViewModel.calculateDegreeScores(_degree);
                     dialog.cancel();
 
                 })
@@ -176,13 +191,12 @@ public class DegreeDetailsFragment extends Fragment {
         TextView universityName = (TextView) _myView.findViewById(R.id.university_name);
         TextView degreeName = (TextView) _myView.findViewById(R.id.degree_name);
         TextView isDegreeEvaluated = (TextView) _myView.findViewById(R.id.evaluated_status);
-        Button calculateScoreButton = (Button) _myView.findViewById(R.id.init_calculation);
 
         degreeImage.setImageDrawable(this.getResources().getDrawable(_degree.getImageResource(), null));
         universityName.setText(this.getResources().getText(_degree.getUniversityResource()));
         degreeName.setText(this.getResources().getText(_degree.getFullNameResource()));
 
-        if (_parentActivity.isDegreeMatched(_degreeId)) {
+        if (_sharedViewModel.isDegreeMatched(_degreeId)) {
             isDegreeEvaluated.setText(R.string.matched);
             isDegreeEvaluated.setTextColor((this.getResources().getColor(R.color.materialAffirmative)));
         } else {
@@ -190,15 +204,10 @@ public class DegreeDetailsFragment extends Fragment {
             isDegreeEvaluated.setTextColor((this.getResources().getColor(R.color.materialNegative)));
         }
 
-        // This button is a case to review. It probably should not be here. Most of the time is hidden as it triggers BIG processing.
-        calculateScoreButton.setOnClickListener(view -> new CombinationCalculator().execute());
-
         ViewPager viewPager = (ViewPager) _myView.findViewById(R.id.degree_viewPager);
-        viewPager.setAdapter(new DegreeViewPagerAdapter(this.getActivity(), _degree, new DegreeViewPagerAdapter.OnDegreeClassItemSelected() {
-            @Override
-            public void onDegreeClassClicked(int degreeId, String degreeClassId) {
-                _parentActivity.loadDegreeClassFragment(degreeId, degreeClassId);
-            }
+        viewPager.setAdapter(new DegreeViewPagerAdapter(this.getActivity(), _degree, (view, degreeClass) -> {
+            _sharedViewModel.setSelectedDegreeClass(degreeClass);
+            _parentActivity.loadDegreeClassFragment(view, degreeClass);
         }));
 
         TabLayout tabLayout = (TabLayout) _myView.findViewById(R.id.degree_tabs);
@@ -289,7 +298,7 @@ public class DegreeDetailsFragment extends Fragment {
 
             // First get the saved annual combinations for this degree
             List<AnnualClassCombination> savedAnnualClassCombinations = databaseConnection.where(AnnualClassCombination.class)
-                    .equalTo("degreeId", (byte) _degreeId)
+                    .equalTo("degreeId", _degreeId)
                     .findAll();
 
 
