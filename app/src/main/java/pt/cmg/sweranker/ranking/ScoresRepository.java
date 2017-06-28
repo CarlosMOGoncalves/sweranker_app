@@ -25,6 +25,10 @@ public interface ScoresRepository {
 
     List<SweScore> getScoresOfDegree(int degreeId);
 
+    SweScore getDegreeCombinationScore(String degreeCombinationId);
+
+    DegreeClassCombination getDegreeClassCombination(String degreeCombinationId);
+
     int countAllCombinationsOfDegree(int degreeId);
 
     void insertOrUpdateObjectsInTransaction(List<?> objects);

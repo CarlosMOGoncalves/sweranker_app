@@ -73,6 +73,10 @@ public class MainActivityViewModel extends ViewModel {
     // Used in inter-fragment communication between DegreeDetailedFragment and DegreeClassFragment
     private DegreeClass _selectedDegreeClass;
 
+    // Used in inter-fragment communication between ScoreMasterFragment and ScoreDetailedChartFragment
+    // This will be used to load data about this particular combination.
+    private String _selectedDegreeCombinationId;
+
     private SwebokRepository _swebokRepository;
     private DegreesRepository _degreesRepository;
     private MatchesRepository _matchesRepository;
@@ -250,6 +254,11 @@ public class MainActivityViewModel extends ViewModel {
         return _knowledgeAreas;
     }
 
+
+    public List<KnowledgeAreaTopic> getKnowledgeAreaTopics() {
+        return _knowledgeAreaTopics;
+    }
+
     /**
      * Returns a single Knowledge Area from the previously loaded system Knowledge Areas
      *
@@ -296,6 +305,22 @@ public class MainActivityViewModel extends ViewModel {
     }
 
 
+    /**
+     * Returns a Degree Class given its ID.
+     *
+     * @param degreeClassId
+     * @return
+     */
+    public DegreeClass getDegreeClass(String degreeClassId) {
+        DegreeClass degreeClass = new DegreeClass();
+        for (Degree degree : _degrees.getValue()) {
+            if (degree.hasDegreeClass(degreeClassId)) {
+                degreeClass = degree.getDegreeClass(degreeClassId);
+            }
+        }
+        return degreeClass;
+    }
+
     public LiveData<Map<String, DegreeClassMatch>> getDegreeMatches() {
         return _degreeMatches;
     }
@@ -317,6 +342,21 @@ public class MainActivityViewModel extends ViewModel {
      */
     public boolean hasMatches(String degreeClassId) {
         return _degreeMatches.getValue().get(degreeClassId) != null;
+    }
+
+
+    public SweScore getDegreeScore(String degreeCombinationId) {
+        _scoresRepository.open();
+        SweScore result = _scoresRepository.getDegreeCombinationScore(degreeCombinationId);
+        _scoresRepository.close();
+        return result;
+    }
+
+    public DegreeClassCombination getDegreeClassCombination(String degreeCombinationId) {
+        _scoresRepository.open();
+        DegreeClassCombination result = _scoresRepository.getDegreeClassCombination(degreeCombinationId);
+        _scoresRepository.close();
+        return result;
     }
 
 
@@ -780,6 +820,14 @@ public class MainActivityViewModel extends ViewModel {
 
     public DegreeClass getSelectedDegreeClass() {
         return _selectedDegreeClass;
+    }
+
+    public void setSelectedDegreeCombinationId(String degreeCombinationId) {
+        _selectedDegreeCombinationId = degreeCombinationId;
+    }
+
+    public String getSelectedDegreeCombinationId() {
+        return _selectedDegreeCombinationId;
     }
 
 }

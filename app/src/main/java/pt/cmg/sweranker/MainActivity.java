@@ -46,10 +46,10 @@ import pt.cmg.sweranker.degrees.DegreesMasterFragment;
 import pt.cmg.sweranker.dependencies.DaggerMainActivityComponent;
 import pt.cmg.sweranker.dependencies.MainActivityComponent;
 import pt.cmg.sweranker.dependencies.MainActivityModule;
-import pt.cmg.sweranker.ranking.MultiScoreChartFragment;
+import pt.cmg.sweranker.ranking.MultiScoreDetailedChartFragment;
 import pt.cmg.sweranker.ranking.RankingService;
-import pt.cmg.sweranker.ranking.ScoreChartFragment;
-import pt.cmg.sweranker.ranking.ScoresMasterFragment;
+import pt.cmg.sweranker.ranking.ScoreDetailedChartFragment;
+import pt.cmg.sweranker.ranking.ScoreMasterFragment;
 import pt.cmg.sweranker.swebok.KnowledgeArea;
 import pt.cmg.sweranker.swebok.KnowledgeAreaTopic;
 import pt.cmg.sweranker.swebok.SwebokDetailedFragment;
@@ -69,9 +69,8 @@ public class MainActivity extends AppCompatActivity implements
         DegreeDetailsFragment.DegreeDetailsFragmentInteractionListener,
         DegreeClassFragment.DegreeClassFragmentInteractionListener,
         DegreeTopicMatcherFragment.OnDegreeMatcherFragmentInteraction,
-        ScoresMasterFragment.RankingFragmentInteractionListener,
-        ScoreChartFragment.OnScoreChartFragmentInteractionListener,
-        MultiScoreChartFragment.OnMultiScoreChartFragmentInteractionListener {
+        ScoreMasterFragment.RankingFragmentInteractionListener,
+        MultiScoreDetailedChartFragment.OnMultiScoreChartFragmentInteractionListener {
 
 
     private SwebokLoaderService _swebokService;
@@ -275,7 +274,7 @@ public class MainActivity extends AppCompatActivity implements
             getFragmentManager().beginTransaction().replace(R.id.content_area, DegreesMasterFragment.newInstance(), "Degrees").commit();
         } else if (id == R.id.rankings_nav) {
             getFragmentManager().popBackStackImmediate();
-            getFragmentManager().beginTransaction().replace(R.id.content_area, ScoresMasterFragment.newInstance(), "Degrees").commit();
+            getFragmentManager().beginTransaction().replace(R.id.content_area, ScoreMasterFragment.newInstance(), "Degrees").commit();
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.nav_drawer);
@@ -583,9 +582,9 @@ public class MainActivity extends AppCompatActivity implements
 
 
     @Override
-    public void loadChartFragment(View v, String degreeScoreId) {
+    public void loadChartFragment(View v) {
 
-        Fragment chartFragment = ScoreChartFragment.newInstance(degreeScoreId);
+        Fragment chartFragment = ScoreDetailedChartFragment.newInstance();
 
         // This is important. I used a simples transition but the real magic is that I change the
         // toolbar into a back button toolbar so that it is easier to navigate.
@@ -621,7 +620,7 @@ public class MainActivity extends AppCompatActivity implements
     @Override
     public void loadCompareScoresFragment(List<String> degreeScoreIds) {
 
-        Fragment chartFragment = MultiScoreChartFragment.newInstance(degreeScoreIds.get(0), degreeScoreIds.get(1));
+        Fragment chartFragment = MultiScoreDetailedChartFragment.newInstance(degreeScoreIds.get(0), degreeScoreIds.get(1));
 
         // This is important. I used a simples transition but the real magic is that I change the
         // toolbar into a back button toolbar so that it is easier to navigate.

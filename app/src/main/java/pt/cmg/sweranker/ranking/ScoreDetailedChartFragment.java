@@ -2,6 +2,9 @@ package pt.cmg.sweranker.ranking;
 
 import android.app.Activity;
 import android.app.Fragment;
+import android.arch.lifecycle.LifecycleRegistry;
+import android.arch.lifecycle.LifecycleRegistryOwner;
+import android.arch.lifecycle.ViewModelProviders;
 import android.content.Context;
 import android.graphics.Paint;
 import android.graphics.PorterDuff;
@@ -50,12 +53,11 @@ import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
 
-import io.realm.Realm;
+import pt.cmg.sweranker.MainActivity;
+import pt.cmg.sweranker.MainActivityViewModel;
 import pt.cmg.sweranker.R;
 import pt.cmg.sweranker.degrees.DegreeClass;
-import pt.cmg.sweranker.degrees.DegreeLoader;
 import pt.cmg.sweranker.swebok.KnowledgeArea;
-import pt.cmg.sweranker.swebok.KnowledgeAreaLoader;
 import pt.cmg.sweranker.swebok.KnowledgeAreaTopic;
 
 /**
@@ -67,12 +69,19 @@ import pt.cmg.sweranker.swebok.KnowledgeAreaTopic;
  * the way they are structured, what to expect of them and their completeness in relation to SWEBOK.
  * In simple words, this is the graphical tool that is the point of this application.
  */
-public class ScoreChartFragment extends Fragment {
+public class ScoreDetailedChartFragment extends Fragment implements LifecycleRegistryOwner {
+
+
+    LifecycleRegistry lifecycleRegistry = new LifecycleRegistry(this);
+
+    @Override
+    public LifecycleRegistry getLifecycle() {
+        return lifecycleRegistry;
+    }
+
 
     private static final int SUBTITLE_COLUMN_COUNT = 2;
     private static final int SUBTITLE_ROW_COUNT = 8;
-
-    private static final String SCORE_ID = "degreeScoreId";
 
     private String _degreeScoreId;
 
@@ -97,7 +106,7 @@ public class ScoreChartFragment extends Fragment {
     private TextView _showOverview;
     private ProgressBar _overviewProgressBar;
 
-    private GridLayout _legendTable;
+    private GridLayout _subtitleTable;
 
     private ProgressBar _percentProgressBar;
     private PieChart _kaPercentDistributionChart;
@@ -114,50 +123,36 @@ public class ScoreChartFragment extends Fragment {
     private SweScore _degreeScore;
     private DegreeClassCombination _degreeCombination;
 
-    private OnScoreChartFragmentInteractionListener _parentActivity;
+    private MainActivityViewModel _sharedViewModel;
 
-    public ScoreChartFragment() {
+
+    public ScoreDetailedChartFragment() {
         // Required empty public constructor
     }
 
-    public static ScoreChartFragment newInstance(String degreeScoreId) {
-        ScoreChartFragment fragment = new ScoreChartFragment();
-        Bundle args = new Bundle();
-        args.putString(SCORE_ID, degreeScoreId);
-        fragment.setArguments(args);
-        return fragment;
+    public static ScoreDetailedChartFragment newInstance() {
+        return new ScoreDetailedChartFragment();
     }
 
 
     @Override
     public void onAttach(Context parentActivity) {
         super.onAttach(parentActivity);
-        if (parentActivity instanceof OnScoreChartFragmentInteractionListener) {
-            _parentActivity = (OnScoreChartFragmentInteractionListener) parentActivity;
-        } else {
-            throw new RuntimeException(parentActivity.toString() + " must implement OnScoreChartFragmentInteractionListener");
-        }
+        _sharedViewModel = ViewModelProviders.of((MainActivity) getActivity()).get(MainActivityViewModel.class);
     }
 
     // NOTE: this is here because onAttach(Context) was added only on API 23, so as long as Lollipop is min sdk this shall be here
     @Override
     public void onAttach(Activity activity) {
         super.onAttach(activity);
-        if (activity instanceof OnScoreChartFragmentInteractionListener) {
-            _parentActivity = (OnScoreChartFragmentInteractionListener) activity;
-        } else {
-            throw new RuntimeException(activity.toString() + " must implement OnScoreChartFragmentInteractionListener");
-        }
-
+        _sharedViewModel = ViewModelProviders.of((MainActivity) getActivity()).get(MainActivityViewModel.class);
     }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            _degreeScoreId = getArguments().getString(SCORE_ID);
-            new SweScoreLoader().execute();
-        }
+        _degreeScoreId = _sharedViewModel.getSelectedDegreeCombinationId();
+        new SweScoreLoader().execute();
     }
 
 
@@ -175,7 +170,7 @@ public class ScoreChartFragment extends Fragment {
         _showOverview = (TextView) _myRootView.findViewById(R.id.show_overview);
 
 
-        _legendTable = (GridLayout) _myRootView.findViewById(R.id.chart_legend_table);
+        _subtitleTable = (GridLayout) _myRootView.findViewById(R.id.chart_legend_table);
 
         _percentProgressBar = (ProgressBar) _myRootView.findViewById(R.id.percent_chart_progress);
         _percentProgressBar.setVisibility(View.VISIBLE);
@@ -201,9 +196,9 @@ public class ScoreChartFragment extends Fragment {
 
         int combinationNumber = Integer.valueOf(_degreeScore.getId().substring(3, _degreeScore.getId().length()));
 
-        _degreeImage.setImageDrawable(ContextCompat.getDrawable(getActivity(), _parentActivity.getDegree(_degreeScore.getDegreeId()).getImageResource()));
-        _overviewDegreeName.setText(getResources().getString(_parentActivity.getDegree(_degreeScore.getDegreeId()).getNameResource()));
-        _overviewUniversityName.setText(getResources().getString(_parentActivity.getDegree(_degreeScore.getDegreeId()).getUniversityResource()));
+        _degreeImage.setImageDrawable(ContextCompat.getDrawable(getActivity(), _sharedViewModel.getDegree(_degreeScore.getDegreeId()).getValue().getImageResource()));
+        _overviewDegreeName.setText(getResources().getString(_sharedViewModel.getDegree(_degreeScore.getDegreeId()).getValue().getNameResource()));
+        _overviewUniversityName.setText(getResources().getString(_sharedViewModel.getDegree(_degreeScore.getDegreeId()).getValue().getUniversityResource()));
         _overviewCombinationName.setText(String.format(getResources().getString(R.string.degree_overview_combination), combinationNumber));
         _showOverview.setOnClickListener(view ->
                 DegreeOverviewDialog.newInstance(getDegreeClasses()).show(getFragmentManager(), "")
@@ -223,7 +218,7 @@ public class ScoreChartFragment extends Fragment {
 
         for (AnnualClassCombination annualCombination : _degreeCombination.getAnnualClassCombinations()) {
             for (DegreeClassId degreeId : annualCombination.getDegreeClassIds()) {
-                degreeClasses.add(_parentActivity.getDegreeClass(degreeId.getDegreeClassId()));
+                degreeClasses.add(_sharedViewModel.getDegreeClass(degreeId.getDegreeClassId()));
             }
         }
 
@@ -354,9 +349,9 @@ public class ScoreChartFragment extends Fragment {
      */
     private void updateSubtitleChart() {
 
-        _legendTable.setAlignmentMode(GridLayout.ALIGN_BOUNDS);
-        _legendTable.setColumnCount(SUBTITLE_COLUMN_COUNT);
-        _legendTable.setRowCount(SUBTITLE_ROW_COUNT);
+        _subtitleTable.setAlignmentMode(GridLayout.ALIGN_BOUNDS);
+        _subtitleTable.setColumnCount(SUBTITLE_COLUMN_COUNT);
+        _subtitleTable.setRowCount(SUBTITLE_ROW_COUNT);
 
         Drawable squareIcon = ContextCompat.getDrawable(getActivity(), R.drawable.square);
 
@@ -384,7 +379,7 @@ public class ScoreChartFragment extends Fragment {
             kaName.setLayoutParams(layoutParams);
 
 
-            _legendTable.addView(kaName, i);
+            _subtitleTable.addView(kaName, i);
         }
     }
 
@@ -683,7 +678,6 @@ public class ScoreChartFragment extends Fragment {
     @Override
     public void onDetach() {
         super.onDetach();
-        _parentActivity = null;
     }
 
 
@@ -706,7 +700,7 @@ public class ScoreChartFragment extends Fragment {
          */
         private void loadKnowledgeAreasVariables() {
 
-            List<KnowledgeArea> kas = _parentActivity.getKnowledgeAreas();
+            List<KnowledgeArea> kas = _sharedViewModel.getKnowledgeAreas().getValue();
 
             _knowledgeAreas = new KnowledgeArea[kas.size()];
             _knowledgeAreaColours = new int[kas.size()];
@@ -716,7 +710,7 @@ public class ScoreChartFragment extends Fragment {
                 _knowledgeAreaColours[knowledgeArea.getId() - 1] = ContextCompat.getColor(getActivity().getApplicationContext(), knowledgeArea.getColourResource());
             }
 
-            List<KnowledgeAreaTopic> allTopics = _parentActivity.getAllKnowledgeAreaTopics();
+            List<KnowledgeAreaTopic> allTopics = _sharedViewModel.getKnowledgeAreaTopics();
             _knowledgeAreaTopics = new KnowledgeAreaTopic[allTopics.size()];
             for (KnowledgeAreaTopic kaTopic : allTopics) {
                 _knowledgeAreaTopics[kaTopic.getId() - 1] = kaTopic;
@@ -729,23 +723,8 @@ public class ScoreChartFragment extends Fragment {
          * Loads from the Realm database the selected score for this fragment and naturally closes the door afterwards
          */
         private void loadSelectedScore() {
-
-            Realm database = Realm.getDefaultInstance();
-
-            SweScore currentScore = database.where(SweScore.class)
-                    .equalTo(SweScoreFields.SCORE_TYPE, SweScore.TYPE_DEGREE_SCORE)
-                    .equalTo(SweScoreFields.ID, _degreeScoreId)
-                    .findFirst();
-
-            _degreeScore = new SweScore(currentScore);
-
-            DegreeClassCombination degreeCombination = database.where(DegreeClassCombination.class)
-                    .equalTo(DegreeClassCombinationFields.COMBINATION_ID, _degreeScoreId)
-                    .findFirst();
-
-            _degreeCombination = database.copyFromRealm(degreeCombination);
-
-            database.close();
+            _degreeScore = _sharedViewModel.getDegreeScore(_degreeScoreId);
+            _degreeCombination = _sharedViewModel.getDegreeClassCombination(_degreeScoreId);
         }
 
         @Override
@@ -800,10 +779,4 @@ public class ScoreChartFragment extends Fragment {
         }
     }
 
-
-    /**
-     * This is the standard communication interface used to pass data from and to this fragment.
-     */
-    public interface OnScoreChartFragmentInteractionListener extends KnowledgeAreaLoader, DegreeLoader {
-    }
 }

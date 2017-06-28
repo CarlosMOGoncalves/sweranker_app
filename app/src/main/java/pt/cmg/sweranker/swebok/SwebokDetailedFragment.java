@@ -50,12 +50,6 @@ public class SwebokDetailedFragment extends Fragment implements LifecycleRegistr
     public SwebokDetailedFragment() {
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @return A new instance of fragment SwebokMasterFragment.
-     */
     public static SwebokDetailedFragment newInstance() {
         return new SwebokDetailedFragment();
     }

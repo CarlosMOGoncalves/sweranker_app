@@ -35,12 +35,10 @@ import pt.cmg.sweranker.MainActivity;
 import pt.cmg.sweranker.MainActivityViewModel;
 import pt.cmg.sweranker.R;
 import pt.cmg.sweranker.degrees.Degree;
-import pt.cmg.sweranker.degrees.DegreeLoader;
 import pt.cmg.sweranker.swebok.KnowledgeArea;
-import pt.cmg.sweranker.swebok.KnowledgeAreaLoader;
 import pt.cmg.sweranker.ui.ConstantSpacingItemDecorator;
 
-public class ScoresMasterFragment extends Fragment implements LifecycleRegistryOwner {
+public class ScoreMasterFragment extends Fragment implements LifecycleRegistryOwner {
 
 
     LifecycleRegistry lifecycleRegistry = new LifecycleRegistry(this);
@@ -50,6 +48,30 @@ public class ScoresMasterFragment extends Fragment implements LifecycleRegistryO
         return lifecycleRegistry;
     }
 
+
+    /**
+     * Communication interface between this fragment and its parent Activity.
+     */
+    public interface RankingFragmentInteractionListener {
+
+        /**
+         * Loads the Chart fragment for this particular score Id. Note that due to
+         * the implementation I made, the Degree Score Id and the Degree Combination Id
+         * is actually the same, which is nice, but will really make me cry when looking
+         * for it in the code somewhere in the future...
+         */
+        void loadChartFragment(View selectedView);
+
+
+        /**
+         * Loads the scores comparation fragment with the selected degree combinations while in
+         * Action Mode.
+         *
+         * @param degreeScoreIds A list with the Degree Combination Ids/ Degree Score Ids to compare.
+         */
+        void loadCompareScoresFragment(List<String> degreeScoreIds);
+
+    }
 
     /**
      * This is a reference to the parent activity that this fragment will be attached to on onAttach()
@@ -77,13 +99,13 @@ public class ScoresMasterFragment extends Fragment implements LifecycleRegistryO
 
     private MainActivityViewModel _sharedViewModel;
 
-    public ScoresMasterFragment() {
+    public ScoreMasterFragment() {
         // Required empty public constructor
     }
 
 
-    public static ScoresMasterFragment newInstance() {
-        return new ScoresMasterFragment();
+    public static ScoreMasterFragment newInstance() {
+        return new ScoreMasterFragment();
     }
 
     @Override
@@ -177,7 +199,7 @@ public class ScoresMasterFragment extends Fragment implements LifecycleRegistryO
         _filterDialog = getActivity().getLayoutInflater().inflate(R.layout.ranking_fragment_filter_dialog, null);
 
         _filterDialogSelectedKA = (Spinner) _filterDialog.findViewById(R.id.knowledge_area_spinner);
-        _filterDialogSelectedKA.setAdapter(new KASpinnerAdapter());
+        _filterDialogSelectedKA.setAdapter(new KASpinnerAdapter(_sharedViewModel.getKnowledgeAreas().getValue()));
 
         String[] orders = new String[]{getActivity().getString(R.string.order_ascending), getActivity().getString(R.string.order_descending)};
         _filterDialogSelectedOrder = (Spinner) _filterDialog.findViewById(R.id.order_spinner);
@@ -189,7 +211,7 @@ public class ScoresMasterFragment extends Fragment implements LifecycleRegistryO
         _filterDialogLimitSpinner.setSelection(1);
 
         _filterDialogSelectedDegree = (Spinner) _filterDialog.findViewById(R.id.degree_spinner);
-        _filterDialogSelectedDegree.setAdapter(new DegreeSpinnerAdapter());
+        _filterDialogSelectedDegree.setAdapter(new DegreeSpinnerAdapter(_sharedViewModel.getDegrees().getValue()));
 
         return _filterDialog;
 
@@ -212,14 +234,14 @@ public class ScoresMasterFragment extends Fragment implements LifecycleRegistryO
             _rankingsGrid.setVisibility(View.GONE);
             new DegreeComboQueryLoader().execute();
         } else {
-            initialiseRankingGrid();
+            initialiseScoresGrid();
         }
 
         return _myRootView;
     }
 
 
-    private void initialiseRankingGrid() {
+    private void initialiseScoresGrid() {
 
         _adapter = new ScoresAndImagesAdapter(getActivity(),
                 _combinationNameAndImage, new ScoresGridListener());
@@ -241,7 +263,8 @@ public class ScoresMasterFragment extends Fragment implements LifecycleRegistryO
 
         @Override
         public void loadDegreeChartsFragment(View rootView, String degreeCombinationId) {
-            _parentActivity.loadChartFragment(rootView, degreeCombinationId);
+            _sharedViewModel.setSelectedDegreeCombinationId(degreeCombinationId);
+            _parentActivity.loadChartFragment(rootView);
         }
 
         @Override
@@ -336,9 +359,6 @@ public class ScoresMasterFragment extends Fragment implements LifecycleRegistryO
 
         /**
          * Just translates an ID to a specific field name used for the query.
-         *
-         * @param kaId
-         * @return
          */
         private String getKaFieldName(int kaId) {
             // This is ugly and most likely shouldn't be here. However I am almost finished with this and
@@ -424,7 +444,7 @@ public class ScoresMasterFragment extends Fragment implements LifecycleRegistryO
         @Override
         protected void onPostExecute(Void aVoid) {
             super.onPostExecute(aVoid);
-            initialiseRankingGrid();
+            initialiseScoresGrid();
         }
     }
 
@@ -446,9 +466,9 @@ public class ScoresMasterFragment extends Fragment implements LifecycleRegistryO
         private List<KnowledgeArea> _knowledgeAreas;
         private Context _context;
 
-        private KASpinnerAdapter() {
+        private KASpinnerAdapter(List<KnowledgeArea> knowledgeAreas) {
             _context = getActivity();
-            _knowledgeAreas = _parentActivity.getKnowledgeAreas();
+            _knowledgeAreas = knowledgeAreas;
         }
 
         @Override
@@ -479,9 +499,9 @@ public class ScoresMasterFragment extends Fragment implements LifecycleRegistryO
         private List<Degree> _degrees;
         private Context _context;
 
-        private DegreeSpinnerAdapter() {
+        private DegreeSpinnerAdapter(List<Degree> degrees) {
             _context = getActivity();
-            _degrees = _parentActivity.getAllDegrees();
+            _degrees = degrees;
         }
 
         @Override
@@ -518,21 +538,4 @@ public class ScoresMasterFragment extends Fragment implements LifecycleRegistryO
         }
     }
 
-    public interface RankingFragmentInteractionListener extends DegreeLoader, KnowledgeAreaLoader {
-
-        /**
-         * Loads the Chart fragment for this particular score Id. Note that due to
-         * the implementation I made, the Degree Score Id and the Degree Combination Id
-         * is actually the same, which is nice, but will really make me cry when looking
-         * for it in the code somewhere in the future...
-         *
-         * @param v
-         * @param degreeScoreId
-         */
-        void loadChartFragment(View v, String degreeScoreId);
-
-
-        void loadCompareScoresFragment(List<String> degreeScoreIds);
-
-    }
 }

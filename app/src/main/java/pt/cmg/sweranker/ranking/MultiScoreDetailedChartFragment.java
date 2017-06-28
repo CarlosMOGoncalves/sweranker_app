@@ -63,7 +63,7 @@ import pt.cmg.sweranker.swebok.KnowledgeArea;
 import pt.cmg.sweranker.swebok.KnowledgeAreaLoader;
 import pt.cmg.sweranker.swebok.KnowledgeAreaTopic;
 
-public class MultiScoreChartFragment extends Fragment {
+public class MultiScoreDetailedChartFragment extends Fragment {
 
     private static final int SUBTITLE_COLUMN_COUNT = 2;
     private static final int SUBTITLE_ROW_COUNT = 8;
@@ -129,12 +129,12 @@ public class MultiScoreChartFragment extends Fragment {
 
     private OnMultiScoreChartFragmentInteractionListener _parentActivity;
 
-    public MultiScoreChartFragment() {
+    public MultiScoreDetailedChartFragment() {
         // Required empty public constructor
     }
 
-    public static MultiScoreChartFragment newInstance(String degreeScoreId, String degreeScoreId2) {
-        MultiScoreChartFragment fragment = new MultiScoreChartFragment();
+    public static MultiScoreDetailedChartFragment newInstance(String degreeScoreId, String degreeScoreId2) {
+        MultiScoreDetailedChartFragment fragment = new MultiScoreDetailedChartFragment();
         Bundle args = new Bundle();
         args.putString(SCORE_ID_1, degreeScoreId);
         args.putString(SCORE_ID_2, degreeScoreId2);
