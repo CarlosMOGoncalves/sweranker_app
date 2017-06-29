@@ -12,6 +12,7 @@ import android.util.Log;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ExecutorService;
@@ -32,6 +33,7 @@ import pt.cmg.sweranker.ranking.DegreeClassId;
 import pt.cmg.sweranker.ranking.MatchesRepository;
 import pt.cmg.sweranker.ranking.ScoresRepository;
 import pt.cmg.sweranker.ranking.SweScore;
+import pt.cmg.sweranker.ranking.SweScoreFields;
 import pt.cmg.sweranker.ranking.combinationstrategies.ClassCombinationStrategy;
 import pt.cmg.sweranker.swebok.KnowledgeArea;
 import pt.cmg.sweranker.swebok.KnowledgeAreaTopic;
@@ -63,6 +65,8 @@ public class MainActivityViewModel extends ViewModel {
     // Keys -> Degree Id , Values -> true if completely matched, false otherwise
     private Map<Integer, Boolean> _matchedDegrees;
 
+    // Keys -> Degree combination name , Values -> a Degree image.
+    private MutableLiveData<LinkedHashMap<String, Integer>> _scoreImages = new MutableLiveData<>();
 
     // Used in inter-fragment communication between SwebokMasterFragment and SwebokDetailedFragment
     private KnowledgeArea _selectedKnowledgeArea;
@@ -76,6 +80,10 @@ public class MainActivityViewModel extends ViewModel {
     // Used in inter-fragment communication between ScoreMasterFragment and ScoreDetailedChartFragment
     // This will be used to load data about this particular combination.
     private String _selectedDegreeCombinationId;
+
+    // Used in inter-fragment communication between ScoreMasterFragment and MultiScoreDetailedChartFragment
+    // This will be used in when comparing two degree combinations against each other
+    private List<String> _selectedDegreeCombinationsToCompare;
 
     private SwebokRepository _swebokRepository;
     private DegreesRepository _degreesRepository;
@@ -293,12 +301,12 @@ public class MainActivityViewModel extends ViewModel {
      * @param degreeId
      * @return
      */
-    public LiveData<Degree> getDegree(int degreeId) {
-        MutableLiveData<Degree> result = new MutableLiveData<>();
+    public Degree getDegree(int degreeId) {
+        Degree result = new Degree();
 
         for (Degree degree : _degrees.getValue()) {
             if (degree.getId() == degreeId) {
-                result.setValue(degree);
+                result = degree;
             }
         }
         return result;
@@ -343,6 +351,22 @@ public class MainActivityViewModel extends ViewModel {
     public boolean hasMatches(String degreeClassId) {
         return _degreeMatches.getValue().get(degreeClassId) != null;
     }
+
+
+//    public List<SweScore> getScoresOfDegree(int degreeId) {
+//        return getScoresOfDegree(degreeId, null);
+//    }
+//
+//    public List<SweScore> getScoresOfDegreeOrderedBy(int degreeId, ScoresRepository.Sort order) {
+//        return getScoresOfDegree(degreeId, order);
+//    }
+//
+//
+//    private List<SweScore> getScoresOfDegree(int degreeId, ScoresRepository.Sort order) {
+//        if (order == null) {
+//            _scoresRepository.open();
+//        }
+//    }
 
 
     public SweScore getDegreeScore(String degreeCombinationId) {
@@ -391,18 +415,13 @@ public class MainActivityViewModel extends ViewModel {
 
         @Override
         protected Void doInBackground(Void... params) {
-
             _degreeCombinationIdBase = "d" + _degreeId + "c";
             _combinationIdCounter = 1;
 
             calculateAndSaveAnnualCombinations(_degree);
-
             calculateAndSaveAnnualScores();
-
             calculateAndSaveDegreeClassCombinations(_degree);
-
             calculateAndSaveDegreeScores();
-
             return null;
 
         }
@@ -796,6 +815,148 @@ public class MainActivityViewModel extends ViewModel {
     }
 
 
+    /**
+     * Loads a data structure that is just a visual representation of the degree scores.
+     * It basically consists of a Degree Combination name and its Image Resource.
+     * This is the data needed to be fed to the ScoreMasterFragment grid.
+     *
+     * @return
+     */
+    public LiveData<LinkedHashMap<String, Integer>> getOrderedScoresImages() {
+
+        new DegreeComboQueryLoader().execute();
+        return _scoreImages;
+    }
+
+    /**
+     * Loads a data structure that is just a visual representation of the degree scores.
+     * It basically consists of a Degree Combination name and its Image Resource.
+     * This is the data needed to be fed to the ScoreMasterFragment grid.
+     *
+     * @param kaId
+     * @param order
+     * @param degreeId
+     * @param limit
+     * @return
+     */
+    public LiveData<LinkedHashMap<String, Integer>> getOrderedScoresImages(int kaId, ScoresRepository.Sort order, int degreeId, int limit) {
+
+        new DegreeComboQueryLoader(kaId, order, degreeId, limit).execute();
+        return _scoreImages;
+    }
+
+    /**
+     * This AsyncTask's job is to load the scores from the system to finally show them in an ordered way.
+     * It executes a parameterised query against the Realm database.
+     * These parameters are passed by the Filter Dialog where the user can set how many results he wants
+     * from the system, as well as their order in relation to a specific Knowledge Area.
+     */
+    private class DegreeComboQueryLoader extends AsyncTask<Void, Void, LinkedHashMap<String, Integer>> {
+
+        private String _kaFieldName;
+        private ScoresRepository.Sort _sortOrder;
+        private int _degreeid;
+        private int _limit;
+
+
+        private DegreeComboQueryLoader() {
+            _kaFieldName = "";
+            _sortOrder = null;
+            _degreeid = 0;
+            _limit = 10;
+        }
+
+        private DegreeComboQueryLoader(int kaId, ScoresRepository.Sort order, int degreeId, int limit) {
+            _kaFieldName = getKaFieldName(kaId);
+            _sortOrder = order;
+            _degreeid = degreeId;
+            _limit = limit;
+        }
+
+        /**
+         * Just translates an ID to a specific field name used for the query.
+         */
+        private String getKaFieldName(int kaId) {
+            // This is ugly and most likely shouldn't be here. However I am almost finished with this and
+            // I won't spend my time now organising this.
+            switch (kaId) {
+                case 1:
+                    return SweScoreFields.KA_PERCENT1;
+                case 2:
+                    return SweScoreFields.KA_PERCENT2;
+                case 3:
+                    return SweScoreFields.KA_PERCENT3;
+                case 4:
+                    return SweScoreFields.KA_PERCENT4;
+                case 5:
+                    return SweScoreFields.KA_PERCENT5;
+                case 6:
+                    return SweScoreFields.KA_PERCENT6;
+                case 7:
+                    return SweScoreFields.KA_PERCENT7;
+                case 8:
+                    return SweScoreFields.KA_PERCENT8;
+                case 9:
+                    return SweScoreFields.KA_PERCENT9;
+                case 10:
+                    return SweScoreFields.KA_PERCENT10;
+                case 11:
+                    return SweScoreFields.KA_PERCENT11;
+                case 12:
+                    return SweScoreFields.KA_PERCENT12;
+                case 13:
+                    return SweScoreFields.KA_PERCENT13;
+                case 14:
+                    return SweScoreFields.KA_PERCENT14;
+                case 15:
+                    return SweScoreFields.KA_PERCENT15;
+                case 16:
+                    return SweScoreFields.KA_PERCENT16;
+                default:
+                    return SweScoreFields.KA_PERCENT1;
+            }
+        }
+
+        @Override
+        protected LinkedHashMap<String, Integer> doInBackground(Void... voids) {
+
+
+            _scoresRepository.open();
+
+            List<SweScore> results;
+            // If no sort order was input, I don't care the order, so the default will be fine
+            if (_sortOrder == null) {
+                results = _scoresRepository.getScoresOfDegree(_degreeid == 0 ? 1 : _degreeid);
+            } else {
+                results = _scoresRepository.getScoresOfDegreeOrderedBy(_degreeid == 0 ? 1 : _degreeid, _kaFieldName, _sortOrder);
+            }
+
+            // ATENCAO: Ha aqui uma grande grande falha. Devido ao facto de o Realm cortar o acesso aos dados quando se faz close na
+            // ligacao eu criei uma copia dos mesmos( ja que nao e mais do que um inteiro e uma string).
+            // No entanto nao e assim que se deve fazer, o ideal e devolver um "ResultSet" que vai sendo iterado ate nao se pretender
+            // mais dados. Isso seria feito, presumo, pelo Adapter desta coisa. Logo a connection estaria aberta ate sair desse ecra...
+            // Tenho que pensar melhor nisto e implementar no futuro.
+            LinkedHashMap<String, Integer> temporaryData = new LinkedHashMap<>();
+            int resultsLimit = _limit == 0 ? results.size() : _limit;
+            if (!results.isEmpty()) {
+                for (int i = 0; i < resultsLimit; i++) {
+                    SweScore currentScore = results.get(i);
+                    temporaryData.put(currentScore.getId(), _degreesById.get((int) currentScore.getDegreeId()).getImageResource());
+                }
+            }
+            _scoresRepository.close();
+
+            return temporaryData;
+        }
+
+        @Override
+        protected void onPostExecute(LinkedHashMap<String, Integer> temporaryData) {
+            super.onPostExecute(temporaryData);
+            _scoreImages.setValue(temporaryData);
+        }
+    }
+
+
     // BELOW IS FRAGMENT INTERACTION ZONE
 
     public void setSelectedKnowledgeArea(KnowledgeArea knowledgeArea) {
@@ -828,6 +989,14 @@ public class MainActivityViewModel extends ViewModel {
 
     public String getSelectedDegreeCombinationId() {
         return _selectedDegreeCombinationId;
+    }
+
+    public void setMultiSelectedDereeCombinationIds(List<String> selectedDegreeCombinationsToCompare) {
+        _selectedDegreeCombinationsToCompare = selectedDegreeCombinationsToCompare;
+    }
+
+    public List<String> getMultiSelectedDegreeCombinationIds() {
+        return _selectedDegreeCombinationsToCompare;
     }
 
 }

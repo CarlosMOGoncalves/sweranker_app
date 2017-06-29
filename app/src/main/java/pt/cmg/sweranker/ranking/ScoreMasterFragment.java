@@ -3,16 +3,17 @@ package pt.cmg.sweranker.ranking;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Fragment;
+import android.arch.lifecycle.Lifecycle;
 import android.arch.lifecycle.LifecycleRegistry;
 import android.arch.lifecycle.LifecycleRegistryOwner;
 import android.arch.lifecycle.ViewModelProviders;
 import android.content.Context;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.view.ActionMode;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -29,8 +30,6 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-import io.realm.Realm;
-import io.realm.Sort;
 import pt.cmg.sweranker.MainActivity;
 import pt.cmg.sweranker.MainActivityViewModel;
 import pt.cmg.sweranker.R;
@@ -41,18 +40,18 @@ import pt.cmg.sweranker.ui.ConstantSpacingItemDecorator;
 public class ScoreMasterFragment extends Fragment implements LifecycleRegistryOwner {
 
 
-    LifecycleRegistry lifecycleRegistry = new LifecycleRegistry(this);
+    private LifecycleRegistry _lifecycle;
 
     @Override
     public LifecycleRegistry getLifecycle() {
-        return lifecycleRegistry;
+        return _lifecycle;
     }
 
 
     /**
      * Communication interface between this fragment and its parent Activity.
      */
-    public interface RankingFragmentInteractionListener {
+    public interface ScoreFragmentInteractionListener {
 
         /**
          * Loads the Chart fragment for this particular score Id. Note that due to
@@ -64,12 +63,10 @@ public class ScoreMasterFragment extends Fragment implements LifecycleRegistryOw
 
 
         /**
-         * Loads the scores comparation fragment with the selected degree combinations while in
+         * Loads the scores comparison fragment with the selected degree combinations while in
          * Action Mode.
-         *
-         * @param degreeScoreIds A list with the Degree Combination Ids/ Degree Score Ids to compare.
          */
-        void loadCompareScoresFragment(List<String> degreeScoreIds);
+        void loadCompareScoresFragment();
 
     }
 
@@ -77,7 +74,7 @@ public class ScoreMasterFragment extends Fragment implements LifecycleRegistryOw
      * This is a reference to the parent activity that this fragment will be attached to on onAttach()
      * It is used to communicate with it.
      */
-    private RankingFragmentInteractionListener _parentActivity;
+    private ScoreFragmentInteractionListener _parentActivity;
 
     private RecyclerView _rankingsGrid;
     private View _myRootView;
@@ -100,7 +97,7 @@ public class ScoreMasterFragment extends Fragment implements LifecycleRegistryOw
     private MainActivityViewModel _sharedViewModel;
 
     public ScoreMasterFragment() {
-        // Required empty public constructor
+        _lifecycle = new LifecycleRegistry(this);
     }
 
 
@@ -111,39 +108,39 @@ public class ScoreMasterFragment extends Fragment implements LifecycleRegistryOw
     @Override
     public void onAttach(Context parentActivity) {
         super.onAttach(parentActivity);
-        if (parentActivity instanceof RankingFragmentInteractionListener) {
-            _parentActivity = (RankingFragmentInteractionListener) parentActivity;
+        if (parentActivity instanceof ScoreFragmentInteractionListener) {
+            _parentActivity = (ScoreFragmentInteractionListener) parentActivity;
         } else {
-            throw new RuntimeException(parentActivity.toString() + " must implement RankingFragmentInteractionListener");
+            throw new RuntimeException(parentActivity.toString() + " must implement ScoreFragmentInteractionListener");
         }
-
-        _sharedViewModel = ViewModelProviders.of((MainActivity) getActivity()).get(MainActivityViewModel.class);
     }
 
     // NOTE: this is here because onAttach(Context) was added only on API 23, so as long as Lollipop is min sdk this shall be here
     @Override
     public void onAttach(Activity activity) {
         super.onAttach(activity);
-        if (activity instanceof RankingFragmentInteractionListener) {
-            _parentActivity = (RankingFragmentInteractionListener) activity;
+        if (activity instanceof ScoreFragmentInteractionListener) {
+            _parentActivity = (ScoreFragmentInteractionListener) activity;
         } else {
-            throw new RuntimeException(activity.toString() + " must implement RankingFragmentInteractionListener");
+            throw new RuntimeException(activity.toString() + " must implement ScoreFragmentInteractionListener");
         }
 
-        _sharedViewModel = ViewModelProviders.of((MainActivity) getActivity()).get(MainActivityViewModel.class);
     }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        _sharedViewModel = ViewModelProviders.of((MainActivity) getActivity()).get(MainActivityViewModel.class);
+
         List<Degree> degrees = _sharedViewModel.getDegrees().getValue();
         _degrees = new LinkedHashMap<>();
         for (Degree d : degrees) {
             _degrees.put(d.getId(), d);
         }
-
         setHasOptionsMenu(true);
+
+        _lifecycle.handleLifecycleEvent(Lifecycle.Event.ON_CREATE);
     }
 
     @Override
@@ -176,14 +173,16 @@ public class ScoreMasterFragment extends Fragment implements LifecycleRegistryOw
                     // In the adapter this is the same
                     int kaId = (int) _filterDialogSelectedKA.getSelectedItemId();
                     // This conversion is inferred by the below Array Adapter.
-                    Sort order = _filterDialogSelectedOrder.getSelectedItemId() == 0 ? Sort.ASCENDING : Sort.DESCENDING;
+                    ScoresRepository.Sort order = _filterDialogSelectedOrder.getSelectedItemId() == 0 ? ScoresRepository.Sort.ASCENDING : ScoresRepository.Sort.DESCENDING;
                     // In the Adapter this is also the same
                     int degreeId = (int) _filterDialogSelectedDegree.getSelectedItemId();
                     // Also inferred from below, ain't nobody got time for parameterization.
                     int limit = _filterDialogLimitSpinner.getSelectedItemId() == 3 ? 0 : Integer.valueOf((String) _filterDialogLimitSpinner.getSelectedItem());
 
                     // The positive button launches a new search with new parameters
-                    new DegreeComboQueryLoader(kaId, order, degreeId, limit).execute();
+                    _progressBar.setVisibility(View.VISIBLE);
+                    _rankingsGrid.setVisibility(View.INVISIBLE);
+                    _sharedViewModel.getOrderedScoresImages(kaId, order, degreeId, limit).observe(this, combinationImages -> initialiseScoresGrid(combinationImages));
 
                     dialog.cancel();
 
@@ -227,24 +226,23 @@ public class ScoreMasterFragment extends Fragment implements LifecycleRegistryOw
 
         _rankingsGrid = (RecyclerView) _myRootView.findViewById(R.id.rankings_grid);
 
+        _progressBar.setVisibility(View.VISIBLE);
+        _rankingsGrid.setVisibility(View.GONE);
 
-        // This is needed so it doesn't load new images every time this fragment is made visible.
-        if (_combinationNameAndImage == null) {
-            _progressBar.setVisibility(View.VISIBLE);
-            _rankingsGrid.setVisibility(View.GONE);
-            new DegreeComboQueryLoader().execute();
-        } else {
-            initialiseScoresGrid();
-        }
+
+        _sharedViewModel.getOrderedScoresImages().observe(this, combinationImages -> {
+            initialiseScoresGrid(combinationImages);
+            Log.i("SweRanker", "Passei por cá.");
+        });
 
         return _myRootView;
     }
 
 
-    private void initialiseScoresGrid() {
+    private void initialiseScoresGrid(LinkedHashMap<String, Integer> combinationNameAndImage) {
 
         _adapter = new ScoresAndImagesAdapter(getActivity(),
-                _combinationNameAndImage, new ScoresGridListener());
+                combinationNameAndImage, new ScoresGridListener());
 
         _rankingsGrid.setLayoutManager(new GridLayoutManager(getActivity(), 4));
         _rankingsGrid.addItemDecoration(new ConstantSpacingItemDecorator(getActivity(),
@@ -258,6 +256,18 @@ public class ScoreMasterFragment extends Fragment implements LifecycleRegistryOw
         _rankingsGrid.setVisibility(View.VISIBLE);
     }
 
+    @Override
+    public void onStart() {
+        super.onStart();
+        _lifecycle.handleLifecycleEvent(Lifecycle.Event.ON_START);
+
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        _lifecycle.handleLifecycleEvent(Lifecycle.Event.ON_RESUME);
+    }
 
     private class ScoresGridListener implements ScoresAndImagesAdapter.OnScoresGridAdapterListener {
 
@@ -314,7 +324,8 @@ public class ScoreMasterFragment extends Fragment implements LifecycleRegistryOw
                     mode.finish();
                     return true;
                 case R.id.apply_selection:
-                    _parentActivity.loadCompareScoresFragment(_adapter.getSelectedDegreeIds());
+                    _sharedViewModel.setMultiSelectedDereeCombinationIds(_adapter.getSelectedDegreeIds());
+                    _parentActivity.loadCompareScoresFragment();
                     mode.finish();
                     return true;
                 default:
@@ -329,129 +340,22 @@ public class ScoreMasterFragment extends Fragment implements LifecycleRegistryOw
         }
     }
 
-    /**
-     * This AsyncTask's job is to load the scores from the system to finally show them in an ordered way.
-     * It executes a parameterised query against the Realm database.
-     * These parameters are passed by the Filter Dialog where the user can set how many results he wants
-     * from the system, as well as their order in relation to a specific Knowledge Area.
-     */
-    private class DegreeComboQueryLoader extends AsyncTask<Void, Void, Void> {
-
-        private String _kaFieldName;
-        private Sort _sortOrder;
-        private int _degreeid;
-        private int _limit;
-
-
-        private DegreeComboQueryLoader() {
-            _kaFieldName = "";
-            _sortOrder = null;
-            _degreeid = 0;
-            _limit = 10;
-        }
-
-        private DegreeComboQueryLoader(int kaId, Sort order, int degreeId, int limit) {
-            _kaFieldName = getKaFieldName(kaId);
-            _sortOrder = order;
-            _degreeid = degreeId;
-            _limit = limit;
-        }
-
-        /**
-         * Just translates an ID to a specific field name used for the query.
-         */
-        private String getKaFieldName(int kaId) {
-            // This is ugly and most likely shouldn't be here. However I am almost finished with this and
-            // I won't spend my time now organising this.
-            switch (kaId) {
-                case 1:
-                    return SweScoreFields.KA_PERCENT1;
-                case 2:
-                    return SweScoreFields.KA_PERCENT2;
-                case 3:
-                    return SweScoreFields.KA_PERCENT3;
-                case 4:
-                    return SweScoreFields.KA_PERCENT4;
-                case 5:
-                    return SweScoreFields.KA_PERCENT5;
-                case 6:
-                    return SweScoreFields.KA_PERCENT6;
-                case 7:
-                    return SweScoreFields.KA_PERCENT7;
-                case 8:
-                    return SweScoreFields.KA_PERCENT8;
-                case 9:
-                    return SweScoreFields.KA_PERCENT9;
-                case 10:
-                    return SweScoreFields.KA_PERCENT10;
-                case 11:
-                    return SweScoreFields.KA_PERCENT11;
-                case 12:
-                    return SweScoreFields.KA_PERCENT12;
-                case 13:
-                    return SweScoreFields.KA_PERCENT13;
-                case 14:
-                    return SweScoreFields.KA_PERCENT14;
-                case 15:
-                    return SweScoreFields.KA_PERCENT15;
-                case 16:
-                    return SweScoreFields.KA_PERCENT16;
-                default:
-                    return SweScoreFields.KA_PERCENT1;
-            }
-        }
-
-        @Override
-        protected void onPreExecute() {
-
-            _progressBar.setVisibility(View.VISIBLE);
-            _rankingsGrid.setVisibility(View.INVISIBLE);
-        }
-
-        @Override
-        protected Void doInBackground(Void... voids) {
-
-            Realm databaseConnection = Realm.getDefaultInstance();
-
-            List<SweScore> results;
-            // If no sort order was input, I don't care the order, so the default will be fine
-            if (_sortOrder == null) {
-                results = databaseConnection.where(SweScore.class)
-                        .equalTo(SweScoreFields.SCORE_TYPE, SweScore.TYPE_DEGREE_SCORE)
-                        .equalTo(SweScoreFields.DEGREE_ID, _degreeid == 0 ? 1 : _degreeid)
-                        .findAll();
-            } else {
-                results = databaseConnection.where(SweScore.class)
-                        .equalTo(SweScoreFields.SCORE_TYPE, SweScore.TYPE_DEGREE_SCORE)
-                        .equalTo(SweScoreFields.DEGREE_ID, _degreeid == 0 ? 1 : _degreeid)
-                        .findAllSorted(_kaFieldName, _sortOrder);
-            }
-
-
-            _combinationNameAndImage = new LinkedHashMap<>();
-            int resultsLimit = _limit == 0 ? results.size() : _limit;
-            if (!results.isEmpty()) {
-                for (int i = 0; i < resultsLimit; i++) {
-                    SweScore currentScore = results.get(i);
-                    _combinationNameAndImage.put(new String(currentScore.getId()), _degrees.get((int) currentScore.getDegreeId()).getImageResource());
-                }
-            }
-            databaseConnection.close();
-
-            return null;
-        }
-
-        @Override
-        protected void onPostExecute(Void aVoid) {
-            super.onPostExecute(aVoid);
-            initialiseScoresGrid();
-        }
+    @Override
+    public void onPause() {
+        super.onPause();
+        _lifecycle.handleLifecycleEvent(Lifecycle.Event.ON_PAUSE);
     }
 
+    @Override
+    public void onStop() {
+        super.onStop();
+        _lifecycle.handleLifecycleEvent(Lifecycle.Event.ON_STOP);
+    }
 
     @Override
     public void onDestroy() {
         super.onDestroy();
+        _lifecycle.handleLifecycleEvent(Lifecycle.Event.ON_DESTROY);
     }
 
     @Override
@@ -461,6 +365,10 @@ public class ScoreMasterFragment extends Fragment implements LifecycleRegistryOw
     }
 
 
+    /**
+     * This is a simple Adapter for a Spinner. It basically shows the Knowledge Area names.
+     * I didn't want to use the standard ArrayAdapter.
+     */
     private class KASpinnerAdapter extends BaseAdapter {
 
         private List<KnowledgeArea> _knowledgeAreas;
@@ -495,6 +403,10 @@ public class ScoreMasterFragment extends Fragment implements LifecycleRegistryOw
     }
 
 
+    /**
+     * This is a simple Adapter for a Spinner. It basically shows the Degree names.
+     * I didn't want to use the standard ArrayAdapter.
+     */
     private class DegreeSpinnerAdapter extends BaseAdapter {
         private List<Degree> _degrees;
         private Context _context;

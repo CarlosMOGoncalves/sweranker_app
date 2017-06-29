@@ -196,9 +196,9 @@ public class ScoreDetailedChartFragment extends Fragment implements LifecycleReg
 
         int combinationNumber = Integer.valueOf(_degreeScore.getId().substring(3, _degreeScore.getId().length()));
 
-        _degreeImage.setImageDrawable(ContextCompat.getDrawable(getActivity(), _sharedViewModel.getDegree(_degreeScore.getDegreeId()).getValue().getImageResource()));
-        _overviewDegreeName.setText(getResources().getString(_sharedViewModel.getDegree(_degreeScore.getDegreeId()).getValue().getNameResource()));
-        _overviewUniversityName.setText(getResources().getString(_sharedViewModel.getDegree(_degreeScore.getDegreeId()).getValue().getUniversityResource()));
+        _degreeImage.setImageDrawable(ContextCompat.getDrawable(getActivity(), _sharedViewModel.getDegree(_degreeScore.getDegreeId()).getImageResource()));
+        _overviewDegreeName.setText(getResources().getString(_sharedViewModel.getDegree(_degreeScore.getDegreeId()).getNameResource()));
+        _overviewUniversityName.setText(getResources().getString(_sharedViewModel.getDegree(_degreeScore.getDegreeId()).getUniversityResource()));
         _overviewCombinationName.setText(String.format(getResources().getString(R.string.degree_overview_combination), combinationNumber));
         _showOverview.setOnClickListener(view ->
                 DegreeOverviewDialog.newInstance(getDegreeClasses()).show(getFragmentManager(), "")
@@ -387,11 +387,6 @@ public class ScoreDetailedChartFragment extends Fragment implements LifecycleReg
     /**
      * This function, which I got online, just creates a shape size and colour based on the subtitle TextView size.
      * Tricky, but works wonders.
-     *
-     * @param shapeToDraw
-     * @param subtitleView
-     * @param colour
-     * @return
      */
     private Drawable calculateSideDrawable(Drawable shapeToDraw, TextView subtitleView, int colour) {
 

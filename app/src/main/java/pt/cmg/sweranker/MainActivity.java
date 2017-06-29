@@ -69,8 +69,7 @@ public class MainActivity extends AppCompatActivity implements
         DegreeDetailsFragment.DegreeDetailsFragmentInteractionListener,
         DegreeClassFragment.DegreeClassFragmentInteractionListener,
         DegreeTopicMatcherFragment.OnDegreeMatcherFragmentInteraction,
-        ScoreMasterFragment.RankingFragmentInteractionListener,
-        MultiScoreDetailedChartFragment.OnMultiScoreChartFragmentInteractionListener {
+        ScoreMasterFragment.ScoreFragmentInteractionListener {
 
 
     private SwebokLoaderService _swebokService;
@@ -480,7 +479,7 @@ public class MainActivity extends AppCompatActivity implements
 
         Fragment degreeClassFragment = DegreeClassFragment.newInstance();
 
-        Degree degree = _viewModel.getDegree(degreeClass.getDegreeId()).getValue();
+        Degree degree = _viewModel.getDegree(degreeClass.getDegreeId());
 
         // This is important. I used a simples transition but the real magic is that I change the
         // toolbar into a back button toolbar so that it is easier to navigate.
@@ -618,9 +617,9 @@ public class MainActivity extends AppCompatActivity implements
     }
 
     @Override
-    public void loadCompareScoresFragment(List<String> degreeScoreIds) {
+    public void loadCompareScoresFragment() {
 
-        Fragment chartFragment = MultiScoreDetailedChartFragment.newInstance(degreeScoreIds.get(0), degreeScoreIds.get(1));
+        Fragment chartFragment = MultiScoreDetailedChartFragment.newInstance();
 
         // This is important. I used a simples transition but the real magic is that I change the
         // toolbar into a back button toolbar so that it is easier to navigate.

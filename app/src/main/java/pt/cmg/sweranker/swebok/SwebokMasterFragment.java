@@ -2,6 +2,7 @@ package pt.cmg.sweranker.swebok;
 
 import android.app.Activity;
 import android.app.Fragment;
+import android.arch.lifecycle.Lifecycle;
 import android.arch.lifecycle.LifecycleRegistry;
 import android.arch.lifecycle.LifecycleRegistryOwner;
 import android.arch.lifecycle.ViewModelProviders;
@@ -26,11 +27,11 @@ import pt.cmg.sweranker.ui.ConstantSpacingItemDecorator;
 public class SwebokMasterFragment extends Fragment implements LifecycleRegistryOwner {
 
 
-    LifecycleRegistry lifecycleRegistry = new LifecycleRegistry(this);
+    private LifecycleRegistry _lifecycle;
 
     @Override
     public LifecycleRegistry getLifecycle() {
-        return lifecycleRegistry;
+        return _lifecycle;
     }
 
     /**
@@ -46,6 +47,7 @@ public class SwebokMasterFragment extends Fragment implements LifecycleRegistryO
 
 
     public SwebokMasterFragment() {
+        _lifecycle = new LifecycleRegistry(this);
     }
 
     /**
@@ -55,8 +57,7 @@ public class SwebokMasterFragment extends Fragment implements LifecycleRegistryO
      * @return A new instance of fragment SwebokMasterFragment.
      */
     public static SwebokMasterFragment newInstance() {
-        SwebokMasterFragment fragment = new SwebokMasterFragment();
-        return fragment;
+        return new SwebokMasterFragment();
     }
 
     @Override
@@ -86,9 +87,8 @@ public class SwebokMasterFragment extends Fragment implements LifecycleRegistryO
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         _viewModel = ViewModelProviders.of((MainActivity) this.getActivity()).get(MainActivityViewModel.class);
-
+        _lifecycle.handleLifecycleEvent(Lifecycle.Event.ON_CREATE);
     }
 
     @Override
@@ -100,12 +100,7 @@ public class SwebokMasterFragment extends Fragment implements LifecycleRegistryO
         _swebokGrid = (RecyclerView) _myView.findViewById(R.id.swebok_grid);
         _swebokGrid.setVisibility(View.INVISIBLE);
 
-        if (!_viewModel.getKnowledgeAreas().getValue().isEmpty()) {
-            fillSwebokGrid(_viewModel.getKnowledgeAreas().getValue());
-        }
         _viewModel.getKnowledgeAreas().observe(this, knowledgeAreas -> fillSwebokGrid(knowledgeAreas));
-
-
         return _myView;
     }
 
@@ -126,8 +121,6 @@ public class SwebokMasterFragment extends Fragment implements LifecycleRegistryO
         _swebokGrid.setLayoutManager(mLayoutManager);
         _swebokGrid.addItemDecoration(new ConstantSpacingItemDecorator(this.getActivity(),
                 10,
-                ConstantSpacingItemDecorator.Side.LEFT,
-                ConstantSpacingItemDecorator.Side.RIGHT,
                 ConstantSpacingItemDecorator.Side.ALL_SIDES));
         _swebokGrid.setItemAnimator(new DefaultItemAnimator());
         _swebokGrid.setAdapter(adapter);
@@ -136,13 +129,42 @@ public class SwebokMasterFragment extends Fragment implements LifecycleRegistryO
         _swebokGrid.setVisibility(View.VISIBLE);
     }
 
+    @Override
+    public void onStart() {
+        super.onStart();
+        _lifecycle.handleLifecycleEvent(Lifecycle.Event.ON_START);
+
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        _lifecycle.handleLifecycleEvent(Lifecycle.Event.ON_RESUME);
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        _lifecycle.handleLifecycleEvent(Lifecycle.Event.ON_PAUSE);
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        _lifecycle.handleLifecycleEvent(Lifecycle.Event.ON_STOP);
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        _lifecycle.handleLifecycleEvent(Lifecycle.Event.ON_DESTROY);
+    }
 
     @Override
     public void onDetach() {
         super.onDetach();
         _parentActivity = null;
     }
-
 
     /**
      * Communication Interface used to communicate with parent activity

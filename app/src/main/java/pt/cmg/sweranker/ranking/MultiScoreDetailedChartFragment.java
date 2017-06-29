@@ -3,6 +3,9 @@ package pt.cmg.sweranker.ranking;
 
 import android.app.Activity;
 import android.app.Fragment;
+import android.arch.lifecycle.LifecycleRegistry;
+import android.arch.lifecycle.LifecycleRegistryOwner;
+import android.arch.lifecycle.ViewModelProviders;
 import android.content.Context;
 import android.graphics.Paint;
 import android.graphics.PorterDuff;
@@ -54,22 +57,26 @@ import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
 
-import io.realm.Realm;
+import pt.cmg.sweranker.MainActivity;
+import pt.cmg.sweranker.MainActivityViewModel;
 import pt.cmg.sweranker.R;
 import pt.cmg.sweranker.degrees.Degree;
 import pt.cmg.sweranker.degrees.DegreeClass;
-import pt.cmg.sweranker.degrees.DegreeLoader;
 import pt.cmg.sweranker.swebok.KnowledgeArea;
-import pt.cmg.sweranker.swebok.KnowledgeAreaLoader;
 import pt.cmg.sweranker.swebok.KnowledgeAreaTopic;
 
-public class MultiScoreDetailedChartFragment extends Fragment {
+public class MultiScoreDetailedChartFragment extends Fragment implements LifecycleRegistryOwner {
+
+
+    LifecycleRegistry lifecycleRegistry = new LifecycleRegistry(this);
+
+    @Override
+    public LifecycleRegistry getLifecycle() {
+        return lifecycleRegistry;
+    }
 
     private static final int SUBTITLE_COLUMN_COUNT = 2;
     private static final int SUBTITLE_ROW_COUNT = 8;
-
-    private static final String SCORE_ID_1 = "degreeScoreId1";
-    private static final String SCORE_ID_2 = "degreeScoreId2";
 
     private String _degreeScoreId1;
     private String _degreeScoreId2;
@@ -83,8 +90,6 @@ public class MultiScoreDetailedChartFragment extends Fragment {
     private DegreeClassCombination _degreeCombination1;
     private DegreeClassCombination _degreeCombination2;
 
-    private int _degreeCombinationNumber1;
-    private int _degreeCombinationNumber2;
 
     /**
      * This array stores the colour mapping to each KA. Each KA has its own colour that identifies it graphically.
@@ -96,7 +101,6 @@ public class MultiScoreDetailedChartFragment extends Fragment {
 
     private KnowledgeArea[] _knowledgeAreas;
     private KnowledgeAreaTopic[] _knowledgeAreaTopics;
-
 
     private View _myRootView;
 
@@ -127,52 +131,38 @@ public class MultiScoreDetailedChartFragment extends Fragment {
     private ProgressBar _coverageChartProgressBar;
     private RadarChart _coverageChart;
 
-    private OnMultiScoreChartFragmentInteractionListener _parentActivity;
+    private MainActivityViewModel _sharedViewModel;
+
 
     public MultiScoreDetailedChartFragment() {
         // Required empty public constructor
     }
 
-    public static MultiScoreDetailedChartFragment newInstance(String degreeScoreId, String degreeScoreId2) {
-        MultiScoreDetailedChartFragment fragment = new MultiScoreDetailedChartFragment();
-        Bundle args = new Bundle();
-        args.putString(SCORE_ID_1, degreeScoreId);
-        args.putString(SCORE_ID_2, degreeScoreId2);
-        fragment.setArguments(args);
-        return fragment;
+    public static MultiScoreDetailedChartFragment newInstance() {
+        return new MultiScoreDetailedChartFragment();
     }
 
 
     @Override
     public void onAttach(Context parentActivity) {
         super.onAttach(parentActivity);
-        if (parentActivity instanceof OnMultiScoreChartFragmentInteractionListener) {
-            _parentActivity = (OnMultiScoreChartFragmentInteractionListener) parentActivity;
-        } else {
-            throw new RuntimeException(parentActivity.toString() + " must implement OnMultiScoreChartFragmentInteractionListener");
-        }
+        _sharedViewModel = ViewModelProviders.of((MainActivity) getActivity()).get(MainActivityViewModel.class);
     }
 
     // NOTE: this is here because onAttach(Context) was added only on API 23, so as long as Lollipop is min sdk this shall be here
     @Override
     public void onAttach(Activity activity) {
         super.onAttach(activity);
-        if (activity instanceof OnMultiScoreChartFragmentInteractionListener) {
-            _parentActivity = (OnMultiScoreChartFragmentInteractionListener) activity;
-        } else {
-            throw new RuntimeException(activity.toString() + " must implement OnMultiScoreChartFragmentInteractionListener");
-        }
-
+        _sharedViewModel = ViewModelProviders.of((MainActivity) getActivity()).get(MainActivityViewModel.class);
     }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            _degreeScoreId1 = getArguments().getString(SCORE_ID_1);
-            _degreeScoreId2 = getArguments().getString(SCORE_ID_2);
-            new SweScoreLoader().execute();
-        }
+        // NOTE: HERE is where I limit the number of degrees to compare
+        _degreeScoreId1 = _sharedViewModel.getMultiSelectedDegreeCombinationIds().get(0);
+        _degreeScoreId2 = _sharedViewModel.getMultiSelectedDegreeCombinationIds().get(1);
+        new SweScoreLoader().execute();
     }
 
 
@@ -220,24 +210,23 @@ public class MultiScoreDetailedChartFragment extends Fragment {
 
     private void updateDegreeOverViewInfo() {
 
-        _degreeCombinationNumber1 = Integer.valueOf(_degreeScore1.getId().substring(3, _degreeScore1.getId().length()));
+        int degreeCombinationNumber1 = Integer.valueOf(_degreeScore1.getId().substring(3, _degreeScore1.getId().length()));
 
         _overviewDegreeName.setText(getResources().getString(_degree1.getNameResource()));
         _overviewUniversityName.setText(getResources().getString(_degree1.getUniversityResource()));
-        _overviewCombinationName.setText(String.format(getResources().getString(R.string.degree_overview_combination), _degreeCombinationNumber1));
+        _overviewCombinationName.setText(String.format(getResources().getString(R.string.degree_overview_combination), degreeCombinationNumber1));
         _showOverview.setOnClickListener(view ->
                 DegreeOverviewDialog.newInstance(getDegreeClasses(_degreeCombination1)).show(getFragmentManager(), "")
         );
 
-        _degreeCombinationNumber2 = Integer.valueOf(_degreeScore2.getId().substring(3, _degreeScore2.getId().length()));
+        int degreeCombinationNumber2 = Integer.valueOf(_degreeScore2.getId().substring(3, _degreeScore2.getId().length()));
 
         _overviewDegreeName2.setText(getResources().getString(_degree2.getNameResource()));
         _overviewUniversityName2.setText(getResources().getString(_degree2.getUniversityResource()));
-        _overviewCombinationName2.setText(String.format(getResources().getString(R.string.degree_overview_combination), _degreeCombinationNumber2));
+        _overviewCombinationName2.setText(String.format(getResources().getString(R.string.degree_overview_combination), degreeCombinationNumber2));
         _showOverview2.setOnClickListener(view ->
                 DegreeOverviewDialog.newInstance(getDegreeClasses(_degreeCombination2)).show(getFragmentManager(), "")
         );
-
 
         _overviewProgressBar.setVisibility(View.INVISIBLE);
     }
@@ -253,7 +242,7 @@ public class MultiScoreDetailedChartFragment extends Fragment {
 
         for (AnnualClassCombination annualCombination : degreeCombination.getAnnualClassCombinations()) {
             for (DegreeClassId degreeId : annualCombination.getDegreeClassIds()) {
-                degreeClasses.add(_parentActivity.getDegreeClass(degreeId.getDegreeClassId()));
+                degreeClasses.add(_sharedViewModel.getDegreeClass(degreeId.getDegreeClassId()));
             }
         }
 
@@ -996,7 +985,6 @@ public class MultiScoreDetailedChartFragment extends Fragment {
     @Override
     public void onDetach() {
         super.onDetach();
-        _parentActivity = null;
     }
 
 
@@ -1019,7 +1007,7 @@ public class MultiScoreDetailedChartFragment extends Fragment {
          */
         private void loadKnowledgeAreasVariables() {
 
-            List<KnowledgeArea> kas = _parentActivity.getKnowledgeAreas();
+            List<KnowledgeArea> kas = _sharedViewModel.getKnowledgeAreas().getValue();
 
             _knowledgeAreas = new KnowledgeArea[kas.size()];
             _knowledgeAreaColours = new int[kas.size()];
@@ -1029,7 +1017,7 @@ public class MultiScoreDetailedChartFragment extends Fragment {
                 _knowledgeAreaColours[knowledgeArea.getId() - 1] = ContextCompat.getColor(getActivity().getApplicationContext(), knowledgeArea.getColourResource());
             }
 
-            List<KnowledgeAreaTopic> allTopics = _parentActivity.getAllKnowledgeAreaTopics();
+            List<KnowledgeAreaTopic> allTopics = _sharedViewModel.getKnowledgeAreaTopics();
             _knowledgeAreaTopics = new KnowledgeAreaTopic[allTopics.size()];
             for (KnowledgeAreaTopic kaTopic : allTopics) {
                 _knowledgeAreaTopics[kaTopic.getId() - 1] = kaTopic;
@@ -1042,38 +1030,14 @@ public class MultiScoreDetailedChartFragment extends Fragment {
          * Loads from the Realm database the selected score for this fragment and naturally closes the door afterwards
          */
         private void loadSelectedScore() {
+            _degreeScore1 = _sharedViewModel.getDegreeScore(_degreeScoreId1);
+            _degree1 = _sharedViewModel.getDegree(_degreeScore1.getDegreeId());
 
-            Realm database = Realm.getDefaultInstance();
+            _degreeScore2 = _sharedViewModel.getDegreeScore(_degreeScoreId2);
+            _degree2 = _sharedViewModel.getDegree(_degreeScore2.getDegreeId());
 
-            SweScore score = database.where(SweScore.class)
-                    .equalTo(SweScoreFields.SCORE_TYPE, SweScore.TYPE_DEGREE_SCORE)
-                    .equalTo(SweScoreFields.ID, _degreeScoreId1)
-                    .findFirst();
-
-            _degreeScore1 = database.copyFromRealm(score);
-            _degree1 = _parentActivity.getDegree(_degreeScore1.getDegreeId());
-
-            SweScore score2 = database.where(SweScore.class)
-                    .equalTo(SweScoreFields.SCORE_TYPE, SweScore.TYPE_DEGREE_SCORE)
-                    .equalTo(SweScoreFields.ID, _degreeScoreId2)
-                    .findFirst();
-
-            _degreeScore2 = database.copyFromRealm(score2);
-            _degree2 = _parentActivity.getDegree(_degreeScore2.getDegreeId());
-
-            DegreeClassCombination degreeCombination = database.where(DegreeClassCombination.class)
-                    .equalTo(DegreeClassCombinationFields.COMBINATION_ID, _degreeScoreId1)
-                    .findFirst();
-
-            _degreeCombination1 = database.copyFromRealm(degreeCombination);
-
-            DegreeClassCombination degreeCombination2 = database.where(DegreeClassCombination.class)
-                    .equalTo(DegreeClassCombinationFields.COMBINATION_ID, _degreeScoreId2)
-                    .findFirst();
-
-            _degreeCombination2 = database.copyFromRealm(degreeCombination2);
-
-            database.close();
+            _degreeCombination1 = _sharedViewModel.getDegreeClassCombination(_degreeScoreId1);
+            _degreeCombination2 = _sharedViewModel.getDegreeClassCombination(_degreeScoreId2);
         }
 
         @Override
@@ -1128,11 +1092,5 @@ public class MultiScoreDetailedChartFragment extends Fragment {
         }
     }
 
-
-    /**
-     * This is the standard communication interface used to pass data from and to this fragment.
-     */
-    public interface OnMultiScoreChartFragmentInteractionListener extends KnowledgeAreaLoader, DegreeLoader {
-    }
 
 }
