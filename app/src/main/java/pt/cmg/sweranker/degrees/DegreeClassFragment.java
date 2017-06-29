@@ -25,22 +25,35 @@ import pt.cmg.sweranker.R;
 import pt.cmg.sweranker.ui.ConstantSpacingItemDecorator;
 import pt.cmg.sweranker.ui.UnderlineDividerItemDecorator;
 
+/**
+ * This Fragment is used to show the details of a given Degree Class, namely its program and
+ * some of its common attributes such as year, semester, etc.
+ */
 public class DegreeClassFragment extends Fragment {
-
-    private static final String DEGREE_ID = "DEGREE_ID";
-    private static final String DEGREE_CLASS_ID = "DEGREE_CLASS_ID";
 
     private DegreeClassFragmentInteractionListener _parentActivity;
 
 
     private View _myView;
 
-    private int _degreeId;
     private String _degreeClassId;
     private DegreeClass _degreeClass;
     private FloatingActionButton _fab;
 
     private MainActivityViewModel _sharedViewModel;
+
+
+    /**
+     * Communication Interface used to communicate between this fragment and its parent Activity.
+     * <p>
+     * Write here any method needed to trigger in the Activity
+     */
+    public interface DegreeClassFragmentInteractionListener {
+        /**
+         * Loads the Degree Evaluator fragment for this degreeClass.
+         */
+        void loadDegreeTopicMatcherFragment();
+    }
 
 
     public DegreeClassFragment() {
@@ -66,7 +79,6 @@ public class DegreeClassFragment extends Fragment {
         } else {
             throw new RuntimeException(parentActivity.toString() + " must implement DegreeClassFragmentInteractionListener");
         }
-        _sharedViewModel = ViewModelProviders.of((MainActivity) getActivity()).get(MainActivityViewModel.class);
     }
 
     // NOTE: this is here because onAttach(Context) was added only on API 23, so as long as Lollipop is min sdk this shall be here
@@ -78,14 +90,14 @@ public class DegreeClassFragment extends Fragment {
         } else {
             throw new RuntimeException(activity.toString() + " must implement DegreeClassFragmentInteractionListener");
         }
-        _sharedViewModel = ViewModelProviders.of((MainActivity) getActivity()).get(MainActivityViewModel.class);
+
     }
 
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        _degreeId = _sharedViewModel.getSelectedDegreeClass().getDegreeId();
+        _sharedViewModel = ViewModelProviders.of((MainActivity) getActivity()).get(MainActivityViewModel.class);
         _degreeClass = _sharedViewModel.getSelectedDegreeClass();
         _degreeClassId = _degreeClass.getId();
     }
@@ -113,12 +125,12 @@ public class DegreeClassFragment extends Fragment {
 
         TextView areMatchesAvailable = (TextView) _myView.findViewById(R.id.is_matched);
 
-        
+
         if (_sharedViewModel.hasMatches(_degreeClassId)) {
-            areMatchesAvailable.setText("(Matched)");
+            areMatchesAvailable.setText("(" + getString(R.string.matched) + ")");
             areMatchesAvailable.setTextColor(ContextCompat.getColor(getActivity(), R.color.materialAffirmative));
         } else {
-            areMatchesAvailable.setText("(Not Matched)");
+            areMatchesAvailable.setText("(" + getString(R.string.notMatched) + ")");
             areMatchesAvailable.setTextColor(ContextCompat.getColor(getActivity(), R.color.materialNegative));
         }
 
@@ -127,12 +139,12 @@ public class DegreeClassFragment extends Fragment {
 
         DegreeClassAdapter adapter = new DegreeClassAdapter(this.getActivity(), _degreeClass);
 
-        RecyclerView.LayoutManager linearLayoutManager = new LinearLayoutManager(this.getActivity(), LinearLayoutManager.VERTICAL, false);
+        RecyclerView.LayoutManager linearLayoutManager = new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false);
         curriculumList.setLayoutManager(linearLayoutManager);
 
-        curriculumList.addItemDecoration(new ConstantSpacingItemDecorator(this.getActivity(), 2, ConstantSpacingItemDecorator.Side.BOTTOM));
+        curriculumList.addItemDecoration(new ConstantSpacingItemDecorator(getActivity(), 2, ConstantSpacingItemDecorator.Side.BOTTOM));
         curriculumList.addItemDecoration(new UnderlineDividerItemDecorator.Builder(this.getActivity(),
-                ContextCompat.getColor((Context) _parentActivity, R.color.darkerBackground),
+                ContextCompat.getColor(getActivity(), R.color.darkerBackground),
                 1)
                 .targetViewHolderClass(DegreeClassAdapter.ClassTopicViewHolder.class)
                 .build());
@@ -141,36 +153,14 @@ public class DegreeClassFragment extends Fragment {
         curriculumList.setAdapter(adapter);
 
         _fab = (FloatingActionButton) _myView.findViewById(R.id.evaluateButton);
-        _fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                _parentActivity.loadDegreeEvaluatorFragment(_degreeClassId);
-            }
-        });
+        _fab.setOnClickListener(view -> _parentActivity.loadDegreeTopicMatcherFragment());
 
         return _myView;
     }
 
 
     /**
-     * Communication Interface used to communicate between this fragment and its parent Activity.
-     * <p>
-     * Write here any method needed to trigger in the Activity
-     */
-    public interface DegreeClassFragmentInteractionListener extends DegreeLoader, DegreeMatcherLoader {
-
-
-        /**
-         * Loads the Degree Evaluator fragment for this degreeClass.
-         *
-         * @param degreeClassId
-         */
-        void loadDegreeEvaluatorFragment(String degreeClassId);
-
-    }
-
-    /**
-     * This Adapter transforms a list of Knowledge Areas in Views for the parent fragment recycler view.
+     * This Adapter is used to show the topics of each DegreeClass in a list.
      */
     private class DegreeClassAdapter extends RecyclerView.Adapter<DegreeClassAdapter.ClassTopicViewHolder> {
 

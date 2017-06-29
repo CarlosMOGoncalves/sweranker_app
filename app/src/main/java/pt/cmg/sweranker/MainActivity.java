@@ -6,13 +6,8 @@ import android.arch.lifecycle.LifecycleRegistry;
 import android.arch.lifecycle.LifecycleRegistryOwner;
 import android.arch.lifecycle.ViewModelProvider;
 import android.arch.lifecycle.ViewModelProviders;
-import android.content.ComponentName;
-import android.content.Context;
-import android.content.Intent;
-import android.content.ServiceConnection;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
-import android.os.IBinder;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -30,30 +25,22 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import javax.inject.Inject;
 
 import pt.cmg.sweranker.degrees.Degree;
 import pt.cmg.sweranker.degrees.DegreeClass;
 import pt.cmg.sweranker.degrees.DegreeClassFragment;
-import pt.cmg.sweranker.degrees.DegreeClassMatch;
 import pt.cmg.sweranker.degrees.DegreeDetailsFragment;
 import pt.cmg.sweranker.degrees.DegreeTopicMatcherFragment;
-import pt.cmg.sweranker.degrees.DegreesLoaderService;
 import pt.cmg.sweranker.degrees.DegreesMasterFragment;
 import pt.cmg.sweranker.dependencies.DaggerMainActivityComponent;
 import pt.cmg.sweranker.dependencies.MainActivityComponent;
 import pt.cmg.sweranker.dependencies.MainActivityModule;
 import pt.cmg.sweranker.ranking.MultiScoreDetailedChartFragment;
-import pt.cmg.sweranker.ranking.RankingService;
 import pt.cmg.sweranker.ranking.ScoreDetailedChartFragment;
 import pt.cmg.sweranker.ranking.ScoreMasterFragment;
 import pt.cmg.sweranker.swebok.KnowledgeArea;
-import pt.cmg.sweranker.swebok.KnowledgeAreaTopic;
 import pt.cmg.sweranker.swebok.SwebokDetailedFragment;
-import pt.cmg.sweranker.swebok.SwebokLoaderService;
 import pt.cmg.sweranker.swebok.SwebokMasterFragment;
 import pt.cmg.sweranker.ui.ImageSizeAndPlaceTransition;
 import pt.cmg.sweranker.ui.OnEndTransitionListener;
@@ -64,81 +51,13 @@ public class MainActivity extends AppCompatActivity implements
         LifecycleRegistryOwner,
         NavigationView.OnNavigationItemSelectedListener,
         SwebokMasterFragment.OnSwebokFragmentInteractionListener,
-        SwebokDetailedFragment.OnKaDetailsFragmentInteractionListener,
         DegreesMasterFragment.DegreesFragmentInteractionListener,
         DegreeDetailsFragment.DegreeDetailsFragmentInteractionListener,
         DegreeClassFragment.DegreeClassFragmentInteractionListener,
-        DegreeTopicMatcherFragment.OnDegreeMatcherFragmentInteraction,
         ScoreMasterFragment.ScoreFragmentInteractionListener {
 
 
-    private SwebokLoaderService _swebokService;
-    private DegreesLoaderService _degreesService;
-    private RankingService _rankingService;
-    boolean _isSwebokServiceBound = false;
-    boolean _isDegreesServiceBound = false;
-    boolean _isRankingServiceBound = false;
-
     private Toolbar _toolbar;
-    private List<KnowledgeArea> _tempKnowledgeAreas;
-    private List<Degree> _tempDegrees;
-
-
-    private ServiceConnection _swebokServiceConnection = new ServiceConnection() {
-        @Override
-        public void onServiceConnected(ComponentName name, IBinder service) {
-            SwebokLoaderService.SwebokLoaderBinder binder = (SwebokLoaderService.SwebokLoaderBinder) service;
-            _swebokService = binder.getService();
-            _isSwebokServiceBound = true;
-            _tempKnowledgeAreas = _swebokService.getKnowledgeAreas();
-            startDegreesService();
-        }
-
-        @Override
-        public void onServiceDisconnected(ComponentName name) {
-            _swebokService = null;
-            _isSwebokServiceBound = false;
-        }
-    };
-
-    private ServiceConnection _degreesServiceConnection = new ServiceConnection() {
-        @Override
-        public void onServiceConnected(ComponentName name, IBinder service) {
-            DegreesLoaderService.DegreesLoaderBinder binder = (DegreesLoaderService.DegreesLoaderBinder) service;
-            _degreesService = binder.getService();
-            _isDegreesServiceBound = true;
-            _tempDegrees = _degreesService.getDegrees();
-            startRankingService();
-
-        }
-
-        @Override
-        public void onServiceDisconnected(ComponentName name) {
-            _degreesService = null;
-            _isDegreesServiceBound = false;
-        }
-    };
-
-    private ServiceConnection _rankingServiceConnection = new ServiceConnection() {
-        @Override
-        public void onServiceConnected(ComponentName name, IBinder service) {
-            RankingService.RankingBinder binder = (RankingService.RankingBinder) service;
-            _rankingService = binder.getService();
-            _isRankingServiceBound = true;
-            _rankingService.setKnowledgeAreas(_tempKnowledgeAreas);
-            _rankingService.setDegreeClasses(_tempDegrees);
-            _tempKnowledgeAreas = null;
-            _tempDegrees = null;
-
-        }
-
-        @Override
-        public void onServiceDisconnected(ComponentName name) {
-            _rankingService = null;
-            _isRankingServiceBound = false;
-        }
-    };
-
 
     private MainActivityComponent _component;
 
@@ -156,11 +75,9 @@ public class MainActivity extends AppCompatActivity implements
                 .applicationComponent(SweRankerApplication.get(this).getComponent())
                 .mainActivityModule(new MainActivityModule(this))
                 .build();
-
         _component.inject(this);
 
         _viewModel = ViewModelProviders.of(this, viewmodelFactory).get(MainActivityViewModel.class);
-
         _viewModel.init();
 
         resetToolbar();
@@ -217,26 +134,8 @@ public class MainActivity extends AppCompatActivity implements
     @Override
     protected void onStart() {
         super.onStart();
-//        startSwebokService();
     }
 
-    private void startSwebokService() {
-        Intent startSwebokServiceIntent = new Intent(this, SwebokLoaderService.class);
-        startService(startSwebokServiceIntent);
-        bindService(startSwebokServiceIntent, _swebokServiceConnection, Context.BIND_AUTO_CREATE);
-    }
-
-    private void startDegreesService() {
-        Intent startDegreesServiceIntent = new Intent(this, DegreesLoaderService.class);
-        startService(startDegreesServiceIntent);
-        bindService(startDegreesServiceIntent, _degreesServiceConnection, Context.BIND_AUTO_CREATE);
-    }
-
-    private void startRankingService() {
-        Intent startDegreeMatcherService = new Intent(this, RankingService.class);
-        startService(startDegreeMatcherService);
-        bindService(startDegreeMatcherService, _rankingServiceConnection, Context.BIND_AUTO_CREATE);
-    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -281,14 +180,6 @@ public class MainActivity extends AppCompatActivity implements
         return true;
     }
 
-    @Override
-    public List<KnowledgeArea> getKnowledgeAreas() {
-        List<KnowledgeArea> kas = new ArrayList<>();
-        if (_isSwebokServiceBound) {
-            kas = _swebokService.getKnowledgeAreas();
-        }
-        return kas;
-    }
 
     @Override
     public void loadDetailedKnowledgeAreaFragment(View knowledgeAreaCardView) {
@@ -368,33 +259,6 @@ public class MainActivity extends AppCompatActivity implements
 
 
     @Override
-    public KnowledgeArea getKnowledgeArea(int knowledgeAreaIdToLoad) {
-        KnowledgeArea ka = new KnowledgeArea();
-        if (_isSwebokServiceBound) {
-            ka = _swebokService.getKnowledgeArea(knowledgeAreaIdToLoad);
-        }
-        return ka;
-    }
-
-    @Override
-    public List<KnowledgeAreaTopic> getAllKnowledgeAreaTopics() {
-        List<KnowledgeAreaTopic> allTopics = new ArrayList<>();
-        if (_isSwebokServiceBound) {
-            allTopics = _swebokService.getKnowledgeAreaTopics();
-        }
-        return allTopics;
-    }
-
-    @Override
-    public List<Degree> getAllDegrees() {
-        List<Degree> degrees = new ArrayList<>();
-        if (_isDegreesServiceBound) {
-            degrees = _degreesService.getDegrees();
-        }
-        return degrees;
-    }
-
-    @Override
     public void loadDetailedDegreeFragment(View degreeCard) {
 
         ImageView image = (ImageView) degreeCard.findViewById(R.id.university_image);
@@ -443,43 +307,12 @@ public class MainActivity extends AppCompatActivity implements
     }
 
     @Override
-    public Degree getDegree(int degreeId) {
-
-        Degree degree = new Degree();
-        if (_isDegreesServiceBound) {
-            degree = _degreesService.getDegree(degreeId);
-        }
-        return degree;
-    }
-
-
-    @Override
-    public DegreeClass getDegreeClass(int degreeId, String degreeClassId) {
-
-        DegreeClass degreeClass = new DegreeClass();
-        if (_isDegreesServiceBound) {
-            degreeClass = _degreesService.getDegreeClass(degreeId, degreeClassId);
-        }
-        return degreeClass;
-    }
-
-    @Override
-    public DegreeClass getDegreeClass(String degreeClassId) {
-
-        DegreeClass degreeClass = new DegreeClass();
-        if (_isDegreesServiceBound) {
-            degreeClass = _degreesService.getDegreeClass(degreeClassId);
-        }
-        return degreeClass;
-    }
-
-
-    @Override
-    public void loadDegreeClassFragment(View selectedView, DegreeClass degreeClass) {
+    public void loadDegreeClassFragment(View selectedView) {
 
         Fragment degreeClassFragment = DegreeClassFragment.newInstance();
 
-        Degree degree = _viewModel.getDegree(degreeClass.getDegreeId());
+        Degree degree = _viewModel.getSelectedDegree();
+        DegreeClass degreeClass = _viewModel.getSelectedDegreeClass();
 
         // This is important. I used a simples transition but the real magic is that I change the
         // toolbar into a back button toolbar so that it is easier to navigate.
@@ -516,11 +349,11 @@ public class MainActivity extends AppCompatActivity implements
 
 
     @Override
-    public void loadDegreeEvaluatorFragment(String degreeClassId) {
+    public void loadDegreeTopicMatcherFragment() {
 
-        Fragment classEvaluator = DegreeTopicMatcherFragment.newInstance(degreeClassId);
+        Fragment classEvaluator = DegreeTopicMatcherFragment.newInstance();
 
-        DegreeClass degreeClass = getDegreeClass(degreeClassId);
+        DegreeClass degreeClass = _viewModel.getSelectedDegreeClass();
 
         // This is important. I used a simples transition but the real magic is that I change the
         // toolbar into a back button toolbar so that it is easier to navigate.
@@ -554,29 +387,6 @@ public class MainActivity extends AppCompatActivity implements
                 .addToBackStack(null)
                 .commit();
 
-    }
-
-
-    @Override
-    public void saveMatch(DegreeClassMatch newlySubmittedMatch) {
-        if (_rankingService.saveMatch(newlySubmittedMatch)) {
-            getFragmentManager().popBackStackImmediate();
-        }
-    }
-
-    @Override
-    public boolean isDegreeMatched(int degreeId) {
-        return _rankingService.hasCompleteMatch(degreeId);
-    }
-
-    @Override
-    public boolean hasMatch(String degreeClassId) {
-        return _rankingService.hasMatches(degreeClassId);
-    }
-
-    @Override
-    public DegreeClassMatch getDegreeClassMatches(String degreeClassId) {
-        return _rankingService.getDegreeClassMatches(degreeClassId);
     }
 
 
@@ -656,20 +466,6 @@ public class MainActivity extends AppCompatActivity implements
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        stopServices();
-    }
-
-    private void stopServices() {
-        if (_isRankingServiceBound) {
-            unbindService(_rankingServiceConnection);
-        }
-        if (_isDegreesServiceBound) {
-            unbindService(_degreesServiceConnection);
-        }
-        if (_isSwebokServiceBound) {
-            unbindService(_swebokServiceConnection);
-        }
-
     }
 
 

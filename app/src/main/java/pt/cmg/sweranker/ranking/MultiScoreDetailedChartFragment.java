@@ -65,8 +65,12 @@ import pt.cmg.sweranker.degrees.DegreeClass;
 import pt.cmg.sweranker.swebok.KnowledgeArea;
 import pt.cmg.sweranker.swebok.KnowledgeAreaTopic;
 
+/**
+ * This fragment is used to display a comparison between the Scores of some previously selected degree combinations.
+ * Despite the name, as of now it displays charts for just a simple comparison between TWO degree combinations.
+ * In fact, in a mobile screen, anymore than that an it gets really hard to understand.
+ */
 public class MultiScoreDetailedChartFragment extends Fragment implements LifecycleRegistryOwner {
-
 
     LifecycleRegistry lifecycleRegistry = new LifecycleRegistry(this);
 
@@ -1027,17 +1031,17 @@ public class MultiScoreDetailedChartFragment extends Fragment implements Lifecyc
         }
 
         /**
-         * Loads from the Realm database the selected score for this fragment and naturally closes the door afterwards
+         * Loads the degree variables needed to show the multi charts.
          */
         private void loadSelectedScore() {
+            _degreeCombination1 = _sharedViewModel.getDegreeClassCombination(_degreeScoreId1);
             _degreeScore1 = _sharedViewModel.getDegreeScore(_degreeScoreId1);
             _degree1 = _sharedViewModel.getDegree(_degreeScore1.getDegreeId());
 
+            _degreeCombination2 = _sharedViewModel.getDegreeClassCombination(_degreeScoreId2);
             _degreeScore2 = _sharedViewModel.getDegreeScore(_degreeScoreId2);
             _degree2 = _sharedViewModel.getDegree(_degreeScore2.getDegreeId());
 
-            _degreeCombination1 = _sharedViewModel.getDegreeClassCombination(_degreeScoreId1);
-            _degreeCombination2 = _sharedViewModel.getDegreeClassCombination(_degreeScoreId2);
         }
 
         @Override

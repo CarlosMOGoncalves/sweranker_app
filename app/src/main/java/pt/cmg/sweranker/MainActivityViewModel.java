@@ -25,12 +25,12 @@ import io.realm.RealmList;
 import pt.cmg.sweranker.degrees.Degree;
 import pt.cmg.sweranker.degrees.DegreeClass;
 import pt.cmg.sweranker.degrees.DegreeClassMatch;
+import pt.cmg.sweranker.degrees.DegreeMatchesRepository;
 import pt.cmg.sweranker.degrees.DegreesRepository;
 import pt.cmg.sweranker.ranking.AnnualClassCombination;
 import pt.cmg.sweranker.ranking.CalculationUtils;
 import pt.cmg.sweranker.ranking.DegreeClassCombination;
 import pt.cmg.sweranker.ranking.DegreeClassId;
-import pt.cmg.sweranker.ranking.MatchesRepository;
 import pt.cmg.sweranker.ranking.ScoresRepository;
 import pt.cmg.sweranker.ranking.SweScore;
 import pt.cmg.sweranker.ranking.SweScoreFields;
@@ -87,11 +87,11 @@ public class MainActivityViewModel extends ViewModel {
 
     private SwebokRepository _swebokRepository;
     private DegreesRepository _degreesRepository;
-    private MatchesRepository _matchesRepository;
+    private DegreeMatchesRepository _matchesRepository;
     private ScoresRepository _scoresRepository;
 
     @Inject
-    public MainActivityViewModel(SwebokRepository repository, DegreesRepository degreesRepository, MatchesRepository matchesRepository, ScoresRepository scoresRepository) {
+    public MainActivityViewModel(SwebokRepository repository, DegreesRepository degreesRepository, DegreeMatchesRepository matchesRepository, ScoresRepository scoresRepository) {
         _swebokRepository = repository;
         _degreesRepository = degreesRepository;
         _matchesRepository = matchesRepository;
@@ -353,21 +353,13 @@ public class MainActivityViewModel extends ViewModel {
     }
 
 
-//    public List<SweScore> getScoresOfDegree(int degreeId) {
-//        return getScoresOfDegree(degreeId, null);
-//    }
-//
-//    public List<SweScore> getScoresOfDegreeOrderedBy(int degreeId, ScoresRepository.Sort order) {
-//        return getScoresOfDegree(degreeId, order);
-//    }
-//
-//
-//    private List<SweScore> getScoresOfDegree(int degreeId, ScoresRepository.Sort order) {
-//        if (order == null) {
-//            _scoresRepository.open();
-//        }
-//    }
+    public boolean saveMatch(DegreeClassMatch newMatchToSave) {
+        return _matchesRepository.saveMatch(newMatchToSave);
+    }
 
+    public DegreeClassMatch getDegreeClassMatch(String degreeClassId) {
+        return _degreeMatches.getValue().get(degreeClassId);
+    }
 
     public SweScore getDegreeScore(String degreeCombinationId) {
         _scoresRepository.open();

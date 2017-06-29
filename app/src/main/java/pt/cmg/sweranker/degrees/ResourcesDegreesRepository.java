@@ -140,9 +140,8 @@ public class ResourcesDegreesRepository implements DegreesRepository {
                 eventType = xmlParser.next();
             }
 
-        } catch (XmlPullParserException | Resources.NotFoundException |
-                IOException e) {
-            e.printStackTrace();
+        } catch (XmlPullParserException | Resources.NotFoundException | IOException e) {
+            Log.e("SweRanker-DegreeLoader", e.getLocalizedMessage());
         }
 
         return degrees;
@@ -230,7 +229,7 @@ public class ResourcesDegreesRepository implements DegreesRepository {
             }
 
         } catch (XmlPullParserException | IOException e) {
-            e.printStackTrace();
+            Log.e("SweRanker-DegreeLoader", e.getLocalizedMessage());
         }
 
         return classesByYear;
@@ -298,7 +297,7 @@ public class ResourcesDegreesRepository implements DegreesRepository {
             }
 
         } catch (XmlPullParserException | IOException e) {
-            e.printStackTrace();
+            Log.e("SweRanker-DegreeLoader", e.getLocalizedMessage());
         }
 
         return program;
@@ -357,8 +356,7 @@ public class ResourcesDegreesRepository implements DegreesRepository {
             }
 
         } catch (XmlPullParserException | IOException | ClassNotFoundException | InstantiationException | IllegalAccessException e) {
-            Log.e("DegreeLoader", e.getLocalizedMessage());
-            e.printStackTrace();
+            Log.e("SweRanker-DegreeLoader", e.getLocalizedMessage());
         }
     }
 

@@ -20,15 +20,6 @@
             </intent-filter>
         </activity>
 
-        <service
-            android:name=".swebok.SwebokLoaderService"
-            android:exported="false" />
-        <service
-            android:name=".degrees.DegreesLoaderService"
-            android:exported="false" />
-        <service
-            android:name=".ranking.RankingService"
-            android:exported="false" />
     </application>
 
 </manifest>

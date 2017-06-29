@@ -169,9 +169,7 @@ public class SwebokMasterFragment extends Fragment implements LifecycleRegistryO
     /**
      * Communication Interface used to communicate with parent activity
      */
-    public interface OnSwebokFragmentInteractionListener extends KnowledgeAreaLoader {
-
-
+    public interface OnSwebokFragmentInteractionListener {
         /**
          * Loads the Detailed Knowledge Area fragment.
          * It passes the View so that any shared elements transitions can be applied to it.

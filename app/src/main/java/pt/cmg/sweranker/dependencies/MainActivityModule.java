@@ -9,8 +9,8 @@ import dagger.Provides;
 import pt.cmg.sweranker.MainActivity;
 import pt.cmg.sweranker.MainActivityViewModel;
 import pt.cmg.sweranker.MainActivityViewModelFactory;
+import pt.cmg.sweranker.degrees.DegreeMatchesRepository;
 import pt.cmg.sweranker.degrees.DegreesRepository;
-import pt.cmg.sweranker.ranking.MatchesRepository;
 import pt.cmg.sweranker.ranking.ScoresRepository;
 import pt.cmg.sweranker.swebok.SwebokRepository;
 
@@ -37,7 +37,7 @@ public class MainActivityModule {
 
     @Provides
     @MainActivityScope
-    ViewModel viewModel(SwebokRepository swebokRepository, DegreesRepository degreesRepository, MatchesRepository matchesRepository, ScoresRepository scoresRepository) {
+    ViewModel viewModel(SwebokRepository swebokRepository, DegreesRepository degreesRepository, DegreeMatchesRepository matchesRepository, ScoresRepository scoresRepository) {
         return new MainActivityViewModel(swebokRepository, degreesRepository, matchesRepository, scoresRepository);
     }
 

@@ -1,10 +1,7 @@
 package pt.cmg.sweranker.swebok;
 
 import android.app.Fragment;
-import android.arch.lifecycle.LifecycleRegistry;
-import android.arch.lifecycle.LifecycleRegistryOwner;
 import android.arch.lifecycle.ViewModelProviders;
-import android.content.Context;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
@@ -27,15 +24,7 @@ import pt.cmg.sweranker.ui.UnderlineDividerItemDecorator;
  * Created by Carlos on 12/01/2017.
  */
 
-public class SwebokDetailedFragment extends Fragment implements LifecycleRegistryOwner {
-
-
-    LifecycleRegistry lifecycleRegistry = new LifecycleRegistry(this);
-
-    @Override
-    public LifecycleRegistry getLifecycle() {
-        return lifecycleRegistry;
-    }
+public class SwebokDetailedFragment extends Fragment {
 
     private MainActivityViewModel _viewModel;
 
@@ -43,7 +32,6 @@ public class SwebokDetailedFragment extends Fragment implements LifecycleRegistr
     private RecyclerView _topicList;
     private View _myView;
 
-    private int _knowledgeAreaId;
     private KnowledgeArea _knowledgeArea;
 
 
@@ -52,12 +40,6 @@ public class SwebokDetailedFragment extends Fragment implements LifecycleRegistr
 
     public static SwebokDetailedFragment newInstance() {
         return new SwebokDetailedFragment();
-    }
-
-
-    @Override
-    public void onAttach(Context parentActivity) {
-        super.onAttach(parentActivity);
     }
 
     @Override
@@ -103,13 +85,5 @@ public class SwebokDetailedFragment extends Fragment implements LifecycleRegistr
         _topicList.setAdapter(adapter);
         return _myView;
     }
-
-
-    /**
-     * Communication Interface used to load a Knowledge Area from the Activity
-     */
-    public interface OnKaDetailsFragmentInteractionListener extends KnowledgeAreaLoader {
-    }
-
 
 }

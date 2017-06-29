@@ -2,6 +2,7 @@ package pt.cmg.sweranker.degrees;
 
 import android.app.Activity;
 import android.app.Fragment;
+import android.arch.lifecycle.Lifecycle;
 import android.arch.lifecycle.LifecycleRegistry;
 import android.arch.lifecycle.LifecycleRegistryOwner;
 import android.arch.lifecycle.ViewModelProviders;
@@ -27,13 +28,12 @@ import pt.cmg.sweranker.ui.ConstantSpacingItemDecorator;
 public class DegreesMasterFragment extends Fragment implements LifecycleRegistryOwner {
 
 
-    LifecycleRegistry lifecycleRegistry = new LifecycleRegistry(this);
+    private LifecycleRegistry _lifecycle;
 
     @Override
     public LifecycleRegistry getLifecycle() {
-        return lifecycleRegistry;
+        return _lifecycle;
     }
-
 
     /**
      * This is a reference to the parent activity that this fragment will be attached to on onAttach()
@@ -47,6 +47,7 @@ public class DegreesMasterFragment extends Fragment implements LifecycleRegistry
     private MainActivityViewModel _sharedViewModel;
 
     public DegreesMasterFragment() {
+        _lifecycle = new LifecycleRegistry(this);
     }
 
     /**
@@ -62,9 +63,7 @@ public class DegreesMasterFragment extends Fragment implements LifecycleRegistry
     /**
      * Communication Interface
      */
-    public interface DegreesFragmentInteractionListener extends DegreeLoader {
-
-
+    public interface DegreesFragmentInteractionListener {
         /**
          * Loads and replaces the current fragment with the detailed Degree fragment.
          *
@@ -78,6 +77,7 @@ public class DegreesMasterFragment extends Fragment implements LifecycleRegistry
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         _sharedViewModel = ViewModelProviders.of((MainActivity) this.getActivity()).get(MainActivityViewModel.class);
+        _lifecycle.handleLifecycleEvent(Lifecycle.Event.ON_CREATE);
     }
 
     @Override
@@ -145,6 +145,36 @@ public class DegreesMasterFragment extends Fragment implements LifecycleRegistry
 
     }
 
+    @Override
+    public void onStart() {
+        super.onStart();
+        _lifecycle.handleLifecycleEvent(Lifecycle.Event.ON_START);
+
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        _lifecycle.handleLifecycleEvent(Lifecycle.Event.ON_RESUME);
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        _lifecycle.handleLifecycleEvent(Lifecycle.Event.ON_PAUSE);
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        _lifecycle.handleLifecycleEvent(Lifecycle.Event.ON_STOP);
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        _lifecycle.handleLifecycleEvent(Lifecycle.Event.ON_DESTROY);
+    }
 
     @Override
     public void onDetach() {

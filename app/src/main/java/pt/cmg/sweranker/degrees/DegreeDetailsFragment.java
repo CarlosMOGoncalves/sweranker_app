@@ -94,13 +94,11 @@ public class DegreeDetailsFragment extends Fragment implements LifecycleRegistry
      * <p>
      * Write here any method needed to trigger in the Activity
      */
-    public interface DegreeDetailsFragmentInteractionListener extends DegreeLoader, DegreeMatcherLoader {
-
-
+    public interface DegreeDetailsFragmentInteractionListener {
         /**
          * Loads the class fragment whose item was chosen.
          */
-        void loadDegreeClassFragment(View selectedView, DegreeClass degreeClass);
+        void loadDegreeClassFragment(View selectedView);
     }
 
     @Override
@@ -207,7 +205,7 @@ public class DegreeDetailsFragment extends Fragment implements LifecycleRegistry
         ViewPager viewPager = (ViewPager) _myView.findViewById(R.id.degree_viewPager);
         viewPager.setAdapter(new DegreeViewPagerAdapter(this.getActivity(), _degree, (view, degreeClass) -> {
             _sharedViewModel.setSelectedDegreeClass(degreeClass);
-            _parentActivity.loadDegreeClassFragment(view, degreeClass);
+            _parentActivity.loadDegreeClassFragment(view);
         }));
 
         TabLayout tabLayout = (TabLayout) _myView.findViewById(R.id.degree_tabs);
