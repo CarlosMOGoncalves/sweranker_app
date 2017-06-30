@@ -112,9 +112,6 @@ public class DegreesMasterFragment extends Fragment implements LifecycleRegistry
         _degreesGrid = (RecyclerView) _myRootView.findViewById(R.id.degrees_grid);
         _degreesGrid.setVisibility(View.INVISIBLE);
 
-        if (!_sharedViewModel.getDegrees().getValue().isEmpty()) {
-            fillDegreesGrid(_sharedViewModel.getDegrees().getValue());
-        }
         _sharedViewModel.getDegrees().observe(this, degrees -> fillDegreesGrid(degrees));
 
 
@@ -134,8 +131,6 @@ public class DegreesMasterFragment extends Fragment implements LifecycleRegistry
         _degreesGrid.setLayoutManager(mLayoutManager);
         _degreesGrid.addItemDecoration(new ConstantSpacingItemDecorator(this.getActivity(),
                 10,
-                ConstantSpacingItemDecorator.Side.LEFT,
-                ConstantSpacingItemDecorator.Side.RIGHT,
                 ConstantSpacingItemDecorator.Side.ALL_SIDES));
         _degreesGrid.setItemAnimator(new DefaultItemAnimator());
         _degreesGrid.setAdapter(adapter);

@@ -9,6 +9,8 @@ import android.arch.lifecycle.ViewModel;
 import android.os.AsyncTask;
 import android.util.Log;
 
+import com.google.common.base.Optional;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -19,6 +21,7 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 
+import javax.annotation.Nullable;
 import javax.inject.Inject;
 
 import io.realm.RealmList;
@@ -376,9 +379,10 @@ public class MainActivityViewModel extends ViewModel {
     }
 
 
-    public void calculateDegreeScores(Degree degree) {
-        new CombinationCalculator(degree).execute();
+    public void calculateDegreeScores(Degree degree, @Nullable ProgressHandler listener) {
+        new CombinationCalculator(degree, listener).execute();
     }
+
 
     /**
      * This is a background thread whose purpose is to calculate and save all the degree combinations and its scores.
@@ -392,17 +396,21 @@ public class MainActivityViewModel extends ViewModel {
         private String _degreeCombinationIdBase;
         private int _totalPossibleCombinations = 1;
 
-        public CombinationCalculator(Degree degree) {
+        private Optional<ProgressHandler> _listener;
+
+        public CombinationCalculator(Degree degree, @Nullable ProgressHandler listener) {
             _degree = degree;
             _degreeId = degree.getId();
             _combinationIdCounter = 1;
-
+            _listener = Optional.fromNullable(listener);
         }
 
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
-
+            if (_listener.isPresent()) {
+                _listener.get().startProgress();
+            }
         }
 
         @Override
@@ -431,6 +439,12 @@ public class MainActivityViewModel extends ViewModel {
         private void calculateAndSaveAnnualCombinations(Degree degree) {
             List<AnnualClassCombination> annualCombinations = new ArrayList<>();
 
+            if (_listener.isPresent()) {
+                _listener.get().startProgressAction("Calculating annual combinations", degree.getYears());
+            }
+
+            publishProgress();
+
             for (Map.Entry<Integer, ClassCombinationStrategy> classCombinationStrategy : degree.getClassCombinationStrategies().entrySet()) {
 
                 Integer yearOfDegree = classCombinationStrategy.getKey();
@@ -439,6 +453,9 @@ public class MainActivityViewModel extends ViewModel {
                 // Here, using each year's strategy to unfold all possible combinations for this year
                 annualCombinations.addAll(combinationStrategy.getAnnualClassCombinations(degree.getClasses().get(yearOfDegree)));
 
+                if (_listener.isPresent()) {
+                    _listener.get().updateProgressAction(1);
+                }
             }
 
             // Last pass to set the degree id
@@ -448,7 +465,13 @@ public class MainActivityViewModel extends ViewModel {
 
             Log.i("SweRanker:Calculation", "Found " + annualCombinations.size() + " annual combinations for degree " + _degreeId);
 
+
+            if (_listener.isPresent()) {
+                _listener.get().startProgressAction("Saving annual combinations", degree.getYears());
+            }
+
             _scoresRepository.saveObjects(annualCombinations);
+
         }
 
         /**
@@ -482,6 +505,11 @@ public class MainActivityViewModel extends ViewModel {
             // I am saving in batches to alleviate memory
             List<SweScore> batch = new ArrayList<>(batchsize);
 
+
+            if (_listener.isPresent()) {
+                _listener.get().startProgressAction("Calculating and saving annual scores", savedAnnualClassCombinations.size());
+            }
+
             Iterator<AnnualClassCombination> iterator = savedAnnualClassCombinations.iterator();
             while (iterator.hasNext()) {
 
@@ -505,9 +533,14 @@ public class MainActivityViewModel extends ViewModel {
 
                     batch.add(calculatedScore);
 
+
                 }
 
                 _scoresRepository.insertOrUpdateObjectsInTransaction(batch);
+
+                if (_listener.isPresent()) {
+                    _listener.get().updateProgressAction(batchsize);
+                }
 
                 batch.clear();
 
@@ -574,6 +607,11 @@ public class MainActivityViewModel extends ViewModel {
             long startTime = System.currentTimeMillis();
             Log.i("SweRanker:Calculation", "Started the calculation of Degree combinations.");
 
+            // This is just progress update, please ignore
+            if (_listener.isPresent()) {
+                _listener.get().startProgressAction("Generating and saving degree combinations...", _totalPossibleCombinations);
+            }
+
             // Now it is the recursive call, this one is very very tricky so I will explain it in the comments
             generateAndSaveRecursively(combinationPool, new ArrayList<>(), 0, new ArrayList<>());
 
@@ -632,8 +670,16 @@ public class MainActivityViewModel extends ViewModel {
                 if ((_combinationIdCounter == _totalPossibleCombinations) || result.size() == 10000) {
 
                     long sMillis = System.currentTimeMillis();
+
                     _scoresRepository.insertOrUpdateObjectsInTransaction(result);
+
                     long endMillis = System.currentTimeMillis();
+
+                    // This is just a progress update, please ignore
+                    if (_listener.isPresent()) {
+                        _listener.get().updateProgressAction(10000);
+                    }
+
                     Log.i("SweRanker:Calculation", "Saved a batch of " + result.size() + " combinations in " + ((endMillis - sMillis) / 1000) + " seconds");
 
                     result.clear();
@@ -718,6 +764,11 @@ public class MainActivityViewModel extends ViewModel {
             int startPosition = 0;
             int batchSize = 7500;
 
+            // This is just progress update, please ignore
+            if (_listener.isPresent()) {
+                _listener.get().startProgressAction("Generating and saving degree scores...", allCombinationsCount);
+            }
+
             while (startPosition < allCombinationsCount) {
 
                 // If by adding the default window surpasses the total size of the collection
@@ -796,6 +847,12 @@ public class MainActivityViewModel extends ViewModel {
 
                 }
                 _scoresRepository.insertOrUpdateObjectsInTransaction(results);
+
+                // This is just a progress update, please ignore
+                if (_listener.isPresent()) {
+                    _listener.get().updateProgressAction(_endPosition - _startPosition);
+                }
+
                 Log.i("SweRanker:Calculation", "Ended saving a batch of Degree Scores with id: " + _id);
                 results.clear();
 
@@ -804,6 +861,14 @@ public class MainActivityViewModel extends ViewModel {
 
         }
 
+
+        @Override
+        protected void onPostExecute(Void aVoid) {
+            super.onPostExecute(aVoid);
+            if (_listener.isPresent()) {
+                _listener.get().terminateProgress();
+            }
+        }
     }
 
 
