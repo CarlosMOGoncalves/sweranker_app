@@ -216,7 +216,7 @@ public class DegreeTopicMatcherAdapter extends RecyclerView.Adapter<RecyclerView
      */
     private MaterialSpinner initialiseSelectedSpinner(DegreeClassTopicMatcherViewHolder holder, String degreeTopicId, KnowledgeAreaTopic selectedKATopic, int selectedTopicIndex) {
 
-        MaterialSpinner kaTopicSpinner = new MaterialSpinner(_context);
+        MaterialSpinner kaTopicSpinner = new MaterialSpinner(_context, true);
         kaTopicSpinner.setAdapter(new KAMaterialSpinnerAdapter(_context, _knowledgeAreas, new KAMaterialSpinnerAdapter.OnKATopicsSpinnerAdapterListener() {
             @Override
             public void getSelectedTopicId(int knowledgeTopicId) {
@@ -243,7 +243,7 @@ public class DegreeTopicMatcherAdapter extends RecyclerView.Adapter<RecyclerView
      * @return
      */
     private MaterialSpinner initialiseEmptySpinner(DegreeClassTopicMatcherViewHolder holder, String degreeTopicId, int positionIndex) {
-        MaterialSpinner kaTopicSpinner = new MaterialSpinner(_context);
+        MaterialSpinner kaTopicSpinner = new MaterialSpinner(_context, true);
         kaTopicSpinner.setAdapter(new KAMaterialSpinnerAdapter(_context, _knowledgeAreas, new KAMaterialSpinnerAdapter.OnKATopicsSpinnerAdapterListener() {
             @Override
             public void getSelectedTopicId(int knowledgeTopicId) {

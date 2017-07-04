@@ -5,6 +5,8 @@
     android:layout_height="wrap_content"
     android:clickable="true"
     android:minHeight="@dimen/degree_matcher_spinner_topic_line_height"
+    android:paddingLeft="@dimen/material_spinner_popup_padding_left"
+    android:paddingRight="@dimen/material_spinner_popup_padding_left"
     android:orientation="horizontal"
     android:descendantFocusability="blocksDescendants">
 
@@ -17,12 +19,9 @@
         android:ellipsize="marquee"
         android:gravity="center_vertical"
         android:layout_weight="6"
-        android:maxLines="1"
+        android:maxLines="2"
         android:minHeight="@dimen/material_spinner_item_height"
         android:paddingBottom="@dimen/material_spinner_popup_padding_top"
-        android:paddingLeft="@dimen/material_spinner_popup_padding_left"
-        android:paddingRight="@dimen/material_spinner_popup_padding_left"
-        android:paddingStart="@dimen/material_spinner_popup_padding_left"
         android:paddingTop="@dimen/material_spinner_popup_padding_top"
         android:text="This is a View" />
 

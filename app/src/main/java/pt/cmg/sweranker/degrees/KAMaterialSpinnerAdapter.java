@@ -273,28 +273,20 @@ public class KAMaterialSpinnerAdapter extends MaterialSpinnerBaseAdapter {
         public KnowledgeAreaTopicViewHolder(View rootView) {
             super(rootView);
             _topicName = (TextView) rootView.findViewById(R.id.ka_topic_name);
-            _topicName.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
+            _topicName.setOnClickListener(v -> {
 
-                    KnowledgeAreaTopic selectedTopic = _kaTopicsAsArray[getAdapterPosition()];
-
-                    if (_onItemSelectedListener != null) {
-                        _onItemSelectedListener.onItemSelected(selectedTopic, _context.getString(selectedTopic.getNameResource()), ContextCompat.getColor(_context, selectedTopic.getColorResource()), getAdapterPosition());
-                    }
-
-                    _listener.getSelectedTopicId(selectedTopic.getId());
+                KnowledgeAreaTopic selectedTopic = _kaTopicsAsArray[getAdapterPosition()];
+                if (_onItemSelectedListener != null) {
+                    _onItemSelectedListener.onItemSelected(selectedTopic, _context.getString(selectedTopic.getNameResource()), ContextCompat.getColor(_context, selectedTopic.getColorResource()), getAdapterPosition());
                 }
+                _listener.getSelectedTopicId(selectedTopic.getId());
             });
 
             _helpButton = (ImageButton) rootView.findViewById(R.id.info_button);
-            _helpButton.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    KnowledgeAreaTopic selectedTopic = _kaTopicsAsArray[getAdapterPosition()];
-                    KATopicInformationDialog dialog = KATopicInformationDialog.newInstance(_context.getString(selectedTopic.getDescriptionResource()), _context.getString(R.string.dismiss));
-                    dialog.show(((Activity) _context).getFragmentManager(), "MessageFragment");
-                }
+            _helpButton.setOnClickListener(v -> {
+                KnowledgeAreaTopic selectedTopic = _kaTopicsAsArray[getAdapterPosition()];
+                KATopicInformationDialog dialog = KATopicInformationDialog.newInstance(_context.getString(selectedTopic.getDescriptionResource()), _context.getString(R.string.dismiss));
+                dialog.show(((Activity) _context).getFragmentManager(), "MessageFragment");
             });
         }
     }
@@ -328,6 +320,7 @@ public class KAMaterialSpinnerAdapter extends MaterialSpinnerBaseAdapter {
 
             builder.setMessage(getArguments().getString(MESSAGE))
                     .setPositiveButton(getArguments().getString(DISMISS_BUTTON_TEXT), new DialogInterface.OnClickListener() {
+                        @Override
                         public void onClick(DialogInterface dialog, int id) {
                         }
                     });

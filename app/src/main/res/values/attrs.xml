@@ -3,6 +3,7 @@
     <declare-styleable name="MaterialSpinner" tools:ignore="ResourceName">
         <attr name="materialspinner_arrow_tint" format="color" />
         <attr name="materialspinner_hide_arrow" format="boolean" />
+        <attr name="materialspinner_dialog_mode" format="boolean" />
         <attr name="materialspinner_background_color" format="color" />
         <attr name="materialspinner_text_color" format="color" />
         <attr name="materialspinner_dropdown_max_height" format="dimension" />

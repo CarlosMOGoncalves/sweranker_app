@@ -229,23 +229,6 @@ public class DegreeDetailsFragment extends Fragment implements LifecycleRegistry
 
     }
 
-    private void showProgressDialog() {
-
-        final Dialog dialog = new Dialog(getActivity());
-        dialog.setContentView(R.layout.dialog);
-
-        Window window = dialog.getWindow();
-        window.setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-
-
-        // set the custom dialog components - title, ProgressBar and button
-        TextView text = (TextView) dialog.findViewById(R.id.progress_text);
-        text.setText("Heavy lifting the earth.");
-        ProgressBar prog = (ProgressBar) dialog.findViewById(R.id.progress_bar);
-        prog.setVisibility(View.VISIBLE);
-
-        dialog.show();
-    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {

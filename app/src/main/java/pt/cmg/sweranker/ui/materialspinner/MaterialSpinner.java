@@ -1,6 +1,8 @@
 package pt.cmg.sweranker.ui.materialspinner;
 
 import android.animation.ObjectAnimator;
+import android.app.AlertDialog;
+import android.app.Dialog;
 import android.content.Context;
 import android.content.res.Resources;
 import android.content.res.TypedArray;
@@ -48,10 +50,13 @@ public class MaterialSpinner extends AppCompatTextView {
 
     private MaterialSpinnerBaseAdapter _adapter;
 
+
+    private Dialog _dialogWindow;
     private PopupWindow _popupWindow;
     private RecyclerView _recyclerView;
     private Drawable _arrowDrawable;
 
+    private boolean _isDialogMode;
     private boolean _hideArrow;
     private boolean _isNothingSelected;
     private int _popupWindowMaxHeight;
@@ -65,6 +70,22 @@ public class MaterialSpinner extends AppCompatTextView {
 
     public MaterialSpinner(Context context) {
         super(context);
+        init(context, null);
+    }
+
+
+    /**
+     * This is a constructor tailor-made to allow dialog mode instead of the normal Popup Window mode.
+     * As the Popup Window mode was only really useful when the Spinner control was placed in a view on
+     * top of the window and in this context (SweRanker app) I have multiple ones well below in the
+     * window, a dialog will do just fine.
+     *
+     * @param context      the acticity or app context
+     * @param isDialogMode true if the dialog mode is needed
+     */
+    public MaterialSpinner(Context context, boolean isDialogMode) {
+        super(context);
+        _isDialogMode = isDialogMode;
         init(context, null);
     }
 
@@ -82,15 +103,15 @@ public class MaterialSpinner extends AppCompatTextView {
     private void init(Context context, AttributeSet attrs) {
         TypedArray styledAttributes = context.obtainStyledAttributes(attrs, R.styleable.MaterialSpinner);
 
-        int defaultColor = getTextColors().getDefaultColor();
 
         boolean isRightToLeft = Utils.isRtl(context);
 
         try {
             _backgroundColor = styledAttributes.getColor(R.styleable.MaterialSpinner_materialspinner_background_color, Color.WHITE);
-            _textColor = styledAttributes.getColor(R.styleable.MaterialSpinner_materialspinner_text_color, defaultColor);
+            _textColor = styledAttributes.getColor(R.styleable.MaterialSpinner_materialspinner_text_color, getTextColors().getDefaultColor());
             _arrowColor = styledAttributes.getColor(R.styleable.MaterialSpinner_materialspinner_arrow_tint, _textColor);
             _hideArrow = styledAttributes.getBoolean(R.styleable.MaterialSpinner_materialspinner_hide_arrow, false);
+            _isDialogMode = styledAttributes.getBoolean(R.styleable.MaterialSpinner_materialspinner_dialog_mode, _isDialogMode ? true : false);
             _popupWindowMaxHeight = styledAttributes.getDimensionPixelSize(R.styleable.MaterialSpinner_materialspinner_dropdown_max_height, 0);
             _popupWindowHeight = styledAttributes.getDimensionPixelSize(R.styleable.MaterialSpinner_materialspinner_dropdown_height, 0);
             _isArrowColorDisabled = Utils.lighter(_arrowColor, 0.8f);
@@ -107,15 +128,16 @@ public class MaterialSpinner extends AppCompatTextView {
             left = resources.getDimensionPixelSize(R.dimen.material_spinner_padding_left);
         }
 
-        setGravity(Gravity.CENTER_VERTICAL | Gravity.START);
-        setClickable(true);
-        setPadding(left, top, right, bottom);
+        // Isto é para o efeito quando se clica, o ripple. Francamente não percebo a diferença de cores.
         setBackgroundResource(R.drawable.material_spinner_selector);
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1 && isRightToLeft) {
+
+        // Isto quase de certeza tem que ver com acessibilidade, mas o meu é sempre LeftToRight, so...
+        if (isRightToLeft) {
             setLayoutDirection(View.LAYOUT_DIRECTION_RTL);
             setTextDirection(View.TEXT_DIRECTION_RTL);
         }
 
+        // Isto literalmente carrega e coloca o desenho da seta ao lado da Textview
         if (!_hideArrow) {
             _arrowDrawable = Utils.getDrawable(context, R.drawable.material_spinner_arrow).mutate();
             _arrowDrawable.setColorFilter(_arrowColor, PorterDuff.Mode.SRC_IN);
@@ -126,63 +148,142 @@ public class MaterialSpinner extends AppCompatTextView {
             }
         }
 
+        // Aqui para baixo vem a parte da lista de escolhas do spinner em si
         _recyclerView = new RecyclerView(context);
         _recyclerView.setId(getId());
         _recyclerView.setLayoutManager(new LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false));
 
-        _popupWindow = new PopupWindow(context);
-        _popupWindow.setContentView(_recyclerView);
-        _popupWindow.setOutsideTouchable(true);
-        _popupWindow.setFocusable(true);
+        if (_isDialogMode) {
 
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            _popupWindow.setElevation(16);
-            _popupWindow.setBackgroundDrawable(Utils.getDrawable(context, R.drawable.material_spinner_drawable));
+            AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(this.getContext());
+
+            dialogBuilder
+                    .setView(_recyclerView)
+                    .setNegativeButton(getResources().getString(R.string.dismiss), (dialog, id) ->
+                            dialog.cancel()
+                    );
+
+            _dialogWindow = dialogBuilder.create();
         } else {
-            _popupWindow.setBackgroundDrawable(Utils.getDrawable(context, R.drawable.material_spinner_drop_down_shadow));
-        }
+            _popupWindow = new PopupWindow(context);
+            _popupWindow.setContentView(_recyclerView);
+            _popupWindow.setOutsideTouchable(true);
+            _popupWindow.setFocusable(true);
+            // Propriedades da lista popup
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                _popupWindow.setElevation(16);
+                _popupWindow.setBackgroundDrawable(Utils.getDrawable(context, R.drawable.material_spinner_drawable));
+            } else {
+                _popupWindow.setBackgroundDrawable(Utils.getDrawable(context, R.drawable.material_spinner_drop_down_shadow));
+            }
 
-        if (_backgroundColor != Color.WHITE) { // default color is white
-            setBackgroundColor(_backgroundColor);
-        }
-        if (_textColor != defaultColor) {
-            setTextColor(_textColor);
-        }
-
-        _popupWindow.setOnDismissListener(new PopupWindow.OnDismissListener() {
-
-            @Override
-            public void onDismiss() {
+            _popupWindow.setOnDismissListener(() -> {
                 if (_isNothingSelected && _onNothingSelectedListener != null) {
                     _onNothingSelectedListener.onNothingSelected(MaterialSpinner.this);
                 }
                 if (!_hideArrow) {
                     animateArrow(false);
                 }
-            }
-        });
+            });
+        }
+
+        setGravity(Gravity.CENTER_VERTICAL | Gravity.START);
+        setClickable(true);
+        setPadding(left, top, right, bottom);
+        setBackgroundColor(_backgroundColor);
+        setTextColor(_textColor);
+
+    }
+
+    /**
+     * This animates the arrow when clicked. It is a cool effect, thumbs up for who did it!
+     *
+     * @param shouldRotateUp true if it should rotate upwards
+     */
+    private void animateArrow(boolean shouldRotateUp) {
+        int start = shouldRotateUp ? 0 : 10000;
+        int end = shouldRotateUp ? 10000 : 0;
+        ObjectAnimator animator = ObjectAnimator.ofInt(_arrowDrawable, "level", start, end);
+        animator.start();
     }
 
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-        _popupWindow.setWidth(MeasureSpec.getSize(widthMeasureSpec));
-        _popupWindow.setHeight(calculatePopupWindowHeight());
+        if (_isDialogMode) {
+
+        } else {
+            _popupWindow.setWidth(MeasureSpec.getSize(widthMeasureSpec));
+            _popupWindow.setHeight(calculatePopupWindowHeight());
+        }
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
     }
+
+    private int calculatePopupWindowHeight() {
+        float listViewHeight = _adapter.getItemCount() * getResources().getDimension(R.dimen.material_spinner_item_height);
+        if (_popupWindowMaxHeight > 0 && listViewHeight > _popupWindowMaxHeight) {
+            return _popupWindowMaxHeight;
+        }
+        return WindowManager.LayoutParams.WRAP_CONTENT;
+    }
+
 
     @Override
     public boolean onTouchEvent(@NonNull MotionEvent event) {
         if (event.getAction() == MotionEvent.ACTION_UP) {
+
+            // Mostra o menu se está activo.
             if (isEnabled() && isClickable()) {
-                if (!_popupWindow.isShowing()) {
-                    expand();
+
+                if (!_dialogWindow.isShowing() || !_popupWindow.isShowing()) {
+                    showSpinnerMenu();
                 } else {
-                    collapse();
+                    dismissSpinnerMenu();
                 }
             }
         }
         return super.onTouchEvent(event);
     }
+
+    /**
+     * Show the dropdown menu of this spinner
+     */
+    public void showSpinnerMenu() {
+        if (!_hideArrow) {
+            animateArrow(true);
+        }
+        _isNothingSelected = true;
+        if (_isDialogMode) {
+            _dialogWindow.show();
+        } else {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                _popupWindow.setOverlapAnchor(false);
+                _popupWindow.showAsDropDown(this);
+            } else {
+                int[] location = new int[2];
+                getLocationOnScreen(location);
+                int x = location[0];
+                int y = getHeight() + location[1];
+                _popupWindow.showAtLocation(this, Gravity.TOP | Gravity.START, x, y);
+            }
+        }
+
+    }
+
+    /**
+     * Closes the dropdown menu
+     */
+    public void dismissSpinnerMenu() {
+        if (!_hideArrow) {
+            animateArrow(false);
+        }
+
+        if (_isDialogMode) {
+            _dialogWindow.dismiss();
+        } else {
+            _popupWindow.dismiss();
+        }
+    }
+
 
     @Override
     public void setBackgroundColor(int color) {
@@ -203,7 +304,13 @@ public class MaterialSpinner extends AppCompatTextView {
         } else if (background != null) { // 21+ (RippleDrawable)
             background.setColorFilter(color, PorterDuff.Mode.SRC_IN);
         }
-        _popupWindow.getBackground().setColorFilter(color, PorterDuff.Mode.SRC_IN);
+
+        if (_isDialogMode) {
+
+        } else {
+            _popupWindow.getBackground().setColorFilter(color, PorterDuff.Mode.SRC_IN);
+        }
+
     }
 
     @Override
@@ -219,7 +326,7 @@ public class MaterialSpinner extends AppCompatTextView {
         bundle.putInt("selected_index", _selectedIndex);
         if (_popupWindow != null) {
             bundle.putBoolean("is_popup_showing", _popupWindow.isShowing());
-            collapse();
+            dismissSpinnerMenu();
         } else {
             bundle.putBoolean("is_popup_showing", false);
         }
@@ -241,7 +348,7 @@ public class MaterialSpinner extends AppCompatTextView {
 
                         @Override
                         public void run() {
-                            expand();
+                            showSpinnerMenu();
                         }
                     });
                 }
@@ -251,11 +358,25 @@ public class MaterialSpinner extends AppCompatTextView {
         super.onRestoreInstanceState(savedState);
     }
 
+
+    /**
+     * This literally sets the text for the selected element spinner.
+     * Really this is just a hardly used wrapper.
+     *
+     * @param text The text to be displayed.
+     */
     public void setSelectedItemText(String text) {
         setText(text);
     }
 
 
+    /**
+     * This literally sets the text for the selected element.
+     * Really this is just a hardly used wrapper.
+     * Mostly values will be set from the adapter.
+     *
+     * @param selectedObject The object selected
+     */
     public void setSelectedObject(Object selectedObject) {
         _selectedObject = selectedObject;
     }
@@ -323,15 +444,12 @@ public class MaterialSpinner extends AppCompatTextView {
      */
     public void setAdapter(MaterialSpinnerBaseAdapter adapter) {
         _adapter = adapter;
-        adapter.setOnItemSelectedListener(new MaterialSpinnerBaseAdapter.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(Object item, String textToSet, int colorResource, int position) {
-                _selectedObject = item;
-                _selectedIndex = position;
-                setText(textToSet);
-                setTextColor(colorResource);
-                collapse();
-            }
+        adapter.setOnItemSelectedListener((item, textToSet, colorResource, position) -> {
+            _selectedObject = item;
+            _selectedIndex = position;
+            setText(textToSet);
+            setTextColor(colorResource);
+            dismissSpinnerMenu();
         });
         setAdapterInternal(adapter);
     }
@@ -348,35 +466,6 @@ public class MaterialSpinner extends AppCompatTextView {
         setText(getContext().getString(R.string.select_topic));
     }
 
-    /**
-     * Show the dropdown menu
-     */
-    public void expand() {
-        if (!_hideArrow) {
-            animateArrow(true);
-        }
-        _isNothingSelected = true;
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            _popupWindow.setOverlapAnchor(false);
-            _popupWindow.showAsDropDown(this);
-        } else {
-            int[] location = new int[2];
-            getLocationOnScreen(location);
-            int x = location[0];
-            int y = getHeight() + location[1];
-            _popupWindow.showAtLocation(this, Gravity.TOP | Gravity.START, x, y);
-        }
-    }
-
-    /**
-     * Closes the dropdown menu
-     */
-    public void collapse() {
-        if (!_hideArrow) {
-            animateArrow(false);
-        }
-        _popupWindow.dismiss();
-    }
 
     /**
      * Set the tint color for the dropdown arrow
@@ -389,13 +478,6 @@ public class MaterialSpinner extends AppCompatTextView {
         if (_arrowDrawable != null) {
             _arrowDrawable.setColorFilter(_arrowColor, PorterDuff.Mode.SRC_IN);
         }
-    }
-
-    private void animateArrow(boolean shouldRotateUp) {
-        int start = shouldRotateUp ? 0 : 10000;
-        int end = shouldRotateUp ? 10000 : 0;
-        ObjectAnimator animator = ObjectAnimator.ofInt(_arrowDrawable, "level", start, end);
-        animator.start();
     }
 
     /**
@@ -418,13 +500,6 @@ public class MaterialSpinner extends AppCompatTextView {
         _popupWindow.setHeight(calculatePopupWindowHeight());
     }
 
-    private int calculatePopupWindowHeight() {
-        float listViewHeight = _adapter.getItemCount() * getResources().getDimension(R.dimen.material_spinner_item_height);
-        if (_popupWindowMaxHeight > 0 && listViewHeight > _popupWindowMaxHeight) {
-            return _popupWindowMaxHeight;
-        }
-        return WindowManager.LayoutParams.WRAP_CONTENT;
-    }
 
     /**
      * Get the {@link PopupWindow}.
