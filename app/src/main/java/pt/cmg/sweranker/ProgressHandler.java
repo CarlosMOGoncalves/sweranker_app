@@ -11,7 +11,7 @@ public abstract class ProgressHandler extends Handler {
 
     public abstract void startProgress();
 
-    public abstract void startProgressAction(String text, int maxProgressValue);
+    public abstract void startProgressAction(int progressMessageResource, int maxProgressValue);
 
     public abstract void updateProgressAction(int progressIncrement);
 

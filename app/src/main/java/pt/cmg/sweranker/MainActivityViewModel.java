@@ -379,6 +379,13 @@ public class MainActivityViewModel extends ViewModel {
     }
 
 
+    /**
+     * Executes an async calculation of the each degree possible combination as well as each of those combinations'
+     * scores. This is a very very intensive operation.
+     *
+     * @param degree   the target degree to calculation
+     * @param listener the handler is used to communicate the progress of this operation to the outside, caller thread.
+     */
     public void calculateDegreeScores(Degree degree, @Nullable ProgressHandler listener) {
         new CombinationCalculator(degree, listener).execute();
     }
@@ -386,7 +393,8 @@ public class MainActivityViewModel extends ViewModel {
 
     /**
      * This is a background thread whose purpose is to calculate and save all the degree combinations and its scores.
-     * It is heavy stuff although I am still debating if I need it to be here (which I don't think I do).
+     * It is heavy stuff.
+     * It uses and Handler so that it can communicate its progress to the outside caller thread.
      */
     private class CombinationCalculator extends AsyncTask<Void, Void, Void> {
 
@@ -440,7 +448,7 @@ public class MainActivityViewModel extends ViewModel {
             List<AnnualClassCombination> annualCombinations = new ArrayList<>();
 
             if (_listener.isPresent()) {
-                _listener.get().startProgressAction("Calculating annual combinations", degree.getYears());
+                _listener.get().startProgressAction(R.string.calculation_progress_annual_combo, degree.getYears());
             }
 
             publishProgress();
@@ -467,7 +475,7 @@ public class MainActivityViewModel extends ViewModel {
 
 
             if (_listener.isPresent()) {
-                _listener.get().startProgressAction("Saving annual combinations", degree.getYears());
+                _listener.get().startProgressAction(R.string.calculation_progress_saving_annual_combos, degree.getYears());
             }
 
             _scoresRepository.saveObjects(annualCombinations);
@@ -507,7 +515,7 @@ public class MainActivityViewModel extends ViewModel {
 
 
             if (_listener.isPresent()) {
-                _listener.get().startProgressAction("Calculating and saving annual scores", savedAnnualClassCombinations.size());
+                _listener.get().startProgressAction(R.string.calculation_progress_calc_saving_annual_scores, savedAnnualClassCombinations.size());
             }
 
             Iterator<AnnualClassCombination> iterator = savedAnnualClassCombinations.iterator();
@@ -609,7 +617,7 @@ public class MainActivityViewModel extends ViewModel {
 
             // This is just progress update, please ignore
             if (_listener.isPresent()) {
-                _listener.get().startProgressAction("Generating and saving degree combinations...", _totalPossibleCombinations);
+                _listener.get().startProgressAction(R.string.calculation_progress_calc_saving_degree_combos, _totalPossibleCombinations);
             }
 
             // Now it is the recursive call, this one is very very tricky so I will explain it in the comments
@@ -766,7 +774,7 @@ public class MainActivityViewModel extends ViewModel {
 
             // This is just progress update, please ignore
             if (_listener.isPresent()) {
-                _listener.get().startProgressAction("Generating and saving degree scores...", allCombinationsCount);
+                _listener.get().startProgressAction(R.string.calculation_progress_saving_degree_scores, allCombinationsCount);
             }
 
             while (startPosition < allCombinationsCount) {
@@ -881,7 +889,9 @@ public class MainActivityViewModel extends ViewModel {
      */
     public LiveData<LinkedHashMap<String, Integer>> getOrderedScoresImages() {
 
-        new DegreeComboQueryLoader().execute();
+        if (_scoreImages.getValue() == null) {
+            new DegreeComboQueryLoader().execute();
+        }
         return _scoreImages;
     }
 
@@ -898,7 +908,9 @@ public class MainActivityViewModel extends ViewModel {
      */
     public LiveData<LinkedHashMap<String, Integer>> getOrderedScoresImages(int kaId, ScoresRepository.Sort order, int degreeId, int limit) {
 
-        new DegreeComboQueryLoader(kaId, order, degreeId, limit).execute();
+        if (_scoreImages.getValue() == null) {
+            new DegreeComboQueryLoader(kaId, order, degreeId, limit).execute();
+        }
         return _scoreImages;
     }
 

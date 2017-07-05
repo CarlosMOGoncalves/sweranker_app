@@ -51,6 +51,10 @@ public class DegreeDetailsFragment extends Fragment implements LifecycleRegistry
 
     private DegreeDetailsFragmentInteractionListener _parentActivity;
 
+    /**
+     * Super important: this handler is used to pass to an external thread so that it can act on this ones views.
+     * Detailed explanation further down.
+     */
     private ProgressHandler _handler;
     private ProgressDialog _progressDialog;
 
@@ -139,7 +143,6 @@ public class DegreeDetailsFragment extends Fragment implements LifecycleRegistry
      * that will crunch the matching data and calculate a score for each degree class, then
      * for each yearly combination and finally for every possible degree combination.
      * <p>
-     * TODO: a way to inform the user that processing is taking place, namely using notifications.
      */
     private void createAndShowFilterDialog() {
         AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(getActivity());
@@ -175,8 +178,8 @@ public class DegreeDetailsFragment extends Fragment implements LifecycleRegistry
         }
 
         @Override
-        public void startProgressAction(String text, int maxProgressValue) {
-            post(() -> _progressDialog.startProgressAction(text, maxProgressValue));
+        public void startProgressAction(int messageResource, int maxProgressValue) {
+            post(() -> _progressDialog.startProgressAction(messageResource, maxProgressValue));
 
         }
 
@@ -196,31 +199,41 @@ public class DegreeDetailsFragment extends Fragment implements LifecycleRegistry
 
         private TextView updateText;
         private ProgressBar progressBar;
+        private TextView progressValue;
 
         private ProgressDialog(Context context) {
             super(context);
             this.setContentView(R.layout.dialog);
+            this.setCanceledOnTouchOutside(false);
+            this.setCancelable(false);
+
             Window window = this.getWindow();
             window.setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+
             // set the custom dialog components - title, ProgressBar and button
             updateText = (TextView) this.findViewById(R.id.progress_text);
-            updateText.setText("Heavy lifting the earth.");
             progressBar = (ProgressBar) this.findViewById(R.id.progress_bar);
             progressBar.setVisibility(View.VISIBLE);
+            progressValue = (TextView) this.findViewById(R.id.progress_counter);
         }
 
         public void startProgress() {
             this.show();
         }
 
-        public void startProgressAction(String text, int maxProgressValue) {
-            updateText.setText(text);
+        public void startProgressAction(int progressTextResource, int maxProgressValue) {
+            updateText.setText(getString(progressTextResource));
             progressBar.setMax(maxProgressValue);
             progressBar.setProgress(0);
+
+            // This sets "0 of 620730" for example
+            progressValue.setText(String.format(getString(R.string.calculation_progress_counter), 0, maxProgressValue));
         }
 
         public void updateProgressAction(int progressIncrement) {
             progressBar.setProgress(progressBar.getProgress() + progressIncrement);
+            // This sets "10000 of 620730" for example
+            progressValue.setText(String.format(getString(R.string.calculation_progress_counter), progressBar.getProgress(), progressBar.getMax()));
         }
 
         public void terminateProgress() {

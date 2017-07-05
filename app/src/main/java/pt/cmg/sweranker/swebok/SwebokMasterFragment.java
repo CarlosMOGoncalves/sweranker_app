@@ -151,6 +151,10 @@ public class SwebokMasterFragment extends Fragment implements LifecycleRegistryO
     @Override
     public void onStop() {
         super.onStop();
+        // I need to remove the observer, because since the observer is set with a lambda it always counts as
+        // a new observer, which means it adds to the LiveData observer counter, which means multiple calls to
+        // the function.
+        _viewModel.getKnowledgeAreas().removeObservers(this);
         _lifecycle.handleLifecycleEvent(Lifecycle.Event.ON_STOP);
     }
 

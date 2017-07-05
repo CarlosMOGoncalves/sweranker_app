@@ -13,7 +13,6 @@ import android.support.v7.view.ActionMode;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -232,7 +231,6 @@ public class ScoreMasterFragment extends Fragment implements LifecycleRegistryOw
 
         _sharedViewModel.getOrderedScoresImages().observe(this, combinationImages -> {
             initialiseScoresGrid(combinationImages);
-            Log.i("SweRanker", "Passei por cá.");
         });
 
         return _myRootView;
@@ -349,6 +347,10 @@ public class ScoreMasterFragment extends Fragment implements LifecycleRegistryOw
     @Override
     public void onStop() {
         super.onStop();
+        // I need to remove the observer, because since the observer is set with a lambda it always counts as
+        // a new observer, which means it adds to the LiveData observer counter, which means multiple calls to
+        // the function.
+        _sharedViewModel.getOrderedScoresImages().removeObservers(this);
         _lifecycle.handleLifecycleEvent(Lifecycle.Event.ON_STOP);
     }
 

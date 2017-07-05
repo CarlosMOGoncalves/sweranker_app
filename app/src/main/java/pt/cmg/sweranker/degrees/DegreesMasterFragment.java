@@ -114,7 +114,6 @@ public class DegreesMasterFragment extends Fragment implements LifecycleRegistry
 
         _sharedViewModel.getDegrees().observe(this, degrees -> fillDegreesGrid(degrees));
 
-
         return _myRootView;
     }
 
@@ -162,6 +161,10 @@ public class DegreesMasterFragment extends Fragment implements LifecycleRegistry
     @Override
     public void onStop() {
         super.onStop();
+        // I need to remove the observer, because since the observer is set with a lambda it always counts as
+        // a new observer, which means it adds to the LiveData observer counter, which means multiple calls to
+        // the function.
+        _sharedViewModel.getDegrees().removeObservers(this);
         _lifecycle.handleLifecycleEvent(Lifecycle.Event.ON_STOP);
     }
 

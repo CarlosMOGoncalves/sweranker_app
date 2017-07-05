@@ -63,6 +63,13 @@
     <string name="show_overview">DETALHES</string>
     <string name="show_degree_overview">MOSTRAR DETALHES</string>
 
+    <string name="calculation_progress_annual_combo">A calcular combinações anuais...</string>
+    <string name="calculation_progress_saving_annual_combos">A guardar combinações anuais...</string>
+    <string name="calculation_progress_calc_saving_annual_scores">A guardar os resultados anuais...</string>
+    <string name="calculation_progress_calc_saving_degree_combos">A gerar e guardar combinações de cursos...</string>
+    <string name="calculation_progress_saving_degree_scores">A calcular e guardar resultados de cursos...</string>
+    <string name="calculation_progress_counter">%1$d de %2$d</string>
+
     <string name="loren_ipsum">Far away\nAcross the field\nTolling on the iron bell\nCalls the faithful to their knees\nTo hear the softly spoken magic spell</string>
     <string name="loren_ipsum_title">Us and Them</string>
     <string name="loren_ipsum_description">Black and blue\nAnd who knows which is which and who is who.\nUp and down\nAnd in the end it\'s only round and round. And round.</string>
