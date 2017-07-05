@@ -181,7 +181,7 @@ public class ScoreMasterFragment extends Fragment implements LifecycleRegistryOw
                     // The positive button launches a new search with new parameters
                     _progressBar.setVisibility(View.VISIBLE);
                     _rankingsGrid.setVisibility(View.INVISIBLE);
-                    _sharedViewModel.getOrderedScoresImages(kaId, order, degreeId, limit).observe(this, combinationImages -> initialiseScoresGrid(combinationImages));
+                    _sharedViewModel.applyFilterToScores(kaId, order, degreeId, limit);
 
                     dialog.cancel();
 

@@ -914,6 +914,10 @@ public class MainActivityViewModel extends ViewModel {
         return _scoreImages;
     }
 
+    public void applyFilterToScores(int kaId, ScoresRepository.Sort order, int degreeId, int limit) {
+        new DegreeComboQueryLoader(kaId, order, degreeId, limit).execute();
+    }
+
     /**
      * This AsyncTask's job is to load the scores from the system to finally show them in an ordered way.
      * It executes a parameterised query against the Realm database.
