@@ -22,6 +22,7 @@
     <string name="semester">Semestre</string>
     <string name="ects">ECTS</string>
     <string name="optional">Optional</string>
+    <string name="optional_short_hand">(Opt)</string>
     <string name="yes">Yes</string>
     <string name="no">No</string>
     <string name="matched">Matched</string>
@@ -45,7 +46,6 @@
     <string name="proceed">Do it!</string>
     <string name="cancel">Cancel</string>
     <string name="calculation_dialog_message">You are about to trigger a demanding action that may take several minutes to complete. Are you sure you wish to proceed?</string>
-
 
     <string name="chart_degree_overview_label">Degree Overview</string>
     <string name="chart_subtitle">Subtitle</string>

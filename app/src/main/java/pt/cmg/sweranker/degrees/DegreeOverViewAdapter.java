@@ -137,7 +137,8 @@ public class DegreeOverViewAdapter extends RecyclerView.Adapter<RecyclerView.Vie
             ((DegreeYearViewHolder) holder)._year.setText(_context.getResources().getString(R.string.year) + " " + getYearOfPosition(position));
         } else {
             DegreeClass currentClass = _degreeClasses[position];
-            ((DegreeClassViewHolder) holder)._degreeClassName.setText(_context.getResources().getString(currentClass.getNameResource()));
+            String isOptional = currentClass.isOptionalClass() ? _context.getString(R.string.optional_short_hand) : "";
+            ((DegreeClassViewHolder) holder)._degreeClassName.setText(_context.getResources().getString(currentClass.getNameResource()) + " " + isOptional);
         }
     }
 

@@ -29,6 +29,7 @@
     <string name="semester">Semestre</string>
     <string name="ects">ECTS</string>
     <string name="optional">Opcional</string>
+    <string name="optional_short_hand">(Opc)</string>
     <string name="yes">Sim</string>
     <string name="no">Não</string>
 

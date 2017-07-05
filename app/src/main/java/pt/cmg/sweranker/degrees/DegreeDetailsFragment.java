@@ -154,7 +154,6 @@ public class DegreeDetailsFragment extends Fragment implements LifecycleRegistry
                 .setPositiveButton(getResources().getString(R.string.proceed), (dialog, which) -> {
                     // The positive button launches a calculation
                     _sharedViewModel.calculateDegreeScores(_degree, _handler);
-//                    new ProgressDialog(getActivity()).show();
                     dialog.cancel();
 
                 })
