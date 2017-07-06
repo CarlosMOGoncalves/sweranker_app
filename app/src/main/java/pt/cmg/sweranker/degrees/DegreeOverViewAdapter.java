@@ -14,9 +14,6 @@ import java.util.Map;
 
 import pt.cmg.sweranker.R;
 
-/**
- * Created by Carlos on 09/02/2017.
- */
 
 public class DegreeOverViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
@@ -25,7 +22,6 @@ public class DegreeOverViewAdapter extends RecyclerView.Adapter<RecyclerView.Vie
 
     private Context _context;
     private Degree _degree;
-    private int _degreeId;
     private int[] _yearTitlePositions;
     private DegreeClass[] _degreeClasses;
 
@@ -36,7 +32,6 @@ public class DegreeOverViewAdapter extends RecyclerView.Adapter<RecyclerView.Vie
 
         _context = context;
         _degree = degree;
-        _degreeId = degree.getId();
 
         _yearTitlePositions = getYearPositions();
         _degreeClasses = getDegreeClassesAsArray();
@@ -145,11 +140,7 @@ public class DegreeOverViewAdapter extends RecyclerView.Adapter<RecyclerView.Vie
 
     /**
      * Returns the position that the year View occupies in the data set (i.e. the degrees)
-     *
-     * @param recyclerViewPosition
-     * @return
      */
-
     private int getYearOfPosition(int recyclerViewPosition) {
         // Aha, magic here! The BinarySearch actually returns the position that the given element occupies in the array, so it
         // is used here not for finding out if it exists but rather to get its position. Neat.

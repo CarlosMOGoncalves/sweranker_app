@@ -15,6 +15,7 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.transition.Fade;
 import android.transition.Slide;
 import android.transition.Transition;
 import android.view.Gravity;
@@ -66,6 +67,7 @@ public class MainActivity extends AppCompatActivity implements
 
     private MainActivityViewModel _viewModel;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -79,9 +81,9 @@ public class MainActivity extends AppCompatActivity implements
 
         _viewModel = ViewModelProviders.of(this, viewmodelFactory).get(MainActivityViewModel.class);
         _viewModel.init();
-
         resetToolbar();
 
+        initialiseRandomScoreView();
 
     }
 
@@ -113,6 +115,37 @@ public class MainActivity extends AppCompatActivity implements
     }
 
     /**
+     * This serves as the current first screen of the App.
+     * It is basically the Score Details Fragment in a Random Mode.
+     * TODO: I should probably chose a different first screen to the app...
+     */
+    private void initialiseRandomScoreView() {
+        _viewModel.setRandomlySelectedDegreeScore();
+
+        Fragment randomScoreFragment = ScoreDetailedChartFragment.newInstance();
+
+        _toolbar.setTitle(getString(R.string.todays_degree));
+
+        Transition exitTransition = new Fade(Fade.OUT);
+        exitTransition.setDuration(100);
+        randomScoreFragment.setExitTransition(exitTransition);
+        exitTransition.addListener(new OnStartTransitionListener() {
+            @Override
+            public void onStartTransition(Transition transition) {
+                // Resets default title
+                _toolbar.setTitle(getResources().getString(getApplicationInfo().labelRes));
+            }
+        });
+
+
+        getFragmentManager().popBackStackImmediate();
+        getFragmentManager()
+                .beginTransaction()
+                .add(R.id.content_area, randomScoreFragment, "RandomScore")
+                .commit();
+    }
+
+    /**
      * Transforms the standard toolbar into a much loved and simpler "BACK" toolbar with a custom name, if needed.
      * This is basically the toolbar but with a back arrow instead of the usual menu.
      *
@@ -120,13 +153,12 @@ public class MainActivity extends AppCompatActivity implements
      */
     private void changeToolbarIntoBackButton(String toolbarTitle) {
 
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        toolbar.setNavigationOnClickListener(view -> getFragmentManager().popBackStack());
+        _toolbar.setNavigationOnClickListener(view -> getFragmentManager().popBackStack());
         if (!toolbarTitle.isEmpty()) {
-            toolbar.setTitle(toolbarTitle);
+            _toolbar.setTitle(toolbarTitle);
         }
     }
 

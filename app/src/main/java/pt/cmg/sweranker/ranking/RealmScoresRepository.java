@@ -89,6 +89,20 @@ public class RealmScoresRepository implements ScoresRepository {
     }
 
     @Override
+    public long getScoreCount() {
+        return getRealmnstanceOfThread().where(SweScore.class)
+                .equalTo(SweScoreFields.SCORE_TYPE, SweScore.TYPE_DEGREE_SCORE)
+                .count();
+    }
+
+    @Override
+    public List<SweScore> getAllScores() {
+        return getRealmnstanceOfThread().where(SweScore.class)
+                .equalTo(SweScoreFields.SCORE_TYPE, SweScore.TYPE_DEGREE_SCORE)
+                .findAll();
+    }
+
+    @Override
     public List<SweScore> getClassScoresOfDegree(int degreeId) {
         return getRealmnstanceOfThread().where(SweScore.class)
                 .equalTo("scoreType", SweScore.TYPE_CLASS_SCORE)

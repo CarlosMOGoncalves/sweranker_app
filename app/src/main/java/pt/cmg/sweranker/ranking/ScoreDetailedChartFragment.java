@@ -1,7 +1,7 @@
 package pt.cmg.sweranker.ranking;
 
-import android.app.Activity;
 import android.app.Fragment;
+import android.arch.lifecycle.Lifecycle;
 import android.arch.lifecycle.LifecycleRegistry;
 import android.arch.lifecycle.LifecycleRegistryOwner;
 import android.arch.lifecycle.ViewModelProviders;
@@ -20,6 +20,7 @@ import android.view.ViewGroup;
 import android.widget.GridLayout;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
+import android.widget.ScrollView;
 import android.widget.TextView;
 
 import com.github.mikephil.charting.charts.HorizontalBarChart;
@@ -72,11 +73,11 @@ import pt.cmg.sweranker.swebok.KnowledgeAreaTopic;
 public class ScoreDetailedChartFragment extends Fragment implements LifecycleRegistryOwner {
 
 
-    LifecycleRegistry lifecycleRegistry = new LifecycleRegistry(this);
+    private LifecycleRegistry _lifecycle;
 
     @Override
     public LifecycleRegistry getLifecycle() {
-        return lifecycleRegistry;
+        return _lifecycle;
     }
 
 
@@ -99,6 +100,9 @@ public class ScoreDetailedChartFragment extends Fragment implements LifecycleReg
 
     private View _myRootView;
 
+    private TextView _noScoreAvailable;
+
+    private ScrollView _contentArea;
     private ImageView _degreeImage;
     private TextView _overviewDegreeName;
     private TextView _overviewUniversityName;
@@ -127,7 +131,7 @@ public class ScoreDetailedChartFragment extends Fragment implements LifecycleReg
 
 
     public ScoreDetailedChartFragment() {
-        // Required empty public constructor
+        _lifecycle = new LifecycleRegistry(this);
     }
 
     public static ScoreDetailedChartFragment newInstance() {
@@ -138,21 +142,17 @@ public class ScoreDetailedChartFragment extends Fragment implements LifecycleReg
     @Override
     public void onAttach(Context parentActivity) {
         super.onAttach(parentActivity);
-        _sharedViewModel = ViewModelProviders.of((MainActivity) getActivity()).get(MainActivityViewModel.class);
+
     }
 
-    // NOTE: this is here because onAttach(Context) was added only on API 23, so as long as Lollipop is min sdk this shall be here
-    @Override
-    public void onAttach(Activity activity) {
-        super.onAttach(activity);
-        _sharedViewModel = ViewModelProviders.of((MainActivity) getActivity()).get(MainActivityViewModel.class);
-    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        _sharedViewModel = ViewModelProviders.of((MainActivity) getActivity()).get(MainActivityViewModel.class);
         _degreeScoreId = _sharedViewModel.getSelectedDegreeCombinationId();
-        new SweScoreLoader().execute();
+
+        _lifecycle.handleLifecycleEvent(Lifecycle.Event.ON_CREATE);
     }
 
 
@@ -161,33 +161,48 @@ public class ScoreDetailedChartFragment extends Fragment implements LifecycleReg
 
 
         _myRootView = inflater.inflate(R.layout.score_chart_fragment, container, false);
+        _contentArea = (ScrollView) _myRootView.findViewById(R.id.content_area);
+        _noScoreAvailable = (TextView) _myRootView.findViewById(R.id.no_score_text);
 
-        _degreeImage = (ImageView) _myRootView.findViewById(R.id.degree_image);
-        _overviewDegreeName = (TextView) _myRootView.findViewById(R.id.degree_overview_name);
-        _overviewUniversityName = (TextView) _myRootView.findViewById(R.id.degree_overview_university);
-        _overviewCombinationName = (TextView) _myRootView.findViewById(R.id.degree_overview_combo_name);
-        _overviewProgressBar = (ProgressBar) _myRootView.findViewById(R.id.overview_progress);
-        _showOverview = (TextView) _myRootView.findViewById(R.id.show_overview);
+        if (_degreeScoreId == null) {
+            _contentArea.setVisibility(View.GONE);
+            _noScoreAvailable.setText(R.string.no_scores_available_yet);
+            _noScoreAvailable.setVisibility(View.VISIBLE);
+        } else {
+            _contentArea.setVisibility(View.VISIBLE);
+            _noScoreAvailable.setVisibility(View.GONE);
+            _degreeImage = (ImageView) _myRootView.findViewById(R.id.degree_image);
+            _overviewDegreeName = (TextView) _myRootView.findViewById(R.id.degree_overview_name);
+            _overviewUniversityName = (TextView) _myRootView.findViewById(R.id.degree_overview_university);
+            _overviewCombinationName = (TextView) _myRootView.findViewById(R.id.degree_overview_combo_name);
+            _overviewProgressBar = (ProgressBar) _myRootView.findViewById(R.id.overview_progress);
+            _showOverview = (TextView) _myRootView.findViewById(R.id.show_overview);
 
+            _subtitleTable = (GridLayout) _myRootView.findViewById(R.id.chart_legend_table);
 
-        _subtitleTable = (GridLayout) _myRootView.findViewById(R.id.chart_legend_table);
+            _percentProgressBar = (ProgressBar) _myRootView.findViewById(R.id.percent_chart_progress);
+            _percentProgressBar.setVisibility(View.VISIBLE);
+            _kaPercentDistributionChart = (PieChart) _myRootView.findViewById(R.id.ka_distribution_chart);
+            _kaPercentDistributionChart.setVisibility(View.INVISIBLE);
 
-        _percentProgressBar = (ProgressBar) _myRootView.findViewById(R.id.percent_chart_progress);
-        _percentProgressBar.setVisibility(View.VISIBLE);
-        _kaPercentDistributionChart = (PieChart) _myRootView.findViewById(R.id.ka_distribution_chart);
-        _kaPercentDistributionChart.setVisibility(View.INVISIBLE);
+            _topKaProgressBar = (ProgressBar) _myRootView.findViewById(R.id.top_kas_chart_progress);
+            _topKaProgressBar.setVisibility(View.VISIBLE);
+            _topKaChart = (HorizontalBarChart) _myRootView.findViewById(R.id.top_kas_chart);
 
-        _topKaProgressBar = (ProgressBar) _myRootView.findViewById(R.id.top_kas_chart_progress);
-        _topKaProgressBar.setVisibility(View.VISIBLE);
-        _topKaChart = (HorizontalBarChart) _myRootView.findViewById(R.id.top_kas_chart);
+            _topcKaTopicsProgressBar = (ProgressBar) _myRootView.findViewById(R.id.top_ka_topics_chart_progress);
+            _topcKaTopicsProgressBar.setVisibility(View.VISIBLE);
+            _topKaTopicsChart = (HorizontalBarChart) _myRootView.findViewById(R.id.top_ka_topics_chart);
 
-        _topcKaTopicsProgressBar = (ProgressBar) _myRootView.findViewById(R.id.top_ka_topics_chart_progress);
-        _topcKaTopicsProgressBar.setVisibility(View.VISIBLE);
-        _topKaTopicsChart = (HorizontalBarChart) _myRootView.findViewById(R.id.top_ka_topics_chart);
+            _coverageChartProgressBar = (ProgressBar) _myRootView.findViewById(R.id.coverage_chart_progress);
+            _coverageChartProgressBar.setVisibility(View.VISIBLE);
+            _coverageChart = (RadarChart) _myRootView.findViewById(R.id.coverage_chart);
+        }
 
-        _coverageChartProgressBar = (ProgressBar) _myRootView.findViewById(R.id.coverage_chart_progress);
-        _coverageChartProgressBar.setVisibility(View.VISIBLE);
-        _coverageChart = (RadarChart) _myRootView.findViewById(R.id.coverage_chart);
+        _sharedViewModel.isLoaded().observe(this, isLoaded -> {
+            if (isLoaded) {
+                new SweScoreLoader().execute();
+            }
+        });
 
         return _myRootView;
     }
@@ -669,6 +684,41 @@ public class ScoreDetailedChartFragment extends Fragment implements LifecycleReg
         _topKaTopicsChart.setVisibility(View.VISIBLE);
     }
 
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        _lifecycle.handleLifecycleEvent(Lifecycle.Event.ON_START);
+
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        _lifecycle.handleLifecycleEvent(Lifecycle.Event.ON_RESUME);
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        _lifecycle.handleLifecycleEvent(Lifecycle.Event.ON_PAUSE);
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        // I need to remove the observer, because since the observer is set with a lambda it always counts as
+        // a new observer, which means it adds to the LiveData observer counter, which means multiple calls to
+        // the function.
+        _sharedViewModel.getDegrees().removeObservers(this);
+        _lifecycle.handleLifecycleEvent(Lifecycle.Event.ON_STOP);
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        _lifecycle.handleLifecycleEvent(Lifecycle.Event.ON_DESTROY);
+    }
 
     @Override
     public void onDetach() {

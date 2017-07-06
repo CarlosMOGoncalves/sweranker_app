@@ -17,6 +17,10 @@ public interface ScoresRepository {
 
     List<DegreeClassCombination> getAllCombinationsOfDegree(int degreeId);
 
+    long getScoreCount();
+
+    List<SweScore> getAllScores();
+
     List<SweScore> getClassScoresOfDegree(int degreeId);
 
     List<SweScore> getAnnualScoresOfDegree(int degreeId);

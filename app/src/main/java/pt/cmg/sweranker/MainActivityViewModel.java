@@ -17,6 +17,7 @@ import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Random;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
@@ -70,6 +71,8 @@ public class MainActivityViewModel extends ViewModel {
 
     // Keys -> Degree combination name , Values -> a Degree image.
     private MutableLiveData<LinkedHashMap<String, Integer>> _scoreImages = new MutableLiveData<>();
+
+    private MutableLiveData<Boolean> _isLoaded = new MutableLiveData<>();
 
     // Used in inter-fragment communication between SwebokMasterFragment and SwebokDetailedFragment
     private KnowledgeArea _selectedKnowledgeArea;
@@ -142,6 +145,7 @@ public class MainActivityViewModel extends ViewModel {
                 _degreeMatches.observe(ALWAYS_ON, degreeMatches -> {
                     _matchedDegrees = calculateMatchedDegrees(degreeMatches);
                     saveBaselineDegreeClassScores();
+                    _isLoaded.setValue(true);
                 });
             });
         });
@@ -153,6 +157,10 @@ public class MainActivityViewModel extends ViewModel {
         _knowledgeAreas.removeObservers(ALWAYS_ON);
         _degrees.removeObservers(ALWAYS_ON);
         _degreeMatches.removeObservers(ALWAYS_ON);
+    }
+
+    public LiveData<Boolean> isLoaded() {
+        return _isLoaded;
     }
 
     /**
@@ -376,6 +384,23 @@ public class MainActivityViewModel extends ViewModel {
         DegreeClassCombination result = _scoresRepository.getDegreeClassCombination(degreeCombinationId);
         _scoresRepository.close();
         return result;
+    }
+
+
+    public void setRandomlySelectedDegreeScore() {
+
+        SweScore result = new SweScore();
+        _scoresRepository.open();
+
+        int maxscores = (int) _scoresRepository.getScoreCount();
+        if (maxscores == 0) {
+            setSelectedDegreeCombinationId(null);
+        } else {
+            result = _scoresRepository.getAllScores().get(new Random().nextInt(maxscores));
+        }
+
+        setSelectedDegreeCombinationId(result.getId());
+        _scoresRepository.close();
     }
 
 
