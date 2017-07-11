@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.List;
 
@@ -50,6 +51,10 @@ public class DegreeAdapter extends RecyclerView.Adapter<DegreeAdapter.DegreeView
 
         holder._degreeImage.setImageDrawable(_context.getResources().getDrawable(degree.getImageResource(), null));
         holder._degreeImage.setTransitionName("degree_image" + position);
+
+        if (position > 0) {
+            holder._degreeImage.setAlpha(0.2f);
+        }
     }
 
 
@@ -75,8 +80,13 @@ public class DegreeAdapter extends RecyclerView.Adapter<DegreeAdapter.DegreeView
             _universityName = (TextView) view.findViewById(R.id.university_name);
 
             view.setOnClickListener(v -> {
-                _listener.loadDetailedDegreeFragment(v, _degrees.get(getAdapterPosition()));
+                if (getAdapterPosition() > 0) {
+                    Toast.makeText(_context, "Coming soon!", Toast.LENGTH_SHORT).show();
+                } else {
+                    _listener.loadDetailedDegreeFragment(v, _degrees.get(getAdapterPosition()));
+                }
             });
+
         }
     }
 
