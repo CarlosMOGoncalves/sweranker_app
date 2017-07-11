@@ -196,13 +196,15 @@ public class ScoreDetailedChartFragment extends Fragment implements LifecycleReg
             _coverageChartProgressBar = (ProgressBar) _myRootView.findViewById(R.id.coverage_chart_progress);
             _coverageChartProgressBar.setVisibility(View.VISIBLE);
             _coverageChart = (RadarChart) _myRootView.findViewById(R.id.coverage_chart);
+
         }
 
         _sharedViewModel.isLoaded().observe(this, isLoaded -> {
-            if (isLoaded) {
+            if (isLoaded && (_sharedViewModel.getSelectedDegreeCombinationId() != null)) {
                 new SweScoreLoader().execute();
             }
         });
+
 
         return _myRootView;
     }

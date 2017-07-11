@@ -64,10 +64,25 @@ public class MainActivityViewModel extends ViewModel {
      */
     private Map<Integer, Degree> _degreesById;
 
+    /**
+     * A custom view of the Degree Classes using its id as the key.
+     * Keys -> Degree Class Id , Values -> the matching Degree Class
+     */
+    private Map<String, DegreeClass> _degreeClassesById;
+
     // Keys -> Degree Class Id , Values -> its current matches
     private LiveData<Map<String, DegreeClassMatch>> _degreeMatches = new MutableLiveData<>();
     // Keys -> Degree Id , Values -> true if completely matched, false otherwise
     private Map<Integer, Boolean> _matchedDegrees;
+
+    /**
+     * Very important, this are all the scores of all the different Degree Classes.
+     * Although normally persisted, I will load them beforehand to be used as the dictionary
+     * to calculated every other combination.
+     * <p>
+     * Keys -> the Degree Class Id ,  Values -> its matching score.
+     */
+    private Map<String, SweScore> _degreeClassScores;
 
     // Keys -> Degree combination name , Values -> a Degree image.
     private MutableLiveData<LinkedHashMap<String, Integer>> _scoreImages = new MutableLiveData<>();
@@ -141,10 +156,13 @@ public class MainActivityViewModel extends ViewModel {
             _degrees = _degreesRepository.loadDegrees();
             _degrees.observe(ALWAYS_ON, degrees -> {
                 _degreesById = createDegreesByIdView(degrees);
+                _degreeClassesById = createDegreeClassByIdView(degrees);
                 _degreeMatches = _matchesRepository.loadMatches();
                 _degreeMatches.observe(ALWAYS_ON, degreeMatches -> {
                     _matchedDegrees = calculateMatchedDegrees(degreeMatches);
-                    saveBaselineDegreeClassScores();
+                    List<SweScore> baselineScores = calculateDegreeClassScores();
+                    _degreeClassScores = createDegreeClassScoresView(baselineScores);
+                    saveBaselineDegreeClassScores(baselineScores);
                     _isLoaded.setValue(true);
                 });
             });
@@ -186,6 +204,20 @@ public class MainActivityViewModel extends ViewModel {
             degreesById.put(degree.getId(), degree);
         }
         return degreesById;
+    }
+
+    /**
+     * Loads a different data view of the degree classes.
+     * Useful to inspect the degree classes without traversing the list.
+     */
+    private Map<String, DegreeClass> createDegreeClassByIdView(List<Degree> degrees) {
+        Map<String, DegreeClass> classesById = new HashMap<>();
+        for (Degree degree : degrees) {
+            for (DegreeClass degreeClass : degree.getClassesAsList()) {
+                classesById.put(degreeClass.getId(), degreeClass);
+            }
+        }
+        return classesById;
     }
 
     /**
@@ -236,12 +268,23 @@ public class MainActivityViewModel extends ViewModel {
         return matchedDegrees;
     }
 
+
+    private Map<String, SweScore> createDegreeClassScoresView(List<SweScore> degreeClassScores) {
+
+        Map<String, SweScore> classScores = new HashMap<>();
+
+        for (SweScore score : degreeClassScores) {
+            classScores.put(score.getId(), score);
+        }
+        return classScores;
+    }
+
     /**
      * Saves all the current degree class rankings that were calculated using the degree class matches as their base.
      */
-    private void saveBaselineDegreeClassScores() {
+    private void saveBaselineDegreeClassScores(List<SweScore> baselineScores) {
         _scoresRepository.open();
-        _scoresRepository.insertOrUpdateObjectsInTransaction(calculateDegreeClassScores());
+        _scoresRepository.insertOrUpdateObjectsInTransaction(baselineScores);
         _scoresRepository.close();
     }
 
@@ -522,26 +565,12 @@ public class MainActivityViewModel extends ViewModel {
             // First get the saved annual combinations for this degree
             List<AnnualClassCombination> savedAnnualClassCombinations = _scoresRepository.getAnnualCombinationsOfDegree(_degreeId);
 
-
-            // Then get the saved Scores for the classes of this degree
-            List<SweScore> individualClassScores = _scoresRepository.getClassScoresOfDegree(_degreeId);
-
-
-            // Now turn it into something easier to work with. As a Map I won't have to traverse the list whenever I want a value.
-            // Keys -> the score ID which here is also the degree class id , Values -> the actual score
-            Map<String, SweScore> scoresByDegreeClassId = new HashMap<>(individualClassScores.size());
-            for (SweScore score : individualClassScores) {
-                scoresByDegreeClassId.put(score.getId(), score);
-            }
-
-
-            // I am saving in batches to alleviate memory
-            List<SweScore> batch = new ArrayList<>(batchsize);
-
-
             if (_listener.isPresent()) {
                 _listener.get().startProgressAction(R.string.calculation_progress_calc_saving_annual_scores, savedAnnualClassCombinations.size());
             }
+
+            // I am saving in batches to alleviate memory
+            List<SweScore> batch = new ArrayList<>(batchsize);
 
             Iterator<AnnualClassCombination> iterator = savedAnnualClassCombinations.iterator();
             while (iterator.hasNext()) {
@@ -555,11 +584,11 @@ public class MainActivityViewModel extends ViewModel {
                     // Then gets their individual that was fetched up there
                     List<SweScore> degreeClassScore = new ArrayList<>();
                     for (DegreeClassId degreeClassId : degreeClassIds) {
-                        degreeClassScore.add(scoresByDegreeClassId.get(degreeClassId.getDegreeClassId()));
+                        degreeClassScore.add(_degreeClassScores.get(degreeClassId.getDegreeClassId()));
                     }
 
                     // And now calculate its combined score
-                    SweScore calculatedScore = CalculationUtils.calculateAccumulatedScore(degreeClassScore);
+                    SweScore calculatedScore = CalculationUtils.calculateAccumulatedScore(_degreeClassesById, degreeClassScore);
                     calculatedScore.setDegreeId(_degreeId);
                     calculatedScore.setScoreType(SweScore.TYPE_ANNUAL_SCORE);
                     calculatedScore.setId(currentAnnualCombination.getId());
@@ -766,18 +795,6 @@ public class MainActivityViewModel extends ViewModel {
 
             _scoresRepository.open();
 
-            List<SweScore> annualScores = _scoresRepository.getAnnualScoresOfDegree(_degreeId);
-
-
-            // Now turn it into something easier to work with. As a Map I won't have to traverse the list whenever I want a value.
-            // This map has Keys ->
-            Map<String, SweScore> scoresByAnnualCombination = new HashMap<>(annualScores.size());
-            for (SweScore score : annualScores) {
-                SweScore copiedScore = new SweScore(score);
-                scoresByAnnualCombination.put(copiedScore.getId(), copiedScore);
-            }
-
-
             long startTime = System.currentTimeMillis();
             Log.i("SweRanker:Calculation", "Started calculation of degree scoring.");
 
@@ -810,7 +827,7 @@ public class MainActivityViewModel extends ViewModel {
                     batchSize = allCombinationsCount - startPosition;
                 }
 
-                executorService.submit(new DegreeScoreCalculator(executionId, scoresByAnnualCombination, startPosition, batchSize));
+                executorService.submit(new DegreeScoreCalculator(executionId, startPosition, batchSize));
                 executionId++;
                 startPosition += batchSize;
 
@@ -839,13 +856,11 @@ public class MainActivityViewModel extends ViewModel {
         private class DegreeScoreCalculator implements Runnable {
 
             private int _id;
-            private Map<String, SweScore> _scoresByAnnualCombination;
             private int _startPosition;
             private int _endPosition;
 
-            DegreeScoreCalculator(int id, Map<String, SweScore> scoresByAnnualCombination, int startPosition, int batchSize) {
+            DegreeScoreCalculator(int id, int startPosition, int batchSize) {
                 _id = id;
-                _scoresByAnnualCombination = scoresByAnnualCombination;
                 _startPosition = startPosition;
                 _endPosition = startPosition + batchSize;
             }
@@ -864,14 +879,17 @@ public class MainActivityViewModel extends ViewModel {
                     // First fetch annual combinations for this particular degree combination
                     RealmList<AnnualClassCombination> degreeAnnualCombinations = currentDegreeCombination.getAnnualClassCombinations();
 
-                    // Then gets their individual score
+                    // Then gets their individual class scores
                     List<SweScore> currentAnnualScores = new ArrayList<>();
                     for (AnnualClassCombination annualCombo : degreeAnnualCombinations) {
-                        currentAnnualScores.add(_scoresByAnnualCombination.get(annualCombo.getId()));
+//                        currentAnnualScores.add(_scoresByAnnualCombination.get(annualCombo.getId()));
+                        for (DegreeClassId degreeClassId : annualCombo.getDegreeClassIds()) {
+                            currentAnnualScores.add(_degreeClassScores.get(degreeClassId.getDegreeClassId()));
+                        }
                     }
 
                     // And now calculate its combined score
-                    SweScore calculatedScore = CalculationUtils.calculateAccumulatedScore(currentAnnualScores);
+                    SweScore calculatedScore = CalculationUtils.calculateAccumulatedScore(_degreeClassesById, currentAnnualScores);
                     calculatedScore.setDegreeId(_degreeId);
                     calculatedScore.setScoreType(SweScore.TYPE_DEGREE_SCORE);
                     calculatedScore.setId(currentDegreeCombination.getCombinationId());

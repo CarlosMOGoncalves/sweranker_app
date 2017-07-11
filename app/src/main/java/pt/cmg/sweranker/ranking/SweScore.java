@@ -234,7 +234,7 @@ public class SweScore extends RealmObject {
         setKaCounters(anotherScore.getKaCounters());
         setTopicCounters(anotherScore.getTopicCounters());
         totalTopicCount = anotherScore.getTotalTopicCount();
-        calculateScores();
+        setKaPercents(anotherScore.getKaPercents());
     }
 
     public String getScoreType() {
@@ -535,6 +535,26 @@ public class SweScore extends RealmObject {
         kaCounter14 = kaCounters[13];
         kaCounter15 = kaCounters[14];
         kaCounter16 = kaCounters[15];
+    }
+
+
+    public void setKaPercents(float... kaPercents) {
+        kaPercent1 = kaPercents[0];
+        kaPercent2 = kaPercents[1];
+        kaPercent3 = kaPercents[2];
+        kaPercent4 = kaPercents[3];
+        kaPercent5 = kaPercents[4];
+        kaPercent6 = kaPercents[5];
+        kaPercent7 = kaPercents[6];
+        kaPercent8 = kaPercents[7];
+        kaPercent9 = kaPercents[8];
+        kaPercent10 = kaPercents[9];
+        kaPercent11 = kaPercents[10];
+        kaPercent12 = kaPercents[11];
+        kaPercent13 = kaPercents[12];
+        kaPercent14 = kaPercents[13];
+        kaPercent15 = kaPercents[14];
+        kaPercent16 = kaPercents[15];
     }
 
 
