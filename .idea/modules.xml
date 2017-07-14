@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="ProjectModuleManager">
-    <modules>
-      <module fileurl="file://$PROJECT_DIR$/SweRanker.iml" filepath="$PROJECT_DIR$/SweRanker.iml" />
-      <module fileurl="file://$PROJECT_DIR$/sweranker/app.iml" filepath="$PROJECT_DIR$/sweranker/app.iml" />
-    </modules>
-  </component>
+    <component name="ProjectModuleManager">
+        <modules>
+            <module fileurl="file://$PROJECT_DIR$/SweRanker.iml"
+                filepath="$PROJECT_DIR$/SweRanker.iml" />
+            <module fileurl="file://$PROJECT_DIR$/sweranker/sweranker.iml"
+                filepath="$PROJECT_DIR$/sweranker/sweranker.iml" />
+        </modules>
+    </component>
 </project>

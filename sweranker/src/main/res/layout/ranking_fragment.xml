@@ -4,6 +4,15 @@
     android:layout_height="match_parent"
     tools:context="pt.cmg.sweranker.ranking.ScoreMasterFragment">
 
+    <TextView
+        android:id="@+id/no_scores_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:textAlignment="center"
+        android:textSize="17sp"
+        android:visibility="gone"
+        tools:text="No Scores found to display.\n Please run the Calculation for at leat one Degree.\nGo to Action Bar Menu -> Curricula -> Select Degree -> Calculate Score." />
 
     <ProgressBar
         android:id="@+id/progress_bar"

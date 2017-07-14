@@ -229,6 +229,10 @@ public class DegreeTopicMatcherAdapter extends RecyclerView.Adapter<RecyclerView
         kaTopicSpinner.setTextColor(ContextCompat.getColor(_context, selectedKATopic.getColorResource()));
         kaTopicSpinner.setText(_context.getString(selectedKATopic.getNameResource()));
 
+        // HERE: with this deactivated this spinner is in effect a read-only. It must just be active in development
+        // I should probably just toy around with flavours to create a dev specific version. Noted.
+        kaTopicSpinner.setEnabled(false);
+
         return kaTopicSpinner;
     }
 
@@ -253,6 +257,11 @@ public class DegreeTopicMatcherAdapter extends RecyclerView.Adapter<RecyclerView
                 holder._addMatcherButton.setEnabled(true);
             }
         }));
+
+        // HERE: with this deactivated this spinner is in effect a read-only. It must just be active in development
+        // I should probably just toy around with flavours to create a dev specific version. Noted.
+        kaTopicSpinner.setEnabled(false);
+
         return kaTopicSpinner;
     }
 
@@ -420,6 +429,10 @@ public class DegreeTopicMatcherAdapter extends RecyclerView.Adapter<RecyclerView
             _removeMatherButton = (ImageView) view.findViewById(R.id.uno_menos);
             _removeMatherButton.setColorFilter(ContextCompat.getColor(_context, R.color.materialNegative));
 
+            // HERE AGAIN: I am removing these buttons so that nobody can touch them, only in dev mode
+            _addMatcherButton.setVisibility(View.GONE);
+            _removeMatherButton.setVisibility(View.GONE);
+
         }
 
     }
@@ -441,6 +454,8 @@ public class DegreeTopicMatcherAdapter extends RecyclerView.Adapter<RecyclerView
                 _submitButton.setAlpha(.3f);
             }
 
+            // HERE AGAIN: I am removing this button so that nobody can touch it, only in dev mode
+            _submitButton.setVisibility(View.GONE);
 
             _submitButton.setOnClickListener(v -> _listener.onMatchSubmitted(_currentMatches));
         }

@@ -61,8 +61,10 @@ public class SwebokDetailedFragment extends Fragment {
         TextView kaTitle = (TextView) _myView.findViewById(R.id.ka_details_name);
 
         kaImage.setImageDrawable(this.getResources().getDrawable(_knowledgeArea.getImageResource(), null));
-        kaImage.setBackgroundColor(ContextCompat.getColor(getActivity(), _knowledgeArea.getColourResource()));
-        kaImage.setColorFilter(Color.parseColor("#ffffff"));
+//        kaImage.setBackgroundColor(ContextCompat.getColor(getActivity(), _knowledgeArea.getColourResource()));
+//        kaImage.setColorFilter(Color.parseColor("#ffffff"));
+        kaImage.setBackgroundColor(Color.parseColor("#ffffff"));
+        kaImage.setColorFilter(ContextCompat.getColor(getActivity(), _knowledgeArea.getColourResource()));
         kaTitle.setText(this.getResources().getText(_knowledgeArea.getNameResource()));
 
         _topicList = (RecyclerView) _myView.findViewById(R.id.ka_details_topics_list);

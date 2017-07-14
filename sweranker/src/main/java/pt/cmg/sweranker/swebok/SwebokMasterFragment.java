@@ -112,9 +112,9 @@ public class SwebokMasterFragment extends Fragment implements LifecycleRegistryO
      */
     private void fillSwebokGrid(List<KnowledgeArea> knowledgeAreas) {
 
-        KnowledgeAreasAdapter adapter = new KnowledgeAreasAdapter(this.getActivity(), knowledgeAreas, (cardClicked, knowledgeArea) -> {
+        KnowledgeAreasAdapter adapter = new KnowledgeAreasAdapter(this.getActivity(), knowledgeAreas, (cardClicked, knowledgeArea, colour) -> {
             _viewModel.setSelectedKnowledgeArea(knowledgeArea);
-            _parentActivity.loadDetailedKnowledgeAreaFragment(cardClicked);
+            _parentActivity.loadDetailedKnowledgeAreaFragment(cardClicked, colour);
         });
 
         GridLayoutManager mLayoutManager = new GridLayoutManager(this.getActivity(), 2);
@@ -178,7 +178,7 @@ public class SwebokMasterFragment extends Fragment implements LifecycleRegistryO
          * Loads the Detailed Knowledge Area fragment.
          * It passes the View so that any shared elements transitions can be applied to it.
          */
-        void loadDetailedKnowledgeAreaFragment(View v);
+        void loadDetailedKnowledgeAreaFragment(View v, int colour);
     }
 
 }

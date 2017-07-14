@@ -6,7 +6,6 @@ import android.arch.lifecycle.LifecycleRegistry;
 import android.arch.lifecycle.LifecycleRegistryOwner;
 import android.arch.lifecycle.ViewModelProvider;
 import android.arch.lifecycle.ViewModelProviders;
-import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
@@ -214,11 +213,11 @@ public class MainActivity extends AppCompatActivity implements
 
 
     @Override
-    public void loadDetailedKnowledgeAreaFragment(View knowledgeAreaCardView) {
+    public void loadDetailedKnowledgeAreaFragment(View knowledgeAreaCardView, int colour) {
         ImageView image = (ImageView) knowledgeAreaCardView.findViewById(R.id.ka_image);
 
         // Gets the colour that will be changed between fragments, the source, which is the KA decorative colour
-        int imageBackgroundColour = ((ColorDrawable) image.getBackground()).getColor();
+        int imageBackgroundColour = colour;
         // ... and the original colours of the Action Bars and Status Bar so we can return back to the original colours
         int actionBarOriginalColour = _toolbar.getSolidColor();
         int statusBarOriginalColour = this.getWindow().getStatusBarColor();

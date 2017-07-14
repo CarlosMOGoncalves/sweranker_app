@@ -87,11 +87,11 @@ public class ScoreMasterFragment extends Fragment implements LifecycleRegistryOw
     // This is useful to create visual effects when this fragment enters Action Mode
     private ActionMode _actionMode;
 
+    private TextView _noScoresText;
     private ProgressBar _progressBar;
     private ScoresAndImagesAdapter _adapter;
 
     private Map<Integer, Degree> _degrees;
-    private LinkedHashMap<String, Integer> _combinationNameAndImage;
 
     private MainActivityViewModel _sharedViewModel;
 
@@ -221,6 +221,7 @@ public class ScoreMasterFragment extends Fragment implements LifecycleRegistryOw
 
         _myRootView = inflater.inflate(R.layout.ranking_fragment, container, false);
 
+        _noScoresText = (TextView) _myRootView.findViewById(R.id.no_scores_text);
         _progressBar = (ProgressBar) _myRootView.findViewById(R.id.progress_bar);
 
         _rankingsGrid = (RecyclerView) _myRootView.findViewById(R.id.rankings_grid);
@@ -230,7 +231,13 @@ public class ScoreMasterFragment extends Fragment implements LifecycleRegistryOw
 
 
         _sharedViewModel.getOrderedScoresImages().observe(this, combinationImages -> {
-            initialiseScoresGrid(combinationImages);
+            if (combinationImages == null || combinationImages.isEmpty()) {
+                _progressBar.setVisibility(View.GONE);
+                _noScoresText.setText(R.string.no_scores_available_yet);
+                _noScoresText.setVisibility(View.VISIBLE);
+            } else {
+                initialiseScoresGrid(combinationImages);
+            }
         });
 
         return _myRootView;

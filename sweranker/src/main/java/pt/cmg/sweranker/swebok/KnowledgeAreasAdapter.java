@@ -29,7 +29,7 @@ public class KnowledgeAreasAdapter extends RecyclerView.Adapter<KnowledgeAreasAd
      * Implement this interface if you want to listen to any selected item on the degree class listener
      */
     public interface OnKnowledgeAreaClicked {
-        void onKnowledgeAreaClicked(View v, KnowledgeArea knowledgeArea);
+        void onKnowledgeAreaClicked(View v, KnowledgeArea knowledgeArea, int colour);
     }
 
     public KnowledgeAreasAdapter(Context context, List<KnowledgeArea> knowledgeAreas, OnKnowledgeAreaClicked listener) {
@@ -55,8 +55,10 @@ public class KnowledgeAreasAdapter extends RecyclerView.Adapter<KnowledgeAreasAd
         holder._kaName.setText(_context.getResources().getString(knowledgeArea.getNameResource()));
         holder._kaTopicCount.setText(knowledgeArea.getTopicsCount() + " " + _context.getResources().getString(R.string.topics_lowercase));
         holder._kaImage.setImageDrawable(_context.getResources().getDrawable(knowledgeArea.getImageResource(), null));
-        holder._kaImage.setBackgroundColor(ContextCompat.getColor(_context, knowledgeArea.getColourResource()));
-        holder._kaImage.setColorFilter(Color.parseColor("#ffffff"));
+//        holder._kaImage.setBackgroundColor(ContextCompat.getColor(_context, knowledgeArea.getColourResource()));
+//        holder._kaImage.setColorFilter(Color.parseColor("#ffffff"));
+        holder._kaImage.setBackgroundColor(Color.parseColor("#ffffff"));
+        holder._kaImage.setColorFilter(ContextCompat.getColor(_context, knowledgeArea.getColourResource()));
         holder._kaImage.setTransitionName("ka_image" + position);
     }
 
@@ -82,14 +84,11 @@ public class KnowledgeAreasAdapter extends RecyclerView.Adapter<KnowledgeAreasAd
             _kaName = (TextView) view.findViewById(R.id.ka_name);
             _kaTopicCount = (TextView) view.findViewById(R.id.ka_topic_number);
 
-            view.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    int pos = getAdapterPosition();
-
-                    // VERY IMPORTANT - The delay is needed because the ripple effect was being triggered too late, as in not triggered at all.
-                    v.postDelayed(() -> _listener.onKnowledgeAreaClicked(v, _knowledgAreas.get(pos)), 300);
-                }
+            view.setOnClickListener(v -> {
+                int pos = getAdapterPosition();
+                // VERY IMPORTANT - The delay is needed because the ripple effect was being triggered too late, as in not triggered at all.
+                v.postDelayed(() -> _listener.onKnowledgeAreaClicked(v, _knowledgAreas.get(pos),
+                        ContextCompat.getColor(_context, _knowledgAreas.get(pos).getColourResource())), 300);
             });
         }
 

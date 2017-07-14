@@ -8,3 +8,7 @@
 /build
 /captures
 .externalNativeBuild
+keystore.properties
+data/
+sweranker/libs/
+sweranker/src/main/res/xml/

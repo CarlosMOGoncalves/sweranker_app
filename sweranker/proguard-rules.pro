@@ -26,3 +26,28 @@
 
 -keep class com.google.**
 -dontwarn com.google.**
+
+## I instantiate the classes in this package with a newInstance call, so proguard cannot negate them
+-keep class pt.cmg.sweranker.ranking.combinationstrategies.**
+
+## Android architecture components: Lifecycle
+# LifecycleObserver's empty constructor is considered to be unused by proguard
+-keep class * implements android.arch.lifecycle.LifecycleObserver {
+    <init>(...);
+}
+# ViewModel's empty constructor is considered to be unused by proguard
+-keepclassmembers class * extends android.arch.lifecycle.ViewModel {
+    <init>(...);
+}
+# keep Lifecycle State and Event enums values
+-keepclassmembers class android.arch.lifecycle.Lifecycle$State { *; }
+-keepclassmembers class android.arch.lifecycle.Lifecycle$Event { *; }
+
+# keep methods annotated with @OnLifecycleEvent even if they seem to be unused
+# (Mostly for LiveData.LifecycleBoundObserver.onStateChange(), but who knows)
+-keepclassmembers class * {
+    @android.arch.lifecycle.OnLifecycleEvent *;
+}
+
+# This because most of animations in the charts were not going well. I am starting to hate this proguard stuff...
+-keep class com.github.mikephil.charting.** { *; }
