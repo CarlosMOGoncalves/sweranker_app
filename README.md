@@ -11,28 +11,25 @@ Software Engineer.
 
 More information about this standard can be found here: https://www.computer.org/web/swebok/v3-guide
 
-### What is this repository for? ###
+### What does this app do? ###
 
-* Quick summary
-* Version
-* [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
+This app's main goal is to crunch through every available degree it has and calculate a score.
+This score is based on how well each degree combination (a combination can be seen as "one possible way to complete a given degree") fares against the SWEBOK.
+Since the SWEBOK is literally the "Software Engineering Book of Knowledge" this calculated score is translated into a numerical representation of HOW WELL
+each degree covers the SWEBOK topics, or in simpler words, how much Software Engineering each of these degrees have.
 
-### How do I get set up? ###
+This app's features:
+- lightweight guide of the SWEBOK. It has a quick-reference, compressed guide to the Software Engineering Body of Knowledge
+- Software Engineering Degrees' guide. Six of the most well-reputed portuguese Software Engineering degrees with their complete program.
+- graphical view of each degree's strenghts and weaknesses. Each degree is ranked against the SWEBOK to find out their worth in Software Engineering terms.
 
-* Summary of set up
-* Configuration
-* Dependencies
-* Database configuration
-* How to run tests
-* Deployment instructions
+### The main menu ###
 
-### Contribution guidelines ###
 
-* Writing tests
-* Code review
-* Other guidelines
 
-### Who do I talk to? ###
+### The SWEBOK ###
 
-* Repo owner or admin
-* Other community or team contact
+
+### The Degrees ###
+
+### The Scores ###
