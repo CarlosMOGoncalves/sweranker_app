@@ -25,6 +25,9 @@ This app's features:
 
 ### The main menu ###
 
+The main screen of this app shows a random Degree Combination Score. Currently, at setup there will be NO score displayed.
+This happens because before any score can be shown it must be calculated beforehand. At the moment each degree score must be calculated in app, for each installation.
+
 
 
 ### The SWEBOK ###
