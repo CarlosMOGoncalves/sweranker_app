@@ -60,6 +60,22 @@ explanation of it is loaded, as well as the topics that compose it. This is main
 
 
 
-### The Degrees ###
+### Curricula ###
+
+The Curricula section is where all the Degrees and their curricula descriptions are available for browsing.
+The first thing to be seen is a grid with all the available portuguese Degrees. By clicking on one Degree, a detailed description of
+it as well as its full curriculum are displayed. This view details a Degree until the very complete subjects of each Degree Class, with its
+full program for the year.
+
+This a very important screen in the app. This is the very point of this app, the degrees and how each of them fares when compared to the
+SWEBOK. There is a number of degrees available in this app, at this stage (BETA) one is available and 5 more are on the way.
+These degrees are not randomly chosen, they are the very best in Portugal and they are ALL taught at public universities. Since they are the most
+relevant of the country it is of the upmost interest to classify them and hopefully see their relative worth on what concerns to Software Engineering.
+
+None of them is known as Software Engineering because sadly, that name is not yet widely used in Portugal.
+Most are known as Informatics Engineering, but to be clear, in terms of the international community _there is no such thing._
+Informatics is just an older name for the subject, before the term Software Engineering was widespread, and derives from the French term "Information Automatique".
+
+![Degree example](/images/Degree_example.png)
 
 ### The Scores ###
