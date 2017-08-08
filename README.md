@@ -78,4 +78,60 @@ Informatics is just an older name for the subject, before the term Software Engi
 
 ![Degree example](/images/Degree_example.png)
 
-### The Scores ###
+### The Scores Area ###
+
+The Scores are is the very core of this app and the purpose of it.
+When the user selects this option he is greeted with a random choice of 10 different, ordered degree combinations' scores per degree.
+In other words, there will be 10 scores for each different degree in the app. They are free to explore in themselves, but it is more useful
+to instead use the filters to actually search for some criteria-based scores.
+
+![Scores main menu](/images/scores_main.png)
+
+##### Degree Combination #####
+
+An important concept to understand this section is a _Degree Combination._
+
+Every Score given to a degree is not given to it directly as a whole, unique, definitive value. This happens because most Degrees, if not all,
+are not linear, i.e. for every Degree there is usually more than one way to complete it (most likely, a lot more ways). Most degrees have Optional
+classes that one can take (you can chose from a given set of them, for example) and a lot of Degrees have specialisation branches that are mutually
+exclusive. This in itself effectively splits a Degree into many possible Degree Combinations. So, a Degree Combination is nothing more
+than a specific set of Degree Classes that a person can take to complete a degree. So in reality, there is not single score for one degree, but rather
+a **single score per Degree Combination, i.e. per different way to complete a degree.**
+
+Every Degree Combination is unique, meaning that there is **at least** one class that differs it from any other combination.
+
+This gives potential to a lot of interesting conclusions for a given degree, because it surfaces specific strenghts and weaknesses to a combination.
+Do you want your degree to focus in Software Construction? Then "Combination nº X" from a given degree is probably more suited to your needs
+because it has more Software Construction classes than, say "Combination nº Y" that is more focused on Software Testing. This app lends itself to this
+kind of conclusion - that is the point of this app.
+
+##### The filters #####
+These are simple practical filters that allow for a refined ordering of the scores based on their highest relative proportion of coverage for
+each of the 15 different Knowledge Areas.
+
+![Scores filter](/images/scores_filter.png)
+
+#### Individual Score ####
+An individual score of a given Degree Combination is a graphical representation of all the metrics that describe the compliance to SWEBOK of a given
+combination. This is shown by means of a set of charts as it is a great way to visualise the information in a meaningful way. Currently there are only 
+3 metrics, namely:
+*   the coverage percentage of each Knowledge Area
+*   the weighted avergage for each Knowledge Area in the degree
+*   the absolute counters for each KA and Topic in the degree
+
+The first is pretty straightforward: given the whole of 15 Knowledge Areas and all its composing 102 Knowledge Area Topics, does that particular
+degree combination cover all of them at any point in its curriculum?
+
+![Score Percent](/images/score_1.png)
+
+Then the weighted average: in the whole curriculum for this combinaton **how much** of each Knowledge Area is covered compared to he universe of the 
+15 Areas? This metric is what gives the sense of proportion in the degree. It answers the question: what is the main focus of this degree?
+(Note: every mean calculated is actually a weighted average. This just means that more important classes contribute more to the average than the less important
+ones. This is only natural, if a class is given 5 hours per week and another is just 2 hours per week, the first has to be more taken into account).
+
+![Score Average](/images/score_2.png)
+
+Finaly the counters: this is simply the number of times each Knowledge Area, via the cummulative counters of each of its topics, is matched in this degree's 
+classes curriculum. Altough less valuable than the weighted average it still gives an interesting view on the particular focus of a given combination.
+
+![Score Counters](/images/score_3.png)
