@@ -87,7 +87,7 @@ to instead use the filters to actually search for some criteria-based scores.
 
 ![Scores main menu](/images/scores_main.png)
 
-##### Degree Combination #####
+#### Degree Combination ####
 
 An important concept to understand this section is a _Degree Combination._
 
@@ -105,13 +105,13 @@ Do you want your degree to focus in Software Construction? Then "Combination nº
 because it has more Software Construction classes than, say "Combination nº Y" that is more focused on Software Testing. This app lends itself to this
 kind of conclusion - that is the point of this app.
 
-##### The filters #####
+#### The filters ####
 These are simple practical filters that allow for a refined ordering of the scores based on their highest relative proportion of coverage for
 each of the 15 different Knowledge Areas.
 
 ![Scores filter](/images/scores_filter.png)
 
-#### Individual Score ####
+### Individual Score ###
 An individual score of a given Degree Combination is a graphical representation of all the metrics that describe the compliance to SWEBOK of a given
 combination. This is shown by means of a set of charts as it is a great way to visualise the information in a meaningful way. Currently there are only 
 3 metrics, namely:
