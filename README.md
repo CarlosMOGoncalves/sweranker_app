@@ -28,9 +28,35 @@ This app's features:
 The main screen of this app shows a random Degree Combination Score. Currently, at setup there will be NO score displayed.
 This happens because before any score can be shown it must be calculated beforehand. At the moment each degree score must be calculated in app, for each installation.
 
+![Main Menu image](/images/MainMenu.png)
+
+There are 3 options to select from this navigation menu:
+* SWEBOK
+* Curricula
+* Rankings
+
 
 
 ### The SWEBOK ###
+
+This section of the application is dedicated to a brief, comprehensible summary of what the SWEBOK is all about. The
+SWEBOK is a book that contains what is known as the Software Engineering Body of Knowledge.
+This Body of Knowledge is the set of all the Areas of Human Knowledge that together define what a person should master in
+order to be considered a Software Engineer. In simpler words, the Body of Knowledge describes what Software
+Engineering is.
+
+For example, the Body of Knowledge of General Medicine would probably be composed of all the traditional branches of that science, such as 
+Pharmacology, Endocrinology, Toxicology and so on. 
+
+Ideally, there should be a Body of Knowledge for every possible professional activity, it is a way to structurally classify the whole of the Human Knowledge.
+However, most professional associations don't bother to define one, either because there is no consensus of what the generally accepted Body of Knowledge
+should be or, more commonly, because they don't feel the need to write a formal documentation of one. Shame.
+
+The SWEBOK area of this app is composed of a grid of all the 15 Areas of Knowledge of Software Engineering and by clicking each one a brief
+explanation of it is loaded, as well as the topics that compose it. This is mainly a bibliographic effort.
+
+![SWEBOK area](/images/SWEBOK_main.png)
+
 
 
 ### The Degrees ###
