@@ -31,6 +31,7 @@ This happens because before any score can be shown it must be calculated beforeh
 ![Main Menu image](/images/MainMenu.png)
 
 There are 3 options to select from this navigation menu:
+
 *   SWEBOK
 *   Curricula
 *   Rankings
