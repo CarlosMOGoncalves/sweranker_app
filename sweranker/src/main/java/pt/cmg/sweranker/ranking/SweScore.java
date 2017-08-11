@@ -25,8 +25,6 @@ public class SweScore extends RealmObject {
     public static final String TYPE_ANNUAL_SCORE = "A";
     public static final String TYPE_DEGREE_SCORE = "D";
 
-    private static final int PERCENT = 100;
-
 
     /**
      * Very important -> this id is:
@@ -856,29 +854,6 @@ public class SweScore extends RealmObject {
         }
     }
 
-    /**
-     * This resets the percent calculations. Only really useful after every counter has been put into place and
-     * no further data will be added.
-     */
-    public void calculateScores() {
-
-        kaPercent1 = (float) kaCounter1 / totalTopicCount * PERCENT;
-        kaPercent2 = (float) kaCounter2 / totalTopicCount * PERCENT;
-        kaPercent3 = (float) kaCounter3 / totalTopicCount * PERCENT;
-        kaPercent4 = (float) kaCounter4 / totalTopicCount * PERCENT;
-        kaPercent5 = (float) kaCounter5 / totalTopicCount * PERCENT;
-        kaPercent6 = (float) kaCounter6 / totalTopicCount * PERCENT;
-        kaPercent7 = (float) kaCounter7 / totalTopicCount * PERCENT;
-        kaPercent8 = (float) kaCounter8 / totalTopicCount * PERCENT;
-        kaPercent9 = (float) kaCounter9 / totalTopicCount * PERCENT;
-        kaPercent10 = (float) kaCounter10 / totalTopicCount * PERCENT;
-        kaPercent11 = (float) kaCounter11 / totalTopicCount * PERCENT;
-        kaPercent12 = (float) kaCounter12 / totalTopicCount * PERCENT;
-        kaPercent13 = (float) kaCounter13 / totalTopicCount * PERCENT;
-        kaPercent14 = (float) kaCounter14 / totalTopicCount * PERCENT;
-        kaPercent15 = (float) kaCounter15 / totalTopicCount * PERCENT;
-        kaPercent16 = (float) kaCounter16 / totalTopicCount * PERCENT;
-    }
 
     @Override
     public String toString() {

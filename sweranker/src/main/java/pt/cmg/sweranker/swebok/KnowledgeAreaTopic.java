@@ -2,9 +2,6 @@ package pt.cmg.sweranker.swebok;
 
 import pt.cmg.sweranker.R;
 
-/**
- * Created by Carlos on 19/12/2016.
- */
 
 public class KnowledgeAreaTopic {
 
@@ -16,6 +13,11 @@ public class KnowledgeAreaTopic {
 
 
     public KnowledgeAreaTopic() {
+    }
+
+    public KnowledgeAreaTopic(int id, int knowledgeAreaId) {
+        _id = id;
+        _knowledgeAreaId = knowledgeAreaId;
     }
 
     public KnowledgeAreaTopic(int knowledgeAreaId) {

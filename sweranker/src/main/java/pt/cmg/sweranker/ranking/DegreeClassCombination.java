@@ -9,9 +9,12 @@ import io.realm.RealmObject;
 import io.realm.annotations.PrimaryKey;
 
 /**
- * Created by Carlos on 05/04/2017.
+ * A DegreeClassCombination is a data class that store all the different Degree Classes from all the
+ * years that compose a unique Degree Combination.
+ * <p>
+ * It is composed by its unique ID, the Degree ID that this combination belongs to and a List of
+ * Annual Class Combinations, which is in itself another list of Degree Classes
  */
-
 public class DegreeClassCombination extends RealmObject {
 
     @PrimaryKey
@@ -64,6 +67,13 @@ public class DegreeClassCombination extends RealmObject {
 
     }
 
+    /**
+     * Returns a Map where entries are the years and the values are the Annual Combination that match
+     * those years.
+     * <p>
+     * In a typical Degree this should be a collection with around 5 entries, one annual combination
+     * for each.
+     */
     public Map<Integer, AnnualClassCombination> getClassCombinationsByYear() {
 
         Map<Integer, AnnualClassCombination> classCombinationsByYear = new HashMap<>();

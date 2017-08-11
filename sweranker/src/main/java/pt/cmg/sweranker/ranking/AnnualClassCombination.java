@@ -7,9 +7,11 @@ import io.realm.RealmObject;
 import io.realm.annotations.PrimaryKey;
 
 /**
- * Created by Carlos on 05/04/2017.
+ * An AnnualClassCombination is little more than a List of Degree Class Ids.
+ * These are the different classes that a person can take in a given Year of a degree.
+ * The system will have a lot of these, all different, to attest for the different ways one student
+ * can complete a given year in a given degree.
  */
-
 public class AnnualClassCombination extends RealmObject {
 
     @PrimaryKey
