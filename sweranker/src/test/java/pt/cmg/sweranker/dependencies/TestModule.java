@@ -21,9 +21,13 @@ public class TestModule {
     public static final String DEGREE_CLASS_PROGRAM_ITEM_ID_2 = "classProgramItem2";
     public static final String DEGREE_CLASS_PROGRAM_ITEM_ID_3 = "classProgramItem3";
 
-    public static final int DEGREE_CLASS_PROGRAM_ITEM_ID_RESOURCE = 1;
+    public static final String DEGREE_CLASS_PROGRAM_ITEM_ID_4 = "classProgramItem4";
+
+    public static final int DEGREE_CLASS_PROGRAM_ITEM_ID_RESOURCE_1 = 1;
+    public static final int DEGREE_CLASS_PROGRAM_ITEM_ID_RESOURCE_2 = 1;
 
     @Provides
+    @Named("standard")
     public DegreeClass degreeClass() {
 
         DegreeClass testClass = new DegreeClass();
@@ -36,9 +40,30 @@ public class TestModule {
         testClass.setYear(1);
 
         Map<String, Integer> classProgram = new HashMap<>();
-        classProgram.put(DEGREE_CLASS_PROGRAM_ITEM_ID_1, DEGREE_CLASS_PROGRAM_ITEM_ID_RESOURCE);
-        classProgram.put(DEGREE_CLASS_PROGRAM_ITEM_ID_2, DEGREE_CLASS_PROGRAM_ITEM_ID_RESOURCE);
-        classProgram.put(DEGREE_CLASS_PROGRAM_ITEM_ID_3, DEGREE_CLASS_PROGRAM_ITEM_ID_RESOURCE);
+        classProgram.put(DEGREE_CLASS_PROGRAM_ITEM_ID_1, DEGREE_CLASS_PROGRAM_ITEM_ID_RESOURCE_1);
+        classProgram.put(DEGREE_CLASS_PROGRAM_ITEM_ID_2, DEGREE_CLASS_PROGRAM_ITEM_ID_RESOURCE_1);
+        classProgram.put(DEGREE_CLASS_PROGRAM_ITEM_ID_3, DEGREE_CLASS_PROGRAM_ITEM_ID_RESOURCE_1);
+
+        testClass.setProgram(classProgram);
+
+        return testClass;
+    }
+
+    @Provides
+    @Named("alternative")
+    public DegreeClass degreeClassAlternative() {
+
+        DegreeClass testClass = new DegreeClass();
+        testClass.setId("degreeClassId2");
+        testClass.setNameResource(2);
+        testClass.setDescriptionResource(2);
+        testClass.setOptionalClass(false);
+        testClass.setEctsCredits(10f);
+        testClass.setSemester(1);
+        testClass.setYear(1);
+
+        Map<String, Integer> classProgram = new HashMap<>();
+        classProgram.put(DEGREE_CLASS_PROGRAM_ITEM_ID_4, DEGREE_CLASS_PROGRAM_ITEM_ID_RESOURCE_2);
 
         testClass.setProgram(classProgram);
 
@@ -47,14 +72,14 @@ public class TestModule {
 
     @Provides
     @Named("incomplete")
-    public DegreeClassMatch incompleteMatch(DegreeClass degreeClass) {
+    public DegreeClassMatch incompleteMatch(@Named("standard") DegreeClass degreeClass) {
         return new DegreeClassMatch(degreeClass);
     }
 
 
     @Provides
     @Named("complete")
-    public DegreeClassMatch completeMatch(DegreeClass degreeClass) {
+    public DegreeClassMatch completeMatch(@Named("standard") DegreeClass degreeClass) {
         DegreeClassMatch degreeClassMatch = new DegreeClassMatch(degreeClass);
 
         degreeClassMatch.addKATopicToDegreeTopic(DEGREE_CLASS_PROGRAM_ITEM_ID_1, 1);
@@ -63,6 +88,22 @@ public class TestModule {
         degreeClassMatch.addAllTopicsToDegreeTopic(DEGREE_CLASS_PROGRAM_ITEM_ID_2, topicsForProgramItem2);
 
         List<Integer> topicsForProgramItem3 = Arrays.asList(3, 7, 8, 9);
+        degreeClassMatch.addAllTopicsToDegreeTopic(DEGREE_CLASS_PROGRAM_ITEM_ID_3, topicsForProgramItem3);
+
+        return degreeClassMatch;
+    }
+
+    @Provides
+    @Named("alternative")
+    public DegreeClassMatch alternativeCompleteMatch(@Named("alternative") DegreeClass degreeClass) {
+        DegreeClassMatch degreeClassMatch = new DegreeClassMatch(degreeClass);
+
+        degreeClassMatch.addKATopicToDegreeTopic(DEGREE_CLASS_PROGRAM_ITEM_ID_1, 6);
+
+        List<Integer> topicsForProgramItem2 = Arrays.asList(7);
+        degreeClassMatch.addAllTopicsToDegreeTopic(DEGREE_CLASS_PROGRAM_ITEM_ID_2, topicsForProgramItem2);
+
+        List<Integer> topicsForProgramItem3 = Arrays.asList(10);
         degreeClassMatch.addAllTopicsToDegreeTopic(DEGREE_CLASS_PROGRAM_ITEM_ID_3, topicsForProgramItem3);
 
         return degreeClassMatch;
@@ -98,5 +139,12 @@ public class TestModule {
         return topicResolver;
     }
 
+    @Provides
+    public Map<String, DegreeClass> degreeClassResolver(@Named("standard") DegreeClass degreeClass1, @Named("alternative") DegreeClass degreeClass2) {
+        Map<String, DegreeClass> degreeClassResolver = new HashMap<>();
+        degreeClassResolver.put(degreeClass1.getId(), degreeClass1);
+        degreeClassResolver.put(degreeClass2.getId(), degreeClass2);
 
+        return degreeClassResolver;
+    }
 }

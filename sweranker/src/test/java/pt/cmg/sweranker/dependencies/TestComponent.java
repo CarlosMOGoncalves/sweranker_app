@@ -12,6 +12,7 @@ import pt.cmg.sweranker.swebok.KnowledgeAreaTopic;
 @Component(modules = {TestModule.class})
 public interface TestComponent {
 
+    @Named("standard")
     DegreeClass getDegreeClass();
 
     @Named("incomplete")
@@ -20,6 +21,11 @@ public interface TestComponent {
     @Named("complete")
     DegreeClassMatch getCompleteDegreeClassMatch();
 
+    @Named("alternative")
+    DegreeClassMatch getAlternativeCompleteDegreeClassMatch();
+
     Map<Integer, KnowledgeAreaTopic> getTopicResolver();
+
+    Map<String, DegreeClass> getDegreeClassResolver();
 
 }

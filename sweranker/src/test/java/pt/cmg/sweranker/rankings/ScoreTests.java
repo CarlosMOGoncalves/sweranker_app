@@ -4,8 +4,10 @@ package pt.cmg.sweranker.rankings;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import java.util.Arrays;
 import java.util.Map;
 
+import pt.cmg.sweranker.degrees.DegreeClass;
 import pt.cmg.sweranker.degrees.DegreeClassMatch;
 import pt.cmg.sweranker.dependencies.DaggerTestComponent;
 import pt.cmg.sweranker.dependencies.TestComponent;
@@ -51,23 +53,28 @@ public class ScoreTests {
     @Test
     public void calculatedAccumulatedScoreShouldBeAccurate() {
 
+        Map<String, DegreeClass> degreeClassResolver = _injector.getDegreeClassResolver();
         Map<Integer, KnowledgeAreaTopic> topicResolver = _injector.getTopicResolver();
-        DegreeClassMatch degreeClassMatch = _injector.getCompleteDegreeClassMatch();
 
-        SweScore classScore = CalculationUtils.calculateScore(topicResolver, degreeClassMatch);
+        DegreeClassMatch degreeClassMatch1 = _injector.getCompleteDegreeClassMatch();
+        DegreeClassMatch degreeClassMatch2 = _injector.getAlternativeCompleteDegreeClassMatch();
 
-        assertNotNull("Score cannot be null", classScore);
+        SweScore classScore1 = CalculationUtils.calculateScore(topicResolver, degreeClassMatch1);
+        SweScore classScore2 = CalculationUtils.calculateScore(topicResolver, degreeClassMatch2);
 
-        assertEquals("Score should have as many counters as matches", degreeClassMatch.getAllMatchesAsList().size(), classScore.getTotalTopicCount());
+        SweScore accumulatedScore = CalculationUtils.calculateAccumulatedScore(degreeClassResolver, Arrays.asList(classScore1, classScore2));
 
-        assertEquals("Expected value for KA 1 is 5", 5, classScore.getKaCounter(1));
-        assertEquals("Expected value for KA 2 is 2", 2, classScore.getKaCounter(2));
-        assertEquals("Expected value for KA 3 is 3", 3, classScore.getKaCounter(3));
-        assertEquals("Expected value for KA 4 is 0", 0, classScore.getKaCounter(4));
+        assertNotNull("Score cannot be null", accumulatedScore);
 
-        assertEquals("Expected value is 50 percent", 50f, classScore.getKaPercent(1), 0.01f);
-        assertEquals("Expected value is 20 percent", 20f, classScore.getKaPercent(2), 0.01f);
-        assertEquals("Expected value is 30 percent", 30f, classScore.getKaPercent(3), 0.01f);
-        assertEquals("Expected value is 0 percent", 0f, classScore.getKaPercent(4), 0f);
+
+        assertEquals("Expected value for KA 1 is 5", 5, accumulatedScore.getKaCounter(1));
+        assertEquals("Expected value for KA 2 is 4", 4, accumulatedScore.getKaCounter(2));
+        assertEquals("Expected value for KA 3 is 3", 3, accumulatedScore.getKaCounter(3));
+        assertEquals("Expected value for KA 4 is 1", 1, accumulatedScore.getKaCounter(4));
+
+        assertEquals("Expected value is 31.25 percent", 31.25f, accumulatedScore.getKaPercent(1), 0.01f);
+        assertEquals("Expected value is 37.50 percent", 37.50f, accumulatedScore.getKaPercent(2), 0.01f);
+        assertEquals("Expected value is 18.75 percent", 18.75f, accumulatedScore.getKaPercent(3), 0.01f);
+        assertEquals("Expected value is 12.5 percent", 12.50f, accumulatedScore.getKaPercent(4), 0.01f);
     }
 }
