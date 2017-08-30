@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical">
@@ -8,7 +9,6 @@
     <android.support.v7.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="@dimen/card_size"
-
         app:cardElevation="3dp">
 
         <LinearLayout
@@ -20,32 +20,39 @@
             android:paddingBottom="@dimen/ka_title_padding"
             android:orientation="vertical">
 
-            <ImageView
-                android:id="@+id/university_image"
+            <FrameLayout
+                android:id="@+id/degree_image_container"
                 android:layout_width="match_parent"
-                android:layout_height="140dp"
-                android:background="@android:color/background_light"
-                android:scaleType="fitCenter"
-                app:srcCompat="@drawable/feup_logo" />
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/university_image"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/degree_master_image_size"
+                    android:background="@android:color/background_light"
+                    android:scaleType="fitCenter"
+                    tools:srcCompat="@drawable/feup_logo" />
+            </FrameLayout>
+
 
             <TextView
                 android:id="@+id/university_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/university_image"
-                android:text="UMinho"
+                android:background="@android:color/background_light"
+                android:gravity="center_horizontal"
                 android:textAlignment="center"
-                android:background="@android:color/background_light" />
+                tools:text="UMinho" />
 
             <TextView
                 android:id="@+id/degree_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/university_name"
-                android:text="MEI"
+                android:background="@android:color/background_light"
+                android:gravity="center_horizontal"
                 android:textAlignment="center"
                 android:textColor="@color/colorPrimaryDark"
-                android:background="@android:color/background_light" />
+                tools:text="MEI" />
 
         </LinearLayout>
     </android.support.v7.widget.CardView>

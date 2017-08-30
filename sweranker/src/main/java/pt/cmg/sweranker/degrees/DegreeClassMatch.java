@@ -162,7 +162,7 @@ public class DegreeClassMatch {
     /**
      * Adds a new KA Topic to a given Degree Class. This represents an association between both, which is the point of this app.
      * Note that these KA Topics are inserted in and ordered fashion and returned as such.
-     * The only reason for this it to be useful for DegreeTopicMatcherAdapter, that relies on item positioning for its logic,
+     * The only reason for this it to be useful for pt.cmg.sweranker.degrees.DegreeTopicMatcherAdapter, that relies on item positioning for its logic,
      * at least at the current moment.
      * Otherwise, the order of the association is irrelevant.
      *

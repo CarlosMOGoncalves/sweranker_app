@@ -4,6 +4,8 @@
     <string name="curricula">Curricula</string>
     <string name="rankings">Rankings</string>
 
+    <string name="coming_soon">Coming soon!</string>
+
     <string name="openDrawer">Open</string>
     <string name="closeDrawer">Close</string>
 
@@ -60,7 +62,7 @@
     <string name="degree_overview_combination">Combination %1$d</string>
     <string name="show_overview">OVERVIEW</string>
     <string name="show_degree_overview">SHOW DEGREE OVERVIEW</string>
-    <string name="no_scores_available_yet">No Scores found to display.\n Please run the Calculation for at leat one Degree.\nGo to Action Bar Menu -> Curricula -> Select Degree -> Calculate Score.</string>
+    <string name="no_scores_available_yet">No Scores found to display.\nPlease run the Calculation for at least one Degree.\nGo to Action Bar Menu -> Curricula -> Select Degree -> Calculate Score.</string>
 
     <string name="calculation_progress_annual_combo">Calculating annual combinations...</string>
     <string name="calculation_progress_saving_annual_combos">Saving annual combinations...</string>

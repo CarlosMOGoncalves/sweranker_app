@@ -21,7 +21,7 @@ android {
         applicationId "pt.cmg.sweranker"
         minSdkVersion 21
         targetSdkVersion 26
-        versionCode 3
+        versionCode 4
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         multiDexEnabled true
@@ -39,17 +39,33 @@ android {
             signingConfig signingConfigs.lockerRoom
         }
     }
+
+    // The usage of two flavours is meant to separate into two apps: one that only views results
+    // and an admin one where I can match the degrees without cluttering the client one.
+    flavorDimensions "feature"
+    productFlavors {
+        client {
+
+        }
+        admin {
+            applicationIdSuffix ".admin"
+        }
+    }
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
 }
 
+// This is a nasty part. I use this snippet to generate both a directory for Dagger2 classes for JUNIT and
+// to run an assembleUnitTest task in order to actually create the classes
 android.applicationVariants.all { variant ->
     if (variant.buildType.name == "debug") {
         def aptOutputDir = new File(buildDir, "generated/source/apt/${variant.unitTestVariant.dirName}")
         variant.unitTestVariant.addJavaSourceFoldersToModel(aptOutputDir)
-        assembleDebug.finalizedBy('assembleDebugUnitTest')
+        assembleClientDebug.finalizedBy('assembleClientDebugUnitTest')
+        assembleAdminDebug.finalizedBy('assembleAdminDebugUnitTest')
     }
 }
 
@@ -78,7 +94,7 @@ dependencies {
     // Here is the Chart library
     compile 'com.github.PhilJay:MPAndroidChart:v3.0.2'
     // All this just for the Optional... thanks google for not fully supporting Java8 after 2 years...
-    compile 'com.google.guava:guava:22.0-android'
+    compile 'com.google.guava:guava:23.0-android'
     // Below are the Dagger2 dependencies
     compile 'com.google.dagger:dagger:2.11'
     compile 'com.google.dagger:dagger-android:2.11'

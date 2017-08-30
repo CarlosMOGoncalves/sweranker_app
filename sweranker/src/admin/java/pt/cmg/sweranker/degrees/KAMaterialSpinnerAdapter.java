@@ -272,7 +272,7 @@ public class KAMaterialSpinnerAdapter extends MaterialSpinnerBaseAdapter {
 
         public KnowledgeAreaTopicViewHolder(View rootView) {
             super(rootView);
-            _topicName = (TextView) rootView.findViewById(R.id.ka_topic_name);
+            _topicName = rootView.findViewById(R.id.ka_topic_name);
             _topicName.setOnClickListener(v -> {
 
                 KnowledgeAreaTopic selectedTopic = _kaTopicsAsArray[getAdapterPosition()];
@@ -282,7 +282,7 @@ public class KAMaterialSpinnerAdapter extends MaterialSpinnerBaseAdapter {
                 _listener.getSelectedTopicId(selectedTopic.getId());
             });
 
-            _helpButton = (ImageButton) rootView.findViewById(R.id.info_button);
+            _helpButton = rootView.findViewById(R.id.info_button);
             _helpButton.setOnClickListener(v -> {
                 KnowledgeAreaTopic selectedTopic = _kaTopicsAsArray[getAdapterPosition()];
                 KATopicInformationDialog dialog = KATopicInformationDialog.newInstance(_context.getString(selectedTopic.getDescriptionResource()), _context.getString(R.string.dismiss));

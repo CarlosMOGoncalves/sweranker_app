@@ -15,6 +15,22 @@ import java.util.Map;
 import pt.cmg.sweranker.R;
 
 
+/**
+ * This Degree Overview Adapter is a fancy name just to say that I am showing a complete list of all the Degree
+ * Classes that compose this Degree's curriculum (or program) but separated by a View that shows the Year.
+ * <p>
+ * Something like this:
+ * <p>
+ * YEAR 1<br/>
+ * Calculus I<br/>
+ * Imperative Programming<br/>
+ * YEAR 2<br/>
+ * Physics II<br/>
+ * Functional Programming<br/>
+ * Databases<br/>
+ * YEAR 3<br/>
+ * ...
+ */
 public class DegreeOverViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     private static final int TYPE_HEADER = 10;

@@ -76,12 +76,6 @@ public class DegreeTopicMatcherAdapter extends RecyclerView.Adapter<RecyclerView
     /**
      * Constructor used whenever there is already a match for this Degree Class.
      * It is useful because now we are updating and not creating a match.
-     *
-     * @param context
-     * @param degreeClass
-     * @param previousMatch
-     * @param knowledgeAreas
-     * @param listener
      */
     public DegreeTopicMatcherAdapter(Activity context, DegreeClass degreeClass, DegreeClassMatch previousMatch, List<KnowledgeArea> knowledgeAreas, OnDegreeTopicMatcherListener listener) {
         _context = context;
@@ -229,10 +223,6 @@ public class DegreeTopicMatcherAdapter extends RecyclerView.Adapter<RecyclerView
         kaTopicSpinner.setTextColor(ContextCompat.getColor(_context, selectedKATopic.getColorResource()));
         kaTopicSpinner.setText(_context.getString(selectedKATopic.getNameResource()));
 
-        // HERE: with this deactivated this spinner is in effect a read-only. It must just be active in development
-        // I should probably just toy around with flavours to create a dev specific version. Noted.
-        kaTopicSpinner.setEnabled(false);
-
         return kaTopicSpinner;
     }
 
@@ -257,10 +247,6 @@ public class DegreeTopicMatcherAdapter extends RecyclerView.Adapter<RecyclerView
                 holder._addMatcherButton.setEnabled(true);
             }
         }));
-
-        // HERE: with this deactivated this spinner is in effect a read-only. It must just be active in development
-        // I should probably just toy around with flavours to create a dev specific version. Noted.
-        kaTopicSpinner.setEnabled(false);
 
         return kaTopicSpinner;
     }
@@ -314,22 +300,18 @@ public class DegreeTopicMatcherAdapter extends RecyclerView.Adapter<RecyclerView
             holder._addMatcherButton.setEnabled(false);
         }
 
-        holder._addMatcherButton.setOnClickListener(new View.OnClickListener() {
+        holder._addMatcherButton.setOnClickListener(v -> {
+            // Basically: how many spinners does this topic already has?
+            int nextSpinnerPositionIndex = _currentMatches.getKATopicsCount(currentDegreeTopicId);
+            MaterialSpinner anotherSpinner = initialiseEmptySpinner(holder, currentDegreeTopicId, nextSpinnerPositionIndex);
 
-            @Override
-            public void onClick(View v) {
-                // Basically: how many spinners does this topic already has?
-                int nextSpinnerPositionIndex = _currentMatches.getKATopicsCount(currentDegreeTopicId);
-                MaterialSpinner anotherSpinner = initialiseEmptySpinner(holder, currentDegreeTopicId, nextSpinnerPositionIndex);
+            holder._selectorContainer.addView(anotherSpinner);
 
-                holder._selectorContainer.addView(anotherSpinner);
+            holder._removeMatherButton.setEnabled(true);
+            holder._removeMatherButton.setAlpha(1f);
 
-                holder._removeMatherButton.setEnabled(true);
-                holder._removeMatherButton.setAlpha(1f);
-
-                holder._addMatcherButton.setEnabled(false);
-                holder._addMatcherButton.setAlpha(0.3f);
-            }
+            holder._addMatcherButton.setEnabled(false);
+            holder._addMatcherButton.setAlpha(0.3f);
         });
     }
 
@@ -420,18 +402,14 @@ public class DegreeTopicMatcherAdapter extends RecyclerView.Adapter<RecyclerView
 
         public DegreeClassTopicMatcherViewHolder(View view) {
             super(view);
-            _degreeTopicName = (TextView) view.findViewById(R.id.topic_name);
-            _selectorContainer = (LinearLayout) view.findViewById(R.id.selector_container);
+            _degreeTopicName = view.findViewById(R.id.topic_name);
+            _selectorContainer = view.findViewById(R.id.selector_container);
 
-            _addMatcherButton = (ImageView) view.findViewById(R.id.uno_mas);
+            _addMatcherButton = view.findViewById(R.id.uno_mas);
             _addMatcherButton.setColorFilter(ContextCompat.getColor(_context, R.color.materialAffirmative));
 
-            _removeMatherButton = (ImageView) view.findViewById(R.id.uno_menos);
+            _removeMatherButton = view.findViewById(R.id.uno_menos);
             _removeMatherButton.setColorFilter(ContextCompat.getColor(_context, R.color.materialNegative));
-
-            // HERE AGAIN: I am removing these buttons so that nobody can touch them, only in dev mode
-            _addMatcherButton.setVisibility(View.GONE);
-            _removeMatherButton.setVisibility(View.GONE);
 
         }
 
@@ -453,9 +431,6 @@ public class DegreeTopicMatcherAdapter extends RecyclerView.Adapter<RecyclerView
                 _submitButton.setEnabled(false);
                 _submitButton.setAlpha(.3f);
             }
-
-            // HERE AGAIN: I am removing this button so that nobody can touch it, only in dev mode
-            _submitButton.setVisibility(View.GONE);
 
             _submitButton.setOnClickListener(v -> _listener.onMatchSubmitted(_currentMatches));
         }

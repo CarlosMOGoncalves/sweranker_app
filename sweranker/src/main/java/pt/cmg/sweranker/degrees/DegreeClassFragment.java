@@ -28,6 +28,10 @@ import pt.cmg.sweranker.ui.UnderlineDividerItemDecorator;
 /**
  * This Fragment is used to show the details of a given Degree Class, namely its program and
  * some of its common attributes such as year, semester, etc.
+ * <p>
+ * More importantly, this is the entry point to the Degree Class Matching, where one can match
+ * each program item to one or more Knowledge Area Topics. That however is only available in
+ * development mode.
  */
 public class DegreeClassFragment extends Fragment {
 

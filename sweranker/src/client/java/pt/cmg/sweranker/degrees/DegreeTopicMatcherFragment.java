@@ -1,7 +1,6 @@
 package pt.cmg.sweranker.degrees;
 
 
-import android.app.Activity;
 import android.app.Fragment;
 import android.arch.lifecycle.ViewModelProviders;
 import android.content.Context;
@@ -30,12 +29,7 @@ public class DegreeTopicMatcherFragment extends Fragment {
     private View _myView;
 
     private MainActivityViewModel _sharedViewModel;
-    private DegreeTopicMatcherFragmentInteractionListener _parentActivity;
 
-    public interface DegreeTopicMatcherFragmentInteractionListener {
-
-        void degreeMatchSaveSuccess();
-    }
 
     public DegreeTopicMatcherFragment() {
     }
@@ -53,22 +47,6 @@ public class DegreeTopicMatcherFragment extends Fragment {
     @Override
     public void onAttach(Context parentActivity) {
         super.onAttach(parentActivity);
-//        if (parentActivity instanceof DegreeTopicMatcherFragmentInteractionListener) {
-//            _parentActivity = (DegreeTopicMatcherFragmentInteractionListener) parentActivity;
-//        } else {
-//            throw new RuntimeException(parentActivity.toString() + " must implement DegreeTopicMatcherFragmentInteractionListener");
-//        }
-    }
-
-    // NOTE: this is here because onAttach(Context) was added only on API 23, so as long as Lollipop is min sdk this shall be here
-    @Override
-    public void onAttach(Activity activity) {
-        super.onAttach(activity);
-//        if (activity instanceof DegreeTopicMatcherFragmentInteractionListener) {
-//            _parentActivity = (DegreeTopicMatcherFragmentInteractionListener) activity;
-//        } else {
-//            throw new RuntimeException(activity.toString() + " must implement DegreeTopicMatcherFragmentInteractionListener");
-//        }
     }
 
     @Override
@@ -86,7 +64,7 @@ public class DegreeTopicMatcherFragment extends Fragment {
                              Bundle savedInstanceState) {
         _myView = inflater.inflate(R.layout.degree_matcher_fragment, container, false);
 
-        RecyclerView matcherList = (RecyclerView) _myView.findViewById(R.id.matcher_list);
+        RecyclerView matcherList = _myView.findViewById(R.id.matcher_list);
 
         if (_sharedViewModel.hasMatches(_degreeClassId)) {
 
@@ -94,23 +72,15 @@ public class DegreeTopicMatcherFragment extends Fragment {
             DegreeTopicMatcherAdapter adapter = new DegreeTopicMatcherAdapter(getActivity(),
                     _degreeClass,
                     previousMatch,
-                    _sharedViewModel.getKnowledgeAreas().getValue(),
-                    selectedMatch -> {
-                        if (_sharedViewModel.saveMatch(selectedMatch)) {
-                            getFragmentManager().popBackStackImmediate();
-                        }
-                    });
+                    _sharedViewModel.getKnowledgeAreas().getValue()
+            );
             matcherList.setAdapter(adapter);
 
         } else {
             DegreeTopicMatcherAdapter adapter = new DegreeTopicMatcherAdapter(getActivity(),
                     _degreeClass,
-                    _sharedViewModel.getKnowledgeAreas().getValue(),
-                    selectedMatch -> {
-                        if (_sharedViewModel.saveMatch(selectedMatch)) {
-                            getFragmentManager().popBackStackImmediate();
-                        }
-                    });
+                    _sharedViewModel.getKnowledgeAreas().getValue()
+            );
             matcherList.setAdapter(adapter);
         }
 

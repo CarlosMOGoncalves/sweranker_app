@@ -9,10 +9,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:textAlignment="center"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:text="@string/no_scores_available_yet"
+        android:textAlignment="textEnd"
         android:textSize="17sp"
-        android:visibility="gone"
-        tools:text="No Scores found to display.\n Please run the Calculation for at leat one Degree.\nGo to Action Bar Menu -> Curricula -> Select Degree -> Calculate Score." />
+        android:visibility="visible" />
 
     <ProgressBar
         android:id="@+id/progress_bar"
