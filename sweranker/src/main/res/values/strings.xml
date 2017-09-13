@@ -1657,48 +1657,204 @@
     <string name="uc_class_procedure_programming_topic9">Pilhas </string>
     <string name="uc_class_procedure_programming_topic10">Filas de espera</string>
 
-    <string name="uc_modern_physics">Tópicos de Física Moderna</string>
-    <string name="uc_modern_physics_description">Transmitir aos alunos conceitos básicos e ferramentas de trabalho que permitem explicar,
+    <string name="uc_class_modern_physics">Tópicos de Física Moderna</string>
+    <string name="uc_class_modern_physics_description">Transmitir aos alunos conceitos básicos e ferramentas de trabalho que permitem explicar,
         compreender e prever fenómenos em Física Clássica e em Física Quântica e a sua relação com Computação Quântica</string>
-    <string name="uc_modern_physics_topic1">A medida em Física Clássica</string>
-    <string name="uc_modern_physics_topic2">A equação do movimento de uma partícula a uma dimensão</string>
-    <string name="uc_modern_physics_topic3">Descrição do comportamento de uma partícula a partir da energia potencial e das condições iniciais</string>
-    <string name="uc_modern_physics_topic4">Oscilador harmónico clássico</string>
-    <string name="uc_modern_physics_topic5">Equação geral de uma onda a uma dimensão</string>
-    <string name="uc_modern_physics_topic6">Sobreposição e interferência</string>
-    <string name="uc_modern_physics_topic7">Ondas estacionárias</string>
-    <string name="uc_modern_physics_topic8">Batimentos</string>
-    <string name="uc_modern_physics_topic9">Pacotes de onda</string>
-    <string name="uc_modern_physics_topic10">Transmissão de informação</string>
-    <string name="uc_modern_physics_topic11">Ondas eletromagnéticas: o limite da óptica geométrica e da óptica física</string>
-    <string name="uc_modern_physics_topic12">Física Quântica: A interpretação probabilística da função de onda de uma partícula</string>
-    <string name="uc_modern_physics_topic13">Física Quântica: A equação de Schrödinger a uma dimensão: exemplos</string>
-    <string name="uc_modern_physics_topic14">Física Quântica: O problema da medida em Física Quântica</string>
-    <string name="uc_modern_physics_topic15">Física Quântica: Os estados de spin como exemplo de um sistema quântico binário</string>
-    <string name="uc_modern_physics_topic16">Física Quântica: Estados de Bell</string>
-    <string name="uc_modern_physics_topic17">Computação Quântica: Relação entre bits clássicos e bits quânticos ou qubits</string>
-    <string name="uc_modern_physics_topic18">Computação Quântica: Operações com qubits</string>
-    <string name="uc_modern_physics_topic19">Computação Quântica: Potencialidades e dificuldades de implementação</string>
+    <string name="uc_class_modern_physics_topic1">A medida em Física Clássica</string>
+    <string name="uc_class_modern_physics_topic2">A equação do movimento de uma partícula a uma dimensão</string>
+    <string name="uc_class_modern_physics_topic3">Descrição do comportamento de uma partícula a partir da energia potencial e das condições iniciais</string>
+    <string name="uc_class_modern_physics_topic4">Oscilador harmónico clássico</string>
+    <string name="uc_class_modern_physics_topic5">Equação geral de uma onda a uma dimensão</string>
+    <string name="uc_class_modern_physics_topic6">Sobreposição e interferência</string>
+    <string name="uc_class_modern_physics_topic7">Ondas estacionárias</string>
+    <string name="uc_class_modern_physics_topic8">Batimentos</string>
+    <string name="uc_class_modern_physics_topic9">Pacotes de onda</string>
+    <string name="uc_class_modern_physics_topic10">Transmissão de informação</string>
+    <string name="uc_class_modern_physics_topic11">Ondas eletromagnéticas: o limite da óptica geométrica e da óptica física</string>
+    <string name="uc_class_modern_physics_topic12">Física Quântica: A interpretação probabilística da função de onda de uma partícula</string>
+    <string name="uc_class_modern_physics_topic13">Física Quântica: A equação de Schrödinger a uma dimensão: exemplos</string>
+    <string name="uc_class_modern_physics_topic14">Física Quântica: O problema da medida em Física Quântica</string>
+    <string name="uc_class_modern_physics_topic15">Física Quântica: Os estados de spin como exemplo de um sistema quântico binário</string>
+    <string name="uc_class_modern_physics_topic16">Física Quântica: Estados de Bell</string>
+    <string name="uc_class_modern_physics_topic17">Computação Quântica: Relação entre bits clássicos e bits quânticos ou qubits</string>
+    <string name="uc_class_modern_physics_topic18">Computação Quântica: Operações com qubits</string>
+    <string name="uc_class_modern_physics_topic19">Computação Quântica: Potencialidades e dificuldades de implementação</string>
 
 
-    <string name="uc_"></string>
-    <string name="uc__description"></string>
-    <string name="uc__topic1"></string>
-    <string name="uc__topic2"></string>
-    <string name="uc__topic3"></string>
-    <string name="uc__topic4"></string>
-    <string name="uc__topic5"></string>
-    <string name="uc__topic6"></string>
-    <string name="uc__topic7"></string>
-    <string name="uc__topic8"></string>
-    <string name="uc__topic9"></string>
-    <string name="uc__topic10"></string>
-    <string name="uc__topic11"></string>
-    <string name="uc__topic12"></string>
-    <string name="uc__topic13"></string>
-    <string name="uc__topic14"></string>
-    <string name="uc__topic15"></string>
-    <string name="uc__topic16"></string>
+    <string name="uc_class_network_intro">Introdução às Redes de Comunicação</string>
+    <string name="uc_class_network_intro_description">A disciplina de Redes de Comunicações pretende dotar os estudantes de
+        um largo espectro de conhecimento nas áreas das comunicações e de capacidades para projectarem soluções técnicas de elevado potencial.</string>
+    <string name="uc_class_network_intro_topic1">Fundamentos das Redes de Comunicação</string>
+    <string name="uc_class_network_intro_topic2">Arquitecturas: OSI e TCP/IP</string>
+    <string name="uc_class_network_intro_topic3">A Camada de Aplicação</string>
+    <string name="uc_class_network_intro_topic4">A Camada de Transporte</string>
+    <string name="uc_class_network_intro_topic5">A Camada de Rede</string>
+    <string name="uc_class_network_intro_topic6">A Camada de Ligação</string>
+    <string name="uc_class_network_intro_topic7">Diferentes tecnologias de redes</string>
+    <string name="uc_class_network_intro_topic8">Novas tecnologias e tendências</string>
+
+    <string name="uc_class_oop">Programação Orientada aos Objectos</string>
+    <string name="uc_class_oop_description">O objectivo desta disciplina é dar ao aluno um conjunto de conhecimentos sólidos em Programação Orientada aos Objectos.
+        Estes conhecimentos não se cingirão à sintaxe de uma linguagem de programação particular, mas incluirão aspectos relativos à modelação orientada aos objectos,
+        assim como à sua representação gráfica.</string>
+    <string name="uc_class_oop_topic1">Perspectiva histórica e motivação para a POO </string>
+    <string name="uc_class_oop_topic2">Classes, Objectos e Métodos</string>
+    <string name="uc_class_oop_topic3">Princípios de modelação OO </string>
+    <string name="uc_class_oop_topic4">Definição de Classes </string>
+    <string name="uc_class_oop_topic5">Questões de Modelação versus Implementação</string>
+    <string name="uc_class_oop_topic6">Herança e Polimorfismo</string>
+    <string name="uc_class_oop_topic7">Questões de modelação: relações de composição versus relações de herança</string>
+    <string name="uc_class_oop_topic8">Gestão de erros e excepções</string>
+    <string name="uc_class_oop_topic9">Programação Baseada em Interfaces</string>
+    <string name="uc_class_oop_topic10">Programação Baseada em Eventos</string>
+    <string name="uc_class_oop_topic11">Programação Baseada em Genéricos</string>
+
+    <string name="uc_class_os">Sistemas Operativos</string>
+    <string name="uc_class_os_description">O objectivo desta disciplina é dar a conhecer aos estudantes o funcionamento dos SO modernos e ao mesmo tempo dotar
+        os estudantes das devidas capacidades para desenvolverem aplicações de sistema que façam uso directo do interface de programação do sistema operativo
+        e que explorem as capacidades de concorrência e multi-programa.</string>
+    <string name="uc_class_os_topic1">Funções de um Sistema Operativo</string>
+    <string name="uc_class_os_topic2">Sistemas de Ficheiros</string>
+    <string name="uc_class_os_topic3">Entrada/Saída e escalonamento de disco</string>
+    <string name="uc_class_os_topic4">Gestão de Processos</string>
+    <string name="uc_class_os_topic5">Escalonamento de processos</string>
+    <string name="uc_class_os_topic6">Gestão de memória: Memória virtual</string>
+    <string name="uc_class_os_topic7">Gestão de memória: Memory-Mapped Files</string>
+    <string name="uc_class_os_topic8">Multi-threading</string>
+    <string name="uc_class_os_topic9">Programação em C em Linux; Comandos Linux; Funções de Sistema Linux</string>
+    <string name="uc_class_os_topic10">Programação Multi-processo e multi-threaded</string>
+    <string name="uc_class_os_topic11">Comunicação entre processos: Sinais; Pipes; Named Pipes; Select; Memória partilhada; Filas de Mensagens</string>
+    <string name="uc_class_os_topic12">Sincronização: Exclusão mútua (mutexes), Semáforos, Variáveis de condição</string>
+    <string name="uc_class_os_topic13">Sincronização: Deadlocks e Race Conditions</string>
+    <string name="uc_class_os_topic14">Segurança</string>
+    <string name="uc_class_os_topic15">Virtualização</string>
+
+    <string name="uc_class_computation_theory">Teoria da Computação</string>
+    <string name="uc_class_computation_theory_description">Estudar os diversos tipos de autómatos (finitos, de pilha, Máquinas de Turing) e de gramáticas
+        formais (regulares, independentes e dependentes do contexto, recursivas) e as relações entre eles,
+        bem como sua relação com linguagens de programação e compiladores.</string>
+    <string name="uc_class_computation_theory_topic1">Introdução e definições básicas: linguagens, gramáticas, autómatos</string>
+    <string name="uc_class_computation_theory_topic2">Autómatos finitos determinísticos e não-determinísticos e suas relações; Transdutores</string>
+    <string name="uc_class_computation_theory_topic3">Linguagens regulares, gramáticas regulares, expressões regulares, autómatos finitos e suas relações</string>
+    <string name="uc_class_computation_theory_topic4">Propriedades das linguagens regulares, lema da bombagem</string>
+    <string name="uc_class_computation_theory_topic5">Linguagens livres de contexto não-regulares, parsing</string>
+    <string name="uc_class_computation_theory_topic6">Simplificação das gramáticas livres de contexto, formas normais</string>
+    <string name="uc_class_computation_theory_topic7">Autómatos de Pilha não-determinísticos e determinísticos</string>
+    <string name="uc_class_computation_theory_topic8">Propriedades das linguagens livres de contexto (fecho, lemas da bombagem)</string>
+    <string name="uc_class_computation_theory_topic9">Máquinas de Turing padrão, tese de Turing</string>
+    <string name="uc_class_computation_theory_topic10">Outros modelos de Máquinas de Turing, autómatos linearmente limitados</string>
+    <string name="uc_class_computation_theory_topic11">Hierarquias de linguagens formais e autómatos</string>
+    <string name="uc_class_computation_theory_topic12">Limites da computação algorítmica</string>
+    <string name="uc_class_computation_theory_topic13">Outros modelos de computação (funções recursivas, Post, re-escrita, cálculo-lambda)</string>
+    <string name="uc_class_computation_theory_topic14">Uma introdução à teoria da complexidade, problemas P e NP</string>
+
+    <string name="uc_class_info_theory">Teoria da Informação</string>
+    <string name="uc_class_info_theory_description">Fornecer de uma forma sistemática as noções fundamentais da teoria da informação e a sua aplicação
+        em contextos de aprendizagem computacional, análise de dados e, sobretudo, aos princípios da codificação nos contextos da codificação de fontes
+        e de canal e na criptografia.</string>
+    <string name="uc_class_info_theory_topic1">Informação:intuição, conceito e propriedades</string>
+    <string name="uc_class_info_theory_topic2">Entropia, incerteza e dispersão</string>
+    <string name="uc_class_info_theory_topic3">Entropia conjunta, condicionada e propriedades</string>
+    <string name="uc_class_info_theory_topic4">Divergência Kullback-Leibler</string>
+    <string name="uc_class_info_theory_topic5">Informação Mútua</string>
+    <string name="uc_class_info_theory_topic6">Regras da Cadeia</string>
+    <string name="uc_class_info_theory_topic7">Princípio da entropia máxima</string>
+    <string name="uc_class_info_theory_topic8">O teorema da codificação da fonte; Códigos e propriedades</string>
+    <string name="uc_class_info_theory_topic9">Teorema de Kraft e de McMillan</string>
+    <string name="uc_class_info_theory_topic10">Códigos Óptimos; Códigos de Shannon-Fano-Elias; Códigos de Huffman; Códigos Aritméticos; Códigos de dicionário</string>
+    <string name="uc_class_info_theory_topic11">Criptografia: Domínios e tipos de algoritmos; Algoritmos clássicos; Sequências pseudo-aleatórias; Encriptação perfeita e imperfeita</string>
+    <string name="uc_class_info_theory_topic12">Criptografia: Distribuição de chaves; Algoritmo de chave assimétrica – o RSA, o teorema de Euler, limites de segurança do RSA, algoritmos de Euclides, pequeno Teorema de Fermat, resto Chinês)</string>
+    <string name="uc_class_info_theory_topic13">Criptografia: Algoritmos de chave simétricas</string>
+    <string name="uc_class_info_theory_topic14">Criptografia: Funções de Hashing</string>
+    <string name="uc_class_info_theory_topic15">Códigos de Recuperação de Erros: Teorema da codificação de Canal</string>
+    <string name="uc_class_info_theory_topic16">Códigos de Recuperação de Erros: Tipos de Canais e de Códigos</string>
+    <string name="uc_class_info_theory_topic17">Códigos de Recuperação de Erros: Códigos lineares, códigos de Hamming</string>
+    <string name="uc_class_info_theory_topic18">Códigos de Recuperação de Erros: Códigos cíclicos, polinómio gerador, Propriedades na detecção e correcção</string>
+
+    <string name="uc_alg_data_structures">Algoritmos e Estruturas de Dados</string>
+    <string name="uc_alg_data_structures_description">Após a conclusão da unidade curricular deve demonstrar conhecimento e capacidade de compreensão nos seguintes aspectos:
+        análise de complexidade; técnicas gerais de projecto de algoritmos;
+        estruturas de dados e algoritmos de ordenamento (características, memória ocupada, velocidade de execução).</string>
+    <string name="uc_alg_data_structures_topic1">Análise de complexidade</string>
+    <string name="uc_alg_data_structures_topic2">Técnicas gerais de projecto de algoritmos</string>
+    <string name="uc_alg_data_structures_topic3">Árvores: Árvores AVL, VP, amontoados, listas de saltos, árvores Binárias</string>
+    <string name="uc_alg_data_structures_topic4">Grafos</string>
+    <string name="uc_alg_data_structures_topic5">Algoritmos de ordenamento: shell sort, merge sort, quick sort, radix sort, MSD, LSD</string>
+    <string name="uc_alg_data_structures_topic6">Tabelas de dispersão</string>
+    <string name="uc_alg_data_structures_topic7">Tópico seleccionado: mapeamento de cadeias de caracteres</string>
+
+    <string name="uc_data_transformation">Análise e Transformação de Dados</string>
+    <string name="uc_data_transformation_description">A disciplina pretende desenvolver as seguintes competências:\n
+- Compreensão e interpretação de fenómenos e processos dinâmicos do mundo real e virtual\n
+- Capacidade de análise de dados suportada por ferramentas computacionais\n
+- Aprofundamento do raciocínio matemático para extracção de informação\n
+- Capacidade de resolução de problemas concretos no âmbito da análise e transformação de dados uni e multidimensionais no domínio do tempo, do espaço e da frequência</string>
+    <string name="uc_data_transformation_topic1">Razões para a Análise e Transformação de Dados</string>
+    <string name="uc_data_transformation_topic2">Análise de fenómenos dinâmicos</string>
+    <string name="uc_data_transformation_topic3">Interacção do computador com o mundo exterior</string>
+    <string name="uc_data_transformation_topic4">Sinais e suas propriedades</string>
+    <string name="uc_data_transformation_topic5">Sistemas em Tempo Discreto</string>
+    <string name="uc_data_transformation_topic6">Transformada de Z</string>
+    <string name="uc_data_transformation_topic7">Propriedades dos sistemas(causalidade, convolução, estabilidade, etc.)</string>
+    <string name="uc_data_transformation_topic8">Análise de Sistemas(feedback, função de transferência, resposta a impulso, etc.)</string>
+    <string name="uc_data_transformation_topic9">Transformadas de Fourier (FS, FT, DTFT, DFT)</string>
+    <string name="uc_data_transformation_topic10">Resposta em frequência e teorema da amostragem</string>
+    <string name="uc_data_transformation_topic11">Resolução e Ruído</string>
+    <string name="uc_data_transformation_topic12">Filtros digitais</string>
+    <string name="uc_data_transformation_topic13">Transformada de Fourier em Janelas(STFT)</string>
+    <string name="uc_data_transformation_topic14">O dilema do princípio da incerteza</string>
+    <string name="uc_data_transformation_topic15">Transformada de Wavelets (análise multi-resolução e função de escala)</string>
+    <string name="uc_data_transformation_topic16">Análise de séries temporais não estacionárias</string>
+    <string name="uc_data_transformation_topic17">Transformada Karhunen-Loéve</string>
+    <string name="uc_data_transformation_topic18">Outras transformadas de base ortogonal</string>
+    <string name="uc_data_transformation_topic19">Transformações para compressão de dados</string>
+    <string name="uc_data_transformation_topic20">Exemplos em vários domínios de aplicação</string>
+
+    <string name="uc_class_multimedia">Multimédia</string>
+    <string name="uc_class_multimedia_description">Após a conclusão da unidade curricular, o estudante deve demonstrar ter adquirido,
+        ter compreendido e saber aplicar os conhecimentos e competências em:\n
+        i) projecto multimédia\n
+        ii) fundamentos de multimédia\n
+        Nomeadamente:\n
+- planeamento, design, desenvolvimento e gestão de projectos multimédia em equipa;\n
+- tópicos de usabilidade e sua aplicação em projectos multimédia;\n
+- imagem, áudio e vídeo digital, com enfoque nos aspectos fisiológicos e perceptuais envolvidos e na representação e compressão desses tipo de dados multimédia.</string>
+    <string name="uc_class_multimedia_topic1">Flash CS5 e programação em ActionScript 3.0</string>
+    <string name="uc_class_multimedia_topic2">Projecto multimédia: planeamento, design, desenvolvimento e gestão</string>
+    <string name="uc_class_multimedia_topic3">Tópicos de Usabilidade</string>
+    <string name="uc_class_multimedia_topic4">Imagem Digital: noções de cor, visão humana (fisiologia e percepção) e modelos e espaços de cor</string>
+    <string name="uc_class_multimedia_topic5">Imagem Digital: representação de imagem digital (mapas de bits e imagens vectoriais)</string>
+    <string name="uc_class_multimedia_topic6">Imagem Digital: codecs de imagem digital (destrutivos e não destrutivos) e compressão perceptual de imagem digital - Áudio Digital</string>
+    <string name="uc_class_multimedia_topic7">Imagem Digital: noções de som e audição humana (fisiologia e percepção)</string>
+    <string name="uc_class_multimedia_topic8">Imagem Digital: representação de áudio digital (áudio amostrado e MIDI)</string>
+    <string name="uc_class_multimedia_topic9">Imagem Digital: codecs de áudio digital (destrutivos e não destrutivos) e compressão perceptual de áudio digital</string>
+    <string name="uc_class_multimedia_topic10">Vídeo Digital: noções de vídeo e fenómenos perceptuais de imagens em movimento</string>
+    <string name="uc_class_multimedia_topic11">Vídeo Digital: representação de vídeo digital</string>
+    <string name="uc_class_multimedia_topic12">Vídeo Digital: odecs de vídeo digital (destrutivos e não destrutivos)</string>
+
+    <string name="uc_class_communication_protocols">Protocolos de Comunicação</string>
+    <string name="uc_class_communication_protocols_description">Os objectivos centrais da disciplina são o estudo e compreensão dos aspectos protocolares
+        dos modernos sistemas de comunicação, sendo dada especial ênfase ao ambiente protocolar da Internet, tendo em vista um conhecimento das principais
+        questões que caracterizam e condicionam os serviços e aplicações.</string>
+    <string name="uc_class_communication_protocols_topic1">Protocolos de comunicação: questões e tendências</string>
+    <string name="uc_class_communication_protocols_topic2">Endereçamento IP (v4 e v6)</string>
+    <string name="uc_class_communication_protocols_topic3">Protocolos de encaminhamento: RIP, OSPF, BGP, outros</string>
+    <string name="uc_class_communication_protocols_topic4">Protocolos de transporte: TCP, RTP/RTCP, SCTP, outros</string>
+
+    <string name="uc_simulation">Simulação e Computação Científica</string>
+    <string name="uc_simulation_description">Esta é uma disciplina transversal, de vastíssimo campo de aplicação.
+        Um dos objectivos fundamentais é a aquisição de um conjunto de conhecimentos e competências que permitam, perante uma situação específica,
+        desenvolver um modelo de simulação, implementá-lo, validá-lo e utilizá-lo de forma correcta,
+        tomando em consideração as vantagens e limitações do uso da simulação.</string>
+    <string name="uc_simulation_topic1">Introdução à Simulação: sistema, modelo e simulação; tipos de modelos</string>
+    <string name="uc_simulation_topic2">Simulação de modelos de sistemas contínuos: sistemas para simulação contínua e integração numérica</string>
+    <string name="uc_simulation_topic3">Simulação de modelos de sistemas discretos: linguagens de simulação e linguagens de programação genéricas</string>
+    <string name="uc_simulation_topic4">Modelos estatísticos em simulação</string>
+    <string name="uc_simulation_topic5">Geração de números aleatórios</string>
+    <string name="uc_simulation_topic6">Modelos de filas de espera</string>
+    <string name="uc_simulation_topic7">Análise de dados e de resultados de simulação</string>
+    <string name="uc_simulation_topic8">Verificação e validação de modelos de simulação</string>
+    <string name="uc_simulation_topic9">Optimização: conceitos básicos, métodos lineares e não lineares, com e sem restrições</string>
 
     <string name="uc_"></string>
     <string name="uc__description"></string>
