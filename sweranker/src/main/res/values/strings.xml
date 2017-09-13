@@ -333,7 +333,7 @@
 
     <string name="up_mieic">MIEIC</string>
     <string name="up_mieic_fullname">Mestrado Integrado em Engenharia Informática e Computação</string>
-    <string name="up_mieic_description">O ensino da Engenharia Informática e Computação foi concebido na FEUP como requerendo um ciclo de formação e aprendizagem completo de cinco anos integrados, correspondendo aos 1º e 2º ciclos da implementação do Processo de Bolonha e conferindo de imediato o grau de Mestre.\n\nNo final dos três primeiros anos (1º ciclo) do MIEIC os alunos estarão providos de uma sólida formação de base, abrangendo as competências científicas e de engenharia essenciais, mas também os conhecimentos fundamentais de banda larga nas diversas áreas da informática, embora sem qualquer especialização. Este primeiro degrau é visto sobretudo como possibilitador de mobilidade de e para outras escolas nacionais e europeias.\n\nNo final dos cinco anos do curso os diplomados terão uma formação avançada em Engenharia Informática e Computação, podendo ter escolhido uma área de especialização ou manter um leque mais alargado de interesses, mercê de uma ampla oferta de opções, configurável individualmente, contida no plano de estudos. As possíveis especializações incluem atualmente:\n\n- Engenharia de Software e Sistemas de Informação (2 sub-áreas com estes nomes)\n\n-Redes e Tecnologias de Informação (sub-áreas de Tecnologias da Internet e de Infra-estruturas Informáticas)\n\n-Sistemas Inteligentes e Multimédia (2 sub-áreas com estes nomes)</string>
+    <string name="up_mieic_description">O ensino da Engenharia Informática e Computação foi concebido na FEUP como requerendo um ciclo de formação e aprendizagem completo de cinco anos integrados, correspondendo aos 1º e 2º ciclos da implementação do Processo de Bolonha e conferindo de imediato o grau de Mestre.\n\nNo final dos três primeiros anos (1º ciclo) do MIEIC os alunos estarão providos de uma sólida formação de base, abrangendo as competências científicas e de engenharia essenciais, mas também os conhecimentos fundamentais de banda larga nas diversas áreas da informática, embora sem qualquer especialização. Este primeiro degrau é visto sobretudo como possibilitador de mobilidade de e para outras escolas nacionais e europeias.\n\nNo final dos cinco anos do curso os diplomados terão uma formação avançada em Engenharia Informática e Computação, podendo ter escolhido uma área de especialização ou manter um leque mais alargado de interesses, mercê de uma ampla oferta de opções, configurável individualmente, contida no plano de estudos. As possíveis especializações incluem actualmente:\n\n- Engenharia de Software e Sistemas de Informação (2 sub-áreas com estes nomes)\n\n-Redes e Tecnologias de Informação (sub-áreas de Tecnologias da Internet e de Infra-estruturas Informáticas)\n\n-Sistemas Inteligentes e Multimédia (2 sub-áreas com estes nomes)</string>
     <string name="up">Universidade do Porto</string>
 
     <string name="up_class_discrete_mathematics">Matemática Discreta</string>
@@ -1484,6 +1484,113 @@
         - Engenharia de Software.\n\nPropõe-se assim a criação de especializações para dar resposta às necessidades do mercado, tanto a nível da indústria e serviços, como a nível da investigação, ambicionando um impacto internacional a médio prazo.
     </string>
     <string name="uc">Universidade de Coimbra</string>
+
+    <string name="uc_class_math_analysis">Análise Matemática</string>
+    <string name="uc_class_math_analysis_description">Dotar os alunos dos conhecimentos básicos de Cálculo Diferencial e Integral para funções reais de
+        uma variável real. Saber resolver equações diferenciais e aplicar os conhecimentos obtidos na modelação e resolução de problemas.</string>
+    <string name="uc_class_math_analysis_topic1">Sucessões numéricas: limites e propriedades básicas</string>
+    <string name="uc_class_math_analysis_topic2">Funções reais de variável real: limites, continuidade, diferenciabilidade</string>
+    <string name="uc_class_math_analysis_topic3">Funções trigonométricas inversas</string>
+    <string name="uc_class_math_analysis_topic4">Funções hiperbólicas e funções hiperbólicas inversas</string>
+    <string name="uc_class_math_analysis_topic5">Primitivas de funções</string>
+    <string name="uc_class_math_analysis_topic6">Aplicações do Cálculo Integral: áreas, volumes e comprimentos de curvas</string>
+    <string name="uc_class_math_analysis_topic7">Integração numérica</string>
+    <string name="uc_class_math_analysis_topic8">Integrais impróprios </string>
+    <string name="uc_class_math_analysis_topic9">Números Complexos</string>
+    <string name="uc_class_math_analysis_topic10">Introdução às funções complexas de variável real</string>
+    <string name="uc_class_math_analysis_topic11">Integração de funções complexas de variável real</string>
+    <string name="uc_class_math_analysis_topic12">Séries numéricas</string>
+    <string name="uc_class_math_analysis_topic13">Sucessões de funções</string>
+    <string name="uc_class_math_analysis_topic14">Séries de funções</string>
+    <string name="uc_class_math_analysis_topic15">Séries de Taylor</string>
+    <string name="uc_class_math_analysis_topic16">Séries de Fourier: versão trigonométrica e complexa</string>
+
+    <string name="uc_class_discrete_structures">Estruturas Discretas</string>
+    <string name="uc_class_discrete_structures_description">Um curso de matemática discreta tem vários objectivos.
+        Os estudantes deverão aprender um conjunto de factos matemáticos e como aplicá-los;
+        mas, mais importante, deverão aprender a pensar matematicamente.
+        Para tal, é realçado o raciocínio matemático e as diferentes formas de abordar e resolver problemas.</string>
+    <string name="uc_class_discrete_structures_topic1">Fundamentos: Como raciocinamos? Lógica proposicional</string>
+    <string name="uc_class_discrete_structures_topic2">Fundamentos: Raciocínio matemático, indução e recursão.</string>
+    <string name="uc_class_discrete_structures_topic3">Fundamentos: Algoritmos e complexidade</string>
+    <string name="uc_class_discrete_structures_topic4">Teoria dos Grafos: Grafos</string>
+    <string name="uc_class_discrete_structures_topic5">Teoria dos Grafos: Árvores</string>
+    <string name="uc_class_discrete_structures_topic6">Os números inteiros: Criptografia</string>
+    <string name="uc_class_discrete_structures_topic7">Contagem: Técnicas básicas e probabilidade discreta</string>
+    <string name="uc_class_discrete_structures_topic8">Contagem: Técnicas avançadas</string>
+
+    <string name="uc_class_intro_programming">Introdução à Programação e Resolução de Problemas</string>
+    <string name="uc_class_intro_programming_description">Aprender os princípios básicos de programação e gestão de dados num contexto de resolução de problemas.
+        São exploradas as vertentes algorítmica e de modelação e manipulação de dados,
+        sendo ainda introduzido contexto sobre sistemas informáticos em geral.</string>
+    <string name="uc_class_intro_programming_topic1">Noções gerais sobre computadores e internet</string>
+    <string name="uc_class_intro_programming_topic2">Numeração e representação de dados</string>
+    <string name="uc_class_intro_programming_topic3">Sistemas operativos: Processos</string>
+    <string name="uc_class_intro_programming_topic4">Sistemas operativos: Memória e armazenamento</string>
+    <string name="uc_class_intro_programming_topic5">Sistemas distribuidos: Conceitos base. HTTP e Email</string>
+    <string name="uc_class_intro_programming_topic6">Python: Noções básicas sobre resolução de problemas e lógica</string>
+    <string name="uc_class_intro_programming_topic7">Python: Introdução ao python e tipos de dados</string>
+    <string name="uc_class_intro_programming_topic8">Python: Instruções de controlo condicionais</string>
+    <string name="uc_class_intro_programming_topic9">Python: Instruções de controlo: ciclos</string>
+    <string name="uc_class_intro_programming_topic10">Python: Cadeias de caracteres</string>
+    <string name="uc_class_intro_programming_topic11">Bases de dados: Introdução e modelo de dados relacional</string>
+    <string name="uc_class_intro_programming_topic12">Bases de dados: Diagramas de Entidade-Relacionamento</string>
+    <string name="uc_class_intro_programming_topic13">Bases de dados: Consulta e manipulação de dados</string>
+    <string name="uc_class_intro_programming_topic14">Python e bases de dados</string>
+
+    <string name="uc_class_computer_tech">Tecnologia dos Computadores</string>
+    <string name="uc_class_computer_tech_description">Tem como objectivos dar uma perspectiva geral das diversas áreas da informática.
+        A componente prática concentra-se na aplicação de conceitos de electrónica digital utilizados no desenho de computadores.</string>
+    <string name="uc_class_computer_tech_topic1">Modelo de von Neumann</string>
+    <string name="uc_class_computer_tech_topic2">Funcionamento de um processador</string>
+    <string name="uc_class_computer_tech_topic3">Hierarquia de memória</string>
+    <string name="uc_class_computer_tech_topic4">Organização de um computador e seus periféricos</string>
+    <string name="uc_class_computer_tech_topic5">Sistemas de Numeração</string>
+    <string name="uc_class_computer_tech_topic6">Grandezas de armazenamento e transmissão de informação</string>
+    <string name="uc_class_computer_tech_topic7">Representação e armazenamento de texto, som e imagem</string>
+    <string name="uc_class_computer_tech_topic8">Técnicas de compressão de dados, de correcção e detecção de erros</string>
+    <string name="uc_class_computer_tech_topic9">Electrónica digital combinacional</string>
+    <string name="uc_class_computer_tech_topic10">Eletrónica digital sequencial (flip-flops, tabelas de excitação e transição de estado, diagramas de estados, extracção de equações e desenho de circuitos simples)</string>
+    <string name="uc_class_computer_tech_topic11">Lógica programável e linguagens de descrição de hardware (VHDL)</string>
+    <string name="uc_class_computer_tech_topic12">Sistemas operativos: arquitecturas, coordenação, escalonamento e segurança.</string>
+    <string name="uc_class_computer_tech_topic13">Básicos de linguagens de programação</string>
+    <string name="uc_class_computer_tech_topic14">Engenharia de software: introdução a conceitos e ferramentas</string>
+    <string name="uc_class_computer_tech_topic15">Estruturas de dados: conceitos básicos, abstracções de dados</string>
+    <string name="uc_class_computer_tech_topic16">Redes de computadores: conceitos básicos</string>
+    <string name="uc_class_computer_tech_topic17">Teoria da Computação e aplicações</string>
+
+    <string name="uc_class_algebra">Álgebra Linear e Geometria Analítica</string>
+    <string name="uc_class_algebra_description">Dotar os alunos dos conhecimentos básicos de Álgebra Linear e Geometria Analítica.
+        Nomeadamente, solucionar sistemas de equações lineares; efectuar operações algébricas com matrizes,
+        compreender e relacionar conceitos e resultados fundamentais de espaços vectoriais,
+        determinar projecções ortogonais e compreender a sua importância no contexto da optimização matemática,
+        compreender e manusear os conceitos de valor próprio e a decomposição espectral de uma matriz</string>
+    <string name="uc_class_algebra_topic1">Matrizes</string>
+    <string name="uc_class_algebra_topic2">Resolução de sistemas de equações lineares - Método de eliminação de Gauss</string>
+    <string name="uc_class_algebra_topic3">Inversão de matrizes</string>
+    <string name="uc_class_algebra_topic4">Determinantes</string>
+    <string name="uc_class_algebra_topic5">Sub-espaços: independência linear; base e dimensão; transformações lineares; produto interno; método dos mínimos quadrados</string>
+    <string name="uc_class_algebra_topic6">Diagonalização de matrizes. Aplicação à resolução de sistemas de equações diferenciais lineares</string>
+
+    <string name="uc_"></string>
+    <string name="uc__description"></string>
+    <string name="uc__topic1"></string>
+    <string name="uc__topic2"></string>
+    <string name="uc__topic3"></string>
+    <string name="uc__topic4"></string>
+    <string name="uc__topic5"></string>
+    <string name="uc__topic6"></string>
+    <string name="uc__topic7"></string>
+    <string name="uc__topic8"></string>
+    <string name="uc__topic9"></string>
+    <string name="uc__topic10"></string>
+    <string name="uc__topic11"></string>
+    <string name="uc__topic12"></string>
+    <string name="uc__topic13"></string>
+    <string name="uc__topic14"></string>
+    <string name="uc__topic15"></string>
+    <string name="uc__topic16"></string>
+
 
     <string name="uav_mei">LEI + MEI</string>
     <string name="uav_mei_fullname">Licenciatura em Engenheria Informatica + Mestrado em Engenharia Informática</string>

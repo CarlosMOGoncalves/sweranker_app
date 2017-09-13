@@ -87,4 +87,50 @@
     <string name="ka_computing_foundations">Computing Foundations</string>
     <string name="ka_mathematical_foundations">Mathematical Foundations</string>
     <string name="ka_engineering_foundations">Engineering Foundations</string>
+
+
+    <string name="up_mieic">MIEIC</string>
+    <string name="up_mieic_fullname">Master Degree in Informatics Engineering and Computation</string>
+    <string name="up_mieic_description">The education in Informatics Engineering and Computation was conceived at FEUP as requiring a complete formation cycle and teaching of 5 years,
+        that match the 1st and 2nd cycles of the Bologna Process specification and which confere immediatelly the Master Degree.\n\n
+        By the end of the first 3 years (1st cycle) of MIEIC, the students are provided with a solid formation basis, that compose the essential scientific and engineering competences
+        as well as the fundamental knowledge in the various informatics areas, although not yet with any specialised field. This first step is mostly seen as an enabler of mobility to or
+        from any other national or international school.\n\n
+        By the end of the 5 years of this degree, the graduates will have and advanced education in Informatics Engineering and Computation, having been given the choice of a specialisation area
+        or a wider array of interests, since there is a varied offer in terms of options, individually configured, in the degree program.\n\n
+        The possible specialisations include, at present:\n
+        - Software Engineering and Information Systems (2 sub-areas)\n\n
+        - Networks and Information Technologies (Internet Technologies and Informatics Infraestructure sub-areas)\n\n
+        - Intelligent Systems and Multimedia (2 sub-areas)
+        </string>
+    <string name="up">Universidade do Porto</string>
+
+    <string name="uc_mei">LEI + MEI</string>
+    <string name="uc_mei_fullname">Licenciate (Bachelor) Degree in Informatics Engineering and Master Degree in Informatics Engineering</string>
+    <string name="uc_mei_description">The Degree in Informatics Engineering has the main goal of providing the future undergraduates the basic principles,
+        theories, methods and practices of the Informatics Engineering and Computation in a way that they are able to master all the concepts for their intervention
+        on society or complement their education with the 2nd cycle, following a professional life or a scientific career. In order to achieve this general goal, the current
+        cycle of studies aims to concile the following specific objectives: instrumental, systemic and interpersonal.\n\n
+        - At the instrumental level, it is expected that the undergraduates in Informatics Engineering acquire skills to articulate in an harmonious
+        was the complementarity between analysis and synthesis, that they deeped the problem resolution dynamics, learn the logics and practices of
+        information management and pursue the exercise of these competencies according to organisational planning approaches centered in the construction
+        of value to clients and transformation of complexity in performance.\n
+        - At systemic level, its goal is to improve the students autonomy and ability to learn, their adaptability to new situations, their correct
+        application of knowledge and competencies and to tailor their mindsets towards quality and excellence.\n
+        - Finally, at interpersonal level, it is expected that the students acquire other kinds of skills that contribute to the development of their
+        personal and civic skills, their ability to autonomously acquire knowledge, their critical thinking and responsibility, information management,
+        teamwork and multidisciplinary teams, collective learning and success construction sense, etc.\n\n
+
+        The Master Degree in Informatics Engineering proposes 4 areas of specialisation according to the latest curriculum recommendaton by the Association for
+        Computer Machinery (ACM) and the Institute for Electrical and Electronic Engineers (IEEE):\n
+        - Comunications, Services and Infrastructures\n
+        - Intelligent Systems\n
+        - Information Systems\n
+        - Software Engineering\n\n
+
+        It is then proposed the creation of speacilisations in order to answer the needs of the market, both at industry and services level, as well as
+        investigation, so that this degree can have an international impact in the mid-run.
+    </string>
+    <string name="uc">Universidade de Coimbra</string>
+
 </resources>
