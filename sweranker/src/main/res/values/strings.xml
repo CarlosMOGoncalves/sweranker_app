@@ -1572,6 +1572,134 @@
     <string name="uc_class_algebra_topic5">Sub-espaços: independência linear; base e dimensão; transformações lineares; produto interno; método dos mínimos quadrados</string>
     <string name="uc_class_algebra_topic6">Diagonalização de matrizes. Aplicação à resolução de sistemas de equações diferenciais lineares</string>
 
+    <string name="uc_class_math_analysis2">Análise Matemática II</string>
+    <string name="uc_class_math_analysis2_description">O objectivo principal é dotar os alunos dos conhecimentos básicos de Cálculo Diferencial e Integral para funções de
+        várias variáveis reais e de Análise Complexa. Saber resolver equações diferenciais lineares de coeficientes constantes
+        (recorrendo às transformadas de Laplace) e equações de diferenças (recorrendo às transformadas de Z) e aplicar
+        esses conhecimentos na modelação e resolução de problemas.</string>
+    <string name="uc_class_math_analysis2_topic1">Limites</string>
+    <string name="uc_class_math_analysis2_topic2">Derivadas parciais e direccionais</string>
+    <string name="uc_class_math_analysis2_topic3">Aproximações Lineares e Diferenciais</string>
+    <string name="uc_class_math_analysis2_topic4">Extremos</string>
+    <string name="uc_class_math_analysis2_topic5">Integrais múltiplos: integrais duplos, integrais triplos e suas aplicações</string>
+    <string name="uc_class_math_analysis2_topic6">Números complexos</string>
+    <string name="uc_class_math_analysis2_topic7">Derivação de funções complexas</string>
+    <string name="uc_class_math_analysis2_topic8">Séries de potências e de Laurent</string>
+    <string name="uc_class_math_analysis2_topic9">Singularidades, zeros e resíduos</string>
+    <string name="uc_class_math_analysis2_topic10">Integração de funções complexas e suas plicações</string>
+    <string name="uc_class_math_analysis2_topic11">Transformada-Z e inversa</string>
+    <string name="uc_class_math_analysis2_topic12">Resolução de equações de diferenças</string>
+    <string name="uc_class_math_analysis2_topic13">Transformada de Laplace e inversa</string>
+    <string name="uc_class_math_analysis2_topic14">Teorema de Heaviside</string>
+    <string name="uc_class_math_analysis2_topic15">Função delta de Dirac e sua transformada (generalizada) de Laplace</string>
+    <string name="uc_class_math_analysis2_topic16">Transformada de Laplace da convolução</string>
+    <string name="uc_class_math_analysis2_topic17">Resolução de equações diferenciais lineares e ordinárias</string>
+    <string name="uc_class_math_analysis2_topic18">Transformada de Fourier e inversa</string>
+    <string name="uc_class_math_analysis2_topic19">Transformada de Fourier da convolução</string>
+    <string name="uc_class_math_analysis2_topic20">Transformadas de Fourier generalizadas: das funções de Heaviside e Delta de Dirac</string>
+    <string name="uc_class_math_analysis2_topic21">Teorema da amostragem</string>
+
+    <string name="uc_class_computer_architecture">Arquitectura de Computadores</string>
+    <string name="uc_class_computer_architecture_description">Proporcionar ao aluno uma noção global do funcionamento de um sistema computacional,
+        na perspectiva do programador e do projectista de sistemas digitais, com especial enfoque em:
+(i) conhecimentos sobre arquitecturas de computadores actuais e compromissos que devem ser tidos em consideração no desenvolvimento de um sistema computacional;
+(ii) programação em linguagem Assembly;
+(iii) compreensão da forma como o software interage com o hardware e consequente consolidação das competências de programação em linguagem C.</string>
+    <string name="uc_class_computer_architecture_topic1">Organização e funcionamento do CPU (unidade de lógica e controlo (ALU) e datapath)</string>
+    <string name="uc_class_computer_architecture_topic2">Execução paralela usando Pipelining</string>
+    <string name="uc_class_computer_architecture_topic3">Hierarquia de memória</string>
+    <string name="uc_class_computer_architecture_topic4">Pooling e Interrupções</string>
+    <string name="uc_class_computer_architecture_topic5">Programação em Assembly: Instruções aritméticas básicas</string>
+    <string name="uc_class_computer_architecture_topic6">Programação em Assembly: Instruções de leitura e escrita da memória</string>
+    <string name="uc_class_computer_architecture_topic7">Programação em Assembly: Mecanismos para controlo do fluxo de execução</string>
+    <string name="uc_class_computer_architecture_topic8">Programação em Assembly: Codificação de instruções</string>
+    <string name="uc_class_computer_architecture_topic9">Programação em Assembly: Números e representação em floating-point</string>
+    <string name="uc_class_computer_architecture_topic10">Programação em Assembly: Criação de um executável (compilação, assemblagem, linkagem, etc.)</string>
+    <string name="uc_class_computer_architecture_topic11">A Linguagem C e o Hardware: Linguagem C (revisão de conceitos básicos)</string>
+    <string name="uc_class_computer_architecture_topic12">A Linguagem C e o Hardware: Ponteiros e endereçamento de memória</string>
+    <string name="uc_class_computer_architecture_topic13">A Linguagem C e o Hardware: Zonas de memória: código, alocação estática, pilha, e “heap” para alocação dinâmica</string>
+    <string name="uc_class_computer_architecture_topic14">A Linguagem C e o Hardware: Gestão de memória dinâmica</string>
+    <string name="uc_class_computer_architecture_topic15">A Linguagem C e o Hardware: Portas de I/O e programação de hardware</string>
+
+    <string name="uc_class_statistics">Estatística</string>
+    <string name="uc_class_statistics_description">Introduzir conhecimentos básicos em modelação de comportamentos padrão de fenómenos aleatórios em contextos de Engenharia ou Ciência,
+        contribuindo para uma formação capaz de descrever, analisar e interpretar situações reais através de modelos matemáticos não deterministas.</string>
+    <string name="uc_class_statistics_topic1">Experiência aleatória, espaço dos resultados, acontecimentos</string>
+    <string name="uc_class_statistics_topic2">Definição de Probabilidade segundo Kolmogorov e suas consequências</string>
+    <string name="uc_class_statistics_topic3">Probabilidade condicionada. Independência de acontecimentos</string>
+    <string name="uc_class_statistics_topic4">Variáveis aleatórias reais discretas e contínuas</string>
+    <string name="uc_class_statistics_topic5">Momentos simples e centrados</string>
+    <string name="uc_class_statistics_topic6">Parâmetros de ordem</string>
+    <string name="uc_class_statistics_topic7">Modelos probabilistas, discretos e contínuos mais usuais</string>
+    <string name="uc_class_statistics_topic8">Teorema do limite central e aplicações</string>
+    <string name="uc_class_statistics_topic9">Introdução à estatística inferencial. Revisão de estatística descritiva.</string>
+    <string name="uc_class_statistics_topic10">Estimação pontual: estimadores, propriedades da média e da variância empíricas, métodos de estimação pontual</string>
+    <string name="uc_class_statistics_topic11">Estimação intervalar: intervalos de confiança, método da variável fulcral, aplicações</string>
+    <string name="uc_class_statistics_topic12">Testes de Hipóteses</string>
+    <string name="uc_class_statistics_topic13">Testes paramétricos e aplicações</string>
+    <string name="uc_class_statistics_topic14">Testes de ajustamento do Qui-quadrado</string>
+    <string name="uc_class_statistics_topic15">Modelo de Regressão Linear Simples: Construção e validação do modelo</string>
+    <string name="uc_class_statistics_topic16">Intervalo de confiança e testes para os parâmetros do modelo</string>
+    <string name="uc_class_statistics_topic17">Previsão</string>
+
+
+    <string name="uc_class_procedure_programming">Princípios de Programação Procedimental</string>
+    <string name="uc_class_procedure_programming_description">Permitir ao aluno adquirir um conjunto de conhecimentos sólidos sobre programação procedimental
+        utilizando a linguagem C, com particular destaque para ponteiros e estruturas de dados dinâmicas simples.</string>
+    <string name="uc_class_procedure_programming_topic1">Estrutura de um Programa em C </string>
+    <string name="uc_class_procedure_programming_topic2">Tipos de Dados Elementares</string>
+    <string name="uc_class_procedure_programming_topic3">Instruções de Selecção e Repetição</string>
+    <string name="uc_class_procedure_programming_topic4">Definição de Funções. Passagem de parâmetros</string>
+    <string name="uc_class_procedure_programming_topic5">Tabelas e ordenamento</string>
+    <string name="uc_class_procedure_programming_topic6">Ponteiros</string>
+    <string name="uc_class_procedure_programming_topic7">Acesso a ficheiros</string>
+    <string name="uc_class_procedure_programming_topic8">Listas Ligadas</string>
+    <string name="uc_class_procedure_programming_topic9">Pilhas </string>
+    <string name="uc_class_procedure_programming_topic10">Filas de espera</string>
+
+    <string name="uc_modern_physics">Tópicos de Física Moderna</string>
+    <string name="uc_modern_physics_description">Transmitir aos alunos conceitos básicos e ferramentas de trabalho que permitem explicar,
+        compreender e prever fenómenos em Física Clássica e em Física Quântica e a sua relação com Computação Quântica</string>
+    <string name="uc_modern_physics_topic1">A medida em Física Clássica</string>
+    <string name="uc_modern_physics_topic2">A equação do movimento de uma partícula a uma dimensão</string>
+    <string name="uc_modern_physics_topic3">Descrição do comportamento de uma partícula a partir da energia potencial e das condições iniciais</string>
+    <string name="uc_modern_physics_topic4">Oscilador harmónico clássico</string>
+    <string name="uc_modern_physics_topic5">Equação geral de uma onda a uma dimensão</string>
+    <string name="uc_modern_physics_topic6">Sobreposição e interferência</string>
+    <string name="uc_modern_physics_topic7">Ondas estacionárias</string>
+    <string name="uc_modern_physics_topic8">Batimentos</string>
+    <string name="uc_modern_physics_topic9">Pacotes de onda</string>
+    <string name="uc_modern_physics_topic10">Transmissão de informação</string>
+    <string name="uc_modern_physics_topic11">Ondas eletromagnéticas: o limite da óptica geométrica e da óptica física</string>
+    <string name="uc_modern_physics_topic12">Física Quântica: A interpretação probabilística da função de onda de uma partícula</string>
+    <string name="uc_modern_physics_topic13">Física Quântica: A equação de Schrödinger a uma dimensão: exemplos</string>
+    <string name="uc_modern_physics_topic14">Física Quântica: O problema da medida em Física Quântica</string>
+    <string name="uc_modern_physics_topic15">Física Quântica: Os estados de spin como exemplo de um sistema quântico binário</string>
+    <string name="uc_modern_physics_topic16">Física Quântica: Estados de Bell</string>
+    <string name="uc_modern_physics_topic17">Computação Quântica: Relação entre bits clássicos e bits quânticos ou qubits</string>
+    <string name="uc_modern_physics_topic18">Computação Quântica: Operações com qubits</string>
+    <string name="uc_modern_physics_topic19">Computação Quântica: Potencialidades e dificuldades de implementação</string>
+
+
+    <string name="uc_"></string>
+    <string name="uc__description"></string>
+    <string name="uc__topic1"></string>
+    <string name="uc__topic2"></string>
+    <string name="uc__topic3"></string>
+    <string name="uc__topic4"></string>
+    <string name="uc__topic5"></string>
+    <string name="uc__topic6"></string>
+    <string name="uc__topic7"></string>
+    <string name="uc__topic8"></string>
+    <string name="uc__topic9"></string>
+    <string name="uc__topic10"></string>
+    <string name="uc__topic11"></string>
+    <string name="uc__topic12"></string>
+    <string name="uc__topic13"></string>
+    <string name="uc__topic14"></string>
+    <string name="uc__topic15"></string>
+    <string name="uc__topic16"></string>
+
     <string name="uc_"></string>
     <string name="uc__description"></string>
     <string name="uc__topic1"></string>
