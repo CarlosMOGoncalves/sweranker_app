@@ -1856,6 +1856,197 @@
     <string name="uc_simulation_topic8">Verificação e validação de modelos de simulação</string>
     <string name="uc_simulation_topic9">Optimização: conceitos básicos, métodos lineares e não lineares, com e sem restrições</string>
 
+    <string name="uc_class_databases">Bases de Dados</string>
+    <string name="uc_class_databases_description">Esta UC debrucça-se sobre of fundamentos das bases de dados relacionais, incluindo modelo relacional, normalização, operações relacionais,
+        linguagem SQL, transacções e controlo de concorrência, indexação, etc,
+        Para além disso, também pretende operacionalizar estes conceitos através da análise,
+        concepção e construção prática de bases de dados relacionais em ambiente cliente-servidor.</string>
+    <string name="uc_class_databases_topic1">Visão geral dos sistemas de bases de dados: SGBDs, SQL, aplicações de bases de dados, etc</string>
+    <string name="uc_class_databases_topic2">Modelo relacional: Integridade dos dados</string>
+    <string name="uc_class_databases_topic3">Modelo relacional: Chaves e restrições de integridade relacional</string>
+    <string name="uc_class_databases_topic4">Modelo relacional: Restrições de integridade complexas: regras de negócio</string>
+    <string name="uc_class_databases_topic5">Modelo relacional: Exemplos e casos de estudo</string>
+    <string name="uc_class_databases_topic6">Álgebra relacional e aspetos básicos de SQL</string>
+    <string name="uc_class_databases_topic7">Diagramas de Entidade-Relacionamento (ER)</string>
+    <string name="uc_class_databases_topic8">Heranças e outros conceitos de modelação avançados</string>
+    <string name="uc_class_databases_topic9">Tradução de diagramas ER para esquemas relacionais</string>
+    <string name="uc_class_databases_topic10">Dependências funcionais e normalização</string>
+    <string name="uc_class_databases_topic11">Exemplos e casos de estudo</string>
+    <string name="uc_class_databases_topic12">Transacções e controlo de concorrência</string>
+    <string name="uc_class_databases_topic13">Índices e indexação de tabelas</string>
+    <string name="uc_class_databases_topic14">Vistas: definição e diferentes utilizações</string>
+    <string name="uc_class_databases_topic15">Execução e optimização de queries: aspectos básicos</string>
+    <string name="uc_class_databases_topic16">Arquitectura e aspectos da implementação de um SGBD</string>
+    <string name="uc_class_databases_topic17">Aspectos básicos de PL/SQL</string>
+
+    <string name="uc_technical_communication">Comunicação Técnica</string>
+    <string name="uc_technical_communication_description">No final do semestre, os estudantes serão capazes de:\n
+(i) utilizar diferentes formas de comunicação em contextos académicos e profissionais (ex: redigir um relatório);\n
+(ii) argumentar, utilizando códigos distintos, em questões de natureza social associadas ao exercício da profissão (ex: apresentações formais);\n
+(iii) adequar as suas formas de comunicação aos públicos-alvo (ex: textos técnicos e de divulgação).</string>
+    <string name="uc_technical_communication_topic1">Aspectos básicos do processo de escrita técnica para engenheiros</string>
+    <string name="uc_technical_communication_topic2">Tipos de “texto”: expositivo (descritivo, narrativo) argumentativo, instrucional</string>
+    <string name="uc_technical_communication_topic3">Escrita de documentos técnicos (correspondência formal - manual de instruções / de utilizador / de referência – relatório – proposta – artigo científico – resumo / abstract)</string>
+    <string name="uc_technical_communication_topic4">Técnicas de escrita, revisão e edição de texto – construção de frases / parágrafos / textos – estilo – pontuação – correcção</string>
+    <string name="uc_technical_communication_topic5">Comunicação verbal e comunicação não-verbal</string>
+    <string name="uc_technical_communication_topic6">Apresentações orais: concepção e execução</string>
+    <string name="uc_technical_communication_topic7">Técnicas de argumentação e persuasão</string>
+    <string name="uc_technical_communication_topic8">Trabalho em grupo e liderança</string>
+    <string name="uc_technical_communication_topic9">A entrevista de emprego e o protocolo na vida profissional</string>
+
+    <string name="uc_class_software_eng">Engenharia de Software</string>
+    <string name="uc_class_software_eng_description">O aluno deverá ser capaz de perceber porque razão a complexidade do software exige uma abordagem de engenharia e as
+        diversas formas de organizar as pessoas e actividades para o desenvolvimento de um produto de qualidade, nomeadamente abordagens lineares, iterativas e incrementais.
+        Deverá ainda ser capaz de perceber as diferenças entre elas e escolher a(s) mais indicada(s) em função do contexto concreto do projecto.
+        Deverá também ser capaz de usar técnicas e artefactos genéricos de gestão de projecto (diagramas Gantt e PERT/CPM, análise de riscos,etc.).
+        Finalmente, deverá ser capaz de descrever o artefacto de software a desenvolver usado a linguagem UML.</string>
+    <string name="uc_class_software_eng_topic1">Introdução à Engenharia de software</string>
+    <string name="uc_class_software_eng_topic2">A natureza do software</string>
+    <string name="uc_class_software_eng_topic3">Tipos de software</string>
+    <string name="uc_class_software_eng_topic4">Qualidade do software</string>
+    <string name="uc_class_software_eng_topic5">Recolha e análise de requisitos</string>
+    <string name="uc_class_software_eng_topic6">Processo de desenvolvimento em cascata</string>
+    <string name="uc_class_software_eng_topic7">Desenvolvimento iterativo e evolutivo</string>
+    <string name="uc_class_software_eng_topic8">Actividades de gestão de software</string>
+    <string name="uc_class_software_eng_topic9">Planeamento do projecto</string>
+    <string name="uc_class_software_eng_topic10">Escalonamento do projecto</string>
+    <string name="uc_class_software_eng_topic11">Diagramas PERT/CPM. Diagramas de Gantt</string>
+    <string name="uc_class_software_eng_topic12">Gestão de risco em projectos de software</string>
+    <string name="uc_class_software_eng_topic13">Identificação, análise, planeamento e monitorização de riscos</string>
+    <string name="uc_class_software_eng_topic14">Linguagem UML: Diagramas de casos de uso</string>
+    <string name="uc_class_software_eng_topic15">Linguagem UML: Diagramas de classes</string>
+    <string name="uc_class_software_eng_topic16">Linguagem UML: Introdução à OCL (Object Constraint Language)</string>
+    <string name="uc_class_software_eng_topic17">Linguagem UML: Diagramas de objectos</string>
+    <string name="uc_class_software_eng_topic18">Linguagem UML: Diagramas de interacção</string>
+    <string name="uc_class_software_eng_topic19">Linguagem UML: Diagramas de sequência</string>
+    <string name="uc_class_software_eng_topic20">Linguagem UML: Diagramas de actividades</string>
+    <string name="uc_class_software_eng_topic21">Linguagem UML: Diagramas de estados</string>
+    <string name="uc_class_software_eng_topic22">Linguagem UML: Diagramas de instalação</string>
+    <string name="uc_class_software_eng_topic23">Linguagem UML: Mapeamento de diagramas UML em código</string>
+
+    <string name="uc_class_management_innovation">Processos de Gestão e de Inovação</string>
+    <string name="uc_class_management_innovation_description">Nesta disciplina, os estudantes serão sensibilizados para a importância de
+        determinados conceitos, princípios e práticas da gestão da inovação, ao mesmo tempo que se irão familiarizar com algumas
+        metodologias e ferramentas que permitam a sua operacionalização e implementação no terreno.</string>
+    <string name="uc_class_management_innovation_topic1">A Gestão e sua evolução: Funções da gestão</string>
+    <string name="uc_class_management_innovation_topic2">A Gestão e sua evolução: Os níveis da gestão</string>
+    <string name="uc_class_management_innovation_topic3">As organizações e a gestão: breve perspectiva histórica e actuais tendências</string>
+    <string name="uc_class_management_innovation_topic4">Planeamento e Estratégia: Missão e objectivos</string>
+    <string name="uc_class_management_innovation_topic5">Planeamento e Estratégia: Gestão por objectivos</string>
+    <string name="uc_class_management_innovation_topic6">Planeamento e Estratégia: Planeamento estratégico</string>
+    <string name="uc_class_management_innovation_topic7">Comunicação Organizacional: Efeitos das novas tecnologias na comunicação organizacional</string>
+    <string name="uc_class_management_innovation_topic8">Comunicação Organizacional: Empresa 2.0</string>
+    <string name="uc_class_management_innovation_topic9">Comunicação Organizacional: “Elevator- pitch” </string>
+    <string name="uc_class_management_innovation_topic10">Gestão da Inovação: Fundamentos e actual importância da gestão da inovação</string>
+    <string name="uc_class_management_innovation_topic11">Gestão da Inovação: “Open Innovation” e redes de inovação</string>
+    <string name="uc_class_management_innovation_topic12">Gestão da Inovação: Como inovar? Construir um “business case” e estratégia para implementar novos produtos/serviços</string>
+    <string name="uc_class_management_innovation_topic13">Transferência de Tecnologia e Propriedade Industrial: Fundamentos de transferência de tecnologia</string>
+    <string name="uc_class_management_innovation_topic14">Transferência de Tecnologia e Propriedade Industrial: Propriedade Industrial</string>
+    <string name="uc_class_management_innovation_topic15">Transferência de Tecnologia e Propriedade Industrial: Gestão e licenciamento de tecnologias</string>
+
+    <string name="uc_class_distributed_systems">Sistemas Distribuídos</string>
+    <string name="uc_class_distributed_systems_description">Os alunos deverão adquirir competências no desenvolvimento de aplicações distribuídas
+        usando várias tecnologias e deverão ser capazes de perceber e interligar conhecimentos sobre técnicas fundamentais para o desenho
+        de aplicações distribuídas em ambiente empresarial e para a Internet.</string>
+    <string name="uc_class_distributed_systems_topic1">Introdução aos Sistemas Distribuídos</string>
+    <string name="uc_class_distributed_systems_topic2">Desafios no desenvolvimento de aplicações distribuídas</string>
+    <string name="uc_class_distributed_systems_topic3">Overview sobre Middleware</string>
+    <string name="uc_class_distributed_systems_topic4">O modelo Cliente/Servidor</string>
+    <string name="uc_class_distributed_systems_topic5">Programação em Sockets TCP e UDP</string>
+    <string name="uc_class_distributed_systems_topic6">Comunicação em Multicast</string>
+    <string name="uc_class_distributed_systems_topic7">O modelo de RPCs e invocação remota de objectos</string>
+    <string name="uc_class_distributed_systems_topic8">Tratamento de falhas no modelo de RPCs e semânticas dos RPCs</string>
+    <string name="uc_class_distributed_systems_topic9">Programação distribuída usando Java RMI</string>
+    <string name="uc_class_distributed_systems_topic10">Introdução ao CORBA</string>
+    <string name="uc_class_distributed_systems_topic11">Message-Oriented Middleware e o JMS API</string>
+    <string name="uc_class_distributed_systems_topic12">O protocolo HTTP</string>
+    <string name="uc_class_distributed_systems_topic13">Modelos 2-tier, 3-tier e N-tier</string>
+    <string name="uc_class_distributed_systems_topic14">Aplicações distribuídas para a Internet</string>
+    <string name="uc_class_distributed_systems_topic15">Overview da programação Web</string>
+    <string name="uc_class_distributed_systems_topic16">A tecnologia de Web-Services: SOAP, XML, UDDI</string>
+    <string name="uc_class_distributed_systems_topic17">Segurança em Sistemas Distribuídos</string>
+    <string name="uc_class_distributed_systems_topic18">Servidores de Naming e Serviços de Diretoria</string>
+    <string name="uc_class_distributed_systems_topic19">Sistemas de Ficheiros Distribuídos</string>
+    <string name="uc_class_distributed_systems_topic20">Sincronização de relógios em sistemas distribuídos</string>
+    <string name="uc_class_distributed_systems_topic21">Ordem causal e total nas aplicações distribuídas</string>
+    <string name="uc_class_distributed_systems_topic22">Manutenção e upgrade de aplicações distribuídas</string>
+    <string name="uc_class_distributed_systems_topic23">Replicação de servidores e soluções de alta-disponibilidade</string>
+    <string name="uc_class_distributed_systems_topic24">Sistemas Peer-to-Peer</string>
+
+    <string name="uc_class_compilers">Compiladores</string>
+    <string name="uc_class_compilers_description">O estudante deverá passar a compreender: os objectivos e a arquitectura de um compilador;
+        os princípios das análises lexical, sintática e semântica e saber implementar essas fases de um compilador, quer de raiz,
+        quer usando ferramentas adequadas; alguns princípios de geração do código final.</string>
+    <string name="uc_class_compilers_topic1">Objectivos e arquitectura de um compilador</string>
+    <string name="uc_class_compilers_topic2">Análise lexical</string>
+    <string name="uc_class_compilers_topic3">Análise sintáctica (descendente e ascendente)</string>
+    <string name="uc_class_compilers_topic4">Sintaxe abstracta</string>
+    <string name="uc_class_compilers_topic5">Análise semântica</string>
+    <string name="uc_class_compilers_topic6">Registos de activação</string>
+    <string name="uc_class_compilers_topic7">Representação intermédia</string>
+    <string name="uc_class_compilers_topic8">Geração de código</string>
+
+    <string name="uc_class_graphics_computation">Computação Gráfica</string>
+    <string name="uc_class_graphics_computation_description">Nesta unidade curricular pretende-se que o aluno adquira conhecimentos sobre
+        temas centrais à Computação Gráfica, tanto a nível de fundamentos como a nível de utilização de ferramentas gráficas.</string>
+    <string name="uc_class_graphics_computation_topic1">Introdução: Tecnologias de hardware gráfico</string>
+    <string name="uc_class_graphics_computation_topic2">Modelização, Pipeline de renderização e Dispositivos de Visualização</string>
+    <string name="uc_class_graphics_computation_topic3">Standards em computação gráfica</string>
+    <string name="uc_class_graphics_computation_topic4">Standards API, tais como OpenGL, etc.</string>
+    <string name="uc_class_graphics_computation_topic5">Geometria e transformações geométricas 2D e 3D</string>
+    <string name="uc_class_graphics_computation_topic6">Cor em computação gráfica: Modelos de cor, modelos de interpolação</string>
+    <string name="uc_class_graphics_computation_topic7">Cor em computação gráfica: Texturas</string>
+    <string name="uc_class_graphics_computation_topic8">Iluminação e sombras: Modelos de reflexão local</string>
+    <string name="uc_class_graphics_computation_topic9">Iluminação e sombras: Sombreamento, texturas e transparência</string>
+    <string name="uc_class_graphics_computation_topic10">Iluminação e sombras: Ray-tracing</string>
+    <string name="uc_class_graphics_computation_topic11">Visibilidade e recorte</string>
+    <string name="uc_class_graphics_computation_topic12">Curvas e superfícies</string>
+    <string name="uc_class_graphics_computation_topic13">Superfícies curvas de , Bezier, Hermite, Splines, Bsplines</string>
+
+    <string name="uc_class_ia_intro">Introdução à Inteligência Artificial</string>
+    <string name="uc_class_ia_intro_description">Pretende-se que o aluno adquira conhecimentos de base sólidos sobre a área da inteligência artificial
+        ao nível dos fundamentos, técnicas e aplicação prática. Para o efeito é adoptado o conceito integrador de Agente. Estuda-se o desenvolvimento
+        de agentes de complexidade e capacidade crescente seguindo três metáforas: Simbólica, Conexionista e Biológica.</string>
+    <string name="uc_class_ia_intro_topic1">Introdução: Definindo Inteligência Artificial</string>
+    <string name="uc_class_ia_intro_topic2">Introdução: Agentes</string>
+    <string name="uc_class_ia_intro_topic3">Introdução: Ambientes</string>
+    <string name="uc_class_ia_intro_topic4">Introdução: Tarefas</string>
+    <string name="uc_class_ia_intro_topic5">Introdução: Estado, operador de mudança de estado, espaço de estados</string>
+    <string name="uc_class_ia_intro_topic6">Agentes de estrutura fixa: Reactivos</string>
+    <string name="uc_class_ia_intro_topic7">Agentes de estrutura fixa: Procura</string>
+    <string name="uc_class_ia_intro_topic8">Agentes de estrutura variável: Aprendizes</string>
+    <string name="uc_class_ia_intro_topic9">Agentes de estrutura variável: Adaptativos</string>
+    <string name="uc_class_ia_intro_topic10">Sociedade de Agentes</string>
+    <string name="uc_class_ia_intro_topic11">Representação, Conhecimento, Incerteza, Raciocínio</string>
+
+    <string name="uc_class_adv_programming_labs">Laboratórios de Programação Avançada</string>
+    <string name="uc_class_adv_programming_labs_description">Resolução de problemas avançados típicos de programação. Aula maioritariamente prática.</string>
+    <string name="uc_class_adv_programming_labs_topic1">Modelação e resolução de problemas</string>
+    <string name="uc_class_adv_programming_labs_topic2">Complexidade computacional</string>
+    <string name="uc_class_adv_programming_labs_topic3">Paradigmas algorítmicos: Procura recursiva</string>
+    <string name="uc_class_adv_programming_labs_topic4">Paradigmas algorítmicos: Backtracking</string>
+    <string name="uc_class_adv_programming_labs_topic5">Paradigmas algorítmicos: Programação dinâmica</string>
+    <string name="uc_class_adv_programming_labs_topic6">Paradigmas algorítmicos: Procura gulosa</string>
+    <string name="uc_class_adv_programming_labs_topic7">Paradigmas algorítmicos: Branch-and-bound</string>
+    <string name="uc_class_adv_programming_labs_topic8">Casos de aplicação: Grafos, Redes de Fluxo, Geometria computacional</string>
+
+    <string name="uc_class_info_systems">Sistemas de Informação</string>
+    <string name="uc_class_info_systems_description">Esta uc proporciona aos alunos as competências e ferramentas que permitem discutir o projecto e
+        evolução de sistemas de informação (SI) com responsáveis de negócio. Ao completar o curso, os alunos compreenderão as diferentes e frequentemente
+        contraditórias perspectivas dos responsáveis de negócio e dos informáticos, tornando-se assim interlocutores privilegiados para ajudar ambas as
+        partes a planear o SI da organização.</string>
+    <string name="uc_class_info_systems_topic1">Os sistemas de informação enquanto carteiras de aplicações</string>
+    <string name="uc_class_info_systems_topic2">O valor para o negócio de distintos componentes do sistema de informação</string>
+    <string name="uc_class_info_systems_topic3">Matriz de McFarlan</string>
+    <string name="uc_class_info_systems_topic4">Análise estratégica: visão, missão, objectivos, factores críticos de sucesso</string>
+    <string name="uc_class_info_systems_topic5">Análise estratégica: análise SWOT, cadeia de valor, cinco forças concorrenciais, matriz de Boston</string>
+    <string name="uc_class_info_systems_topic6">Análise estratégica: competências chave, gerador de opções estratégicas, balanced scorecard</string>
+    <string name="uc_class_info_systems_topic7">Modelos de negócio</string>
+    <string name="uc_class_info_systems_topic8">Arquitectura empresarial: Gestão de processos de negócio</string>
+    <string name="uc_class_info_systems_topic9">Arquitectura empresarial: Reengenharia de processos de negócio</string>
+    <string name="uc_class_info_systems_topic10">Sistema de Informação: Sistemas empresariais integrados</string>
+    <string name="uc_class_info_systems_topic11">Sistema de Informação: Arquitecturas orientadas a serviços</string>
+
     <string name="uc_"></string>
     <string name="uc__description"></string>
     <string name="uc__topic1"></string>
