@@ -15,7 +15,7 @@ public class AllClasses implements ClassCombinationStrategy {
 
 
     @Override
-    public List<AnnualClassCombination> getAnnualClassCombinations(List<DegreeClass> degreeClassesOfYear) {
+    public List<AnnualClassCombination> getAnnualClassCombinations(int year, List<DegreeClass> degreeClassesOfYear) {
 
 
         // This is a single combination year, then id will be almost static

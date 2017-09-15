@@ -44,6 +44,9 @@
                 <semester>1</semester>
                 <ects>6</ects>
                 <optional>false</optional>
+                <paths></paths>
+                <mandatoryPaths></mandatoryPaths>
+                <exclusivePath></exclusivePath>
                 <program>
                     <topic>
                         <id>c1t1</id>
@@ -95,6 +98,9 @@
                 <semester>1</semester>
                 <ects>6</ects>
                 <optional>false</optional>
+                <paths></paths>
+                <mandatoryPaths></mandatoryPaths>
+                <exclusivePath></exclusivePath>
                 <program>
                     <topic>
                         <id>c2t1</id>
@@ -6761,6 +6767,8 @@
                     </topic>
                 </program>
             </class>
+
+            <!-- 5TH YEAR-->
             <class>
                 <id>uc_mei_c69</id>
                 <name>@string/up_class_dissertation</name>

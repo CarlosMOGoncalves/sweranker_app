@@ -240,13 +240,6 @@ public class MainActivityViewModel extends ViewModel {
 
     /**
      * Calculates the degrees that have complete matches.
-     * <p>
-     * NOTE: This is awful. It may be a good idea to be in this service, but it
-     * suffers from the fact that the data for the degrees have to be put here
-     * by another service in an ugly ugly trick in the activity. If not for the time
-     * constraints this MUST be changed.
-     *
-     * @return
      */
     private Map<Integer, Boolean> calculateMatchedDegrees(Map<String, DegreeClassMatch> degreeMatches) {
 
@@ -527,7 +520,7 @@ public class MainActivityViewModel extends ViewModel {
                 ClassCombinationStrategy combinationStrategy = classCombinationStrategy.getValue();
 
                 // Here, using each year's strategy to unfold all possible combinations for this year
-                annualCombinations.addAll(combinationStrategy.getAnnualClassCombinations(degree.getClasses().get(yearOfDegree)));
+                annualCombinations.addAll(combinationStrategy.getAnnualClassCombinations(yearOfDegree, degree.getClasses().get(yearOfDegree)));
 
                 if (_listener.isPresent()) {
                     _listener.get().updateProgressAction(1);

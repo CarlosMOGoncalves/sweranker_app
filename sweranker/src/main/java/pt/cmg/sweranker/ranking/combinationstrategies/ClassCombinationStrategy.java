@@ -20,7 +20,7 @@ public interface ClassCombinationStrategy {
      * @param degreeClassesOfYear
      * @return
      */
-    List<AnnualClassCombination> getAnnualClassCombinations(List<DegreeClass> degreeClassesOfYear);
+    List<AnnualClassCombination> getAnnualClassCombinations(int year, List<DegreeClass> degreeClassesOfYear);
 
 
 }

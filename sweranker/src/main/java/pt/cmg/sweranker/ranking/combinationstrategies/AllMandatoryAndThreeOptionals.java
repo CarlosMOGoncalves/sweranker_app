@@ -18,9 +18,8 @@ public class AllMandatoryAndThreeOptionals implements ClassCombinationStrategy {
 
 
     @Override
-    public List<AnnualClassCombination> getAnnualClassCombinations(List<DegreeClass> degreeClassesOfYear) {
+    public List<AnnualClassCombination> getAnnualClassCombinations(int year, List<DegreeClass> degreeClassesOfYear) {
 
-        int year = degreeClassesOfYear.get(0).getYear();
         String combinationIdBase = "d_" + degreeClassesOfYear.get(0).getDegreeId() + "_y_" + degreeClassesOfYear.get(0).getYear() + "_c_";
 
         List<String> mandatoryClasses = new ArrayList<>();
