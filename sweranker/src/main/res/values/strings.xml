@@ -2047,24 +2047,272 @@
     <string name="uc_class_info_systems_topic10">Sistema de Informação: Sistemas empresariais integrados</string>
     <string name="uc_class_info_systems_topic11">Sistema de Informação: Arquitecturas orientadas a serviços</string>
 
-    <string name="uc_"></string>
-    <string name="uc__description"></string>
-    <string name="uc__topic1"></string>
-    <string name="uc__topic2"></string>
-    <string name="uc__topic3"></string>
-    <string name="uc__topic4"></string>
-    <string name="uc__topic5"></string>
-    <string name="uc__topic6"></string>
-    <string name="uc__topic7"></string>
-    <string name="uc__topic8"></string>
-    <string name="uc__topic9"></string>
-    <string name="uc__topic10"></string>
-    <string name="uc__topic11"></string>
-    <string name="uc__topic12"></string>
-    <string name="uc__topic13"></string>
-    <string name="uc__topic14"></string>
-    <string name="uc__topic15"></string>
-    <string name="uc__topic16"></string>
+    <string name="uc_class_entrepreneurship">Empreendedorismo e Gestão de Empresas</string>
+    <string name="uc_class_entrepreneurship_description">São objectivos desta disciplina estimular a criação de competências de empreendedorismo e espírito inovador e familiarizar os futuros profissionais com a realidade do tecido empresarial e os fundamentos teóricos da criação e gestão de pequenas empresas e negócios numa óptica de criação de valor. </string>
+    <string name="uc_class_entrepreneurship_topic1">Casos de sucesso empresarial local</string>
+    <string name="uc_class_entrepreneurship_topic2">Liderança e gestão de pessoas nas organizações</string>
+    <string name="uc_class_entrepreneurship_topic3">Geração de modelos de negócio - Business Model Canvas</string>
+    <string name="uc_class_entrepreneurship_topic4">O mercado e a sua análise</string>
+    <string name="uc_class_entrepreneurship_topic5">Marketing-mix e marketing de serviços</string>
+    <string name="uc_class_entrepreneurship_topic6">Criação de valor nas start-ups</string>
+    <string name="uc_class_entrepreneurship_topic7">Financiamento de start-ups</string>
+    <string name="uc_class_entrepreneurship_topic8">Internacionalização</string>
+    <string name="uc_class_entrepreneurship_topic9">Propriedade industrial – licenciamentos</string>
+    <string name="uc_class_entrepreneurship_topic10">Aspectos legais da constituição de sociedades</string>
+    <string name="uc_class_entrepreneurship_topic11">Contabilidade e fiscalidade nas empresas</string>
+    <string name="uc_class_entrepreneurship_topic12">Análise e gestão financeira</string>
+    <string name="uc_class_entrepreneurship_topic13">Introdução ao plano de negócios</string>
+
+    <string name="uc_class_human_computer_interaction">Interacção Humano-Computador</string>
+    <string name="uc_class_human_computer_interaction_description">Através desta unidade curricular os estudantes ficarão a conhecer os conceitos fundamentais para compreender a interação entre humanos e sistemas computacionais. O estudante deverá:\n
+- compreender o papel dos factores humanos na interação e interface;\n
+- compreender e aplicar técnicas de prototipagem para investigação e ensaio de proposta de design;\n
+- desenvolver a capacidade para conceber propostas de design de interação e interface para contextos de uso específicos tendo em vista a optimização da experiência de interação, com base em abordagens contextuais e participativas;\n
+- desenvolver a capacidade de avaliação da usabilidade com domínio de técnicas variadas e sua adequação ao contexto de projeto;\n
+- desenvolver a capacidade de construção de interfaces inovadoras e coerentes com o propósito;\n
+- desenvolver a capacidade de combinar as técnicas de uma forma sistemática numa abordagem empírica ao design de interação;\n
+- desenvolver a capacidade de aprendizagem autónoma no domínio de HCI.</string>
+    <string name="uc_class_human_computer_interaction_topic1">Breve história da HCI. Modelos da performance humana, teoria cognitiva, teoria da actividade e da acção situada</string>
+    <string name="uc_class_human_computer_interaction_topic2">Modelação de utilizadores e tarefas; Personas; Modelação e análise de cenários</string>
+    <string name="uc_class_human_computer_interaction_topic3">Engenharia de contextos de interacção pelo design de meios; Design Contextual</string>
+    <string name="uc_class_human_computer_interaction_topic4">A prototipagem e o seu papel no design de interacção; Oficinas de design participativo. O conceito de trajectórias no design da experiência de uso</string>
+    <string name="uc_class_human_computer_interaction_topic5">Da usabilidade à experiência de uso: modelos e técnicas de avaliação</string>
+    <string name="uc_class_human_computer_interaction_topic6">Técnicas de observação e análise: cognitive design walkthrough, avaliação heurística, avaliação formal de laboratório, avaliação de campo, entrevistas e questionários</string>
+    <string name="uc_class_human_computer_interaction_topic7">A estética da interacção no design de interface</string>
+    <string name="uc_class_human_computer_interaction_topic8">Visualização e sonorização da informação; Elementos de design visual e sonoro</string>
+    <string name="uc_class_human_computer_interaction_topic9">A adaptação do design aos dispositivos e contextos de uso; Interface em cenário de smartphone e tablet</string>
+    <string name="uc_class_human_computer_interaction_topic10">Arquitecturas e técnicas de interface: da interface linguística às GUI, TUI e NUI</string>
+
+    <string name="uc_class_experimental_methodologies">Metodologias Experimentais em Informática</string>
+    <string name="uc_class_experimental_methodologies_description">Fornecer os métodos experimentais necessários para efetuar avaliação empírica de desempenho de sistemas computacionais que surgem nas várias áreas da informática, de redes de comunicação a algoritmos e inteligência artificial. Aquisição de competências ao nível da análise e síntese, organização e planeamento.</string>
+    <string name="uc_class_experimental_methodologies_topic1">O método experimental; cenários de experimentação em informática</string>
+    <string name="uc_class_experimental_methodologies_topic2">Análise exploratória de dados</string>
+    <string name="uc_class_experimental_methodologies_topic3">Medições e benchmarking</string>
+    <string name="uc_class_experimental_methodologies_topic4">Análise de dados: distribuições, correlação, regressão linear</string>
+    <string name="uc_class_experimental_methodologies_topic5">Desenho experimental: factores e interacções</string>
+    <string name="uc_class_experimental_methodologies_topic6">Metodologia qualitativa: entrevistas e questionários, análise de conteúdo</string>
+
+    <string name="uc_class_modeling">Modelação e Análise de Sistemas</string>
+    <string name="uc_class_modeling_description">Esta disciplina foca-se em modelos para a análise de sistemas, com ênfase em problemas de optimização e sistemas de eventos discretos, com aplicações às quatro opções temáticas do curso. Pretende-se que os estudantes venham a ser capazes de:\n
+1) formular problemas de optimização, categorizando-os em função das suas características e formalizando-os de modo a poderem ser resolvidos pelos métodos mais adequados\n
+2) modelar e analisar sistemas simples de tráfego, de produção, computacionais (hardware e software) e de comunicação enquanto sistemas de eventos discretos\n
+Os estudantes deverão ainda desenvolver competências em análise e síntese, resolução de problemas, raciocínio crítico, aprendizagem autónoma, e a capacidade de aplicar o conhecimento teórico adquirido a situações práticas concretas.</string>
+    <string name="uc_class_modeling_topic1">Programação não-linear: conceitos e resultados gerais para os casos com e sem restrições</string>
+    <string name="uc_class_modeling_topic2">Programação linear: formalização; dualidade; aplicações</string>
+    <string name="uc_class_modeling_topic3">Programação linear inteira: unimodularidade; planos de corte; aplicações</string>
+    <string name="uc_class_modeling_topic4">Programação dinâmica: conceitos; princípio de optimalidade de Bellman; aplicações</string>
+    <string name="uc_class_modeling_topic5">Sistemas e modelos: conceitos; tipos de sistemas; DES e exemplos de aplicação</string>
+    <string name="uc_class_modeling_topic6">Autómatos finitos: modelação de DES como linguagens; análise de DES modelados por autómatos</string>
+    <string name="uc_class_modeling_topic7">Redes de Petri: definição; comparação com autómatos; análise de redes de Petri</string>
+    <string name="uc_class_modeling_topic8">Modelos temporizados e híbridos: autómatos e redes de Petri temporizados; álgebras de dióides; modelos híbridos</string>
+    <string name="uc_class_modeling_topic9">Autómatos temporizados estocásticos</string>
+    <string name="uc_class_modeling_topic10">Cadeias de Markov: tempo discreto e tempo contínuo</string>
+    <string name="uc_class_modeling_topic11">Introdução à teoria das filas de espera</string>
+
+    <string name="uc_class_communication_sys">Fundamentos de Sistemas de Comunicação</string>
+    <string name="uc_class_communication_sys_description">Os objectivos principais desta UC são o estudo dos fundamentos dos sistemas de transmissão e de comutação. Os tópicos incluem: modulação e transmissão de sinais, sistemas de transmissão e de comutação, aspectos de sinalização em sistemas digitais. Esta UC trata dos aspectos dos sistemas relacionados com redes fixas ou móveis e satélites, e com a transmissão de sinais de voz e vídeo. A UC também cobre os fundamentos dos protocolos de comunicação relacionados com controlo de erros, controlo de fluxo e especificação de protocolos.</string>
+    <string name="uc_class_communication_sys_topic1">Fundamentos de comunicação</string>
+    <string name="uc_class_communication_sys_topic2">Modulação e amostragem</string>
+    <string name="uc_class_communication_sys_topic3">Transmissão de dados</string>
+    <string name="uc_class_communication_sys_topic4">Controlo de fluxo e de erros</string>
+    <string name="uc_class_communication_sys_topic5">Conceitos básicos de protocolos de comunicação</string>
+
+    <string name="uc_class_mobile_comm_sys">Sistemas de Comunicação Móvel</string>
+    <string name="uc_class_mobile_comm_sys_description">Objectivos centrais da UC são, por um lado, a abordagem e estudo, teórico e prático, dos principais aspectos relacionados com a mobilidade de sistemas e redes e, por outro, a exploração de protocolos, tecnologias e aplicações de redes de sensores.</string>
+    <string name="uc_class_mobile_comm_sys_topic1">Fundamentos e evolução das redes sem fios</string>
+    <string name="uc_class_mobile_comm_sys_topic2">Redes locais sem fios</string>
+    <string name="uc_class_mobile_comm_sys_topic3">Sistemas celulares 3G e 4G</string>
+    <string name="uc_class_mobile_comm_sys_topic4">Mobilidade em ambiente IP</string>
+    <string name="uc_class_mobile_comm_sys_topic5">Mobilidade de redes</string>
+    <string name="uc_class_mobile_comm_sys_topic6">Redes de sensores sem fios: protocolos, tecnologias e aplicações</string>
+    <string name="uc_class_mobile_comm_sys_topic7">Multicasting</string>
+
+    <string name="uc_class_req_engineering">Engenharia de Requisitos</string>
+    <string name="uc_class_req_engineering_description">Nesta unidade curricular os estudantes irão estudar diversos métodos para compreender o problema com que se deparam, os factores que condicionam a gama de soluções possíveis, e as abordagens para decidirem entre essas alternativas.</string>
+    <string name="uc_class_req_engineering_topic1">Engenharia de Requisitos</string>
+    <string name="uc_class_req_engineering_topic2">Classes de problemas</string>
+    <string name="uc_class_req_engineering_topic3">Análise Contextual</string>
+    <string name="uc_class_req_engineering_topic4">Casos de Uso (como guia para o ciclo de vida do software)</string>
+    <string name="uc_class_req_engineering_topic5">Considerações de Usabilidade</string>
+    <string name="uc_class_req_engineering_topic6">Condicionantes económicas, de negócio e regulamentares</string>
+    <string name="uc_class_req_engineering_topic7">Uma abordagem de engenharia ao desenvolvimento de software</string>
+
+    <string name="uc_class_sys_integration">Integração de Sistemas</string>
+    <string name="uc_class_sys_integration_description">Nesta disciplina abordamos múltiplas formas estruturadas de integrar aplicações, não só ao nível de uma organização, mas para além dela. É dada uma forte ênfase à integração utilizando middleware, em particular, utilizando abordagens como SOA (Service Oriented Architecture) e ESB (Enterprise Service Bus).</string>
+    <string name="uc_class_sys_integration_topic1">Desafios da integração</string>
+    <string name="uc_class_sys_integration_topic2">Integração de dados: Tecnologias XML (XML, XSL, XSLT, XQUERY, etc.)</string>
+    <string name="uc_class_sys_integration_topic3">Integração de dados: Integração semântica</string>
+    <string name="uc_class_sys_integration_topic4">Integração de dados: Java Persistence API</string>
+    <string name="uc_class_sys_integration_topic5">Integração Funcional: Enterprise Java Beans</string>
+    <string name="uc_class_sys_integration_topic6">Integração Funcional: Web Services e Web Services de segunda geração</string>
+    <string name="uc_class_sys_integration_topic7">Integração Funcional: Arquitecturas Orientadas aos Serviços (SOA)</string>
+    <string name="uc_class_sys_integration_topic8">Middleware para sistemas empresariais: Transacções distribuídas, transacções longas, actividades de negócios, middleware orientado às mensagens</string>
+    <string name="uc_class_sys_integration_topic9">Integração de sistemas herdados</string>
+    <string name="uc_class_sys_integration_topic10">Outras Plataformas de Integração: Java EE Connector Architecture (JCA)</string>
+    <string name="uc_class_sys_integration_topic11">Outras Plataformas de Integração: Microsoft Sharepoint</string>
+    <string name="uc_class_sys_integration_topic12">Outras Plataformas de Integração: SAP Netweaver</string>
+    <string name="uc_class_sys_integration_topic13">Integração extra-organização e parceiros de negócio: UCCnet, RosettaNet e ebXML</string>
+    <string name="uc_class_sys_integration_topic14">Integração com aplicações cloud</string>
+
+    <string name="uc_class_computer_learning">Aprendizagem Computacional</string>
+    <string name="uc_class_computer_learning_description">Estudar  as principais técnicas de aprendizagem computacional no contexto da multiplicidade de tipos de dados disponíveis nas aplicações relevantes nomeadamente desenvolvimento e interpretação de árvores de decisão , configuração e treino de redes neuronais artificiais, de lógica difusa, sistemas difusos e neuro-difusos, e configuração e treino de máquinas de vectores de suporte. Desenvolver as competências para conceber sistemas de classificação de grandes conjuntos de dados, de diagnóstico em contextos industriais e médicos, de controlo inteligente, de análise sistémica dos problemas complexos e de avaliação crítico dos resultados.</string>
+    <string name="uc_class_computer_learning_topic1">Introducão à aprendizagem computacional</string>
+    <string name="uc_class_computer_learning_topic2">Árvores de decisão</string>
+    <string name="uc_class_computer_learning_topic3">Redes Neuronais: arquitecturas básicas</string>
+    <string name="uc_class_computer_learning_topic4">Redes Multicamada e aprendizagem por retropropagação</string>
+    <string name="uc_class_computer_learning_topic5">Redes RBF (Radial Basis Function). Algoritmos de treino</string>
+    <string name="uc_class_computer_learning_topic6">Arquitecturas avançadas de redes neuronais: redes recurrentes e aprendizagem em tempo real</string>
+    <string name="uc_class_computer_learning_topic7">Lógica difusa e conjuntos difusos. Relações difusas, princípio da extensão de Zadeh</string>
+    <string name="uc_class_computer_learning_topic8">Sistemas Difusos baseados em regras, de tipos Mamdani e Sugeno. Aprendizagem de regras difusas: técnicas de clustering</string>
+    <string name="uc_class_computer_learning_topic9">Sistemas Neuro-difusos: a arquitectura ANFIS e seu treino.Aplicações</string>
+    <string name="uc_class_computer_learning_topic10">Máquinas de Vectores de Suporte</string>
+
+    <string name="uc_class_ai">Inteligência Artificial</string>
+    <string name="uc_class_ai_description">Fornecer aos estudantes conceitos, princípios e teorias avançadas necessárias para o desenvolvimento de aplicações reais envolvendo agentes ou sistemas com capacidades de raciocínio, comportamento e interação com os seus ambientes de forma inteligente.</string>
+    <string name="uc_class_ai_topic1">Lógica para Representação de Conhecimento e Raciocínio</string>
+    <string name="uc_class_ai_topic2">Formalismos lógicos para representação de conhecimento: lógica proposicional; lógica de predicados de primeira ordem; lógica de omissão; lógicas descritivas; ontologias e taxonomias</string>
+    <string name="uc_class_ai_topic3">Raciocínio lógico: satisfatibilidade, dedução crédula e cética</string>
+    <string name="uc_class_ai_topic4">Programação em lógica</string>
+    <string name="uc_class_ai_topic5">Agentes e ambientes; taxonomia de agentes</string>
+    <string name="uc_class_ai_topic6">Arquitectura BDI: crenças, desejos e intenções</string>
+    <string name="uc_class_ai_topic7">Emoções e computação afectiva em agentes</string>
+    <string name="uc_class_ai_topic8">Estabelecimento de acordos: negociação e argumentação</string>
+    <string name="uc_class_ai_topic9">Trabalho conjunto: cooperação e coordenação</string>
+    <string name="uc_class_ai_topic10">Engenharia de software orientada ao agente</string>
+    <string name="uc_class_ai_topic11">Normas FIPA</string>
+    <string name="uc_class_ai_topic12">Quantificação de incerteza</string>
+    <string name="uc_class_ai_topic13">Abordagens ao raciocínio com incerteza: raciocínio probabilístico e lógica de omissão</string>
+    <string name="uc_class_ai_topic14">Raciocínio probabilístico com dimensão temporal</string>
+    <string name="uc_class_ai_topic15">Decisão: decisões unitárias, decisões sequenciais/planeamento, planeamento com incerteza</string>
+
+    <string name="uc_class_company_arch">Arquitectura de Empresas</string>
+    <string name="uc_class_company_arch_description">Uma arquitectura de empresa tenta descrever e controlar a estrutura de uma organização, processos, aplicações e sistemas de forma integrada. A especificação não ambígua dos componentes e das suas relações numa arquitectura requer uma linguagem de modelação coerente. Tal linguagem deve permitir a modelação integrada de vários domínios da arquitectura e deve ser analisada por pessoas de TI e por pessoas com um background empresarial. Nesta unidade curricular, apresentamos uma linguagem de modelação de empresas que capta a complexidade dos domínios de uma arquitectura, as suas relações e permite a construção de modelos integrados. A linguagem fornece aos arquitectos instrumentos concretos para que possam melhorar as suas práticas arquitectónicas.</string>
+    <string name="uc_class_company_arch_topic1">Introdução a arquitectura de empresas; O processo de arquitectura; Razões para uma arquitectura da empresa</string>
+    <string name="uc_class_company_arch_topic2">Estado da arte - Arquitectura de empresas, outros instrumentos de governança; métodos e estruturas; Linguagens de modelação; Arquitectura orientadas a serviços</string>
+    <string name="uc_class_company_arch_topic3">Fundações - Complexidade arquitectónica; Descrição de arquitecturas de empresas; Representações, modelos e semântica</string>
+    <string name="uc_class_company_arch_topic4">Modelação de empresas - Orientação a serviços e camadas; Três dimensões de modelação; Conceitos da camada de negócio; da camada de aplicações; da camada de tecnologia; Relações</string>
+    <string name="uc_class_company_arch_topic5">Pontos de vista e visualização - arquitectura; Modelos, vistas e visualização; Visualização e interacção; Criação, selecção e uso de pontos de vista</string>
+    <string name="uc_class_company_arch_topic6">Ferramentas de suporte - Necessidades de ferramentas para arquitectura de empresas; Ferramentas disponíveis; Workbench para arquitectura de empresas; Ferramenta de desenho de vistas; Ferramenta de análise do impacto de mudanças</string>
+    <string name="uc_class_company_arch_topic7">Casos de estudo</string>
+
+    <string name="uc_class_info_management_systems">Gestão de Sistemas de Informação</string>
+    <string name="uc_class_info_management_systems_description">Esta unidade curricular explica aos alunos os principais conceitos, princípios e metodologias necessárias para gerir SI em organizações. A unidade também fornece competências necessárias em síntese, comunicação escrita, resolução de problemas, raciocínio crítico e aplicação prática de conhecimento em áreas como governação de IT, governação de Big Data, e metodologias de gestão, tais como o ITIL e o COBIT.</string>
+    <string name="uc_class_info_management_systems_topic1">Evolução dos sistemas de informação; tipos de sistemas de informação; integração de sistemas; gestão de sistemas</string>
+    <string name="uc_class_info_management_systems_topic2">Conceitos de governação de TI: Alinhamento estratégico; geração de valor; gestão de riscos; gestão de recursos; medição de desempenho</string>
+    <string name="uc_class_info_management_systems_topic3">Processos empresarias; integração de departamentos verticais; sistemas ERP; casos de estudo</string>
+    <string name="uc_class_info_management_systems_topic4">Governação de Big Data: Tipos de dados; ciclo de vida; privacidade; qualidade</string>
+    <string name="uc_class_info_management_systems_topic5">Gestão de serviços: Melhores práticas; estratégia de serviços; design de serviços; operação de serviços; transição de serviços; melhoria de serviços; ITIL</string>
+    <string name="uc_class_info_management_systems_topic6">Sistemas de serviços: Planos de serviços; arquitecturas de serviços; linguagens de descrição de serviços, redes de serviços</string>
+    <string name="uc_class_info_management_systems_topic7">Controlo e monitorização: Interligação da estratégia às operações; processos críticos; principais indicadores de desempenho; COBIT</string>
+
+    <string name="uc_class_it_security">Segurança em Tecnologias da Informação</string>
+    <string name="uc_class_it_security_description">Esta UC pretende dotar os alunos das capacidades técnicas para administração da segurança em TI. Aspetos de sistemas de comunicação, redes informáticas, sistemas de informação organizacionais e sistemas distribuídos. Compreender o conjunto de métodos e ferramentas para a realização das tarefas associadas a um especialista em Segurança em TI.</string>
+    <string name="uc_class_it_security_topic1">Aspectos fundamentais</string>
+    <string name="uc_class_it_security_topic2">Segurança em sistemas de comunicação</string>
+    <string name="uc_class_it_security_topic3">Segurança em sistemas de informação</string>
+    <string name="uc_class_it_security_topic4">Segurança na Internet</string>
+    <string name="uc_class_it_security_topic5">Segurança em comércio e transacções etectrónicas</string>
+    <string name="uc_class_it_security_topic6">Controlo de acesso e detecção e prevenção de intrusões</string>
+    <string name="uc_class_it_security_topic7">Auditorias de segurança e aspectos organizacionais.</string>
+
+    <string name="uc_class_infra_net_structures">Gestão de Infraestruturas e Serviços na Internet</string>
+    <string name="uc_class_infra_net_structures_description">Os objectivos centrais da disciplina são a abordagem teórica e prática à temática de gestão de infraestruturas informáticas, incluindo o planeamento e gestão dos serviços de rede que integram e/ou dão suporte a essas infraestruturas, o suporte ás operações e manutenção dessas infraestruturas (planeamento, monitorização, gestão de falhas, gestão de níveis de serviço, AAA, etc.), os protocolos de suporte à gestão de redes e serviços informáticos, e a administração de serviços e infraestruturas informáticas em ambientes virtualizados e/ou instalados em ambientes cloud.</string>
+    <string name="uc_class_infra_net_structures_topic1">Planeamento e manutenção de Serviços de Rede</string>
+    <string name="uc_class_infra_net_structures_topic2">Operações e Manutenção de Infraestruturas Informáticas</string>
+    <string name="uc_class_infra_net_structures_topic3">Protocolos de Gestão de Redes e Serviços</string>
+    <string name="uc_class_infra_net_structures_topic4">Administração de Infraestruturas Virtualizadas e Cloud-sourced</string>
+
+    <string name="uc_class_network_modeling">Modelação e Desempenho de Redes</string>
+    <string name="uc_class_network_modeling_description">O objectivo principal da disciplina é o estudo de metodologias para a modelação e avaliação do desempenho de redes de comunicação. A disciplina aborda os fundamentos da teoria das probabilidades e dos processos estocásticos na perspectiva da modelação e análise de desempenho das redes de comunicação. De forma complementar, a disciplina aborda metodologias de simulação para avaliação de desempenho de sistemas de comunicação.</string>
+    <string name="uc_class_network_modeling_topic1">Metodologias de avaliação de desempenho de sistemas de comunicação</string>
+    <string name="uc_class_network_modeling_topic2">Modelação por simulação de sistemas de comunicação: objetivos, requisitos e abordagens; criação de modelos de simulação de componentes de sistemas de comunicação; validação, análise e apresentação de resultados</string>
+    <string name="uc_class_network_modeling_topic3">Técnicas de classificação e caracterização de tráfego: classificação por inspeção e por análise estatística; parâmetros de caracterização de tráfego</string>
+    <string name="uc_class_network_modeling_topic4">Modelação analítica de sistemas de comunicação: modelos analíticos de ligações e de tráfego; teria de filas aplicada à modelação de componentes de sistemas de comunicação</string>
+    <string name="uc_class_network_modeling_topic5">Avaliação de desempenho de sistemas reais: protótipos e redes em produção</string>
+
+    <string name="uc_class_software_architecture">Arquitectura de Software</string>
+    <string name="uc_class_software_architecture_description">Após a conclusão desta unidade curricular, os alunos deverão:\n
+- ser capazes de descrever uma arquitectura com precisão;\n
+- reconhecer os principais estilos arquitecturais existentes em sistemas de software;\n
+- propor alternativas de arquitectura para um problema, e escolher entre eles;\n
+- ter as competências necessárias para a construção de um sistema de software de dimensão média que satisfaça uma especificação de arquitectura;\n
+- usar as ferramentas de desenvolvimento correctas para acelerar essas tarefas;\n
+- compreender a definição formal de uma arquitectura e ser capaz de raciocinar sobre as suas propriedades;\n
+- usar o conhecimento de domínio para especializar uma arquitectura para uma determinada família de aplicações.</string>
+    <string name="uc_class_software_architecture_topic1">Conceitos base de Arquitectura de Software (AS): o papel da AS no desenvolvimento de software</string>
+    <string name="uc_class_software_architecture_topic2">Principais estilos e padrões arquitecturais em software</string>
+    <string name="uc_class_software_architecture_topic3">Análise de requisitos de software e o seu papel na construção e avaliação de uma Arquitectura</string>
+    <string name="uc_class_software_architecture_topic4">Desenho de uma AS: criação, fundamentação e selecção de alternativas arquitecturais</string>
+    <string name="uc_class_software_architecture_topic5">Reutilização de software: estratégias para reutilização de software e avaliação do seu impacto na AS. O recurso a COTS e a middleware numa Arquitectura</string>
+    <string name="uc_class_software_architecture_topic6">Notações formais para a especificação e análise de Arquitectura de Software</string>
+    <string name="uc_class_software_architecture_topic7">Documentação de uma Arquitectura de Software</string>
+    <string name="uc_class_software_architecture_topic8">Implementação de uma Arquitectura de Software: design detalhado e design patterns</string>
+    <string name="uc_class_software_architecture_topic9">Avaliação de uma Arquitectura de Software: respeito pelos requisitos do software e a gestão de compromissos entre atributos de qualidade</string>
+    <string name="uc_class_software_architecture_topic10">Consideração de tendências futuras do software e o seu impacto nas Arquitectura de Software</string>
+
+    <string name="uc_class_software_quality">Qualidade e Confiabilidade de Software</string>
+    <string name="uc_class_software_quality_description">Esta unidade curricular aborda com profundidade as áreas da engenharia de software relacionadas com a verificação, validação e certificação. O objetivo é dotar os alunos com conhecimento abrangente sobre qualidade de software e as actividades técnicas levadas a cabo para assegurar a qualidade e a confiabilidade do software, incluindo análise estática e dinâmica, modelos de desenvolvimento e standards, e certificação de software.</string>
+    <string name="uc_class_software_quality_topic1">Fundamentos: Qualidade funcional e qualidade estrutural</string>
+    <string name="uc_class_software_quality_topic2">Fundamentos: O valor económico da qualidade</string>
+    <string name="uc_class_software_quality_topic3">Fundamentos: Confiabilidade de software: atributos, ameaças e meios</string>
+    <string name="uc_class_software_quality_topic4">Fundamentos: Prevenção e remoção de defeitos</string>
+    <string name="uc_class_software_quality_topic5">Análise estática e métodos formais: Inspecções e revisões de software</string>
+    <string name="uc_class_software_quality_topic6">Análise estática e métodos formais: Análise estática automática</string>
+    <string name="uc_class_software_quality_topic7">Análise estática e métodos formais: Métodos formais de especificação e verificação</string>
+    <string name="uc_class_software_quality_topic8">Análise estática e métodos formais: Verificação de modelos</string>
+    <string name="uc_class_software_quality_topic9">Teste de software: Testes unitários, testes de integração e testes de sistema</string>
+    <string name="uc_class_software_quality_topic10">Teste de software: Testes black-box e white-box</string>
+    <string name="uc_class_software_quality_topic11">Teste de software: Testes baseados em modelos</string>
+    <string name="uc_class_software_quality_topic12">Teste de software: Critérios de cobertura</string>
+    <string name="uc_class_software_quality_topic13">Teste de software: Tracking de defeitos</string>
+    <string name="uc_class_software_quality_topic14">Teste de software: Verificação de sistemas distribuídos</string>
+    <string name="uc_class_software_quality_topic15">Teste de software: Testes de regressão</string>
+    <string name="uc_class_software_quality_topic16">Modelos e standards de desenvolvimento: Processos de ciclo de vida de software</string>
+    <string name="uc_class_software_quality_topic17">Modelos e standards de desenvolvimento: Qualidade de produtos de software</string>
+    <string name="uc_class_software_quality_topic18">Modelos e standards de desenvolvimento: Desenvolvimento dirigido por testes (TDD)</string>
+    <string name="uc_class_software_quality_topic19">Modelos e standards de desenvolvimento: Programação por contrato</string>
+    <string name="uc_class_software_quality_topic20">Certificação: CMMI (Capability Maturity Model Integration)</string>
+    <string name="uc_class_software_quality_topic21">Certificação: Medição e estimação da qualidade de software</string>
+    <string name="uc_class_software_quality_topic22">Certificação: Verificação e validação</string>
+    <string name="uc_class_software_quality_topic23">Certificação: Garantia de qualidade</string>
+
+    <string name="uc_class"></string>
+    <string name="uc_class_description"></string>
+    <string name="uc_class_topic1"></string>
+    <string name="uc_class_topic2"></string>
+    <string name="uc_class_topic3"></string>
+    <string name="uc_class_topic4"></string>
+    <string name="uc_class_topic5"></string>
+    <string name="uc_class_topic6"></string>
+    <string name="uc_class_topic7"></string>
+    <string name="uc_class_topic8"></string>
+    <string name="uc_class_topic9"></string>
+    <string name="uc_class_topic10"></string>
+    <string name="uc_class_topic11"></string>
+    <string name="uc_class_topic12"></string>
+    <string name="uc_class_topic13"></string>
+    <string name="uc_class_topic14"></string>
+    <string name="uc_class_topic15"></string>
+    <string name="uc_class_topic16"></string>
+
+    <string name="uc_class"></string>
+    <string name="uc_class_description"></string>
+    <string name="uc_class_topic1"></string>
+    <string name="uc_class_topic2"></string>
+    <string name="uc_class_topic3"></string>
+    <string name="uc_class_topic4"></string>
+    <string name="uc_class_topic5"></string>
+    <string name="uc_class_topic6"></string>
+    <string name="uc_class_topic7"></string>
+    <string name="uc_class_topic8"></string>
+    <string name="uc_class_topic9"></string>
+    <string name="uc_class_topic10"></string>
+    <string name="uc_class_topic11"></string>
+    <string name="uc_class_topic12"></string>
+    <string name="uc_class_topic13"></string>
+    <string name="uc_class_topic14"></string>
+    <string name="uc_class_topic15"></string>
+    <string name="uc_class_topic16"></string>
 
 
     <string name="uav_mei">LEI + MEI</string>

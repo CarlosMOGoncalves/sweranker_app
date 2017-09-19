@@ -232,6 +232,9 @@
                 <semester>1</semester>
                 <ects>6</ects>
                 <optional>false</optional>
+                <paths></paths>
+                <mandatoryPaths></mandatoryPaths>
+                <exclusivePath></exclusivePath>
                 <program>
                     <topic>
                         <id>c3t1</id>
@@ -299,6 +302,9 @@
                 <semester>1</semester>
                 <ects>6</ects>
                 <optional>false</optional>
+                <paths></paths>
+                <mandatoryPaths></mandatoryPaths>
+                <exclusivePath></exclusivePath>
                 <program>
                     <topic>
                         <id>c4t1</id>
@@ -374,6 +380,9 @@
                 <semester>1</semester>
                 <ects>4.5</ects>
                 <optional>false</optional>
+                <paths></paths>
+                <mandatoryPaths></mandatoryPaths>
+                <exclusivePath></exclusivePath>
                 <program>
                     <topic>
                         <id>c5t1</id>
@@ -493,6 +502,9 @@
                 <semester>1</semester>
                 <ects>1.5</ects>
                 <optional>false</optional>
+                <paths></paths>
+                <mandatoryPaths></mandatoryPaths>
+                <exclusivePath></exclusivePath>
                 <program>
                     <topic>
                         <id>c6t1</id>
@@ -541,6 +553,9 @@
                 <semester>2</semester>
                 <ects>4.5</ects>
                 <optional>false</optional>
+                <paths></paths>
+                <mandatoryPaths></mandatoryPaths>
+                <exclusivePath></exclusivePath>
                 <program>
                     <topic>
                         <id>c7t1</id>
@@ -620,6 +635,9 @@
                 <semester>2</semester>
                 <ects>7.5</ects>
                 <optional>false</optional>
+                <paths></paths>
+                <mandatoryPaths></mandatoryPaths>
+                <exclusivePath></exclusivePath>
                 <program>
                     <topic>
                         <id>c8t1</id>
@@ -755,6 +773,9 @@
                 <semester>2</semester>
                 <ects>6</ects>
                 <optional>false</optional>
+                <paths></paths>
+                <mandatoryPaths></mandatoryPaths>
+                <exclusivePath></exclusivePath>
                 <program>
                     <topic>
                         <id>c9t1</id>
@@ -814,6 +835,9 @@
                 <semester>2</semester>
                 <ects>6</ects>
                 <optional>false</optional>
+                <paths></paths>
+                <mandatoryPaths></mandatoryPaths>
+                <exclusivePath></exclusivePath>
                 <program>
                     <topic>
                         <id>c10t1</id>
@@ -845,6 +869,9 @@
                 <semester>2</semester>
                 <ects>6</ects>
                 <optional>false</optional>
+                <paths></paths>
+                <mandatoryPaths></mandatoryPaths>
+                <exclusivePath></exclusivePath>
                 <program>
                     <topic>
                         <id>c11t1</id>
@@ -907,6 +934,9 @@
                 <semester>1</semester>
                 <ects>6</ects>
                 <optional>false</optional>
+                <paths></paths>
+                <mandatoryPaths></mandatoryPaths>
+                <exclusivePath></exclusivePath>
                 <program>
                     <topic>
                         <id>c12t1</id>
@@ -950,6 +980,9 @@
                 <semester>1</semester>
                 <ects>4.5</ects>
                 <optional>false</optional>
+                <paths></paths>
+                <mandatoryPaths></mandatoryPaths>
+                <exclusivePath></exclusivePath>
                 <program>
                     <topic>
                         <id>c13t1</id>
@@ -997,6 +1030,9 @@
                 <semester>1</semester>
                 <ects>6</ects>
                 <optional>false</optional>
+                <paths></paths>
+                <mandatoryPaths></mandatoryPaths>
+                <exclusivePath></exclusivePath>
                 <program>
                     <topic>
                         <id>c14t1</id>
@@ -1048,6 +1084,9 @@
                 <semester>1</semester>
                 <ects>7.5</ects>
                 <optional>false</optional>
+                <paths></paths>
+                <mandatoryPaths></mandatoryPaths>
+                <exclusivePath></exclusivePath>
                 <program>
                     <topic>
                         <id>c15t1</id>
@@ -1111,6 +1150,9 @@
                 <semester>1</semester>
                 <ects>6</ects>
                 <optional>false</optional>
+                <paths></paths>
+                <mandatoryPaths></mandatoryPaths>
+                <exclusivePath></exclusivePath>
                 <program>
                     <topic>
                         <id>c16t1</id>
@@ -1174,6 +1216,9 @@
                 <semester>2</semester>
                 <ects>6</ects>
                 <optional>false</optional>
+                <paths></paths>
+                <mandatoryPaths></mandatoryPaths>
+                <exclusivePath></exclusivePath>
                 <program>
                     <topic>
                         <id>c17t1</id>
@@ -1233,6 +1278,9 @@
                 <semester>2</semester>
                 <ects>6</ects>
                 <optional>false</optional>
+                <paths></paths>
+                <mandatoryPaths></mandatoryPaths>
+                <exclusivePath></exclusivePath>
                 <program>
                     <topic>
                         <id>c18t1</id>
@@ -1296,6 +1344,9 @@
                 <semester>2</semester>
                 <ects>6</ects>
                 <optional>false</optional>
+                <paths></paths>
+                <mandatoryPaths></mandatoryPaths>
+                <exclusivePath></exclusivePath>
                 <program>
                     <topic>
                         <id>c19t1</id>
@@ -1339,6 +1390,9 @@
                 <semester>2</semester>
                 <ects>6</ects>
                 <optional>false</optional>
+                <paths></paths>
+                <mandatoryPaths></mandatoryPaths>
+                <exclusivePath></exclusivePath>
                 <program>
                     <topic>
                         <id>c20t1</id>
@@ -1430,6 +1484,9 @@
                 <semester>2</semester>
                 <ects>6</ects>
                 <optional>false</optional>
+                <paths></paths>
+                <mandatoryPaths></mandatoryPaths>
+                <exclusivePath></exclusivePath>
                 <program>
                     <topic>
                         <id>c21t1</id>
@@ -1488,6 +1545,9 @@
                 <semester>1</semester>
                 <ects>4.5</ects>
                 <optional>false</optional>
+                <paths></paths>
+                <mandatoryPaths></mandatoryPaths>
+                <exclusivePath></exclusivePath>
                 <program>
                     <topic>
                         <id>c22t1</id>
@@ -1539,6 +1599,9 @@
                 <semester>1</semester>
                 <ects>6</ects>
                 <optional>false</optional>
+                <paths></paths>
+                <mandatoryPaths></mandatoryPaths>
+                <exclusivePath></exclusivePath>
                 <program>
                     <topic>
                         <id>c23t1</id>
@@ -1566,6 +1629,9 @@
                 <semester>1</semester>
                 <ects>6</ects>
                 <optional>false</optional>
+                <paths></paths>
+                <mandatoryPaths></mandatoryPaths>
+                <exclusivePath></exclusivePath>
                 <program>
                     <topic>
                         <id>c24t1</id>
@@ -1737,6 +1803,9 @@
                 <semester>1</semester>
                 <ects>6</ects>
                 <optional>false</optional>
+                <paths></paths>
+                <mandatoryPaths></mandatoryPaths>
+                <exclusivePath></exclusivePath>
                 <program>
                     <topic>
                         <id>c25t1</id>
@@ -1788,6 +1857,9 @@
                 <semester>2</semester>
                 <ects>7.5</ects>
                 <optional>false</optional>
+                <paths></paths>
+                <mandatoryPaths></mandatoryPaths>
+                <exclusivePath></exclusivePath>
                 <program>
                     <topic>
                         <id>c26t1</id>
@@ -1835,6 +1907,9 @@
                 <semester>2</semester>
                 <ects>6</ects>
                 <optional>false</optional>
+                <paths></paths>
+                <mandatoryPaths></mandatoryPaths>
+                <exclusivePath></exclusivePath>
                 <program>
                     <topic>
                         <id>c27t1</id>
@@ -1870,6 +1945,9 @@
                 <semester>2</semester>
                 <ects>6</ects>
                 <optional>false</optional>
+                <paths></paths>
+                <mandatoryPaths></mandatoryPaths>
+                <exclusivePath></exclusivePath>
                 <program>
                     <topic>
                         <id>c28t1</id>
@@ -2053,6 +2131,9 @@
                 <semester>2</semester>
                 <ects>6</ects>
                 <optional>false</optional>
+                <paths></paths>
+                <mandatoryPaths></mandatoryPaths>
+                <exclusivePath></exclusivePath>
                 <program>
                     <topic>
                         <id>c29t1</id>
@@ -2112,6 +2193,9 @@
                 <semester>2</semester>
                 <ects>6</ects>
                 <optional>false</optional>
+                <paths></paths>
+                <mandatoryPaths></mandatoryPaths>
+                <exclusivePath></exclusivePath>
                 <program>
                     <topic>
                         <id>c30t1</id>
@@ -2163,6 +2247,9 @@
                 <semester>2</semester>
                 <ects>4.5</ects>
                 <optional>false</optional>
+                <paths></paths>
+                <mandatoryPaths></mandatoryPaths>
+                <exclusivePath></exclusivePath>
                 <program>
                     <topic>
                         <id>c31t1</id>
@@ -2225,6 +2312,9 @@
                 <semester>1</semester>
                 <ects>4.5</ects>
                 <optional>false</optional>
+                <paths></paths>
+                <mandatoryPaths></mandatoryPaths>
+                <exclusivePath></exclusivePath>
                 <program>
                     <topic>
                         <id>c32t1</id>
@@ -2284,6 +2374,9 @@
                 <semester>1</semester>
                 <ects>7.5</ects>
                 <optional>false</optional>
+                <paths></paths>
+                <mandatoryPaths></mandatoryPaths>
+                <exclusivePath></exclusivePath>
                 <program>
                     <topic>
                         <id>c33t1</id>
@@ -2319,6 +2412,9 @@
                 <semester>1</semester>
                 <ects>6</ects>
                 <optional>false</optional>
+                <paths></paths>
+                <mandatoryPaths></mandatoryPaths>
+                <exclusivePath></exclusivePath>
                 <program>
                     <topic>
                         <id>c34t1</id>
@@ -2382,6 +2478,9 @@
                 <semester>1</semester>
                 <ects>6</ects>
                 <optional>false</optional>
+                <paths></paths>
+                <mandatoryPaths></mandatoryPaths>
+                <exclusivePath></exclusivePath>
                 <program>
                     <topic>
                         <id>c35t1</id>
@@ -2477,6 +2576,9 @@
                 <semester>1</semester>
                 <ects>6</ects>
                 <optional>false</optional>
+                <paths></paths>
+                <mandatoryPaths></mandatoryPaths>
+                <exclusivePath></exclusivePath>
                 <program>
                     <topic>
                         <id>c36t1</id>
@@ -2612,6 +2714,9 @@
                 <semester>2</semester>
                 <ects>4.5</ects>
                 <optional>false</optional>
+                <paths></paths>
+                <mandatoryPaths></mandatoryPaths>
+                <exclusivePath></exclusivePath>
                 <program>
                     <topic>
                         <id>c37t1</id>
@@ -2671,6 +2776,9 @@
                 <semester>2</semester>
                 <ects>7.5</ects>
                 <optional>false</optional>
+                <paths></paths>
+                <mandatoryPaths></mandatoryPaths>
+                <exclusivePath></exclusivePath>
                 <program>
                     <topic>
                         <id>c38t1</id>
@@ -2714,6 +2822,9 @@
                 <semester>2</semester>
                 <ects>6</ects>
                 <optional>true</optional>
+                <paths></paths>
+                <mandatoryPaths></mandatoryPaths>
+                <exclusivePath></exclusivePath>
                 <program>
                     <topic>
                         <id>c39t1</id>
@@ -2789,6 +2900,9 @@
                 <semester>2</semester>
                 <ects>6</ects>
                 <optional>true</optional>
+                <paths></paths>
+                <mandatoryPaths></mandatoryPaths>
+                <exclusivePath></exclusivePath>
                 <program>
                     <topic>
                         <id>c40t1</id>
@@ -2848,6 +2962,9 @@
                 <semester>2</semester>
                 <ects>6</ects>
                 <optional>true</optional>
+                <paths></paths>
+                <mandatoryPaths></mandatoryPaths>
+                <exclusivePath></exclusivePath>
                 <program>
                     <topic>
                         <id>c41t1</id>
@@ -2911,6 +3028,9 @@
                 <semester>2</semester>
                 <ects>6</ects>
                 <optional>true</optional>
+                <paths></paths>
+                <mandatoryPaths></mandatoryPaths>
+                <exclusivePath></exclusivePath>
                 <program>
                     <topic>
                         <id>c42t1</id>
@@ -2954,6 +3074,9 @@
                 <semester>2</semester>
                 <ects>6</ects>
                 <optional>true</optional>
+                <paths></paths>
+                <mandatoryPaths></mandatoryPaths>
+                <exclusivePath></exclusivePath>
                 <program>
                     <topic>
                         <id>c43t1</id>
@@ -2985,6 +3108,9 @@
                 <semester>2</semester>
                 <ects>6</ects>
                 <optional>true</optional>
+                <paths></paths>
+                <mandatoryPaths></mandatoryPaths>
+                <exclusivePath></exclusivePath>
                 <program>
                     <topic>
                         <id>c44t1</id>
@@ -3068,6 +3194,9 @@
                 <semester>2</semester>
                 <ects>6</ects>
                 <optional>true</optional>
+                <paths></paths>
+                <mandatoryPaths></mandatoryPaths>
+                <exclusivePath></exclusivePath>
                 <program>
                     <topic>
                         <id>c45t1</id>
@@ -3115,6 +3244,9 @@
                 <semester>2</semester>
                 <ects>6</ects>
                 <optional>true</optional>
+                <paths></paths>
+                <mandatoryPaths></mandatoryPaths>
+                <exclusivePath></exclusivePath>
                 <program>
                     <topic>
                         <id>c70t1</id>
@@ -3150,6 +3282,9 @@
                 <semester>2</semester>
                 <ects>6</ects>
                 <optional>true</optional>
+                <paths></paths>
+                <mandatoryPaths></mandatoryPaths>
+                <exclusivePath></exclusivePath>
                 <program>
                     <topic>
                         <id>c46t1</id>
@@ -3233,6 +3368,9 @@
                 <semester>2</semester>
                 <ects>6</ects>
                 <optional>true</optional>
+                <paths></paths>
+                <mandatoryPaths></mandatoryPaths>
+                <exclusivePath></exclusivePath>
                 <program>
                     <topic>
                         <id>c47t1</id>
@@ -3300,6 +3438,9 @@
                 <semester>2</semester>
                 <ects>6</ects>
                 <optional>true</optional>
+                <paths></paths>
+                <mandatoryPaths></mandatoryPaths>
+                <exclusivePath></exclusivePath>
                 <program>
                     <topic>
                         <id>c48t1</id>
@@ -3339,6 +3480,9 @@
                 <semester>2</semester>
                 <ects>6</ects>
                 <optional>true</optional>
+                <paths></paths>
+                <mandatoryPaths></mandatoryPaths>
+                <exclusivePath></exclusivePath>
                 <program>
                     <topic>
                         <id>c49t1</id>
@@ -3370,6 +3514,9 @@
                 <semester>2</semester>
                 <ects>6</ects>
                 <optional>true</optional>
+                <paths></paths>
+                <mandatoryPaths></mandatoryPaths>
+                <exclusivePath></exclusivePath>
                 <program>
                     <topic>
                         <id>c50t1</id>
@@ -3409,6 +3556,9 @@
                 <semester>2</semester>
                 <ects>6</ects>
                 <optional>true</optional>
+                <paths></paths>
+                <mandatoryPaths></mandatoryPaths>
+                <exclusivePath></exclusivePath>
                 <program>
                     <topic>
                         <id>c51t1</id>
@@ -3460,6 +3610,9 @@
                 <semester>2</semester>
                 <ects>6</ects>
                 <optional>true</optional>
+                <paths></paths>
+                <mandatoryPaths></mandatoryPaths>
+                <exclusivePath></exclusivePath>
                 <program>
                     <topic>
                         <id>c52t1</id>
@@ -3534,6 +3687,9 @@
                 <semester>1</semester>
                 <ects>6</ects>
                 <optional>false</optional>
+                <paths></paths>
+                <mandatoryPaths></mandatoryPaths>
+                <exclusivePath></exclusivePath>
                 <program>
                     <topic>
                         <id>c53t1</id>
@@ -3565,6 +3721,9 @@
                 <semester>1</semester>
                 <ects>6</ects>
                 <optional>true</optional>
+                <paths></paths>
+                <mandatoryPaths></mandatoryPaths>
+                <exclusivePath></exclusivePath>
                 <program>
                     <topic>
                         <id>c54t1</id>
@@ -3608,6 +3767,9 @@
                 <semester>1</semester>
                 <ects>6</ects>
                 <optional>true</optional>
+                <paths></paths>
+                <mandatoryPaths></mandatoryPaths>
+                <exclusivePath></exclusivePath>
                 <program>
                     <topic>
                         <id>c55t1</id>
@@ -3659,6 +3821,9 @@
                 <semester>1</semester>
                 <ects>6</ects>
                 <optional>true</optional>
+                <paths></paths>
+                <mandatoryPaths></mandatoryPaths>
+                <exclusivePath></exclusivePath>
                 <program>
                     <topic>
                         <id>c56t1</id>
@@ -3754,6 +3919,9 @@
                 <semester>1</semester>
                 <ects>6</ects>
                 <optional>true</optional>
+                <paths></paths>
+                <mandatoryPaths></mandatoryPaths>
+                <exclusivePath></exclusivePath>
                 <program>
                     <topic>
                         <id>c57t1</id>
@@ -3801,6 +3969,9 @@
                 <semester>1</semester>
                 <ects>6</ects>
                 <optional>true</optional>
+                <paths></paths>
+                <mandatoryPaths></mandatoryPaths>
+                <exclusivePath></exclusivePath>
                 <program>
                     <topic>
                         <id>c58t1</id>
@@ -3848,6 +4019,9 @@
                 <semester>1</semester>
                 <ects>6</ects>
                 <optional>true</optional>
+                <paths></paths>
+                <mandatoryPaths></mandatoryPaths>
+                <exclusivePath></exclusivePath>
                 <program>
                     <topic>
                         <id>c59t1</id>
@@ -3891,6 +4065,9 @@
                 <semester>1</semester>
                 <ects>6</ects>
                 <optional>true</optional>
+                <paths></paths>
+                <mandatoryPaths></mandatoryPaths>
+                <exclusivePath></exclusivePath>
                 <program>
                     <topic>
                         <id>c60t1</id>
@@ -3942,6 +4119,9 @@
                 <semester>1</semester>
                 <ects>6</ects>
                 <optional>true</optional>
+                <paths></paths>
+                <mandatoryPaths></mandatoryPaths>
+                <exclusivePath></exclusivePath>
                 <program>
                     <topic>
                         <id>c61t1</id>
@@ -4033,6 +4213,9 @@
                 <semester>1</semester>
                 <ects>6</ects>
                 <optional>true</optional>
+                <paths></paths>
+                <mandatoryPaths></mandatoryPaths>
+                <exclusivePath></exclusivePath>
                 <program>
                     <topic>
                         <id>c62t1</id>
@@ -4160,6 +4343,9 @@
                 <semester>1</semester>
                 <ects>6</ects>
                 <optional>true</optional>
+                <paths></paths>
+                <mandatoryPaths></mandatoryPaths>
+                <exclusivePath></exclusivePath>
                 <program>
                     <topic>
                         <id>c63t1</id>
@@ -4191,6 +4377,9 @@
                 <semester>1</semester>
                 <ects>6</ects>
                 <optional>true</optional>
+                <paths></paths>
+                <mandatoryPaths></mandatoryPaths>
+                <exclusivePath></exclusivePath>
                 <program>
                     <topic>
                         <id>c64t1</id>
@@ -4214,6 +4403,9 @@
                 <semester>1</semester>
                 <ects>6</ects>
                 <optional>true</optional>
+                <paths></paths>
+                <mandatoryPaths></mandatoryPaths>
+                <exclusivePath></exclusivePath>
                 <program>
                     <topic>
                         <id>c65t1</id>
@@ -4265,6 +4457,9 @@
                 <semester>1</semester>
                 <ects>6</ects>
                 <optional>true</optional>
+                <paths></paths>
+                <mandatoryPaths></mandatoryPaths>
+                <exclusivePath></exclusivePath>
                 <program>
                     <topic>
                         <id>c66t1</id>
@@ -4304,6 +4499,9 @@
                 <semester>1</semester>
                 <ects>6</ects>
                 <optional>true</optional>
+                <paths></paths>
+                <mandatoryPaths></mandatoryPaths>
+                <exclusivePath></exclusivePath>
                 <program>
                     <topic>
                         <id>c67t1</id>
@@ -4391,6 +4589,9 @@
                 <semester>1</semester>
                 <ects>6</ects>
                 <optional>true</optional>
+                <paths></paths>
+                <mandatoryPaths></mandatoryPaths>
+                <exclusivePath></exclusivePath>
                 <program>
                     <topic>
                         <id>c68t1</id>
@@ -4454,6 +4655,9 @@
                 <semester>2</semester>
                 <ects>6</ects>
                 <optional>false</optional>
+                <paths></paths>
+                <mandatoryPaths></mandatoryPaths>
+                <exclusivePath></exclusivePath>
                 <program>
                     <topic>
                         <id>c69t1</id>
@@ -4527,6 +4731,9 @@
                 <semester>1</semester>
                 <ects>6</ects>
                 <optional>false</optional>
+                <paths></paths>
+                <mandatoryPaths></mandatoryPaths>
+                <exclusivePath></exclusivePath>
                 <program>
                     <topic>
                         <id>c1t1</id>
@@ -4578,6 +4785,9 @@
                 <semester>2</semester>
                 <ects>6</ects>
                 <optional>false</optional>
+                <paths></paths>
+                <mandatoryPaths></mandatoryPaths>
+                <exclusivePath></exclusivePath>
                 <program>
                     <topic>
                         <id>c18t1</id>
@@ -4641,6 +4851,9 @@
                 <semester>2</semester>
                 <ects>7.5</ects>
                 <optional>false</optional>
+                <paths></paths>
+                <mandatoryPaths></mandatoryPaths>
+                <exclusivePath></exclusivePath>
                 <program>
                     <topic>
                         <id>c26t1</id>
@@ -4688,6 +4901,9 @@
                 <semester>2</semester>
                 <ects>6</ects>
                 <optional>true</optional>
+                <paths></paths>
+                <mandatoryPaths></mandatoryPaths>
+                <exclusivePath></exclusivePath>
                 <program>
                     <topic>
                         <id>c70t1</id>
@@ -4723,6 +4939,9 @@
                 <semester>2</semester>
                 <ects>6</ects>
                 <optional>false</optional>
+                <paths></paths>
+                <mandatoryPaths></mandatoryPaths>
+                <exclusivePath></exclusivePath>
                 <program>
                     <topic>
                         <id>c69t1</id>
@@ -4796,6 +5015,9 @@
                 <semester>1</semester>
                 <ects>6</ects>
                 <optional>false</optional>
+                <paths></paths>
+                <mandatoryPaths></mandatoryPaths>
+                <exclusivePath></exclusivePath>
                 <program>
                     <topic>
                         <id>c71t1</id>
@@ -4871,6 +5093,9 @@
                 <semester>1</semester>
                 <ects>6</ects>
                 <optional>false</optional>
+                <paths></paths>
+                <mandatoryPaths></mandatoryPaths>
+                <exclusivePath></exclusivePath>
                 <program>
                     <topic>
                         <id>c72t1</id>
@@ -4914,6 +5139,9 @@
                 <semester>1</semester>
                 <ects>6</ects>
                 <optional>false</optional>
+                <paths></paths>
+                <mandatoryPaths></mandatoryPaths>
+                <exclusivePath></exclusivePath>
                 <program>
                     <topic>
                         <id>c73t1</id>
@@ -4989,6 +5217,9 @@
                 <semester>1</semester>
                 <ects>6</ects>
                 <optional>false</optional>
+                <paths></paths>
+                <mandatoryPaths></mandatoryPaths>
+                <exclusivePath></exclusivePath>
                 <program>
                     <topic>
                         <id>c74t1</id>
@@ -5068,6 +5299,9 @@
                 <semester>1</semester>
                 <ects>6</ects>
                 <optional>false</optional>
+                <paths></paths>
+                <mandatoryPaths></mandatoryPaths>
+                <exclusivePath></exclusivePath>
                 <program>
                     <topic>
                         <id>c75t1</id>
@@ -5103,6 +5337,9 @@
                 <semester>2</semester>
                 <ects>6</ects>
                 <optional>false</optional>
+                <paths></paths>
+                <mandatoryPaths></mandatoryPaths>
+                <exclusivePath></exclusivePath>
                 <program>
                     <topic>
                         <id>c76t1</id>
@@ -5198,6 +5435,9 @@
                 <semester>2</semester>
                 <ects>6</ects>
                 <optional>false</optional>
+                <paths></paths>
+                <mandatoryPaths></mandatoryPaths>
+                <exclusivePath></exclusivePath>
                 <program>
                     <topic>
                         <id>c77t1</id>
@@ -5269,6 +5509,9 @@
                 <semester>2</semester>
                 <ects>6</ects>
                 <optional>false</optional>
+                <paths></paths>
+                <mandatoryPaths></mandatoryPaths>
+                <exclusivePath></exclusivePath>
                 <program>
                     <topic>
                         <id>c78t1</id>
@@ -5348,6 +5591,9 @@
                 <semester>2</semester>
                 <ects>6</ects>
                 <optional>false</optional>
+                <paths></paths>
+                <mandatoryPaths></mandatoryPaths>
+                <exclusivePath></exclusivePath>
                 <program>
                     <topic>
                         <id>c79t1</id>
@@ -5399,6 +5645,9 @@
                 <semester>2</semester>
                 <ects>6</ects>
                 <optional>false</optional>
+                <paths></paths>
+                <mandatoryPaths></mandatoryPaths>
+                <exclusivePath></exclusivePath>
                 <program>
                     <topic>
                         <id>c80t1</id>
@@ -5488,6 +5737,9 @@
                 <semester>1</semester>
                 <ects>6</ects>
                 <optional>false</optional>
+                <paths></paths>
+                <mandatoryPaths></mandatoryPaths>
+                <exclusivePath></exclusivePath>
                 <program>
                     <topic>
                         <id>c81t1</id>
@@ -5531,6 +5783,9 @@
                 <semester>1</semester>
                 <ects>6</ects>
                 <optional>false</optional>
+                <paths></paths>
+                <mandatoryPaths></mandatoryPaths>
+                <exclusivePath></exclusivePath>
                 <program>
                     <topic>
                         <id>c82t1</id>
@@ -5586,6 +5841,9 @@
                 <semester>1</semester>
                 <ects>6</ects>
                 <optional>false</optional>
+                <paths></paths>
+                <mandatoryPaths></mandatoryPaths>
+                <exclusivePath></exclusivePath>
                 <program>
                     <topic>
                         <id>c83t1</id>
@@ -5657,6 +5915,9 @@
                 <semester>1</semester>
                 <ects>6</ects>
                 <optional>false</optional>
+                <paths></paths>
+                <mandatoryPaths></mandatoryPaths>
+                <exclusivePath></exclusivePath>
                 <program>
                     <topic>
                         <id>c84t1</id>
@@ -5724,6 +5985,9 @@
                 <semester>1</semester>
                 <ects>6</ects>
                 <optional>false</optional>
+                <paths></paths>
+                <mandatoryPaths></mandatoryPaths>
+                <exclusivePath></exclusivePath>
                 <program>
                     <topic>
                         <id>c85t1</id>
@@ -5807,6 +6071,9 @@
                 <semester>2</semester>
                 <ects>6</ects>
                 <optional>false</optional>
+                <paths></paths>
+                <mandatoryPaths></mandatoryPaths>
+                <exclusivePath></exclusivePath>
                 <program>
                     <topic>
                         <id>c86t1</id>
@@ -5846,6 +6113,9 @@
                 <semester>2</semester>
                 <ects>6</ects>
                 <optional>false</optional>
+                <paths></paths>
+                <mandatoryPaths></mandatoryPaths>
+                <exclusivePath></exclusivePath>
                 <program>
                     <topic>
                         <id>c87t1</id>
@@ -5937,6 +6207,9 @@
                 <semester>2</semester>
                 <ects>6</ects>
                 <optional>false</optional>
+                <paths></paths>
+                <mandatoryPaths></mandatoryPaths>
+                <exclusivePath></exclusivePath>
                 <program>
                     <topic>
                         <id>c88t1</id>
@@ -5996,6 +6269,9 @@
                 <semester>2</semester>
                 <ects>6</ects>
                 <optional>false</optional>
+                <paths></paths>
+                <mandatoryPaths></mandatoryPaths>
+                <exclusivePath></exclusivePath>
                 <program>
                     <topic>
                         <id>c89t1</id>
@@ -6023,6 +6299,9 @@
                 <semester>2</semester>
                 <ects>6</ects>
                 <optional>false</optional>
+                <paths></paths>
+                <mandatoryPaths></mandatoryPaths>
+                <exclusivePath></exclusivePath>
                 <program>
                     <topic>
                         <id>c90t1</id>
@@ -6072,6 +6351,9 @@
                 <semester>1</semester>
                 <ects>6</ects>
                 <optional>false</optional>
+                <paths></paths>
+                <mandatoryPaths></mandatoryPaths>
+                <exclusivePath></exclusivePath>
                 <program>
                     <topic>
                         <id>c91t1</id>
@@ -6151,6 +6433,9 @@
                 <semester>1</semester>
                 <ects>6</ects>
                 <optional>false</optional>
+                <paths></paths>
+                <mandatoryPaths></mandatoryPaths>
+                <exclusivePath></exclusivePath>
                 <program>
                     <topic>
                         <id>c92t1</id>
@@ -6198,6 +6483,9 @@
                 <semester>1</semester>
                 <ects>6</ects>
                 <optional>false</optional>
+                <paths></paths>
+                <mandatoryPaths></mandatoryPaths>
+                <exclusivePath></exclusivePath>
                 <program>
                     <topic>
                         <id>c93t1</id>
@@ -6301,6 +6589,9 @@
                 <semester>1</semester>
                 <ects>6</ects>
                 <optional>false</optional>
+                <paths></paths>
+                <mandatoryPaths></mandatoryPaths>
+                <exclusivePath></exclusivePath>
                 <program>
                     <topic>
                         <id>c94t1</id>
@@ -6372,6 +6663,9 @@
                 <semester>1</semester>
                 <ects>6</ects>
                 <optional>false</optional>
+                <paths></paths>
+                <mandatoryPaths></mandatoryPaths>
+                <exclusivePath></exclusivePath>
                 <program>
                     <topic>
                         <id>c95t1</id>
@@ -6479,6 +6773,9 @@
                 <semester>2</semester>
                 <ects>6</ects>
                 <optional>false</optional>
+                <paths></paths>
+                <mandatoryPaths></mandatoryPaths>
+                <exclusivePath></exclusivePath>
                 <program>
                     <topic>
                         <id>c96t1</id>
@@ -6522,6 +6819,9 @@
                 <semester>2</semester>
                 <ects>6</ects>
                 <optional>false</optional>
+                <paths></paths>
+                <mandatoryPaths></mandatoryPaths>
+                <exclusivePath></exclusivePath>
                 <program>
                     <topic>
                         <id>c97t1</id>
@@ -6585,6 +6885,9 @@
                 <semester>2</semester>
                 <ects>6</ects>
                 <optional>false</optional>
+                <paths></paths>
+                <mandatoryPaths></mandatoryPaths>
+                <exclusivePath></exclusivePath>
                 <program>
                     <topic>
                         <id>c98t1</id>
@@ -6640,6 +6943,9 @@
                 <semester>2</semester>
                 <ects>6</ects>
                 <optional>false</optional>
+                <paths></paths>
+                <mandatoryPaths></mandatoryPaths>
+                <exclusivePath></exclusivePath>
                 <program>
                     <topic>
                         <id>c99t1</id>
@@ -6683,6 +6989,9 @@
                 <semester>2</semester>
                 <ects>6</ects>
                 <optional>false</optional>
+                <paths></paths>
+                <mandatoryPaths></mandatoryPaths>
+                <exclusivePath></exclusivePath>
                 <program>
                     <topic>
                         <id>c100t1</id>
@@ -6740,6 +7049,9 @@
                 <semester>2</semester>
                 <ects>6</ects>
                 <optional>true</optional>
+                <paths></paths>
+                <mandatoryPaths></mandatoryPaths>
+                <exclusivePath></exclusivePath>
                 <program>
                     <topic>
                         <id>c70t1</id>
@@ -6777,6 +7089,9 @@
                 <semester>2</semester>
                 <ects>6</ects>
                 <optional>false</optional>
+                <paths></paths>
+                <mandatoryPaths></mandatoryPaths>
+                <exclusivePath></exclusivePath>
                 <program>
                     <topic>
                         <id>c69t1</id>
@@ -6849,6 +7164,9 @@
                 <semester>1</semester>
                 <ects>6</ects>
                 <optional>false</optional>
+                <paths></paths>
+                <mandatoryPaths></mandatoryPaths>
+                <exclusivePath></exclusivePath>
                 <program>
                     <topic>
                         <id>c1t1</id>
@@ -6900,6 +7218,9 @@
                 <semester>2</semester>
                 <ects>6</ects>
                 <optional>false</optional>
+                <paths></paths>
+                <mandatoryPaths></mandatoryPaths>
+                <exclusivePath></exclusivePath>
                 <program>
                     <topic>
                         <id>c18t1</id>
@@ -6963,6 +7284,9 @@
                 <semester>2</semester>
                 <ects>7.5</ects>
                 <optional>false</optional>
+                <paths></paths>
+                <mandatoryPaths></mandatoryPaths>
+                <exclusivePath></exclusivePath>
                 <program>
                     <topic>
                         <id>c26t1</id>
@@ -7010,6 +7334,9 @@
                 <semester>2</semester>
                 <ects>6</ects>
                 <optional>true</optional>
+                <paths></paths>
+                <mandatoryPaths></mandatoryPaths>
+                <exclusivePath></exclusivePath>
                 <program>
                     <topic>
                         <id>c70t1</id>
@@ -7045,6 +7372,9 @@
                 <semester>2</semester>
                 <ects>6</ects>
                 <optional>false</optional>
+                <paths></paths>
+                <mandatoryPaths></mandatoryPaths>
+                <exclusivePath></exclusivePath>
                 <program>
                     <topic>
                         <id>c69t1</id>
@@ -7117,6 +7447,9 @@
                 <semester>1</semester>
                 <ects>6</ects>
                 <optional>false</optional>
+                <paths></paths>
+                <mandatoryPaths></mandatoryPaths>
+                <exclusivePath></exclusivePath>
                 <program>
                     <topic>
                         <id>c1t1</id>
@@ -7168,6 +7501,9 @@
                 <semester>2</semester>
                 <ects>6</ects>
                 <optional>false</optional>
+                <paths></paths>
+                <mandatoryPaths></mandatoryPaths>
+                <exclusivePath></exclusivePath>
                 <program>
                     <topic>
                         <id>c18t1</id>
@@ -7231,6 +7567,9 @@
                 <semester>2</semester>
                 <ects>7.5</ects>
                 <optional>false</optional>
+                <paths></paths>
+                <mandatoryPaths></mandatoryPaths>
+                <exclusivePath></exclusivePath>
                 <program>
                     <topic>
                         <id>c26t1</id>
@@ -7278,6 +7617,9 @@
                 <semester>2</semester>
                 <ects>6</ects>
                 <optional>true</optional>
+                <paths></paths>
+                <mandatoryPaths></mandatoryPaths>
+                <exclusivePath></exclusivePath>
                 <program>
                     <topic>
                         <id>c70t1</id>
@@ -7313,6 +7655,9 @@
                 <semester>2</semester>
                 <ects>6</ects>
                 <optional>false</optional>
+                <paths></paths>
+                <mandatoryPaths></mandatoryPaths>
+                <exclusivePath></exclusivePath>
                 <program>
                     <topic>
                         <id>c69t1</id>

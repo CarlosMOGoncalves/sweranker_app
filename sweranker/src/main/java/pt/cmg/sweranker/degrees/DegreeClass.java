@@ -90,6 +90,9 @@ public class DegreeClass {
     public DegreeClass(int degreeId) {
         _program = new HashMap<>();
         _degreeId = degreeId;
+        _hasPaths = false;
+        _hasMandatoryPaths = false;
+        _hasExclusivePaths = false;
     }
 
     public String getId() {
