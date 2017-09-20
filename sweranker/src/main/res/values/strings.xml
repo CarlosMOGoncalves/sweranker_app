@@ -2276,6 +2276,126 @@ Os estudantes deverão ainda desenvolver competências em análise e síntese, r
     <string name="uc_class_software_quality_topic22">Certificação: Verificação e validação</string>
     <string name="uc_class_software_quality_topic23">Certificação: Garantia de qualidade</string>
 
+    <string name="uc_class_evolutionary_computing">Computação Evolucionária</string>
+    <string name="uc_class_evolutionary_computing_description">Apresentar, discutir e desenvolver soluções de engenharia de inspiração natural (i.e., biológica, social, física) para problemas de elevada complexidade que, ou não têm solução analítica, ou são computacionalmente intratáveis. Aprender a avaliar de modo rigoroso, i.e., por recurso à estatística, soluções alternativas para os problemas.</string>
+    <string name="uc_class_evolutionary_computing_topic1">Introdução: meta-heurísticas e resolução de problemas</string>
+    <string name="uc_class_evolutionary_computing_topic2">Sistemas Evolucionários</string>
+    <string name="uc_class_evolutionary_computing_topic3">Sistemas Imunes Artificiais</string>
+    <string name="uc_class_evolutionary_computing_topic4">Sistemas Baseados em Desenvolvimento</string>
+    <string name="uc_class_evolutionary_computing_topic5">Inteligência Colectiva</string>
+    <string name="uc_class_evolutionary_computing_topic6">Parametrização e Desempenho</string>
+
+    <string name="uc_class_pattern_recognition">Reconhecimento de Padrões</string>
+    <string name="uc_class_pattern_recognition_description">O Reconhecimento de Padrões (RP) estuda a concepção, desenvolvimento e implementação de sistemas capazes de reconhecer padrões nos dados. Esta UC ministra os algoritmos que permitem explorar aplicações de RP, formalizando-as, com modelos analíticos de uso alargado nos mais diversos domínios. Conceitos básicos, modelos e ferramentas para a compreensão e desenho de um SRP.</string>
+    <string name="uc_class_pattern_recognition_topic1">Discriminação de padrões: funções e regiões de decisão; Métricas de separação de classes; Discriminantes Lineares (Euclidian e Mahalanobis) e de Fisher</string>
+    <string name="uc_class_pattern_recognition_topic2">Extracção e Selecção de características; métodos de ranking; Kruskal Wallis. Pré-processamento (remoção de outliers, normalização, missing data)</string>
+    <string name="uc_class_pattern_recognition_topic3">Clustering: Agrupamento Hierárquico; Algoritmo das k-médias</string>
+    <string name="uc_class_pattern_recognition_topic4">Métodos Paramétricos: Selecção de Modelos, Modelos Lineares Generalizados, Modelos de Mistura, Classificação de Bayes Supervisionada, Estimação de Parâmetros: Método da máxima verosimilhança; Estimação Bayes e Risco; Máximo A Posteriori (MAP); Divergência de Kullback-Leibler</string>
+    <string name="uc_class_pattern_recognition_topic5">Métodos não Paramétricos: Estimação da densidade: Método Parzen e Método k-vizinhos mais próximos</string>
+    <string name="uc_class_pattern_recognition_topic6">Redução Dimensionalidade; Principal Component Analysis (PCA); Métodos não lineares</string>
+    <string name="uc_class_pattern_recognition_topic7">Métodos de Kernel:Mercer kernel, Kernel PCA</string>
+    <string name="uc_class_pattern_recognition_topic8">Avaliação de Classificadores; Amostragem, matriz de confusão e probabilidade de erro; curvas ROC; Bootstrapping, Boosting</string>
+
+    <string name="uc_class_service_engineering">Engenharia de Serviços</string>
+    <string name="uc_class_service_engineering_description">A engenharia de serviços fornece um contributo importante para a definição, desenho, modelação, execução e análise de serviços. A unidade curricular apresenta linguagens de modelação, métodos, metodologias, aplicações e casos de estudo com resultados accionáveis, ilustrando as técnicas que podem ser utilizadas em larga escala com recurso a exemplos do mundo real para projectar serviços.</string>
+    <string name="uc_class_service_engineering_topic1">Ciência de serviços; Motivação e definições; Ciclo de vida da engenharia de serviços; Tipos de serviços; Serviços e standards</string>
+    <string name="uc_class_service_engineering_topic2">Web semântica (e.g. Linked Data and Linked Services); Networks science; Ciclo de vida dos serviços; Cloud computing</string>
+    <string name="uc_class_service_engineering_topic3">Descrição de serviços (e.g.,USDL); Instâncias de serviços (e.g. Amazon EC2 e SugarCRM); Marketplaces de serviços; Modelos de sistemas de serviços; Serviços Cloud</string>
+    <string name="uc_class_service_engineering_topic4">O modelo de relações; Tipo de relacionamentos; Tipo de redes de serviços; Modelação de redes de serviços, modelação de relações, construção de redes e sua população; Análise de redes de serviços</string>
+    <string name="uc_class_service_engineering_topic5">Desenho centrado no serviço; Ferramentas de software Cloud; Blueprinting; e prototipagem</string>
+    <string name="uc_class_service_engineering_topic6">Análise de serviços descritiva: análise preditiva análise prescritiva</string>
+    <string name="uc_class_service_engineering_topic7">Aplicações e ferramentas: Marketplaces, editores, bibliotecas, monitorização, negociadores e conversores</string>
+
+    <string name="uc_class_business_process_man">Gestão de Processos de Negócio</string>
+    <string name="uc_class_business_process_man_description">A unidade curricular de Gestão de Processos de Negócio introduz conceitos e abordagens de gestão e melhoria de processos de negócio.
+        Foca-se na compreensão, desenho e otimização de processos.\n
+        Os estudantes aprenderão a identificar, desenhar, documentar, modelar, avaliar e melhorar processos de negócio,
+        apercebendo-se dos desafios inerentes. Perceberão a forma como as tecnologias de informação podem ser usadas para automatizar,
+        gerir, transformar e melhorar processos de negócio, ganhando competências na utilização de algumas ferramentas.
+        Compreenderão desafios, vantagens e riscos envolvidos em processos inter-organizacionais e em outsourcing de processos de negócio.</string>
+    <string name="uc_class_business_process_man_topic1">Introdução aos processos de negócio</string>
+    <string name="uc_class_business_process_man_topic2">Modelação de processos</string>
+    <string name="uc_class_business_process_man_topic3">Descoberta de processos</string>
+    <string name="uc_class_business_process_man_topic4">Avaliação de processos</string>
+    <string name="uc_class_business_process_man_topic5">Melhoria de processos</string>
+    <string name="uc_class_business_process_man_topic6">Tecnologias de Informação de suporte a processos</string>
+    <string name="uc_class_business_process_man_topic7">Processos de negócio inter-organizacionais e outsourcing de processos</string>
+
+    <string name="uc_class_complex_systems">Sistemas Complexos</string>
+    <string name="uc_class_complex_systems_description">Esta cadeira tem por objectivo principal o estudo de sistemas complexos,
+        sejam eles físicos (e.g., o clima), biológicos (e.g. redes de regulação genética), cognitivos (e.g. a mente)
+        ou sociais (e.g., os mercados financeiros). Focaremos os conceitos,
+        os modelos e as ferramentas necessários à compreensão destes sistemas.</string>
+    <string name="uc_class_complex_systems_topic1">Conceitos (sistema, sistema complexo, sistema adaptativo complexo, sistema dinâmico, complexidade e de diversidade, informação, computação, evolução e modelos)</string>
+    <string name="uc_class_complex_systems_topic2">Modelos matemáticos (autómatos celulares, fractais, caos, criticalidade auto-organizada)</string>
+    <string name="uc_class_complex_systems_topic3">Modelos em rede (small-world networks, scale-free networks, random boolean networks)</string>
+    <string name="uc_class_complex_systems_topic4">Modelos baseados em regras (inteligência colectiva)</string>
+    <string name="uc_class_complex_systems_topic5">Ferramentas</string>
+    <string name="uc_class_complex_systems_topic6">Casos de Estudo</string>
+
+    <string name="uc_class_ubiquitous_systems">Sistemas Ubíquos</string>
+    <string name="uc_class_ubiquitous_systems_description">Nesta disciplina são adquiridos os conhecimentos necessários à concepção e desenvolvimento de sistemas ubíquos e à sua integração com os sistemas de informação existentes. É dada especial atenção às metodologias de posicionamento, representação de lugares e percepção de contexto, privacidade e segurança e avaliação de sistemas ubíquos.</string>
+    <string name="uc_class_ubiquitous_systems_topic1">Visão proposta por Mark Weiser. Percepção de contexto, pro-actividade e o computador móvel como representante do utilizador</string>
+    <string name="uc_class_ubiquitous_systems_topic2">Aplicações: computação urbana, energia para a sustentabilidade, governação participativa, agricultura de precisão</string>
+    <string name="uc_class_ubiquitous_systems_topic3">Computação pós-PC: Cercados de poder computacional e de dados, oportunidades e implicações; interfaces gráficos para os interfaces ubiquos; redes de sensores; sensorização oportunística; dados a partir de multidões; segurança e privacidade</string>
+    <string name="uc_class_ubiquitous_systems_topic4">Posições/lugares. Metodologias e sistemas de posicionamento. Representação de lugar, percepção de contexto. Estudos de campo. Desenho. Participantes.</string>
+    <string name="uc_class_ubiquitous_systems_topic5">Mastigação de dados. Dados e pré-processamento.</string>
+    <string name="uc_class_ubiquitous_systems_topic6">Algoritmos de classificação, agrupamento e análise de séries temporais</string>
+    <string name="uc_class_ubiquitous_systems_topic7">Modelação comportamental</string>
+    <string name="uc_class_ubiquitous_systems_topic8">Necessidades, actividades, utilização do espaço, mobilidade individual, questões de privacidade e segurança</string>
+    <string name="uc_class_ubiquitous_systems_topic9">Soluções técnicas, cidades inteligentes sustentáveis, energia para a sustentabilidade, agricultura de precisão</string>
+
+    <string name="uc_class_data_management">Sistemas de Gestão de Dados</string>
+    <string name="uc_class_data_management_description">Aborda-se conceitos de sistemas de gestão de bases de dados (SGBD) convencionais, sistemas de gestão para bigdata,
+        escalabilidade e performance. Aborda-se também sistemas de gestão de dados em outros ambientes. Os conceitos básicos incluem hardware, organização física,
+        índices, processamento e optimização de pesquisas, transacções, backups e recuperação, bem como aspectos relacionados com o desenvolvimento de aplicações.
+        Para além destes, a unidade curricular focará colocação e gestão de dados em ambientes paralelos, distribuídos e móveis, questões de replicação, consistência,
+        transacções e disponibilidade nesses ambientes. São abordados temas actuais (e que podem evoluir ao longo dos anos), tais como Map-Reduce e Hive, bases de dados
+        verticais, sistemas NoSQL. </string>
+    <string name="uc_class_data_management_topic1">Arquitectura base de SGBDs</string>
+    <string name="uc_class_data_management_topic2">Estruturas Físicas de suporte</string>
+    <string name="uc_class_data_management_topic3">Indexação avançada</string>
+    <string name="uc_class_data_management_topic4">Processamento e optimização de pesquisas</string>
+    <string name="uc_class_data_management_topic5">Transacções, ACID, Replicação e Consistência</string>
+    <string name="uc_class_data_management_topic6">Backups e recuperação, disponibilidade</string>
+    <string name="uc_class_data_management_topic7">Arquitecturas e processamento paralelo, distribuído, grid e móvel</string>
+    <string name="uc_class_data_management_topic8">Arquitecturas de sistemas com escalabilidade (caching: memcached, squid, outros; case-studies: facebook, youtube, Google, wikipedia, outros)</string>
+    <string name="uc_class_data_management_topic9">Arquitecturas actuais de processamento e gestão de dados (map-reduce, cep, verticais, NoSQL, cep)</string>
+
+    <string name="uc_class_computer_vision">Visão por Computador</string>
+    <string name="uc_class_computer_vision_description">Perceber os aspectos relativos à formação geométrica e radiométrica das imagens.
+        Aprender métodos para estimar elementos na imagem e relacioná-los com as estruturas 3D.
+        Aprender métodos para a reconstrução 3D e para a estimação de movimento 3D.</string>
+    <string name="uc_class_computer_vision_topic1">Formação e aquisição de Imagens</string>
+    <string name="uc_class_computer_vision_topic2">Câmaras e calibração geométrica</string>
+    <string name="uc_class_computer_vision_topic3">Cor e radiometria</string>
+    <string name="uc_class_computer_vision_topic4">Filtros lineares e detecção de arestas</string>
+    <string name="uc_class_computer_vision_topic5">Textura; Segmentação</string>
+    <string name="uc_class_computer_vision_topic6">Visão Estéreo</string>
+    <string name="uc_class_computer_vision_topic7">Movimento e sua projecção</string>
+    <string name="uc_class_computer_vision_topic8">Fluxo óptico</string>
+    <string name="uc_class_computer_vision_topic9">Reconstrução 3D</string>
+    <string name="uc_class_computer_vision_topic10">Visão dinâmica</string>
+
+    <string name="uc_class_business_intelligence">Inteligência no Negócio</string>
+    <string name="uc_class_business_intelligence_description">Esta disciplina tem por objectivos estudar as principais metodologias de desenvolvimento
+        de soluções de Business Intelligence e mostrar como as técnicas de Data Warehouses(DW), de OLAP e de Data Mining(DM)
+        podem ser conjugadas na construção de soluções informáticas de apoio à decisão.</string>
+    <string name="uc_class_business_intelligence_topic1">Introdução às Data Warehouses</string>
+    <string name="uc_class_business_intelligence_topic2">Análise multidimensional e esquemas em estrela</string>
+    <string name="uc_class_business_intelligence_topic3">Projecto de Data Warehouses</string>
+    <string name="uc_class_business_intelligence_topic4">Extracção, transformação e carregamento de dados (ETL)</string>
+    <string name="uc_class_business_intelligence_topic5">Optimização e administração de Data Warehouses</string>
+    <string name="uc_class_business_intelligence_topic6">Bases de dados multidimensionais e OLAP</string>
+    <string name="uc_class_business_intelligence_topic7">Tópicos avançados e novos paradigmas de tratamento, armazenamento e acesso a dados</string>
+    <string name="uc_class_business_intelligence_topic8">Introdução ao Data Mining</string>
+    <string name="uc_class_business_intelligence_topic9">Metodologia de Desenvolvimento de Projectos de Data Mining</string>
+    <string name="uc_class_business_intelligence_topic10">Análise do Negócio e Selecção de Dados</string>
+    <string name="uc_class_business_intelligence_topic11">Pré-processamento de Dados</string>
+    <string name="uc_class_business_intelligence_topic12">Geração de Modelos</string>
+    <string name="uc_class_business_intelligence_topic13">Avaliação de Modelos</string>
+    <string name="uc_class_business_intelligence_topic14">Produtização de Modelos</string>
+
     <string name="uc_class"></string>
     <string name="uc_class_description"></string>
     <string name="uc_class_topic1"></string>
