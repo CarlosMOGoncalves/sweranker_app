@@ -76,7 +76,7 @@ public class DegreeClass {
     private boolean _hasMandatoryPaths;
     private int[] _mandatoryPaths;
 
-    private boolean _hasExclusivePaths;
+    private boolean _hasExclusivePath;
     private int _exclusivePath;
 
 
@@ -92,7 +92,7 @@ public class DegreeClass {
         _degreeId = degreeId;
         _hasPaths = false;
         _hasMandatoryPaths = false;
-        _hasExclusivePaths = false;
+        _hasExclusivePath = false;
     }
 
     public String getId() {
@@ -188,11 +188,11 @@ public class DegreeClass {
     }
 
     public boolean hasExclusivePaths() {
-        return _hasExclusivePaths;
+        return _hasExclusivePath;
     }
 
     public void setHasExclusivePaths(boolean hasExclusivePaths) {
-        _hasExclusivePaths = hasExclusivePaths;
+        _hasExclusivePath = hasExclusivePaths;
     }
 
     public int getExclusivePath() {
@@ -201,6 +201,60 @@ public class DegreeClass {
 
     public void setExclusivePath(int pathExclusive) {
         _exclusivePath = pathExclusive;
+    }
+
+    public boolean isPathExclusive(int path) {
+        return _exclusivePath == path;
+    }
+
+
+    /**
+     * Returns true if this degree class is an optional class for a given path, false otherwise.
+     */
+    public boolean isOptionalForPath(int path) {
+
+        //Since this has a lot of awkward clauses it will be fully documented.
+
+        // If if does not have paths (i.e. it is a regular common degree class)
+        // it it a no-brainer, it cannot be optional for a path
+        if (!_hasPaths) {
+            return false;
+        }
+
+        // If this class is not available in this path it cannot also be optional for this path
+        if (!isPathAvailable(path)) {
+            return false;
+        }
+
+        // If it HAS paths and IS available on this path then we keep on searching for a clause
+
+        // If it has mandatory paths I have to check if it this path is one of them
+        if (_hasMandatoryPaths) {
+
+            // and if it is, then obviously is not optional
+            if (isPathMandatory(path)) {
+                return false;
+            }
+
+            // The special case is if it has a mandatory path which is not the one I'm in and also an
+            // exclusive path but it is also not the one I'm in. In that case, although this is not a mandatory
+            // path, it is also NOT optional because it is in fact exclusive to another path
+            if (_hasExclusivePath && (_exclusivePath != path)) {
+                return false;
+            }
+        } else {
+
+            // Now, if it does NOT have mandatory paths it can still be OPTIONAL to and exclusive path
+            if (_hasExclusivePath) {
+
+                //... but only if that path is the one we're in.
+                if (_exclusivePath != path) {
+                    return false;
+                }
+            }
+        }
+
+        return true;
     }
 
     public boolean hasPaths() {
@@ -219,8 +273,13 @@ public class DegreeClass {
         _hasMandatoryPaths = hasMandatoryPaths;
     }
 
+
     public int[] getPaths() {
         return _paths;
+    }
+
+    public boolean isPathAvailable(int path) {
+        return Arrays.binarySearch(_paths, path) >= 0;
     }
 
     public void setPaths(int[] paths) {

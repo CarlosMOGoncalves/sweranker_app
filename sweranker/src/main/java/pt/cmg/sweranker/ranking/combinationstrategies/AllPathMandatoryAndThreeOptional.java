@@ -7,7 +7,6 @@ import org.paukov.combinatorics.ICombinatoricsVector;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 import java.util.Set;
 import java.util.TreeSet;
 
@@ -33,8 +32,6 @@ public class AllPathMandatoryAndThreeOptional implements ClassCombinationStrateg
 
         Set<Integer> availablePaths = getAvailablePaths(classesOfYear);
 
-        Map<Integer, List<String>> baseCombinationPerPath;
-
         for (Integer path : availablePaths) {
 
             List<String> mandatoryClasses = getMandatoryPathClasses(path, allDegreeClasses);
@@ -48,6 +45,10 @@ public class AllPathMandatoryAndThreeOptional implements ClassCombinationStrateg
     }
 
 
+    /**
+     * This function pretty much just returns a list with all the Degree Classes for THE CURRENT YEAR
+     * we are trying to get the combinations for.
+     */
     private List<DegreeClass> getDegreeClassesOfYear(List<DegreeClass> allDegreeClasses) {
         List<DegreeClass> classesOfYear = new ArrayList<>();
         for (DegreeClass degreeClass : allDegreeClasses) {
@@ -78,6 +79,11 @@ public class AllPathMandatoryAndThreeOptional implements ClassCombinationStrateg
         return paths;
     }
 
+    /**
+     * Returns a list with all the MANDATORY classes for the given PATH.
+     * This is very important, because the choosing of these classes are determinant
+     * to the combinations generated.
+     */
     private List<String> getMandatoryPathClasses(int path, List<DegreeClass> allClasses) {
 
         List<String> mandatoryClasses = new ArrayList<>();
@@ -93,11 +99,18 @@ public class AllPathMandatoryAndThreeOptional implements ClassCombinationStrateg
         return mandatoryClasses;
     }
 
+
+    /**
+     * Returns the optional classes for this path. This is normally slightly more complicated in
+     * PATH aware degrees because some classes need to be picked here and there.
+     * In any case this is the list that will suffer Combinatory math a bit further down the line
+     * to effectively create the final combinations of the year.
+     */
     private List<String> getOptionalPathClasses(int path, List<DegreeClass> allClasses) {
 
         List<String> optionalClasses = new ArrayList<>();
         for (DegreeClass degreeClass : allClasses) {
-            if (degreeClass.isOptionalClass() && !degreeClass.isPathMandatory(path)) {
+            if (degreeClass.isOptionalForPath(path)) {
                 optionalClasses.add(degreeClass.getId());
             }
 
