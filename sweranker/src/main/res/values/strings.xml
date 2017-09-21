@@ -331,6 +331,8 @@
     <string name="ka16_topic1_name">Nenhuma das Áreas do Conhecimento</string>
     <string name="ka16_topic1_description">Para qualquer tópico do programa que não encaixa em qualquer das Áreas do Conhecimento.</string>
 
+    <!-- UNIVERSIDADE DO PORTO START-->
+
     <string name="up_mieic">MIEIC</string>
     <string name="up_mieic_fullname">Mestrado Integrado em Engenharia Informática e Computação</string>
     <string name="up_mieic_description">O ensino da Engenharia Informática e Computação foi concebido na FEUP como requerendo um ciclo de formação e aprendizagem completo de cinco anos integrados, correspondendo aos 1º e 2º ciclos da implementação do Processo de Bolonha e conferindo de imediato o grau de Mestre.\n\nNo final dos três primeiros anos (1º ciclo) do MIEIC os alunos estarão providos de uma sólida formação de base, abrangendo as competências científicas e de engenharia essenciais, mas também os conhecimentos fundamentais de banda larga nas diversas áreas da informática, embora sem qualquer especialização. Este primeiro degrau é visto sobretudo como possibilitador de mobilidade de e para outras escolas nacionais e europeias.\n\nNo final dos cinco anos do curso os diplomados terão uma formação avançada em Engenharia Informática e Computação, podendo ter escolhido uma área de especialização ou manter um leque mais alargado de interesses, mercê de uma ampla oferta de opções, configurável individualmente, contida no plano de estudos. As possíveis especializações incluem actualmente:\n\n- Engenharia de Software e Sistemas de Informação (2 sub-áreas com estes nomes)\n\n-Redes e Tecnologias de Informação (sub-áreas de Tecnologias da Internet e de Infra-estruturas Informáticas)\n\n-Sistemas Inteligentes e Multimédia (2 sub-áreas com estes nomes)</string>
@@ -1462,6 +1464,10 @@
     <string name="up_class_computer_vision_topic12">Reconhecimento de objectos: descrição baseada em características locais invariantes</string>
     <string name="up_class_computer_vision_topic13">Reconhecimento de objectos: sistemas de aprendizagem</string>
 
+    <!-- UNIVERSIDADE DO PORTO END -->
+
+    <!-- UNIVERSIDADE DO MINHO START -->
+
     <string name="uminho_miei">MiEI</string>
     <string name="uminho_miei_fullname">Mestrado Integrado em Engenharia Informática</string>
     <string name="uminho_miei_description">O Mestrado Integrado em Engenharia Informática (MiEI) é um curso integrado do primeiro e segundo ciclo de estudos do ensino superior, ministrado na Universidade do Minho, com a duração de 5 anos lectivos, 10 semestres lectivos, a 40 semanas de estudo a tempo inteiro por ano e a um total de 300 ECTS.\n\nO MiEI tem por objectivo preparar engenheiros informáticos, aptos em todas as fases actualmente reconhecidas no rigoroso processo de análise, concepção e implementação de soluções informáticas. Os seus licenciados devem adquirir durante o curso grande experiência teórica e prática na análise de sistemas de software, na especificação dos requisitos desses mesmos sistemas, nas técnicas de construção de protótipos e em todas as fases da sua instalação, na gestão de projectos informáticos, no teste, instalação e manutenção de aplicações informáticas, e, consequentemente, dos sistemas ou redes que as suportam.\n\nO MiEI tem como objectivo básico providenciar durante o curso aos seus alunos a perícia e o conhecimento (teórico e prático) necessários para:\n
@@ -1471,6 +1477,10 @@
         - a implementação de redes de comunicação por computador e infra-estruturas de suporte;\n
         - a gestão e implementação de projectos informáticos, incluindo o projecto e implementação de sistemas de computação.\n\nComo futuros engenheiros deverão, também, ter sempre a preocupação do rigor, quer na execução quer na gestão do projecto, avaliando a sua qualidade, custos e impacto económico, bem como nas preocupações de implementação dos seus produtos nas organizações destino.</string>
     <string name="uminho">Universidade do Minho</string>
+
+    <!-- UNIVERSIDADE DO MINHO END -->
+
+    <!-- UNIVERSIDADE DE COIMBRA START -->
 
     <string name="uc_mei">LEI + MEI</string>
     <string name="uc_mei_fullname">Licenciatura em Engenheria Informatica e Mestrado em Engenharia Informática</string>
@@ -2396,44 +2406,126 @@ Os estudantes deverão ainda desenvolver competências em análise e síntese, r
     <string name="uc_class_business_intelligence_topic13">Avaliação de Modelos</string>
     <string name="uc_class_business_intelligence_topic14">Produtização de Modelos</string>
 
-    <string name="uc_class"></string>
-    <string name="uc_class_description"></string>
-    <string name="uc_class_topic1"></string>
-    <string name="uc_class_topic2"></string>
-    <string name="uc_class_topic3"></string>
-    <string name="uc_class_topic4"></string>
-    <string name="uc_class_topic5"></string>
-    <string name="uc_class_topic6"></string>
-    <string name="uc_class_topic7"></string>
-    <string name="uc_class_topic8"></string>
-    <string name="uc_class_topic9"></string>
-    <string name="uc_class_topic10"></string>
-    <string name="uc_class_topic11"></string>
-    <string name="uc_class_topic12"></string>
-    <string name="uc_class_topic13"></string>
-    <string name="uc_class_topic14"></string>
-    <string name="uc_class_topic15"></string>
-    <string name="uc_class_topic16"></string>
+    <string name="uc_class_project_management">Gestão de Projectos</string>
+    <string name="uc_class_project_management_description">A natureza da actividade de um engenheiro informático é de tal forma única, que requer o
+        conhecimento de técnicas de gestão de projectos, nomeadamente a nível da gestão de recursos, quer humanos quer computacionais, análise de riscos,
+        planeamento, acompanhamento, etc. Nesta disciplina pretende-se abordar as principais técnicas de gestão de projecto enquanto actividade de engenharia,
+        i.e. com custos e prazos finitos, incluindo aspectos de relacionamento pessoal e organizacional, como resultado da necessidade de trabalhar no seio
+        de equipas de razoável dimensão (8 a 12 pessoas), em projectos reais com clientes reais.</string>
+    <string name="uc_class_project_management_topic1">Conceitos Base: Engenharia de Sistemas</string>
+    <string name="uc_class_project_management_topic2">Conceitos Base: Ciclos de Vida</string>
+    <string name="uc_class_project_management_topic3">Conceitos Base: Processos de Engenharia</string>
+    <string name="uc_class_project_management_topic4">Definição de Âmbito e Gestão de Requisitos</string>
+    <string name="uc_class_project_management_topic5">Planeamento e Acompanhamento de Projectos: Estimativas de Esforço</string>
+    <string name="uc_class_project_management_topic6">Planeamento e Acompanhamento de Projectos: Análise de Riscos</string>
+    <string name="uc_class_project_management_topic7">Planeamento e Acompanhamento de Projectos: Planeamento</string>
+    <string name="uc_class_project_management_topic8">Planeamento e Acompanhamento de Projectos: Monitorização</string>
+    <string name="uc_class_project_management_topic9">Aquisição e Contratação: Identificação de Alternativas</string>
+    <string name="uc_class_project_management_topic10">Aquisição e Contratação: Modelos para Tomada de Decisão</string>
+    <string name="uc_class_project_management_topic11">Aquisição e Contratação: Modelos para Avaliação Económica</string>
+    <string name="uc_class_project_management_topic12">Gestão de Expectativas de Clientes: Comunicação</string>
+    <string name="uc_class_project_management_topic13">Gestão de Expectativas de Clientes: Tomada de Decisão</string>
+    <string name="uc_class_project_management_topic14">Gestão de Expectativas de Clientes: Negociação</string>
+    <string name="uc_class_project_management_topic15">Gestão de Equipas e Pessoas: Gestão de Relacionamentos</string>
+    <string name="uc_class_project_management_topic16">Gestão de Equipas e Pessoas: Gestão de Conflitos</string>
+    <string name="uc_class_project_management_topic17">Gestão de Equipas e Pessoas: Liderança</string>
+    <string name="uc_class_project_management_topic18">Gestão da Garantia de Qualidade</string>
 
-    <string name="uc_class"></string>
-    <string name="uc_class_description"></string>
-    <string name="uc_class_topic1"></string>
-    <string name="uc_class_topic2"></string>
-    <string name="uc_class_topic3"></string>
-    <string name="uc_class_topic4"></string>
-    <string name="uc_class_topic5"></string>
-    <string name="uc_class_topic6"></string>
-    <string name="uc_class_topic7"></string>
-    <string name="uc_class_topic8"></string>
-    <string name="uc_class_topic9"></string>
-    <string name="uc_class_topic10"></string>
-    <string name="uc_class_topic11"></string>
-    <string name="uc_class_topic12"></string>
-    <string name="uc_class_topic13"></string>
-    <string name="uc_class_topic14"></string>
-    <string name="uc_class_topic15"></string>
-    <string name="uc_class_topic16"></string>
+    <string name="uc_class_dissertation">Dissertação/Estágio</string>
+    <string name="uc_class_dissertation_description">Os objectivos principais do estágio são os seguintes:\n
+- Técnicas de projecto e desenvolvimento de software e sistemas de informação e comunicação\n
+- Realização de projectos de desenvolvimento tecnológico\n
+- Contacto com a elaboração de projectos em ambiente empresarial\n
+- Iniciação a actividades de investigação de base e aplicada\n
+- Integração no mercado laboral\n
+        Realização de um documento com a proposta de estágio / dissertação incluindo os seguintes aspectos:\n
+- Análise do estado da arte\n
+- Escolha justificada das ferramentas e metodologias a utilizar\n
+- Análise de requisitos relativamente ao tema a desenvolver\n
+- Especificação de alto nível do sistema a desenvolver / trabalho a realizar incluindo objectivos concretos e calendarização para o segundo semestre.</string>
+    <string name="uc_class_dissertation_topic1">Todos os conteúdos na área das tecnologias de informação e comunicações (TIC) com ênfase para as metodologias de concepção e acompanhamento de projectos na área das TIC</string>
 
+    <string name="uc_class_healthcare_it">Informática Médica</string>
+    <string name="uc_class_healthcare_it_description">Fornecer de uma forma sistemática as tecnologias e os fundamentos para a integração e
+        desenvolvimento de sistemas de informação e de apoio à decisão em aplicações clínicas. Em particular, é objectivo exporem-se os
+        protocolos e abordagens mais significativas em sistemas de informação clínicos, as arquitecturas e tecnologias utilizadas para
+        a construção de sistemas tele-médicos (nomeadamente de sistemas pHealth), e ainda algoritmos de análise de informação clínica
+        para apoio ao diagnóstico.</string>
+    <string name="uc_class_healthcare_it_topic1">Conceitos básicos em Informática Médica</string>
+    <string name="uc_class_healthcare_it_topic2">Sistemas de Informação Hospitalar</string>
+    <string name="uc_class_healthcare_it_topic3">Normas para a representação e transmissão de informação clínica (ICD9/10, SNOMED, SIPE)</string>
+    <string name="uc_class_healthcare_it_topic4">Registos clínicos (openEHR, CEN 13606, HL7 CDA)</string>
+    <string name="uc_class_healthcare_it_topic5">HL7 (v2.3 e v3)</string>
+    <string name="uc_class_healthcare_it_topic6">Standard DICOM</string>
+    <string name="uc_class_healthcare_it_topic7">Serviços e tecnologias de suporte à tele-medicina</string>
+    <string name="uc_class_healthcare_it_topic8">Normas para tele-medicina (IEEE 11073 PhD e BSM; H323, H26x, RTP, redes de sensores)</string>
+    <string name="uc_class_healthcare_it_topic9">Sistemas Tele-médicos: Middlewares</string>
+    <string name="uc_class_healthcare_it_topic10">Algoritmos de análise de informação clínica (séries temporais e de imagem) para sistemas de suporte à decisão</string>
+
+    <string name="uc_class_robotics">Robótica</string>
+    <string name="uc_class_robotics_description">Pretende-se fornecer conhecimento (in-depth) em Robótica para aquisição de competências a todos:\n
+1. aqueles que pretendam operar e/ou desenvolver aplicações que usem robots ou sistemas robóticos;\n
+2. aqueles que pretendam desenvolver/projectar sistemas robóticos.</string>
+    <string name="uc_class_robotics_topic1">Introdução à robótica</string>
+    <string name="uc_class_robotics_topic2">Descrições Espaciais e Transformações</string>
+    <string name="uc_class_robotics_topic3">Cinemática de manipuladores</string>
+    <string name="uc_class_robotics_topic4">Cinemática Inversa de manipuladores</string>
+    <string name="uc_class_robotics_topic5">Jacobiano : velocidades e forças estáticas</string>
+    <string name="uc_class_robotics_topic6">Dinâmica de Manipuladores</string>
+    <string name="uc_class_robotics_topic7">Planeamento de Trajectórias: espaço das juntas e espaço tarefa</string>
+
+    <string name="uc_class_emerging_internet_services">Serviços Emergentes da Internet</string>
+    <string name="uc_class_emerging_internet_services_description">Os objectivos da disciplina são o conhecimento de fundamentos de
+        aplicações telemáticas, aplicações para a Internet e de serviços emergentes na Internet.
+        Serão também abordados os paradigmas, tecnologias e protocolos para o suporte de aplicações multimédia na Internet.
+        Os alunos deverão desenvolver competências de análise crítica e exposição das soluções actuais e dos desafios futuros
+        nas áreas das aplicações telemáticas.</string>
+    <string name="uc_class_emerging_internet_services_topic1">Protocolos para suporte de multimédia</string>
+    <string name="uc_class_emerging_internet_services_topic2">Aplicações e servidores Web</string>
+    <string name="uc_class_emerging_internet_services_topic3">Serviços de Voz sobre a Internet (VoIP)</string>
+    <string name="uc_class_emerging_internet_services_topic4">Serviços de Vídeo sobre a Internet (VCoIP, IPTV, VoD, nPlay)</string>
+    <string name="uc_class_emerging_internet_services_topic5">Qualidade de serviço e Qualidade de experiência</string>
+    <string name="uc_class_emerging_internet_services_topic6">Aplicações peer-to-peer</string>
+    <string name="uc_class_emerging_internet_services_topic7">Aplicações e redes de conteúdo</string>
+    <string name="uc_class_emerging_internet_services_topic8">Computação na cloud e aplicações na cloud</string>
+    <string name="uc_class_emerging_internet_services_topic9">Novos serviços na Internet</string>
+    <string name="uc_class_emerging_internet_services_topic10">Avaliação de desempenho.</string>
+
+    <string name="uc_class_high_availabilty_systems">Serviços e Infraestruturas de Alto Desempenho</string>
+    <string name="uc_class_high_availabilty_systems_description">Os objectivos centrais da disciplina são a abordagem teórica e
+        prática à temática de gestão de serviços e infraestruturas informáticas de alto desempenho, incluindo o planeamento e
+        administração dessas infraestruturas (especificação e desenho de centros de dados, operações e manutenção, gestão de recursos,
+        aspectos de eficiência energética), o planeamento e administração desses serviços e das comunicações que lhe dão suporte
+        (resiliência, qualidade de serviço, gestão de acordos de nível de serviço, eficiência energética).</string>
+    <string name="uc_class_high_availabilty_systems_topic1">Planeamento e administração de infraestruturas de alto desempenho (planeamento de centros de dados, O e M, gestão de recursos, eficiência energética)</string>
+    <string name="uc_class_high_availabilty_systems_topic2">Planeamento e administração de Serviços de alto desempenho</string>
+    <string name="uc_class_high_availabilty_systems_topic3">Resiliência em comunicações de alto desempenho (virtualização de redes, tecnologias de alto desempenho, ― software defined networking)</string>
+    <string name="uc_class_high_availabilty_systems_topic4">Qualidade de serviço em comunicações de alto desempenho</string>
+    <string name="uc_class_high_availabilty_systems_topic5">Eficiência energética em comunicações de alto desempenho</string>
+
+    <string name="uc_class_semantic_web">Web Semântica</string>
+    <string name="uc_class_semantic_web_description">O objectivo principal da cadeira de Web Semântica é que o aluno adquira um conjunto de competências:
+- Capacidade de construção e gestão de ontologias\n
+- Capacidade de representar uma ontologia numa linguagem da Web Semântica (RDF, RDFa, RDFs e OWL)\n
+- Capacidade para utilizar triple stores, SPARQL, Pesquisa Semântica e os mecanismos de raciocínio\n
+- Capacidade de aplicação e uso de ontologias representadas através de linguagens da Web Semântica, em aplicações para a Internet ou Intranets\n
+- Capacidade de especificação, design e desenvolvimento de sistemas/aplicações para a Web Semântica\n
+- Capacidade de reutilização de ontologias disponibilizadas na Internet</string>
+    <string name="uc_class_semantic_web_topic1">Introdução à Web Semântica</string>
+    <string name="uc_class_semantic_web_topic2">Web Semântica: Ontologias</string>
+    <string name="uc_class_semantic_web_topic3">Linguagens para a Web Semântica: XML / RDF / RDFa</string>
+    <string name="uc_class_semantic_web_topic4">Linguagens para a Web Semântica: RDF Schema</string>
+    <string name="uc_class_semantic_web_topic5">Linguagens para a Web Semântica: OWL (Lite, DL e Full)</string>
+    <string name="uc_class_semantic_web_topic6">Triple Stores, SPARQL, Pesquisa Semântica e Mecanismos de Raciocínio</string>
+    <string name="uc_class_semantic_web_topic7">Ferramentas de Criação de Ontologias</string>
+    <string name="uc_class_semantic_web_topic8">Reutilização de Ontologias</string>
+    <string name="uc_class_semantic_web_topic9">Aplicações da Web Semântica</string>
+    <string name="uc_class_semantic_web_topic10">Processamento de Linguagem Natural para a Web Semântica</string>
+
+    <!-- UNIVERSIDADE DE COIMBRA END-->
+
+
+    <!-- UNIVERSIDADE DE AVEIRO START-->
 
     <string name="uav_mei">LEI + MEI</string>
     <string name="uav_mei_fullname">Licenciatura em Engenheria Informatica + Mestrado em Engenharia Informática</string>
@@ -2449,6 +2541,10 @@ Os estudantes deverão ainda desenvolver competências em análise e síntese, r
 - Dotar o tecido empresarial da região, nacional e internacional de quadros superiores habilitados;\n
 - omentar uma formação avançada centrada em inovação, desenvolvimento e investigação em engenharia informática</string>
     <string name="uav">Universidade de Aveiro</string>
+
+    <!-- UNIVERSIDADE DE AVEIRO END-->
+
+    <!-- UNIVERSIDADE DE LISBOA START-->
 
     <string name="ist_meic">LEIC + MEIC</string>
     <string name="ist_meic_fullname">Licenciatura em Engenheria Informatica e de Computadores e Mestrado em Engenharia Informática e de Computadores</string>
@@ -2468,5 +2564,6 @@ Os estudantes deverão ainda desenvolver competências em análise e síntese, r
     <string name="ist">Instituto Superior Técnico</string>
     <string name="title_activity_degree_class">DegreeClassActivity</string>
 
+    <!-- UNIVERSIDADE DE LISBOA END-->
 
 </resources>
