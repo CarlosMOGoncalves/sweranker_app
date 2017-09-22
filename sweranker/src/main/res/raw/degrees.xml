@@ -4996,12 +4996,13 @@
             <combinator>
                 <year>4</year>
                 <class>
-                    pt.cmg.sweranker.ranking.combinationstrategies.AllMandatoryAndThreeOptionals
+                    pt.cmg.sweranker.ranking.combinationstrategies.AllPathMandatoryAndTwoOptional
                 </class>
             </combinator>
             <combinator>
                 <year>5</year>
-                <class>pt.cmg.sweranker.ranking.combinationstrategies.AllMandatoryAndFourOptionals
+                <class>
+                    pt.cmg.sweranker.ranking.combinationstrategies.AllPathMandatoryAndTwoOptionalMixedWithPreviousYear
                 </class>
             </combinator>
         </yearly_combinators>
@@ -8644,8 +8645,13 @@
                 <year>5</year>
                 <semester>1</semester>
                 <ects>6</ects>
-                <optional>false</optional>
-                <paths></paths>
+                <optional>true</optional>
+                <paths>
+                    <path>1</path>
+                    <path>2</path>
+                    <path>3</path>
+                    <path>4</path>
+                </paths>
                 <mandatoryPaths></mandatoryPaths>
                 <exclusivePath></exclusivePath>
                 <program>
@@ -8698,8 +8704,13 @@
                 <year>5</year>
                 <semester>1</semester>
                 <ects>6</ects>
-                <optional>false</optional>
-                <paths></paths>
+                <optional>true</optional>
+                <paths>
+                    <path>1</path>
+                    <path>2</path>
+                    <path>3</path>
+                    <path>4</path>
+                </paths>
                 <mandatoryPaths></mandatoryPaths>
                 <exclusivePath></exclusivePath>
                 <program>
@@ -8740,8 +8751,13 @@
                 <year>5</year>
                 <semester>1</semester>
                 <ects>6</ects>
-                <optional>false</optional>
-                <paths></paths>
+                <optional>true</optional>
+                <paths>
+                    <path>1</path>
+                    <path>2</path>
+                    <path>3</path>
+                    <path>4</path>
+                </paths>
                 <mandatoryPaths></mandatoryPaths>
                 <exclusivePath></exclusivePath>
                 <program>
@@ -8804,8 +8820,13 @@
                 <year>5</year>
                 <semester>1</semester>
                 <ects>6</ects>
-                <optional>false</optional>
-                <paths></paths>
+                <optional>true</optional>
+                <paths>
+                    <path>1</path>
+                    <path>2</path>
+                    <path>3</path>
+                    <path>4</path>
+                </paths>
                 <mandatoryPaths></mandatoryPaths>
                 <exclusivePath></exclusivePath>
                 <program>
@@ -8838,8 +8859,13 @@
                 <year>5</year>
                 <semester>1</semester>
                 <ects>6</ects>
-                <optional>false</optional>
-                <paths></paths>
+                <optional>true</optional>
+                <paths>
+                    <path>1</path>
+                    <path>2</path>
+                    <path>3</path>
+                    <path>4</path>
+                </paths>
                 <mandatoryPaths></mandatoryPaths>
                 <exclusivePath></exclusivePath>
                 <program>
