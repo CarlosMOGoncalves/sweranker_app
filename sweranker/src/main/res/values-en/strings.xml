@@ -133,4 +133,40 @@
     </string>
     <string name="uc">Universidade de Coimbra</string>
 
+
+    <!-- UNIVERSIDADE DE LISBOA START-->
+
+    <string name="ist_meic">LEIC + MEIC</string>
+    <string name="ist_meic_fullname">Licenciate (Bachelor) Degree in Informatics and Computers Engineering and Master Degree in Informatics and Computers Engineering</string>
+    <string name="ist_meic_description">The Degree in Informatics and Computers Engineering (LEIC) is one of the greatest degree in the "Técnico" and
+        has already made a name for itself on the job market, both at national and international level. The LEIC graduates are recognized as competent
+        professional with solid knowledge in the Informatics (Software Engineering) field and a good adaptability to the constant evolution of the
+        Information Technologies.\n\n
+        By the end of the degree, a student can specialise in one of the fields offered by the Master Degree in Informatics Engineering and Computers,
+        on another similar deree or entre straight into the professional world.\n\n\
+        The Master Degree in Informatics and Computers Engineering has its roots in the strong basis formation offered by the first cycle and provides
+        attractive specialisations for students as well as serving as base for anyone who wants to entre a PhD program. It createsa solid basis for the
+        intervention of the Informatics Engineering Department of the IST on the lifelong formation of students, which will represent an increasingly
+        important component in the labour market of advanced education.\n\n
+        By the end of the Master degree the students are able to entre the professional life. The students have a wide array of specific professional
+        competencies, such as:\n
+        - Analisys and project of complex systems;\n
+        - Project and systems management techniques;\n
+        - Modelation and data usage in information systems;\n
+        - Application development for distributed systems;\n
+        - Management, configuration and operation of computer systems;\n
+        - Advanced techniques for problem resolution;\n
+        - Adaptable systems projects, to solve complex problems;\n
+        - Human inteaction projects that use natural interfaces;\n
+        - Control and robotics;\n
+        - Modelation and control of industrial systems;\n
+        - Generic optimisation techniques.\n\n
+        The typical employers for engineers that have their degree taken at IST are: service companies in the banking and insurance fields,
+        software companies and telecommunication companies.
+    </string>
+    <string name="ist">Instituto Superior Técnico</string>
+    <string name="title_activity_degree_class">DegreeClassActivity</string>
+
+    <!-- UNIVERSIDADE DE LISBOA END-->
+
 </resources>

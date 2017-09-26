@@ -6066,8 +6066,8 @@
             </class>
             <class>
                 <id>uc_mei_c16</id>
-                <name>@string/uc_alg_data_structures</name>
-                <description>@string/uc_alg_data_structures_description</description>
+                <name>@string/uc_class_alg_data_structures</name>
+                <description>@string/uc_class_alg_data_structures_description</description>
                 <year>2</year>
                 <semester>2</semester>
                 <ects>6</ects>
@@ -6078,38 +6078,38 @@
                 <program>
                     <topic>
                         <id>c86t1</id>
-                        <description>@string/uc_alg_data_structures_topic1</description>
+                        <description>@string/uc_class_alg_data_structures_topic1</description>
                     </topic>
                     <topic>
                         <id>c86t2</id>
-                        <description>@string/uc_alg_data_structures_topic2</description>
+                        <description>@string/uc_class_alg_data_structures_topic2</description>
                     </topic>
                     <topic>
                         <id>c86t3</id>
-                        <description>@string/uc_alg_data_structures_topic3</description>
+                        <description>@string/uc_class_alg_data_structures_topic3</description>
                     </topic>
                     <topic>
                         <id>c86t4</id>
-                        <description>@string/uc_alg_data_structures_topic4</description>
+                        <description>@string/uc_class_alg_data_structures_topic4</description>
                     </topic>
                     <topic>
                         <id>c86t5</id>
-                        <description>@string/uc_alg_data_structures_topic5</description>
+                        <description>@string/uc_class_alg_data_structures_topic5</description>
                     </topic>
                     <topic>
                         <id>c86t6</id>
-                        <description>@string/uc_alg_data_structures_topic6</description>
+                        <description>@string/uc_class_alg_data_structures_topic6</description>
                     </topic>
                     <topic>
                         <id>c86t7</id>
-                        <description>@string/uc_alg_data_structures_topic7</description>
+                        <description>@string/uc_class_alg_data_structures_topic7</description>
                     </topic>
                 </program>
             </class>
             <class>
                 <id>uc_mei_c17</id>
-                <name>@string/uc_data_transformation</name>
-                <description>@string/uc_data_transformation_description</description>
+                <name>@string/uc_class_data_transformation</name>
+                <description>@string/uc_class_data_transformation_description</description>
                 <year>2</year>
                 <semester>2</semester>
                 <ects>6</ects>
@@ -6120,83 +6120,83 @@
                 <program>
                     <topic>
                         <id>c87t1</id>
-                        <description>@string/uc_data_transformation_topic1</description>
+                        <description>@string/uc_class_data_transformation_topic1</description>
                     </topic>
                     <topic>
                         <id>c87t2</id>
-                        <description>@string/uc_data_transformation_topic2</description>
+                        <description>@string/uc_class_data_transformation_topic2</description>
                     </topic>
                     <topic>
                         <id>c87t3</id>
-                        <description>@string/uc_data_transformation_topic3</description>
+                        <description>@string/uc_class_data_transformation_topic3</description>
                     </topic>
                     <topic>
                         <id>c87t4</id>
-                        <description>@string/uc_data_transformation_topic4</description>
+                        <description>@string/uc_class_data_transformation_topic4</description>
                     </topic>
                     <topic>
                         <id>c87t5</id>
-                        <description>@string/uc_data_transformation_topic5</description>
+                        <description>@string/uc_class_data_transformation_topic5</description>
                     </topic>
                     <topic>
                         <id>c87t6</id>
-                        <description>@string/uc_data_transformation_topic6</description>
+                        <description>@string/uc_class_data_transformation_topic6</description>
                     </topic>
                     <topic>
                         <id>c87t7</id>
-                        <description>@string/uc_data_transformation_topic7</description>
+                        <description>@string/uc_class_data_transformation_topic7</description>
                     </topic>
                     <topic>
                         <id>c87t8</id>
-                        <description>@string/uc_data_transformation_topic8</description>
+                        <description>@string/uc_class_data_transformation_topic8</description>
                     </topic>
                     <topic>
                         <id>c87t9</id>
-                        <description>@string/uc_data_transformation_topic9</description>
+                        <description>@string/uc_class_data_transformation_topic9</description>
                     </topic>
                     <topic>
                         <id>c87t10</id>
-                        <description>@string/uc_data_transformation_topic10</description>
+                        <description>@string/uc_class_data_transformation_topic10</description>
                     </topic>
                     <topic>
                         <id>c87t11</id>
-                        <description>@string/uc_data_transformation_topic11</description>
+                        <description>@string/uc_class_data_transformation_topic11</description>
                     </topic>
                     <topic>
                         <id>c87t12</id>
-                        <description>@string/uc_data_transformation_topic12</description>
+                        <description>@string/uc_class_data_transformation_topic12</description>
                     </topic>
                     <topic>
                         <id>c87t13</id>
-                        <description>@string/uc_data_transformation_topic13</description>
+                        <description>@string/uc_class_data_transformation_topic13</description>
                     </topic>
                     <topic>
                         <id>c87t14</id>
-                        <description>@string/uc_data_transformation_topic14</description>
+                        <description>@string/uc_class_data_transformation_topic14</description>
                     </topic>
                     <topic>
                         <id>c87t15</id>
-                        <description>@string/uc_data_transformation_topic15</description>
+                        <description>@string/uc_class_data_transformation_topic15</description>
                     </topic>
                     <topic>
                         <id>c87t16</id>
-                        <description>@string/uc_data_transformation_topic16</description>
+                        <description>@string/uc_class_data_transformation_topic16</description>
                     </topic>
                     <topic>
                         <id>c87t17</id>
-                        <description>@string/uc_data_transformation_topic17</description>
+                        <description>@string/uc_class_data_transformation_topic17</description>
                     </topic>
                     <topic>
                         <id>c87t18</id>
-                        <description>@string/uc_data_transformation_topic18</description>
+                        <description>@string/uc_class_data_transformation_topic18</description>
                     </topic>
                     <topic>
                         <id>c87t19</id>
-                        <description>@string/uc_data_transformation_topic19</description>
+                        <description>@string/uc_class_data_transformation_topic19</description>
                     </topic>
                     <topic>
                         <id>c87t20</id>
-                        <description>@string/uc_data_transformation_topic20</description>
+                        <description>@string/uc_class_data_transformation_topic20</description>
                     </topic>
                 </program>
             </class>
