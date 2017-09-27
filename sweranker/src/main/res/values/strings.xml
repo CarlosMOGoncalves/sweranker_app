@@ -2602,6 +2602,118 @@ Os estudantes deverão ainda desenvolver competências em análise e síntese, r
     <string name="ist_class_calculus1_topic9">Funções transcendentes elementares: logaritmo, exponencial e funções hiperbólicas</string>
     <string name="ist_class_calculus1_topic10">Séries numéricas: série geométrica; critérios de comparação; séries absolutamente convergentes; séries de potências</string>
 
+    <string name="ist_class_programming_fundamentals">Fundamentos da Programação</string>
+    <string name="ist_class_programming_fundamentals_description">Fornecer conhecimentos sobre conceitos fundamentais relativos à actividade de programação,
+        nomeadamente, algoritmo, abstracção procedimental e abstracção de dados, a programação como construção de abstracções, paradigmas de programação.
+        Após a frequência da cadeira, os alunos deverão dominar os conceitos apresentados e serem capazes de desenvolver programas numa linguagem de
+        programação de alto nível, o Python.</string>
+    <string name="ist_class_programming_fundamentals_topic1">Computadores, algoritmos e programas</string>
+    <string name="ist_class_programming_fundamentals_topic2">Características de um computador</string>
+    <string name="ist_class_programming_fundamentals_topic3">Programas e algoritmos</string>
+    <string name="ist_class_programming_fundamentals_topic4">Linguagens de programação: Sintaxe e semântica Elementos básicos de programação Expressões Tipos elementares de informação Nomes e atribuição Comunicação com o exterior</string>
+    <string name="ist_class_programming_fundamentals_topic5">Programas: instruções e sequenciação, selecção, repetição, funções, abstracção procedimental</string>
+    <string name="ist_class_programming_fundamentals_topic6">Módulos, tuplos e ciclos contados, cadeias de caracteres revisitadas, Listas</string>
+    <string name="ist_class_programming_fundamentals_topic7">Métodos de passagem de parâmetros</string>
+    <string name="ist_class_programming_fundamentals_topic8">Algoritmos de procura, Algoritmos de ordenação, Considerações sobre eficiência</string>
+    <string name="ist_class_programming_fundamentals_topic9">Funções revisitadas, funções recursivas, funções de ordem superior e programação funcional</string>
+    <string name="ist_class_programming_fundamentals_topic10">Recursão e iteração: recursão linear, iteração linear, recursão em processos e em função, recursão em árvore </string>
+    <string name="ist_class_programming_fundamentals_topic11">Ficheiros: leitura de ficheiros e escrita em ficheiros</string>
+    <string name="ist_class_programming_fundamentals_topic12">Dicionários e Dicionários de dicionários</string>
+    <string name="ist_class_programming_fundamentals_topic13">Caminhos mais curtos em grafos</string>
+    <string name="ist_class_programming_fundamentals_topic14">Abstracção de dados: Abstracção em programaç, tipos abstractos de informação, barreiras de abstracção</string>
+    <string name="ist_class_programming_fundamentals_topic15">Objectos: Programação com objectos, classes, subclasses e herança. Objectos em Python. Polimorfismo</string>
+    <string name="ist_class_programming_fundamentals_topic16">Estruturas lineares, pilhas e Filas</string>
+
+    <string name="ist_class_intro_computer_arch">Introdução à Arquitectura de Computadores</string>
+    <string name="ist_class_intro_computer_arch_description">Os alunos deverão dominar os conceitos básicos e o funcionamento geral de um computador,
+        a estrutura material que permite a execução de programas. Deverão conseguir descrever o funcionamento dos elementos básicos, processador,
+        sistema de memória e sistema de entradas e saídas, e sua interacção. Em particular, devem ser capazes de compreender a estrutura interna de
+        um processador e o processo de execução das instruções.</string>
+    <string name="ist_class_intro_computer_arch_topic1">Introdução e visão global: organização interna de um computador em termos de processador, memória,
+        periféricos, barramentos; ciclo básico das instruções; noção de contador de programa e de endereço; interacção com o exterior;
+        componentes de um computador; estrutura interna de um processador; perspectiva histórica</string>
+    <string name="ist_class_intro_computer_arch_topic2">Representação digital da informação: bases de numeração; operações aritméticas em bases 2, 8 e 16; códigos numéricos e alfanuméricos</string>
+    <string name="ist_class_intro_computer_arch_topic3">Funções lógicas: álgebra de Boole; manipulação de expressões lógicas; portas lógicas básicas e sua realização física; codificadores e descodificadores; multiplexadores</string>
+    <string name="ist_class_intro_computer_arch_topic4">Circuitos aritméticos: somadores e subtractores; multiplicadores e divisores; unidade lógica e aritmética (ULA)</string>
+    <string name="ist_class_intro_computer_arch_topic5">Circuitos sequenciais: registos e bancos de registos; memórias; separação entre circuito de dados e circuito de controlo.</string>
+    <string name="ist_class_intro_computer_arch_topic6">Conjunto de Instruções (ISA): instruções típicas; modos de endereçamento; pilha e rotinas; interrupções.</string>
+    <string name="ist_class_intro_computer_arch_topic7">Arquitetura de um processador: estrutura interna de um processador, codificação de instruções; bits de estado; registos especiais; unidade de processamento, banco de registos e ULA; unidade de controlo e micro-programação; análise da execução de instruções</string>
+    <string name="ist_class_intro_computer_arch_topic8">Sistema de memória: endereçamento da memória, protocolos e descodificação de endereços; caches, princípios de funcionamento e racional de desempenho; memória virtual, princípios de funcionamento e sistema de tradução de endereços</string>
+    <string name="ist_class_intro_computer_arch_topic9">Sistema de entradas e saídas: periféricos e barramentos; comunicação com o exterior (paralela e série, protocolos); temporizadores e interrupções</string>
+
+    <string name="ist_class_intro_swe">Introdução à Engenharia Informática</string>
+    <string name="ist_class_intro_swe_description">Esta UC tem como objectivo principal dar aos alunos uma visão da engenharia informática na sociedade, nas empresas, na inovação e na investigação.</string>
+    <string name="ist_class_intro_swe_topic1">A função da informática na sociedade. O papel do Engenheiro Informático.</string>
+    <string name="ist_class_intro_swe_topic2">As bases científicas da Engenharia Informatica Ciências da Computação e da Informação Bioinformática, Computação Quântica, I.A., Voz, Visão</string>
+    <string name="ist_class_intro_swe_topic3">Engenharia de Computadores e das Infraestruturas Informáticas Computadores, S.O.s, S.D.s,Computação em Nuvém, Data Centers, Segurança.</string>
+    <string name="ist_class_intro_swe_topic4">Engenharia de Software e Sistemas Aplicacionais Especializados Concepção, desenvolvimento, produção e teste de produtos de Software. Principais domínios aplicacionais em Engenharia de Software</string>
+    <string name="ist_class_intro_swe_topic5">Engenharia dos Sistemas de Informação; A Informática nas Organização: Arquitectura, Governação e Engenharia Empresarial; A descoberta, mineração, exploração e preservação da Informação</string>
+    <string name="ist_class_intro_swe_topic6"> A investigação em Engenharia Informática: Os grandes desafios da Sociedade Biónica</string>
+    <string name="ist_class_intro_swe_topic7">Inovação e Empreendedorismo em Engenharia Informática</string>
+
+    <string name="ist_class_calculus2">Cálculo Diferencial e Integral II</string>
+    <string name="ist_class_calculus2_description">Esta Uc providencia os alunos com o domínio do cálculo diferencial e integral de funções de mais de uma variável real, incluindo os teoremas fundamentais do cálculo. Aplicações à Física.</string>
+    <string name="ist_class_calculus2_topic1">Estrutura algébrica e topológica de R^n</string>
+    <string name="ist_class_calculus2_topic2">Funções de R^n em R^m: limite e continuidade</string>
+    <string name="ist_class_calculus2_topic3">Diferenciabilidade. Derivadas parciais. Derivada da função composta.</string>
+    <string name="ist_class_calculus2_topic4">Teorema de Taylor em Rn e aplicação ao estudo de extremos. Teoremas da função inversa e da função implícita. </string>
+    <string name="ist_class_calculus2_topic5">Extremos condicionados</string>
+    <string name="ist_class_calculus2_topic6">Integrais múltiplos: Teorema de Fubini, Teorema de mudança de variáveis, aplicações ao cálculo de grandezas físicas.</string>
+    <string name="ist_class_calculus2_topic7">Integrais de linha: Integrais de campos escalares e campos vectoriais; Teorema Fundamental do Cálculo para integrais de linha, campos gradientes e potenciais escalares; Teorema de Green</string>
+    <string name="ist_class_calculus2_topic8">Integrais de superfície: Integrais de campos escalares e fluxos de campos vectoriais</string>
+    <string name="ist_class_calculus2_topic9">Teorema da Divergência e Teorema de Stokes</string>
+
+    <string name="ist_class_intro_algorithm">Introdução aos Algoritmos e Estruturas de Dados</string>
+    <string name="ist_class_intro_algorithm_description">Ganhar conhecimentos de programação numa linguagem imperativa.
+        Adquirir conhecimentos sobre algoritmos básicos de ordenação e procura. Saber seleccionar, criar e utilizar
+        estruturas de dados elementares. Saber projectar algoritmos iterativos e recursivos, para a resolução de problemas.
+        Saber analisar a complexidade dos algoritmos utilizados para resolver um dado problema por forma a poder escolher
+        aqueles que sejam mais eficientes.</string>
+    <string name="ist_class_intro_algorithm_topic1">Introdução à programação imperativa e à linguagem de programação C</string>
+    <string name="ist_class_intro_algorithm_topic2">Introdução ao estudo da eficiência de algoritmos</string>
+    <string name="ist_class_intro_algorithm_topic3">Algoritmos de ordenação elementares e avançados: inserção directa, selecção directa, bubblesort, quicksort, fusão binária e heapsort.</string>
+    <string name="ist_class_intro_algorithm_topic4">Tipos de dados: pilhas, filas de espera, filas de prioridade, amontoados, árvores. Implementações vectoriais e dinâmicas</string>
+    <string name="ist_class_intro_algorithm_topic5">Árvores binárias de pesquisa e Árvores de pesquisa equilibradas</string>
+    <string name="ist_class_intro_algorithm_topic6">Tabelas de dispersão (hashtables)</string>
+    <string name="ist_class_intro_algorithm_topic7">Resolução de colisões por encadeamento e por endereçamento aberto</string>
+    <string name="ist_class_intro_algorithm_topic8">Endereçamento linear, quadrático e dispersão dupla</string>
+
+    <string name="ist_class_programming_logic">Lógica para Programação</string>
+    <string name="ist_class_programming_logic_description">Com a frequência da disciplina pretende-se que os alunos tenham conhecimento
+        sobre os componentes de uma lógica, sejam capazes de desenvolver provas no sistema dedutivo, sejam capazes de utilizar o
+        formalismo semântico, sejam capazes de relacionar o sistema dedutivo e o sistema semântico e provar propriedades sobre estas
+        relações. Deverão obter noções sobre o raciocínio automático e ser capazes de desenvolver programas utilizando o
+        paradigma da programação em lógica.</string>
+    <string name="ist_class_programming_logic_topic1">Proposições e argumentos</string>
+    <string name="ist_class_programming_logic_topic2">Componentes de uma lógica</string>
+    <string name="ist_class_programming_logic_topic3">Lógica proposicional (sistema dedutivo e semântica)</string>
+    <string name="ist_class_programming_logic_topic4">Lógica de primeira ordem (sistema dedutivo e semântica)</string>
+    <string name="ist_class_programming_logic_topic5">Solidez e completude, Resolução</string>
+    <string name="ist_class_programming_logic_topic6">Programação em lógica</string>
+
+    <string name="ist_class_"></string>
+    <string name="ist_class__description"></string>
+    <string name="ist_class__topic1"></string>
+    <string name="ist_class__topic2"></string>
+    <string name="ist_class__topic3"></string>
+    <string name="ist_class__topic4"></string>
+    <string name="ist_class__topic5"></string>
+    <string name="ist_class__topic6"></string>
+    <string name="ist_class__topic7"></string>
+    <string name="ist_class__topic8"></string>
+    <string name="ist_class__topic9"></string>
+    <string name="ist_class__topic10"></string>
+    <string name="ist_class__topic11"></string>
+    <string name="ist_class__topic12"></string>
+    <string name="ist_class__topic13"></string>
+    <string name="ist_class__topic14"></string>
+    <string name="ist_class__topic15"></string>
+    <string name="ist_class__topic16"></string>
+    <string name="ist_class__topic17"></string>
+    <string name="ist_class__topic18"></string>
+    <string name="ist_class__topic19"></string>
+    <string name="ist_class__topic20"></string>
+
     <string name="ist_class_"></string>
     <string name="ist_class__description"></string>
     <string name="ist_class__topic1"></string>
