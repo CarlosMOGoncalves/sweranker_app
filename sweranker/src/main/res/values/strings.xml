@@ -2861,6 +2861,196 @@ Os estudantes deverão ainda desenvolver competências em análise e síntese, r
     <string name="ist_class_computing_theory_topic18">Construção da hierarquia polinomial</string>
     <string name="ist_class_computing_theory_topic19">Relativização</string>
 
+    <string name="ist_class_databases">Bases de Dados</string>
+    <string name="ist_class_databases_description">A disciplina faz uma introdução à concepção e análise de bases de dados.
+        O curso foca no modelo relacional, cobrindo o desenho lógico das bases de dados (desenho do esquema) e sua
+        implementação, bem como os sistemas de gestão de transações. Alguns aspectos dos sistemas de bases de dados
+        paralelas e distribuídas, gestão de informação não estruturada e semiestruturada serão também abordados.
+        A disciplina tem como objectivo expor os alunos aos conceitos básicos necessários no desenho e concepção
+        de um sistema de gestão de base de dados, assim como questões práticas da sua realização no âmbito de um
+        projecto em equipa.</string>
+    <string name="ist_class_databases_topic1">Introdução aos SGBD: Principais características dos sistemas de bases de dados; Vantagens; Quando usar e não usar SGBD.</string>
+    <string name="ist_class_databases_topic2">Modelos de dados dos SGBD: Modelo Relacional</string>
+    <string name="ist_class_databases_topic3">Arquitectura de SGBD; Mercado dos SGBD; O processo de concepção dos sistemas de base de dados</string>
+    <string name="ist_class_databases_topic4">O Modelo Entidade-Associação: conjuntos de entidades e associações</string>
+    <string name="ist_class_databases_topic5">Introdução ao Modelo Relacional e conversão de modelos E-A em relacionais</string>
+    <string name="ist_class_databases_topic6">Linguagens para interrogação de bases de dados. Álgebra Relacional e SQL.</string>
+    <string name="ist_class_databases_topic7">Restrições de Integridade, Integridade de entidades, Integridade de domínio, Integridade referencial e Integridade em SQL.</string>
+    <string name="ist_class_databases_topic8">Integridade em SQL: Triggers Arquitetura de aplicações de bases de bases de dados e sua programação Stored procedures. Cursores. SQL embebido/SQLJ. SQL dinâmico/JDBC </string>
+    <string name="ist_class_databases_topic9">Normalização de dados</string>
+    <string name="ist_class_databases_topic10">Teoria das Dependências e Axiomas de Armstrong</string>
+    <string name="ist_class_databases_topic11">Tipos de Ficheiros: tabelas e índices Estruturas de Indexação: Árvore B+. Índices Hash. Índices Bitmap. Criação de índices em SQL</string>
+    <string name="ist_class_databases_topic12">Transacções</string>
+    <string name="ist_class_databases_topic13">Concorrência em Transações. Protocolos de bloqueio; 2PL – bloqueio em duas fases. Tratamento de Deadlocks.</string>
+    <string name="ist_class_databases_topic14">Recuperação e Atomicidade. Recuperação Baseada em Diário. O algoritmo ARIES.</string>
+    <string name="ist_class_databases_topic15">Segurança e Controlo de Acesso em Bases de Dados</string>
+    <string name="ist_class_databases_topic16">Bases de Dados Paralelas e Distribuídas</string>
+    <string name="ist_class_databases_topic17">Sistemas de apoio à decisão; O pipeline dos processos de descoberta de conheciment; Data warehousing</string>
+    <string name="ist_class_databases_topic18">Modelos de representação de informação semiestruturada: XML</string>
+
+    <string name="ist_class_graphics_computing">Computação Gráfica</string>
+    <string name="ist_class_graphics_computing_description">Esta unidade curricular pretende fornecer conhecimentos básicos
+        sobre computação gráfica interactiva. São leccionados os fundamentos da representação e criação de imagens sintéticas
+        a partir de cenas tri-dimensionais. Neste âmbito os alunos verão dominar as transformações geométricas elementares
+        e compreender o funcionamento do pipeline de visualização 3D e dos seus andares principais. No final, os alunos
+        estarão preparados para desenhar e desenvolver aplicações gráficas interactivas.</string>
+    <string name="ist_class_graphics_computing_topic1">Matemática para CG (inclui trigonometria e matrizes)</string>
+    <string name="ist_class_graphics_computing_topic3">Introdução ao three.js</string>
+    <string name="ist_class_graphics_computing_topic4">Transformações Geométricas: Transformações geométricas planas elementares; Transformações em coordenadas homogéneas; Transformações em três dimensões; Composição de transformações geométricas; Matriz de transformação composta</string>
+    <string name="ist_class_graphics_computing_topic5">Grafos de cena</string>
+    <string name="ist_class_graphics_computing_topic6">Manipulação de matrizes em three.js</string>
+    <string name="ist_class_graphics_computing_topic7">Programação baseada em acontecimentos, animação e colisões</string>
+    <string name="ist_class_graphics_computing_topic8">Pipeline Gráfico: Visualização e projecção; Câmara Virtual Simples; Visualização e Projecção em three.js; Iluminação (modelo de Blinn-Phong); Sombreamento (Flat, Gouraud e Phong) Recorte (Cohen-Sutherland e Sutherland-Hodgman) e remoção de superfícies ocultas</string>
+    <string name="ist_class_graphics_computing_topic10">Operações sobre fragmentos: memórias-tampão e mapeamento de texturas</string>
+    <string name="ist_class_graphics_computing_topic11">Novas arquitecturas hardware/software em Computação Gráfica</string>
+
+    <string name="ist_class_ia">Inteligência Artificial</string>
+    <string name="ist_class_ia_description">ntroduzir o tema de Inteligência Artificial ao aluno, de forma a
+        que adquira os conhecimentos básicos desta área da informática e o motive a seguir a área da Inteligência
+        Artificial. Servir de base a cadeiras mais avançadas de Inteligência Artificial.</string>
+    <string name="ist_class_ia_topic1">Introdução à Inteligência Artificial: o que é a Inteligência Artificial e como difere da informática tradicional; a história da Inteligência Artificial</string>
+    <string name="ist_class_ia_topic2">Agentes inteligentes: o conceito de racionalidade, ambientes, tipos de agentes</string>
+    <string name="ist_class_ia_topic3">Resolução de problemas por procura em espaços de estados: métodos de procura não-informados e informados; estudo de heurísticas</string>
+    <string name="ist_class_ia_topic4">Procura com adversários: jogos</string>
+    <string name="ist_class_ia_topic5">Problemas de satisfação de restrições: procura com retrocesso, procura local, estrutura de problemas</string>
+    <string name="ist_class_ia_topic6">Representação de Conhecimento: engenharia de ontologias; categorias e objectos; acções, situações e eventos</string>
+    <string name="ist_class_ia_topic7">Planeamento de acções: procura em espaço de estados, planeamento de ordem parcial, grafos de planeamento, planeamento com lógica proposicional</string>
+    <string name="ist_class_ia_topic8">Aprendizagem: aprendizagem indutiva, árvores de decisão, "ensemble learning", teoria da aprendizagem computacional</string>
+    <string name="ist_class_ia_topic9">Comunicação: gramáticas e "parsing"</string>
+    <string name="ist_class_ia_topic10">Linguagens de programação usadas em Inteligência Artificial: introdução ao LISP, uma linguagem funcional</string>
+
+    <string name="ist_class_computer_organisation">Organização de Computadores</string>
+    <string name="ist_class_computer_organisation_description">Os alunos deverão adquirir uma visão abrangente e actual das arquitecturas de
+        computadores ao nível dos seus diversos componentes: processadores, sistema de memória e de entradas e saídas. Os alunos deverão ainda
+        ser capazes de compreender as condicionantes para a evolução dos sistemas computacionais e de avaliar estratégias para optimização
+        de programas tendo em atenção a arquitectura computacional subjacente, baseadas em métricas de desempenho.</string>
+    <string name="ist_class_computer_organisation_topic1">Introdução e revisão dos conceitos básicos: revisão da organização interna e funcionamento de um computador; perspectiva da evolução recente e futura</string>
+    <string name="ist_class_computer_organisation_topic2">Organização do computador: processadores CISC vs RISC; condicionantes da evolução tecnológica dos computadores; geração de código, papel dos compiladores; organização dos dados em memória; representação de números, formato IEEE 754; métricas de desempenho</string>
+    <string name="ist_class_computer_organisation_topic3">Funcionamento de um processador RISC: organização; processamento em pipeline; conflitos no pipeline de dados, controlo e estruturais; optimização do código</string>
+    <string name="ist_class_computer_organisation_topic4">Sistema de memória: hierarquia de memória; memória primária; arquitectura das memórias cache; optimização de programas; gestão de memória, ligação ao sistema operativo; mecanismos eficientes de tradução de endereços; funcionamento integrado do sistema de memória</string>
+    <string name="ist_class_computer_organisation_topic5">Sistema de entradas e saídas: interface analógico-digital; desempenho na comunicação com periféricos; características de barramentos padrão; interface de periféricos com a memória, processador e sistema operativo; interrupções, excepções e traps; DMA; compressão de dados; fiabilidade de dados: paridade, ECC, RAID</string>
+    <string name="ist_class_computer_organisation_topic6">Arquiteturas avançadas: processadores multiple-issue: superescalares e VLIWs; arquitecturas paralelas, taxonomia de Flynn; multiprocessadores: SMP e NUMA; coerência de memória; sincronismo; clusters</string>
+
+    <string name="ist_class_computer_networks">Redes de Computadores</string>
+    <string name="ist_class_computer_networks_description">Saber analisar de forma crítica as várias opções tomadas na concepção de redes
+        de computadores, suas arquitecturas e protocolos. Conhecer os protocolos principais da Internet. Saber programar aplicações de
+        rede usando a interface de sockets.</string>
+    <string name="ist_class_computer_networks_topic1">Introdução: redes de computadores e a Internet; tecnologias de comutação; arquitectura em camadas; protocolos; serviços; medidas de desempenho</string>
+    <string name="ist_class_computer_networks_topic2">Camada de aplicação: a Web e HTTP; FTP; SMTP; DNS; a interface de sockets</string>
+    <string name="ist_class_computer_networks_topic4">Camada de transporte: multiplexagem e desmultiplexagem; UDP; transferência fiável de dados; stop-and-wait, go-back-N e selective Repeat; TCP; controlo de congestão</string>
+    <string name="ist_class_computer_networks_topic5">Camada de rede: encaminhamento por estado-da-ligação; encaminhamento por vector-distãncia; IP; CIDR; RIP; OSPF; BGP; IPv6; VPNs; NAT</string>
+    <string name="ist_class_computer_networks_topic6">Camada da ligação de dados: detecção e correcção de erros; acesso múltiplo; ALOHA; CSMA; token-ring; WLANs e IEEE 802.11; ARP; hubs e comutadores; PPP; ATM</string>
+    <string name="ist_class_computer_networks_topic7">Aplicações multimedia: streaming áudio e vídeo; telefonia pela Internet; qualidade de serviço; escalonamento de tráfego</string>
+    <string name="ist_class_computer_networks_topic8">Segurança em redes: criptografia de chave simétrica, DES e AES; criptografia de chave pública, Diffie-Hellman e RSA; confidencialidade; autenticação; integralidade; PGP; SSL; IPSec</string>
+
+    <string name="ist_class_sys_modeling_analisys">Análise e Modelação de Sistemas</string>
+    <string name="ist_class_sys_modeling_analisys_description">Dotar os alunos com as competências fundamentais para a análise de problemas
+        de engenharia em que a solução se pode conceptualizar como um sistema, recorrendo a técnicas de engenharia de requisitos e
+        desenvolvimento de modelos conceptuais (especialmente em UML, SysML e BPMN)</string>
+    <string name="ist_class_sys_modeling_analisys_topic1">Conceitos fundamentais: definições de "sistema" e de "sistema de sistemas"; conceitos de contexto e de arquitectura de sistema, "stakeholders", “concern”, “viewpoint”, “view” e modelos</string>
+    <string name="ist_class_sys_modeling_analisys_topic2">Técnicas de representação de contextos, com destaque para a técnica de mapas conceptuais</string>
+    <string name="ist_class_sys_modeling_analisys_topic3">Conceitos, motivações para a MDA (Model Driven Architecture) e MDE (Model Driven Engineering)</string>
+    <string name="ist_class_sys_modeling_analisys_topic4">Entidades de normalização de referência (ISO, ITU, IEEE, W3C, IETF, INCOSE, NISO, IPQ, OASIS, The Open Group, OMG)</string>
+    <string name="ist_class_sys_modeling_analisys_topic5">Engenharia de Requisitos: conceitos, processos e técnicas fundamentais: Requisitos como “concerns” e constrangimentos aos sistemas</string>
+    <string name="ist_class_sys_modeling_analisys_topic6">Os processos de levantamento, negociação, validação e documentação de requisitos. Ferramentas de gestão de requisitos. Técnicas para levantamento de requisitos. Regras para expressão de requisitos bem formados e SMART (Specific, Measurable, Achievable, Realisable, Traceable).Técnicas de rastreabilidade.</string>
+    <string name="ist_class_sys_modeling_analisys_topic7">Requisitos funcionais e Requisitos não funcionais</string>
+    <string name="ist_class_sys_modeling_analisys_topic8">Conceitos de vistas de sistemas “black box” e “white box”. Casos de uso e cenários de casos de uso como técnicas de engenharia de requisitos (UML e SysML)</string>
+    <string name="ist_class_sys_modeling_analisys_topic9">Contexto de sistema e questões éticas, sociais e políticas. Dimensões éticas e morais de análise de sistemas. Códigos de ética em engenharia. (IEEE, ACM e OE)</string>
+    <string name="ist_class_sys_modeling_analisys_topic10">Análise e Modelação Orientada a Objectos - Modelos de Estrutura: Modelação orientada a objectos: conceitos; vistas de estrutura e de comportamento</string>
+    <string name="ist_class_sys_modeling_analisys_topic11">Sistemas físicos e sistemas lógicos. Sistemas de informação como sistemas lógicos.</string>
+    <string name="ist_class_sys_modeling_analisys_topic12">Análise de universos de discurso e desenvolvimento de modelos de domínio em UML</string>
+    <string name="ist_class_sys_modeling_analisys_topic13">Associações em modelos UML (generalização e especialização; associações genéricas; composição e agregação; classes de associação)</string>
+    <string name="ist_class_sys_modeling_analisys_topic14">Diagramas de componentes e de instalação em UML</string>
+    <string name="ist_class_sys_modeling_analisys_topic15">Modelação de interfaces e Diagramas de objectos</string>
+    <string name="ist_class_sys_modeling_analisys_topic16">Modelos em SysML</string>
+    <string name="ist_class_sys_modeling_analisys_topic17">Análise e Modelação Orientada a Objectos - Modelos de Comportamento: Vistas de comportamento “black box” (casos de uso) e “white box” (eventos, fluxos e mensagens)</string>
+    <string name="ist_class_sys_modeling_analisys_topic18">Técnicas UML para desenvolvimento de vistas de comportamento: diagramas de mensagens (sequência, comunicação, temporais; interacção geral), de actividade, e de máquinas de estado</string>
+    <string name="ist_class_sys_modeling_analisys_topic19">Sistemas de Informação - Análise e Modelação de Processos de Negócio O processo como transformação de inputs em outputs com ênfase no produto final e produção de valor</string>
+    <string name="ist_class_sys_modeling_analisys_topic20">A relevância da vista de processos de uma organização (qualidade e responsabilidade na norma ISO 9001)</string>
+    <string name="ist_class_sys_modeling_analisys_topic21">A cadeia de valor de Porter</string>
+    <string name="ist_class_sys_modeling_analisys_topic22">A arquitectura de processos na arquitectura empresarial. Processos de “risk assessment” (identificação, análise e avaliação de risco)</string>
+    <string name="ist_class_sys_modeling_analisys_topic23">Elementos básicos da linguagem BPMN (eventos, actividades, gateways, sequências, mensagens, associações, objectos de dados)</string>
+    <string name="ist_class_sys_modeling_analisys_topic24">Diagramas genéricos em BPMN</string>
+    <string name="ist_class_sys_modeling_analisys_topic25">Processos públicos, processos privados e colaborações</string>
+
+
+    <string name="ist_class_compilers">Compiladores</string>
+    <string name="ist_class_compilers_description">Aquisição de conceitos sobre a definição de linguagens de programação.
+        Obtenção de conhecimentos sobre os métodos de análise (front-end) e síntese (back-end) mais usados pelos compiladores.
+        Especificação lexical e sintáctica, bem como a análise semântica das linguagens de computação, com especial
+        ênfase nas linguagens de programação. Desenvolver um compilador para uma linguagem de programação simples
+        que gere código máquina executável.</string>
+    <string name="ist_class_compilers_topic1">Ambiente de desenvolvimento Unix: ferramentas gcc, gdb, cvs, make, lex e yacc</string>
+    <string name="ist_class_compilers_topic2">Linguagens regulares e análise lexica: modelação do reconhecimento de frases, em analisadores lexicos, por autómatos finitos (deterministas e não-deterministas)</string>
+    <string name="ist_class_compilers_topic3">Linguagens livres de contexto: gramaticas livres de contexto, árvores de derivação, autómatos finitos com pilha, analisadores sintacticos descendendes LL(1), e ascendendes LR(0)/ SLR(1)/ LALR(1)</string>
+    <string name="ist_class_compilers_topic4">Gramáticas atributivas e avaliação de atributos</string>
+    <string name="ist_class_compilers_topic5">Tratamento e recuperação de erros, analise semântica estática e dinâmica: erros gramaticais, manipulação de identificadores, tipificação e árvores de activação</string>
+    <string name="ist_class_compilers_topic6">Geração de código intermédio em árvores abstractas e código postfix</string>
+    <string name="ist_class_compilers_topic7">Tópicos de geração e optimização de código final para maquinas "load and store"</string>
+
+    <string name="ist_class_computing_society">Computação e Sociedade</string>
+    <string name="ist_class_computing_society_description">Transmitir aos futuros engenheiros informáticos a noção do enorme
+        impacto social que os aspectos éticos têm no desenvolvimento e utilização de produtos e serviços baseados em
+        tecnologias de informação. Ensinar os fundamentos necessários para que possam fazer as escolhas acertadas
+        quando confrontados com situações concretas envolvendo o desenvolvimento, operação e utilização de
+        sistemas de informação.</string>
+    <string name="ist_class_computing_society_topic1">Ética: Ética e integridade. Moralidade e ética, legalidade e legitimidade</string>
+    <string name="ist_class_computing_society_topic2">Ética: Ética no sector das tecnologias de informação</string>
+    <string name="ist_class_computing_society_topic3">Ética: Ética e responsabilidade profissional dos engenheiros informáticos</string>
+    <string name="ist_class_computing_society_topic4">Organizações profissionais: Programas de certificação</string>
+    <string name="ist_class_computing_society_topic5">Organizações profissionais: Uso aceitável dos sistemas de informação</string>
+    <string name="ist_class_computing_society_topic6">Segurança e crime informático: Estabelecimento de políticas de segurança</string>
+    <string name="ist_class_computing_society_topic7">Segurança e crime informático: Educação dos intervenientes</string>
+    <string name="ist_class_computing_society_topic8">Segurança e crime informático: Prevenção, detecção e resposta a incidentes</string>
+    <string name="ist_class_computing_society_topic9">Segurança e crime informático: Legislação</string>
+    <string name="ist_class_computing_society_topic10">Privacidade: Leis de protecção da privacidade</string>
+    <string name="ist_class_computing_society_topic11">Privacidade: Gestão da privacidade e anonimidade</string>
+    <string name="ist_class_computing_society_topic12">Privacidade: Liberdade de expressão</string>
+    <string name="ist_class_computing_society_topic13">Privacidade: Controlo do acesso à informação</string>
+    <string name="ist_class_computing_society_topic14">Privacidade: Anonimáto na Internet</string>
+    <string name="ist_class_computing_society_topic15">Propriedade intelectual: Direito de cópia e Patentes</string>
+    <string name="ist_class_computing_society_topic16">Propriedade intelectual: Software livre</string>
+    <string name="ist_class_computing_society_topic17">Propriedade intelectual: Código aberto</string>
+    <string name="ist_class_computing_society_topic18">Propriedade intelectual: Engenharia inversa</string>
+    <string name="ist_class_computing_society_topic19">Impactos das tecnologias de informação na sociedade</string>
+    <string name="ist_class_computing_society_topic20">Tecnologias de informação, investimento e produtividade</string>
+    <string name="ist_class_computing_society_topic21">Tecnologias de informação na saúde</string>
+    <string name="ist_class_computing_society_topic22">As redes sociais: Uso comercial das redes sociais</string>
+    <string name="ist_class_computing_society_topic23">As redes sociais: Cyberbullying e cyberstalking</string>
+    <string name="ist_class_computing_society_topic24">As redes sociais: Partilha de conteúdos inapropriados</string>
+    <string name="ist_class_computing_society_topic25">As redes sociais: Mundos virtuais</string>
+    <string name="ist_class_computing_society_topic26">As redes sociais: Uso educativo e comercial</string>
+    <string name="ist_class_computing_society_topic27">Crime nos mundos virtuais</string>
+    <string name="ist_class_computing_society_topic28">Ética das organizações: Gestão de colaboradores e fornecedores externos</string>
+    <string name="ist_class_computing_society_topic29">Ética das organizações: Computação verde</string>
+
+    <string name="ist_class_swe">Engenharia de Software</string>
+    <string name="ist_class_swe_description">Transmitir um roteiro do desenvolvimento de software, desde o levantamento de requisitos até à manutenção de programas. Integrar os conhecimentos adquiridos noutras disciplinas no contexto mais alargado do processo de desenvolvimento. Motivar para o desenvolvimento de software como uma engenharia, que integra os aspectos tecnológicas da computação com os factores sociais e humanos da construção de produtos.</string>
+    <string name="ist_class_swe_topic1">Desenho de Software</string>
+    <string name="ist_class_swe_topic2">Escrita de Programas</string>
+    <string name="ist_class_swe_topic3">Processo de Desenvolvimento</string>
+    <string name="ist_class_swe_topic4">Engenharia de Requisitos</string>
+    <string name="ist_class_swe_topic5">Gestão de Projecto</string>
+    <string name="ist_class_swe_topic6">Verificação e Validação</string>
+
+    <string name="ist_class_distributed_sys">Sistemas Distribuídos</string>
+    <string name="ist_class_distributed_sys_description">Analisar as arquitecturas e as tecnologias que permitem desenvolver
+        aplicações distribuídas que possam garantir requisitos não funcionais como a reconfigurabilidade, a segurança, a
+        tolerância a faltas e a escalabilidade. Aquisição de conhecimentos que permitam desenvolver uma aplicação com
+        uma arquitectura distribuída. Programar aplicações distribuídas. Interpretar requisitos de segurança formulando
+        políticas e concretizando mecanismos seguros no código da aplicação. Análise de requisitos de fiabilidade e
+        disponibilidade e introdução de mecanismos de tolerância a faltas.</string>
+    <string name="ist_class_distributed_sys_topic1">Introdução: Problemas introduzidos pela distribuição. Evolução histórica. Arquitecturas de referência.</string>
+    <string name="ist_class_distributed_sys_topic2">Comunicação Distribuídas: Nível de Transporte e respectivas API. Chamada de Procedimentos Remotos. Sistemas de Objectos Distribuídos. Web Services.</string>
+    <string name="ist_class_distributed_sys_topic3">Gestão de Nomes: Propriedades dos Nomes, Sistemas de gestão de nomes. Sistemas de Directório. Arquitectura de serviço de gestão de nomes.</string>
+    <string name="ist_class_distributed_sys_topic4">Segurança: Politicas e mecanismo de segurança. Base computacional de confiança. Canais seguros.</string>
+    <string name="ist_class_distributed_sys_topic5">Introdução à criptografia: Chave simétrica e chave assimétrica, distribuição de chaves. Autenticação. Autorização. Integridade ? assinaturas digitais</string>
+    <string name="ist_class_distributed_sys_topic6">Web Services security</string>
+    <string name="ist_class_distributed_sys_topic7">Tolerância a faltas: Modelo de Sistema, Tipos de falta; densas, bizantinas. Grandezas: Fiabilidade, Disponibilidade. Politicas de tolerância a faltas e recuperação do erro, processamento do erro. Sistema de replicação passiva. </string>
+    <string name="ist_class_distributed_sys_topic8">Transacções distribuídas: Arquitectura X/Open, Terminação em duas Fases, Monitores Transaccionais. Filas de Mensagens, Comunicação Síncrona e Assíncrona</string>
+    <string name="ist_class_distributed_sys_topic9">Message Oriented Middleware: Java Messages</string>
+    <string name="ist_class_distributed_sys_topic10">Análise de plataformas integradoras: Sun-RPC, CORBA, J2EE, Web Services</string>
+
     <string name="ist_class_"></string>
     <string name="ist_class__description"></string>
     <string name="ist_class__topic1"></string>
@@ -2883,6 +3073,7 @@ Os estudantes deverão ainda desenvolver competências em análise e síntese, r
     <string name="ist_class__topic18"></string>
     <string name="ist_class__topic19"></string>
     <string name="ist_class__topic20"></string>
+
 
     <!-- UNIVERSIDADE DE LISBOA END-->
 
