@@ -3051,6 +3051,373 @@ Os estudantes deverão ainda desenvolver competências em análise e síntese, r
     <string name="ist_class_distributed_sys_topic9">Message Oriented Middleware: Java Messages</string>
     <string name="ist_class_distributed_sys_topic10">Análise de plataformas integradoras: Sun-RPC, CORBA, J2EE, Web Services</string>
 
+    <string name="ist_class_sw_arch">Arquitecturas de Software</string>
+    <string name="ist_class_sw_arch_description">Formar nos métodos, técnicas e linguagens do desenho de software de qualidade
+        utilizando as abordagens de arquiteturas de software e padrões de desenho. Estudar os métodos e as técnicas da passagem
+        do espaço do problema para o espaço da solução de modo a garantir a rastreabilidade entre os requisitos do sistema e o
+        seu desenho. Ler, avaliar e escrever arquitecturas de software.</string>
+    <string name="ist_class_sw_arch_topic1">Introdução às Arquitecturas de Software: O Ciclo de Influência da Arquitectura; Conceitos; Atributos e Táticas de Qualidade</string>
+    <string name="ist_class_sw_arch_topic2">Documentar Arquitecturas de Software: Vistas e Estilos Arquitecturais - Módulo, Componente-Conector, Afectação; Diagramas de Contexto; Combinação de Vistas Variabilidade e Dinamismo; Escolha de Vistas</string>
+    <string name="ist_class_sw_arch_topic3">Avaliar Arquitecturas de Software: Método ATAM; Método CBAM. Famílias de Produtos de Software.</string>
+    <string name="ist_class_sw_arch_topic4">Melhores Práticas de Arquitecturas de Software: Padrões de Arquitectura Empresarial</string>
+
+    <string name="ist_class_sw_specification">Especificação de Software</string>
+    <string name="ist_class_sw_specification_description">Aprender técnicas formais para especificação
+        de requisitos e desenvolvimento de software. Entender a importância e aprender métodos para a
+        verificação da correcção de programas.
+        Utilização de ferramentas automáticas para verificação programas.</string>
+    <string name="ist_class_sw_specification_topic1">Especificação de Software usando Event-B</string>
+    <string name="ist_class_sw_specification_topic2">Especificação de Requisitos: Representação de Estados e de Invariantes. Construção de Modelos.</string>
+    <string name="ist_class_sw_specification_topic3">Event-B: Primitivas, Proof Obligations e Semântica Denotacional.</string>
+    <string name="ist_class_sw_specification_topic4">Refinamento de Requisitos como processo de desenvolvimento de software</string>
+    <string name="ist_class_sw_specification_topic5">Correcção de Modelos e Refinamentos: Provas de correcção como método de verificação de software e de detecção de erros</string>
+    <string name="ist_class_sw_specification_topic6">Modelação de Concorrência, Não Determinismo e Sistemas Distribuídos</string>
+    <string name="ist_class_sw_specification_topic7">Desenvolvimento de programas imperativos</string>
+    <string name="ist_class_sw_specification_topic8">Ferramentas Automáticas de Verificação: A plataforma Rodin</string>
+    <string name="ist_class_sw_specification_topic9">Especificação de Software em Alloy</string>
+    <string name="ist_class_sw_specification_topic10">Alloy: Diferenças entre Theorem Proving e Model-Checking</string>
+    <string name="ist_class_sw_specification_topic11">Alloy: Sintaxe</string>
+    <string name="ist_class_sw_specification_topic12">Alloy: Átomos, Relações e Restrições</string>
+    <string name="ist_class_sw_specification_topic13">Alloy: Semântica - Predicados e Restrições como forma de representar estados e execuções de programas</string>
+    <string name="ist_class_sw_specification_topic14">Alloy: Refinamento - Adição de restrições como processo de Refinamento</string>
+    <string name="ist_class_sw_specification_topic15">Alloy: Satisfação de Restrições e Predicados como processo de verificação</string>
+    <string name="ist_class_sw_specification_topic16">Ferramentas Automáticas de Verificação: Alloy Analyzer</string>
+    <string name="ist_class_sw_specification_topic17">Alloy: Comparação com geração de casos de teste</string>
+    <string name="ist_class_sw_specification_topic18">Verificação: A linguagem pi - Sintaxe e Anotações. Pre e Pós-Condições.</string>
+    <string name="ist_class_sw_specification_topic19">Utilização de Substituições para definir o estado de um programa </string>
+    <string name="ist_class_sw_specification_topic20">Propriedades de Safety e Liveness</string>
+    <string name="ist_class_sw_specification_topic21">Indução e funções de Ranking</string>
+    <string name="ist_class_sw_specification_topic22">Correcção de Ciclos e Recursão</string>
+    <string name="ist_class_sw_specification_topic23">Estratégias para provar correcção de programas</string>
+
+    <string name="ist_class_swe_management">Gestão de Projectos Informáticos</string>
+    <string name="ist_class_swe_management_description">Os objetivos de aprendizagem de Gestão de Projectos Informáticos são alinhados com
+        os da disciplina “IS 2010.4 IS Project Management” do currículo “ACM/AIS IS 2010 Curriculum Guidelines”</string>
+    <string name="ist_class_swe_management_topic1">Conceito de gestão de projectos numa perspectiva organizacional</string>
+    <string name="ist_class_swe_management_topic2">Os fundamentos do projecto</string>
+    <string name="ist_class_swe_management_topic3">Modelos de Ciclos de Vida</string>
+    <string name="ist_class_swe_management_topic4">Gestão do âmbito</string>
+    <string name="ist_class_swe_management_topic5">Gestão do tempo </string>
+    <string name="ist_class_swe_management_topic6">Organização do projecto e Comunicação</string>
+    <string name="ist_class_swe_management_topic7">Gestão das partes interessadas</string>
+    <string name="ist_class_swe_management_topic8">Gestão dos custos</string>
+    <string name="ist_class_swe_management_topic9">Gestão da qualidade</string>
+    <string name="ist_class_swe_management_topic10">Gestão dos Riscos</string>
+    <string name="ist_class_swe_management_topic11">Gestão de Aquisições e Contratos</string>
+    <string name="ist_class_swe_management_topic12">Controlo do projecto</string>
+    <string name="ist_class_swe_management_topic13">Encerramento do projecto</string>
+    <string name="ist_class_swe_management_topic14">Elementos de competência de gestão de projectos</string>
+    <string name="ist_class_swe_management_topic15">Alinhamento dos projectos com o contexto organizacional e de negócio</string>
+
+    <string name="ist_class_advanced_programming">Programação Avançada</string>
+    <string name="ist_class_advanced_programming_description">Dominar técnicas avançadas de programação e os problemas mais adequados
+        para a sua aplicação. Compreender as limitações das actuais linguagens de programação e saber colmatar essas limitações.
+        Ser capaz de antecipar o impacto da utilização de técnicas avançadas no funcionamento, facilidade de desenvolvimento e
+        facilidade de manutenção de um programa. Compreender a capacidade de reflexão das linguagens de programação nas vertentes
+        de introspecção e intercessão e nos tempos de compilação, carregamento, e execução. Compreender a diferença entre
+        programação e meta-programação e a utilidade de modelos de código. Compreender meta-classes, protocolos de meta-objecto,
+        e as suas capacidades de intercessão. Compreender a programação orientada a aspectos e a sua aplicação a requisitos
+        transversais. Compreender a abstracção linguística, os avaliadores, e os avaliadores meta-circulares. Ser capaz de dotar
+        avaliadores de mecanismos de meta-programação, de avaliação atrasada, e de avaliação não-determinística.</string>
+    <string name="ist_class_advanced_programming_topic1">Reflexão, introspecção e intercessão</string>
+    <string name="ist_class_advanced_programming_topic2">Reificação</string>
+    <string name="ist_class_advanced_programming_topic3">Arquitecturas reflexivas</string>
+    <string name="ist_class_advanced_programming_topic4">Meta-programação e modelos de código</string>
+    <string name="ist_class_advanced_programming_topic5">A reflexão em Java e em Javassist</string>
+    <string name="ist_class_advanced_programming_topic6">Protocolos de meta-objecto</string>
+    <string name="ist_class_advanced_programming_topic7">Protocolos em CLOS</string>
+    <string name="ist_class_advanced_programming_topic8">Funções genéricas e combinação de métodos</string>
+    <string name="ist_class_advanced_programming_topic9">Classes e metaclasses</string>
+    <string name="ist_class_advanced_programming_topic10">Protocolos de criação de instâncias, de acesso a membros, de redefinição de classes</string>
+    <string name="ist_class_advanced_programming_topic11">Programação orientada a aspectos: AspectJ</string>
+    <string name="ist_class_advanced_programming_topic12">Abstracção linguística, avaliadores e avaliadores meta-circulares</string>
+    <string name="ist_class_advanced_programming_topic13">Macros</string>
+    <string name="ist_class_advanced_programming_topic14">Avaliação atrasada (lazy-evaluation)</string>
+    <string name="ist_class_advanced_programming_topic15">Estilo directo e estilo de passagem de continuações</string>
+    <string name="ist_class_advanced_programming_topic16">Transferência de controle não-local</string>
+    <string name="ist_class_advanced_programming_topic17">Avaliação não-determinística</string>
+
+    <string name="ist_class_sw_test_validation">Teste e Validação de Software</string>
+    <string name="ist_class_sw_test_validation_description">O tamanho e a complexidade de programas de software tem vindo a crescer,
+        sendo por isso cada vez mais importante conseguir validar a correção dos programas. Um dos custos principais no
+        desenvolvimento de software é a sua validação. Existem várias técnicas de validação, sendo a técnica de teste de
+        software uma das técnicas mais utilizadas. A UC de Teste e Validação de Software (TVS) oferece formação avançada nas
+        técnicas de teste de software, incluindo técnicas manuais, semi-automáticas e automáticas. A UC de TVS oferece também
+        formação sobre técnicas adicionais de validação de software, incluindo a análise estática e a verificação de modelos.
+        A UC proporciona também contacto com ferramentas académicas e industriais de validação de software.</string>
+    <string name="ist_class_sw_test_validation_topic1">Limitações de testar software</string>
+    <string name="ist_class_sw_test_validation_topic2">Testes de Software aplicado a código com objectos</string>
+    <string name="ist_class_sw_test_validation_topic3">Testes de Caixa Branca: Grafo de controlo de fluxo; Modelos de cobertura</string>
+    <string name="ist_class_sw_test_validation_topic4">Testes de Caixa Preta: Testes baseado num modelo do código</string>
+    <string name="ist_class_sw_test_validation_topic5">Testes ao nível de método: Testes aos valores fronteira; Testes por classes de equivalência; Testes baseados numa tabela decisão; testes a recursão</string>
+    <string name="ist_class_sw_test_validation_topic6">Testes ao nível de classe: Testes a classes modais e não modais e impacto de herança nos testes; Testes ao nível de subsistema</string>
+    <string name="ist_class_sw_test_validation_topic7">Testes de integração: Big Bang, Top-Down, Bottom-Up, Por camadas, Sistemas Distribuídos</string>
+    <string name="ist_class_sw_test_validation_topic8">Testes de regressão: Definição de técnica de selecção de casos de teste. Diferentes técnicas de selecção</string>
+    <string name="ist_class_sw_test_validation_topic9">Testes ao nível de sistema. Testes a requisitos funcionais</string>
+    <string name="ist_class_sw_test_validation_topic10">Testes a requisitos não-funcionais: Testes de carga, Testes de desempenho</string>
+    <string name="ist_class_sw_test_validation_topic11">Geração Automática de Testes: Teste por mutação; Teste concólico; Execução simbólica</string>
+    <string name="ist_class_sw_test_validation_topic12">Análise Estática de Software: Técnicas de análise estática; Apresentar algumas ferramentas existentes</string>
+    <string name="ist_class_sw_test_validation_topic13">Verificação de Modelos de Software: lógica temporal, restrições, etc.</string>
+    <string name="ist_class_sw_test_validation_topic14">Algoritmos para verificação de modelos </string>
+    <string name="ist_class_sw_test_validation_topic15">Tópicos Adicionais: Depuração delta; Instrumentação de código; Identificação de invariantes</string>
+
+    <string name="ist_class_it_infra_admin">Administração e Gestão de Infraestruturas de IT</string>
+    <string name="ist_class_it_infra_admin_description">Os estudantes devem ser capazes de:
+        1.	Compreender as diferenças e semelhanças entre os componentes fundamentais de uma solução de infraestrutura informática
+        2.	Compreender a forma como os componentes de uma infraestrutura informática devem estar organizados em diferentes ambientes organizacionais
+        3.	Compreender os princípios subjacentes à virtualização de serviços informáticos
+        4.	Configurar uma solução de infraestrutura informática de pequena dimensão, incluindo servidores, armazenamento de dados, rede, dispositivos de segurança e clientes
+        5.	Compreender a arquitetura e compromissos envolvidos no desenho e gestão de uma solução de infraestrutura informática em ambientes organizacionais de larga escala
+        6.	Compreender o papel de ambientes de gestão e controlo de serviços na gestão de infraestruturas informáticas de grande escala
+        7.	Compreender as oportunidades que as infraestruturas de aprovisionamento dinâmico, como as plataformas de computação em nuvem, criam para as organizações
+        8.  Analisar e avaliar as implicações para o desenho de infraestruturas informáticas das soluções existentes de segurança e de continuidade de negócio
+        9.	Minimizar o impacte das soluções de infraestruturas informáticas no ambiente e no consumo de recursos</string>
+    <string name="ist_class_it_infra_admin_topic1">Infraestruturas físicas: Green computing; Gestão da energia; Segurança física; Normas de infraestruturas; Redundância; Construção e relocação de centros de dados</string>
+    <string name="ist_class_it_infra_admin_topic2">Armazenamento: Arquitecturas e tecnologias de armazenamento; SAN, NAS, DAS; Discos virtuais; RAID; Sincronização de sistemas de armazenamento distribuídos; Gestão do ciclo de vida dos dados</string>
+    <string name="ist_class_it_infra_admin_topic3">Servidores: Arquitectura de servidores; Servidores blade; Servidores virtuais e consolidação de servidores; Avaliação de desempenho; Clusters de servidores; Supercomputadores</string>
+    <string name="ist_class_it_infra_admin_topic4">Redes: Arquitectura de rede de um centro de dados; Tipos de redes e de equipamentos; Arquitectura e políticas de segurança; Redes definidas por software.</string>
+    <string name="ist_class_it_infra_admin_topic5">Administração: Ferramentas; Scripting; Servidores Windows e Linux; Instalação e actualização de software; Backups; Virtual desktop; Manutenção e suporte; Domínios de administração; Mecanismos de segurança e de controlo de acessos.</string>
+    <string name="ist_class_it_infra_admin_topic6">Gestão: Standards de gestão e governação; Boas práticas de gestão (ITIL); Auditorias e certificações; Bases de dados de gestão de configuração; Aquisição, contratação e avaliação; Gestão de serviços de IT; Gestão de continuidade; Gestão de disponibilidade e capacidade; Gestão de incidentes e problemas; Gestão de configuração e de alterações.</string>
+    <string name="ist_class_it_infra_admin_topic7">Plataformas informáticas: Modelos de funcionamento; Centros de dados virtuais; Centros de dados definidos por software; SaaS, PaaS, IaaS; Integração de plataformas informáticas distribuídas; Centros de dados de recuperação de desastres; Computação autonómica; Automação da gestão de plataformas informáticas.</string>
+
+    <string name="ist_class_business_tec">Engenharia e Tecnologia de Processos de Negócio</string>
+    <string name="ist_class_business_tec_description">A disciplina de Engenharia e Tecnologia de Processos de Negócio tem como objectivo
+        introduzir conceitos, técnicas e ferramentas associados à gestão de processos de negócio (Business Process Management, BPM).
+        Será dada enfâse ao ciclo de vida do BPM e à sua gestão no plano da engenharia. Os temas incluem a identificação, documentação,
+        modelação, verificação e melhoria dos processos de negócio de uma organização através de técnicas de análise, desenho e
+        automação de processos.</string>
+    <string name="ist_class_business_tec_topic1">Introdução à Gestão dos Processos de Negócio: Business Process Modelling, Enterprise architecture modeling</string>
+    <string name="ist_class_business_tec_topic2">Identificação de processos de negócio: Business Process Modelling, Enterprise architecture modeling, Enterprise architecture frameworks, Reference Models</string>
+    <string name="ist_class_business_tec_topic3">Modelação de processos de negócio: Business Process Modelling, Event-driven architectures, Business rules, Cross-organizational business processes, Enterprise architecture frameworks, Enterprise architecture modeling</string>
+    <string name="ist_class_business_tec_topic4">Descoberta de processos de negócio: Business process modelling, Business intelligence, Business process monitoring, Business process management systems</string>
+    <string name="ist_class_business_tec_topic5">Verificação e validação de processos de negócio: Business intelligence, Business-IT alignment, Business process management systems</string>
+    <string name="ist_class_business_tec_topic6">Análise de processos de negócio: Business intelligence, Business-IT alignment, Business process management systems, Reference models</string>
+    <string name="ist_class_business_tec_topic7">Redesenho de processos de negócio: Business process modelling, Enterprise architecture modeling, Business-IT alignment, Reference Models</string>
+    <string name="ist_class_business_tec_topic8">Automação de processos de negócio: Business process management systems, Enterprise computing, IT architectures</string>
+
+    <string name="ist_class_info_sys_fundamentals">Fundamentos de Sistemas de Informação</string>
+    <string name="ist_class_info_sys_fundamentals_description">Os objetivos de aprendizagem de Fundamentos dos Sistemas de Informação são os da disciplina
+        “IS 2010.1 Foundations of Information Systems” do currículo “ACM/AIS IS 2010 Curriculum Guidelines”:
+        1.	Fornecer uma abordagem sociotécnica aos sistemas de informação organizacionais; entender como e porquê os sistemas de informação são hoje usados nas organizações
+        2.	Explicar a relações entre os componentes de tecnologia, de pessoas e organizacionais dos sistemas de informação empresariais
+        3.	Conhecer os principais componentes de tecnologia dos sistemas de informação
+        4.	Entender como as empresas utilizam os sistemas de informação para suportar as suas actividades e criar vantagens competitivas
+        5.	Entender como os sistemas de informação permitem criar novas formas de comércio entre indivíduos, organizações e governos
+        6.	Conhecer as novas tecnologias que permitem novas formas de comunicação, colaboração e parcerias
+        7.	Entender como os sistemas de informação permitem criar relações com clientes e fornecedores, e como são utilizados para reforçar as estruturas organizacionais e os processos de negócio
+        8.	Entender como os sistemas de informação podem suportar a tomada de decisão nos diferentes níveis e funções das organizações
+        9.	Compreender como as organizações desenvolvem e adquirem tecnologias e sistemas de informação
+        10.	Compreender o valor dos investimentos em sistemas de informação, bem como aprender a preparar um plano de negócios para um novo sistema de informação, incluindo a estimativa de custos e benefícios
+        11.	Mitigar os riscos, bem como planear e recuperar de desastres
+        12.	Entender como garantir a segurança dos sistemas de informação, tendo em conta tanto aspetos tecnológicos como humanos
+        13.	Avaliar as questões éticas dos sistemas de informação, e o impacto dos sistemas de informação na fraude e no crime</string>
+    <string name="ist_class_info_sys_fundamentals_topic1">Sistemas de Informação Empresariais à Escala Global: fundamentos, função, impacto nos negócios, globalização e dimensão</string>
+    <string name="ist_class_info_sys_fundamentals_topic2">Negócio Electrónico e Colaboração à Escala Global: Processos de negócio e sistemas de informação; Tipos de sistemas de informação empresariais ;Sistemas para interligar a organização; Conceitos de “E-Business”, “E-Commerce” e “E-Government”; Sistemas colaborativos e sociais.</string>
+    <string name="ist_class_info_sys_fundamentals_topic3">Sistemas de Informação, Organizações e Estratégia: Impacto económico, organizacional e comportamental; Modelo das forças competitivas de Porter; Estratégias de sistemas de informação para lidar com as forças competitivas </string>
+    <string name="ist_class_info_sys_fundamentals_topic4">Questões Éticas e Sociais: Dimensões morais da sociedade da informação; Ética na sociedade da informação; Dimensões morais dos sistemas de informação; Privacidade e liberdade na idade da Internet; Propriedade intelectual</string>
+    <string name="ist_class_info_sys_fundamentals_topic5">Segurança: Abuso e vulnerabilidades de sistemas, Gestão de risco, Políticas de segurança, Recuperação de desastre e continuidade de negócio, Auditorias</string>
+    <string name="ist_class_info_sys_fundamentals_topic6">Excelência operacional com aplicações empresariais: Sistemas empresariais; Sistemas de gestão de cadeias de abastecimento; Sistemas de relacionamento com o cliente</string>
+    <string name="ist_class_info_sys_fundamentals_topic7">Comércio Electrónico: Comércio electrónico na Internet; Mercados e bens digitais; mercados globais; Modelos de negócio </string>
+    <string name="ist_class_info_sys_fundamentals_topic8">Gestão do Conhecimento: A cadeia de valor; Tipos de sistemas; Sistemas de gestão de conteúdos; colaboração </string>
+    <string name="ist_class_info_sys_fundamentals_topic9">Suporte à Tomada de Decisão: “Business intelligence” na organização; Suporte à decisão para a gestão operacional e gestão intermédia; Suporte à decisão para a gestão executiva: “balanced scorecard”; Sistemas de suporte à decisão em grupo </string>
+    <string name="ist_class_info_sys_fundamentals_topic10">Construção de Sistemas de Informação: Sistemas informação como mudança organizacional planeada; Análise e desenho de sistemas; Ciclos de vida dos sistemas; Desenho e gestão de processos de negócio</string>
+    <string name="ist_class_info_sys_fundamentals_topic11">Gestão de Projectos de Sistemas de Informação: “Runaway projects” e falha no sistema; Vinculação do projectos de sistemas de informação ao plano de negócios; Análise de portfolio; Gestão dos riscos do projecto</string>
+    <string name="ist_class_info_sys_fundamentals_topic12">Gestão de Sistemas de Informação à Escala Global: O ambiente global: “business drivers” e desafios; Localização do software; Integração de sistemas à escala global; Gestão de sistemas globais</string>
+
+    <string name="ist_class_enterprise_arch">Arquitetura Empresarial</string>
+    <string name="ist_class_enterprise_arch_description">1. Compreender o ciclo de vida da engenharia empresarial, incluindo a governação e os processos de transformação organizacionais.
+        2. Compreender as teorias fundamentais subjacentes engenharia empresarial.
+        3. Compreender e aplicar os princípios de arquitetura empresarial.
+        4. Compreender e usar as linguagens de modelação de arquitetura empresarial, nomeadamente o ArchiMate e o DEMO.
+        5. Compreender e utilizar modelos e molduras de referência das organizações por indústria.
+        6. Compreender e aplicar as técnicas de alinhamento empresarial
+        7. Analisar casos de estudos de organizações reais.</string>
+    <string name="ist_class_enterprise_arch_topic1">Desenho Organizacional: ontologia organizacional; desenho datalógico, infológico e ontológico; o método DEMO e a linguagem DEMO</string>
+    <string name="ist_class_enterprise_arch_topic2">Linguagens de Modelação de Arquitetura Empresarial: panorâmica da notações de Arquitectura Empresarial: BPMN, REA, EPC, IDEF, YAWL, UML;  modelo fundamental e extensões do ArchiMate</string>
+    <string name="ist_class_enterprise_arch_topic3">Molduras de Arquitectura Empresarial: panorâmica das molduras de arquitetura empresarial - FEAF 2.0, DODAF, PEAF, IAF, BEN/St. Galen, COBIT, ITIL , IEEE 42010, Zachman, TOGAF</string>
+    <string name="ist_class_enterprise_arch_topic4">Perspectivas da Arquitectura Empresarial: vistas, pontos de vista, e modelos de visualização;  perspectiva de negócio e motivacional; perspectiva informacional; perspectiva sistémica; perspectiva infraestrutural</string>
+    <string name="ist_class_enterprise_arch_topic5">Modelos de Referência de Arquitetura Empresarial: Propriedade s Requisitos de um Modelo de Referência Arquitectura Empresarial;  Exemplos de Modelos de Referência - Telecomunicações, Retalho, Financeiro, (TAM, eTOM, SID; PCF, SCOR)</string>
+    <string name="ist_class_enterprise_arch_topic6">Princípios de Arquitectura Empresarial: padrões e princípios de arquitectura empresarial e exemplos reais</string>
+    <string name="ist_class_enterprise_arch_topic7">Representação Empresarial: técnicas de representação e automação da representação empresarial</string>
+    <string name="ist_class_enterprise_arch_topic8">Métodos de Arquitectura Empresarial: “Business Systems Planning”; “Information Systems Architecture”;  Alinhamento da Arquitectura Empresarial; conceitos e tipos de alinhamentos; aferição e medição dos alinhamentos</string>
+    <string name="ist_class_enterprise_arch_topic9">Conceitos e Modelação da Arquitetura de Informação: entidades informacionais; linguagens e técnicas da arquitectura de informação</string>
+    <string name="ist_class_enterprise_arch_topic10">Conceitos da Arquitectura de Sistemas: conceitos de sistemas de informação e arquitectura de sistemas em archimate</string>
+    <string name="ist_class_enterprise_arch_topic11">Arquitectura de Serviços: arquitectura orientada a serviços; modelação de serviços e métodos para a identificação de serviços</string>
+    <string name="ist_class_enterprise_arch_topic12">Conceitos da Infraestrutura Tecnológica: modelação da infraestrutura, produtos e tecnologia e modelação das capacidades</string>
+
+    <string name="ist_class_org_management">Organização e Gestão da Função Informática</string>
+    <string name="ist_class_org_management_description">Os objectivos de aprendizagem estão alinhados com:
+        1. Compreender as diversas funções e atividades na área de sistemas de informação (SI) incluindo
+        o papel da gestão da informática e do director de SI, a estrutura da gestão dos SI dentro de uma
+        organização, e a gestão dos profissionais de SI.
+        2. Ver uma organização pelo ponto de vista da administração de topo para decidir como os SI devem
+        suportar os processos de negócio, quer os principais, quer os de suporte, quer os de gestão
+        de clientes e fornecedores.
+        3. Compreender os conceitos de economia da informação ao nível da organização.
+        4. Perceber como os SI representam uma importante fonte de vantagem competitiva para as organizações.
+        5. Estruturar as actividades relacionadas com os SI para maximizar o valor dos SI dentro e
+        fora das organizações.
+        6. Compreender as tecnologias de informação existentes e emergentes, as funções dos SI, e o
+        seu impacto sobre as operações da organização.
+        7. Avaliar as questões e os desafios associados com a incorporação dos SI numa organização.
+        8. Entender como as decisões estratégicas são feitas sobre a aquisição de SI, incluindo a capacidade
+        de avaliar as diferentes opções de fornecimento.
+        9. Aplicar informação às necessidades de diferentes indústrias e áreas. 10. Compreender o papel
+        do controlo e as frameworks de gestão de serviços de informática pela perspectiva da gestão
+        dos SI numa organização.</string>
+    <string name="ist_class_org_management_topic1">Introdução à função informática: Impacto das tecnologias nas organizações, Funções e actividades na informática, Papel do director e gestores de SI</string>
+    <string name="ist_class_org_management_topic2">Introdução ao COBIT 5: Principios do COBIT 5 , Gestão, organização, e controlo da informática, Papel das frameworks na função informática, Exemplo de framework: COBIT 5</string>
+    <string name="ist_class_org_management_topic3">Utilização estratégica da informação: O conceito de economia da informação, Utilização da informação nas organizações, A informação como vantagem competitiva</string>
+    <string name="ist_class_org_management_topic4">Impacto dos sistemas de informação nas organizações: O papel dos SI na perspectiva do negócio, Os SI como fonte de vantagem competitiva, Desafios da adopção de SI nas organizações</string>
+    <string name="ist_class_org_management_topic5">Planeamento estratégico dos sistemas de informação: A estratégia dos SI na estratégia organizaciomal, Processo de decisão estratégica nos SI, Avaliação de alternativas de aquisição</string>
+    <string name="ist_class_org_management_topic6">Papel dos sistemas de informação na estratégia organizacional: perceber o papel dos SI ao nível da gestão de topo, O papel dos SI na criação de vantagens competitivas, O valor dos investimentos em sistemas de informação</string>
+    <string name="ist_class_org_management_topic7">Gestão dos sistemas de informação: O papel do director de SI, Organização do departamento de SI, Contratação e gestão de RH nos SI, Gestão de recursos internos e externos, Alocação de recursos a tarefas</string>
+    <string name="ist_class_org_management_topic8">Financiamento e avaliação dos sistemas de informação</string>
+    <string name="ist_class_org_management_topic9">Aquisição de sistemas e serviços de informação: Aquisição de infraestrutura tecnológica, Aquisição de serviços de informática, Aquisição de aplicações informáticas</string>
+    <string name="ist_class_org_management_topic10">Gestão do risco dos sistemas de informação: Gestão da continuidade do negócio, Gestão da segurança e privacidade</string>
+    <string name="ist_class_org_management_topic11">Boas práticas de governação dos sistemas de informação: Frameworks de governação de SI, Áreas e Processos do COBIT 5</string>
+    <string name="ist_class_org_management_topic12">Implementação de boas práticas de governação dos SI: Modelos de maturidade - ISO 15504, Implementação de COBIT 5, Process Assessment Model do COBIT 5</string>
+
+    <string name="ist_class_distributed_apps">Desenvolvimento de Aplicações Distribuídas</string>
+    <string name="ist_class_distributed_apps_description">Perceber os problemas de nível sistema subjacentes à concepção e
+        desenvolvimento de aplicações em redes de grandes escala (ex.: na Internet). Conhecer as soluções existentes no
+        âmbito das plataformas de suporte à execução das aplicações antes referidas com ênfase na arquitectura,
+        modelos de comunicação, escalabilidade, desempenho e segurança. Especificar, conceber, analisar e implementar
+        aplicações distribuídas em redes de grande escala assim como as respectivas plataformas de suporte à sua execução.</string>
+    <string name="ist_class_distributed_apps_topic1">Modelos de sistema Modelos de sistema Sistemas síncronos e assíncronos</string>
+    <string name="ist_class_distributed_apps_topic2">Troca de mensagens e partilha de memória</string>
+    <string name="ist_class_distributed_apps_topic3">Modelos de faltas, Modelos de coerência e o teorema CAP</string>
+    <string name="ist_class_distributed_apps_topic4">Dimensões do sistema: Cliente-servidor, Agregados e computação em grelha, Computação na nuvem e Sistemas entre-pares</string>
+    <string name="ist_class_distributed_apps_topic5">Coordenação distribuída: Relógios físicos e sincronização de relógios</string>
+    <string name="ist_class_distributed_apps_topic6">Tempo lógico e relógios lógicos; Relógios vectoriais</string>
+    <string name="ist_class_distributed_apps_topic7">Estados globais e captura de estado distribuída</string>
+    <string name="ist_class_distributed_apps_topic8">Exclusão mútua</string>
+    <string name="ist_class_distributed_apps_topic9">Eleiçao de líder, Acordo distribuído, Difusão fiável, Ordem total e Consenso</string>
+    <string name="ist_class_distributed_apps_topic10">Comunicação em grupo e sincronia na vista</string>
+    <string name="ist_class_distributed_apps_topic11">Processamento distribuído de transacções, Controlo de concorrência e confirmação atómica distribuída</string>
+    <string name="ist_class_distributed_apps_topic12">Sistemas: Construção de sistemas confiáveis de grande dimensão</string>
+    <string name="ist_class_distributed_apps_topic13">Sistemas: Sistemas de ficheiros replicados</string>
+    <string name="ist_class_distributed_apps_topic14">Sistemas: Replicação diferida</string>
+    <string name="ist_class_distributed_apps_topic15">Sistemas: Sistemas entre-pares</string>
+    <string name="ist_class_distributed_apps_topic16">Sistemas geo-replicados</string>
+    <string name="ist_class_distributed_apps_topic17">A Google como caso de estudo</string>
+
+    <string name="ist_class_network_security">Segurança Informática em Redes e Sistemas</string>
+    <string name="ist_class_network_security_description">O objectivo desta cadeira é fornecer ao aluno um conjunto de conceitos,
+        metodologias e ferramentas de segurança informática que lhe permita abordar o tema face a um conjunto de tecnologias
+        alargado, tais como: redes locais, redes pessoais, redes globais, desenvolvimento de código seguro, sistemas operativos,
+        sistemas distribuídos e protocolos de comunicação.</string>
+    <string name="ist_class_network_security_topic1">Vulnerabilidades e segurança em redes</string>
+    <string name="ist_class_network_security_topic2">Firewalls e sistemas de detecção de intrusões</string>
+    <string name="ist_class_network_security_topic3">Desenvolvimento de código seguro</string>
+    <string name="ist_class_network_security_topic4">Certificação</string>
+    <string name="ist_class_network_security_topic5">Criptografia simétrica, assimétrica, funções de resumo criptográficas</string>
+    <string name="ist_class_network_security_topic6">Autenticação de mensagens e assinaturas digitais</string>
+    <string name="ist_class_network_security_topic7">Gestão e protocolos de distribuição de chaves simétricas</string>
+    <string name="ist_class_network_security_topic8">Certificados digitais e infraestruturas de distribuição de chaves públicas</string>
+    <string name="ist_class_network_security_topic9">Autenticação e protocolos de autenticação</string>
+    <string name="ist_class_network_security_topic10">Autorização</string>
+    <string name="ist_class_network_security_topic11">Segurança em redes sem fios</string>
+    <string name="ist_class_network_security_topic12">Redes privadas virtuais e canais seguros</string>
+
+    <string name="ist_class_data_admin">Administração de Dados e Sistemas de Informação</string>
+    <string name="ist_class_data_admin_description">A unidade curricular de Administração de Dados em Sistemas de Informação
+        tem como objectivo dar aos alunos as competências necessárias para gerir, optimizar e usar eficazmente sistemas
+        modernos para a gestão de grandes volumes de dados. Os alunos devem ser capazes de:\n
+        1. compreender os mecanismos internos de um Sistema de Gestão de Bases de Dados (SGBD) relacional, nomeadamente a
+        gestão de armazenamento, a indexação, o processamento e optimização de interrogações, a gestão de transacções,
+        do controlo de concorrência e gestão de recuperação\n
+        2. compreender as tarefas envolvidas na administração de bases de dados\n
+        3. optimizar o acesso à informação em bases de dados que armazenam grandes quantidades de dados\n
+        4. adquirir conhecimento básico sobre as várias arquitecturas de bases de dados paralelas e distribuídas,
+        incluindo sistemas convencionais (SQL) e não convencionais (NoSQL).</string>
+    <string name="ist_class_data_admin_topic1">Sub-)Sistemas de armazenamento: Tecnologias de armazenamento (e.g., RAID), Replicação e Arquitecturas</string>
+    <string name="ist_class_data_admin_topic2">Algoritmos de indexação e organização de ficheiros: Armazenamento de registos, Gestão de buffers e Acesso aos dados</string>
+    <string name="ist_class_data_admin_topic3">Processamento de interrogações: Planeamento, Algoritmos e Optimização</string>
+    <string name="ist_class_data_admin_topic4">Controlo de concorrência: Protocolos baseados em locking, Protocolos baseados em timestamping, Protocolos multi-versão</string>
+    <string name="ist_class_data_admin_topic5">Recuperação de dados: Logging, Falhas de memória não volátil, Cópias de segurança (backups)</string>
+    <string name="ist_class_data_admin_topic6">Optimização de bases de dados: Optimização do esquema e Optimização de interrogações</string>
+    <string name="ist_class_data_admin_topic7">Optimização de índices: Clustering e Índices de cobertura (covering indexes)</string>
+    <string name="ist_class_data_admin_topic8">Optimização do hardware e sistema operativo: Threads, buffers e armazenamento, Desempenho de bases de dados</string>
+    <string name="ist_class_data_admin_topic9">Bases de dados paralelas e distribuídas: Arquitecturas, Particionamento, Algoritmos e Sistemas baseados em map-reduce</string>
+    <string name="ist_class_data_admin_topic10">Bases de dados NoSQL: Bases de dados chave-valor, Bases de dados de documentos, Bases de dados orientadas às colunas e Bases de dados de grafos</string>
+
+    <string name="ist_class_cloud_computing">Computação em Nuvem e Virtualização</string>
+    <string name="ist_class_cloud_computing_description">Deter uma perspectiva integradora da computação em nuvem e da virtualização,
+        e da sua conjugação e síntese, no desenho dos sistemas modernos na computação distribuída em larga escala, com as suas tecnologias,
+        mecanismos e algoritmos subjacentes. Compreender uma abordagem vertical às diversas tecnologias de virtualização e da computação
+        em nuvem, que oferecem às aplicações e serviços maior flexibilidade, melhor utilização de recursos e eficiência económica,
+        e maior escalabilidade e adaptabilidade. Ser capaz de desenvolver aplicações e sistemas, escaláveis e fiáveis, para
+        computação em nuvem, sobre as infra-estruturas e plataformas de virtualização, e modelos aplicacionais adoptados.
+        Ser capaz de avaliar escolhas, soluções, e compromissos envolvidos no desenvolvimento, uso e gestão de infra-estruturas
+        de virtualização para computação em nuvem.</string>
+    <string name="ist_class_cloud_computing_topic1">Introdução à Virtualização e Computação em Nuvem, IaaS, PaaS, SaaS</string>
+    <string name="ist_class_cloud_computing_topic2">Virtualização de nível sistema: arquitectura de VM sistema, virtualização de CPU, núcleo, memória, entradas/saídas; suporte hardware para virtualização; casos de estudo (VMWare, QEMU/KVM, Xen)</string>
+    <string name="ist_class_cloud_computing_topic3">Sistemas de computação em nuvem (Amazon EC2, openStack, XenCloud, OpenNebula); escalonamento, migração e replicação de VMs; monitorização e escalabilidade (CloudWatch, Autoscaling)</string>
+    <string name="ist_class_cloud_computing_topic4">Virtualização de nível processo: especificação e arquitectura de referência da Java VM, modelo de segurança, gestão e tradução binária de código, compilação just-in-time e optimização, reciclagem de memória, caso de estudo (Jikes RVM)</string>
+    <string name="ist_class_cloud_computing_topic5">Plataformas para computação em nuvem (Azure, Google App Engine); máquinas virtuais distribuídas; monitorização e escalabilidade (Azure Fabric Controller)</string>
+    <string name="ist_class_cloud_computing_topic6">Serviços de Dados e de Armazenamento: blocos, ficheiros, chave-valor (Dynamo, S3, Datastore), tabular (BigTable, Percolator)</string>
+    <string name="ist_class_cloud_computing_topic7">Escalabilidade na Computação em Nuvem: Map-reduce, dataflows (Pig, Dryad, OOzie), streams (S4), aplicações, monitorização, elasticidade e optimização</string>
+    <string name="ist_class_cloud_computing_topic8">Questões Transversais na Computação em Nuvem: eficiência energética da virtualização, redimensionamento dinâmico, desenho na nuvem centrado na energia</string>
+
+    <string name="ist_class_enterprise_integration">Integração Empresarial</string>
+    <string name="ist_class_enterprise_integration_description">A disciplina de Integração de Sistemas Empresariais tem por objectivo
+        fornecer uma visão abrangente dos conceitos, metodologias e tecnologias de integração, compreendendo desde a integração de
+        aplicações e serviços até à integração de processos inter-organizacionais. A temática da disciplina está posicionada na
+        interface crítica entre as infraestruturas tecnológicas e os processos de negócio, visando fazer compreender a ligação
+        e as dependências entre ambos. Permitirá ainda transmitir uma visão de como é possível desenvolver uma infraestrutura
+        aplicacional distribuída e integrada.</string>
+    <string name="ist_class_enterprise_integration_topic1">Evolução dos sistemas de informação: funções essenciais dos sistemas de informação nas organizações; evolução da arquitectura dos sistemas de informação; integração ponto-a-ponto vs. integração centralizada; integração com base no conceito de serviço. </string>
+    <string name="ist_class_enterprise_integration_topic2">Introdução às plataformas de integração: troca de mensagens; esquema e transformação de mensagens; portas e adaptadores; orquestrações; regras de negócio.</string>
+    <string name="ist_class_enterprise_integration_topic3">Sistemas de mensagens: conceitos fundamentais; transacções de mensagens; confirmação de mensagens; correlação de mensagens; plataformas de mensagens</string>
+    <string name="ist_class_enterprise_integration_topic4">Mediadores de mensagens: integração ao nível das mensagens vs. integração ao nível da orquestração; publicação e subscrição de mensagens com filtros; propriedades em mensagens; correlação; mensagens assíncronas</string>
+    <string name="ist_class_enterprise_integration_topic5">Adaptadores: modelo em três fileiras; captura da interface do utilizador; integração através de ficheiros; interfaces de acesso a bases de dados; obtenção de dados em XML; acesso a dados em orquestrações; métodos e interfaces; descoberta de interfaces e invocações dinâmicas; invocação de Web services em orquestrações</string>
+    <string name="ist_class_enterprise_integration_topic6">Serviços e SOA: serviços e aplicações; composição de serviços; orquestração de serviços; processos de negócio; princípios de desenho de serviços; benefícios de SOA; suporte à participação humana</string>
+    <string name="ist_class_enterprise_integration_topic7">Orquestrações de Serviços: estrutura em blocos; instanciação e início do fluxo; construção de mensagens; controlo do fluxo com ciclos, decisões, e paralelismo; orquestrações como sub-processos; eventos concorrentes; correlações; tratamento de excepções; transacções e compensação</string>
+    <string name="ist_class_enterprise_integration_topic8">Integração interorganizacional: transmissão electrónica de dados e EDI; introdução à gestão da cadeia de fornecimento; coordenação na cadeia de fornecimento; comércio electrónico; protocolos de negociação</string>
+    <string name="ist_class_enterprise_integration_topic9">Internet das Coisas: integração do mundo físico com o virtual; sistemas de rastreabilidade; sensores e tratamento de eventos complexos; sistemas logísticos integrados com RFID</string>
+
+    <string name="ist_class_mobile_computing">Computação Móvel e Ubíqua</string>
+    <string name="ist_class_mobile_computing_description">Perceber os desafios e problemas subjacentes à concepção e
+        desenvolvimento de software de suporte (middleware e sistema operativo) a aplicações em ambientes com entidades
+        móveis e ubíquas (pessoas, hardware, software). Especificar, conceber, analisar e implementar sistemas
+        (middleware móvel/ubíquo e sistema operativo) de suporte à mobilidade/ubiquidade de hardware e software
+        assim como dos seus utilizadores.</string>
+    <string name="ist_class_mobile_computing_topic1">Desafios e problemas fundamentais da Computação Móvel e Ubíqua</string>
+    <string name="ist_class_mobile_computing_topic2">Replicação (caching, staging, hoarding), consistência e sincronização</string>
+    <string name="ist_class_mobile_computing_topic3">Descoberta e utilização de recursos (cyberforaging)</string>
+    <string name="ist_class_mobile_computing_topic4">Mobilidade, localização, contexto e adaptabilidade</string>
+    <string name="ist_class_mobile_computing_topic5">Consumo de bateria</string>
+    <string name="ist_class_mobile_computing_topic6">Segurança</string>
+    <string name="ist_class_mobile_computing_topic7">Comunicação, redes espontâneas, redes de sensores (ad-hoc e sensor networks)</string>
+    <string name="ist_class_mobile_computing_topic8">Código móvel, agentes móveis</string>
+    <string name="ist_class_mobile_computing_topic9">Middleware, exemplos de aplicações, arquitectura de aplicações (Android)</string>
+
+    <string name="ist_class_high_availability_sys">Sistemas de Elevada Confiabilidade</string>
+    <string name="ist_class_high_availability_sys_description">Fornecer uma perspectiva integrada dos aspectos de confiança
+        no funcionamento no sentido lato, cobrindo não só falhas acidentais, mas também falhas maliciosas e intrusões,
+        combinando as facetas de tolerância a faltas e de segurança no desenvolvimento de sistemas.</string>
+    <string name="ist_class_high_availability_sys_topic1">Fundamentos de confiança no funcionamento: Taxonomia (falta, erro, failha)  c) Modelo de faltas e d) Redundância espacial,, temporal e de valor</string>
+    <string name="ist_class_high_availability_sys_topic2">Fundamentos de confiança no funcionamento: Fiabilidade, disponibilidade, capacidade de manutenção, segurança</string>
+    <string name="ist_class_high_availability_sys_topic3">Fundamentos de confiança no funcionamento: Modelo de faltas e Redundância espacial, temporal e de valor</string>
+    <string name="ist_class_high_availability_sys_topic4">Fundamentos de confiança no funcionamento: Redundância espacial, temporal e de valor; Codificação; Redundância modular tripla</string>
+    <string name="ist_class_high_availability_sys_topic5">Fundamentos de confiança no funcionamento: Processamento de erros. Recuperação para a frente e para trás</string>
+    <string name="ist_class_high_availability_sys_topic6">Fundamentos de confiança no funcionamento: Detecção de falhas e diagnóstico. Monitores.</string>
+    <string name="ist_class_high_availability_sys_topic7">Hardware Seguro: Dispositivos de segurança</string>
+    <string name="ist_class_high_availability_sys_topic8">Hardware Seguro: Smartcards</string>
+    <string name="ist_class_high_availability_sys_topic9">Hardware Seguro: Plataformas confiáveis</string>
+    <string name="ist_class_high_availability_sys_topic10">Hardware Seguro: Sistemas biométricos</string>
+    <string name="ist_class_high_availability_sys_topic11">Segurança: Segurança física</string>
+    <string name="ist_class_high_availability_sys_topic12">Segurança: Protecção</string>
+    <string name="ist_class_high_availability_sys_topic13">Segurança: Tolerância a intrusões</string>
+    <string name="ist_class_high_availability_sys_topic14">Tolerância a faltas Bizantinas: Eleição de líder Byzantina</string>
+    <string name="ist_class_high_availability_sys_topic15">Tolerância a faltas Bizantinas: Difusão Byzantino</string>
+    <string name="ist_class_high_availability_sys_topic16">Tolerância a faltas Bizantinas: Memória Byzantino</string>
+    <string name="ist_class_high_availability_sys_topic17">Tolerância a faltas Bizantinas: Consenso Byzantino</string>
+    <string name="ist_class_high_availability_sys_topic18">Tolerância a faltas Bizantinas: Máquina de estados replicada Byzantina</string>
+    <string name="ist_class_high_availability_sys_topic19">Factores humanos: Factores humanos na segurança</string>
+    <string name="ist_class_high_availability_sys_topic20">Factores humanos: Engenharia social</string>
+
     <string name="ist_class_"></string>
     <string name="ist_class__description"></string>
     <string name="ist_class__topic1"></string>
@@ -3073,7 +3440,6 @@ Os estudantes deverão ainda desenvolver competências em análise e síntese, r
     <string name="ist_class__topic18"></string>
     <string name="ist_class__topic19"></string>
     <string name="ist_class__topic20"></string>
-
 
     <!-- UNIVERSIDADE DE LISBOA END-->
 
