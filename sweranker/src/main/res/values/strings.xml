@@ -3418,6 +3418,130 @@ Os estudantes deverão ainda desenvolver competências em análise e síntese, r
     <string name="ist_class_high_availability_sys_topic19">Factores humanos: Factores humanos na segurança</string>
     <string name="ist_class_high_availability_sys_topic20">Factores humanos: Engenharia social</string>
 
+    <string name="ist_class_3d_visualisation">Animação e Visualização Tridimensional</string>
+    <string name="ist_class_3d_visualisation_description">Esta UC introduz e discute o estado de arte das técnicas de
+        concepção e desenvolvimento de aplicações gráficas 3D, com preocupações ao nível do tempo-real, da interactividade
+        e do realismo, através da utilização das APIs gráficas OpenGL e WebGL. Inclui o desenvolvimento de uma aplicação
+        gráfica 3D imersiva num dispositivo móvel recorrendo a um par de óculos de Realidade Virtual de baixo-custo,
+        os Google Carboard. A cadeira também aborda os avanços mais recentes na tecnologia de GPU e suas
+        aplicações à simulação e jogos de computador. Após a frequência desta disciplina, os alunos devem saber
+        descrever e justificar métodos, procedimentos e técnicas elementares utilizados em sistemas de Ambientes
+        Virtuais Interactivos e Tempo-Real, identificando os termos, conceitos e princípios básicos subjacentes.</string>
+    <string name="ist_class_3d_visualisation_topic1">Síntese de Imagem por Computador em Tempo-Real</string>
+    <string name="ist_class_3d_visualisation_topic2">Pipeline de Visualização 3D (OpenGL 3.X e WebGL)</string>
+    <string name="ist_class_3d_visualisation_topic3">Shaders e programação com linguagem de shading GLSL</string>
+    <string name="ist_class_3d_visualisation_topic4">Formatos de descrição de cenas</string>
+    <string name="ist_class_3d_visualisation_topic5">Transformacões Geométicas Avançadas</string>
+    <string name="ist_class_3d_visualisation_topic6">Aparência Visual: Iluminação avançada e mapeamento de Texturas (Bump Mapping e Environmental Mapping)</string>
+    <string name="ist_class_3d_visualisation_topic7">Detecção de colisões</string>
+    <string name="ist_class_3d_visualisation_topic8">Efeitos visuais especiais: lens flare, stencil, impostores, sistemas de partículas</string>
+    <string name="ist_class_3d_visualisation_topic9">Estéreoscopia, Técnicas de Aceleração para vídeojogos e simuladores</string>
+
+    <string name="ist_class_user_centric">Concepção Centrada no Utilizador</string>
+    <string name="ist_class_user_centric_description">Apreender os princípios norteantes e as metodologias da
+        concepção centrada no utilizador de sistemas interactivos. Apreender a necessidade do conhecimento dos
+        utilizadores e suas necessidades e seu envolvimento na construção de sistemas interactivos. Adaptar
+        estes conhecimentos a metodologias de desenvolvimento centrado no utilizador. Aplicar modelos de
+        avaliação de acordo com a fase de projecto. Realizar um projecto de um sistema interactivo com base
+        nos conhecimentos adquiridos e com envolvimento dos utilizadores a vários níveis.</string>
+    <string name="ist_class_user_centric_topic1">Utilizadores e Stakeholders, Inquirir Utilizadores e Peritos, Observação de Utilizadores</string>
+    <string name="ist_class_user_centric_topic2">Envolvimento e Participação de Utilizadores</string>
+    <string name="ist_class_user_centric_topic3">Necessidades dos Utilizadores e Levantamento de Requisitos</string>
+    <string name="ist_class_user_centric_topic4">Engenharia de Usabilidade</string>
+    <string name="ist_class_user_centric_topic5">Análise e Interpretação de Dados</string>
+    <string name="ist_class_user_centric_topic6">Construção de Protótipos</string>
+    <string name="ist_class_user_centric_topic7">Tipos de Interface</string>
+    <string name="ist_class_user_centric_topic8">Aspectos Afectivos na Interacção</string>
+    <string name="ist_class_user_centric_topic9">Acessibilidade</string>
+    <string name="ist_class_user_centric_topic10">Ética no Desenvolvimento Centrado no Utilizador</string>
+    <string name="ist_class_user_centric_topic11">Validação dos Requisitos Modelo Conceptual</string>
+    <string name="ist_class_user_centric_topic12">Esboço de Protótipos de Baixa Fidelidade, Testes de Usabilidade, Protótipos de Baixa Fidelidade, Protótipo Funcional</string>
+
+    <string name="ist_class_info_visualisation">Visualização de Informação</string>
+    <string name="ist_class_info_visualisation_description">O objectivo é dar aos alunos os conhecimentos da área
+        de visualização de dados e informação que lhes permitam conceber e executar visualizações de grande impacto
+        como veículo privilegiado para transmitir informação quantitativa e qualitativa. Será introduzida a área
+        de Visualização de Informação após o que será ensinada uma metodologia para a análise de domínio e concepção
+        de visualizações eficazes. Conhecida esta, serão discutidos os vários tipos de variáveis (contínuas,
+        nominais, rácio, etc.), dados (tabulares, redes, texto, etc.) e padrões a visualizar. Em seguida serão
+        descritos os vários factores fisiologicos e psicológicos (memória, processamento visual, etc.) relevantes
+        para a criação de uma boa visualização. Estudaremos os tipos de visualização de informação mais comuns e
+        adequados para vários tipos de informação (grafos, séries temporais, etc.) e as técnicas de interacção
+        possíveis (focus+context, overview+detail, panning+zoom, brushing). Uma vez introduzida a área, as
+        tarefas nela desempenhadas, e os problemas encontrados, veremos quais as abordagens mais correctas para
+        avaliar aplicações de Visualização de Informação.</string>
+    <string name="ist_class_info_visualisation_topic1">Metodologia de Desenho</string>
+    <string name="ist_class_info_visualisation_topic2">Datasets e variáveis</string>
+    <string name="ist_class_info_visualisation_topic3">Factores Humanos na Visualização de Informação</string>
+    <string name="ist_class_info_visualisation_topic4">Tipos de Visualização</string>
+    <string name="ist_class_info_visualisation_topic5">Técnicas de Visualização</string>
+    <string name="ist_class_info_visualisation_topic6">Visualizações dinâmicas e animações</string>
+    <string name="ist_class_info_visualisation_topic7">Redução de Items e Atributos</string>
+    <string name="ist_class_info_visualisation_topic8">Legibilidade e Fidelidade nas Visualizações</string>
+    <string name="ist_class_info_visualisation_topic9">Avaliação de Soluções de Visualização de Informação</string>
+    <string name="ist_class_info_visualisation_topic10">Aplicações práticas</string>
+
+    <string name="ist_class_visual_communication">Comunicação Visual Interactiva</string>
+    <string name="ist_class_visual_communication_description">O objectivo é dar aos alunos os conhecimentos e competências
+        necessários para a comunicação eficaz de conceitos, tendências e informação com base em aplicações gráficas interactivas.
+        Serão descritas as especificidades dos vários tipos de dados que podem ser usados para comunicar, e a melhor forma de
+        os usar e combinar para esse fim. Posteriormente, serão ensinadas técnicas de extracção de metadados e descritores
+        relevantes dos vários media, com ênfase em imagens, permitindo assim a sua mais eficiente manipulação e utilização.
+        A indexação e recuperação dos media com base nesses metadados e descritores será o objeto de estudo seguinte.
+        Já na posse dos dados num formato fácil de manipular, os alunos adquirirão competências relacionadas com a sua
+        representação visual, e a sua exploração em ferramentas interactivas. Finalmente, será abordada a questão de qual
+        a melhor forma de apresentar os conceitos, tendências e informação revelados na aplicação interactiva com a
+        criação de apresentações multimédia públicas, maximizando o seu impacto e a quantidade de informação transmitida
+        e retida pela audiência.</string>
+    <string name="ist_class_visual_communication_topic1">Imagens e outros media</string>
+    <string name="ist_class_visual_communication_topic2">Metadados e Informação de Conteúdo</string>
+    <string name="ist_class_visual_communication_topic3">Especificidades da Informação pessoal: PIM e Lifelogging</string>
+    <string name="ist_class_visual_communication_topic4">Extracção e Indexação de Características</string>
+    <string name="ist_class_visual_communication_topic5">Avaliação da Recuperação</string>
+    <string name="ist_class_visual_communication_topic6">Princípios de Design Gráfico</string>
+    <string name="ist_class_visual_communication_topic7">Factores Humanos</string>
+    <string name="ist_class_visual_communication_topic8">Comunicando com Dados</string>
+    <string name="ist_class_visual_communication_topic9">Fotografia, Vídeo e Animações</string>
+    <string name="ist_class_visual_communication_topic10">Apresentações Multimédia</string>
+
+    <string name="ist_class_multimedia_production">Produção de Conteúdos Multimédia</string>
+    <string name="ist_class_multimedia_production_description">Conhecer os vários tipos de informação multimédia e como os manipular
+        para a produção de conteúdos. Reconhecer as características de um processo de Produção de Conteúdos Multimédia. Entender os
+        constrangimentos tecnológicos que se colocam na Produção, nomeadamente nos aspetos de captura, codificação, processamento
+        e visualização dos vários media. Conhecer os vários tipos de ferramentas de autoria disponíveis. Produzir conteúdos
+        Multimédia; Conhecer os vários contextos em que o multimédia por ser consumido, com ênfase em aspectos de rede (requisitos
+        de largura de banda, tempo de latência, sincronização, etc.) e dispositivos móveis. Introduzir algumas formas avançadas
+        de utilização de multimédia como a modelação procedimental, arte generativa e realidade aumentada. Aplicar métodos
+        eficientes de pesquisa de informação multimédia baseada no conteúdo.</string>
+    <string name="ist_class_multimedia_production_topic1">Tipos de Dados Multimédia: Texto, Imagens bitmap, Imagens Vectoriais e SVG, Som e Vídeo, Animações.</string>
+    <string name="ist_class_multimedia_production_topic2">Processamento e Visualização de sinais multimédia</string>
+    <string name="ist_class_multimedia_production_topic3">Captura e Codificação de informação multimédia</string>
+    <string name="ist_class_multimedia_production_topic4">Princípios de Desenho em Multimédia</string>
+    <string name="ist_class_multimedia_production_topic5">Edição linear e não linear de vídeo e áudio</string>
+    <string name="ist_class_multimedia_production_topic6">Sincronização</string>
+    <string name="ist_class_multimedia_production_topic7">Linguagens de Scripting e aplicações Interactivas</string>
+    <string name="ist_class_multimedia_production_topic8">Multimédia e Redes</string>
+    <string name="ist_class_multimedia_production_topic9">Multimédia Móvel</string>
+    <string name="ist_class_multimedia_production_topic10">Aplicações Multimédia Avançadas</string>
+    <string name="ist_class_multimedia_production_topic11">Recuperação de Informação Multimédia baseada em conteúdo</string>
+    <string name="ist_class_multimedia_production_topic12">Bases de dados multimédia</string>
+
+    <string name="ist_class_3d_programming">Programação 3D</string>
+    <string name="ist_class_3d_programming_description">Esta unidade curricular introduz e discute a aplicação das leis da
+        Física na geração de imagens 3D de Alta Fidelidade (Fotorealismo), com especial enfoque na simulação do processo
+        físico de Transporte de Luz e a correspondente interacção com a matéria. Para além das técnicas baseadas em Ray-Tracing,
+        a cadeira inclui ainda o desenvolvimento de uma aplicação gráfica 3D interactiva com efeitos fotorealistas,
+        baseada no motor de jogo Unity 3D, através do uso das suas bibliotecas de Assets e de shaders.</string>
+    <string name="ist_class_3d_programming_topic1">Equação de Transporte de Luz</string>
+    <string name="ist_class_3d_programming_topic2">Síntese de Imagem fotorealista e o algoritmo de Ray-Tracing</string>
+    <string name="ist_class_3d_programming_topic3">Técnicas de Intersecção Geométricas</string>
+    <string name="ist_class_3d_programming_topic4">Materiais e Integração Monte Carlo</string>
+    <string name="ist_class_3d_programming_topic5">Técnicas de Aceleração: Grelhas, KD-Trees e Hierarquias de Volumes Envolventes</string>
+    <string name="ist_class_3d_programming_topic6">BRDF e Light Sampling</string>
+    <string name="ist_class_3d_programming_topic7">Sampling e Path Tracing</string>
+    <string name="ist_class_3d_programming_topic8">Photon Mapping</string>
+    <string name="ist_class_3d_programming_topic9">Motor de Jogo Unity 3D: GUI, game objects e componentes, luzes, materiais, corpos rígidos, scripting, input e character control, câmaras, prefabs, colliders, triggers e shaders</string>
+
     <string name="ist_class_"></string>
     <string name="ist_class__description"></string>
     <string name="ist_class__topic1"></string>
