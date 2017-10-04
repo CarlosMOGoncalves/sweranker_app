@@ -3542,6 +3542,383 @@ Os estudantes deverão ainda desenvolver competências em análise e síntese, r
     <string name="ist_class_3d_programming_topic8">Photon Mapping</string>
     <string name="ist_class_3d_programming_topic9">Motor de Jogo Unity 3D: GUI, game objects e componentes, luzes, materiais, corpos rígidos, scripting, input e character control, câmaras, prefabs, colliders, triggers e shaders</string>
 
+    <string name="ist_class_natural_language">Língua Natural</string>
+    <string name="ist_class_natural_language_description">Conhecer os conceitos básicos, principais formalismos, técnicas e algoritmos,
+        bases de conhecimento e corpora envolvidos na área do Processamento da Língua Natural.
+        Perceber quais são as grandes tarefas envolvidas no processamento de uma frase, parágrafo ou texto e entender
+        as dificuldades de cada uma destas tarefas. Conhecer as principais aplicações da área e ser capaz de identificar
+        a tecnologia envolvida. Compreender as tarefas que são realizáveis com as tecnologias actuais.</string>
+    <string name="ist_class_natural_language_topic1">Conceitos básicos: Ambiguidade e variabilidade linguística,  Conhecimento envolvido</string>
+    <string name="ist_class_natural_language_topic2">Metodologia: Corpus de treino/teste, Validação cruzada, Medidas de avaliação (precisão, cobertura, etc.)</string>
+    <string name="ist_class_natural_language_topic3">Expressões regulares e autómatos</string>
+    <string name="ist_class_natural_language_topic4">N-Gramas: N-gramas como modelos de língua Markov, assumption e probabilidade de um N-grama/frase, Técnicas de alisamento</string>
+    <string name="ist_class_natural_language_topic5">Morfologia: Morfologia e transdutores, Etiquetação, Morfológica Baseada em regras e estocástica, HMMs e algoritmo de Viterbi</string>
+    <string name="ist_class_natural_language_topic6">Sintaxe: Formalismos gramaticais, Gramáticas Livres de Contexto, Gramáticas de dependências, Gramáticas probabilísticas, Análise sintáctica, Análise Sintáctica com traços, Análise Sintáctica Top-down e Bottom-up, Chat-parsers (Earley e CKY), Análise Sintáctica Probabilística</string>
+    <string name="ist_class_natural_language_topic7">Semântica: Representação de significado, Semântica Lexical, Papéis semânticos, Desambiguação semântica, Análise Semântica, Análise semântica composicional, Análise semântica estatística, Classificadores e sua aplicação na análise semântica</string>
+    <string name="ist_class_natural_language_topic8">Aplicações: Extracção de Informação (reconhecimento de entidades mencionadas, etc.), Classificação de textos, Sistemas de Pergunta/Resposta, Sistemas de Diálogos, Sistemas de Tradução Automática, Processamento de Fala</string>
+
+    <string name="ist_class_planning">Procura e Planeamento</string>
+    <string name="ist_class_planning_description">Aprofundar os temas da procura de soluções para problemas complexos e do planeamento de acções.
+        Reconhecer os diferentes tipos de problemas a resolver.
+        Dominar as principais metodologias e estratégias de procura.
+        Perceber que metodologia e estratégia aplicar para cada tipo de problema.
+        Ser capaz de resolver problemas razoavelmente complexos.
+        Compreender a especificidade do problema do planeamento de acções e porque necessita de uma abordagem mais potente.
+        Estudar os fundamentos e abordagens do planeamento de acções e ser capaz de resolver problemas simples de planeamento.</string>
+    <string name="ist_class_planning_topic1">Heurísticas e Representação de Problemas:Tipos de Problemas, Espaço de Estados face a Redução de Problemas, Heurísticas, Formulação Construtiva face a Formulação Reparativa, Satisfação, Optimização e Semi-Optimização, Geração-e-Teste face a Divisão-e-Poda, Procura Sistemática face a Procura Local </string>
+    <string name="ist_class_planning_topic2">Estratégias básicas de procura heurística: Procura Local (Trepar-a-Colina), Procura Sistemática Cega (Estratégias LIFO e FIFO e Procura em Grafos AND/OR), Procura Sistemática Informada (Procura Melhor-Primeiro, BF, GBF e GBF*), Estratégias Melhor-Primeiro Especializadas (Z*, A*, AO e AO*), Estratégias Híbridas </string>
+    <string name="ist_class_planning_topic3">Estratégias avançadas de procura heurística: Estratégias de Memoria Limitada Minimalistas (IDS Uni- e Bi-direccional, IDA*, RBF e IBS)e  Maximalistas (SMA*)</string>
+    <string name="ist_class_planning_topic4">Estratégias avançadas de procura heurística: Estratégias de Tempo Limitado Quase-Óptimas (A* com pesos estáticos e com pesos dinâmicos, A*-epsilon)</string>
+    <string name="ist_class_planning_topic5">Estratégias avançadas de procura heurística: Estratégias Avançadas de Procura Local – Meta-Heurísticas</string>
+    <string name="ist_class_planning_topic6">Estratégias avançadas de procura heurística: stratégias de Procura Parcial Não-Sistemáticas</string>
+    <string name="ist_class_planning_topic7">Estratégias avançadas de procura heurística: Estratégias de Discrepância Limitada (LDS, ILDS e DDS</string>
+    <string name="ist_class_planning_topic8">Problemas de satisfação de restrições: Formalização (Grafos de restrições, Formulação incremental e de estado-completo, Tipos de PSRs)</string>
+    <string name="ist_class_planning_topic9">Problemas de satisfação de restrições: Procura de Retrocesso</string>
+    <string name="ist_class_planning_topic10">Problemas de satisfação de restrições: Procura Local para PSRs </string>
+    <string name="ist_class_planning_topic11">Procura com outras fontes de conhecimento: Sub-Objectivos Independentes, Sequenciáveis, Insequenciáveis, Sequenciáveis-por-Bloco </string>
+    <string name="ist_class_planning_topic12">Procura com outras fontes de conhecimento: Macro-Operadores</string>
+    <string name="ist_class_planning_topic13">Procura com outras fontes de conhecimento: Abstracção</string>
+    <string name="ist_class_planning_topic14">Planeamento clássico: Da Resolução de Problemas ao Planeamento, Planeamento em Cálculo Situacional, O Problema do Planeamento, Planear com procura num espaço de estados, Planear com procura num espaço de planos, Grafos de Planeamento, Algoritmo GRAPHPLAN </string>
+    <string name="ist_class_planning_topic15">Planeamento e acção no mundo real: Tempo, Cronogramas e Recursos, Planeamento Hierárquico, Planeamento e Acção em Domínios Não-Determinísticos e Planeamento Multi-Agente</string>
+
+    <string name="ist_class_decision_support_sys">Sistemas de Apoio à Decisão</string>
+    <string name="ist_class_decision_support_sys_description">Introduzir os conceitos fundamentais da descoberta de informação a partir de grandes
+        quantidades de dados Tornar os alunos hábeis na criação de sistemas capazes de descobrir informação escondida através
+        da aplicação de técnicas de data mining. Tornar os alunos hábeis na avaliação da informação descoberta, em particular
+        na comparação dos diferentes modelos descobertos.</string>
+    <string name="ist_class_decision_support_sys_topic1">Processo de Descoberta de Informação Pré-processamento</string>
+    <string name="ist_class_decision_support_sys_topic2">Selecção, Limpeza, Integração e Redução PCA Pós-processamento</string>
+    <string name="ist_class_decision_support_sys_topic3">Princípio da Navalha de Occam e MDL Regras de associação e descoberta de padrões</string>
+    <string name="ist_class_decision_support_sys_topic4">Algoritmos apriori. Regras de associação, padrões máximos e fechados. Descoberta de padrões sequenciais – PrefixSpan Segmentação (Clustering)</string>
+    <string name="ist_class_decision_support_sys_topic5">Algoritmos k-means e em Segmentação de sequências. Classificação Noção de conceito</string>
+    <string name="ist_class_decision_support_sys_topic6">Classificação baseada em instâncias – knn</string>
+    <string name="ist_class_decision_support_sys_topic7">Classificação Bayesiana – MAP, naïve Bayes, Redes de Bayes </string>
+    <string name="ist_class_decision_support_sys_topic8">Árvores de decisão – ID3, C4.5 e CART</string>
+    <string name="ist_class_decision_support_sys_topic9">Redes neuronais – treino perceptrão e backpropagation</string>
+    <string name="ist_class_decision_support_sys_topic10">Máquinas de vectores de suporte</string>
+    <string name="ist_class_decision_support_sys_topic11">Combinação de modelos (Ensemble) – RandomForests, AdaBoost</string>
+    <string name="ist_class_decision_support_sys_topic12">Avaliação de modelos</string>
+    <string name="ist_class_decision_support_sys_topic13">Social Network Analysis</string>
+    <string name="ist_class_decision_support_sys_topic14">Conceitos básicos: centralidade e prestígio. Algoritmo HITS Algoritmo PageRank e variantes Aplicações</string>
+    <string name="ist_class_decision_support_sys_topic15">Descoberta de informação em fluxos de dados e “na nuvem”, Sistemas de recomendação Exploração de texto e recuperação da informação Bioinformática e exploração de dados clínicos</string>
+    <string name="ist_class_decision_support_sys_topic16">Análise de séries temporais e exploração de dados temporais Descoberta de sentimentos e exploração de opiniões</string>
+
+    <string name="ist_class_autonomous_agents">Agentes Autónomos e Sistemas Multi-Agente</string>
+    <string name="ist_class_autonomous_agents_description">Adquirir noções gerais de agentes e sistemas multi-agente; saber identificar e
+        classificar agentes e ambientes, de acordo com diferentes propriedades. Saber desenvolver sistemas complexos e
+        de diferentes áreas de aplicação, usando uma metodologia orientada a agentes. Saber especificar uma sociedade de
+        agentes para a resolução de um problema concreto. Ter a capacidade de conceber agentes com arquitecturas reactivas,
+        deliberativas e híbridas. Ter a capacidade de criar sociedades de agentes que comunicam, de uma forma prática,
+        usando linguagens e plataformas adequadas.</string>
+    <string name="ist_class_autonomous_agents_topic1">Agentes e Ambientes: O conceito de agente, Propriedades de agentes, Propriedades de ambientes, Aplicações, Arquiteturas abstractas para agentes</string>
+    <string name="ist_class_autonomous_agents_topic2">Arquitecturas Reactivas: Agentes puramente reactivos, Arquitectura de subsunção de Brooks</string>
+    <string name="ist_class_autonomous_agents_topic3">Arquitecturas Deliberativas: O paradigma intencional, O modelo BDI, Arquitecturas de agentes de raciocínio prático, Procedural Reasoning System</string>
+    <string name="ist_class_autonomous_agents_topic4">Arquitecturas Híbridas: Arquitecturas híbridas horizontais e verticais, TouringMachines e InteRRaP</string>
+    <string name="ist_class_autonomous_agents_topic5">Arquitecturas com Emoções: Teorias de "Appraisal", O conceito e papel da emoção, Agentes com emoções, Impacto nas arquiteturas estudadas, Modelos e sistemas existentes</string>
+    <string name="ist_class_autonomous_agents_topic6">Sociedades de Agentes e Comportamento Emergente: Sociedades de agentes, Estigmergia, auto-organização e emergência, Casos de estudo - "Game of life", BOIDS e multidões</string>
+    <string name="ist_class_autonomous_agents_topic7">Teoria de Jogos: Introdução à teoria de jogos - conceitos e propriedades fundamentais, O dilema do prisioneiro. Equilíbrio de Nash, Jogos sequenciais e jogos infinitamente longos</string>
+    <string name="ist_class_autonomous_agents_topic8">Comunicação entre Agentes: Comunicação, Actos de discurso, Semântica,  KQML e KIF, FIPA-ACL</string>
+    <string name="ist_class_autonomous_agents_topic9">Coordenação e Cooperação entre Agentes: Resolução de problemas cooperativa e distribuída, O protocolo Contract Net</string>
+    <string name="ist_class_autonomous_agents_topic10">Negociação entre Agentes: Negociação - mecanismos/protocolos e estratégias, Leilões - características e tipos de leilão, Negociar/regatear em domínios orientados à tarefa, "Monotonic Concession Protocol" e "Zeuthen Strategy"</string>
+    <string name="ist_class_autonomous_agents_topic11">Desenvolvimento de Agentes: Programação orientada a agentes, Metodologias e problemas no desenvolvimento de agentes e sistemas multi-agente.</string>
+    <string name="ist_class_autonomous_agents_topic12">Aprendizagem em Agentes: Aprendizagem por reforço em cenários com um agente e em cenários multi-agente,"Q-learning", O problema da coordenação</string>
+    <string name="ist_class_autonomous_agents_topic13">Interacção entre humanos e agentes</string>
+
+    <string name="ist_class_learning">Aprendizagem e Decisão Inteligente</string>
+    <string name="ist_class_learning_description">Reconhecer os principais desafios envolvidos no desenvolvimento de sistemas
+        inteligentes em cenários com incerteza e/ou adversariais. Conhecer e aplicar as principais técnicas de
+        planeamento e aprendizagem neste tipo de cenários</string>
+    <string name="ist_class_learning_topic1">Decisão face à incerteza: Utilidade esperada. Teoria da decisão e optimização. Cadeias de Markov. Controlo e observabilidade. Processos de decisão de Markov (MDPs). Valores de estado e estado-acção. Noções de política e política óptima. Iteração em valores para avaliação de políticas. Iteração em política. Convergência. e.	Iteração em valores para optimização de políticas. Convergência. Processos de decisão de Markov parcialmente observáveis (POMDPs). Crenças. Planeamento. Métodos baseados em pontos.</string>
+    <string name="ist_class_learning_topic2">Decisão em sistemas adversos: Jogos na forma normal. Melhor resposta. Equilíbrio de Nash. Jogos sequenciais. Forma estendida. Jogos estocásticos. O cálculo de equilíbrios de Nash e a sua complexidade</string>
+    <string name="ist_class_learning_topic3">Aprendizagem: Teoria da decisão e inferência Bayesiana. Classificador óptimo de Bayes. Redes de Bayes. Inferência. Algoritmo max-sum. Aprendizagem de modelos sequenciais. Algoritmo forward-backward (Baum-Welch). Aplicação à aprendizagem de POMDPs</string>
+    <string name="ist_class_learning_topic4">Aprendizagem e decisão: Aprendizagem activa. Teoria da aprendizagem. Aprendizagem sequencial. Algoritmo weighted majority. Bandits. Bandits estocásticos. Regret. Algoritmo UCB. Garantias de performance</string>
+    <string name="ist_class_learning_topic5">Aprendizagem e decisão: Bandits adversos. Algoritmo EXP3. Garantias de performance. Aprendizagem em processos de decisão de Markov</string>
+    <string name="ist_class_learning_topic6">Aprendizagem e decisão: Aprendizagem por reforço baseada em modelos. Aprendizagem por reforço baseada em valor: algoritmos TD-learning e Q-learning. Convergência.</string>
+    <string name="ist_class_learning_topic7">Aplicações: TD-Gammon - Aplicação de aprendizagem por reforço ao jogo backgammon</string>
+    <string name="ist_class_learning_topic8">Aplicações: Bandits e planeamento: Monte-carlo tree searc</string>
+    <string name="ist_class_learning_topic9">Aplicações: Algoritmo UCT e aplicações ao jogo Go</string>
+
+    <string name="ist_class_knowledge_rep">Representação do Conhecimento e Raciocínio</string>
+    <string name="ist_class_knowledge_rep_description">Conhecer as várias famílias de representação de conhecimento e de raciocínio avançadas
+        (para além da Lógica Clássica de Primeira Ordem).Compreender como representar conhecimento em cada uma dessas famílias e
+        as formas de raciocínio sobre o mesmo oferecidas por cada uma. Conhecer as vantagens, limitações e fragilidades de cada
+        uma dessas famílias tanto do ponto de vista da representação como do raciocínio. Ser capaz de efectuar as escolhas adequadas
+        de sistema dado um problema concreto de representação e raciocínio. Ser capaz de construir bases de conhecimento segundo
+        cada uma das famílias. Ser capaz de representar e resolver problemas razoavelmente complexos de representação e raciocínio.
+        Ser capaz de representar grandes quantidades de conhecimento e conseguir a sua partilha entre vários sistemas.</string>
+    <string name="ist_class_knowledge_rep_topic1">Conhecimento, Representação de Conhecimento e Raciocínio. Conhecimento Declarativo e Conhecimento Procedimental. A Hipótese de Representação de Conhecimento. Sistemas Baseados em Conhecimento. A importância da representar conhecimento e de raciocinar sobre ele. Noções de Solidez e Completude. O nível dos símbolos e do conhecimento</string>
+    <string name="ist_class_knowledge_rep_topic2">Aplicações da Representação de Conhecimento e Raciocínio</string>
+    <string name="ist_class_knowledge_rep_topic3">Lógica de Primeira Ordem: Sintaxe, Semântica, Pragmática. Crenças explícitas e implícitas em Sistemas Baseados em Conhecimento em lógica de primeira ordem</string>
+    <string name="ist_class_knowledge_rep_topic4">Exprimir o conhecimento em Lógica Clássica de Primeira Ordem: metodologia para criar bases de conhecimentos em Lógica Clássica de Primeira Ordem</string>
+    <string name="ist_class_knowledge_rep_topic5">Resolução em Lógica Clássica de Primeira Ordem (variáveis e quantificadores)</string>
+    <string name="ist_class_knowledge_rep_topic6">Estratégias várias para lidar com a Intratabilidade do raciocínio: Base de Herbrand, SAT Solvers, MGU, Raciocínio baseado em Cláusulas de Horn, estratégias várias</string>
+    <string name="ist_class_knowledge_rep_topic7">Controlo de Raciocínio Procedimental</string>
+    <string name="ist_class_knowledge_rep_topic8">Sistemas Baseados em Conhecimento: O que são, componentes, casos de sucesso, áreas de aplicação, técnicas usadas, limitações. Análise de um sistema de sucesso (por exemplo MYCIN)</string>
+    <string name="ist_class_knowledge_rep_topic9">Sistemas de Produção: a utilização de Regras como método de representação de conhecimento e raciocínio</string>
+    <string name="ist_class_knowledge_rep_topic10">Sistemas Orientados a Objectos: ideias principais de representação e raciocínio neste tipo de sistemas. Um sistema de Enquadramentos genérico (representação e raciocínio). Análise de um problema concreto usando um sistema de enquadramentos. Um Sistema de Enquadramentos avançados (por exemplo KEE): representação e raciocínio. Representação de conhecimento para resolução de um problema num sistema de enquadramentos. Vantagens e Desvantagens.</string>
+    <string name="ist_class_knowledge_rep_topic11">Representação de conhecimento em Lógicas Descritivas. Ideias principais por detrás do desenvolvimento desta família de sistemas. Representação de Conhecimento em Lógicas Descritivas. Separação da A-Box e T-Box, propriedades intrínsecas e contigentes. Um sistema da família DL, sintaxe e seu sistema semântico. Raciocínio em Lógicas Descritivas. Computação da subsumpção (subsumption) e satisfação. Resolução de um problema de representação numa Lógica Descritiva. Classificação. Extensões à linguagem base. Aplicações baseadas em Lógicas Descritivas</string>
+    <string name="ist_class_knowledge_rep_topic12">Semantic Web e Ontologias. As Lógicas Descritivas e a Semantic Web. As Lógicas Descritivas e as Ontologias</string>
+    <string name="ist_class_knowledge_rep_topic13">Redes de Herança. Abordagens translacionais e topológicas. Herança estrita e revisível. Estratégias topológicas de resolução da Herança revisível: caminho mais curto, distância inferencial. Resolução de herança revisível segundo uma abordagem topológica completa: suporte, especificidade, preensão, redundância. A noção de extensão. Extensão crédula e extensão preferida. Herança crédula e herança céptica</string>
+    <string name="ist_class_knowledge_rep_topic14">Motivação às Lógicas não monótonas. Raciocínio por omissão e não monotonicidade. Uma lógica não monótona, por exemplo a Lógica de Omissão do Reiter. Regras de Omissão, extensões, múltiplas extensões. Representação de problemas na Lógica de Omissão. Cálculo de extensões, usando o sistema sintático. Exemplos de teorias sem extensões, uma ou várias extensões. Teorias normais de omissão e suas propriedades. Teorias semi-normais e suas propriedades. Vantagens e desvantagens das lógicas não monótonas. Objecções às Lógicas não monótonas</string>
+    <string name="ist_class_knowledge_rep_topic15">Incerteza e graus de crença</string>
+    <string name="ist_class_knowledge_rep_topic16">Explicação e Diagnóstico</string>
+
+    <string name="ist_class_logic_algorithms">Algoritmos para Lógica Computacional</string>
+    <string name="ist_class_logic_algorithms_description">A Lógica é um dos pilares da Ciência da Computação (Computer Science, CS),
+        encontrando aplicação em todas as áreas de CS. Exemplos concretos incluem as bases de dados, os sistemas de informação inteligentes,
+        a inteligência artificial, mas também a especificação, validação e verificação de software, hardware e redes. O objectivo
+        desta unidade curricular é proporcionar formacão avançada em abordagens para resolver problemas computacionais relacionados
+        com Lógica. Os estudantes ficam capacitados para analisar, modelar e resolver problemas computacionalmente difíceis usando
+        Lógica. Adicionalmente, obtém formação nos aspectos de engenharia essenciais na construção de software para problemas de
+        Lógica: funcionamento e implementação de um sistema dedutivo e técnicas algorítmicas e estruturas de dados fundamentais
+        para a implementação de ferramentas baseadas em Lógica.</string>
+    <string name="ist_class_logic_algorithms_topic1">Problemas de decisão em lógica proposicional (Boolean Satisfiability, SAT)</string>
+    <string name="ist_class_logic_algorithms_topic2">Exemplos de modelação com lógica proposicional</string>
+    <string name="ist_class_logic_algorithms_topic3">Algoritmos para SAT</string>
+    <string name="ist_class_logic_algorithms_topic4">Problemas de decisão em lógica de primeira ordem</string>
+    <string name="ist_class_logic_algorithms_topic5">O problema de Satisfação Módulo Teorias (Satisfiability Modulo Theories, SMT)</string>
+    <string name="ist_class_logic_algorithms_topic6">Conversão para SAT. Algoritmos para SMT.</string>
+    <string name="ist_class_logic_algorithms_topic7">A Programação por Restrições (Constraint Programming, CP): Algoritmos e exemplos de modelação</string>
+    <string name="ist_class_logic_algorithms_topic8">Conversão de e para lógica proposicional</string>
+    <string name="ist_class_logic_algorithms_topic9">Programação por Conjuntos de Resposta (Answer Set Programming, ASP): algoritmos e exemplos de modelação</string>
+    <string name="ist_class_logic_algorithms_topic10">Relação com a lógica proposicional</string>
+    <string name="ist_class_logic_algorithms_topic11">Problemas de função e enumeração para SAT, SMT, ASP e CP, incluindo problemas de optimização e problemas relacionados com conjuntos sobre-especificados de restrições</string>
+    <string name="ist_class_logic_algorithms_topic12">Problemas de decisão, de função e de enumeração com variáveis proposicionais quantificadas. Exemplos de aplicação</string>
+
+    <string name="ist_class_complexity">Computabilidade e Complexidade</string>
+    <string name="ist_class_complexity_description">Caracterizar classes computacionais, identificar conjuntos completos, distinguir complexidade uniforme de não uniforme e executar reduções; estudar problemas em aberto em complexidade computacional.</string>
+    <string name="ist_class_complexity_topic1">Computação com recursos limitados no espaço e no tempo</string>
+    <string name="ist_class_complexity_topic2">Relações estruturais entre classes de complexidade</string>
+    <string name="ist_class_complexity_topic3">Reduções com recursos limitados, de muitos para um (tempo polinomial, espaço logarítmico) e Turing</string>
+    <string name="ist_class_complexity_topic4">Conjuntos NP-completos, PSPACE-completos e NL-completos</string>
+    <string name="ist_class_complexity_topic5">A hierarquia (de tempo) polinomial</string>
+    <string name="ist_class_complexity_topic6">Classes de complexidade não uniforme e circuitos booleanos</string>
+    <string name="ist_class_complexity_topic7">Conjuntos P-completos</string>
+    <string name="ist_class_complexity_topic8">Máquinas de Turing probabilísticas</string>
+    <string name="ist_class_complexity_topic9">Classes PP, BPP, R e ZPP</string>
+    <string name="ist_class_complexity_topic10">Conjuntos PP-completos</string>
+    <string name="ist_class_complexity_topic11">Relativizações negativas e positivas</string>
+    <string name="ist_class_complexity_topic12">Isomorfismo e NP-completude: cilindros e conjuntos esparsos completos</string>
+    <string name="ist_class_complexity_topic13">Máquinas de Turing interactivas</string>
+    <string name="ist_class_complexity_topic14">Jogos Artur contra Merlin e sistemas de prova</string>
+
+    <string name="ist_class_complex_networks">Redes Complexas</string>
+    <string name="ist_class_complex_networks_description">Esta disciplina tem como objecto de estudo as redes complexas,
+        com foco nos algoritmos, modelos e aplicações quer para redes artificiais quer para redes reais, tais como redes
+        sociais, redes de informação, a Internet, e redes biológicas. Os grafos inerentes a estas redes partilham algumas
+        características recorrentes: grande dimensão; esparsos; scale-free; small-world and clustering effect;
+        comunidades; etc. Neste contexto, interessa tanto o desenvolvimento de algoritmos e estruturas de dados
+        escaláveis para que seja possível um análise efectiva destas redes complexas, como a elaboração de modelos
+        teóricos capazes de descrever os padrões encontrados empiricamente. As aplicações são inúmeras, indo desde
+        motores de pesquisa, difusão de informação na internet, nas redes sociais, nos blogs, ao marketing viral,
+        tolerância das redes a eventos destrutivos, fenómenos epidemiológicos em redes, biologia computacional,
+        com ligações às ciências sociais, à física e à economia.</string>
+    <string name="ist_class_complex_networks_topic1">Redes de grande dimensão e propriedades</string>
+    <string name="ist_class_complex_networks_topic2">Caracterização de redes complexas: redes biológicas, sociais e tecnológicas</string>
+    <string name="ist_class_complex_networks_topic3">Modelos de grafos aleatórios</string>
+    <string name="ist_class_complex_networks_topic4">Representação eficiente de grafos de grande dimensão</string>
+    <string name="ist_class_complex_networks_topic5">Estruturas de dados sucintas</string>
+    <string name="ist_class_complex_networks_topic6">Desenho e análise de algoritmos escaláveis para a análise de redes de grande dimensão, incluindo algoritmos aleatórios e com recurso a técnicas de amostragem</string>
+    <string name="ist_class_complex_networks_topic7">Bases de dados e plataformas distribuídas orientadas ao armazenamento e processamento de redes de grande dimensão</string>
+    <string name="ist_class_complex_networks_topic8">Análise de ligações e caminhos aleatórios</string>
+    <string name="ist_class_complex_networks_topic9">Detecção de comunidades e partição de grafos</string>
+    <string name="ist_class_complex_networks_topic10">Algoritmos de ranking</string>
+    <string name="ist_class_complex_networks_topic11">Renomeação de vértices</string>
+    <string name="ist_class_complex_networks_topic12">Efeitos causados pela estrutura das redes, ligações a eventos económicos, sociais e biológicos</string>
+    <string name="ist_class_complex_networks_topic13">Sistemas dinâmicos em redes</string>
+    <string name="ist_class_complex_networks_topic14">Introdução à descrição de processos estocásticos e simulações multi-agente em larga escala</string>
+    <string name="ist_class_complex_networks_topic15">Propagação de doenças em redes e tolerância a eventos destrutivos. Influencia social e modelos de formação de opiniões em redes</string>
+    <string name="ist_class_complex_networks_topic16">Teoria de jogos e dinâmica de populações</string>
+    <string name="ist_class_complex_networks_topic17">Cooperação, dinâmicas de reputações e problemas de bem público</string>
+    <string name="ist_class_complex_networks_topic18">Processos de decisão em redes complexas estáticas e dinâmicas</string>
+
+    <string name="ist_class_advanced_algorithms">Algoritmos Avançados</string>
+    <string name="ist_class_advanced_algorithms_description">O objectivo desta unidade curricular é portanto a formação
+        avançada em técnicas de desenvolvimento e análise de algoritmos com particular foco em estruturas de dados avançadas
+        para indexação e compressão, algoritmos randomizados, algoritmos de aproximação, algoritmos para processamento
+        online e em tempo real, e estruturas de dados e algoritmos distribuídos e com acesso a memória externa.
+        Esta unidade curricular seguirá uma abordagem baseda na resolução de problemas em que as técnicas de desenho
+        e análise das estruturas de dados e algoritmos serão motivadas e exploradas de forma intuitiva e construtiva.</string>
+    <string name="ist_class_advanced_algorithms_topic1">Estruturas de dados avançadas e B-trees</string>
+    <string name="ist_class_advanced_algorithms_topic2">Amontoados binomiais, de Fibonacci, e relaxados</string>
+    <string name="ist_class_advanced_algorithms_topic3">Algoritmos de Aproximação para problemas NP-hard</string>
+    <string name="ist_class_advanced_algorithms_topic4">Técnicas probabilísticas, caminhos aleatórios, e teoria de jogos</string>
+    <string name="ist_class_advanced_algorithms_topic5">Algoritmos com escolhas aleatórias e algoritmos online e para processamento em tempo real</string>
+    <string name="ist_class_advanced_algorithms_topic6">Estruturas de dados e algoritmos distribuídos e com recurso memória externa</string>
+    <string name="ist_class_advanced_algorithms_topic7">Algoritmos para strings, árvores de sufixos</string>
+    <string name="ist_class_advanced_algorithms_topic8">Algoritmos em árvores, LCA</string>
+    <string name="ist_class_advanced_algorithms_topic9">Algoritmos em grafos, corte mínimo, MST em tempo linear, partição de grafos, e contagem de subgrafos</string>
+    <string name="ist_class_advanced_algorithms_topic10">Análise amortizada</string>
+    <string name="ist_class_advanced_algorithms_topic11">Contagem aproximada</string>
+
+    <string name="ist_class_parallel_computing">Computação Paralela e Distribuída</string>
+    <string name="ist_class_parallel_computing_description">Compreender os modelos, técnicas, e formas de programação de algoritmos paralelos.
+        Analisar e conceber algoritmos paralelos. Compreender os fundamentos da computação distribuída.</string>
+    <string name="ist_class_parallel_computing_topic1">Modelos de computação paralela: multiprocessadores e multicomputadores; organização da memória; complexidade da comunicação</string>
+    <string name="ist_class_parallel_computing_topic2">Redes de Interligação</string>
+    <string name="ist_class_parallel_computing_topic3">Taxonomia de Flynn</string>
+    <string name="ist_class_parallel_computing_topic4">Programação em sistemas de passagem de mensagens: MPI, metodologia de Foster</string>
+    <string name="ist_class_parallel_computing_topic5">Programação em sistemas com memória partilhada: OpenMP, threads, condições de corrida, detecção de interblocagem</string>
+    <string name="ist_class_parallel_computing_topic6">Análise e síntese de algoritmos paralelos: divisão do problema; organização dos dados; sincronização; balanceamento e escalonamento</string>
+    <string name="ist_class_parallel_computing_topic7">Análise do desempenho de algoritmos paralelos</string>
+    <string name="ist_class_parallel_computing_topic8">Fundamentos de computação distribuída e suas aplicações aos algoritmos paralelos</string>
+    <string name="ist_class_parallel_computing_topic9">Limites da computação paralela</string>
+    <string name="ist_class_parallel_computing_topic10">Estudo de algoritmos paralelos: algoritmos de ordenação; algoritmos numéricos, multiplicação de matrizes, solução de sistemas lineares. algoritmos em grafos</string>
+    <string name="ist_class_parallel_computing_topic11">Algoritmos de procura e optimização</string>
+
+    <string name="ist_class_programming_languages">Linguagens de Programação</string>
+    <string name="ist_class_programming_languages_description">Compreensão da história e evolução das linguagens e paradigmas de programação.
+        Domínio das conceitos fundamentais de ligação, âmbito, duração, tipo, fluxo de controle, abstração de dados, abstração de controle,
+        e excepções. Avaliação das semelhanças e diferenças entre as várias linguagens de programação. Compreensão das alternativas no
+        desenho e implementação de linguagens, por exemplo, execução por compilação vs interpretação, âmbito léxico vs dinâmico,
+        tipificação estática vs dinâmica, modelo de referências vs modelo de valores, memória gerida manualmente vs automaticamente,
+        etc. Compreensão das diferenças entre os paradigmas imperativo, funcional, lógico e orientado a objectos.</string>
+    <string name="ist_class_programming_languages_topic1">História das linguagens de programação, Compilação e Interpretação</string>
+    <string name="ist_class_programming_languages_topic2">Ligação, âmbito e duração</string>
+    <string name="ist_class_programming_languages_topic3">Âmbito léxico e dinâmico</string>
+    <string name="ist_class_programming_languages_topic4">Módulos</string>
+    <string name="ist_class_programming_languages_topic5">Alocação de memória</string>
+    <string name="ist_class_programming_languages_topic6">Fluxo de controle</string>
+    <string name="ist_class_programming_languages_topic7">Precedência e associatividade</string>
+    <string name="ist_class_programming_languages_topic8">Atribuição e inicialização</string>
+    <string name="ist_class_programming_languages_topic9">Sequenciação e selecção e iteração</string>
+    <string name="ist_class_programming_languages_topic10">Ciclos enumerados e ciclos lógicos e Ciclos combinados</string>
+    <string name="ist_class_programming_languages_topic11">Iteradores internos e externos</string>
+    <string name="ist_class_programming_languages_topic12">Tipos, equivalência, compatibilidade e inferência de tipos</string>
+    <string name="ist_class_programming_languages_topic13">Linguagens fortemente/fracamente tipificadas e dinamicamente/estaticamente tipificadas</string>
+    <string name="ist_class_programming_languages_topic14">Conversões de tipos</string>
+    <string name="ist_class_programming_languages_topic15">Tipos recursivos, Apontadores, Abstracção de controle, Subrotinas</string>
+    <string name="ist_class_programming_languages_topic16">Passagem de parâmetros e Funções de ordem superior</string>
+    <string name="ist_class_programming_languages_topic17">Excepções</string>
+    <string name="ist_class_programming_languages_topic18">Abstracção de dados e orientação a objectos</string>
+    <string name="ist_class_programming_languages_topic19">Ligação dinâmica</string>
+    <string name="ist_class_programming_languages_topic20">Modelo de referências e modelo de valores</string>
+    <string name="ist_class_programming_languages_topic21">Herança simples e herança múltipla</string>
+    <string name="ist_class_programming_languages_topic22">Programação genérica</string>
+    <string name="ist_class_programming_languages_topic23">Programação funcional, história e fundamentos teóricos</string>
+    <string name="ist_class_programming_languages_topic24">Modelo de avaliação</string>
+    <string name="ist_class_programming_languages_topic25">Programação lógica, história e fundamentos teóricos, resolução e unificação</string>
+    <string name="ist_class_programming_languages_topic26">Linguagens de scripting</string>
+    <string name="ist_class_programming_languages_topic27">Domínios de aplicação</string>
+
+    <string name="ist_class_data_integration">Análise e Integração de Dados</string>
+    <string name="ist_class_data_integration_description">A disciplina de Análise e Integração de Dados pretende ensinar aos alunos
+        os conceitos mais importantes de integração de dados sobre duas perspectivas diferentes: virtual, onde as fontes de dados
+        podem ser consultadas através de uma arquitectura de mediação; e wharehoused, onde um repositório de dados materializado
+        (denominado armazém de dados ou data warehouse) é preenchido com dados provenientes das fontes. Adicionalmente, a disciplina
+        ensinará as técnicas que podem ser utilizadas para explorar a informação: OLAP e reporting numa arquitectura wharehoused,
+        e sistemas de mash-up numa arquitectura virtual.</string>
+    <string name="ist_class_data_integration_topic1">Principais desafios dos processos de integração de dados; paradigmas de integração de dados</string>
+    <string name="ist_class_data_integration_topic2">Fontes de dados heterógeneas: gestão e processamento de dados XML</string>
+    <string name="ist_class_data_integration_topic3">Fontes de dados heterógenas: gestão e processamento de dados provenientes de sensores (stream data)</string>
+    <string name="ist_class_data_integration_topic4">Integração Virtual: wrappers-mediadores; manipulação de interrogações</string>
+    <string name="ist_class_data_integration_topic5">Execução de interrogações usando vistas; descrições de fonte</string>
+    <string name="ist_class_data_integration_topic6">Linguagens de mapeamento de esquemas; global-as-view e local-as-view; mapeamento e emparelhamento de esquemas</string>
+    <string name="ist_class_data_integration_topic7">Wrappers: construção manual e construção automática</string>
+    <string name="ist_class_data_integration_topic8">Data warehousing: o modelo multi-dimensional; concepção de data warehouses</string>
+    <string name="ist_class_data_integration_topic9">OLAP (Online-Analytical Processing) e ETL (Extraction-Transformation-Loading)</string>
+    <string name="ist_class_data_integration_topic10">Caching e materialização parcial; reporting</string>
+    <string name="ist_class_data_integration_topic11">Troca de dados (Data Exchange) Warehousing declarativo</string>
+    <string name="ist_class_data_integration_topic12">Limpeza de dados: uma taxonomia de problemas de qualidade nos dados; dimensões da qualidade dos dados</string>
+    <string name="ist_class_data_integration_topic13">Detecção de duplicados: algoritmos de emparelhamento de strings e algoritmos de emparelhamento de registos</string>
+    <string name="ist_class_data_integration_topic14">Fusão de dados. Mash-ups: motivação, criação e aplicação</string>
+    <string name="ist_class_data_integration_topic15">Proveniência de dados e aplicações</string>
+
+    <string name="ist_class_info_recovery">Processamento e Recuperação de Informação</string>
+    <string name="ist_class_info_recovery_description">A disciplina de Processamento e Recuperação de Informação visa proporcionar
+        uma introdução completa e actualizada aos conceitos-chave, tecnologias, e mecanismos de processamento de dados utilizados
+        nas áreas da Recuperação de Informação (IR), Filtragem de Informação (IF), e Extração de Informação (IE).
+        Os alunos da disciplina aprenderão os conceitos teóricos fundamentais nestas áreas, adquirindo as competências
+        teóricas e práticas necessárias para: Projectar soluções modernas para o processamento, gestão e interrogação
+        de grandes volumes de informação não estruturada ou semi-estruturada;
+        Classificar e agrupar automaticamente conjuntos de recursos (e.g., grandes conjuntos de documentos de texto)
+        através de características descritivas;Conceber sistemas para a recuperação e filtragem da informação
+        relevante existem em grandes colecções, com base em termos chave, com base em exemplos, ou com base em perfis dos
+        utilizadores; Conceber sistemas para a extração de informação desde documentos de texto, ou desde a Web;
+        Avaliar comparativamente diferentes sistemas para a extracção, filtragem e recuperação de informação relevante</string>
+    <string name="ist_class_info_recovery_topic1">Introdução: Arquitetura geral de sistemas de IR/IE</string>
+    <string name="ist_class_info_recovery_topic2">Introdução: Pré-processamento de documentos em IR/IE</string>
+    <string name="ist_class_info_recovery_topic3">Introdução: Modelos para dados não estruturados</string>
+    <string name="ist_class_info_recovery_topic4">Introdução: O modelo booleano para recuperação de informação (RI)</string>
+    <string name="ist_class_info_recovery_topic5">Introdução: Pesagem de termos e o modelo do espaço vectorial</string>
+    <string name="ist_class_info_recovery_topic6">Introdução: Redução de dimensionalidade e latent semantic indexing</string>
+    <string name="ist_class_info_recovery_topic7">Introdução: Modelos probabilísticos, o modelo BM25, e modelos de linguagem para RI</string>
+    <string name="ist_class_info_recovery_topic8">Processamento de Informação não estruturada e extracção de informação a partir de texto</string>
+    <string name="ist_class_info_recovery_topic9">Classificação e agrupamento automático de documentos</string>
+    <string name="ist_class_info_recovery_topic10">Classificação de documentos com o modelo naive Bayes</string>
+    <string name="ist_class_info_recovery_topic11">Extracção de informação com hidden Markov models</string>
+    <string name="ist_class_info_recovery_topic12">Avaliação: Métricas de avaliação (precisão, abrangência, MAP, NDCG)</string>
+    <string name="ist_class_info_recovery_topic13">Avaliação: Colecções de referência, o TREC e a metodologia de avaliação de Cranfield</string>
+    <string name="ist_class_info_recovery_topic14">Avaliação: Validação cruzada e outras considerações práticas</string>
+    <string name="ist_class_info_recovery_topic15">Avaliação: </string>
+    <string name="ist_class_info_recovery_topic16">Modelos de dados semi-estruturados (e.g., baseados em JSON)</string>
+    <string name="ist_class_info_recovery_topic17">A Extensible Markup Language (XML) e tecnologias relacionadas (e.g., XPath)</string>
+    <string name="ist_class_info_recovery_topic18">Linguagens de markup baseadas em XML (e.g., TEI, METS, MODS)</string>
+    <string name="ist_class_info_recovery_topic19">Outros modelos e linguagens de markup (e.g., SGML, HTML e RDF) </string>
+    <string name="ist_class_info_recovery_topic20">Geração de wrappers e extracção de informação a partir de recursos na Web</string>
+    <string name="ist_class_info_recovery_topic21">Consultas a dados semi-estruturados e a linguagem XQuery</string>
+    <string name="ist_class_info_recovery_topic22">Recuperação de informação em colecções de dados XML</string>
+    <string name="ist_class_info_recovery_topic23">Análise de hiperligações e recuperação de informação na Web: Modelos da Web, Conceitos gerais sobre grafos e métodos de análise de hiperligações, Ordenação de resultados em motores de busca na Web, com base na análise de hiperligações, Recolha de dados da Web </string>
+    <string name="ist_class_info_recovery_topic24">Indexação e consulta de informação não estruturada: Expressões regulares, Índices invertidos e construção eficiente de índices, Processamento de consultas com índices invertidos </string>
+    <string name="ist_class_info_recovery_topic25">Pesquisa por itens similares e pesquisa por similaridade em dados multi-dimensionais</string>
+    <string name="ist_class_info_recovery_topic26">Sistemas de recomendação: Contexto, personalização, e filtragem de informação, Sistemas de recomendação com base no conteúdo, Sistemas de filtragem colaborativa </string>
+    <string name="ist_class_info_recovery_topic27">Técnicas de processamento distribuído para IR e IE </string>
+    <string name="ist_class_info_recovery_topic28">Aplicações para as técnicas de IE e IR: Enterprise search e pesquisa de peritos, Bibliotecas digitais, Prospecção de opiniões em conteúdos online, Outras aplicações (e.g., publicidade online)</string>
+
+    <string name="ist_class_forensics_cibersec">Ciber Segurança Forense</string>
+    <string name="ist_class_forensics_cibersec_description">O objectivo do curso é o estudo das técnicas e metodologias forenses
+        aplicadas às evidencias digitais. Durante o cursos os alunos apreenderão as diferentes fases da metodologia forense bem
+        como a sua aplicação à recolha e tratamento de evidências digitais em diferentes meios, nomeadamente evidências recolhidas
+        da rede, da memória volátil e persistente dos sistema de informação e dos sistemas activos de gestão da rede e ainda
+        da memória de dispositivos móveis. Serão ainda abordados alguns aspectos legais relevantes para o processo de recolha
+        e tratamento de dados de forma a permitir a produção prova em tribunal.</string>
+    <string name="ist_class_forensics_cibersec_topic1">Fundamentos da análise forense</string>
+    <string name="ist_class_forensics_cibersec_topic2">Metodologia</string>
+    <string name="ist_class_forensics_cibersec_topic3">Tipos de dados</string>
+    <string name="ist_class_forensics_cibersec_topic4">Análise Forense de redes</string>
+    <string name="ist_class_forensics_cibersec_topic5">Análise de dados da rede</string>
+    <string name="ist_class_forensics_cibersec_topic6">Análise dos sistemas de gestão activos</string>
+    <string name="ist_class_forensics_cibersec_topic7">Análise Forense de sistemas</string>
+    <string name="ist_class_forensics_cibersec_topic8">Análise de sistemas Windows</string>
+    <string name="ist_class_forensics_cibersec_topic9">Análise de sistemas Linux</string>
+    <string name="ist_class_forensics_cibersec_topic10">Análise de sistemas móveis</string>
+    <string name="ist_class_forensics_cibersec_topic11">Aspectos legais (US, Europa)</string>
+
+    <string name="ist_class_sw_security">Segurança em Software</string>
+    <string name="ist_class_sw_security_description">Compreender os problemas de segurança em software mais comuns e as suas causas fundamentais.
+        Conhecer orientações, técnicas e ferramentas para a sua prevenção ou detecção, e os melhores princípios que estão por detrás destas técnicas.</string>
+    <string name="ist_class_sw_security_topic1">Princípios da segurança de computadores Propriedades e conceitos básicos; Princípios de projecto de software seguro.</string>
+    <string name="ist_class_sw_security_topic2">Vulnerabilidades em Software de Aplicações convencionais (buffer overflows, corridas)</string>
+    <string name="ist_class_sw_security_topic3">Aplicações Web e bases de dados e Aplicações móveis</string>
+    <string name="ist_class_sw_security_topic4">Aspectos de desenvolvimento de software seguro: Auditoria de software, Validação e codificação.</string>
+    <string name="ist_class_sw_security_topic5">Controlo do ambiente de execução: Protecção dinâmica, Virtualização e segurança, Trusted computing</string>
+    <string name="ist_class_sw_security_topic6">Segurança baseada em linguagem: Análise de fluxos de informação; Sistemas de tipos para a segurança; Desenvolvimento de código de baixo nível seguro; Código portador de prova</string>
+    <string name="ist_class_sw_security_topic7">Caso de estudo: segurança em Java Sandboxing e inspecção da pilha; Falhas de segurança em Java; Princípios de programação segura em Java</string>
+
+    <string name="ist_class_cryptography">Criptografia e Protocolos de Segurança</string>
+    <string name="ist_class_cryptography_description">Conhecer os sistemas e protocolos criptográficos em uso,
+        desenvolver protocolos para resolução de problemas específicos e perspectivar desenvolvimentos futuros.</string>
+    <string name="ist_class_cryptography_topic1">Motivação: conceitos básicos e problemas centrais da criptografia</string>
+    <string name="ist_class_cryptography_topic2">Sistemas criptográficos de chave privada</string>
+    <string name="ist_class_cryptography_topic3">Cifras sequenciais</string>
+    <string name="ist_class_cryptography_topic4">Contributo da teoria da informação</string>
+    <string name="ist_class_cryptography_topic5">Formas de ataque: dividir para conquistar e correlação rápida</string>
+    <string name="ist_class_cryptography_topic6">Cifras por blocos</string>
+    <string name="ist_class_cryptography_topic7">Exemplos típicos: DES e AES</string>
+    <string name="ist_class_cryptography_topic8">Segurança perfeita e computacional</string>
+    <string name="ist_class_cryptography_topic9">Sistemas criptográficos de chave pública</string>
+    <string name="ist_class_cryptography_topic10">Sistema RSA</string>
+    <string name="ist_class_cryptography_topic11">Algoritmos de factorização e primalidade</string>
+    <string name="ist_class_cryptography_topic12">Análise criptográfica quântica</string>
+    <string name="ist_class_cryptography_topic13">Coordenadas projectivas</string>
+    <string name="ist_class_cryptography_topic14">Curvas elípticas</string>
+    <string name="ist_class_cryptography_topic15">Inteiros de Gauss. Algoritmo de Euclides para polinómios. Teorema de Hilbert. Bases de Gröbner.</string>
+    <string name="ist_class_cryptography_topic16">Sistemas criptográficos elípticos e hiperelípticos</string>
+    <string name="ist_class_cryptography_topic17">Protocolos de chave pública. Esquema de assinatura ElGamal e DSS. Algoritmos de assinatura digital baseados em curvas elítpticas.</string>
+    <string name="ist_class_cryptography_topic18">Assinaturas cegas. Funções de dispersão. Esquemas de distribuição de chaves de Diffie-Hellman. Distribuição quântica de chaves. Protocolo estação para estação e MTI. Códigos de autenticação.</string>
+    <string name="ist_class_cryptography_topic19">Esquema de partilha de segredos de Shamir. Sistemas de prova com conhecimento nulo. Esquemas de Schnorr e Fiat-Shamir.</string>
+    <string name="ist_class_cryptography_topic20">Computação segura e aplicações.</string>
+
     <string name="ist_class_"></string>
     <string name="ist_class__description"></string>
     <string name="ist_class__topic1"></string>
@@ -3564,6 +3941,7 @@ Os estudantes deverão ainda desenvolver competências em análise e síntese, r
     <string name="ist_class__topic18"></string>
     <string name="ist_class__topic19"></string>
     <string name="ist_class__topic20"></string>
+
 
     <!-- UNIVERSIDADE DE LISBOA END-->
 
