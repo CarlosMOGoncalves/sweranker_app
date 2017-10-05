@@ -2691,6 +2691,17 @@ Os estudantes deverão ainda desenvolver competências em análise e síntese, r
     <string name="ist_class_programming_logic_topic5">Solidez e completude, Resolução</string>
     <string name="ist_class_programming_logic_topic6">Programação em lógica</string>
 
+    <string name="ist_class_discrete_math">Matemática Discreta</string>
+    <string name="ist_class_discrete_math_description">Desenvolver o raciocínio matemático rigoroso.
+        Dominar os conceitos e instrumentos matemáticos necessários para a análise de procedimentos e
+        algoritmos, quer quanto à sua correcção, quer quanto à sua eficiência.</string>
+    <string name="ist_class_discrete_math_topic1">Algoritmia: Introdução à linguagem de programação Mathematica. Procedimento versus algoritmo. Análise da eficiência de programas imperativos no pior caso e no caso médio. Notação assintótica. Somatórios, produtórios. Princípio de inclusão-exclusão. Demonstração por indução finita de formas fechadas. Fórmula da soma de Euler.</string>
+    <string name="ist_class_discrete_math_topic2">Teoria de números elementar: Aritmética modular. Divisibilidade, máximo divisor comum, algoritmo de Euclides. Factorização e primalidade, teorema de Euler. Teorema chinês dos restos. Relações de equivalência e de congruência. Corpos finitos. Polinómios sobre corpos finitos. Transformada de Fourier discreta, seu cálculo eficiente e correcção.</string>
+    <string name="ist_class_discrete_math_topic3">Funções geradoras: Função geradora de uma sucessão. Propriedades. Coeficientes binomiais. Função geradora de uma variável aleatória discreta, momentos. Análise de recorrências. Teorema da expansão racional. Resolução de equações lineares às diferenças.</string>
+    <string name="ist_class_discrete_math_topic4">Correcção de programas: Correcção parcial de programas, condições invariantes. Terminação de programas, expressões variantes. Pré-condição e pós-condição. Cálculo de Hoare para correcção parcial de programas imperativos. Ordens parciais, bem fundadas e indução. Cálculo de Hoare para correcção total de programas imperativos. </string>
+    <string name="ist_class_discrete_math_topic5">Grafos: Grafos, caminhos e ciclos. Árvores. Problema do percurso mínimo, algoritmo de Dijkstra e sua análise, soluções distribuídas (Chandy-Misra). Grafos dirigidos, fluxos e cortes. Teorema do fluxo máximo, algoritmo de Ford-Fulkerson.</string>
+    <string name="ist_class_discrete_math_topic6">Linguagens e autómatos: Autómatos finitos determinísticos e não determinísticos. Expressões regulares, gramáticas regulares. Linguagens regulares. Lema da bombagem. Autómatos de pilha e linguagens livres de contexto, hierarquia de Chomsky.</string>
+
     <string name="ist_class_diff_functions">Análise Complexa e Equações Diferenciais</string>
     <string name="ist_class_diff_functions_description">Formação básica em: funções de uma variável complexa, equações diferenciais ordinárias, métodos de
         análise de Fourier com aplicação à resolução de equações diferenciais parciais.</string>
@@ -3918,6 +3929,407 @@ Os estudantes deverão ainda desenvolver competências em análise e síntese, r
     <string name="ist_class_cryptography_topic18">Assinaturas cegas. Funções de dispersão. Esquemas de distribuição de chaves de Diffie-Hellman. Distribuição quântica de chaves. Protocolo estação para estação e MTI. Códigos de autenticação.</string>
     <string name="ist_class_cryptography_topic19">Esquema de partilha de segredos de Shamir. Sistemas de prova com conhecimento nulo. Esquemas de Schnorr e Fiat-Shamir.</string>
     <string name="ist_class_cryptography_topic20">Computação segura e aplicações.</string>
+
+    <string name="ist_class_game_computing">Computação Gráfica para Jogos</string>
+    <string name="ist_class_game_computing_description">Computação gráfica para jogos cobre aspectos teóricos e práticos
+        do desenvolvimento de motores gráficos para videojogos (game engines). Aborda os diferentes subsistemas presentes
+        num motor de jogo, incluindo, entre outros, subsistemas de rasterização, animação de personagens, e físicos, e
+        discute a articulação necessária entre os vários subsistemas para suportar o desenvolvimento de jogabilidade.
+        Após a frequência desta disciplina, os alunos deverão compreender como funciona um motor gráfico moderno e
+        serem capazes de desenvolver os seus próprios motores gráficos para jogos.</string>
+    <string name="ist_class_game_computing_topic1">Introdução ao desenvolvimento de motores gráficos para jogos</string>
+    <string name="ist_class_game_computing_topic2">Arquitectura de um motor gráfico de jogo</string>
+    <string name="ist_class_game_computing_topic3">Pipeline de produção e gestão de recursos</string>
+    <string name="ist_class_game_computing_topic4">Ciclos de simulação em tempo real</string>
+    <string name="ist_class_game_computing_topic5">Dispositivos de interface</string>
+    <string name="ist_class_game_computing_topic6">Matemática para motores gráficos 3D</string>
+    <string name="ist_class_game_computing_topic7">Pipeline de visualização: modelação, modelo de visualização, modelos de iluminação e sombreamento, texturas</string>
+    <string name="ist_class_game_computing_topic8">Pipeline de rasterização do GPU e programação de shaders</string>
+    <string name="ist_class_game_computing_topic9">Efeitos visuais</string>
+    <string name="ist_class_game_computing_topic10">Iluminação global e sombras</string>
+    <string name="ist_class_game_computing_topic11">Gestão de cenas</string>
+    <string name="ist_class_game_computing_topic12">Sistemas de animação</string>
+    <string name="ist_class_game_computing_topic13">Colisões e dinâmica de corpos rígidos</string>
+    <string name="ist_class_game_computing_topic14">Sistemas de som</string>
+    <string name="ist_class_game_computing_topic15">Sistemas multijogador</string>
+    <string name="ist_class_game_computing_topic16">Articulação para desenvolvimento de jogabilidade</string>
+
+    <string name="ist_class_game_design">Design de Jogos</string>
+    <string name="ist_class_game_design_description">Esta disciplina permite ao aluno adquirir capacidades para concepção
+        de uma experiência de jogo e desenvolvimento de protótipos que realizem essa experiência. As capacidades são
+        desenvolvidas fomentando a discussão sobre o que é um jogo, quais são os seus constituintes e qual a relação
+        do jogo com os seus jogadores (tendo em conta as suas diferenças). O aluno desenvolve o seu trabalho com base
+        em documentos de design e construção de protótipos.</string>
+    <string name="ist_class_game_design_topic1">Componentes de design de jogos</string>
+    <string name="ist_class_game_design_topic2">Definição de jogo e jogar</string>
+    <string name="ist_class_game_design_topic3">Perspectiva histórica: exemplos clássicos e modernos</string>
+    <string name="ist_class_game_design_topic4">Teoria de jogos </string>
+    <string name="ist_class_game_design_topic5">Modelos de jogadores </string>
+    <string name="ist_class_game_design_topic6">A experiência do jogador</string>
+    <string name="ist_class_game_design_topic7">Teoria do divertimento</string>
+    <string name="ist_class_game_design_topic8">Jogabilidade: mundos, cenários, abstrações, progressão e balanceamento</string>
+    <string name="ist_class_game_design_topic9">Categorização: géneros de jogos e seus desafios</string>
+    <string name="ist_class_game_design_topic10">Narrativa e desenvolvimento de personagens</string>
+    <string name="ist_class_game_design_topic11">Emoções em jogos</string>
+    <string name="ist_class_game_design_topic12">O processo criativo</string>
+    <string name="ist_class_game_design_topic13">Documentação: conceito, tratamento e guião</string>
+    <string name="ist_class_game_design_topic14">Regras de design de jogos</string>
+    <string name="ist_class_game_design_topic15">O negócio dos jogos e empreendedorismo</string>
+
+    <string name="ist_class_games_ia">Inteligência Artificial para Jogos</string>
+    <string name="ist_class_games_ia_description">Reconhecer as diferenças entre a IA tradicional e aplicação de técnicas de IA ao
+        desenvolvimento de Jogos de Computador, onde outros factores como a jogabilidade são mais importantes que a inteligência do adversário.
+        Conhecer os problemas práticos do desenvolvimento de IA para Jogos de Computador, bem como as diferentes vertentes das
+        técnicas aplicadas em Jogos de Computador comerciais.Saber desenhar e construir um sistema de IA para um jogo de
+        computador, qualquer que seja o seu estilo: acção, desporto, estratégia, narrativa, etc</string>
+    <string name="ist_class_games_ia_topic1">Visão Geral IA para Jogos. A falácia da complexidade. O papel da IA na experiência de jogo do jogador. Considerações acerca das limitações temporais e de memória. O motor de IA para jogos. Competições de IA para Jogos.</string>
+    <string name="ist_class_games_ia_topic2">Procura de caminhos mais curtos. Grafo de caminhos. Dijkstra. A*. Aperfeiçoar o A*. Representação de mundos. Procura de caminhos hierárquica. Procura de caminhos em tempo real. Planeamento de movimento.</string>
+    <string name="ist_class_games_ia_topic3">Movimento. Conceitos fundamentais de algoritmos de Movimento. Algoritmos de movimento “Kinematicos”. Comportamentos de condução. Utilização de Física para predição. Movimento coordenado. Controlo motor. </string>
+    <string name="ist_class_games_ia_topic4">Decisão. Árvores de decisão. Máquinas de estado. Árvores de comportamento. Lógica “Fuzzy”. Comportamento baseado em objectivos. Sistemas baseados em regras.</string>
+    <string name="ist_class_games_ia_topic5">IA para tácticas e estratégia. Tácticas com pontos de localização. Análise Táctica. Procura de caminhos táctica. Acções coordenadas.</string>
+    <string name="ist_class_games_ia_topic6">Aprendizagem em Jogos. Conceitos fundamentais de aprendizagem. Modificação de Parâmetros. Predição de acções. Aprendizagem de decisões. Classificador “Naive Bayes”. Modelação do utilizador.</string>
+    <string name="ist_class_games_ia_topic7">Jogos de Tabuleiro. Algoritmo minimax. Tabelas de transposição. Algoritmos de teste com memória. Jogos de estratégia baseados em turnos.</string>
+    <string name="ist_class_games_ia_topic8">Desenhar IA para Jogos. Como desenhar a IA de um Jogo. Jogos de tiros. Jogos de condução. Jogos de estratégia em tempo real. Jogos de desporto. Jogos de estratégia baseados em turnos.</string>
+    <string name="ist_class_games_ia_topic9">Utilização de IA em Narrativa Interactiva.</string>
+
+    <string name="ist_class_game_dev_method">Metodologia de Desenvolvimento de Jogos</string>
+    <string name="ist_class_game_dev_method_description">Dar ao alunos uma visão geral das diferentes metodologias e tecnologias envolvida
+        no desenvolvimento de videojogos discutindo as principais questões de cada uma delas. Dotar os alunos de ferramentas e técnicas
+        para desenvolver interfaces de videojogos tendo especial atenção aos modos de controlo usados. Dotar os alunos de capacidade
+        de reflecção sobre a jogabilidade e a experiência do jogador seguindo uma perspectiva de modelação conceptual juntamente
+        com uma perspectiva empírica de realização de testes com jogadores. Salientar processos de exploração da experiência
+        na perspectiva do jogador.</string>
+    <string name="ist_class_game_dev_method_topic1">O Jogo como artefacto interactivo.</string>
+    <string name="ist_class_game_dev_method_topic2">Envolvimento do jogador</string>
+    <string name="ist_class_game_dev_method_topic3">Desenvolvimento ágil</string>
+    <string name="ist_class_game_dev_method_topic4">Ferramentas de desenvolvimento</string>
+    <string name="ist_class_game_dev_method_topic5">Modelos de interacção</string>
+    <string name="ist_class_game_dev_method_topic6">Tipos de interface</string>
+    <string name="ist_class_game_dev_method_topic7">Apresentação do mundo e representação do jogador</string>
+    <string name="ist_class_game_dev_method_topic8">Metáforas de controle</string>
+    <string name="ist_class_game_dev_method_topic9">Modelação conceptual da Experiência do Jogador</string>
+    <string name="ist_class_game_dev_method_topic10">Modelo Económico do Jogo</string>
+    <string name="ist_class_game_dev_method_topic11">Modelos dinâmicos</string>
+    <string name="ist_class_game_dev_method_topic12">Testes de jogabilidade no processo de desenvolvimento</string>
+    <string name="ist_class_game_dev_method_topic13">Metodologias e técnicas de recolha e análise de dados</string>
+    <string name="ist_class_game_dev_method_topic14">Prototipagem e Design de níveis</string>
+    <string name="ist_class_game_dev_method_topic15">Gameplay/Player analytics e Adaptação ao jogador</string>
+
+    <string name="ist_class_speech_processing">Processamento da Fala</string>
+    <string name="ist_class_speech_processing_description">Pretende-se que os alunos dominem os princípios e técnicas básicas da codificação, síntese e reconhecimento de fala.</string>
+    <string name="ist_class_speech_processing_topic1">Principais aplicações da síntese e do reconhecimento de fala</string>
+    <string name="ist_class_speech_processing_topic2">Conceitos de PDS (processamento digital de sinais)</string>
+    <string name="ist_class_speech_processing_topic3">O modo como os humanos geram e interpretam fala</string>
+    <string name="ist_class_speech_processing_topic4">Mecanismos de produção e audição da fala</string>
+    <string name="ist_class_speech_processing_topic5">Noções sobre percepção</string>
+    <string name="ist_class_speech_processing_topic6">Simulação de fala pelos computadores</string>
+    <string name="ist_class_speech_processing_topic7">Técnicas de análise do sinal de fala</string>
+    <string name="ist_class_speech_processing_topic8">Modelos de codificação e metodologias de conversão texto-fala (síntese) e fala-texto (reconhecimento)</string>
+    <string name="ist_class_speech_processing_topic9">Reconhecimento do orador e da língua</string>
+    <string name="ist_class_speech_processing_topic10">Processamento de sinais multimédia</string>
+    <string name="ist_class_speech_processing_topic11">Sistemas de diálogo</string>
+    <string name="ist_class_speech_processing_topic12">Sistemas de tradução fala-para-fala</string>
+    <string name="ist_class_speech_processing_topic13">Aplicações de e-learning e e-health</string>
+
+    <string name="ist_class_bioinformatics">Bioinformática</string>
+    <string name="ist_class_bioinformatics_description">A Bioinformática desenvolve métodos computacionais e algoritmos para o
+        processamento de dados biológicos e utiliza modelação matemática e estatística para definir hipóteses testáveis sobre
+        entidades e processos biológicos. Esta disciplina introdutória pretende familiarizar os alunos com as metodologias
+        computacionais e matemáticas que estão na base de muitas das abordagens que suportam os novos desenvolvimentos
+        desta área. Adicionalmente, pretende-se desenvolver o espírito crítico através da leitura e análise de publicações
+        cientificas relevantes à disciplina. A componente prática da disciplina pretende dotar os alunos da capacidade
+        de desenvolvimento de ferramentas de software para o tratamento e integração de dados biológicos e clínicos.</string>
+    <string name="ist_class_bioinformatics_topic1">Conceitos básicos de algoritmos</string>
+    <string name="ist_class_bioinformatics_topic2">Conceitos básicos de biologia molecular</string>
+    <string name="ist_class_bioinformatics_topic3">Grafos e genética</string>
+    <string name="ist_class_bioinformatics_topic4">Análise de sequências de DNA</string>
+    <string name="ist_class_bioinformatics_topic5">Algoritmos para alinhamento simples</string>
+    <string name="ist_class_bioinformatics_topic6">Algoritmos para alinhamento múltiplo</string>
+    <string name="ist_class_bioinformatics_topic7">Algoritmos para pesquisa de motivos</string>
+    <string name="ist_class_bioinformatics_topic8">Algoritmos para re-sequenciação </string>
+    <string name="ist_class_bioinformatics_topic9">Modelos probabilísticos: Modelos de Markov e HMMs</string>
+    <string name="ist_class_bioinformatics_topic10">Análise da expressão genética</string>
+    <string name="ist_class_bioinformatics_topic11">Algoritmos de Clustering e Biclustering</string>
+    <string name="ist_class_bioinformatics_topic12">Métodos para análise de filogenia</string>
+    <string name="ist_class_bioinformatics_topic13">Classificação usando árvores de decisão</string>
+    <string name="ist_class_bioinformatics_topic14">Métodos Bayesianos</string>
+    <string name="ist_class_bioinformatics_topic15">Análise de dados integrativa</string>
+
+    <string name="ist_class_healthcare_informatics">Tecnologias de Informação em Saúde</string>
+    <string name="ist_class_healthcare_informatics_description">O objectivo geral da disciplina é o de dotar os alunos com os
+        princípios e conceitos fundamentais relativos à utilização das tecnologias de informação em saúde. Os alunos adquirem
+        competências essenciais e familiarizar-se-ão com as potencialidades do uso das tecnologias de informação na
+        investigação em biomedicina e no papel crucial que hoje representam nas várias vertentes da prestação de cuidados de saúde.</string>
+    <string name="ist_class_healthcare_informatics_topic1">As tecnologias de informação na biologia e ciências da saúde</string>
+    <string name="ist_class_healthcare_informatics_topic2">Sistemas de informação clínica</string>
+    <string name="ist_class_healthcare_informatics_topic3">Aquisição, processamento e uso de dados biomédicos. O registo clínico digital.</string>
+    <string name="ist_class_healthcare_informatics_topic4">Processamento de língua natural e prospecção de textos em biomedicina</string>
+    <string name="ist_class_healthcare_informatics_topic5">Standards para intercâmbio de informação biomédica. Terminologias e Nomenclaturas. Ontologias.</string>
+    <string name="ist_class_healthcare_informatics_topic6">Sistemas de apoio à decisão clínica</string>
+    <string name="ist_class_healthcare_informatics_topic7">Sistemas de monitorização de pacientes</string>
+    <string name="ist_class_healthcare_informatics_topic8">Tele-Saúde</string>
+    <string name="ist_class_healthcare_informatics_topic9">Bioinformática e infraestruturas digitais de informação biomédica </string>
+    <string name="ist_class_healthcare_informatics_topic10">Pesquisa de Informação</string>
+    <string name="ist_class_healthcare_informatics_topic11">Medicina personalizada</string>
+    <string name="ist_class_healthcare_informatics_topic12">Questões Éticas, Legais e Sociais das tecnologias de informação na saúde</string>
+    <string name="ist_class_healthcare_informatics_topic13">Tecnologias de Informação em Saúde Pública</string>
+    <string name="ist_class_healthcare_informatics_topic14"> As TIC na promoção da vida saudável e envelhecimento activo. Informática do Consumidor de Saúde.</string>
+    <string name="ist_class_healthcare_informatics_topic15">TIC na formação de utentes e educação dos profissionais da saúde</string>
+
+    <string name="ist_class_embedded_apps">Aplicações para Sistemas Embebidos</string>
+    <string name="ist_class_embedded_apps_description">Dotar os alunos de conhecimentos sobre sistemas embebidos e sistemas de
+        tempo real com ênfase na concepção, desenvolvimento e teste de aplicações. Abordar a especificidade dos sistemas
+        embebidos no que se refere às arquitecturas hardware, barramentos, redes de comunicação e interfaces ciber-físicas.
+        Estudar arquitecturas de software, sistemas operativos multitarefa e políticas de escalonamento de tempo-real.
+        Analisar formas de optimização de programas por forma a melhorar o desempenho, o consumo e o custo dos sistemas.
+        Introduzir metodologias de desenho de sistemas e de análise de requisitos. Estudo de casos e domínios aplicacionais:
+        identificação e acesso a serviços baseados em meios electrónicos (smart cards) e biométricos, sensores
+        em dispositivos pessoais (smartphones).</string>
+    <string name="ist_class_embedded_apps_topic1">Introdução: Objectivos e organização da disciplina. Características dos sistemas embebidos: Requisitos, ciclo de vida, factores económicos.</string>
+    <string name="ist_class_embedded_apps_topic2">Interfaces e dispositivos de Entrada/Saída. Serviço das Entradas/saídas. Avaliação de desempenho (latência, largura de banda). Interface com o mundo físico.</string>
+    <string name="ist_class_embedded_apps_topic3">Arquitecturas de Software: Plataformas de execução. Avaliação de desempenho.</string>
+    <string name="ist_class_embedded_apps_topic4">Padrões de desenho em sistemas embebidos</string>
+    <string name="ist_class_embedded_apps_topic5">Sistemas Operativos de Tempo-Real: Métodos de escalonamento</string>
+    <string name="ist_class_embedded_apps_topic6">Tolerância a Faltas</string>
+    <string name="ist_class_embedded_apps_topic7">Ciclo de desenvolvimento de programas. Plataformas de desenvolvimento e teste.</string>
+    <string name="ist_class_embedded_apps_topic8">Optimização de Programas: Tempo de execução, consumo de energia, ocupação de memória.</string>
+    <string name="ist_class_embedded_apps_topic9">Concepção e Desenho de Sistemas Embebidos. Formalismos para especificação de sistemas.</string>
+    <string name="ist_class_embedded_apps_topic10">Estudo de casos e domínios aplicacionais: identificação electrónica e biométrca (cartões inteligentes), sensores em smartphones.</string>
+    <string name="ist_class_embedded_apps_topic11">Tópicos avançados: Co-desenho. Redes de Sensores.</string>
+    <string name="ist_class_embedded_apps_topic12">Seminário de Sistemas Embebidos</string>
+
+    <string name="ist_class_digital_sys_projects">Projecto de Sistemas Digitais</string>
+    <string name="ist_class_digital_sys_projects_description">Fornecer aos alunos as competências para: Projectar de modo estruturado sistemas electrónicos
+        digitais de complexidade média. Compreender e aplicar as técnicas fundamentais de síntese e optimização a nível arquitectural.
+        Simular e sintetizar sistemas digitais utilizando linguagens de especificação de hardware. Compreender e utilizar as funcionalidades
+        das ferramentas de projecto assistido por computador. Implementar sistemas digitais utilizando dispositivos lógicos programáveis (FPGAs e PLDs).</string>
+    <string name="ist_class_digital_sys_projects_topic1">Introdução ao projecto estruturado de sistemas electrónicos digitais utilizando dispositivos lógicos programáveis (FPGAs e PLDs)</string>
+    <string name="ist_class_digital_sys_projects_topic2">Introdução às ferramentas de projecto assistido por computador</string>
+    <string name="ist_class_digital_sys_projects_topic3">Especificação e modelação de projecto utilizando linguagens de descrição de hardware</string>
+    <string name="ist_class_digital_sys_projects_topic4">Conjunto fundamental de elementos VHDL para modelação e síntese automática de circuitos combinatórios e sequenciais</string>
+    <string name="ist_class_digital_sys_projects_topic5">Arquitecturas de sistemas de microprocessamento digital</string>
+    <string name="ist_class_digital_sys_projects_topic6">Estratégias para optimização de arquitecturas</string>
+    <string name="ist_class_digital_sys_projects_topic7">Síntese arquitectural: técnicas básicas de escalonamento, alocação e atribuição de recursos</string>
+    <string name="ist_class_digital_sys_projects_topic8">Técnicas de redução do consumo de potência</string>
+    <string name="ist_class_digital_sys_projects_topic9">Metodologias de sincronização temporal</string>
+    <string name="ist_class_digital_sys_projects_topic10">Metodologias de síntese lógica: síntese de máquinas de estado, optimização lógica e mapeamento tecnológico; unidades de controlo e unidades de dados; síntese de circuitos pipelined</string>
+    <string name="ist_class_digital_sys_projects_topic11">Técnicas de simulação lógica e funcional</string>
+    <string name="ist_class_digital_sys_projects_topic12">Tecnologias de agregados lógicos programáveis</string>
+    <string name="ist_class_digital_sys_projects_topic13">Dispositivos baseados em tecnologia de memória estática CMOS</string>
+    <string name="ist_class_digital_sys_projects_topic14">Circuitos assíncronos: técnicas de implementação, protocolos de sinalização, arbitragem</string>
+    <string name="ist_class_digital_sys_projects_topic15">Sistemas globalmente assíncronos e localmente síncronos</string>
+
+    <string name="ist_class_intelligent_environments">Ambientes Inteligentes</string>
+    <string name="ist_class_intelligent_environments_description">Compreenderão o conceito de “Ambiente Inteligente” e terão noção das múltiplas áreas em
+        que pode ser aplicado; reconhecerão a importância de dispor de ambientes sensíveis e reactivos que reagem adequadamente à presença
+        de pessoas e das suas preferências; terão sido introduzidos a diferentes tecnologias que podem ser aplicadas neste domínio e
+        estarão cientes dos principais desafios que se colocam relativamente ao consumo de energia, comunicação, segurança, fiabilidade,
+        interface com sensores e actuadores e interacção com as pessoas; terão adquirido conhecimentos sobre três áreas aplicacionais
+        específicas: casas inteligentes/domótica e edifícios inteligentes, redes de sensores e actuadores sem fios, e sistemas
+        inteligentes de mobilidade; conhecerão diferentes estratégias de gestão da energia, no domínio da automação de
+        habitações e de edifícios, sendo dada ênfase aos requisitos dos utilizadores e às suas preferências; terão a
+        capacidade de definir os requisitos e abordar a implementação de um sistema que monitoriza um ambiente e
+        reage a diferentes ocorrências, em conformidade com o perfil das pessoas presentes.</string>
+    <string name="ist_class_intelligent_environments_topic1">Problemas principais que se colocam: consumo de energia, comunicação, segurança, fiabilidade</string>
+    <string name="ist_class_intelligent_environments_topic2">Arquitectura típica: sensores/actuadores; processador; memória; comunicação rádio; sistema digital</string>
+    <string name="ist_class_intelligent_environments_topic3">Tipos de sensores e actuadores</string>
+    <string name="ist_class_intelligent_environments_topic4">Redes de comunicação</string>
+    <string name="ist_class_intelligent_environments_topic5">Domótica: Objectivos e benefícios</string>
+    <string name="ist_class_intelligent_environments_topic6">Áreas de aplicação e funções</string>
+    <string name="ist_class_intelligent_environments_topic7">Arquitecturas de sistema</string>
+    <string name="ist_class_intelligent_environments_topic8">Protocolos e meios de comunicação mais comuns</string>
+    <string name="ist_class_intelligent_environments_topic9">Estudo da tecnologia X10: arquitectura, protocolo, exemplos de módulos, controladores X10</string>
+    <string name="ist_class_intelligent_environments_topic10">Estudo da tecnologia EIB/KNX: arquitectura, protocolo, meios de comunicação, exemplos de módulos, mecanismos de interoperação, concepção e colocação em operação</string>
+    <string name="ist_class_intelligent_environments_topic11">Sistemas Inteligentes de Transportes: Objectivos: ambiente, segurança, conforto</string>
+    <string name="ist_class_intelligent_environments_topic12">Condições ambientais e humanas de aplicação</string>
+    <string name="ist_class_intelligent_environments_topic13">Detecção, localização e identificação de objectos</string>
+    <string name="ist_class_intelligent_environments_topic14">Comunicações móveis e locais</string>
+    <string name="ist_class_intelligent_environments_topic15">Gestão da informação: informação ao público; gestão da mobilidade</string>
+    <string name="ist_class_intelligent_environments_topic16">Redes de sensores e exemplos de aplicação: detecção de incêndios florestais; detecção atempada de sismos; monitorização de solos e águas; monitorização de animais e pessoas</string>
+    <string name="ist_class_intelligent_environments_topic17">Problemas: consumo e produção de energia; sincronização; protocolos de comunicação.</string>
+    <string name="ist_class_intelligent_environments_topic18">Estimação e agregação de dados</string>
+
+    <string name="ist_class_advanced_architectures">Arquitecturas Avançadas de Computadores</string>
+    <string name="ist_class_advanced_architectures_description">O objectivo principal da disciplina de Arquitecturas Avançadas de Computadores
+        é criar competências para analisar e desenvolver sistemas de computadores. A análise envolve os modernos processadores
+        de uso geral com estruturas super-escalares, e os sistemas hierárquicos de memória com suporte para memória
+        virtual gerida pelos sistemas operativos. Na componente de desenvolvimento, o objectivo da disciplina é
+        fornecer ferramentas de projecto e teste de processadores RISC associados aos sistemas de memória.</string>
+    <string name="ist_class_advanced_architectures_topic1">Arquitecturas RISC, nomeadamente as unidades de controlo e caminho de dados, analisando-se as diferentes técnicas para a resolução de conflitos inerentes ao processamento em pipeline</string>
+    <string name="ist_class_advanced_architectures_topic2">Estudo de técnicas para explorar o paralelismo ao nível das instruções, de forma estática, pelo compilador, ou dinamicamente pelo hardware</string>
+    <string name="ist_class_advanced_architectures_topic3">Análise de técnicas para explorar paralelismo nos processadores super-escalares (Pentium, AMD, PowerPC, etc) e VLIW (Transmeta Crusoe, TMS6xxx) e em arquitecturas especializadas, como o Trimedia e a Sony Playstation 3</string>
+    <string name="ist_class_advanced_architectures_topic4">Estudo dos sistemas de memória virtual (Cache -> Memória Principal -> Disco) e respectiva interligação com o processador e os dispositivos de I/O</string>
+    <string name="ist_class_advanced_architectures_topic5">Análise de técnicas para programação eficiente dos sistemas</string>
+
+    <string name="ist_class_hardware_projects">Co-Projecto Hw/Sw</string>
+    <string name="ist_class_hardware_projects_description">Compreender os conceitos e as técnicas de projecto a nível de sistema de
+        sistemas embebidos com componentes de hardware e software. Modelar, simular e sintetizar sistemas digitais usando
+        métodos e ferramentas a nível de sistema. Descrever exemplos de aplicações e sistemas desenvolvidos usando uma
+        abordagem de co-projecto. Projectar e implementar sistemas hardware / software de média complexidade utilizando FPGAs.</string>
+    <string name="ist_class_hardware_projects_topic1">Sistemas Hardware-Software e co-projecto</string>
+    <string name="ist_class_hardware_projects_topic2">Linguagens de especificação, metodologias e ferramentas a nível de sistema línguas design</string>
+    <string name="ist_class_hardware_projects_topic3">Mapeamento de arquitecturas, Interfaces HW-SW e Computação Reconfigurável</string>
+    <string name="ist_class_hardware_projects_topic4">Sistemas Embebidos baseados em FPGA: SoPCs - Sistemas em chips programáveis</string>
+    <string name="ist_class_hardware_projects_topic5">Núcleos de processadores e redes intra-chip</string>
+    <string name="ist_class_hardware_projects_topic6">Aceleradores por hardware e co-projecto de sustemas</string>
+    <string name="ist_class_hardware_projects_topic7">Exemplos de projecto e casos de estudo</string>
+
+    <string name="ist_class_digisignal_processing">Processamento Digital de Sinais</string>
+    <string name="ist_class_digisignal_processing_description">O principal objectivo desta disciplina é o de fornecer aos alunos
+        os principais conceitos e as ferramentas fundamentais para o processamento de sinais em tempo discreto. A disciplina
+        de Processamento Digital de Sinais tem uma forte componente prática, apresentando exemplos ilustrativos dos conceitos
+        teóricos e a sua aplicação em situações reais.</string>
+    <string name="ist_class_digisignal_processing_topic1">Transformadas Discretas e Filtragem: Sistemas e sinais discretos</string>
+    <string name="ist_class_digisignal_processing_topic2">Transformadas Discretas e Filtragem: Transformada Z</string>
+    <string name="ist_class_digisignal_processing_topic3">Transformadas Discretas e Filtragem: Transformada discreta de Fourier</string>
+    <string name="ist_class_digisignal_processing_topic4">Transformadas Discretas e Filtragem: Filtragem digital</string>
+    <string name="ist_class_digisignal_processing_topic5">Processamento de Sinal Baseado em Modelos: Sinais aleatórios</string>
+    <string name="ist_class_digisignal_processing_topic6">Processamento de Sinal Baseado em Modelos: Estimação de parâmetros</string>
+    <string name="ist_class_digisignal_processing_topic7">Processamento de Sinal Baseado em Modelos: Filtragem adaptativa</string>
+
+    <string name="ist_class_network_embedded">Sistemas Embebidos em Rede</string>
+    <string name="ist_class_network_embedded_description">Analisar, especificar, conceber e realizar redes de sensores e
+        actuadores nos seus aspectos fundamentais: Transdução, Computação e Comunicações.</string>
+    <string name="ist_class_network_embedded_topic1">Introdução e aplicações características, arquitectura dos nós e de rede, plataformas e tecnologias emergentes</string>
+    <string name="ist_class_network_embedded_topic2">Tipos de transdutores (sensores e actuadores) com ênfase nos transdutores inteligentes usando nanotecnologias e biotecnologias integradas, recolha de sinais e seu processamento</string>
+    <string name="ist_class_network_embedded_topic3">SO de tempo-real com restrições de consumo energético, linguagens de programação especializadas</string>
+    <string name="ist_class_network_embedded_topic4">Processamento e agregação da informação, sincronização inter-nodal, cobertura e localização, seguimento e processamento de sinal cooperativo</string>
+    <string name="ist_class_network_embedded_topic5">Normalização</string>
+    <string name="ist_class_network_embedded_topic6">Controlo de acesso ao meio, comunicação distribuída em redes sem fios, encaminhamento em redes ad-hoc com milhares de nós, encaminhamento geográfico</string>
+
+    <string name="ist_class_intelligent_control">Controlo e Decisão Inteligente</string>
+    <string name="ist_class_intelligent_control_description">Fornecer uma perspectiva moderna do controlo de sistemas de alto nível,
+        especialmente o controlo e decisão baseados em técnicas inteligentes (soft computing). Dotar os alunos de conhecimentos
+        da teoria, projecto e aplicação de técnicas de soft computing, dando especial ênfase a sistemas fuzzy, redes neuronais,
+        e a algoritmos de optimização genéticos e inspirados em agentes biológicos. As técnicas utilizadas deverão ser aplicadas
+        sinergeticamente em problemas de modelação, controlo, classificação, decisão e optimização, em sistemas complexos de
+        grande escala.</string>
+    <string name="ist_class_intelligent_control_topic1">Perspectiva histórica sobre sistemas e controlo dinâmico</string>
+    <string name="ist_class_intelligent_control_topic2">Análise de dados dinâmicos</string>
+    <string name="ist_class_intelligent_control_topic3">Identificação e modelação inteligente</string>
+    <string name="ist_class_intelligent_control_topic4">Sistemas e conjuntos fuzzy: Operações e relações fuzzy, Sistemas baseados em regras, Fuzzy clustering, Controlo fuzzy</string>
+    <string name="ist_class_intelligent_control_topic5">Redes neuronais: definições, arquitecturas básicas e aprendizagem</string>
+    <string name="ist_class_intelligent_control_topic6">Redes adaptativas</string>
+    <string name="ist_class_intelligent_control_topic7">Classificação neuronal</string>
+    <string name="ist_class_intelligent_control_topic8">Aprendizagem híbrida</string>
+    <string name="ist_class_intelligent_control_topic9">Perceptrão</string>
+    <string name="ist_class_intelligent_control_topic10">MultiLayer Perceptron (MLP)</string>
+    <string name="ist_class_intelligent_control_topic11">Radial Basis Function Networks (RBFN)</string>
+    <string name="ist_class_intelligent_control_topic12">Modelação de sistemas dinâmicos com redes neuronais</string>
+    <string name="ist_class_intelligent_control_topic13">Sistemas neuro-fuzzy</string>
+    <string name="ist_class_intelligent_control_topic14">Aprendizagem aplicada a problemas de decisão</string>
+    <string name="ist_class_intelligent_control_topic15">Teoria da decisão inteligente: objectivos, restrições e decisões</string>
+    <string name="ist_class_intelligent_control_topic16">Problemas de optimização baseados em modelo</string>
+    <string name="ist_class_intelligent_control_topic17">Introdução ao conceito de optimização</string>
+    <string name="ist_class_intelligent_control_topic18">Algoritmos genéticos</string>
+    <string name="ist_class_intelligent_control_topic19">Algoritmos evolutivos (genéticos) baseados em código real</string>
+    <string name="ist_class_intelligent_control_topic20">Algoritmos de vida artificial</string>
+    <string name="ist_class_intelligent_control_topic21">Conceitos básicos de colónias de formigas</string>
+    <string name="ist_class_intelligent_control_topic22">Exemplos práticos de aplicações de modelação, controlo, classificação, decisão e optimização inteligentes</string>
+
+
+    <string name="ist_class_vision_processing">Processamento de Imagem e Visão</string>
+    <string name="ist_class_vision_processing_description">Este curso introduz métodos de análise de imagem e de percepção do mundo
+        através de câmaras. O curso inclui: filtragem, segmentação, reconhecimento de objectos, detecção e seguimento,
+        autolocalização da câmara, reconstrução de cenas 3D.</string>
+    <string name="ist_class_vision_processing_topic1">Modelo da câmara: modelo projectivo, calibração</string>
+    <string name="ist_class_vision_processing_topic2">Processamento de imagem: filtragem, redução de ruído, pirâmides e espaço-escala</string>
+    <string name="ist_class_vision_processing_topic3">Extracção de características: contornos, cantos, rectas, SIFT</string>
+    <string name="ist_class_vision_processing_topic4">Alinhamento de imagem: baseado em marcas, métodos densos</string>
+    <string name="ist_class_vision_processing_topic5">Segmentação: limiarização, labeling, campos de Markov</string>
+    <string name="ist_class_vision_processing_topic6">Reconhecimento de objectos: descritores de forma, textura e cor, descritores de cenas</string>
+    <string name="ist_class_vision_processing_topic7">Estrutura a partir de movimento: visão estéreo, geometria epipolar, estimação de movimento</string>
+
+    <string name="ist_class_social_robots">Robôs Sociais e Interacção Pessoa Robô</string>
+    <string name="ist_class_social_robots_description">Desenvolver mecanismos de inteligência artificial em robôs que forneçam a
+        plataformas robóticas a capacidade de interagir com humanos de uma forma social. Ser capaz de integrar e avaliar aspectos
+        como intencionalidade, credibilidade, emoções e colaboração na interacção entre humanos e robôs.</string>
+    <string name="ist_class_social_robots_topic1">Robótica Social. Tipos de robôs sociais.</string>
+    <string name="ist_class_social_robots_topic2">Arquitecturas para Robôs Sociais. Sensores para robôs sociais.</string>
+    <string name="ist_class_social_robots_topic3">Desenho de Interacção. Interacção via voz, língua natural e gestos.</string>
+    <string name="ist_class_social_robots_topic4">Intenções e Intencionalidade em Robôs.</string>
+    <string name="ist_class_social_robots_topic5">Emoções</string>
+    <string name="ist_class_social_robots_topic6">Aprendizagem Social em Robôs. Imitação.</string>
+    <string name="ist_class_social_robots_topic7">Colaboração entre robôs e entre robôs e humanos.</string>
+    <string name="ist_class_social_robots_topic8">Aplicações em ambientes fabris, domésticos, carros autónomos, entretenimento, cultura (museus) e educação.</string>
+    <string name="ist_class_social_robots_topic9">Desenho Experimental.</string>
+
+    <string name="ist_class_autonomous_sys">Sistemas Autónomos</string>
+    <string name="ist_class_autonomous_sys_description">Abordam-se os conceitos fundamentais envolvidos em sistemas compostos
+        por diversos agentes físicos com diversos graus de autonomia (sensores, processadores, actuadores, robots)
+        distribuídos espacialmente. Descrevem-se métodos de mapeamento e representação de mapas. Introduzem-se os conceitos
+        e métodos fundamentais de auto-localização na presença de incertezas na observação e no modelo do movimento.
+        Apresentam-se métodos de integração da informação proveniente de vários sensores, para posicionamento e
+        representação do mapa do mundo onde os sensores estão situados, bem como métodos para a resolução de problemas
+        em sistemas cooperativos, incluindo a percepção cooperativa e a atribuição, planeamento e coordenação de tarefas.
+        Termina-se com uma perspectiva integradora dos vários módulos ensinados.</string>
+    <string name="ist_class_autonomous_sys_topic1">Introdução. Exemplos e componentes de sistemas autónomos: robots móveis, redes de sensores móveis e estáticos, sistemas embebidos.</string>
+    <string name="ist_class_autonomous_sys_topic2">Representação do Mapa do Mundo Representação do espaço. Tipos e armazenamento de mapas na presença de incerteza de observação.</string>
+    <string name="ist_class_autonomous_sys_topic3">Posicionamento. Métodos de localização absoluta (Triangulação e Trilateração. GPS). Localização baseada em filtragem de Kalman. Localização de Markov. Localização de Monte Carlo (MCL). Localização e Mapeamento simultâneos (SLAM).</string>
+    <string name="ist_class_autonomous_sys_topic4">Planeamento e Coordenação de Tarefas. Planeamento de tarefas baseado em lógica. Gramáticas geradoras de planos. Aprendizagem por reforço para optimização de tarefas. Representação de planos e coordenação da sua execução. Análise de desempenho.</string>
+    <string name="ist_class_autonomous_sys_topic5">Sistemas Cooperativos. Localização e seguimento cooperativo de objectos. Integração sensorial: métodos de fusão da informação de vários sensores, distribuídos espacial e temporalmente. Atribuição, planeamento e coordenação de tarefas cooperativas. Interacção homano-robot.</string>
+    <string name="ist_class_autonomous_sys_topic6">Arquitecturas Funcionais de Sistemas Autónomos. Arquitecturas modeladas como sistemas híbridos. Arquitecturas deliberativas e reactivas.</string>
+
+    <string name="ist_class_robotics">Robótica</string>
+    <string name="ist_class_robotics_description">Introduzir os conceitos fundamentais de robots manipuladores e robots móveis:
+        cinemática, dinâmica, cinemática diferencial, planeamento de caminhos e trajectórias, controlo. Apresentação de
+        diversos tipos de sensores úteis em robótica, seu princípio de funcionamento e modelo de observação. Noções de
+        controlo de formações. Linguagens de programação e interfaces de operação de robots.</string>
+    <string name="ist_class_robotics_topic1">Introdução: Robots manipuladores e plataformas móveis. Aplicações.</string>
+    <string name="ist_class_robotics_topic2">Cinemática e Dinâmica de robots: Sistemas de coordenadas: posição, orientação. Transformações homogéneas de coordenadas. Convenção de Denavit-Hartenberg. Cinemática directa e inversa de manipuladores. Cinemática de plataformas móveis. Cinemática diferencial. Noções de dinâmica de manipuladores e de plataformas móveis.</string>
+    <string name="ist_class_robotics_topic3">Sensores e actuadores: Sensores: de rotação, acelerómetros,giroscópios, sonares, laser range-finder e visão. Actuadores: motores, superfícies de deflecção.</string>
+    <string name="ist_class_robotics_topic4">Planeamento do Movimento e Navegação: Trajectórias no espaço e no tempo. Geração de trajectórias. Planeamento de caminhos por procura em grafos de visibilidade e por potenciais artificiais. Planeamento de caminhos sob restrições holonómicas e não-holonómicas.</string>
+    <string name="ist_class_robotics_topic5">Controlo de robots manipuladores e móveis.</string>
+    <string name="ist_class_robotics_topic6">Controlo de formações de robots móveis.</string>
+    <string name="ist_class_robotics_topic7">Linguagens de programação de robots. Interfaces.</string>
+
+    <string name="ist_class_advanced_robotics">Robótica Avançada para Ambientes Industriais</string>
+    <string name="ist_class_advanced_robotics_description">Introdução dos conceitos fundamentais relacionados com robótica
+        avançada em ambientes industriais, incorporada em sistemas de produção, através de uma combinação teórica e
+        laboratorial. Os conceitos teóricos fornecidos são aplicados a uma Célula Flexível de Produção. Pretende-se
+        assim estudar métodos de modelação e análise de sistemas robóticos de produção, técnicas de simulação para
+        este tipo de sistemas e metodologias de planeamento de tarefas (operações), bem como alocação de recursos
+        e tarefas.</string>
+    <string name="ist_class_advanced_robotics_topic1">Sistemas robotizados em ambiente industrial: caracterização e especificação</string>
+    <string name="ist_class_advanced_robotics_topic2">Introdução aos sistemas de produção</string>
+    <string name="ist_class_advanced_robotics_topic3">Tipologia da produção industrial</string>
+    <string name="ist_class_advanced_robotics_topic4">Caracterização de sistemas e equipamento de fabrico</string>
+    <string name="ist_class_advanced_robotics_topic5">Sistemas de movimentação e armazenagem</string>
+    <string name="ist_class_advanced_robotics_topic6">Controlo de processos discretos: supervisão, controlo local e comunicação</string>
+    <string name="ist_class_advanced_robotics_topic7">Introdução ao planeamento e ao escalonamento em sistemas de produção (manufactura e serviços)</string>
+    <string name="ist_class_advanced_robotics_topic8">Modelação de fluxo de produção</string>
+    <string name="ist_class_advanced_robotics_topic9">Fluxo da produção flexível</string>
+    <string name="ist_class_advanced_robotics_topic10">Problemas de Job Shop</string>
+    <string name="ist_class_advanced_robotics_topic11">Sistemas robotizados: caracterização e especificação</string>
+    <string name="ist_class_advanced_robotics_topic12">Programação de sistemas robóticos</string>
+    <string name="ist_class_advanced_robotics_topic13">Gestão integrada da produção</string>
+    <string name="ist_class_advanced_robotics_topic14">Arquitecturas de integração</string>
+    <string name="ist_class_advanced_robotics_topic15">Análise de soluções aplicacionais</string>
+    <string name="ist_class_advanced_robotics_topic16">Modelação e simulação de sistemas de fabrico</string>
+    <string name="ist_class_advanced_robotics_topic17">Aprendizagem de uma linguagem de simulação</string>
+    <string name="ist_class_advanced_robotics_topic18">Escalonamento de sistemas de montagem flexíveis</string>
+    <string name="ist_class_advanced_robotics_topic19">Modelação, simulação, desenvolvimento e implementação de sistemas de produção robotizados em rede</string>
+    <string name="ist_class_advanced_robotics_topic20">Programação de sistemas robóticos</string>
+
+    <string name="ist_class_project">Projecto de Mestrado em Engenharia Informática e de Computadores</string>
+    <string name="ist_class_project_description">Desenvolvimento de um trabalho de projecto de natureza integradora, na área da engenharia informática.</string>
+    <string name="ist_class_project_topic1">Desenvolvimento de um trabalho de projecto de natureza integradora, na área da engenharia informática.</string>
+
+    <string name="ist_class_thesis">Dissertação - Mestrado em Engenharia Informática e de Computadores</string>
+    <string name="ist_class_thesis_description">Escrita de uma tese de Mestrado na área da Engenharia Informática</string>
+    <string name="ist_class_thesis_topic1">Desenvolvimento de um trabalho de investigação e/ou desenvolvimento, de natureza integradora, na área da engenharia informática, complementado pela escrita de uma dissertação que descreva as metodologias e tecnologias usadas, os resultados alcançados e as conclusões retiradas do trabalho desenvolvido.</string>
+
+    <string name="ist_class_personal_portfolio1">Portfolio Pessoal 1</string>
+    <string name="ist_class_personal_portfolio1_description">Desenvolver nos estudantes competências comportamentais de trabalho em equipa,
+        de capacidade de expressão oral e escrita, de línguas e experiências internacionais e de experiência da realidade das empresas e
+        do mundo do trabalho, através da prática de actividades extra-curriculares.</string>
+    <string name="ist_class_personal_portfolio1_topic1">Produção de um Relatório de Actividades e de um Relatório Individual de Aprendizagens</string>
+
+    <string name="ist_class_personal_portfolio2">Portfolio Pessoal 1</string>
+    <string name="ist_class_personal_portfolio2_description">Desenvolver nos estudantes competências comportamentais de trabalho em equipa,
+        de capacidade de expressão oral e escrita, de línguas e experiências internacionais e de experiência da realidade das empresas e
+        do mundo do trabalho, através da prática de actividades extra-curriculares.</string>
+    <string name="ist_class_personal_portfolio2_topic1">Produção de um Relatório de Actividades e de um Relatório Individual de Aprendizagens</string>
 
     <string name="ist_class_"></string>
     <string name="ist_class__description"></string>
