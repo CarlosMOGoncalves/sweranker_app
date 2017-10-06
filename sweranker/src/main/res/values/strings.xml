@@ -2954,35 +2954,35 @@ Os estudantes deverão ainda desenvolver competências em análise e síntese, r
     <string name="ist_class_computer_networks_topic7">Aplicações multimedia: streaming áudio e vídeo; telefonia pela Internet; qualidade de serviço; escalonamento de tráfego</string>
     <string name="ist_class_computer_networks_topic8">Segurança em redes: criptografia de chave simétrica, DES e AES; criptografia de chave pública, Diffie-Hellman e RSA; confidencialidade; autenticação; integralidade; PGP; SSL; IPSec</string>
 
-    <string name="ist_class_sys_modeling_analisys">Análise e Modelação de Sistemas</string>
-    <string name="ist_class_sys_modeling_analisys_description">Dotar os alunos com as competências fundamentais para a análise de problemas
+    <string name="ist_class_sys_modeling_analysis">Análise e Modelação de Sistemas</string>
+    <string name="ist_class_sys_modeling_analysis_description">Dotar os alunos com as competências fundamentais para a análise de problemas
         de engenharia em que a solução se pode conceptualizar como um sistema, recorrendo a técnicas de engenharia de requisitos e
         desenvolvimento de modelos conceptuais (especialmente em UML, SysML e BPMN)</string>
-    <string name="ist_class_sys_modeling_analisys_topic1">Conceitos fundamentais: definições de "sistema" e de "sistema de sistemas"; conceitos de contexto e de arquitectura de sistema, "stakeholders", “concern”, “viewpoint”, “view” e modelos</string>
-    <string name="ist_class_sys_modeling_analisys_topic2">Técnicas de representação de contextos, com destaque para a técnica de mapas conceptuais</string>
-    <string name="ist_class_sys_modeling_analisys_topic3">Conceitos, motivações para a MDA (Model Driven Architecture) e MDE (Model Driven Engineering)</string>
-    <string name="ist_class_sys_modeling_analisys_topic4">Entidades de normalização de referência (ISO, ITU, IEEE, W3C, IETF, INCOSE, NISO, IPQ, OASIS, The Open Group, OMG)</string>
-    <string name="ist_class_sys_modeling_analisys_topic5">Engenharia de Requisitos: conceitos, processos e técnicas fundamentais: Requisitos como “concerns” e constrangimentos aos sistemas</string>
-    <string name="ist_class_sys_modeling_analisys_topic6">Os processos de levantamento, negociação, validação e documentação de requisitos. Ferramentas de gestão de requisitos. Técnicas para levantamento de requisitos. Regras para expressão de requisitos bem formados e SMART (Specific, Measurable, Achievable, Realisable, Traceable).Técnicas de rastreabilidade.</string>
-    <string name="ist_class_sys_modeling_analisys_topic7">Requisitos funcionais e Requisitos não funcionais</string>
-    <string name="ist_class_sys_modeling_analisys_topic8">Conceitos de vistas de sistemas “black box” e “white box”. Casos de uso e cenários de casos de uso como técnicas de engenharia de requisitos (UML e SysML)</string>
-    <string name="ist_class_sys_modeling_analisys_topic9">Contexto de sistema e questões éticas, sociais e políticas. Dimensões éticas e morais de análise de sistemas. Códigos de ética em engenharia. (IEEE, ACM e OE)</string>
-    <string name="ist_class_sys_modeling_analisys_topic10">Análise e Modelação Orientada a Objectos - Modelos de Estrutura: Modelação orientada a objectos: conceitos; vistas de estrutura e de comportamento</string>
-    <string name="ist_class_sys_modeling_analisys_topic11">Sistemas físicos e sistemas lógicos. Sistemas de informação como sistemas lógicos.</string>
-    <string name="ist_class_sys_modeling_analisys_topic12">Análise de universos de discurso e desenvolvimento de modelos de domínio em UML</string>
-    <string name="ist_class_sys_modeling_analisys_topic13">Associações em modelos UML (generalização e especialização; associações genéricas; composição e agregação; classes de associação)</string>
-    <string name="ist_class_sys_modeling_analisys_topic14">Diagramas de componentes e de instalação em UML</string>
-    <string name="ist_class_sys_modeling_analisys_topic15">Modelação de interfaces e Diagramas de objectos</string>
-    <string name="ist_class_sys_modeling_analisys_topic16">Modelos em SysML</string>
-    <string name="ist_class_sys_modeling_analisys_topic17">Análise e Modelação Orientada a Objectos - Modelos de Comportamento: Vistas de comportamento “black box” (casos de uso) e “white box” (eventos, fluxos e mensagens)</string>
-    <string name="ist_class_sys_modeling_analisys_topic18">Técnicas UML para desenvolvimento de vistas de comportamento: diagramas de mensagens (sequência, comunicação, temporais; interacção geral), de actividade, e de máquinas de estado</string>
-    <string name="ist_class_sys_modeling_analisys_topic19">Sistemas de Informação - Análise e Modelação de Processos de Negócio O processo como transformação de inputs em outputs com ênfase no produto final e produção de valor</string>
-    <string name="ist_class_sys_modeling_analisys_topic20">A relevância da vista de processos de uma organização (qualidade e responsabilidade na norma ISO 9001)</string>
-    <string name="ist_class_sys_modeling_analisys_topic21">A cadeia de valor de Porter</string>
-    <string name="ist_class_sys_modeling_analisys_topic22">A arquitectura de processos na arquitectura empresarial. Processos de “risk assessment” (identificação, análise e avaliação de risco)</string>
-    <string name="ist_class_sys_modeling_analisys_topic23">Elementos básicos da linguagem BPMN (eventos, actividades, gateways, sequências, mensagens, associações, objectos de dados)</string>
-    <string name="ist_class_sys_modeling_analisys_topic24">Diagramas genéricos em BPMN</string>
-    <string name="ist_class_sys_modeling_analisys_topic25">Processos públicos, processos privados e colaborações</string>
+    <string name="ist_class_sys_modeling_analysis_topic1">Conceitos fundamentais: definições de "sistema" e de "sistema de sistemas"; conceitos de contexto e de arquitectura de sistema, "stakeholders", “concern”, “viewpoint”, “view” e modelos</string>
+    <string name="ist_class_sys_modeling_analysis_topic2">Técnicas de representação de contextos, com destaque para a técnica de mapas conceptuais</string>
+    <string name="ist_class_sys_modeling_analysis_topic3">Conceitos, motivações para a MDA (Model Driven Architecture) e MDE (Model Driven Engineering)</string>
+    <string name="ist_class_sys_modeling_analysis_topic4">Entidades de normalização de referência (ISO, ITU, IEEE, W3C, IETF, INCOSE, NISO, IPQ, OASIS, The Open Group, OMG)</string>
+    <string name="ist_class_sys_modeling_analysis_topic5">Engenharia de Requisitos: conceitos, processos e técnicas fundamentais: Requisitos como “concerns” e constrangimentos aos sistemas</string>
+    <string name="ist_class_sys_modeling_analysis_topic6">Os processos de levantamento, negociação, validação e documentação de requisitos. Ferramentas de gestão de requisitos. Técnicas para levantamento de requisitos. Regras para expressão de requisitos bem formados e SMART (Specific, Measurable, Achievable, Realisable, Traceable).Técnicas de rastreabilidade.</string>
+    <string name="ist_class_sys_modeling_analysis_topic7">Requisitos funcionais e Requisitos não funcionais</string>
+    <string name="ist_class_sys_modeling_analysis_topic8">Conceitos de vistas de sistemas “black box” e “white box”. Casos de uso e cenários de casos de uso como técnicas de engenharia de requisitos (UML e SysML)</string>
+    <string name="ist_class_sys_modeling_analysis_topic9">Contexto de sistema e questões éticas, sociais e políticas. Dimensões éticas e morais de análise de sistemas. Códigos de ética em engenharia. (IEEE, ACM e OE)</string>
+    <string name="ist_class_sys_modeling_analysis_topic10">Análise e Modelação Orientada a Objectos - Modelos de Estrutura: Modelação orientada a objectos: conceitos; vistas de estrutura e de comportamento</string>
+    <string name="ist_class_sys_modeling_analysis_topic11">Sistemas físicos e sistemas lógicos. Sistemas de informação como sistemas lógicos.</string>
+    <string name="ist_class_sys_modeling_analysis_topic12">Análise de universos de discurso e desenvolvimento de modelos de domínio em UML</string>
+    <string name="ist_class_sys_modeling_analysis_topic13">Associações em modelos UML (generalização e especialização; associações genéricas; composição e agregação; classes de associação)</string>
+    <string name="ist_class_sys_modeling_analysis_topic14">Diagramas de componentes e de instalação em UML</string>
+    <string name="ist_class_sys_modeling_analysis_topic15">Modelação de interfaces e Diagramas de objectos</string>
+    <string name="ist_class_sys_modeling_analysis_topic16">Modelos em SysML</string>
+    <string name="ist_class_sys_modeling_analysis_topic17">Análise e Modelação Orientada a Objectos - Modelos de Comportamento: Vistas de comportamento “black box” (casos de uso) e “white box” (eventos, fluxos e mensagens)</string>
+    <string name="ist_class_sys_modeling_analysis_topic18">Técnicas UML para desenvolvimento de vistas de comportamento: diagramas de mensagens (sequência, comunicação, temporais; interacção geral), de actividade, e de máquinas de estado</string>
+    <string name="ist_class_sys_modeling_analysis_topic19">Sistemas de Informação - Análise e Modelação de Processos de Negócio O processo como transformação de inputs em outputs com ênfase no produto final e produção de valor</string>
+    <string name="ist_class_sys_modeling_analysis_topic20">A relevância da vista de processos de uma organização (qualidade e responsabilidade na norma ISO 9001)</string>
+    <string name="ist_class_sys_modeling_analysis_topic21">A cadeia de valor de Porter</string>
+    <string name="ist_class_sys_modeling_analysis_topic22">A arquitectura de processos na arquitectura empresarial. Processos de “risk assessment” (identificação, análise e avaliação de risco)</string>
+    <string name="ist_class_sys_modeling_analysis_topic23">Elementos básicos da linguagem BPMN (eventos, actividades, gateways, sequências, mensagens, associações, objectos de dados)</string>
+    <string name="ist_class_sys_modeling_analysis_topic24">Diagramas genéricos em BPMN</string>
+    <string name="ist_class_sys_modeling_analysis_topic25">Processos públicos, processos privados e colaborações</string>
 
 
     <string name="ist_class_compilers">Compiladores</string>
