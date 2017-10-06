@@ -8666,7 +8666,7 @@
             <class>
                 <id>ist_meic_c1</id>
                 <name>@string/ist_class_algebra</name>
-                <description>@string/ist_class_algebra</description>
+                <description>@string/ist_class_algebra_description</description>
                 <year>1</year>
                 <semester>1</semester>
                 <ects>6</ects>
@@ -8760,7 +8760,7 @@
             <class>
                 <id>ist_meic_c2</id>
                 <name>@string/ist_class_calculus1</name>
-                <description>@string/ist_class_calculus1</description>
+                <description>@string/ist_class_calculus1_description</description>
                 <year>1</year>
                 <semester>1</semester>
                 <ects>6</ects>
@@ -8814,7 +8814,7 @@
             <class>
                 <id>ist_meic_c3</id>
                 <name>@string/ist_class_programming_fundamentals</name>
-                <description>@string/ist_class_programming_fundamentals</description>
+                <description>@string/ist_class_programming_fundamentals_description</description>
                 <year>1</year>
                 <semester>1</semester>
                 <ects>7.5</ects>
@@ -8894,7 +8894,7 @@
             <class>
                 <id>ist_meic_c4</id>
                 <name>@string/ist_class_intro_computer_arch</name>
-                <description>@string/ist_class_intro_computer_arch</description>
+                <description>@string/ist_class_intro_computer_arch_description</description>
                 <year>1</year>
                 <semester>1</semester>
                 <ects>7.5</ects>
@@ -8944,7 +8944,7 @@
             <class>
                 <id>ist_meic_c5</id>
                 <name>@string/ist_class_intro_swe</name>
-                <description>@string/ist_class_intro_swe</description>
+                <description>@string/ist_class_intro_swe_description</description>
                 <year>1</year>
                 <semester>1</semester>
                 <ects>3</ects>
@@ -8986,7 +8986,7 @@
             <class>
                 <id>ist_meic_c6</id>
                 <name>@string/ist_class_calculus2</name>
-                <description>@string/ist_class_calculus2</description>
+                <description>@string/ist_class_calculus2_description</description>
                 <year>1</year>
                 <semester>2</semester>
                 <ects>7.5</ects>
@@ -9036,7 +9036,7 @@
             <class>
                 <id>ist_meic_c7</id>
                 <name>@string/ist_class_intro_algorithm</name>
-                <description>@string/ist_class_intro_algorithm</description>
+                <description>@string/ist_class_intro_algorithm_description</description>
                 <year>1</year>
                 <semester>2</semester>
                 <ects>7.5</ects>
@@ -9082,7 +9082,7 @@
             <class>
                 <id>ist_meic_c8</id>
                 <name>@string/ist_class_programming_logic</name>
-                <description>@string/ist_class_programming_logic</description>
+                <description>@string/ist_class_programming_logic_description</description>
                 <year>1</year>
                 <semester>2</semester>
                 <ects>7.5</ects>
@@ -9120,7 +9120,7 @@
             <class>
                 <id>ist_meic_c9</id>
                 <name>@string/ist_class_discrete_math</name>
-                <description>@string/ist_class_discrete_math</description>
+                <description>@string/ist_class_discrete_math_description</description>
                 <year>1</year>
                 <semester>2</semester>
                 <ects>7.5</ects>
@@ -9158,9 +9158,173 @@
 
             <!-- 2ND YEAR -->
             <class>
-                <id>ist_meic_c1</id>
+                <id>ist_meic_c10</id>
                 <name>@string/ist_class_diff_functions</name>
-                <description>@string/ist_class_diff_functions</description>
+                <description>@string/ist_class_diff_functions_description</description>
+                <year>2</year>
+                <semester>1</semester>
+                <ects>7.5</ects>
+                <optional>false</optional>
+                <paths></paths>
+                <mandatoryPaths></mandatoryPaths>
+                <exclusivePath></exclusivePath>
+                <program>
+                    <topic>
+                        <id>c143t1</id>
+                        <description>@string/ist_class_diff_functions_topic1</description>
+                    </topic>
+                    <topic>
+                        <id>c143t2</id>
+                        <description>@string/ist_class_diff_functions_topic2</description>
+                    </topic>
+                    <topic>
+                        <id>c143t3</id>
+                        <description>@string/ist_class_diff_functions_topic3</description>
+                    </topic>
+                    <topic>
+                        <id>c143t4</id>
+                        <description>@string/ist_class_diff_functions_topic4</description>
+                    </topic>
+                    <topic>
+                        <id>c143t5</id>
+                        <description>@string/ist_class_diff_functions_topic5</description>
+                    </topic>
+                    <topic>
+                        <id>c143t6</id>
+                        <description>@string/ist_class_diff_functions_topic6</description>
+                    </topic>
+                    <topic>
+                        <id>c143t7</id>
+                        <description>@string/ist_class_diff_functions_topic7</description>
+                    </topic>
+                    <topic>
+                        <id>c143t8</id>
+                        <description>@string/ist_class_diff_functions_topic8</description>
+                    </topic>
+                    <topic>
+                        <id>c143t9</id>
+                        <description>@string/ist_class_diff_functions_topic9</description>
+                    </topic>
+                    <topic>
+                        <id>c143t10</id>
+                        <description>@string/ist_class_diff_functions_topic10</description>
+                    </topic>
+                    <topic>
+                        <id>c143t11</id>
+                        <description>@string/ist_class_diff_functions_topic11</description>
+                    </topic>
+                    <topic>
+                        <id>c143t12</id>
+                        <description>@string/ist_class_diff_functions_topic12</description>
+                    </topic>
+                    <topic>
+                        <id>c143t13</id>
+                        <description>@string/ist_class_diff_functions_topic13</description>
+                    </topic>
+                    <topic>
+                        <id>c143t14</id>
+                        <description>@string/ist_class_diff_functions_topic14</description>
+                    </topic>
+                    <topic>
+                        <id>c143t15</id>
+                        <description>@string/ist_class_diff_functions_topic15</description>
+                    </topic>
+                </program>
+            </class>
+            <class>
+                <id>ist_meic_c11</id>
+                <name>@string/ist_class_management</name>
+                <description>@string/ist_class_management_description</description>
+                <year>2</year>
+                <semester>1</semester>
+                <ects>4.5</ects>
+                <optional>false</optional>
+                <paths></paths>
+                <mandatoryPaths></mandatoryPaths>
+                <exclusivePath></exclusivePath>
+                <program>
+                    <topic>
+                        <id>c144t1</id>
+                        <description>@string/ist_class_management_topic1</description>
+                    </topic>
+                    <topic>
+                        <id>c144t2</id>
+                        <description>@string/ist_class_management_topic2</description>
+                    </topic>
+                    <topic>
+                        <id>c144t3</id>
+                        <description>@string/ist_class_management_topic3</description>
+                    </topic>
+                    <topic>
+                        <id>c144t4</id>
+                        <description>@string/ist_class_management_topic4</description>
+                    </topic>
+                    <topic>
+                        <id>c144t5</id>
+                        <description>@string/ist_class_management_topic5</description>
+                    </topic>
+                    <topic>
+                        <id>c144t6</id>
+                        <description>@string/ist_class_management_topic6</description>
+                    </topic>
+                    <topic>
+                        <id>c144t7</id>
+                        <description>@string/ist_class_management_topic7</description>
+                    </topic>
+                    <topic>
+                        <id>c144t8</id>
+                        <description>@string/ist_class_management_topic8</description>
+                    </topic>
+                    <topic>
+                        <id>c144t9</id>
+                        <description>@string/ist_class_management_topic9</description>
+                    </topic>
+                    <topic>
+                        <id>c144t10</id>
+                        <description>@string/ist_class_management_topic10</description>
+                    </topic>
+                    <topic>
+                        <id>c144t11</id>
+                        <description>@string/ist_class_management_topic11</description>
+                    </topic>
+                    <topic>
+                        <id>c144t12</id>
+                        <description>@string/ist_class_management_topic12</description>
+                    </topic>
+                    <topic>
+                        <id>c144t13</id>
+                        <description>@string/ist_class_management_topic13</description>
+                    </topic>
+                    <topic>
+                        <id>c144t14</id>
+                        <description>@string/ist_class_management_topic14</description>
+                    </topic>
+                    <topic>
+                        <id>c144t15</id>
+                        <description>@string/ist_class_management_topic15</description>
+                    </topic>
+                    <topic>
+                        <id>c144t16</id>
+                        <description>@string/ist_class_management_topic16</description>
+                    </topic>
+                    <topic>
+                        <id>c144t17</id>
+                        <description>@string/ist_class_management_topic17</description>
+                    </topic>
+                    <topic>
+                        <id>c144t18</id>
+                        <description>@string/ist_class_management_topic18</description>
+                    </topic>
+                    <topic>
+                        <id>c144t19</id>
+                        <description>@string/ist_class_management_topic19</description>
+                    </topic>
+                </program>
+            </class>
+            <class>
+                <id>ist_meic_c12</id>
+                <name>@string/ist_class_mechanic_waves</name>
+                <description>@string/ist_class_mechanic_waves_description</description>
                 <year>2</year>
                 <semester>1</semester>
                 <ects>6</ects>
@@ -9170,94 +9334,256 @@
                 <exclusivePath></exclusivePath>
                 <program>
                     <topic>
-                        <id>c142t1</id>
-                        <description>@string/ist_class_diff_functions_topic1</description>
+                        <id>c145t1</id>
+                        <description>@string/ist_class_mechanic_waves_topic1</description>
                     </topic>
                     <topic>
-                        <id>c142t2</id>
-                        <description>@string/ist_class_diff_functions_topic2</description>
+                        <id>c145t2</id>
+                        <description>@string/ist_class_mechanic_waves_topic2</description>
                     </topic>
                     <topic>
-                        <id>c142t3</id>
-                        <description>@string/ist_class_diff_functions_topic3</description>
+                        <id>c145t3</id>
+                        <description>@string/ist_class_mechanic_waves_topic3</description>
                     </topic>
                     <topic>
-                        <id>c142t4</id>
-                        <description>@string/ist_class_diff_functions_topic4</description>
+                        <id>c145t4</id>
+                        <description>@string/ist_class_mechanic_waves_topic4</description>
                     </topic>
                     <topic>
-                        <id>c142t5</id>
-                        <description>@string/ist_class_diff_functions_topic5</description>
+                        <id>c145t5</id>
+                        <description>@string/ist_class_mechanic_waves_topic5</description>
                     </topic>
                     <topic>
-                        <id>c142t6</id>
-                        <description>@string/ist_class_diff_functions_topic6</description>
+                        <id>c145t6</id>
+                        <description>@string/ist_class_mechanic_waves_topic6</description>
                     </topic>
                     <topic>
-                        <id>c142t7</id>
-                        <description>@string/ist_class_diff_functions_topic7</description>
+                        <id>c145t7</id>
+                        <description>@string/ist_class_mechanic_waves_topic7</description>
                     </topic>
                     <topic>
-                        <id>c142t8</id>
-                        <description>@string/ist_class_diff_functions_topic8</description>
+                        <id>c145t8</id>
+                        <description>@string/ist_class_mechanic_waves_topic8</description>
                     </topic>
                     <topic>
-                        <id>c142t9</id>
-                        <description>@string/ist_class_diff_functions_topic9</description>
-                    </topic>
-                    <topic>
-                        <id>c142t10</id>
-                        <description>@string/ist_class_diff_functions_topic10</description>
-                    </topic>
-                    <topic>
-                        <id>c142t11</id>
-                        <description>@string/ist_class_diff_functions_topic11</description>
-                    </topic>
-                    <topic>
-                        <id>c142t12</id>
-                        <description>@string/ist_class_diff_functions_topic12</description>
-                    </topic>
-                    <topic>
-                        <id>c142t13</id>
-                        <description>@string/ist_class_diff_functions_topic13</description>
-                    </topic>
-                    <topic>
-                        <id>c142t14</id>
-                        <description>@string/ist_class_diff_functions_topic14</description>
-                    </topic>
-                    <topic>
-                        <id>c142t15</id>
-                        <description>@string/ist_class_diff_functions_topic15</description>
-                    </topic>
-                    <topic>
-                        <id>c142t16</id>
-                        <description>@string/ist_class_diff_functions_topic16</description>
-                    </topic>
-                    <topic>
-                        <id>c142t17</id>
-                        <description>@string/ist_class_diff_functions_topic17</description>
-                    </topic>
-                    <topic>
-                        <id>c142t18</id>
-                        <description>@string/ist_class_diff_functions_topic18</description>
-                    </topic>
-                    <topic>
-                        <id>c142t19</id>
-                        <description>@string/ist_class_diff_functions_topic19</description>
-                    </topic>
-                    <topic>
-                        <id>c142t20</id>
-                        <description>@string/ist_class_diff_functions_topic20</description>
+                        <id>c145t9</id>
+                        <description>@string/ist_class_mechanic_waves_topic9</description>
                     </topic>
                 </program>
             </class>
-
-            <!-- 3RD YEAR -->
             <class>
-                <id>ist_meic_c26</id>
-                <name>@string/up_class_web_tech</name>
-                <description>@string/up_class_web_tech_description</description>
-                <year>3</year>
+                <id>ist_meic_c13</id>
+                <name>@string/ist_class_oop</name>
+                <description>@string/ist_class_oop_description</description>
+                <year>2</year>
+                <semester>1</semester>
+                <ects>6</ects>
+                <optional>false</optional>
+                <paths></paths>
+                <mandatoryPaths></mandatoryPaths>
+                <exclusivePath></exclusivePath>
+                <program>
+                    <topic>
+                        <id>c146t1</id>
+                        <description>@string/ist_class_oop_topic1</description>
+                    </topic>
+                    <topic>
+                        <id>c146t2</id>
+                        <description>@string/ist_class_oop_topic2</description>
+                    </topic>
+                    <topic>
+                        <id>c146t3</id>
+                        <description>@string/ist_class_oop_topic3</description>
+                    </topic>
+                    <topic>
+                        <id>c146t4</id>
+                        <description>@string/ist_class_oop_topic4</description>
+                    </topic>
+                    <topic>
+                        <id>c146t5</id>
+                        <description>@string/ist_class_oop_topic5</description>
+                    </topic>
+                    <topic>
+                        <id>c146t6</id>
+                        <description>@string/ist_class_oop_topic6</description>
+                    </topic>
+                    <topic>
+                        <id>c146t7</id>
+                        <description>@string/ist_class_oop_topic7</description>
+                    </topic>
+                </program>
+            </class>
+            <class>
+                <id>ist_meic_c14</id>
+                <name>@string/ist_class_os</name>
+                <description>@string/ist_class_os_description</description>
+                <year>2</year>
+                <semester>1</semester>
+                <ects>6</ects>
+                <optional>false</optional>
+                <paths></paths>
+                <mandatoryPaths></mandatoryPaths>
+                <exclusivePath></exclusivePath>
+                <program>
+                    <topic>
+                        <id>c147t1</id>
+                        <description>@string/ist_class_os_topic1</description>
+                    </topic>
+                    <topic>
+                        <id>c147t2</id>
+                        <description>@string/ist_class_os_topic2</description>
+                    </topic>
+                    <topic>
+                        <id>c147t3</id>
+                        <description>@string/ist_class_os_topic3</description>
+                    </topic>
+                    <topic>
+                        <id>c147t4</id>
+                        <description>@string/ist_class_os_topic4</description>
+                    </topic>
+                    <topic>
+                        <id>c147t5</id>
+                        <description>@string/ist_class_os_topic5</description>
+                    </topic>
+                    <topic>
+                        <id>c147t6</id>
+                        <description>@string/ist_class_os_topic6</description>
+                    </topic>
+                    <topic>
+                        <id>c147t7</id>
+                        <description>@string/ist_class_os_topic7</description>
+                    </topic>
+                    <topic>
+                        <id>c147t8</id>
+                        <description>@string/ist_class_os_topic8</description>
+                    </topic>
+                    <topic>
+                        <id>c147t9</id>
+                        <description>@string/ist_class_os_topic9</description>
+                    </topic>
+                    <topic>
+                        <id>c147t10</id>
+                        <description>@string/ist_class_os_topic10</description>
+                    </topic>
+                    <topic>
+                        <id>c147t11</id>
+                        <description>@string/ist_class_os_topic11</description>
+                    </topic>
+                    <topic>
+                        <id>c147t12</id>
+                        <description>@string/ist_class_os_topic12</description>
+                    </topic>
+                    <topic>
+                        <id>c147t13</id>
+                        <description>@string/ist_class_os_topic13</description>
+                    </topic>
+                    <topic>
+                        <id>c147t14</id>
+                        <description>@string/ist_class_os_topic14</description>
+                    </topic>
+                </program>
+            </class>
+            <class>
+                <id>ist_meic_c15</id>
+                <name>@string/ist_class_algorithm_analysis</name>
+                <description>@string/ist_class_algorithm_analysis_description</description>
+                <year>2</year>
+                <semester>2</semester>
+                <ects>6</ects>
+                <optional>false</optional>
+                <paths></paths>
+                <mandatoryPaths></mandatoryPaths>
+                <exclusivePath></exclusivePath>
+                <program>
+                    <topic>
+                        <id>c148t1</id>
+                        <description>@string/ist_class_algorithm_analysis_topic1</description>
+                    </topic>
+                    <topic>
+                        <id>c148t2</id>
+                        <description>@string/ist_class_algorithm_analysis_topic2</description>
+                    </topic>
+                    <topic>
+                        <id>c148t3</id>
+                        <description>@string/ist_class_algorithm_analysis_topic3</description>
+                    </topic>
+                    <topic>
+                        <id>c148t4</id>
+                        <description>@string/ist_class_algorithm_analysis_topic4</description>
+                    </topic>
+                    <topic>
+                        <id>c148t5</id>
+                        <description>@string/ist_class_algorithm_analysis_topic5</description>
+                    </topic>
+                    <topic>
+                        <id>c148t6</id>
+                        <description>@string/ist_class_algorithm_analysis_topic6</description>
+                    </topic>
+                    <topic>
+                        <id>c148t7</id>
+                        <description>@string/ist_class_algorithm_analysis_topic7</description>
+                    </topic>
+                    <topic>
+                        <id>c148t8</id>
+                        <description>@string/ist_class_algorithm_analysis_topic8</description>
+                    </topic>
+                </program>
+            </class>
+            <class>
+                <id>ist_meic_c16</id>
+                <name>@string/ist_class_electromagnetism</name>
+                <description>@string/ist_class_electromagnetism_description</description>
+                <year>2</year>
+                <semester>2</semester>
+                <ects>6</ects>
+                <optional>false</optional>
+                <paths></paths>
+                <mandatoryPaths></mandatoryPaths>
+                <exclusivePath></exclusivePath>
+                <program>
+                    <topic>
+                        <id>c149t1</id>
+                        <description>@string/ist_class_electromagnetism_topic1</description>
+                    </topic>
+                    <topic>
+                        <id>c149t2</id>
+                        <description>@string/ist_class_electromagnetism_topic2</description>
+                    </topic>
+                    <topic>
+                        <id>c149t3</id>
+                        <description>@string/ist_class_electromagnetism_topic3</description>
+                    </topic>
+                    <topic>
+                        <id>c149t4</id>
+                        <description>@string/ist_class_electromagnetism_topic4</description>
+                    </topic>
+                    <topic>
+                        <id>c149t5</id>
+                        <description>@string/ist_class_electromagnetism_topic5</description>
+                    </topic>
+                    <topic>
+                        <id>c149t6</id>
+                        <description>@string/ist_class_electromagnetism_topic6</description>
+                    </topic>
+                    <topic>
+                        <id>c149t7</id>
+                        <description>@string/ist_class_electromagnetism_topic7</description>
+                    </topic>
+                    <topic>
+                        <id>c149t8</id>
+                        <description>@string/ist_class_electromagnetism_topic8</description>
+                    </topic>
+                    <topic>
+                        <id>c149t9</id>
+                        <description>@string/ist_class_electromagnetism_topic9</description>
+                    </topic>
+                </program>
+            </class>
+            <class>
+                <id>ist_meic_c17</id>
+                <name>@string/ist_class_human_machine</name>
+                <description>@string/ist_class_human_machine_description</description>
+                <year>2</year>
                 <semester>2</semester>
                 <ects>7.5</ects>
                 <optional>false</optional>
@@ -9266,43 +9592,289 @@
                 <exclusivePath></exclusivePath>
                 <program>
                     <topic>
-                        <id>c26t1</id>
-                        <description>@string/up_class_web_tech_topic1</description>
+                        <id>c150t1</id>
+                        <description>@string/ist_class_human_machine_topic1</description>
                     </topic>
                     <topic>
-                        <id>c26t2</id>
-                        <description>@string/up_class_web_tech_topic2</description>
+                        <id>c150t2</id>
+                        <description>@string/ist_class_human_machine_topic2</description>
                     </topic>
                     <topic>
-                        <id>c26t3</id>
-                        <description>@string/up_class_web_tech_topic3</description>
+                        <id>c150t3</id>
+                        <description>@string/ist_class_human_machine_topic3</description>
                     </topic>
                     <topic>
-                        <id>c26t4</id>
-                        <description>@string/up_class_web_tech_topic4</description>
+                        <id>c150t4</id>
+                        <description>@string/ist_class_human_machine_topic4</description>
                     </topic>
                     <topic>
-                        <id>c26t5</id>
-                        <description>@string/up_class_web_tech_topic5</description>
+                        <id>c150t5</id>
+                        <description>@string/ist_class_human_machine_topic5</description>
                     </topic>
                     <topic>
-                        <id>c26t6</id>
-                        <description>@string/up_class_web_tech_topic6</description>
+                        <id>c150t6</id>
+                        <description>@string/ist_class_human_machine_topic6</description>
                     </topic>
                     <topic>
-                        <id>c26t7</id>
-                        <description>@string/up_class_web_tech_topic7</description>
+                        <id>c150t7</id>
+                        <description>@string/ist_class_human_machine_topic7</description>
                     </topic>
                     <topic>
-                        <id>c26t8</id>
-                        <description>@string/up_class_web_tech_topic8</description>
+                        <id>c150t8</id>
+                        <description>@string/ist_class_human_machine_topic8</description>
                     </topic>
                     <topic>
-                        <id>c26t9</id>
-                        <description>@string/up_class_web_tech_topic9</description>
+                        <id>c150t9</id>
+                        <description>@string/ist_class_human_machine_topic9</description>
+                    </topic>
+                    <topic>
+                        <id>c150t10</id>
+                        <description>@string/ist_class_human_machine_topic10</description>
+                    </topic>
+                    <topic>
+                        <id>c150t11</id>
+                        <description>@string/ist_class_human_machine_topic11</description>
+                    </topic>
+                    <topic>
+                        <id>c150t12</id>
+                        <description>@string/ist_class_human_machine_topic12</description>
+                    </topic>
+                    <topic>
+                        <id>c150t13</id>
+                        <description>@string/ist_class_human_machine_topic13</description>
                     </topic>
                 </program>
             </class>
+            <class>
+                <id>ist_meic_c18</id>
+                <name>@string/ist_class_probability</name>
+                <description>@string/ist_class_probability_description</description>
+                <year>2</year>
+                <semester>2</semester>
+                <ects>6</ects>
+                <optional>false</optional>
+                <paths></paths>
+                <mandatoryPaths></mandatoryPaths>
+                <exclusivePath></exclusivePath>
+                <program>
+                    <topic>
+                        <id>c151t1</id>
+                        <description>@string/ist_class_probability_topic1</description>
+                    </topic>
+                    <topic>
+                        <id>c151t2</id>
+                        <description>@string/ist_class_probability_topic2</description>
+                    </topic>
+                    <topic>
+                        <id>c151t3</id>
+                        <description>@string/ist_class_probability_topic3</description>
+                    </topic>
+                    <topic>
+                        <id>c151t4</id>
+                        <description>@string/ist_class_probability_topic4</description>
+                    </topic>
+                    <topic>
+                        <id>c151t5</id>
+                        <description>@string/ist_class_probability_topic5</description>
+                    </topic>
+                    <topic>
+                        <id>c151t6</id>
+                        <description>@string/ist_class_probability_topic6</description>
+                    </topic>
+                    <topic>
+                        <id>c151t7</id>
+                        <description>@string/ist_class_probability_topic7</description>
+                    </topic>
+                </program>
+            </class>
+            <class>
+                <id>ist_meic_c19</id>
+                <name>@string/ist_class_computing_theory</name>
+                <description>@string/ist_class_computing_theory_description</description>
+                <year>2</year>
+                <semester>2</semester>
+                <ects>4.5</ects>
+                <optional>false</optional>
+                <paths></paths>
+                <mandatoryPaths></mandatoryPaths>
+                <exclusivePath></exclusivePath>
+                <program>
+                    <topic>
+                        <id>c152t1</id>
+                        <description>@string/ist_class_computing_theory_topic1</description>
+                    </topic>
+                    <topic>
+                        <id>c152t2</id>
+                        <description>@string/ist_class_computing_theory_topic2</description>
+                    </topic>
+                    <topic>
+                        <id>c152t3</id>
+                        <description>@string/ist_class_computing_theory_topic3</description>
+                    </topic>
+                    <topic>
+                        <id>c152t4</id>
+                        <description>@string/ist_class_computing_theory_topic4</description>
+                    </topic>
+                    <topic>
+                        <id>c152t5</id>
+                        <description>@string/ist_class_computing_theory_topic5</description>
+                    </topic>
+                    <topic>
+                        <id>c152t6</id>
+                        <description>@string/ist_class_computing_theory_topic6</description>
+                    </topic>
+                    <topic>
+                        <id>c152t7</id>
+                        <description>@string/ist_class_computing_theory_topic7</description>
+                    </topic>
+                    <topic>
+                        <id>c152t8</id>
+                        <description>@string/ist_class_computing_theory_topic8</description>
+                    </topic>
+                    <topic>
+                        <id>c152t9</id>
+                        <description>@string/ist_class_computing_theory_topic9</description>
+                    </topic>
+                    <topic>
+                        <id>c152t10</id>
+                        <description>@string/ist_class_computing_theory_topic10</description>
+                    </topic>
+                    <topic>
+                        <id>c152t11</id>
+                        <description>@string/ist_class_computing_theory_topic11</description>
+                    </topic>
+                    <topic>
+                        <id>c152t12</id>
+                        <description>@string/ist_class_computing_theory_topic12</description>
+                    </topic>
+                    <topic>
+                        <id>c152t13</id>
+                        <description>@string/ist_class_computing_theory_topic13</description>
+                    </topic>
+                    <topic>
+                        <id>c152t14</id>
+                        <description>@string/ist_class_computing_theory_topic14</description>
+                    </topic>
+                    <topic>
+                        <id>c152t15</id>
+                        <description>@string/ist_class_computing_theory_topic15</description>
+                    </topic>
+                    <topic>
+                        <id>c152t16</id>
+                        <description>@string/ist_class_computing_theory_topic16</description>
+                    </topic>
+                    <topic>
+                        <id>c152t17</id>
+                        <description>@string/ist_class_computing_theory_topic17</description>
+                    </topic>
+                    <topic>
+                        <id>c152t18</id>
+                        <description>@string/ist_class_computing_theory_topic18</description>
+                    </topic>
+                    <topic>
+                        <id>c152t19</id>
+                        <description>@string/ist_class_computing_theory_topic19</description>
+                    </topic>
+                </program>
+            </class>
+
+            <!-- 3RD YEAR -->
+            <class>
+                <id>ist_meic_c20</id>
+                <name>@string/ist_class_computing_theory</name>
+                <description>@string/ist_class_computing_theory_description</description>
+                <year>3</year>
+                <semester>1</semester>
+                <ects>6</ects>
+                <optional>false</optional>
+                <paths></paths>
+                <mandatoryPaths></mandatoryPaths>
+                <exclusivePath></exclusivePath>
+                <program>
+                    <topic>
+                        <id>c152t1</id>
+                        <description>@string/ist_class_computing_theory_topic1</description>
+                    </topic>
+                    <topic>
+                        <id>c152t2</id>
+                        <description>@string/ist_class_computing_theory_topic2</description>
+                    </topic>
+                    <topic>
+                        <id>c152t3</id>
+                        <description>@string/ist_class_computing_theory_topic3</description>
+                    </topic>
+                    <topic>
+                        <id>c152t4</id>
+                        <description>@string/ist_class_computing_theory_topic4</description>
+                    </topic>
+                    <topic>
+                        <id>c152t5</id>
+                        <description>@string/ist_class_computing_theory_topic5</description>
+                    </topic>
+                    <topic>
+                        <id>c152t6</id>
+                        <description>@string/ist_class_computing_theory_topic6</description>
+                    </topic>
+                    <topic>
+                        <id>c152t7</id>
+                        <description>@string/ist_class_computing_theory_topic7</description>
+                    </topic>
+                    <topic>
+                        <id>c152t8</id>
+                        <description>@string/ist_class_computing_theory_topic8</description>
+                    </topic>
+                    <topic>
+                        <id>c152t9</id>
+                        <description>@string/ist_class_computing_theory_topic9</description>
+                    </topic>
+                    <topic>
+                        <id>c152t10</id>
+                        <description>@string/ist_class_computing_theory_topic10</description>
+                    </topic>
+                    <topic>
+                        <id>c152t11</id>
+                        <description>@string/ist_class_computing_theory_topic11</description>
+                    </topic>
+                    <topic>
+                        <id>c152t12</id>
+                        <description>@string/ist_class_computing_theory_topic12</description>
+                    </topic>
+                    <topic>
+                        <id>c152t13</id>
+                        <description>@string/ist_class_computing_theory_topic13</description>
+                    </topic>
+                    <topic>
+                        <id>c152t14</id>
+                        <description>@string/ist_class_computing_theory_topic14</description>
+                    </topic>
+                    <topic>
+                        <id>c152t15</id>
+                        <description>@string/ist_class_computing_theory_topic15</description>
+                    </topic>
+                    <topic>
+                        <id>c152t16</id>
+                        <description>@string/ist_class_computing_theory_topic16</description>
+                    </topic>
+                    <topic>
+                        <id>c152t17</id>
+                        <description>@string/ist_class_computing_theory_topic17</description>
+                    </topic>
+                    <topic>
+                        <id>c152t18</id>
+                        <description>@string/ist_class_computing_theory_topic18</description>
+                    </topic>
+                    <topic>
+                        <id>c152t19</id>
+                        <description>@string/ist_class_computing_theory_topic19</description>
+                    </topic>
+                    <topic>
+                        <id>c152t20</id>
+                        <description>@string/ist_class_computing_theory_topic20</description>
+                    </topic>
+                </program>
+            </class>
+
+            <!-- 4TH YEAR -->
             <class>
                 <id>ist_meic_c70</id>
                 <name>@string/up_class_markup_languages</name>

@@ -2791,16 +2791,16 @@ Os estudantes deverão ainda desenvolver competências em análise e síntese, r
     <string name="ist_class_os_topic13">Estrutura interna do núcleo do Linux</string>
     <string name="ist_class_os_topic14">Visão global do sistema Windows-NT e do Linux</string>
 
-    <string name="ist_class_algorithm_analisys">Análise e Síntese de Algoritmos</string>
-    <string name="ist_class_algorithm_analisys_description">Formação de nível intermédio em algoritmia e complexidade, familiarizando os alunos com técnicas de análise e síntese de algoritmos e estruturas de dados. Conhecimento dos fundamentos da análise e síntese de algoritmos. Análise da realização prática de algoritmos e estruturas de dados. Perspectiva abrangente das aplicações dos algoritmos em Engenharia Informática.</string>
-    <string name="ist_class_algorithm_analisys_topic1">Fundamentos matemáticos para análise de algoritmos</string>
-    <string name="ist_class_algorithm_analisys_topic2">Revisão de algoritmos de ordenação: Mergesort; Heapsort; Quicksort; algoritmos de ordenação não baseados em comparação</string>
-    <string name="ist_class_algorithm_analisys_topic3">Revisão de estruturas de dados: Listas; Pilhas; Filas; Tabelas de dispersão; Árvores de procura binária; Árvores equilibradas</string>
-    <string name="ist_class_algorithm_analisys_topic4">Análise amortizada. Exemplos de aplicação: Amontoados Binomiais</string>
-    <string name="ist_class_algorithm_analisys_topic5">Algoritmos em grafos: Algoritmos elementares; Árvores abrangentes de menor custo; Caminhos mais curtos; Fluxos máximos</string>
-    <string name="ist_class_algorithm_analisys_topic6">Introdução à Programação Linear: Algoritmo Simplex; Técnicas de síntese de algoritmos: Programação dinâmica; Algoritmos gananciosos; Algoritmos para emparelhamentos máximos</string>
-    <string name="ist_class_algorithm_analisys_topic7">Introdução à complexidade: Classes P e NP; Problemas NP-completos; Teorema de Cook</string>
-    <string name="ist_class_algorithm_analisys_topic8">Estudo de alguns problemas NP-completos; Algoritmos de aproximação para problemas NP-díficeis</string>
+    <string name="ist_class_algorithm_analysis">Análise e Síntese de Algoritmos</string>
+    <string name="ist_class_algorithm_analysis_description">Formação de nível intermédio em algoritmia e complexidade, familiarizando os alunos com técnicas de análise e síntese de algoritmos e estruturas de dados. Conhecimento dos fundamentos da análise e síntese de algoritmos. Análise da realização prática de algoritmos e estruturas de dados. Perspectiva abrangente das aplicações dos algoritmos em Engenharia Informática.</string>
+    <string name="ist_class_algorithm_analysis_topic1">Fundamentos matemáticos para análise de algoritmos</string>
+    <string name="ist_class_algorithm_analysis_topic2">Revisão de algoritmos de ordenação: Mergesort; Heapsort; Quicksort; algoritmos de ordenação não baseados em comparação</string>
+    <string name="ist_class_algorithm_analysis_topic3">Revisão de estruturas de dados: Listas; Pilhas; Filas; Tabelas de dispersão; Árvores de procura binária; Árvores equilibradas</string>
+    <string name="ist_class_algorithm_analysis_topic4">Análise amortizada. Exemplos de aplicação: Amontoados Binomiais</string>
+    <string name="ist_class_algorithm_analysis_topic5">Algoritmos em grafos: Algoritmos elementares; Árvores abrangentes de menor custo; Caminhos mais curtos; Fluxos máximos</string>
+    <string name="ist_class_algorithm_analysis_topic6">Introdução à Programação Linear: Algoritmo Simplex; Técnicas de síntese de algoritmos: Programação dinâmica; Algoritmos gananciosos; Algoritmos para emparelhamentos máximos</string>
+    <string name="ist_class_algorithm_analysis_topic7">Introdução à complexidade: Classes P e NP; Problemas NP-completos; Teorema de Cook</string>
+    <string name="ist_class_algorithm_analysis_topic8">Estudo de alguns problemas NP-completos; Algoritmos de aproximação para problemas NP-díficeis</string>
 
     <string name="ist_class_electromagnetism">Electromagnetismo e Óptica</string>
     <string name="ist_class_electromagnetism_description">Esta disciplina apresenta os conceitos e princípios básicos do electromagnetismo e da
