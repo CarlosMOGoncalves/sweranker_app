@@ -14718,95 +14718,73 @@
             <!-- 5TH YEAR-->
             <class>
                 <id>ist_meic_c90</id>
-                <name>@string/ist_class_distributed_sys</name>
-                <description>@string/ist_class_distributed_sys_description</description>
+                <name>@string/ist_class_project</name>
+                <description>@string/ist_class_project_description</description>
                 <year>5</year>
                 <semester>1</semester>
-                <ects>6</ects>
+                <ects>12</ects>
                 <optional>false</optional>
                 <paths></paths>
                 <mandatoryPaths></mandatoryPaths>
                 <exclusivePath></exclusivePath>
                 <program>
                     <topic>
-                        <id>c222t1</id>
-                        <description>@string/ist_class_distributed_sys_topic1</description>
+                        <id>c223t1</id>
+                        <description>@string/ist_class_project_topic1</description>
                     </topic>
+                </program>
+            </class>
+            <class>
+                <id>ist_meic_c91</id>
+                <name>@string/ist_class_personal_portfolio1</name>
+                <description>@string/ist_class_personal_portfolio1_description</description>
+                <year>5</year>
+                <semester>1</semester>
+                <ects>1.5</ects>
+                <optional>false</optional>
+                <paths></paths>
+                <mandatoryPaths></mandatoryPaths>
+                <exclusivePath></exclusivePath>
+                <program>
                     <topic>
-                        <id>c222t2</id>
-                        <description>@string/ist_class_distributed_sys_topic2</description>
+                        <id>c224t1</id>
+                        <description>@string/ist_class_personal_portfolio1_topic1</description>
                     </topic>
+                </program>
+            </class>
+            <class>
+                <id>ist_meic_c92</id>
+                <name>@string/ist_class_personal_portfolio2</name>
+                <description>@string/ist_class_personal_portfolio2_description</description>
+                <year>5</year>
+                <semester>2</semester>
+                <ects>1.5</ects>
+                <optional>false</optional>
+                <paths></paths>
+                <mandatoryPaths></mandatoryPaths>
+                <exclusivePath></exclusivePath>
+                <program>
                     <topic>
-                        <id>c222t3</id>
-                        <description>@string/ist_class_distributed_sys_topic3</description>
+                        <id>c225t1</id>
+                        <description>@string/ist_class_personal_portfolio2_topic1</description>
                     </topic>
+                </program>
+            </class>
+            <class>
+                <id>ist_meic_c93</id>
+                <name>@string/ist_class_thesis</name>
+                <description>@string/ist_class_thesis_description</description>
+                <year>5</year>
+                <semester>2</semester>
+                <ects>30</ects>
+                <optional>false</optional>
+                <paths></paths>
+                <mandatoryPaths></mandatoryPaths>
+                <exclusivePath></exclusivePath>
+                <program>
                     <topic>
-                        <id>c222t4</id>
-                        <description>@string/ist_class_distributed_sys_topic4</description>
-                    </topic>
-                    <topic>
-                        <id>c222t5</id>
-                        <description>@string/ist_class_distributed_sys_topic5</description>
-                    </topic>
-                    <topic>
-                        <id>c222t6</id>
-                        <description>@string/ist_class_distributed_sys_topic6</description>
-                    </topic>
-                    <topic>
-                        <id>c222t7</id>
-                        <description>@string/ist_class_distributed_sys_topic7</description>
-                    </topic>
-                    <topic>
-                        <id>c222t8</id>
-                        <description>@string/ist_class_distributed_sys_topic8</description>
-                    </topic>
-                    <topic>
-                        <id>c222t9</id>
-                        <description>@string/ist_class_distributed_sys_topic9</description>
-                    </topic>
-                    <topic>
-                        <id>c222t10</id>
-                        <description>@string/ist_class_distributed_sys_topic10</description>
-                    </topic>
-                    <topic>
-                        <id>c222t11</id>
-                        <description>@string/ist_class_distributed_sys_topic11</description>
-                    </topic>
-                    <topic>
-                        <id>c222t12</id>
-                        <description>@string/ist_class_distributed_sys_topic12</description>
-                    </topic>
-                    <topic>
-                        <id>c222t13</id>
-                        <description>@string/ist_class_distributed_sys_topic13</description>
-                    </topic>
-                    <topic>
-                        <id>c222t14</id>
-                        <description>@string/ist_class_distributed_sys_topic14</description>
-                    </topic>
-                    <topic>
-                        <id>c222t15</id>
-                        <description>@string/ist_class_distributed_sys_topic15</description>
-                    </topic>
-                    <topic>
-                        <id>c222t16</id>
-                        <description>@string/ist_class_distributed_sys_topic16</description>
-                    </topic>
-                    <topic>
-                        <id>c222t17</id>
-                        <description>@string/ist_class_distributed_sys_topic17</description>
-                    </topic>
-                    <topic>
-                        <id>c222t18</id>
-                        <description>@string/ist_class_distributed_sys_topic18</description>
-                    </topic>
-                    <topic>
-                        <id>c222t19</id>
-                        <description>@string/ist_class_distributed_sys_topic19</description>
-                    </topic>
-                    <topic>
-                        <id>c222t20</id>
-                        <description>@string/ist_class_distributed_sys_topic20</description>
+                        <id>c226t1</id>
+                        <description>@string/ist_class_thesis_topic1</description>
                     </topic>
                 </program>
             </class>
