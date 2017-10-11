@@ -4509,6 +4509,176 @@ Os estudantes deverão ainda desenvolver competências em análise e síntese, r
     <string name="uav_class_oop_topic9">Entrada e saída de dados: streams, decoradores, serialização</string>
     <string name="uav_class_oop_topic10">Swing e programação por eventos</string>
 
+    <string name="uav_class_algorithms">Algoritmos e Estruturas de Dados</string>
+    <string name="uav_class_algorithms_description">No final desta unidade curricular os alunos deverão estar habilitados a:\n
+        - Desenvolver estratégias algorítmicas fundamentais envolvendo iteração e recursividade\n
+        - Saber analisar o desempenho de algoritmos iterativos e recursivos em termos da sua complexidade algorítmica\n
+        - Saber aplicar estratégias sistemáticas de depuração, gestão de falhas e implementação de algoritmos e estruturas de dados com correcção e robustez.</string>
+    <string name="uav_class_algorithms_topic1">Introdução à análise da complexidade de algoritmos: terminologia e conceitos fundamentais</string>
+    <string name="uav_class_algorithms_topic2">Análise de algoritmos iterativos e recursivos para diferentes tipos de problemas (pesquisa, ordenação, etc.)</string>
+    <string name="uav_class_algorithms_topic3">Estratégias algorítmicas (divisão-e-conquista, programação dinâmica, etc.)</string>
+    <string name="uav_class_algorithms_topic4">Polimorfismo paramétrico (tipos genéricos)</string>
+    <string name="uav_class_algorithms_topic5">Gestão de falhas e construção de algoritmos e estruturas de dados com correcção e robustez</string>
+    <string name="uav_class_algorithms_topic6">Implementação de estruturas de dados fundamentais: pilhas, filas, listas ligadas e bi-ligadas, tabelas de dispersão, árvores binárias de pesquisa e grafos.</string>
+
+    <string name="uav_class_probability">Métodos Probabílisticos para Engenharia Informática</string>
+    <string name="uav_class_probability_description">Justificar a necessidade da modelação probabilística no contexto da Eng. Informática.
+        Fornecer as ferramentas matemáticas que permitam caracterizar esta modelação nos seus diferentes aspectos
+        (probabilidades, estatística e processos estocásticos). Explorar as possibilidades de experimentação abertas pela
+        disponibilidade dos actuais meios computacionais. Ensinar as técnicas de simulação de eventos discretos.</string>
+    <string name="uav_class_probability_topic1">Noções básicas de probabilidade </string>
+    <string name="uav_class_probability_topic2">Variáveis aleatórias e distribuições</string>
+    <string name="uav_class_probability_topic3">Noções básicas de processos estocásticos</string>
+    <string name="uav_class_probability_topic4">Processos de renovamento e cadeias de Markov (em tempo discreto)</string>
+    <string name="uav_class_probability_topic5">Simulação: Geração de números aleatórios; Geração de variáveis aleatórias e Simulação</string>
+    <string name="uav_class_probability_topic6">Aplicações representativas: Contadores aleatórios; Bloom Filters; indíce de Jaccard para a pesquisa de conjuntos semelhantes; etc.</string>
+
+    <string name="uav_class_networks_and_services">Redes e Serviços</string>
+    <string name="uav_class_networks_and_services_description">Esta UC tem como objectivo Fornecer uma visão detalhada das redes de comunicações,
+        abrangendo as tecnologias e serviços mais relevantes usados nas redes de acesso e de núcleo.</string>
+    <string name="uav_class_networks_and_services_topic1">Noções de redes de telecomunicações: Redes com comutação de circuitos e com comutação de pacotes. Redes de acesso, metropolitanas e de núcleo. Infraestrutura de rede numa organização moderna. Equipamentos de rede fundamentais. Modelos OSI e TCP/IP.</string>
+    <string name="uav_class_networks_and_services_topic2">Camada da ligação (Ethernet): Endereçamento e expedição de pacotes em switches. Controlo de acesso. Segmentação da rede local (VLAN). Encaminhamento  (protocolos STP e RSTP)</string>
+    <string name="uav_class_networks_and_services_topic3">Camada de Rede: Conceitos genéricos de endereçamento na Internet. Diferentes tipos de endereços. Endereçamento IPv4. Encaminhamento estático.</string>
+    <string name="uav_class_networks_and_services_topic4">Camada de Rede: Endereçamento IPv6. Definição de sub-redes IP e agregação de redes IP. Serviços de suporte ao endereçamento IP (DHCP e DNS).</string>
+    <string name="uav_class_networks_and_services_topic5">Camada de Rede: Encaminhamento dinâmico unicast (protocolos RIP e OSPF). Encaminhamento dinâmico unicast (protocolo BGP). Encaminhamento multicast.</string>
+    <string name="uav_class_networks_and_services_topic6">Camada de transporte. Mecanismos NAT/PAT.</string>
+    <string name="uav_class_networks_and_services_topic7">Camada das aplicações. Sockets.</string>
+    <string name="uav_class_networks_and_services_topic8">Introdução à segurança em redes.</string>
+    <string name="uav_class_networks_and_services_topic9">Mecanismos de qualidade de serviço em redes.</string>
+
+    <string name="uav_class_multimedia_sys">Sistemas Multimédia</string>
+    <string name="uav_class_multimedia_sys_description">Entender a relevância dos sistemas multimédia.
+        Entender a necessidade do uso de técnicas para a representação eficiente de informação multimédia.
+        Conhecer as principais tecnologias e normas para a representação eficiente e processamento de informação multimédia.
+        Conhecer os principais factores relacionados com o desempenho dos sistemas multimédia.</string>
+    <string name="uav_class_multimedia_sys_topic1">Fundamentos e formatos de áudio, imagem e vídeo digital</string>
+    <string name="uav_class_multimedia_sys_topic2">Representação eficiente de informação multimédia</string>
+    <string name="uav_class_multimedia_sys_topic3">Armazenamento e transporte de informação multimédia</string>
+    <string name="uav_class_multimedia_sys_topic4">Introdução às técnicas de processamento de informação multimédia</string>
+    <string name="uav_class_multimedia_sys_topic5">Aplicações</string>
+
+    <string name="uav_class_os">Sistemas Operativos</string>
+    <string name="uav_class_os_description">Apresentar os conceitos mais importantes sobre a organização dos sistemas de operação actuais numa perspectiva funcional;
+        Introduzir o ambiente de interacção com o sistema computacional baseado no processamento de linha de comandos;
+        Apresentar o sistema de operação como uma abstracção que fornece ao programador de aplicações um modelo de máquina virtual baseado em chamadas ao sistema;
+        Introduzir a programação concorrente e os mecanismos principais de comunicação e de sincronização entre processos;
+        Familiarizar os alunos com o interface de interacção fornecido pelo Unix.</string>
+    <string name="uav_class_os_topic1">Conceitos Introdutórios</string>
+    <string name="uav_class_os_topic2">Ambiente de interacção de linha de comando</string>
+    <string name="uav_class_os_topic3">Gestão do Processador em Multiprogramação</string>
+    <string name="uav_class_os_topic4">Comunicação entre Processos</string>
+    <string name="uav_class_os_topic5">Gestão da memória</string>
+    <string name="uav_class_os_topic6">Input/Output</string>
+    <string name="uav_class_os_topic7">Sistema de ficheiros</string>
+    <string name="uav_class_os_topic8">Protecção e Segurança</string>
+
+    <string name="uav_class_compilers">Compiladores</string>
+    <string name="uav_class_compilers_description">A unidade curricular aborda teoria das linguagens, tendo como objectivo dotar o estudante com a capacidade de projectar
+        e implementar tradutores dirigidos pela sintaxe, com foco na construção de compiladores. Pretende-se que o aluno adquira:\n
+        - Capacidade de trabalhar com linguagens regulares, incluindo a manipulação de modelos computacionais usados para as descrever
+        e reconhecer, nomeadamente as expressões regulares, autómatos finitos e gramáticas regulares.\n
+        - Capacidade de trabalhar linguagens independentes do contexto, quer na sua interpretação, quer no projecto.\n
+        - Capacidade de distinguir análise lexical e análise sintática.\n
+        - Capacidade de projectar e implementar tradutores dirigidos pela sintaxe, incluindo compiladores.</string>
+    <string name="uav_class_compilers_topic1">Introdução ao processo de compilação: Processadores de linguagens</string>
+    <string name="uav_class_compilers_topic2">Introdução ao processo de compilação: Estrutura de um compilador</string>
+    <string name="uav_class_compilers_topic3">Linguagens: Noções básicas</string>
+    <string name="uav_class_compilers_topic4">Linguagens: Operações sobre linguagens</string>
+    <string name="uav_class_compilers_topic5">Linguagens: Representação e classificação das linguagens</string>
+    <string name="uav_class_compilers_topic6">Análise lexical: O papel do analisador lexical</string>
+    <string name="uav_class_compilers_topic7">Análise lexical: Expressões regulares</string>
+    <string name="uav_class_compilers_topic8">Análise lexical: Autómatos finitos: deterministas, não deterministas e generalizados</string>
+    <string name="uav_class_compilers_topic9">Análise lexical: Gramáticas regulares</string>
+    <string name="uav_class_compilers_topic10">Análise lexical: Equivalência entre expressões regulares, autómatos finitos e gramáticas regulares</string>
+    <string name="uav_class_compilers_topic11">Análise sintática: O papel do analisador sintático</string>
+    <string name="uav_class_compilers_topic12">Análise sintática: Gramáticas independentes do contexto</string>
+    <string name="uav_class_compilers_topic13">Análise sintática: Projecto de gramáticas</string>
+    <string name="uav_class_compilers_topic14">Análise sintática: Análise sintática descendente</string>
+    <string name="uav_class_compilers_topic15">Análise sintática: Análise sintática ascendente</string>
+    <string name="uav_class_compilers_topic16">Traduções dirigidas pela sintaxe: Atributos e acções semânticas</string>
+    <string name="uav_class_compilers_topic17">Traduções dirigidas pela sintaxe: Definições dirigidas pela sintaxe</string>
+    <string name="uav_class_compilers_topic18">Traduções dirigidas pela sintaxe: Árvores sintáticas abstractas</string>
+    <string name="uav_class_compilers_topic19">Traduções dirigidas pela sintaxe: Análise semântica</string>
+    <string name="uav_class_compilers_topic20">Geração de código: Geração de código intermédio</string>
+
+    <string name="uav_class_distributed_computing">Computação Distribuída</string>
+    <string name="uav_class_distributed_computing_description">Introduzir os alunos aos princípios e à prática subjacente ao projecto de
+        sistemas distribuídos, apresentando os conceitos mais importantes relativos à sua implementação.
+        São particularmente explorados diferentes paradigmas de comunicação e de sincronização.
+        Pretende-se especificamente promover: a compreensão dos problemas principais que envolvem o
+        projecto de sistemas distribuídos; a capacidade de desenvolvimento de aplicações distribuídas simples;</string>
+    <string name="uav_class_distributed_computing_topic1">Sistemas distribuídos: Modelos arquitecturais distribuídos (Cliente-Servidor, P2P, Grid, Cloud, SOA)</string>
+    <string name="uav_class_distributed_computing_topic2">Comunicação e sincronização: Comunicação por passagem de mensagens</string>
+    <string name="uav_class_distributed_computing_topic3">Comunicação e sincronização: Invocação de métodos remotos (RMI, SOAP)</string>
+    <string name="uav_class_distributed_computing_topic4">Comunicação e sincronização: Invocação de métodos sobre objetos remotos (CORBA, RMI)</string>
+    <string name="uav_class_distributed_computing_topic5">Comunicação e sincronização: Manipulação de recursos remotos (REST)</string>
+    <string name="uav_class_distributed_computing_topic6">Modelos de programação distribuída: Map-Reduce</string>
+    <string name="uav_class_distributed_computing_topic7">Modelos de comunicação em grupo: Sincronização e exclusão mútua distribuídas</string>
+    <string name="uav_class_distributed_computing_topic8">Modelos de comunicação em grupo: Algoritmos electivos</string>
+    <string name="uav_class_distributed_computing_topic9">Modelos de comunicação em grupo: Transacções distribuídas</string>
+    <string name="uav_class_distributed_computing_topic10">Consistência e replicação: Modelos de consistência centrados nos dados</string>
+    <string name="uav_class_distributed_computing_topic11">Consistência e replicação: Modelos de consistência centrados nos clientes</string>
+    <string name="uav_class_distributed_computing_topic12">Consistência e replicação: Protocolos</string>
+    <string name="uav_class_distributed_computing_topic13">Sistemas de ficheiros distribuídos: NFS, HadoopFS</string>
+
+    <string name="uav_class_design_patterns">Padrões e Desenho de Software</string>
+    <string name="uav_class_design_patterns_description">Este curso aborda um conjunto de princípios e padrões de desenho de software
+        orientado a objectos. O objectivo é consolidar conceitos de OOP, como proceder a refactoring de código,
+        aprender a identificar e usar padrões de software.</string>
+    <string name="uav_class_design_patterns_topic1">Princípios de desenho de software: Princípios e orientações (e.g. GRASP)</string>
+    <string name="uav_class_design_patterns_topic2">Princípios de desenho de software: Impacto destes no processo de desenho de um sistema nomeadamente ao nível flexibilidade, de facilidade de manutenção e reutilização de componentes.</string>
+    <string name="uav_class_design_patterns_topic3">Revisão e melhoria do código: Métricas sobre código</string>
+    <string name="uav_class_design_patterns_topic4">Revisão e melhoria do código: Revisão de código, “Bad smells” e reengenharia</string>
+    <string name="uav_class_design_patterns_topic5">Revisão e melhoria do código: Anti-padrões frequentes</string>
+    <string name="uav_class_design_patterns_topic6">Padrões de desenho de software: apresentação dos principais padrões de desenho (e.g. GoF )</string>
+    <string name="uav_class_design_patterns_topic7">Padrões de desenho de software: identificação e estudo das características de padrões de desenho em casos concretos</string>
+    <string name="uav_class_design_patterns_topic8">Estilos de arquitectura de software: Estilos de arquitectura estruturais e de interacção/concorrência</string>
+    <string name="uav_class_design_patterns_topic9">Estilos de arquitectura de software: Identificação e estudo das características de padrões de desenho em casos concretos</string>
+    <string name="uav_class_design_patterns_topic10">Introdução a padrões de concorrência: Sistemas distribuídos como um conjunto de componentes que cooperam entre si</string>
+
+    <string name="uav_class_human_computer_interaction">Interacção Humano-Computador</string>
+    <string name="uav_class_human_computer_interaction_description">Trata-se de uma disciplina introdutória à área da Interacção Humano-Computador que
+        tem como objectivos específicos:\n
+        - promover a compreensão da importância da interface de utilizador num sistema interactivo;
+        - fazer uma introdução à bibliografia da área científica interacção humano-computador
+        - introduzir os conceitos, técnicas e ferramentas de projecto, implementação e avaliação de uma interface de utilizador;
+        - desenvolver capacidades mais genéricas como raciocínio crítico, capacidade de trabalhar em grupo e capacidade de comunicação oral e escrita.</string>
+    <string name="uav_class_human_computer_interaction_topic1">Introdução ao problema; princípios gerais do projecto de interfaces de utilizador e principais paradigmas de interacção</string>
+    <string name="uav_class_human_computer_interaction_topic2">Perfil do utilizador: sistema de processamento de informação e sistema visual humanos; outras características importantes para o projecto de uma interface de utilizador</string>
+    <string name="uav_class_human_computer_interaction_topic3">Modelo conceptual e modelos mentais; recomendações para o desenvolvimento de modelos conceptuais</string>
+    <string name="uav_class_human_computer_interaction_topic4">Estilos de diálogo: características, resultados experimentais, condições de aplicação, formulários, linguagens de comando, teclas de funções, manipulação directa, linguagem natural</string>
+    <string name="uav_class_human_computer_interaction_topic5">Utilização do espaço e da cor no ecrã: resultados experimentais, princípios e recomendações. Modelos de cor</string>
+    <string name="uav_class_human_computer_interaction_topic6">Tempo de resposta: observações gerais, princípios e recomendações</string>
+    <string name="uav_class_human_computer_interaction_topic7">Documentação para o utilizador: princípios e recomendações</string>
+    <string name="uav_class_human_computer_interaction_topic8">Engenharia de usabilidade - avaliação de interfaces de utilizador: objectivos e principais métodos de avaliação analíticos e empíricos</string>
+    <string name="uav_class_human_computer_interaction_topic9">Ciclo de vida do software interactivo de acordo com uma abordagem centrada no utilizador, suas fases e principais resultados de cada fase</string>
+    <string name="uav_class_human_computer_interaction_topic10">Modelos a utilizar no projecto de interfaces de utilizador: modelos do utilizador, análise de tarefas e notação do diálogo</string>
+    <string name="uav_class_human_computer_interaction_topic11">Construção de interfaces e conteúdos web</string>
+
+    <string name="uav_class_databases">Bases de Dados</string>
+    <string name="uav_class_databases_description">No final desta disciplina os alunos deverão ter conhecimentos ao nível dos conceitos,
+        métodos e técnicas fundamentais no domínio das bases de dados, que lhes permitam:\n
+        Construir um modelo de dados relacional adequado aos requisitos de um sistema de informação,
+        recorrendo às técnicas de desenho conceptual e lógico de uma base de dados;\n
+        Explorar as potencialidades de um sistema de gestão de bases de dados (SGBD),
+        incluindo a especificação da estrutura da base de dados com SQL DDL, a manipulação
+        de dados com SQL DML, as facilidades de programação SQL (stored procedures,
+        triggers e functions) e os mecanismos de segurança;\n
+        Compreender as diferentes possibilidades de interacção com uma base de dados
+        e desenvolver aplicações para acesso aos dados;\n
+        Compreender o papel das bases de dados no âmbito geral do ciclo de
+        modelação e desenvolvimento de um sistema de software.</string>
+    <string name="uav_class_databases_topic1">Desenho Conceptual – Diagramas ER</string>
+    <string name="uav_class_databases_topic2">Desenho Lógico - Modelo Relacional</string>
+    <string name="uav_class_databases_topic3">Definição de Dados (Linguagem SQL – DDL)</string>
+    <string name="uav_class_databases_topic4">Álgebra Relacional</string>
+    <string name="uav_class_databases_topic5">Manipulação de Dados (Linguagem SQL – DML)</string>
+    <string name="uav_class_databases_topic6">Normalização</string>
+    <string name="uav_class_databases_topic7">Índices e Optimização</string>
+    <string name="uav_class_databases_topic8">Programação em SQL (Batch, Script, Cursores, Stored Procedures, User Defined Functions e Triggers)</string>
+    <string name="uav_class_databases_topic9">Transacções, Controlo de Concorrência e Recuperação de Falhas</string>
+    <string name="uav_class_databases_topic10">Segurança em Base de Dados</string>
+
     <string name="uav_class_"></string>
     <string name="uav_class__description"></string>
     <string name="uav_class__topic1"></string>
