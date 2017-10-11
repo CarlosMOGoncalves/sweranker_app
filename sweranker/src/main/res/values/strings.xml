@@ -2524,26 +2524,6 @@ Os estudantes deverão ainda desenvolver competências em análise e síntese, r
 
     <!-- UNIVERSIDADE DE COIMBRA END-->
 
-
-    <!-- UNIVERSIDADE DE AVEIRO START-->
-
-    <string name="uav_mei">LEI + MEI</string>
-    <string name="uav_mei_fullname">Licenciatura em Engenheria Informatica + Mestrado em Engenharia Informática</string>
-    <string name="uav_mei_description">A Licenciatura em Engenharia Informática da Universidade de Aveiro tem por finalidade fornecer uma formação sólida em engenharia informática, área que se tem vindo a revelar como o principal motor de desenvolvimento nas economias avançadas.\n\nMais concretamente, esta licenciatura pretende fornecer as seguintes competências:\n
-- Compreender e utilizar metodologias de desenvolvimento de software em projectos de pequena e larga escala.\n
-- Planear e escrever programas correctos, robustos, eficientes, bem organizados e bem documentados.\n
-- Compreender e utilizar modelos e abstracções na concepção, implementação e utilização de sistemas computacionais e de informação.\n
-- Entender os aspectos fundamentais em arquitectura de computadores e sistemas operativos, e a sua importância no desenvolvimento e execução de aplicações informáticas.\n
-- Aplicar conhecimento nas áreas de cálculo, probabilidades, estatística e matemática discreta em problemas da área da informática.\n
-- Aplicar técnicas de avaliação e gestão de qualidade em projectos de Engenharia Informática.\n
-- Comunicar eficazmente e saber trabalhar em equipas multidisciplinares.\n
-- Reconhecer a necessidade de, e ter a capacidade para, se envolver activamente num processo contínuo de aprendizagem ao longo da vida.\n\nOs objectivos do Mestrado em Engenharia Informática estão alinhados com esta estratégia e com as necessidades do mercado, procurando-se:\n
-- Dotar o tecido empresarial da região, nacional e internacional de quadros superiores habilitados;\n
-- omentar uma formação avançada centrada em inovação, desenvolvimento e investigação em engenharia informática</string>
-    <string name="uav">Universidade de Aveiro</string>
-
-    <!-- UNIVERSIDADE DE AVEIRO END-->
-
     <!-- UNIVERSIDADE DE LISBOA START-->
 
     <string name="ist_meic">LEIC + MEIC</string>
@@ -4331,30 +4311,227 @@ Os estudantes deverão ainda desenvolver competências em análise e síntese, r
         do mundo do trabalho, através da prática de actividades extra-curriculares.</string>
     <string name="ist_class_personal_portfolio2_topic1">Produção de um Relatório de Actividades e de um Relatório Individual de Aprendizagens</string>
 
-    <string name="ist_class_"></string>
-    <string name="ist_class__description"></string>
-    <string name="ist_class__topic1"></string>
-    <string name="ist_class__topic2"></string>
-    <string name="ist_class__topic3"></string>
-    <string name="ist_class__topic4"></string>
-    <string name="ist_class__topic5"></string>
-    <string name="ist_class__topic6"></string>
-    <string name="ist_class__topic7"></string>
-    <string name="ist_class__topic8"></string>
-    <string name="ist_class__topic9"></string>
-    <string name="ist_class__topic10"></string>
-    <string name="ist_class__topic11"></string>
-    <string name="ist_class__topic12"></string>
-    <string name="ist_class__topic13"></string>
-    <string name="ist_class__topic14"></string>
-    <string name="ist_class__topic15"></string>
-    <string name="ist_class__topic16"></string>
-    <string name="ist_class__topic17"></string>
-    <string name="ist_class__topic18"></string>
-    <string name="ist_class__topic19"></string>
-    <string name="ist_class__topic20"></string>
-
-
     <!-- UNIVERSIDADE DE LISBOA END-->
+
+    <!-- UNIVERSIDADE DE AVEIRO START-->
+
+    <string name="uav_mei">LEI + MEI</string>
+    <string name="uav_mei_fullname">Licenciatura em Engenheria Informatica + Mestrado em Engenharia Informática</string>
+    <string name="uav_mei_description">A Licenciatura em Engenharia Informática da Universidade de Aveiro tem por finalidade fornecer uma formação sólida em engenharia informática, área que se tem vindo a revelar como o principal motor de desenvolvimento nas economias avançadas.\n\nMais concretamente, esta licenciatura pretende fornecer as seguintes competências:\n
+- Compreender e utilizar metodologias de desenvolvimento de software em projectos de pequena e larga escala.\n
+- Planear e escrever programas correctos, robustos, eficientes, bem organizados e bem documentados.\n
+- Compreender e utilizar modelos e abstracções na concepção, implementação e utilização de sistemas computacionais e de informação.\n
+- Entender os aspectos fundamentais em arquitectura de computadores e sistemas operativos, e a sua importância no desenvolvimento e execução de aplicações informáticas.\n
+- Aplicar conhecimento nas áreas de cálculo, probabilidades, estatística e matemática discreta em problemas da área da informática.\n
+- Aplicar técnicas de avaliação e gestão de qualidade em projectos de Engenharia Informática.\n
+- Comunicar eficazmente e saber trabalhar em equipas multidisciplinares.\n
+- Reconhecer a necessidade de, e ter a capacidade para, se envolver activamente num processo contínuo de aprendizagem ao longo da vida.\n\nOs objectivos do Mestrado em Engenharia Informática estão alinhados com esta estratégia e com as necessidades do mercado, procurando-se:\n
+- Dotar o tecido empresarial da região, nacional e internacional de quadros superiores habilitados;\n
+- omentar uma formação avançada centrada em inovação, desenvolvimento e investigação em engenharia informática</string>
+    <string name="uav">Universidade de Aveiro</string>
+
+
+    <string name="uav_class_algebra">Álgebra Linear e Geometria Analítica</string>
+    <string name="uav_class_algebra_description">Nesta unidade curricular comum a diversos cursos de engenharias,
+        leccionam-se alguns tópicos de álgebra linear e de geometria analítica que fornecem o quadro teórico conceptual
+        e os instrumentos de cálculo necessários à compreensão e desenvolvimento de variadas e importantes aplicações
+        da matemática a outras ciências e engenharias. Entre as competências fundamentais a desenvolver pelos estudantes
+        destacam-se a capacidade de cálculo formal algébrico e bem como a de formulação e resolução explícita de
+        problemas algébricos, incluindo questões de geometria analítica; a capacidade de utilizar técnicas vectoriais
+        e matriciais em diversas aplicações; a resolução de problemas recorrendo a subespaços e transformações
+        lineares; a identificação e manipulação algébrica de cónicas e quádricas.</string>
+    <string name="uav_class_algebra_topic1">Matrizes e sistemas de equações lineares: operações com matrizes; método de eliminação de Gauss; inversa de uma matriz</string>
+    <string name="uav_class_algebra_topic2">Determinantes: definição e propriedades; Teorema de Laplace; inversa de uma matriz à custa da adjunta; Regra de Cramer</string>
+    <string name="uav_class_algebra_topic3">Espaços vectoriais reais: definição; subespaços; espaço gerado; independência linear, bases, dimensão; coordenadas e mudança de base</string>
+    <string name="uav_class_algebra_topic4">Espaços euclidianos: produto interno, norma, ângulo; desigualdade de Cauchy–Schwarz; ortogonalidade, bases ortonormais; decomposição ortogonal; projecção ortogonal; produto vectorial em IR3</string>
+    <string name="uav_class_algebra_topic5">Valores próprios e vectores próprios: valor próprio, vector próprio; diagonalização de matrizes; diagonalização ortogonal de matrizes simétricas</string>
+    <string name="uav_class_algebra_topic6">Transformações lineares: definição; matriz de uma aplicação linear; núcleo e imagem</string>
+    <string name="uav_class_algebra_topic7">Rectas e planos: equações cartesianas, posição relativa, distâncias e ângulos</string>
+    <string name="uav_class_algebra_topic8">Cónicas e quádricas: equação geral, equações reduzidas e classificação de cónicas e quádricas</string>
+
+    <string name="uav_class_physics">Elementos de Física</string>
+    <string name="uav_class_physics_description">A disciplina de Elementos de Física aborda diversos fenómenos e conceitos
+        físicos indispensáveis para a compreensão do progresso científico e tecnológico moderno, enquadrando a Física no
+        contexto de outras Ciências e Engenharias. Será dada ênfase especial aos desenvolvimentos do século XX,
+        apresentando, ainda que duma forma qualitativa, os modelos físicos e seus limites. Por outro lado,
+        pretende-se desenvolver competências no domínio da experimentação e capacidade de raciocínio crítico.</string>
+    <string name="uav_class_physics_topic1">Óptica geométrica: Reflexão e refracção da luz</string>
+    <string name="uav_class_physics_topic2">Óptica geométrica: Dispositivos ópticos: espelhos, lentes</string>
+    <string name="uav_class_physics_topic3">Movimento Oscilatório: Movimento harmónico simples</string>
+    <string name="uav_class_physics_topic4">Movimento Oscilatório: Movimento amortecido</string>
+    <string name="uav_class_physics_topic5">Movimento Oscilatório: Movimento forçado</string>
+    <string name="uav_class_physics_topic6">Fenómenos ondulatórios: Ondas harmónicas</string>
+    <string name="uav_class_physics_topic7">Fenómenos ondulatórios: Efeito Doppler</string>
+    <string name="uav_class_physics_topic8">Interferência de ondas: Interferência de ondas</string>
+    <string name="uav_class_physics_topic9">Interferência de ondas: Ondas estacionárias e ressonância</string>
+    <string name="uav_class_physics_topic10">Física Quântica: Breve historial. Quanta de energia e fotões</string>
+    <string name="uav_class_physics_topic11">Física Quântica: Efeitos fotoeléctrico e Compton</string>
+    <string name="uav_class_physics_topic12">Física Quântica: Naturezas corpuscular e ondulatória da matéria</string>
+    <string name="uav_class_physics_topic13">Física Quântica: Funções de onda e quantificação. Aplicações</string>
+    <string name="uav_class_physics_topic14">Radioactividade: Decaimento radioactivo. Fenomenologia</string>
+    <string name="uav_class_physics_topic15">Radioactividade: Aplicações da radioactividade. Datação por carbono</string>
+
+    <string name="uav_class_calculus1">Cálculo I</string>
+    <string name="uav_class_calculus1_description">Aquisição de conhecimentos e competências em cálculo com uma
+        variável incluindo o estudo de funções de uma variável e a integração.</string>
+    <string name="uav_class_calculus1_topic1">Funções reais de variável real</string>
+    <string name="uav_class_calculus1_topic2">Funções trigonométricas inversas; Teorema de Weierstrass,de Rolle e de Lagrange</string>
+    <string name="uav_class_calculus1_topic3">Contradomínios e extremos; Teorema e regra de Cauchy.</string>
+    <string name="uav_class_calculus1_topic4">Integração: Definição de primitiva; Propriedades; Integral indefinido</string>
+    <string name="uav_class_calculus1_topic5">Integração: Técnicas de integração: imediata, por partes, por substituição, integração de funções racionais; Definição integral de Riemann; Critérios de integrabilidade</string>
+    <string name="uav_class_calculus1_topic6">Integração: Cálculo de integrais à custa de primitivas; Substituição de variável no integral definido</string>
+    <string name="uav_class_calculus1_topic7">Integração: Teorema do Valor Médio; Teorema Fundamental do Cálculo; Aplicação ao cálculo de áreas</string>
+    <string name="uav_class_calculus1_topic8">Integração: Integrais impróprios de 1.ª, 2.ª e 3.ª espécies; Critérios de convergência; Convergência absoluta</string>
+    <string name="uav_class_calculus1_topic9">Séries numéricas: Critérios de convergência para séries de termos não negativos: do Integral, Comparação, Comparação por Passagem ao Limite</string>
+    <string name="uav_class_calculus1_topic10">Séries numéricas: Critérios de convergência para séries de termos quaisquer: de Cauchy, de D’Alembert</string>
+    <string name="uav_class_calculus1_topic11">Séries numéricas: Séries alternadas e Critério de Leibniz</string>
+
+    <string name="uav_class_intro_web">Introdução às Tecnologias Web</string>
+    <string name="uav_class_intro_web_description">Esta unidade curricular tem como objetivo fornecer as primeiras noções de
+        utilização de ferramentas e de programação web. Será dado um enfoque particular na criação das páginas, quer em
+        modo autónomo quer através da sua integração em ferramentas e ainda na programação do lado do cliente. No final
+        da unidade curricular, os alunos deverão ser capazes de desenvolver páginas web de pequena e média complexidade,
+        que modelem situações concretas e que forneçam resposta às questões por elas levantadas. Os alunos aprenderão
+        a conceber programas que manipulam quer objetos de interface web quer estruturas de dados.</string>
+    <string name="uav_class_intro_web_topic1">Elementos de desenho Web</string>
+    <string name="uav_class_intro_web_topic2">Formatos de imagem</string>
+    <string name="uav_class_intro_web_topic3">HTML (HyperText Markup Language)</string>
+    <string name="uav_class_intro_web_topic4">CSS (Cascading Style Sheets)</string>
+    <string name="uav_class_intro_web_topic5">Utilização de softwares colaborativos para a edição colectiva e difusão de documentos: CMS’s – Content Management Systems, Wikis, Podcasts, Blogs</string>
+    <string name="uav_class_intro_web_topic6">JavaScript</string>
+    <string name="uav_class_intro_web_topic7">JSON (JavaScript Object Notation)</string>
+
+    <string name="uav_class_programming_fundamentals">Fundamentos de Programação</string>
+    <string name="uav_class_programming_fundamentals_description">Pretende-se dotar os alunos da capacidade para resolver problemas de pequena e
+        média dimensão recorrendo a uma linguagem de programação multi-paradigma (Python)</string>
+    <string name="uav_class_programming_fundamentals_topic1">Enquadramento histórico e conceitos básicos sobre paradigmas de programação</string>
+    <string name="uav_class_programming_fundamentals_topic2">Variaveis, Expressões, e definições</string>
+    <string name="uav_class_programming_fundamentals_topic3">Funções</string>
+    <string name="uav_class_programming_fundamentals_topic4">Estruturas decisórias</string>
+    <string name="uav_class_programming_fundamentals_topic5">Recursividade</string>
+    <string name="uav_class_programming_fundamentals_topic6">Iterações</string>
+    <string name="uav_class_programming_fundamentals_topic7">Strings</string>
+    <string name="uav_class_programming_fundamentals_topic8">Estruturas de dados</string>
+    <string name="uav_class_programming_fundamentals_topic9">Ficheiros</string>
+    <string name="uav_class_programming_fundamentals_topic10">Algoritmos de Pesquisa</string>
+    <string name="uav_class_programming_fundamentals_topic11">Algoritmos de Ordenação</string>
+
+    <string name="uav_class_modeling">Modelação e Análise de Sistemas</string>
+    <string name="uav_class_modeling_description">O objetivo da unidade curricular é fornecer uma compreensão geral dos
+        conceitos da análise por objetos, das metodologias  de desenvolvimento de software, e da linguagem UML
+        para construção de modelos.</string>
+    <string name="uav_class_modeling_topic1">Metodologias de desenvolvimento de software: disciplinas e resultados associados ao ciclo de vida do software</string>
+    <string name="uav_class_modeling_topic2">Metodologias de desenvolvimento de software: Principais metodologias de desenvolvimento de software</string>
+    <string name="uav_class_modeling_topic3">Engenharia de Requisitos: Gestão de requisitos e riscos no desenvolvimento de software</string>
+    <string name="uav_class_modeling_topic4">Engenharia de Requisitos: Levantamento de requisitos funcionais através de casos de utilização</string>
+    <string name="uav_class_modeling_topic5">Engenharia de Requisitos: Utilização de protótipos na mitigação de riscos</string>
+    <string name="uav_class_modeling_topic6">Modelação visual com a UML: Modelação das componentes estáticas e dinâmicas de um sistema com a UML</string>
+    <string name="uav_class_modeling_topic7">Modelação visual com a UML: Complementaridade das perspectivas de modelação no desenvolvimento de um projecto</string>
+    <string name="uav_class_modeling_topic8">Desenvolvimento iterativo e práticas ágeis: Organização do ciclo de vida por iterações</string>
+    <string name="uav_class_modeling_topic9">Desenvolvimento iterativo e práticas ágeis: Práticas das metodologias ágeis e o foco no incremento da solução</string>
+    <string name="uav_class_modeling_topic10">Arquitectura de software: Conceitos básicos de arquitectura</string>
+    <string name="uav_class_modeling_topic11">Arquitectura de software: Modelos para comunicar a arquitectura lógica e de instalação de um sistema</string>
+
+    <string name="uav_class_calculus2">Cálculo II</string>
+    <string name="uav_class_calculus2_description">Estender a formação de cálculo em uma variável ao estudo das séries e das
+        equações diferenciais. Estudo dos extremos d funções de várias variáveis.</string>
+    <string name="uav_class_calculus2_topic1">Extremos de funções reais de várias variáveis reais</string>
+    <string name="uav_class_calculus2_topic2">Derivação parcial; Extremos locais; Extremos globais; Extremos condicionados</string>
+    <string name="uav_class_calculus2_topic3">Equações diferenciais ordinárias: equações diferenciais de 1ª ordem - equações diferenciais de variáveis separadas, de variáveis separáveis, redutíveis a variáveis separáveis, homogéneas, exactas, com factor integrante, lineares de primeira ordem, de Bernoulli</string>
+    <string name="uav_class_calculus2_topic4">Equações diferenciais ordinárias: equações diferenciais de ordem superior à primeira</string>
+    <string name="uav_class_calculus2_topic5">Equações diferenciais ordinárias: equações diferenciais lineares de ordem n - homogénea de coeficientes constantes, completa de coeficientes constantes</string>
+    <string name="uav_class_calculus2_topic6">Equações diferenciais ordinárias: </string>
+    <string name="uav_class_calculus2_topic7">Transformada de Laplace e sua aplicação à resolução de EDOs</string>
+    <string name="uav_class_calculus2_topic8">Séries de potências e fórmula de Taylor</string>
+    <string name="uav_class_calculus2_topic9">Sucessões e séries de funções: Convergência pontual e uniforme; Critério de Weierstrass; Séries de Fourier</string>
+
+    <string name="uav_class_discrete_math">Matemática Discreta</string>
+    <string name="uav_class_discrete_math_description">Formação em matemática discreta que permita a compreensão de modelos
+        matemáticos de natureza combinatória, muito comuns em computação, telecomunicações, indústria de processadores,
+        desenho de circuitos integrados, criptografia e segurança na transmissão de comunicações, sistemas de tráfego, etc.</string>
+    <string name="uav_class_discrete_math_topic1">Linguagem Matemática e Lógica Informal: Lógica proposicional; Relações (produto cartesiano e relações binárias; relações de ordem); Lógica de primeira ordem.</string>
+    <string name="uav_class_discrete_math_topic2">Contextos e Estratégias de Demonstração: Estratégias de demonstração da implicação ; Princípios da indução e da indução completa; Princípio da gaiola dos pombos.</string>
+    <string name="uav_class_discrete_math_topic3">Princípios de Enumeração Combinatória: Princípio da bijecção; Princípios da adição e da multiplicação; Princípio da inclusão-exclusão.</string>
+    <string name="uav_class_discrete_math_topic4">Agrupamentos e Identidades Combinatórias: Arranjos com repetição e arranjos e combinações simples; Combinações e permutações com repetição e números multinomiais; Identidades combinatórias.</string>
+    <string name="uav_class_discrete_math_topic5">Recorrência e Funções Geradoras: Relações de recorrência; Funções geradoras.</string>
+    <string name="uav_class_discrete_math_topic6">Introdução aos Números Combinatórios: Factoriais e números binomiais; Números de Fibonacci e número de ouro; Propriedades dos números de Fibonacci.</string>
+    <string name="uav_class_discrete_math_topic7">Elementos de Teoria dos Grafos: Conceitos e resultados fundamentais; Conexidade, caminhos e árvores.</string>
+
+    <string name="uav_class_compute_arch">Introdução à Arquitectura de Computadores</string>
+    <string name="uav_class_compute_arch_description">Conhecer as formas de representação da informação nos computadores digitais,
+        com relevo para a representação da informação numérica e as operações aritméticas básicas.\n
+- Conhecer as operações lógicas e as componentes eletrónicas que as realizam.\n
+- Compreender o funcionamento dos sistemas com memória e o funcionamento dos principais dispositivos de armazenamento de informação\n
+- Compreender a organização interna dos computadores digitais\n
+- Compreender os mecanismos de comunicação do computador com o exterior\n
+- Adquirir familiariedade com a arquitectura de processadores através da programação em assembly</string>
+    <string name="uav_class_compute_arch_topic1">Introdução: sistemas de computação de uso geral. Microprocessadores.</string>
+    <string name="uav_class_compute_arch_topic2">Representação da informação: o bit como unidade de informação. Tipos de dados inteiros – inteiros positivos e inteiros com sinal; representações em sinal e módulo, complemento para um e complemento para dois: gama de representação. Conversão decimal-binário e binário-decimal. Notação hexadecimal.</string>
+    <string name="uav_class_compute_arch_topic3">Aritmética Binária: adição e subtração</string>
+    <string name="uav_class_compute_arch_topic4">Operações lógicas: AND, OR, NOT, Exclusive OR</string>
+    <string name="uav_class_compute_arch_topic5">Representação de informação não numérica. O código ASCII</string>
+    <string name="uav_class_compute_arch_topic6">Representação em vírgula flutuante. Breve referência ao Standard IEEE 754 para representação em vírgula flutuante.</string>
+    <string name="uav_class_compute_arch_topic7">Portas lógicas (logic gates): NOT, OR, NOR, AND, NAND</string>
+    <string name="uav_class_compute_arch_topic8">Blocos combinatórios básicos: descodificadores, multiplexers, full-adder</string>
+    <string name="uav_class_compute_arch_topic9">Dispositivos básicos de armazenamento de informação: R-S latch, Flip-Flop D. Registos.</string>
+    <string name="uav_class_compute_arch_topic10">Memória: espaço de endereçamento. Endereçamento das células de memória. Tecnologias de memória: SRAM e DRAM.IV – O Modelo de Von Neumann</string>
+    <string name="uav_class_compute_arch_topic11">As componentes básicas: Memória, Unidade de Processamento, Entrada e Saída de dados, Unidade de Controle</string>
+    <string name="uav_class_compute_arch_topic12">Estrutura de um processador MIPS. Ciclo básico de processamento das instruções.</string>
+    <string name="uav_class_compute_arch_topic13">Organização da memória central dos sistemas de computação. Ciclos básicos de acesso à memória.</string>
+    <string name="uav_class_compute_arch_topic14">Traços gerais da evolução da arquitectura dos sistemas de computação e das tecnologias de implementação.</string>
+    <string name="uav_class_compute_arch_topic15">Os diferentes níveis de utilização dos sistemas de computação: aplicação, linguagem de programação de alto nível, Assembly, serviços do sistema de operação.</string>
+    <string name="uav_class_compute_arch_topic16">Função e estrutura. Arquitetura como a visão funcional básica comum de uma "família" de processadores. Modelo de programação e repertório de instruções.</string>
+    <string name="uav_class_compute_arch_topic17">A arquitectura MIPS: Modelo de programação. Reportório de instruções: as 3 principais classes de instruções - de processamento (aritméticas e lógicas), de transferência da informação e de controlo do fluxo de execução.</string>
+    <string name="uav_class_compute_arch_topic18">A arquitectura MIPS: Instruções aritméticas e lógicas na arquitetura MIPS. Códigos de instrução.</string>
+    <string name="uav_class_compute_arch_topic19">A arquitectura MIPS: Instruções de acesso à memória e modos de endereçamento.</string>
+    <string name="uav_class_compute_arch_topic20">A arquitectura MIPS: Tradução das estruturas de decisão if e if…else para assembly: instruções de salto condicional e incondicional.</string>
+    <string name="uav_class_compute_arch_topic21">A arquitectura MIPS: Tradução das estruturas de controlo de fluxo: for, while e do-while. Acesso sequencial a elementos de arrays.</string>
+    <string name="uav_class_compute_arch_topic22">A arquitectura MIPS: Procedimentos: invocação e retorno. O problema da passagem de parâmetros. Utilização da stack.</string>
+    <string name="uav_class_compute_arch_topic23">A arquitectura MIPS: Convenções de salvaguarda do conteúdo dos registos.</string>
+    <string name="uav_class_compute_arch_topic24">A linguagem assembly: Instruções, Directivas e Exemplos</string>
+    <string name="uav_class_compute_arch_topic25">O processo de tradução dos programas assembly em binário executável</string>
+    <string name="uav_class_compute_arch_topic26">Entradas e saídas mapeadas em memória vs. instruções específicas para entrada e saída de dados</string>
+    <string name="uav_class_compute_arch_topic27">Entradas/Saídas sob interrupção. O sistema de interrupções. Programação sob interrupção</string>
+
+
+    <string name="uav_class_oop">Programação Orientada a Objectos</string>
+    <string name="uav_class_oop_description">Este curso é uma introdução à programação orientada a objetos (OOP), usando a linguagem Java.
+        O objectivo é abordar temas como encapsulamento,herança, polimorfismo, estruturas de dados, de modo que os
+        alunos sejam capazes de decompor e construir uma solução de acordo com princípios de OOP.</string>
+    <string name="uav_class_oop_topic1">Introdução à programação em Java: dados, tipo de dados, operações, instruções, selecção, controlo de fluxo e vectores</string>
+    <string name="uav_class_oop_topic2">Classes e objectos: atributos e métodos; sobreposição de nomes de métodos; construtores e destrutor; atributos e funções estáticas.</string>
+    <string name="uav_class_oop_topic3">Classes e objectos: Encapsulamento e Tipos de Dados Abstractos.</string>
+    <string name="uav_class_oop_topic4">Correcção e Robustez: programação por contrato (asserções) e excepções.</string>
+    <string name="uav_class_oop_topic5">Herança: classes base e derivadas; herança; redefinição e sobreposição de métodos;</string>
+    <string name="uav_class_oop_topic6">Polimorfismo: generalização versus especialização; ligação estática e ligação dinâmica; classes abstractas</string>
+    <string name="uav_class_oop_topic7">Interfaces: programação para a interface</string>
+    <string name="uav_class_oop_topic8">Colecções Java: utilização de estruturas de dados e algoritmos</string>
+    <string name="uav_class_oop_topic9">Entrada e saída de dados: streams, decoradores, serialização</string>
+    <string name="uav_class_oop_topic10">Swing e programação por eventos</string>
+
+    <string name="uav_class_"></string>
+    <string name="uav_class__description"></string>
+    <string name="uav_class__topic1"></string>
+    <string name="uav_class__topic2"></string>
+    <string name="uav_class__topic3"></string>
+    <string name="uav_class__topic4"></string>
+    <string name="uav_class__topic5"></string>
+    <string name="uav_class__topic6"></string>
+    <string name="uav_class__topic7"></string>
+    <string name="uav_class__topic8"></string>
+    <string name="uav_class__topic9"></string>
+    <string name="uav_class__topic10"></string>
+    <string name="uav_class__topic11"></string>
+    <string name="uav_class__topic12"></string>
+    <string name="uav_class__topic13"></string>
+    <string name="uav_class__topic14"></string>
+    <string name="uav_class__topic15"></string>
+    <string name="uav_class__topic16"></string>
+    <string name="uav_class__topic17"></string>
+    <string name="uav_class__topic18"></string>
+    <string name="uav_class__topic19"></string>
+    <string name="uav_class__topic20"></string>
+
+    <!-- UNIVERSIDADE DE AVEIRO END-->
 
 </resources>
