@@ -4679,6 +4679,186 @@ Os estudantes deverão ainda desenvolver competências em análise e síntese, r
     <string name="uav_class_databases_topic9">Transacções, Controlo de Concorrência e Recuperação de Falhas</string>
     <string name="uav_class_databases_topic10">Segurança em Base de Dados</string>
 
+    <string name="uav_class_security">Segurança Informática e Nas Organizações</string>
+    <string name="uav_class_security_description">Pretende-se que esta disciplina ofereça uma visão geral da área da Segurança
+        Informática, com ênfase particular para os problemas de segurança que se colocam ao nível das organizações.
+        Estes serão realçados em termos de segurança da informação e segurança das infra-estrututuras (máquinas e redes).
+        Nesta cadeira serão focados os aspectos base da segurança informática, a definição de políticas de
+        segurança e a sua implantação usando diversos mecanismos de segurança.Complementarmente, serão focadas
+        questões éticas, legais e sociais da segurança nas organizações.</string>
+    <string name="uav_class_security_topic1">Objectivos, problemas, perspectiva das soluções, atitudes realistas</string>
+    <string name="uav_class_security_topic2">Riscos e sua origem; Vulnerabilidades, sua detecção e exploração</string>
+    <string name="uav_class_security_topic3">Políticas de segurança vs. mecanismos de segurança; Níveis de segurança, domínios de segurança</string>
+    <string name="uav_class_security_topic4">Ataque e defesa</string>
+    <string name="uav_class_security_topic5">Caracterização das vulnerabilidades, vulnerabilidades globais, técnicas base de exploração de vulnerabilidades</string>
+    <string name="uav_class_security_topic6">Segurança em sistemas operativos: Estrutura e funcionalidade de um sistema operativo</string>
+    <string name="uav_class_security_topic7">Segurança em sistemas operativos: Noções de processo, espaço de endereçamento e ficheiro</string>
+    <string name="uav_class_security_topic8">Segurança em sistemas operativos: Modelo de protecção base do Linux</string>
+    <string name="uav_class_security_topic9">Controlo de acesso: Objectos protegidos e modelo de protecção, Protecção com listas de controlo de acesso, Controlo de acesso a ficheiros, Controlo de acesso a redes (firewalls)</string>
+    <string name="uav_class_security_topic10">Criptografia: Terminologia, modelos teóricos, aproximações práticas; Tipos de cifras; Modos de cifra; Autenticação de dados</string>
+    <string name="uav_class_security_topic11">Infraestruturas de chave pública: Uso de pares de chaves assimétricas, Certificados digitais, Hierarquias de certificação</string>
+    <string name="uav_class_security_topic12">Mecanismos de autenticação locais de pessoas ou serviços: Com password: Unix/Linux, Windows; Senhas únicas</string>
+    <string name="uav_class_security_topic13">Execução correcta/segura de aplicações</string>
+    <string name="uav_class_security_topic14">Armazenamento confiável/seguro de dados: Tolerância a faltas (RAID) </string>
+    <string name="uav_class_security_topic15">Comunicação segura: Segurança com SSH; Segurança em redes 802.11; Segurança com SSL</string>
+
+    <string name="uav_class_network_arch">Arquitectura e Gestão de Redes</string>
+    <string name="uav_class_network_arch_description">Consolidar os conhecimentos fundamentais dos atuais sistemas de rede e simultaneamente
+        fornecer aos alunos competências no planeamento, monitorização e gestão de redes.</string>
+    <string name="uav_class_network_arch_topic1">Planeamento de endereçamento IP privado (NAT/PAT)</string>
+    <string name="uav_class_network_arch_topic2">Planeamento de encaminhamento Multicast (IGMP, PIM)</string>
+    <string name="uav_class_network_arch_topic3">Endereçamento IPv6 e cenários de transição IPv4/IPv6</string>
+    <string name="uav_class_network_arch_topic4">Tópicos avançados de encaminhamento em redes IP (RIP/OSPF, RIPng e OSPFv6)</string>
+    <string name="uav_class_network_arch_topic5">Tópicos avançados de interligação de sistemas autónomos (BGP e MP-BGP)</string>
+    <string name="uav_class_network_arch_topic6">Tópicos de planeamento e implementação de qualidade de serviço (QoS)</string>
+    <string name="uav_class_network_arch_topic7">Monitorização de redes, identificação e correcção de problemas de rede (debugging)</string>
+    <string name="uav_class_network_arch_topic8">Planeamento e implementação de mecanismos de segurança em rede: Controlo de acesso (ACL), Comunicação IP segura (IPsec), Tecnologias e sistemas de redes privadas (VPN) e Arquitecturas de autenticação, autorização e contabilização (AAA).</string>
+
+    <string name="uav_class_company_management">Gestão de Empresas</string>
+    <string name="uav_class_company_management_description">O objectivo geral desta unidade curricular é fornecer aos alunos os conceitos
+        fundamentais de gestão nas suas diversas funções para que sejam capazes de os conhecer, interpretar e aplicar. Pretende-se
+        sensibilizar os alunos para a importância de modelo de negócio no processo de criação de valor e promover a familiarização
+        com as metologias e as ferramentas de apoio à implementação de ideias de negócio.</string>
+    <string name="uav_class_company_management_topic1">A tela do Modelo de negócio: Identificação das componentes de um modelo de negócio</string>
+    <string name="uav_class_company_management_topic2">A tela do Modelo de negócio: Importância do modelo de negócio no processo de criação de valor</string>
+    <string name="uav_class_company_management_topic3">O Marketing e a tela do Modelo de Negócio: Relação do Marketing com os elementos da tela do Modelo de Negócio</string>
+    <string name="uav_class_company_management_topic4">A Estratégia e a tela do Modelo de Negócio: Elementos de estratégia empresarial</string>
+    <string name="uav_class_company_management_topic5">A Estratégia e a tela do Modelo de Negócio: Análise do ambiente</string>
+    <string name="uav_class_company_management_topic6">Fluxos de receita, tipos de modelos de receita, estratégias e mecanismos de preços, previsões de receita</string>
+    <string name="uav_class_company_management_topic7">Custo das actividades, custos dos recursos utilizados, custos das parcerias, custos do capital</string>
+    <string name="uav_class_company_management_topic8">Fluxos de caixa</string>
+    <string name="uav_class_company_management_topic9">Demonstração de resultados</string>
+    <string name="uav_class_company_management_topic10">Projecção da análise financeira</string>
+    <string name="uav_class_company_management_topic11">Avaliação e financiamento do negócio - Implicações financeiras: rentabilidade esperada e potencial, intensidade dos ativos necessários, ritmo de crescimento</string>
+    <string name="uav_class_company_management_topic12">Avaliação e financiamento do negócio: Dívida versus equidade</string>
+    <string name="uav_class_company_management_topic13">Avaliação e financiamento do negócio: Investidores de capital</string>
+
+    <string name="uav_class_database_complement">Complementos de Bases de Dados</string>
+    <string name="uav_class_database_complement_description">Enquanto a disciplina de Bases de Dados se foca apenas na representação
+        e gestão de dados estruturados recorrendo ao modelo relacional, esta unidade curricular aborda bases de dados NoSQL,
+        bases de dados NewSQL, bases de dados distribuídas e processamento distribuído. Adicionalmente, é também abordada
+        a problemática do controlo de acesso.</string>
+    <string name="uav_class_database_complement_topic1">Arquitecturas de Bases de dados</string>
+    <string name="uav_class_database_complement_topic2">Bases de dados distribuídas</string>
+    <string name="uav_class_database_complement_topic3">Bases de dados paralelas</string>
+    <string name="uav_class_database_complement_topic4">Bases de dados NoSQL</string>
+    <string name="uav_class_database_complement_topic5">Bases de dados NewSQL</string>
+    <string name="uav_class_database_complement_topic6">Controlo de acesso</string>
+
+    <string name="uav_class_ai">Inteligência Artificial</string>
+    <string name="uav_class_ai_description">A disciplina de Inteligência Artificial fornece alguns dos conceitos nucleares na
+        área de Inteligência Artificial, desde a noção de agente até técnicas de pesquisa e planeamento. Esta disciplina
+        serve também o objectivo de familiarizar os alunos com aspectos da programação ao estilo funcional, com ênfase
+        no processamento de listas, recursividade e funções de ordem superior.</string>
+    <string name="uav_class_ai_topic1">Motivação: como representar o conhecimento? como resolver problemas? como gerar sequências de acções? como aprender com a experiência? História e definições da "Inteligência Artificial".</string>
+    <string name="uav_class_ai_topic2">Paradigmas de programação declarativa no desenvolvimento de aplicações de Inteligência Artificial</string>
+    <string name="uav_class_ai_topic3">Apresentação linguagem de programação multi-paradigma Python, com ênfase na programação ao estilo funcional.</string>
+    <string name="uav_class_ai_topic4">A noção de agente; arquitecturas de agentes; agentes reactivos, deliberativos e híbridos.</string>
+    <string name="uav_class_ai_topic5">Formalismos para a representação do conhecimento: lógica de primeira ordem, redes semânticas e suas variantes, a linguagem KIF.</string>
+    <string name="uav_class_ai_topic6">Resolução de problemas e métodos de pesquisa: pesquisa não informada (em largura, de custo uniforme, em profundidade, em profundidade com limite, em profundidade com limite crescente); pesquisa informada gulosa, A* e suas variantes; pesquisa por propagação de restrições; pesquisa por melhorias sucessivas.</string>
+    <string name="uav_class_ai_topic7">Planeamento de sequências de acções: os formatos de representação das acções STRIPS e PDDL; planeamento no espaço de estados e planeamento no espaço de soluções; planeamento progressivo e regressivo; planeamento hierárquico.</string>
+
+    <string name="uav_class_swe_intro">Introdução à Engenharia de Software</string>
+    <string name="uav_class_swe_intro_description">Desenvolver um sistema de software em equipa, com recurso a frameworks
+        de classe empresarial. Para cimentar estes objectivo, os alunos irão assumir vários papéis inerentes a uma
+        equipa de desenvolvimento e construir um sistema ao longo do semestre utilizando de uma arquitectura/plataforma
+        de referência (e.g. J2EE, .NET, Android), integrando serviços externos (e.g. google, sapo).</string>
+    <string name="uav_class_swe_intro_topic1">Preparar o ambiente de trabalho para o desenvolvimento em equipa</string>
+    <string name="uav_class_swe_intro_topic2">Ciclo de vida, papéis e gestão do projeto</string>
+    <string name="uav_class_swe_intro_topic3">Distribuição de trabalho e seguimento do progresso</string>
+    <string name="uav_class_swe_intro_topic4">Gestão de defeitos e configurações</string>
+    <string name="uav_class_swe_intro_topic5">Frameworks correntes para soluções de classe empresarial: Desafios das soluções de larga escala</string>
+    <string name="uav_class_swe_intro_topic6">Frameworks correntes para soluções de classe empresarial: Plataformas de referência correntes</string>
+    <string name="uav_class_swe_intro_topic7">Frameworks correntes para soluções de classe empresarial: Análise dos componentes e serviços de uma plataforma (e.g.: J2EE)</string>
+    <string name="uav_class_swe_intro_topic8">Integração de software e serviços</string>
+    <string name="uav_class_swe_intro_topic9">Reutilização de código</string>
+    <string name="uav_class_swe_intro_topic10">Desenvolvimento de bibliotecas e princípios de desenho</string>
+    <string name="uav_class_swe_intro_topic11">Desenvolvimento orientado por serviços (SOA)</string>
+    <string name="uav_class_swe_intro_topic12">Desafios e práticas na manutenção do software</string>
+
+    <string name="uav_class_entrepreneurship">Empreendedorismo</string>
+    <string name="uav_class_entrepreneurship_description">Objectivos para esta UC:\n
+        - Apresentar a evolução histórica, as teorias e o processo do empreendedorismo no Mundo e, em particular, o empreendedorismo em Portugal;\n
+        - Fornecer um conjunto de técnicas utilizadas para formular, implementar e gerir uma ideia de negócio;\n
+        - Proporcionar meios e caminhos para as análises teóricas e práticas dos ambientes interno e externos às organizações;\n
+        - Estimular a atitude empreendedora do aluno e no aluno;\n
+        - Incentivar a compreensão do processo de detecção e de análise das oportunidades de negócios;\n
+        - Fornecer ferramentas para as análises da plausibilidade e da viabilidade económica e financeira de um negócio</string>
+    <string name="uav_class_entrepreneurship_topic1">Introdução: Definição, Conceitos, Evolução Histórica, Teorias, Processo, Empreendedorismo no Mundo, Empreendedorismo em Portugal</string>
+    <string name="uav_class_entrepreneurship_topic2">Empreendedor: Conceitos, Evolução Histórica, Teorias, Perfil, Tipos, Empreendedor no Mundo, Empreendedor em Portugal</string>
+    <string name="uav_class_entrepreneurship_topic3">Gestão: Estratégica, Inovação, Tecnologia, Novas ideias, Oportunidade de Negócios</string>
+    <string name="uav_class_entrepreneurship_topic4">Plano de Negócio: Conceitos, Pré-conceito, Abrangência, Conteúdo</string>
+    <string name="uav_class_entrepreneurship_topic5">Plano de Negócio - Guião: Sumário Executivo; Descrição do Negócio e dos Empreendedores; Planos Estratégico, de Marketing, de Operações, de Recursos Humanos,de Investimento, de Financiamento; Estudos Económicos e Financeiros; Conclusão de Viabilidade</string>
+
+    <string name="uav_class_operational_investigation">Investigação Operacional</string>
+    <string name="uav_class_operational_investigation_description">Dar a conhecer o papel da Investigação Operacional (IO) na resolução de
+        problemas de decisão e apresentar algumas das técnicas de uso mais generalizado, nomeadamente:\n
+        - fornecer uma abordagem científica e estruturada na tomada de decisões, para a resolução de problemas
+        complexos nas operações (actividades) de uma organização, habitualmente em situação de recursos escassos;\n
+        -representar sistemas do mundo real, usando modelos matemáticos e algoritmos numa perspectiva de optimização;\n
+        -servir como processo social, em que os actores (clientes, gestores, decisores e utilizadores),
+        investigadores e um problema interactuam, com o principal objectivo de obter algum apoio,
+        para melhorar a qualidade das acções dos actores.</string>
+    <string name="uav_class_operational_investigation_topic1">Processo de construção de modelos, com especial incidência nos modelos matemáticos. Modelação de problemas com recurso à Programação Linear (PL) e à Programação Linear Inteira (PLI).</string>
+    <string name="uav_class_operational_investigation_topic2">Estrutura dos modelos de Programação Linear (formas de apresentação, operações de reformulação, bases admissíveis e soluções básicas); hipóteses do modelo e propriedades fundamentais.</string>
+    <string name="uav_class_operational_investigation_topic3">O método Simplex: O método Simplex na forma tabular; apresentação do algoritmo (primal Simplex); Condições de optimalidade e de admissibilidade; casos particulares. </string>
+    <string name="uav_class_operational_investigation_topic4">O método Simplex: Interpretação geométrica e interpretação económica do método Simplex; Técnica das variáveis artificiais: o método das duas fases e o M-método; Análise do caso degenerado e o fenómeno de “cycling”</string>
+    <string name="uav_class_operational_investigation_topic5">Teoria da dualidade:  Definição do problema dual e propriedades do par de problemas primal-dual;  Complementaridade de “slacks”; interpretações económicas; O algoritmo dual do Simplex.</string>
+    <string name="uav_class_operational_investigation_topic6">Incorporação de incerteza no modelo de Programação Linear: Análise pós-optimal; Análise de sensibilidade.</string>
+    <string name="uav_class_operational_investigation_topic7">Alguns problemas particulares de PL e Algoritmos especializados para a sua resolução (O Problema de Transportes (PT),O Problema de Transexpedição ("Transhipment Problem"), O Problema de Afectação (“Assignment Problem”), etc)</string>
+    <string name="uav_class_operational_investigation_topic8">Redes: Conceitos fundamentais sobre grafos e redes</string>
+    <string name="uav_class_operational_investigation_topic9">Redes - O problema da árvore mínima de suporte: definição, aplicações e alguns algoritmos de resolução. Algoritmos de Prim e Kruskal.</string>
+    <string name="uav_class_operational_investigation_topic10">Redes - O problema do caminho mais curto: definição, formulação, aplicações e alguns algoritmos de resolução. Algoritmos de Dijkstra e Floyd.</string>
+    <string name="uav_class_operational_investigation_topic11">Redes - O problema do fluxo máximo: definição, formulação, aplicações e alguns algoritmos de resolução. Algoritmo de Ford-Fulkerson.</string>
+    <string name="uav_class_operational_investigation_topic12">Redes - O problema do fluxo de custo mínimo: definição, formulação, aplicações e alguns algoritmos de resolução. Algoritmo de Busacker-Gowen.</string>
+
+    <string name="uav_class_project">Projecto em Informática</string>
+    <string name="uav_class_project_description">Os objectivos desta UC são:
+        Familiarização com a metodologia de projecto em engenharia informática, aplicando e
+        integrando competências desenvolvidas ao longo do 1º ciclo de estudos.\n
+        Fomentar competências inerentes ao trabalho em equipa.\n
+        Contactar com problemas do mundo real através de seminários dados por profissionais do sector.\n
+        Reforçar capacidades de documentação, comunicação e demonstração de aplicações (protótipos)</string>
+    <string name="uav_class_project_topic1">Metodologias ágeis para o desenvolvimento de software: Ciclo de vida de um projecto</string>
+    <string name="uav_class_project_topic2">Metodologias ágeis para o desenvolvimento de software: Planeamento de um projecto</string>
+    <string name="uav_class_project_topic3">Metodologias ágeis para o desenvolvimento de software: Fases de desenvolvimento de um projecto</string>
+    <string name="uav_class_project_topic4">Competências transversais: Trabalho em equipa</string>
+    <string name="uav_class_project_topic5">Competências transversais: Uso de um repositório partilhado como parte do processo de desenvolvimento do projecto</string>
+    <string name="uav_class_project_topic6">Competências transversais: Elaboração de relatórios técnicos e documentação de projetos</string>
+    <string name="uav_class_project_topic7">Competências transversais: Preparação de apresentações e demonstrações</string>
+    <string name="uav_class_project_topic8">Competências transversais: Análise crítica do trabalho realizado, resultados obtidos, procedimentos e desempenho em equipa</string>
+
+    <string name="uav_class_professionalism">Aspectos Profissionais e Sociais da Engenharia Informática</string>
+    <string name="uav_class_professionalism_description">Pretende-se com esta disciplina dar uma panorâmica geral acerca da
+        profissão de engenheiro informático e do seu posicionamento perante a sociedade.</string>
+    <string name="uav_class_professionalism_topic1">Interacção e atitudes comunicacionais: regras básicas da comunicação pessoal e profissional; a problemática do plágio; normas e ferramentas de referenciação.</string>
+    <string name="uav_class_professionalism_topic2">Exercicio de uma profissão: qualificação (o papel da escola), enquadramento e conduta profissional (o papel dos pares), ética (o papel da consciência e da lei).</string>
+    <string name="uav_class_professionalism_topic3">Aspectos marcantes da engenharia informática: trabalho em equipa, normalização e certificação, políticas de segurança, privacidade e proteção de dados, propriedade intelectual e industrial.</string>
+    <string name="uav_class_professionalism_topic4">Análise crítica de modelos de negócio prevalecentes na área da informática.</string>
+    <string name="uav_class_professionalism_topic5">Cultura, cultura científica e cultura técnica</string>
+
+    <string name="uav_class_sw_test">Teste e Qualidade de Software</string>
+    <string name="uav_class_sw_test_description">O objectivo geral da unidade curricular é fornecer aos alunos um conjunto
+        de princípios teóricos e de ferramentas que lhes permita compreender e aplicar um processo de garantia de
+        qualidade de software que seja sistemático, orientado aos testes e, tanto quanto possível, automatizado.</string>
+    <string name="uav_class_sw_test_topic1">Conceitos em qualidade de software: Factores de qualidade e Elementos de um sistema de garantia de qualidade</string>
+    <string name="uav_class_sw_test_topic2">Revisão e melhoria do código: Métricas para análise de código</string>
+    <string name="uav_class_sw_test_topic3">Revisão e melhoria do código: Análise estrutural apoiada em ferramentas</string>
+    <string name="uav_class_sw_test_topic4">Revisão e melhoria do código: Inspecção e revisão de código</string>
+    <string name="uav_class_sw_test_topic5">Revisão e melhoria do código: Reconstrução (refactoring) para melhorar o código existente</string>
+    <string name="uav_class_sw_test_topic6">Métodos de teste de software: Níveis de teste de verificação (unidade, integração, sistema)</string>
+    <string name="uav_class_sw_test_topic7">Métodos de teste de software: Frameworks para testes unitários</string>
+    <string name="uav_class_sw_test_topic8">Métodos de teste de software: Testes de carga e desempenho</string>
+    <string name="uav_class_sw_test_topic9">Métodos de teste de software: Frameworks para automatizar teste de aplicações web</string>
+    <string name="uav_class_sw_test_topic10">O processo de teste: Integração de testes em metodologias ágeis</string>
+    <string name="uav_class_sw_test_topic11">O processo de teste: Planeamento, execução e gestão de testes</string>
+    <string name="uav_class_sw_test_topic12">O processo de teste: Desenvolvimento orientado por testes (TDD)</string>
+    <string name="uav_class_sw_test_topic13">Práticas de garantia de qualidade do software: Seguimento e gestão de defeitos</string>
+    <string name="uav_class_sw_test_topic14">Práticas de garantia de qualidade do software: Gestão de configurações</string>
+    <string name="uav_class_sw_test_topic15">Práticas de garantia de qualidade do software: Manuais de estilo e de práticas partilhadas</string>
+    <string name="uav_class_sw_test_topic16">Práticas de garantia de qualidade do software: Integração contínua: a linha de montagem</string>
+    <string name="uav_class_sw_test_topic17">Práticas de garantia de qualidade do software: Provisão automática de ambientes virtuais para teste e integração</string>
+
     <string name="uav_class_"></string>
     <string name="uav_class__description"></string>
     <string name="uav_class__topic1"></string>
@@ -4701,6 +4881,7 @@ Os estudantes deverão ainda desenvolver competências em análise e síntese, r
     <string name="uav_class__topic18"></string>
     <string name="uav_class__topic19"></string>
     <string name="uav_class__topic20"></string>
+
 
     <!-- UNIVERSIDADE DE AVEIRO END-->
 
