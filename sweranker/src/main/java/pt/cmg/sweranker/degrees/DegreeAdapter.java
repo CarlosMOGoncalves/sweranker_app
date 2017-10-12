@@ -56,7 +56,7 @@ public class DegreeAdapter extends RecyclerView.Adapter<DegreeAdapter.DegreeView
         holder._degreeImage.setTransitionName("degree_image" + position);
 
         // TODO: as more degrees start to become available check this!
-        if (position > 0) {
+        if (position > 2) {
             holder._degreeImage.setAlpha(0.2f);
 
             // Ok, here I basically create a TextView to overlay on top of the degrees that are not yet available. Neat.
@@ -102,7 +102,7 @@ public class DegreeAdapter extends RecyclerView.Adapter<DegreeAdapter.DegreeView
 
             view.setOnClickListener(v -> {
                 // TODO: as more degrees start to become available check this!
-                if (getAdapterPosition() > 0) {
+                if (getAdapterPosition() > 2) {
                     Toast.makeText(_context, "Coming soon!", Toast.LENGTH_SHORT).show();
                 } else {
                     _listener.loadDetailedDegreeFragment(v, _degrees.get(getAdapterPosition()));

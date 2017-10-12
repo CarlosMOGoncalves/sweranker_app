@@ -221,10 +221,10 @@ public class ScoreMasterFragment extends Fragment implements LifecycleRegistryOw
 
         _myRootView = inflater.inflate(R.layout.ranking_fragment, container, false);
 
-        _noScoresText = (TextView) _myRootView.findViewById(R.id.no_scores_text);
-        _progressBar = (ProgressBar) _myRootView.findViewById(R.id.progress_bar);
+        _noScoresText = _myRootView.findViewById(R.id.no_scores_text);
+        _progressBar = _myRootView.findViewById(R.id.progress_bar);
 
-        _rankingsGrid = (RecyclerView) _myRootView.findViewById(R.id.rankings_grid);
+        _rankingsGrid = _myRootView.findViewById(R.id.rankings_grid);
 
         _progressBar.setVisibility(View.VISIBLE);
         _rankingsGrid.setVisibility(View.GONE);
@@ -259,6 +259,7 @@ public class ScoreMasterFragment extends Fragment implements LifecycleRegistryOw
 
         _progressBar.setVisibility(View.INVISIBLE);
         _rankingsGrid.setVisibility(View.VISIBLE);
+        _noScoresText.setVisibility(View.INVISIBLE);
     }
 
     @Override
