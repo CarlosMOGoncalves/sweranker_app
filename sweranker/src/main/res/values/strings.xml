@@ -4859,6 +4859,281 @@ Os estudantes deverão ainda desenvolver competências em análise e síntese, r
     <string name="uav_class_sw_test_topic16">Práticas de garantia de qualidade do software: Integração contínua: a linha de montagem</string>
     <string name="uav_class_sw_test_topic17">Práticas de garantia de qualidade do software: Provisão automática de ambientes virtuais para teste e integração</string>
 
+    <string name="uav_class_advanced_algorithms">Algoritmos Avançados</string>
+    <string name="uav_class_advanced_algorithms_description">A compreensão das características e do funcionamento de algoritmos de
+        diferentes tipos, e o conhecimento quanto às possíveis estratégias de abordagem para determinados problemas,
+        são componentes fundamentais da formação em Engenharia Informática. Pretende-se fornecer formação adicional à
+        adquirida no 1º ciclo (licenciatura) em algoritmia, tendo como ponto principal reconhecer que estrutura de
+        dados e algoritmo padrão são mais apropriados para resolver um determinado problema.</string>
+    <string name="uav_class_advanced_algorithms_topic1">Fundamentais de algoritmia e estruturas de dados (estruturas de dados fundamentais, algoritmos de procura e ordenação, complexidade computacional)</string>
+    <string name="uav_class_advanced_algorithms_topic2">Estratégias algorítmicas (dividir para conquistar, programação dinâmica, força bruta)</string>
+    <string name="uav_class_advanced_algorithms_topic3">Estruturas de dados diversas (árvores balanceadas, treaps e outras)</string>
+    <string name="uav_class_advanced_algorithms_topic4">Problemas combinatórios (geração de todas as possibilidades, order statistics)</string>
+    <string name="uav_class_advanced_algorithms_topic5">Problemas/algoritmos sobre grafos (todas as distâncias máximas entre pares de vértices, maximum networkflow)</string>
+    <string name="uav_class_advanced_algorithms_topic6">Problemas da geometria computacional (convex hull, triangulação de Delaunay, diagrama de Voronoi)</string>
+    <string name="uav_class_advanced_algorithms_topic7">Tópicos diversos (algoritmos probabilísticos, problemas NP-Completos, algoritmos aproximativos)</string>
+
+    <string name="uav_class_info_theory">Teoria Algoritmica da Informação</string>
+    <string name="uav_class_info_theory_description">Nesta unidade curricular pretende-se que os alunos:\n
+        - Entendam os conceitos básicos de teoria da informação\n
+        - Entendam a necessidade da existência de algoritmos de compressão de dados\n
+        - Fiquem a conhecer e percebam o funcionamento dos algoritmos principais de compressão de dados\n
+        - Entendam a relação entre a compressão de dados, a teoria algorítmica da informação, e a sua aplicação à análise e exploração de dados.</string>
+    <string name="uav_class_info_theory_topic1">Conceitos básicos de teoria da informação</string>
+    <string name="uav_class_info_theory_topic2">Códigos de comprimento variável</string>
+    <string name="uav_class_info_theory_topic3">Codificação aritmética</string>
+    <string name="uav_class_info_theory_topic4">Codificação baseada em dicionários</string>
+    <string name="uav_class_info_theory_topic5">Modelação de fontes de informação</string>
+    <string name="uav_class_info_theory_topic6">Introdução à complexidade de Kolmogorov</string>
+    <string name="uav_class_info_theory_topic7">Medidas de distância baseadas na informação algorítmica</string>
+    <string name="uav_class_info_theory_topic8">Exemplos de aplicação da teoria algorítmica da informação</string>
+
+    <string name="uav_class_info_recovery">Recuperação de Informação</string>
+    <string name="uav_class_info_recovery_description">O objectivo desta disciplina é estudar as técnicas e algoritmos
+        utilizados na recuperação e extracção de informação baseada em texto (IR e IE). Após o estudo deste curso o
+        aluno deverá ser capaz de:\n
+        1) compreender conceitos fundamentais de recuperação e extracção de informação\n
+        2) implementar algoritmos e usar estratégias baseadas em dicionários e em aprendizagem automática e\n
+        3) avaliar o desempenho de solução de IR e IE.</string>
+    <string name="uav_class_info_recovery_topic1">Conceitos gerais: Termos,  stop-words, normalização</string>
+    <string name="uav_class_info_recovery_topic2">Conceitos gerais: Stemming, lemmatization, part-of-speech</string>
+    <string name="uav_class_info_recovery_topic3">Conceitos gerais: Indexação</string>
+    <string name="uav_class_info_recovery_topic4">Dicionários: Estruturas de dados</string>
+    <string name="uav_class_info_recovery_topic5">Dicionários: Tolerância de termos</string>
+    <string name="uav_class_info_recovery_topic6">Construção e compressão de índices</string>
+    <string name="uav_class_info_recovery_topic7">Modelo de espaço vectorial: Pesagem de termos e documentos</string>
+    <string name="uav_class_info_recovery_topic8">Modelo de espaço vectorial: Medidas de desempenho</string>
+    <string name="uav_class_info_recovery_topic9">Modelo de espaço vectorial: Expansão de termos</string>
+    <string name="uav_class_info_recovery_topic10">Modelos probabilísticos</string>
+    <string name="uav_class_info_recovery_topic11">Modelos baseados em linguagens</string>
+    <string name="uav_class_info_recovery_topic12">Classificação de documentos</string>
+    <string name="uav_class_info_recovery_topic13">Web crawling e pesquisa</string>
+    <string name="uav_class_info_recovery_topic14">Extracção de informação</string>
+
+    <string name="uav_class_info_visualisation">Visualização de Informação</string>
+    <string name="uav_class_info_visualisation_description">A utilização de métodos e ferramentas de Visualização de Informação
+        faz parte integrante do desenvolvimento de alguns tipos de Sistemas de Informação, e é reconhecida como essencial
+        para uma decisão informada por parte dos utilizadores.\n
+        A compreensão dos métodos e das características principais de ferramentas da Computação Gráfica e da
+        Visualização  são componentes fundamentais da formação em Sistemas de Informação.\n
+        Pretende-se fornecer formação básica em Computação Gráfica e Visualização de Dados e de Informação.
+        E utilizar uma ferramenta standard: "The Visualization Toolkit".</string>
+    <string name="uav_class_info_visualisation_topic1">Computação Gráfica: Primitivas Gráficas</string>
+    <string name="uav_class_info_visualisation_topic2">Computação Gráfica: Transformações Geométricas e Visualização</string>
+    <string name="uav_class_info_visualisation_topic3">Computação Gráfica: Visão e Modelos de Cor</string>
+    <string name="uav_class_info_visualisation_topic4">Computação Gráfica: Métodos de Iluminação e Sombreamento</string>
+    <string name="uav_class_info_visualisation_topic5">Visualização de Dados</string>
+    <string name="uav_class_info_visualisation_topic6">Características dos Dados</string>
+    <string name="uav_class_info_visualisation_topic7">Visualização de Informação: Aspectos Principais</string>
+    <string name="uav_class_info_visualisation_topic8">Visualização de Informação: Representações</string>
+    <string name="uav_class_info_visualisation_topic9">Visualização de Informação: Apresentação</string>
+
+    <string name="uav_class_data_exploration">Exploração de Dados</string>
+    <string name="uav_class_data_exploration_description">Esta unidade curricular foca o desenvolvimento de sistemas de apoio à
+        decisão usando técnicas de data warehousing e data mining.\n
+        O data warehousing designa um conjunto de técnicas de bases de dados para a criar repositórios centralizados
+        que integram dados provenientes de fontes heterogéneas. Tipicamente, armazenam dados atuais e dados históricos,
+        e são usados para análise de dados, análise de tendências e criação de relatórios em sistemas de apoio à decisão.\n
+        O data mining é uma área interdisciplinar orientada para o processo de procura de padrões em grandes volumes de dados.
+        Estes objectivos são alcançados utilizando técnicas de pré-processamento que visam a normalização e muitas vezes a
+        redução de dimensão, algoritmos que extraem a informação relevante e, finalmente a apresentação da informação de
+        maneira a poder ser interpretada.</string>
+    <string name="uav_class_data_exploration_topic1">Data Warehousing: Modelos de dados multidimensionais</string>
+    <string name="uav_class_data_exploration_topic2">Data Warehousing: Esquemas de implementação de data warehouses</string>
+    <string name="uav_class_data_exploration_topic3">Data Warehousing: Técnicas de extracção, transformação e carregamento de dados (ETL)</string>
+    <string name="uav_class_data_exploration_topic4">Data Warehousing: Processamento analítico de dados (OLAP): esquemas de implementação, técnicas de processamento de dados e ferramentas</string>
+    <string name="uav_class_data_exploration_topic5">Data Warehousing: Estruturas de dados e métodos de acesso multidimensionais: índices bitmap, bases de dados colunares e bases de dados em memória</string>
+    <string name="uav_class_data_exploration_topic6">Data Mining: Técnicas de análise e pré-processamento de dados</string>
+    <string name="uav_class_data_exploration_topic7">Data Mining: Técnicas de Classificação: técnicas de Bayes, árvores de decisão, modelos lineares (perceptrão e SVM (support vector machine)), modelos não lineares (redes neuronais e SVM), KNN (vizinhos mais próximos)</string>
+    <string name="uav_class_data_exploration_topic8">Data Mining: Classificadores e medidas de desempenho</string>
+    <string name="uav_class_data_exploration_topic9">Data Mining: Técnicas de Agrupamento: medidas de semelhança, K-médias, e algoritmos Hierárquicos</string>
+    <string name="uav_class_data_exploration_topic10">Data Mining: SOM (self organizing maps) e redes de Kohonen</string>
+
+    <string name="uav_class_large_scale_computing">Computação em Larga Escala</string>
+    <string name="uav_class_large_scale_computing_description">Esta disciplina pretende dotar os alunos com os conhecimentos relacionados com os
+        princípios e a utilização de computação em Cloud, computação paralela e em GPU. Os objectivos principais são:\n
+        - aprender os fundamentos de várias estratégias para resolver problemas que necessitam de computação em larga escala;\n
+        - adquirir competências para perceber os conceitos mais gerais relacionados com a Cloud, como a Virtualização;\n
+        - contacto com tecnologias actuais de computação na Cloud de modo a poderem desenvolver pequenos projectos;\n
+        - familiarização com os conceitos fundamentais de Passagem de Passagens e Memória Partilhada;\n
+        - utilização das tecnologias mais usadas em computação paralela;\n
+        - adquirir competências para perceber o modelo de programação e melhorias de desempenho que se podem obter
+        através da utilização de GPUs para computação geral e para o desenvolvimento de programas simples de utilização de CUDA.</string>
+    <string name="uav_class_large_scale_computing_topic1">High Throughput Computing/ High Performance Computing</string>
+    <string name="uav_class_large_scale_computing_topic2">Arquitecturas Paralelas</string>
+    <string name="uav_class_large_scale_computing_topic3">Modelos de Paralelização</string>
+    <string name="uav_class_large_scale_computing_topic4">Computação na Cloud</string>
+    <string name="uav_class_large_scale_computing_topic5">Virtualização</string>
+    <string name="uav_class_large_scale_computing_topic6">Armazenamento Distribuído</string>
+    <string name="uav_class_large_scale_computing_topic7">Modelos de Programação para Cloud</string>
+    <string name="uav_class_large_scale_computing_topic8">Programação Paralela</string>
+    <string name="uav_class_large_scale_computing_topic9">Passagem de Mensagens</string>
+    <string name="uav_class_large_scale_computing_topic10">Memória Partilhada</string>
+    <string name="uav_class_large_scale_computing_topic11">Algoritmos Paralelos</string>
+    <string name="uav_class_large_scale_computing_topic12">Tecnologias para programação paralela</string>
+    <string name="uav_class_large_scale_computing_topic13">Computação em GPU</string>
+    <string name="uav_class_large_scale_computing_topic14">Arquitectura de GPUs</string>
+    <string name="uav_class_large_scale_computing_topic15">Linguagem CUDA</string>
+
+    <string name="uav_class_sw_architectures">Arquitecturas de Software</string>
+    <string name="uav_class_sw_architectures_description">A AS é o culminar de um processo de definição de uma solução que
+        deve obedecer a um conjunto vasto de requisitos técnicos, operacionais, de qualidade e de custo. Pode ser analisada
+        a 2 níveis distintos: distribuição e composição. Ao nível da distribuição podemos ter diversas arquitectura, entre
+        as quais centralizadas, cliente-servidor e distribuídas. Ao nível da composição podemos ter diversas arquitectura,
+        entre as quais baseadas componentes e baseadas em MicroServices.\n
+        A UC aborda alguns dos aspectos mais relevantes que estão subjacentes à definição de uma arquitectura de software
+        quer seja ao nível da distribuição quer seja ao nível da composição. Os obj. definidos são os seguintes:\n
+        – Conhecer arquitecturas de software relevantes quer em termos de distribuição quer em termos de composição\n
+        – Conhecer factores com impacto em cada uma das arquitecturas\n
+        – Saber escolher para caso concreto qual ou quais as melhores arquitecturas a utilizar\n
+        – Conceber arquitecturas para casos concretos</string>
+    <string name="uav_class_sw_architectures_topic1">Introdução: o que é Arquitectura de Software</string>
+    <string name="uav_class_sw_architectures_topic2">Introdução: porque é importante Arquitectura de Software</string>
+    <string name="uav_class_sw_architectures_topic3">Introdução: contextos de utilização</string>
+    <string name="uav_class_sw_architectures_topic4">Introdução: competências de um arquitecto de software</string>
+    <string name="uav_class_sw_architectures_topic5">Principais arquitecturas: centralizadas, cliente-servidor, distribuídas, N-camadas, SOA, baseadas em componentes e MicroServices</string>
+    <string name="uav_class_sw_architectures_topic6">Principais arquitecturas: casos de uso para cada arquitectura</string>
+    <string name="uav_class_sw_architectures_topic7">Principais arquitecturas: casos de uso como agregação de mais do que uma arquitectura: combinação de distribuição com composição</string>
+    <string name="uav_class_sw_architectures_topic8">Atributos de qualidade: o que são atributos de qualidade</string>
+    <string name="uav_class_sw_architectures_topic9">Atributos de qualidade: principais atributos de qualidade</string>
+    <string name="uav_class_sw_architectures_topic10">Atributos de qualidade: papeis dos atributos de qualidade nas diversas arquitecturas de software</string>
+    <string name="uav_class_sw_architectures_topic11">A Arquitectura no Ciclo de Vida dos produtos: arquitectura em ambientes Ágeis</string>
+    <string name="uav_class_sw_architectures_topic12">A Arquitectura no Ciclo de Vida dos produtos: arquitectura e requisitos</string>
+    <string name="uav_class_sw_architectures_topic13">A Arquitectura no Ciclo de Vida dos produtos: concepção de arquitecturas</string>
+    <string name="uav_class_sw_architectures_topic14">A Arquitectura no Ciclo de Vida dos produtos: documentação de arquitecturas</string>
+    <string name="uav_class_sw_architectures_topic15">A Arquitectura no Ciclo de Vida dos produtos: implementação e teste</string>
+    <string name="uav_class_sw_architectures_topic16">A Arquitectura no Ciclo de Vida dos produtos: avaliação</string>
+    <string name="uav_class_sw_architectures_topic17">A Arquitectura no Ciclo de Vida dos produtos: gestão</string>
+
+    <string name="uav_class_sw_engineering">Engenharia de Software</string>
+    <string name="uav_class_sw_engineering_description">O principal objectivo deste curso é implementar uma aplicação de nível empresarial
+        (J2EE) que FUNCIONE desenvolvido no seio de uma equipa seguindo metodologia de desenvolvimento baseada em testes. Ao longo
+        cursos os conceitos principais relacionados com testes e qualidade de software serão apresentados e aplicados nos projectos.</string>
+    <string name="uav_class_sw_engineering_topic1">J2EE framework - Camada de negócios: webservices e EJB</string>
+    <string name="uav_class_sw_engineering_topic2">J2EE framework - Camada de apresentação: servlets e JSF </string>
+    <string name="uav_class_sw_engineering_topic3">J2EE framework - Camada de persistência: Java Persistence API</string>
+    <string name="uav_class_sw_engineering_topic4">Qualidade e teste de software: Conceitos e âmbito</string>
+    <string name="uav_class_sw_engineering_topic5">Qualidade e teste de software: Integração contínua</string>
+    <string name="uav_class_sw_engineering_topic6">Qualidade e teste de software: Desenvolvimento dirigido por testes e por comportamentos</string>
+    <string name="uav_class_sw_engineering_topic7">Qualidade e teste de software: Prática - JUnit, mockito, Hudson</string>
+    <string name="uav_class_sw_engineering_topic8">Desenvolvimento de um projecto</string>
+
+    <string name="uav_class_infra_management">Gestão de Infraestruturas de Computação</string>
+    <string name="uav_class_infra_management_description">Conhecer o contexto e requisitos de operação de plataformas de computação.
+        Conhecer as arquitecturas principais e métodos de planeamento de uma plataforma de computação.
+        Conhecer os modelos, mecanismos e ferramentas para a gestão de recursos em plataformas de computação
+        Conhecer a interdependência de sistemas numa plataforma de computação</string>
+    <string name="uav_class_infra_management_topic1">Objectivo, conceitos, modelos de operação e arquitectura dos centros de dados</string>
+    <string name="uav_class_infra_management_topic2">Disponibilização de recursos de computação: sistemas, contentores, virtualização</string>
+    <string name="uav_class_infra_management_topic3">Gestão de sistemas e recursos: orquestração, isolamento, gestão de rede centralizada, automatização das configurações</string>
+    <string name="uav_class_infra_management_topic4">Fornecimento de serviços: disponibilidade, escalabilidade, distribuição de carga, redundância, desacoplamento</string>
+    <string name="uav_class_infra_management_topic5">Armazenamento de dados: arquiteturas, sistemas e protocolos para armazenamento local, remoto e distribuído, orientado a objectos ou a blocos</string>
+    <string name="uav_class_infra_management_topic6">Arquitecturas, sistemas e protocolos para monitorização de sistemas e recursos: SNMP, WBEM, RRD</string>
+    <string name="uav_class_infra_management_topic7">Arquitecturas e sistemas para distribuição de carga e distribuição de conteúdos na Internet</string>
+
+    <string name="uav_class_simulation">Simulação e Optimização</string>
+    <string name="uav_class_simulation_description">Com esta UC espera-se que os alunos adquiram:\n
+        - compreensão dos conceitos básicos associados à modelação e simulação computacional\n
+        - capacidade de manipulação das ferramentas e das metodologias indispensáveis à elaboração de projectos de simulação,
+        desde a manipulação dos dados primitivos até à análise dos resultados\n
+        - compreensão das fases do ciclo de vida de um projecto de simulação, desde a análise de domínio e especificação do modelo ao teste e validação\n
+        - compreensão das várias abordagens e técnicas de simulação\n
+        - capacidade de identificar problemas que possam ser tratados através de simulação e de construir o sistema de simulação correspondente\n
+        - compreensão dos conceitos básicos da formulação de problemas de optimização\n
+        - conhecimento dos tipos de técnicas de optimização mais adequados aos vários tipos de problemas\n
+        - capacidade de aplicação prática de optimizadores baseados em programação linear, programação inteira e
+        metaheurísticas para a resolução de problemas.\n</string>
+    <string name="uav_class_simulation_topic1">Simulação como ferramenta de engenharia</string>
+    <string name="uav_class_simulation_topic2">Modelação e tipos de modelos</string>
+    <string name="uav_class_simulation_topic3">Técnicas de simulação: contínuas, discretas e estocásticas</string>
+    <string name="uav_class_simulation_topic4">Simulação e Modelação</string>
+    <string name="uav_class_simulation_topic5">O ciclo de vida do projecto de simulação</string>
+    <string name="uav_class_simulation_topic6">Linguagens, Ferramentas e Ambientes de Simulação</string>
+    <string name="uav_class_simulation_topic7">Geradores de números aleatórios</string>
+    <string name="uav_class_simulation_topic8">Escalonamento de eventos; Motores de física</string>
+    <string name="uav_class_simulation_topic9">Formulação de problemas de optimização: contínuos e combinatórios</string>
+    <string name="uav_class_simulation_topic10">Eficiência de algoritmos de optimização</string>
+    <string name="uav_class_simulation_topic11">Solução óptima e aproximada</string>
+    <string name="uav_class_simulation_topic12">Métodos de optimização</string>
+    <string name="uav_class_simulation_topic13">Programação Linear</string>
+    <string name="uav_class_simulation_topic14">Programação Inteira</string>
+    <string name="uav_class_simulation_topic15">Meta-heuristicas: hill climbing; tabu search; simulated annealing; genetic algorithms</string>
+
+    <string name="uav_class_info_sys">Sistemas de Informação Nas Organizações</string>
+    <string name="uav_class_info_sys_description">- Adquirir uma visão alargada acerca dos vários contextos de utilização dos
+        sistemas de informação nas organizações:Funcionais: CRM, ERP, KMS, etc. \n
+        Operacionais: front office, back office.\n
+        Sectoriais: áreas de utilização, cadeias de valor, actores, etc.\n
+        - Compreender as tecnologias e estruturas básicas dos modernos sistemas de informação (incluindo as tecnologias de virtualização e clouding).\n
+        - Desenhar e projectar a arquitectura básica de um sistema de informação e ser capaz de fazer a respectiva integração e colocação em serviço.\n
+        - Ter sensibilidade para os aspectos de natureza ética, legal e social dos sistemas de informação.</string>
+    <string name="uav_class_info_sys_topic1">Fundamentos dos Sistemas de Informação: Sistemas Operativos</string>
+    <string name="uav_class_info_sys_topic2">Arquitecturas e organização</string>
+    <string name="uav_class_info_sys_topic3">Virtualização e clouding</string>
+    <string name="uav_class_info_sys_topic4">Aplicacionais (CRM, ERP, KMS,etc.)</string>
+    <string name="uav_class_info_sys_topic5">Redes e infraestruturas (potência, HVAC, etc)</string>
+    <string name="uav_class_info_sys_topic6">Aspectos éticos, legais e sociais</string>
+
+    <string name="uav_class_distributed_sys">Sistemas Distribuídos</string>
+    <string name="uav_class_distributed_sys_description">O seu objectivo principal é introduzir os alunos aos princípios e à prática subjacente
+        ao projecto de sistemas distribuídos, apresentando os conceitos mais importantes relativos à sua implementação.
+        São particularmente explorados diferentes paradigmas de comunicação e de sincronização.\n
+        Pretende-se especificamente promover\n
+        - compreensão dos problemas principais que envolvem o projecto de sistemas distribuídos;\n
+        - capacidade de desenvolvimento de aplicações distribuídas simples;\n
+        - familiarização com o ambiente de programação distribuída em Java.</string>
+    <string name="uav_class_distributed_sys_topic1">Introdução ao Java: Organização geral da linguagem</string>
+    <string name="uav_class_distributed_sys_topic2">Introdução ao Java: Sua caracterização em termos do paradigma orientado por objectos e do modelo de concorrência</string>
+    <string name="uav_class_distributed_sys_topic3">Sistemas Distribuídos: Panorâmica geral</string>
+    <string name="uav_class_distributed_sys_topic4">Modelos arquitecturais</string>
+    <string name="uav_class_distributed_sys_topic5">Modelos fundamentais</string>
+    <string name="uav_class_distributed_sys_topic6">Comunicação por passagem de mensagens</string>
+    <string name="uav_class_distributed_sys_topic7">Invocação de métodos sobre objectos remostos</string>
+    <string name="uav_class_distributed_sys_topic8">Modelos cliente-servidor</string>
+    <string name="uav_class_distributed_sys_topic9">O problema da migração de código</string>
+    <string name="uav_class_distributed_sys_topic10">Modelos de comunicação em grupo: Sincronização e exclusão mútua distribuídas</string>
+    <string name="uav_class_distributed_sys_topic11">Modelos de comunicação em grupo: Algoritmos electivos</string>
+    <string name="uav_class_distributed_sys_topic12">Modelos de comunicação em grupo: Transacções distribuídas</string>
+    <string name="uav_class_distributed_sys_topic13">Consistência e replicação: Modelos de consistência centrados nos dados</string>
+    <string name="uav_class_distributed_sys_topic14">Consistência e replicação: Modelos de consistência centrados nos clientes</string>
+    <string name="uav_class_distributed_sys_topic15">Consistência e replicação: Protocolos</string>
+    <string name="uav_class_distributed_sys_topic16">Segurança: Canais seguros</string>
+    <string name="uav_class_distributed_sys_topic17">Segurança: Controlo de acesso</string>
+    <string name="uav_class_distributed_sys_topic18">Segurança: Gestão da segurança</string>
+
+    <string name="uav_class_intelligent_sys">Sistemas Inteligentes</string>
+    <string name="uav_class_intelligent_sys_description">Partindo de conhecimentos de base em Inteligência Artificial,
+        tipicamente adquiridos no 1º ciclo, aunidade curricular de Sistemas Inteligentes introduz conceitos avançados
+        nessa área, dando uma perspectiva integrada orientada ao sistema. Em particular, pretende-se que os alunos
+        fiquem a conhecer os conceitos básicos e a saber utilizar as principais técnicas nas seguintes áreas:\n
+        - Técnicas avançadas de representação do conhecimento e raciocínio\n
+        - Aprendizagem automática\n
+        - Sistemas multi-agente</string>
+    <string name="uav_class_intelligent_sys_topic1">Técnicas avançadas de representação do conhecimento e raciocínio: lógica, redes semânticas e redes de Bayes</string>
+    <string name="uav_class_intelligent_sys_topic2">Técnicas avançadas de representação do conhecimento e raciocínio: lógicas de descrição</string>
+    <string name="uav_class_intelligent_sys_topic3">Técnicas avançadas de representação do conhecimento e raciocínio: processos de decisão de Markov</string>
+    <string name="uav_class_intelligent_sys_topic4">Aprendizagem automática: aprendizagem por reforço</string>
+    <string name="uav_class_intelligent_sys_topic5">Aprendizagem automática: programação em lógica por indução</string>
+    <string name="uav_class_intelligent_sys_topic6">Aprendizagem automática: aprendizagem por generalização dedutiva</string>
+    <string name="uav_class_intelligent_sys_topic7">Aprendizagem automática: aprendizagem em redes de Bayes</string>
+    <string name="uav_class_intelligent_sys_topic8">Sistemas multi-agente: Classificação de Sistemas Multi-Agente</string>
+    <string name="uav_class_intelligent_sys_topic9">Sistemas multi-agente: Interacção entre Agentes</string>
+    <string name="uav_class_intelligent_sys_topic10">Sistemas multi-agente: Coordenação de Agentes</string>
+    <string name="uav_class_intelligent_sys_topic11">Casos de estudo sobre integração em sistemas inteligentes</string>
+
+    <string name="uav_class_semantic_web">Web Semântica</string>
+    <string name="uav_class_semantic_web_description">Unidade curricular centrada na formação avançada nos domínios das tecnologias
+        e gestão de conhecimento em ambientes Web, complementando a formação, nos mesmos domínios, obtida na licenciatura e
+        em disciplinas do primeiro semestre do mestrado.</string>
+    <string name="uav_class_semantic_web_topic1">Introdução à linguagem Python</string>
+    <string name="uav_class_semantic_web_topic2">Programação web utilizando a linguagem Python</string>
+    <string name="uav_class_semantic_web_topic3">Introdução à web semântica</string>
+    <string name="uav_class_semantic_web_topic4">Semântica dos Dados: relações semânticas; repositório de triplos; inferência; pesquisa e visualização de grafos.</string>
+    <string name="uav_class_semantic_web_topic5">Padrões e fontes de dados: RDF, RDFS, RDFa, SPARQL; RDF/XML, N3, N-Triples; Linked Data, FOAF.</string>
+    <string name="uav_class_semantic_web_topic6">Ontologias: OWL e Protégé</string>
+    <string name="uav_class_semantic_web_topic7">Tecnologias e programação da web semântica: repositórios RDF e bibliotecas de acesso</string>
+    <string name="uav_class_semantic_web_topic8">Tecnologias e programação da web semântica: inferência, pesquisa, filtragem e visualização</string>
+
     <string name="uav_class_"></string>
     <string name="uav_class__description"></string>
     <string name="uav_class__topic1"></string>
