@@ -5134,6 +5134,309 @@ Os estudantes deverão ainda desenvolver competências em análise e síntese, r
     <string name="uav_class_semantic_web_topic7">Tecnologias e programação da web semântica: repositórios RDF e bibliotecas de acesso</string>
     <string name="uav_class_semantic_web_topic8">Tecnologias e programação da web semântica: inferência, pesquisa, filtragem e visualização</string>
 
+    <string name="uav_class_seminar">Seminário</string>
+    <string name="uav_class_seminar_description">A cadeira de seminário pretende familiarizar o aluno com o ambiente
+        de investigação e desenvolvimento em geral, e com os mais recentes avanços na área de especialização quer
+        ao nível de I and D quer ao nível das empresas, assim como abordar competências transversais ao nível da
+        organização da investigação e escrita de artigos e teses, técnicas bibliográficas, apresentação e
+        comunicação, ética e deontologia profissional, empreendedorismo, etc.</string>
+    <string name="uav_class_seminar_topic1">Temas de investigação dos vários grupos de I e D</string>
+    <string name="uav_class_seminar_topic2">Apresentações de empresas</string>
+    <string name="uav_class_seminar_topic3">Organização da investigação e escrita de artigos e teses, procura de informação, técnicas bibliográficas, etc.</string>
+    <string name="uav_class_seminar_topic4">Apresentações e comunicação</string>
+    <string name="uav_class_seminar_topic5">Ética e deontologia profissional, segurança e privacidade</string>
+    <string name="uav_class_seminar_topic6">Empreendedorismo</string>
+
+    <string name="uav_class_project_management">Avaliação e Gestão de Projectos</string>
+    <string name="uav_class_project_management_description">A gestão de projectos é uma ciência bem desenvolvida e aceite tanto no meio
+        profissional como académico. Inúmeros métodos, técnicas e ferramentas têm sido desenvolvidos, para cobrir todos os
+        aspectos da gestão de projectos, nomeadamente, a avaliação da mesma.\n
+        No entanto, a Avaliação e Gestão de Projectos continua a ser uma área problemática, ou seja, não tem sido vista como
+        um processo organizacional, a despeito de existir a visão de que todas as Organizações necessitariam de realizar
+        projectos internamente para assegurarem e/ou minimizarem o risco nas suas actividades principais, e por tal,
+        criar competências internas para executar os seus projectos.\n
+        Esta disciplina visa fornecer conhecimentos teóricos necessários à gestão de projectos ao nível Organizacional
+        e os conhecimentos práticos das ferramentas de planeamento, avaliação e controlo de custos, prazos,
+        recursos materiais, humanos e financeiros.\n
+        A metodologia permitirá a implementação de um conjunto de boas práticas de Avaliação e Gestão de
+        Projectos nas suas diferentes fases.</string>
+    <string name="uav_class_project_management_topic1">Conceitos de projecto e de gestão de projectos. Tipologia de projectos. A relação da gestão de projectos com outras dimensões da gestão empresarial.</string>
+    <string name="uav_class_project_management_topic2">Gestão estratégica do projecto. Strategic fit. O projecto como elemento de descontinuidade do comportamento estratégico da organização.</string>
+    <string name="uav_class_project_management_topic3">Inovação e mudança. Boas práticas de gestão de projectos.</string>
+    <string name="uav_class_project_management_topic4">Fases de um projecto e ciclo de vida de um projecto</string>
+    <string name="uav_class_project_management_topic5">Estrutura e influênc­ias organizacionais na gestão de projectos. Relação do projecto com a estrutura da organização promotora.</string>
+    <string name="uav_class_project_management_topic6">Os processos e as interacções na gestão de projectos. Perfil e competências do gestor de projectos. Cultura da organização promotora e enquadramento do projecto.</string>
+    <string name="uav_class_project_management_topic7">Preparação do dossier de um projecto</string>
+    <string name="uav_class_project_management_topic8">Estrutura hierárquica das actividades (work breakdown structure). Definição de actividades. Estabelecimento da sequência de actividades. Redes de actividades. </string>
+    <string name="uav_class_project_management_topic9">Estimação da duração de cada actividade. Calendarização do projecto e controlo do tempo. Instrumentos operacionais de planeamento do tempo.</string>
+    <string name="uav_class_project_management_topic10">Planeamento e gestão dos recursos. Estimação dos custos. Orçamentação. Controlo dos custos.</string>
+    <string name="uav_class_project_management_topic11">Instrumentos operacionais de planeamento dos custos. Planeamento e garantia da qualidade. Controlo da qualidade.</string>
+    <string name="uav_class_project_management_topic12">Apresentação do programa Microsoft Project: ambiente, funções, utilização na fase de planeamento e na fase de imple­mentação e controlo do projecto.</string>
+    <string name="uav_class_project_management_topic13">Planeamento do tempo, estabelecimento de redes de activida­des e calendarização. Definição e planeamento de recursos/custos.</string>
+    <string name="uav_class_project_management_topic14">Conceito de valor económico de um projecto de investimento</string>
+    <string name="uav_class_project_management_topic15">Fundamentos da avaliação das decisões de investimento: risco e retorno, dimensão temporal do valor do dinheiro</string>
+    <string name="uav_class_project_management_topic16">Avaliação económica das decisões de investimento: pressupostos e aplicabilidade dos principais métodos de avaliação. Indicadores de mérito económico e critérios de aceitação. Estimação dos fluxos de caixa relevantes e do custo de oportunidade do capital</string>
+    <string name="uav_class_project_management_topic17">Avaliação em contexto de incerteza: gestão de risco do projecto</string>
+    <string name="uav_class_project_management_topic18">Apresentação de casos práticos</string>
+    <string name="uav_class_project_management_topic19">Avaliação em contexto de incerteza: gestão de risco do projecto.</string>
+    <string name="uav_class_project_management_topic20">Análise de sensibilidades</string>
+
+    <string name="uav_class_mobile_computation">Computação Móvel, Ubiqua e Pervasiva</string>
+    <string name="uav_class_mobile_computation_description">Fornecer uma visão global dos aspectos fundamentais que norteiam o
+        desenvolvimento de soluções e aplicações moveis, ubíquas e pervasivas. Apresentar os conceitos e tecnologias que
+        norteiam o estado da arte. Deve ser capaz de compreender e discutir, protocolos e tecnologias de rede apropriadas
+        à utilização em ambientes de computação ubíqua e pervasivo. Ser capaz de projectar e desenvolver aplicações e
+        serviços ubíquos e pervasivos.</string>
+    <string name="uav_class_mobile_computation_topic1">Protocolos de Descoberta de Serviços</string>
+    <string name="uav_class_mobile_computation_topic2">Redes Ad-hoc</string>
+    <string name="uav_class_mobile_computation_topic3">Redes de Sensores</string>
+    <string name="uav_class_mobile_computation_topic4">Sensores e outro Dispositivos embebidos</string>
+    <string name="uav_class_mobile_computation_topic5">Comunicações M2M</string>
+    <string name="uav_class_mobile_computation_topic6">Inteligencia Ambiente</string>
+    <string name="uav_class_mobile_computation_topic7">Sistemas sensíveis a contexto</string>
+    <string name="uav_class_mobile_computation_topic8">Segurança e Privacidade</string>
+    <string name="uav_class_mobile_computation_topic9">Arquitecturas de Software Sistemas Ubíquos e Pervasivos</string>
+
+    <string name="uav_class_quantic_computing">Computação Quântica</string>
+    <string name="uav_class_quantic_computing_description">A Computação Quântica é uma área recente em franco desenvolvimento,
+        visando na sua componente prática a construção de computadores quânticos.
+        Neste curso introdutório, os alunos poderão adquirir os fundamentos matemáticos básicos subjacentes ao
+        modelo de computação quântica, a par com a compreensão global dos mais proeminentes algoritmos desenvolvidos
+        até ao momento e suas implicações.</string>
+    <string name="uav_class_quantic_computing_topic1">Introdução: perspectiva histórica, bits quânticos, a notação de Dirac, formulação matemática dos postulados da Mecânica Quântica.</string>
+    <string name="uav_class_quantic_computing_topic2">Circuitos Quânticos: portas quânticas elementares, portas de controlo, conjuntos universais de portas quânticas.</string>
+    <string name="uav_class_quantic_computing_topic3">Algoritmos Quânticos: o algoritmo de Deutsch-Jozsa, o algoritmo de pesquisa de Grover e generalizações.</string>
+    <string name="uav_class_quantic_computing_topic4">A transformada quântica de Fourier e suas aplicações: o algoritmo de Shor para a factorização de inteiros em primos, algoritmos de estimação de fase.</string>
+
+    <string name="uav_class_visual_computing">Computação Visual</string>
+    <string name="uav_class_visual_computing_description">A disciplina de Computação Visual visa dotar os alunos com conhecimentos
+        fundamentais associados aos algoritmos e operações nucleares dos processos de Síntese e de Análise de Imagens,
+        através uma selecção apropriada de tópicos das áreas de Computação Gráfica e Processamento de Imagem.</string>
+    <string name="uav_class_visual_computing_topic1">Motivação: síntese e análise de imagens; Computação Gráfica e Processamento de Imagem; áreas de aplicação e operações habituais.</string>
+    <string name="uav_class_visual_computing_topic2">Sistemas Gráficos Interactivos: Modelo conceptual; O pipeline de visualização; Primitivas gráficas e seus atributos; Visualização e interacção.</string>
+    <string name="uav_class_visual_computing_topic3">Modelação de Objectos e Transformações Geométricas: Modelação usando malhas poligonais; Estruturas de dados para a representação de modelos; Transformações Euclidianas e Afins; Projecções geométricas planas.</string>
+    <string name="uav_class_visual_computing_topic4">Representações Realistas: Cor, Modelos de Cor; O modelo de reflexão de Phong; Técnicas de sombreamento; Mapeamento de texturas; Introdução ao ray-tracing.</string>
+    <string name="uav_class_visual_computing_topic5">Operações Básicas do Processamento de Imagens: Transformações de Intensidade; Processamento de histogramas; Filtragem (“smoothing” e “sharpening”); “Warping”; Detecção de arestas/contornos; Segmentação.</string>
+    <string name="uav_class_visual_computing_topic6">Operações Morfológicas: operações sobre imagens binárias e sobre imagens com níveis de cinzento; Aplicações.</string>
+
+    <string name="uav_class_service_eng">Engenharia de Serviços</string>
+    <string name="uav_class_service_eng_description">Fornecer uma visão global dos aspectos fundamentais que norteiam o desenvolvimento de
+        arquitecturas de serviço em telecomunicações. Apresentar arquitecturas de desenvolvimento de software e serviços em redes avançadas.</string>
+    <string name="uav_class_service_eng_topic1">Arquitecturas de Telecomunicações orientadas a serviço.</string>
+    <string name="uav_class_service_eng_topic2">Standardização de Serviços em Telecomunicações (3GPP, OMA)</string>
+    <string name="uav_class_service_eng_topic3">Tecnologias para suporte a desenvolvimento de serviços: SMS, WAP, MMS, SIP IMS</string>
+    <string name="uav_class_service_eng_topic4">Serviços em redes SOA: Instant Messaging, Presence, virtual PABX, serviços de localização</string>
+    <string name="uav_class_service_eng_topic5">Tecnologias e APIs para SOA: XMPP, OSA/Parlay, Parlay-X, SIPServlets</string>
+    <string name="uav_class_service_eng_topic6">Web services e Widgets para ambientes de telecomunicações</string>
+    <string name="uav_class_service_eng_topic7">Sistemas de mensagens</string>
+
+    <string name="uav_class_strategy_competition">Estratégia e Competitividade</string>
+    <string name="uav_class_strategy_competition_description">Os objectivos da unidade curricular são:\n
+        - Fornecer aos discentes um conjunto de elementos que lhes permitam, utilizando uma lógica de raciocínio própria
+        das ciências empresariais, compreender e interpretar o funcionamento das organizações, sejam públicas,
+        privadas ou para-públicas, numa óptica estratégica;\n
+        - Proporcionar aos discentes uma perspetiva técnica e científica da estratégia e competitividade,
+        tanto a nível de planeamento como a nível de implementação;\n
+        - Adquirir um corpo básico de conhecimentos, de forma a permitir a sua aplicação no contexto
+        empresarial no que concerne a tomadas de decisões estratégicas;\n
+        - Desenvolver competências de pesquisa bibliográfica e de campo, de trabalho em grupo e de
+        apresentação oral e escrita científica.\n
+        - Reconhecer a necessidade de adaptação contínua ao meio em que a empresa se insere,
+        nomeadamente tendo em consideração o relacionamento bi-direccional empresa-meio ambiente;</string>
+    <string name="uav_class_strategy_competition_topic1">Introdução À Gestão Estratégica e à competitividade estratégica</string>
+    <string name="uav_class_strategy_competition_topic2">O Contexto Externo</string>
+    <string name="uav_class_strategy_competition_topic3">O Contexto Interno</string>
+    <string name="uav_class_strategy_competition_topic4">Estratégia De Negócios</string>
+    <string name="uav_class_strategy_competition_topic5">Rivalidade e Dinâmica Competitiva</string>
+    <string name="uav_class_strategy_competition_topic6">Estratégia Corporativa</string>
+    <string name="uav_class_strategy_competition_topic7">Estratégias de Aquisição e Fusão</string>
+    <string name="uav_class_strategy_competition_topic8">Estratégias de Internacionalização</string>
+    <string name="uav_class_strategy_competition_topic9">Estratégias Cooperativas</string>
+    <string name="uav_class_strategy_competition_topic10">Governança corporativa</string>
+    <string name="uav_class_strategy_competition_topic11">Responsabilidade social e ambiental</string>
+    <string name="uav_class_strategy_competition_topic12">Liderança estratégica – “Strategic leadership” / Empreendedorismo estratégico – “Strategic entrepreneurship” </string>
+    <string name="uav_class_strategy_competition_topic13">Desafios Estratégicos</string>
+
+    <string name="uav_class_computational_geometry">Geometria Computacional</string>
+    <string name="uav_class_computational_geometry_description">O objectivo desta disciplina é desenvolver algoritmos e estruturas de dados
+        eficientes que serão aplicados na resolução de problemas de optimização em termos de objectos geométricos elementares.</string>
+    <string name="uav_class_computational_geometry_topic1">Algoritmos geométricos: localização de pontos em polígonos e poliedros</string>
+    <string name="uav_class_computational_geometry_topic2">Determinação de invólucros convexos</string>
+    <string name="uav_class_computational_geometry_topic3">Problemas de proximidade: O problema do par mais próximo</string>
+    <string name="uav_class_computational_geometry_topic4">Triangulação de polígonos simples</string>
+    <string name="uav_class_computational_geometry_topic5">Teorema da Galeria de Arte e Variantes</string>
+    <string name="uav_class_computational_geometry_topic6">Diagramas de Voronoi e Triangulação de Delaunay</string>
+
+    <string name="uav_class_service_quality_management">Gestão da Qualidade em Serviços</string>
+    <string name="uav_class_service_quality_management_description">Os objectivos específicos da unidade curricular são os seguintes:
+        - Desenvolver os elementos fundamentais da gestão de qualidade em serviços;\n
+        - Abordar diferentes modelos de avaliação da qualidade dos serviços;\n
+        - Aprofundar o papel do cliente na definição de requisitos dos serviços;\n
+        - Discutir metodologias de projecto e definição dos padrões dos serviços;\n
+        - Detalhar estratégias e ferramentas para a prestação de serviços de qualidade;\n
+        - Examinar os mecanismos de gestão das promessas de serviço.</string>
+    <string name="uav_class_service_quality_management_topic1">Modelos de avaliação da qualidade de serviços</string>
+    <string name="uav_class_service_quality_management_topic2">Expectativas do cliente com o serviço</string>
+    <string name="uav_class_service_quality_management_topic3">Percepções do cliente sobre o serviço</string>
+    <string name="uav_class_service_quality_management_topic4">Requisitos do cliente: Ouvir o cliente através de pesquisa de marketing</string>
+    <string name="uav_class_service_quality_management_topic5">Requisitos do cliente: Construção do relacionamento com o cliente</string>
+    <string name="uav_class_service_quality_management_topic6">Requisitos do cliente: Recuperação do serviço</string>
+    <string name="uav_class_service_quality_management_topic7">Alinhamento do projeto e dos padrões de serviço: Inovação e projeto do serviço</string>
+    <string name="uav_class_service_quality_management_topic8">Alinhamento do projeto e dos padrões de serviço: Evidências físicas e cenário do serviço</string>
+    <string name="uav_class_service_quality_management_topic9">Prestação e desempenho do serviço: A importância dos clientes na prestação do serviço</string>
+    <string name="uav_class_service_quality_management_topic10">Prestação e desempenho do serviço: Gestão da procura e da capacidade</string>
+    <string name="uav_class_service_quality_management_topic11">Gestão das promessas de serviço: Comunicação integrada de serviços</string>
+
+    <string name="uav_class_data_management">Gestão de Dados e de Informação</string>
+    <string name="uav_class_data_management_description">Estudar conceitos essenciais relativos aos dados semi-estruturados e tipos de dados complexos.
+        Estudar as mais recentes tecnologias e normas relacionadas com este tipo de dados.
+        Aplicar os conceitos estudados a cenários reais e utilizar as tecnologias e normas no desenvolvimento de soluções
+        informáticas que facilitem a criação, manipulação, pesquisa e recuperação no âmbito deste tipo de dados e informação.</string>
+    <string name="uav_class_data_management_topic1">Dados semi-estruturados, interoperabilidade de dados, metadados</string>
+    <string name="uav_class_data_management_topic2">Norma XML e suas congéneres (XML Schema, XSLT, XPath)</string>
+    <string name="uav_class_data_management_topic3">Persistência e pesquisa de XML (XML DBs, XQuery)</string>
+    <string name="uav_class_data_management_topic4">Tipos de dados complexos: dados espaciais</string>
+    <string name="uav_class_data_management_topic5">Modelos objecto-relacional</string>
+    <string name="uav_class_data_management_topic6">Mapeamento objecto-relacional</string>
+
+    <string name="uav_class_business_process">Modelos e Processos de Negócio Nas Organizações</string>
+    <string name="uav_class_business_process_description">Os objectivos desta UC são:
+        estudar modelos e processos de negócio, do planeamento e desenho à implementação e controlo,que permitam à organização uma posição sustentada no mercado;\n
+        introduzir metodologias e ferramentas que permitam arquitectar e desenhar o modelo de negócio e inventariar, analisar, representar e automatizar os processos;\n
+        estudar e desenvolver novas formas de negócio implementadas com recurso à Internet;\n
+        estudar e desenvolver formas de integração intra e interorganizacional, recorrendo a perspectivas, ferramentas e competências multidisciplinares.</string>
+    <string name="uav_class_business_process_topic1">Modelos e processos de negócio: evolução dos conceitos e relação com estratégia de negócio</string>
+    <string name="uav_class_business_process_topic2">Dimensões de análise e modelação de Modelo de Negócio: proposição de valor; clientes; infraestrutura; aspectos financeiros</string>
+    <string name="uav_class_business_process_topic3">Potencial do Modelo de Negócio, na relação com: a gestão de pessoas; gestão de parcerias; sistemas de informação; gestão do conhecimento; novação</string>
+    <string name="uav_class_business_process_topic4">Processos de negócio: conceitos; descrição, modelação e análise de processos</string>
+    <string name="uav_class_business_process_topic5">Análise, modelação e automatização de processos: conceitos em workflow; metodologias de levantamento, análise e representação de processos; Redes de Petri e automatização de processos</string>
+    <string name="uav_class_business_process_topic6">Modelos de negócio implementados sobre a Internet: negócio electrónico; enquadramento legal; criação de valor; estratégias de negócio electrónico; cadeia de valor e cadeia de abastecimentos;</string>
+    <string name="uav_class_business_process_topic7">Modelos de negócio implementados sobre a Internet: infraestruturas, tecnologias e sistemas de informação; planeamento de actividades e de recursos; modelação e implementação dos processos; relação com o cliente; avaliação da presença na Web</string>
+
+    <string name="uav_class_concurrent_oop">Programação Concorrente Orientada por Objectos</string>
+    <string name="uav_class_concurrent_oop_description">Domínio de métodos e técnicas avançadas de programação concorrente no
+        contexto da programação orientada por objectos em Java.</string>
+    <string name="uav_class_concurrent_oop_topic1">Suporte nativo à concorrência em Java</string>
+    <string name="uav_class_concurrent_oop_topic2">Concorrência num contexto de objectos</string>
+    <string name="uav_class_concurrent_oop_topic3">Comunicação por partilha de memória: mecanismos básicos de sincronismo</string>
+    <string name="uav_class_concurrent_oop_topic4">Comunicação por partilha de objectos: esquemas de sincronismo interno de objectos (monitores, exclusão leitores-escritor, leitores-escritor concorrentes, copy-on-write, transacções)</string>
+    <string name="uav_class_concurrent_oop_topic5">Concorrência e controlo de fluxo de programas imperativos</string>
+    <string name="uav_class_concurrent_oop_topic6">Comunicação por partilha de objectos: esquemas de sincronismo externo de objectos (exclusão, transacções)</string>
+    <string name="uav_class_concurrent_oop_topic7">Concorrência e contratos</string>
+    <string name="uav_class_concurrent_oop_topic8">Comunicação por partilha de objectos: esquemas de sincronismo condicional de objectos</string>
+    <string name="uav_class_concurrent_oop_topic9">Concorrência, tipos de dados abstractos, e polimorfismo subtipo (herança)</string>
+    <string name="uav_class_concurrent_oop_topic10">Comunicação por envio de mensagens: mecanismos básicos de sincronismo</string>
+    <string name="uav_class_concurrent_oop_topic11">Concorrência e invocação de funções</string>
+    <string name="uav_class_concurrent_oop_topic12">Comunicação por envio de mensagens: actores</string>
+    <string name="uav_class_concurrent_oop_topic13">Gestão de falhas num contexto concorrente (excepções concorrentes)</string>
+
+    <string name="uav_class_advanced_web_programming">Programação Web Avançada</string>
+    <string name="uav_class_advanced_web_programming_description">Objectivos da unidade curricular e conhecimentos, capacidades e competências a adquirir:\n
+        - Aprender as diferenças entre CMS, ERP e CRM.\n
+        - Compreender os diferentes requisitos associados a cada sistema, sabendo avaliar de forma cabal a necessidade,
+        validade e exequibilidade destes no decurso de exigências associadas a determinados processos de negócio.\n
+        - Aprender a analisar componentes integráveis nos diversos CMSs.\n
+        - Aprender a especificar, implementar e testar componentes integráveis num CMS.</string>
+    <string name="uav_class_advanced_web_programming_topic1">Análise de sistemas de CMS (Content Management System): Joomla, WordPress, Moodle, Drupal, Media Wiki, Screwturn Wiki, Sharepoint, DNN, Plone, Django</string>
+    <string name="uav_class_advanced_web_programming_topic2">Análise de sistemas de ERP (Enterprise Resource Planning): OpenERP, Primavera, SAP</string>
+    <string name="uav_class_advanced_web_programming_topic3">Análise de sistemas de CRM (Customer Relashionship Management): OpenCRM, Primavera, SAP, Microsoft Dynamics</string>
+    <string name="uav_class_advanced_web_programming_topic4">Noções de arquitectura e interacção de componentes nos diversos sistemas</string>
+    <string name="uav_class_advanced_web_programming_topic5">Implementação de módulos estáticos e dinâmicos nos diversos CMS</string>
+
+    <string name="uav_class_vr_ar">Realidade Virtual e Aumentada</string>
+    <string name="uav_class_vr_ar_description">Esta é uma disciplina introdutória às áreas da Realidade Virtual e Aumentada em que se pretende introduzir
+        conceitos básicos, métodos e ferramentas que permitam aos alunos projectar, avaliar e desenvolver aplicações simples.\n
+        Os objectivos principais são:\n
+        - Definir e dar uma panorâmica das aplicações da Realidade Virtual e Aumentada;\n
+        - Introduzir ideias, métodos e ferramentas para o projecto, implementação e avaliação de sistemas de Realidade Virtual e Aumentada.\n
+        - Pretende-se também promover capacidades gerais importantes, como o pensamento crítico, capacidade de trabalho em
+        grupo e capacidades de comunicação oral e por escrito.</string>
+    <string name="uav_class_vr_ar_topic1">Introdução à Realidade Virtual (RV) e Realidade Aumentada (RA). Definição, evolução histórica, exemplos de aplicação</string>
+    <string name="uav_class_vr_ar_topic2">Modelação de ambientes virtuais</string>
+    <string name="uav_class_vr_ar_topic3">Arquitectura dos sistemas, exemplos de Frameworks para RV e RA</string>
+    <string name="uav_class_vr_ar_topic4">Dispositivos de entrada e saída, tracking</string>
+    <string name="uav_class_vr_ar_topic5">Interfaces de utilizador 3D e técnicas de interacção</string>
+    <string name="uav_class_vr_ar_topic6">Factores humanos e avaliação de usabilidade em RV e RA</string>
+
+    <string name="uav_class_service_networks_imagiology">Redes e Serviços em Imagiologia</string>
+    <string name="uav_class_service_networks_imagiology_description">Introduzir o conceito genérico de PACS\n
+        Abordar do ponto de vista sistémico as principais modalidades de imagem médica\n
+        Estudar as principais estratégias de arquivo de transmissão de imagem\n
+        Abordar questões de gestão e controlo de qualidade em ambientes RIS/PACS\n
+        Envolver os alunos em pequenos projectos de desenvolvimento relacionado com o universo PACS/DICOM</string>
+    <string name="uav_class_service_networks_imagiology_topic1">Conceito genérico de PACS (picture archive and communication system)</string>
+    <string name="uav_class_service_networks_imagiology_topic2">Standardization (DICOM, HL7, IHE)</string>
+    <string name="uav_class_service_networks_imagiology_topic3">Aquisição de Imagem: Modalidades</string>
+    <string name="uav_class_service_networks_imagiology_topic4">Aquisição de Imagem: Imagiologia Digital</string>
+    <string name="uav_class_service_networks_imagiology_topic5">Visualização: Hardcopy versus Softcopy</string>
+    <string name="uav_class_service_networks_imagiology_topic6">Visualização: Conceito de Qualidade de Imagem</string>
+    <string name="uav_class_service_networks_imagiology_topic7">Visualização: Workstations para visualização</string>
+    <string name="uav_class_service_networks_imagiology_topic8">Arquivo, Distribuição: Requisitos e Problemas</string>
+    <string name="uav_class_service_networks_imagiology_topic9">Arquivo, Distribuição: Volume de Dados</string>
+    <string name="uav_class_service_networks_imagiology_topic10">Arquivo, Distribuição: Compressão de Dados</string>
+    <string name="uav_class_service_networks_imagiology_topic11">Digital Imaging and Communication in Medicine: Norma - Aspectos de Armazenamento e Comunicação;</string>
+    <string name="uav_class_service_networks_imagiology_topic12">Digital Imaging and Communication in Medicine: Estrutura e Formato de Dados</string>
+    <string name="uav_class_service_networks_imagiology_topic13">Digital Imaging and Communication in Medicine: Serviços DICOM; Workflow e Worklists</string>
+    <string name="uav_class_service_networks_imagiology_topic14">Digital Imaging and Communication in Medicine: Relatórios Estruturados</string>
+    <string name="uav_class_service_networks_imagiology_topic15">PACS: Arquitecturas</string>
+    <string name="uav_class_service_networks_imagiology_topic16">PACS: Estratégias de Distribuição e Arquivo de Imagens</string>
+    <string name="uav_class_service_networks_imagiology_topic17">PACS: Workflow e Dataflow em Radiologia</string>
+    <string name="uav_class_service_networks_imagiology_topic18">PACS: Cenários Críticos: PACS Cardíacos; Evolução: S-PACS (Surgery-PACS)</string>
+    <string name="uav_class_service_networks_imagiology_topic19">PACS: Segurança e Privacidade de Dados e Sistemas</string>
+    <string name="uav_class_service_networks_imagiology_topic20">PACS: PACS e E-Learning em Ciências Médicas</string>
+    <string name="uav_class_service_networks_imagiology_topic21">PACS: Cenário Intra e Inter Institucional</string>
+    <string name="uav_class_service_networks_imagiology_topic22">PACS: PACS Regionais, Telemedicina e Teletrabalho</string>
+    <string name="uav_class_service_networks_imagiology_topic23">PACS em infraestruras Cloud</string>
+    <string name="uav_class_service_networks_imagiology_topic24">Integração: PACS/RIS/HIS</string>
+    <string name="uav_class_service_networks_imagiology_topic25">Integração: Integrating the Healthcare Enterprise (IHE)</string>
+    <string name="uav_class_service_networks_imagiology_topic26">Data mining em plataformas PACS</string>
+
+    <string name="uav_class_robotics">Robótica Móvel e Inteligente</string>
+    <string name="uav_class_robotics_description">Pretende-se nesta disciplina fornecer aos alunos uma formação abrangente
+        na área da robótica móvel inteligente, focando temas essenciais no desenvolvimento de um robô autónomo e móvel.</string>
+    <string name="uav_class_robotics_topic1">Arquitectura de agentes robóticos</string>
+    <string name="uav_class_robotics_topic2">Infra-estrutura mecânica, electrónica e computacional de um robô móvel</string>
+    <string name="uav_class_robotics_topic3">Controlo</string>
+    <string name="uav_class_robotics_topic4">Percepção, fusão e interpretação sensorial</string>
+    <string name="uav_class_robotics_topic5">Localização</string>
+    <string name="uav_class_robotics_topic6">Navegação</string>
+    <string name="uav_class_robotics_topic7">Mapeamento</string>
+    <string name="uav_class_robotics_topic8">Equipas de robôs</string>
+    <string name="uav_class_robotics_topic9">Aprendizagem em robótica</string>
+    <string name="uav_class_robotics_topic10">Casos de estudo</string>
+
+
+    <string name="uav_class_security2">Segurança</string>
+    <string name="uav_class_security2_description">O objectivo geral desta disciplina é apresentar e descrever os principais conceitos
+        fundamentais da segurança em sistemas computacionais. Como muitas das soluções de segurança recorrem à aplicação de técnicas
+        criptográficas, nesta cadeira faz-se também uma introdução à criptografia e à criptanálise. A segurança é abordada em diversos
+        contextos, como o dos programas, dos sistemas operativos, das máquinas virtuais e das bases de dados.</string>
+    <string name="uav_class_security2_topic1">Introdução: Objetivos, problemas, perspetiva das soluções, atitudes realistas</string>
+    <string name="uav_class_security2_topic2">Introdução: Riscos e sua origem, Vulnerabilidades, sua detecção e exploração</string>
+    <string name="uav_class_security2_topic3">Introdução: Políticas de segurança vs. mecanismos de segurança, Níveis de segurança, domínios de segurança</string>
+    <string name="uav_class_security2_topic4">Introdução: Ataques e Mecanismos de defesa</string>
+    <string name="uav_class_security2_topic5">Detecção e exploração de vulnerabilidades: Caracterização das vulnerabilidades, vulnerabilidades globais, técnicas base de exploração</string>
+    <string name="uav_class_security2_topic6">Detecção e exploração de vulnerabilidades: Vulnerabilidades de aplicações, de sistemas operativos e de bases de dados</string>
+    <string name="uav_class_security2_topic7">Detecção e exploração de vulnerabilidades: Exemplos práticos de exploração (buffer overflows)</string>
+    <string name="uav_class_security2_topic8">Criptografia: Terminologia, modelos teóricos, aproximações práticas</string>
+    <string name="uav_class_security2_topic9">Criptografia: Tipos de cifras (mono-alfabéticas, poli-alfabéticas, contínuas, por blocos, com chave secreta, com chaves privada e pública)</string>
+    <string name="uav_class_security2_topic10">Criptografia: Modos de cifra</string>
+    <string name="uav_class_security2_topic11">Criptografia: Autenticação de dados (MACs, digests, assinaturas digitais, blind signatures)</string>
+    <string name="uav_class_security2_topic12">Criação, distribuição e utilização de chaves: Geração de pares de chaves</string>
+    <string name="uav_class_security2_topic13">Criação, distribuição e utilização de chaves: Protecção das chaves privadas</string>
+    <string name="uav_class_security2_topic14">Criação, distribuição e utilização de chaves: Certificados de chaves públicas, hierarquias de certificação, PKIs</string>
+    <string name="uav_class_security2_topic15">Smartcards: Motivação, estrutura, modelo computacional</string>
+    <string name="uav_class_security2_topic16">Smartcards: Panorâmica do universo de aplicações</string>
+    <string name="uav_class_security2_topic17">Smartcards: Middleware</string>
+    <string name="uav_class_security2_topic18">Smartcards: Experimentação com o Cartão de Cidadão</string>
+    <string name="uav_class_security2_topic19"></string>
+    <string name="uav_class_security2_topic20"></string>
+    <string name="uav_class_security2_topic21"></string>
+    <string name="uav_class_security2_topic22"></string>
+    <string name="uav_class_security2_topic23"></string>
+    <string name="uav_class_security2_topic24"></string>
+    <string name="uav_class_security2_topic25"></string>
+
     <string name="uav_class_"></string>
     <string name="uav_class__description"></string>
     <string name="uav_class__topic1"></string>
