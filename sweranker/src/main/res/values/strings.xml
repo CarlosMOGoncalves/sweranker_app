@@ -5429,13 +5429,59 @@ Os estudantes deverão ainda desenvolver competências em análise e síntese, r
     <string name="uav_class_security2_topic16">Smartcards: Panorâmica do universo de aplicações</string>
     <string name="uav_class_security2_topic17">Smartcards: Middleware</string>
     <string name="uav_class_security2_topic18">Smartcards: Experimentação com o Cartão de Cidadão</string>
-    <string name="uav_class_security2_topic19"></string>
-    <string name="uav_class_security2_topic20"></string>
-    <string name="uav_class_security2_topic21"></string>
-    <string name="uav_class_security2_topic22"></string>
-    <string name="uav_class_security2_topic23"></string>
-    <string name="uav_class_security2_topic24"></string>
-    <string name="uav_class_security2_topic25"></string>
+    <string name="uav_class_security2_topic19">Controlo de acesso: Objectos protegidos e modelo de protecção</string>
+    <string name="uav_class_security2_topic20">Controlo de acesso: Protecção com listas de controlo de acesso e protecção com capabilities</string>
+    <string name="uav_class_security2_topic21">Controlo de acesso: Controlo discricionário vs. controlo obrigatório</string>
+    <string name="uav_class_security2_topic22">Autenticação local de pessoas ou serviços: Autenticação com password (Unix/Linux, Windows) e Autenticação com biometria</string>
+    <string name="uav_class_security2_topic23">Políticas de segurança: Modelos com um nível de segurança, modelos multi-nível e modelos de controlo de fluxos de informação</string>
+    <string name="uav_class_security2_topic24">Políticas e mecanismos de protecção em sistemas operativos: Requisitos de segurança e Autenticação de utentes</string>
+    <string name="uav_class_security2_topic25">Políticas e mecanismos de protecção em sistemas operativos: Controlo de acesso e Sistemas operativos certificados</string>
+    <string name="uav_class_security2_topic26">Políticas e mecanismos de protecção em Máquinas Virtuais: Máquinas virtuais genéricas (VMware, Virtual PC, etc.) e Máquinas virtuais específicas (Java Virtual Machine)</string>
+    <string name="uav_class_security2_topic27">Execução correcta/segura de aplicações: Desenvolvimento de aplicações tendo em conta cenários de risco e execução controlada de aplicações</string>
+    <string name="uav_class_security2_topic28">Armazenamento seguro de dados: Aproximações (aplicacionais, integradas, intermédias), Soluções aplicacionais (PGP), Soluções integradas (EFS) e Soluções intermédias (CFS)</string>
+    <string name="uav_class_security2_topic29">Segurança em bases de dados: Requisitos de segurança, Controlo de acesso a dados sensíveis, Inferência e Bases de dados multi-nível</string>
+
+    <string name="uav_class_security_and_risk">Segurança e Gestão de Risco</string>
+    <string name="uav_class_security_and_risk_description">Aprender a projectar e orientar o desenvolvimento de uma política de segurança na organização\n
+        Aprender a determinar estratégias adequadas para assegurar confidencialidade, integridade e disponibilidade da informação\n
+        Aprender a aplicar técnicas de gestão de risco de modo a melhor gerir riscos, reduzir vulnerabilidades, ameaças e aplicar garantias/controlos adequados</string>
+    <string name="uav_class_security_and_risk_topic1">Funções e actividades da segurança: Definição do papel da segurança no negócio</string>
+    <string name="uav_class_security_and_risk_topic2">Funções e actividades da segurança: Caracterização da importância da segurança da informação e a sua diferença face à segurança dos sistemas de informação</string>
+    <string name="uav_class_security_and_risk_topic3">Funções e actividades da segurança: Descrição das actividades associadas com a gestão, administração e controlo de um plano de segurança no âmbito de uma empresa ou de um negócio</string>
+    <string name="uav_class_security_and_risk_topic4">Funções e actividades da segurança: Identificação das várias áreas da segurança que permitem uma abordagem integrada e abrangente da segurança da informação</string>
+    <string name="uav_class_security_and_risk_topic5">Normativos e referenciais de segurança: Normas internacionais que permitem a certificação de um sistema de gestão</string>
+    <string name="uav_class_security_and_risk_topic6">Normativos e referenciais de segurança: Referenciais internacionalmente reconhecidos de apoio à implementação de medidas de segurança</string>
+    <string name="uav_class_security_and_risk_topic7">Riscos de Segurança: Caracterização dos riscos como função de ameaças e vulnerabilidades</string>
+    <string name="uav_class_security_and_risk_topic8">Riscos de Segurança: Identificação e tipificação dos vários tipos de ameaças à segurança da informação</string>
+    <string name="uav_class_security_and_risk_topic9">Riscos de Segurança: Identificação e análise de diferentes tipos de vulnerabilidades de segurança a que é preciso estar atento e evitar</string>
+    <string name="uav_class_security_and_risk_topic10">Riscos de Segurança: Elencagem das falhas de segurança existentes em ambientes empresariais</string>
+    <string name="uav_class_security_and_risk_topic11">Gestão de Risco: Caracterização das actividades que conduzem ao controlo de uma organização no que diz respeito aos riscos</string>
+    <string name="uav_class_security_and_risk_topic12">Gestão de Risco: Identificação das diferenças entre a gestão do risco e a análise do risco</string>
+    <string name="uav_class_security_and_risk_topic13">Gestão de Risco: Elencagem das alternativas de tratamento dos riscos</string>
+    <string name="uav_class_security_and_risk_topic14">Mitigação do risco: Analise das situações de aplicação de medidas técnicas ou administrativas</string>
+    <string name="uav_class_security_and_risk_topic15">Mitigação do risco: Controlos técnicos para mitigação do risco</string>
+    <string name="uav_class_security_and_risk_topic16">Mitigação do risco: Elencagem das técnicas criptográficas e a sua aplicabilidade como controlos de segurança</string>
+    <string name="uav_class_security_and_risk_topic17">Análise de Risco: Técnicas para avaliação do risco numa organização e os custos e benefícios associados a essa aferição</string>
+    <string name="uav_class_security_and_risk_topic18">Análise de Risco: Identificação e descrição de métodos para determinar níveis de relevância em sistemas e processos e aproximações para desenvolver estratégias de recuperação</string>
+    <string name="uav_class_security_and_risk_topic19">Análise de Risco: A metodologia de análise e avaliação de risco FRAAP, desenvolvida por Thomas R. Peltier</string>
+    <string name="uav_class_security_and_risk_topic20">Ferramentas de apoio à Gestão da Segurança: Vantagens da utilização de ferramentas como apoio à gestão do risco</string>
+    <string name="uav_class_security_and_risk_topic21">Ferramentas de apoio à Gestão da Segurança: Ferramentas de procura e análise de vulnerabilidades</string>
+    <string name="uav_class_security_and_risk_topic22">Gestão da Continuidade de Negócio: Identificação e uso das ferramentas, as metodologias e os procedimentos necessários para conceber e concretizar um plano de recuperação de catástrofe e de reactivação do negócio</string>
+    <string name="uav_class_security_and_risk_topic23">Gestão da Continuidade de Negócio: Definição, em termos de gestão, das análises, dos objetivos e das justificações para o esforço de planeamento num ambiente empresarial</string>
+    <string name="uav_class_security_and_risk_topic24">Gestão da Continuidade de Negócio: Análise do Business Impact Analysis como processo de análise dos impactos no negócio</string>
+    <string name="uav_class_security_and_risk_topic25">Gestão da Continuidade de Negócio: Determinação de quais e de que forma os processos/sistemas requerem a continuidade de negócio</string>
+
+    <string name="uav_class_dissertation">Dissertação/Projeto/Estágio</string>
+    <string name="uav_class_dissertation_description">Esta é uma unidade curricular integradora onde os alunos devem demonstrar que têm as
+        competências e os conhecimentos necessários para obter o grau de Mestre em Engenharia Informática. Os objectivos são os seguintes:\n
+        - Aprofundar as capacidades de organização, planificação e gestão do tempo.
+        - Ser capaz de trabalhar de forma autónoma, agir com iniciativa e tomar decisões tendo em vista a
+        concretização dos objectivos definidos no plano de trabalhos.
+        - Ser capaz de aplicar conhecimentos técnicos e metodológicos adquiridos no curso, e de resolver problemas
+        em situações novas e não familiares, bem como em contextos alargados e multidisciplinares.
+        - Ser capaz de apresentar resultados de forma concisa, estruturada e com rigor académico e científico.
+        - Promover o raciocínio crítico e o desenvolvimento da autocrítica.</string>
+    <string name="uav_class_dissertation_topic1">Realização de uma dissertação de natureza científica, de um projeto de engenharia ou de um estágio profissional</string>
 
     <string name="uav_class_"></string>
     <string name="uav_class__description"></string>
