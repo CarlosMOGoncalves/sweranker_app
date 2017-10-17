@@ -18489,59 +18489,622 @@
         </yearly_combinators>
         <university>@string/uminho</university>
         <classes>
+
+            <!-- 1ST YEAR -->
             <class>
                 <id>uminho_miei_c1</id>
-                <name>@string/up_class_discrete_mathematics</name>
+                <name>@string/um_class_algebra</name>
+                <description>@string/um_class_algebra_description</description>
                 <year>1</year>
                 <semester>1</semester>
-                <ects>6</ects>
+                <ects>5</ects>
                 <optional>false</optional>
                 <paths></paths>
                 <mandatoryPaths></mandatoryPaths>
                 <exclusivePath></exclusivePath>
                 <program>
                     <topic>
-                        <id>c1t1</id>
-                        <description>@string/up_class_discrete_mathematics_topic1</description>
+                        <id>c290t1</id>
+                        <description>@string/um_class_algebra_topic1</description>
                     </topic>
                     <topic>
-                        <id>c1t2</id>
-                        <description>@string/up_class_discrete_mathematics_topic2</description>
+                        <id>c290t2</id>
+                        <description>@string/um_class_algebra_topic2</description>
                     </topic>
                     <topic>
-                        <id>c1t3</id>
-                        <description>@string/up_class_discrete_mathematics_topic3</description>
+                        <id>c290t3</id>
+                        <description>@string/um_class_algebra_topic3</description>
                     </topic>
                     <topic>
-                        <id>c1t4</id>
-                        <description>@string/up_class_discrete_mathematics_topic4</description>
+                        <id>c290t4</id>
+                        <description>@string/um_class_algebra_topic4</description>
                     </topic>
                     <topic>
-                        <id>c1t5</id>
-                        <description>@string/up_class_discrete_mathematics_topic5</description>
+                        <id>c290t5</id>
+                        <description>@string/um_class_algebra_topic5</description>
                     </topic>
                     <topic>
-                        <id>c1t6</id>
-                        <description>@string/up_class_discrete_mathematics_topic6</description>
-                    </topic>
-                    <topic>
-                        <id>c1t7</id>
-                        <description>@string/up_class_discrete_mathematics_topic7</description>
-                    </topic>
-                    <topic>
-                        <id>c1t8</id>
-                        <description>@string/up_class_discrete_mathematics_topic8</description>
-                    </topic>
-                    <topic>
-                        <id>c1t9</id>
-                        <description>@string/up_class_discrete_mathematics_topic9</description>
-                    </topic>
-                    <topic>
-                        <id>c1t10</id>
-                        <description>@string/up_class_discrete_mathematics_topic10</description>
+                        <id>c290t6</id>
+                        <description>@string/um_class_algebra_topic6</description>
                     </topic>
                 </program>
             </class>
+            <class>
+                <id>uminho_miei_c2</id>
+                <name>@string/um_class_calculus</name>
+                <description>@string/um_class_calculus_description</description>
+                <year>1</year>
+                <semester>1</semester>
+                <ects>5</ects>
+                <optional>false</optional>
+                <paths></paths>
+                <mandatoryPaths></mandatoryPaths>
+                <exclusivePath></exclusivePath>
+                <program>
+                    <topic>
+                        <id>c291t1</id>
+                        <description>@string/um_class_calculus_topic1</description>
+                    </topic>
+                    <topic>
+                        <id>c291t2</id>
+                        <description>@string/um_class_calculus_topic2</description>
+                    </topic>
+                    <topic>
+                        <id>c291t3</id>
+                        <description>@string/um_class_calculus_topic3</description>
+                    </topic>
+                    <topic>
+                        <id>c291t4</id>
+                        <description>@string/um_class_calculus_topic4</description>
+                    </topic>
+                    <topic>
+                        <id>c291t5</id>
+                        <description>@string/um_class_calculus_topic5</description>
+                    </topic>
+                    <topic>
+                        <id>c291t6</id>
+                        <description>@string/um_class_calculus_topic6</description>
+                    </topic>
+                    <topic>
+                        <id>c291t7</id>
+                        <description>@string/um_class_calculus_topic7</description>
+                    </topic>
+                    <topic>
+                        <id>c291t8</id>
+                        <description>@string/um_class_calculus_topic8</description>
+                    </topic>
+                    <topic>
+                        <id>c291t9</id>
+                        <description>@string/um_class_calculus_topic9</description>
+                    </topic>
+                    <topic>
+                        <id>c291t10</id>
+                        <description>@string/um_class_calculus_topic10</description>
+                    </topic>
+                    <topic>
+                        <id>c291t11</id>
+                        <description>@string/um_class_calculus_topic11</description>
+                    </topic>
+                    <topic>
+                        <id>c291t12</id>
+                        <description>@string/um_class_calculus_topic12</description>
+                    </topic>
+                    <topic>
+                        <id>c291t13</id>
+                        <description>@string/um_class_calculus_topic13</description>
+                    </topic>
+                    <topic>
+                        <id>c291t14</id>
+                        <description>@string/um_class_calculus_topic14</description>
+                    </topic>
+                    <topic>
+                        <id>c291t15</id>
+                        <description>@string/um_class_calculus_topic15</description>
+                    </topic>
+                    <topic>
+                        <id>c291t16</id>
+                        <description>@string/um_class_calculus_topic16</description>
+                    </topic>
+                </program>
+            </class>
+            <class>
+                <id>uminho_miei_c3</id>
+                <name>@string/um_class_discrete_math</name>
+                <description>@string/um_class_discrete_math_description</description>
+                <year>1</year>
+                <semester>1</semester>
+                <ects>5</ects>
+                <optional>false</optional>
+                <paths></paths>
+                <mandatoryPaths></mandatoryPaths>
+                <exclusivePath></exclusivePath>
+                <program>
+                    <topic>
+                        <id>c292t1</id>
+                        <description>@string/um_class_discrete_math_topic1</description>
+                    </topic>
+                    <topic>
+                        <id>c292t2</id>
+                        <description>@string/um_class_discrete_math_topic2</description>
+                    </topic>
+                    <topic>
+                        <id>c292t3</id>
+                        <description>@string/um_class_discrete_math_topic3</description>
+                    </topic>
+                    <topic>
+                        <id>c292t4</id>
+                        <description>@string/um_class_discrete_math_topic4</description>
+                    </topic>
+                    <topic>
+                        <id>c292t5</id>
+                        <description>@string/um_class_discrete_math_topic5</description>
+                    </topic>
+                    <topic>
+                        <id>c292t6</id>
+                        <description>@string/um_class_discrete_math_topic6</description>
+                    </topic>
+                </program>
+            </class>
+            <class>
+                <id>uminho_miei_c4</id>
+                <name>@string/um_class_functional_programming</name>
+                <description>@string/um_class_functional_programming_description</description>
+                <year>1</year>
+                <semester>1</semester>
+                <ects>5</ects>
+                <optional>false</optional>
+                <paths></paths>
+                <mandatoryPaths></mandatoryPaths>
+                <exclusivePath></exclusivePath>
+                <program>
+                    <topic>
+                        <id>c293t1</id>
+                        <description>@string/um_class_functional_programming_topic1</description>
+                    </topic>
+                    <topic>
+                        <id>c293t2</id>
+                        <description>@string/um_class_functional_programming_topic2</description>
+                    </topic>
+                    <topic>
+                        <id>c293t3</id>
+                        <description>@string/um_class_functional_programming_topic3</description>
+                    </topic>
+                    <topic>
+                        <id>c293t4</id>
+                        <description>@string/um_class_functional_programming_topic4</description>
+                    </topic>
+                    <topic>
+                        <id>c293t5</id>
+                        <description>@string/um_class_functional_programming_topic5</description>
+                    </topic>
+                    <topic>
+                        <id>c293t6</id>
+                        <description>@string/um_class_functional_programming_topic6</description>
+                    </topic>
+                    <topic>
+                        <id>c293t7</id>
+                        <description>@string/um_class_functional_programming_topic7</description>
+                    </topic>
+                    <topic>
+                        <id>c293t8</id>
+                        <description>@string/um_class_functional_programming_topic8</description>
+                    </topic>
+                </program>
+            </class>
+            <class>
+                <id>uminho_miei_c5</id>
+                <name>@string/um_class_sys_eng_elements</name>
+                <description>@string/um_class_sys_eng_elements_description</description>
+                <year>1</year>
+                <semester>1</semester>
+                <ects>5</ects>
+                <optional>false</optional>
+                <paths></paths>
+                <mandatoryPaths></mandatoryPaths>
+                <exclusivePath></exclusivePath>
+                <program>
+                    <topic>
+                        <id>c294t1</id>
+                        <description>@string/um_class_sys_eng_elements_topic1</description>
+                    </topic>
+                    <topic>
+                        <id>c294t2</id>
+                        <description>@string/um_class_sys_eng_elements_topic2</description>
+                    </topic>
+                    <topic>
+                        <id>c294t3</id>
+                        <description>@string/um_class_sys_eng_elements_topic3</description>
+                    </topic>
+                    <topic>
+                        <id>c294t4</id>
+                        <description>@string/um_class_sys_eng_elements_topic4</description>
+                    </topic>
+                    <topic>
+                        <id>c294t5</id>
+                        <description>@string/um_class_sys_eng_elements_topic5</description>
+                    </topic>
+                    <topic>
+                        <id>c294t6</id>
+                        <description>@string/um_class_sys_eng_elements_topic6</description>
+                    </topic>
+                </program>
+            </class>
+            <class>
+                <id>uminho_miei_c6</id>
+                <name>@string/um_class_informatics_lab1</name>
+                <description>@string/um_class_informatics_lab1_description</description>
+                <year>1</year>
+                <semester>1</semester>
+                <ects>5</ects>
+                <optional>false</optional>
+                <paths></paths>
+                <mandatoryPaths></mandatoryPaths>
+                <exclusivePath></exclusivePath>
+                <program>
+                    <topic>
+                        <id>c295t1</id>
+                        <description>@string/um_class_informatics_lab1_topic1</description>
+                    </topic>
+                    <topic>
+                        <id>c295t2</id>
+                        <description>@string/um_class_informatics_lab1_topic2</description>
+                    </topic>
+                    <topic>
+                        <id>c295t3</id>
+                        <description>@string/um_class_informatics_lab1_topic3</description>
+                    </topic>
+                    <topic>
+                        <id>c295t4</id>
+                        <description>@string/um_class_informatics_lab1_topic4</description>
+                    </topic>
+                    <topic>
+                        <id>c295t5</id>
+                        <description>@string/um_class_informatics_lab1_topic5</description>
+                    </topic>
+                    <topic>
+                        <id>c295t6</id>
+                        <description>@string/um_class_informatics_lab1_topic6</description>
+                    </topic>
+                    <topic>
+                        <id>c295t7</id>
+                        <description>@string/um_class_informatics_lab1_topic7</description>
+                    </topic>
+                    <topic>
+                        <id>c295t8</id>
+                        <description>@string/um_class_informatics_lab1_topic8</description>
+                    </topic>
+                    <topic>
+                        <id>c295t9</id>
+                        <description>@string/um_class_informatics_lab1_topic9</description>
+                    </topic>
+                    <topic>
+                        <id>c295t10</id>
+                        <description>@string/um_class_informatics_lab1_topic10</description>
+                    </topic>
+                    <topic>
+                        <id>c295t11</id>
+                        <description>@string/um_class_informatics_lab1_topic11</description>
+                    </topic>
+                    <topic>
+                        <id>c295t12</id>
+                        <description>@string/um_class_informatics_lab1_topic12</description>
+                    </topic>
+                    <topic>
+                        <id>c295t13</id>
+                        <description>@string/um_class_informatics_lab1_topic13</description>
+                    </topic>
+                    <topic>
+                        <id>c295t14</id>
+                        <description>@string/um_class_informatics_lab1_topic14</description>
+                    </topic>
+                    <topic>
+                        <id>c295t15</id>
+                        <description>@string/um_class_informatics_lab1_topic15</description>
+                    </topic>
+                    <topic>
+                        <id>c295t16</id>
+                        <description>@string/um_class_informatics_lab1_topic16</description>
+                    </topic>
+                    <topic>
+                        <id>c295t17</id>
+                        <description>@string/um_class_informatics_lab1_topic17</description>
+                    </topic>
+                </program>
+            </class>
+            <class>
+                <id>uminho_miei_c7</id>
+                <name>@string/um_class_computing_sys</name>
+                <description>@string/um_class_computing_sys_description</description>
+                <year>1</year>
+                <semester>2</semester>
+                <ects>5</ects>
+                <optional>false</optional>
+                <paths></paths>
+                <mandatoryPaths></mandatoryPaths>
+                <exclusivePath></exclusivePath>
+                <program>
+                    <topic>
+                        <id>c296t1</id>
+                        <description>@string/um_class_computing_sys_topic1</description>
+                    </topic>
+                    <topic>
+                        <id>c296t2</id>
+                        <description>@string/um_class_computing_sys_topic2</description>
+                    </topic>
+                    <topic>
+                        <id>c296t3</id>
+                        <description>@string/um_class_computing_sys_topic3</description>
+                    </topic>
+                    <topic>
+                        <id>c296t4</id>
+                        <description>@string/um_class_computing_sys_topic4</description>
+                    </topic>
+                    <topic>
+                        <id>c296t5</id>
+                        <description>@string/um_class_computing_sys_topic5</description>
+                    </topic>
+                    <topic>
+                        <id>c296t6</id>
+                        <description>@string/um_class_computing_sys_topic6</description>
+                    </topic>
+                    <topic>
+                        <id>c296t7</id>
+                        <description>@string/um_class_computing_sys_topic7</description>
+                    </topic>
+                    <topic>
+                        <id>c296t8</id>
+                        <description>@string/um_class_computing_sys_topic8</description>
+                    </topic>
+                </program>
+            </class>
+            <class>
+                <id>uminho_miei_c8</id>
+                <name>@string/um_class_analysys</name>
+                <description>@string/um_class_analysys_description</description>
+                <year>1</year>
+                <semester>2</semester>
+                <ects>5</ects>
+                <optional>false</optional>
+                <paths></paths>
+                <mandatoryPaths></mandatoryPaths>
+                <exclusivePath></exclusivePath>
+                <program>
+                    <topic>
+                        <id>c297t1</id>
+                        <description>@string/um_class_analysys_topic1</description>
+                    </topic>
+                    <topic>
+                        <id>c297t2</id>
+                        <description>@string/um_class_analysys_topic2</description>
+                    </topic>
+                    <topic>
+                        <id>c297t3</id>
+                        <description>@string/um_class_analysys_topic3</description>
+                    </topic>
+                    <topic>
+                        <id>c297t4</id>
+                        <description>@string/um_class_analysys_topic4</description>
+                    </topic>
+                    <topic>
+                        <id>c297t5</id>
+                        <description>@string/um_class_analysys_topic5</description>
+                    </topic>
+                    <topic>
+                        <id>c297t6</id>
+                        <description>@string/um_class_analysys_topic6</description>
+                    </topic>
+                    <topic>
+                        <id>c297t7</id>
+                        <description>@string/um_class_analysys_topic7</description>
+                    </topic>
+                    <topic>
+                        <id>c297t8</id>
+                        <description>@string/um_class_analysys_topic8</description>
+                    </topic>
+                    <topic>
+                        <id>c297t9</id>
+                        <description>@string/um_class_analysys_topic9</description>
+                    </topic>
+                    <topic>
+                        <id>c297t10</id>
+                        <description>@string/um_class_analysys_topic10</description>
+                    </topic>
+                    <topic>
+                        <id>c297t11</id>
+                        <description>@string/um_class_analysys_topic11</description>
+                    </topic>
+                    <topic>
+                        <id>c297t12</id>
+                        <description>@string/um_class_analysys_topic12</description>
+                    </topic>
+                </program>
+            </class>
+            <class>
+                <id>uminho_miei_c9</id>
+                <name>@string/um_class_modern_physics</name>
+                <description>@string/um_class_modern_physics_description</description>
+                <year>1</year>
+                <semester>2</semester>
+                <ects>5</ects>
+                <optional>false</optional>
+                <paths></paths>
+                <mandatoryPaths></mandatoryPaths>
+                <exclusivePath></exclusivePath>
+                <program>
+                    <topic>
+                        <id>c298t1</id>
+                        <description>@string/um_class_modern_physics_topic1</description>
+                    </topic>
+                    <topic>
+                        <id>c298t2</id>
+                        <description>@string/um_class_modern_physics_topic2</description>
+                    </topic>
+                    <topic>
+                        <id>c298t3</id>
+                        <description>@string/um_class_modern_physics_topic3</description>
+                    </topic>
+                    <topic>
+                        <id>c298t4</id>
+                        <description>@string/um_class_modern_physics_topic4</description>
+                    </topic>
+                    <topic>
+                        <id>c298t5</id>
+                        <description>@string/um_class_modern_physics_topic5</description>
+                    </topic>
+                    <topic>
+                        <id>c298t6</id>
+                        <description>@string/um_class_modern_physics_topic6</description>
+                    </topic>
+                    <topic>
+                        <id>c298t7</id>
+                        <description>@string/um_class_modern_physics_topic7</description>
+                    </topic>
+                    <topic>
+                        <id>c298t8</id>
+                        <description>@string/um_class_modern_physics_topic8</description>
+                    </topic>
+                    <topic>
+                        <id>c298t9</id>
+                        <description>@string/um_class_modern_physics_topic9</description>
+                    </topic>
+                    <topic>
+                        <id>c298t10</id>
+                        <description>@string/um_class_modern_physics_topic10</description>
+                    </topic>
+                </program>
+            </class>
+            <class>
+                <id>uminho_miei_c10</id>
+                <name>@string/um_class_logic</name>
+                <description>@string/um_class_logic_description</description>
+                <year>1</year>
+                <semester>2</semester>
+                <ects>5</ects>
+                <optional>false</optional>
+                <paths></paths>
+                <mandatoryPaths></mandatoryPaths>
+                <exclusivePath></exclusivePath>
+                <program>
+                    <topic>
+                        <id>c299t1</id>
+                        <description>@string/um_class_logic_topic1</description>
+                    </topic>
+                    <topic>
+                        <id>c299t2</id>
+                        <description>@string/um_class_logic_topic2</description>
+                    </topic>
+                </program>
+            </class>
+            <class>
+                <id>uminho_miei_c11</id>
+                <name>@string/um_class_imperative_programming</name>
+                <description>@string/um_class_imperative_programming_description</description>
+                <year>1</year>
+                <semester>2</semester>
+                <ects>5</ects>
+                <optional>false</optional>
+                <paths></paths>
+                <mandatoryPaths></mandatoryPaths>
+                <exclusivePath></exclusivePath>
+                <program>
+                    <topic>
+                        <id>c300t1</id>
+                        <description>@string/um_class_imperative_programming_topic1</description>
+                    </topic>
+                    <topic>
+                        <id>c300t2</id>
+                        <description>@string/um_class_imperative_programming_topic2</description>
+                    </topic>
+                    <topic>
+                        <id>c300t3</id>
+                        <description>@string/um_class_imperative_programming_topic3</description>
+                    </topic>
+                    <topic>
+                        <id>c300t4</id>
+                        <description>@string/um_class_imperative_programming_topic4</description>
+                    </topic>
+                    <topic>
+                        <id>c300t5</id>
+                        <description>@string/um_class_imperative_programming_topic5</description>
+                    </topic>
+                    <topic>
+                        <id>c300t6</id>
+                        <description>@string/um_class_imperative_programming_topic6</description>
+                    </topic>
+                    <topic>
+                        <id>c300t7</id>
+                        <description>@string/um_class_imperative_programming_topic7</description>
+                    </topic>
+                    <topic>
+                        <id>c300t8</id>
+                        <description>@string/um_class_imperative_programming_topic8</description>
+                    </topic>
+                    <topic>
+                        <id>c300t9</id>
+                        <description>@string/um_class_imperative_programming_topic9</description>
+                    </topic>
+                    <topic>
+                        <id>c300t10</id>
+                        <description>@string/um_class_imperative_programming_topic10</description>
+                    </topic>
+                    <topic>
+                        <id>c300t11</id>
+                        <description>@string/um_class_imperative_programming_topic11</description>
+                    </topic>
+                    <topic>
+                        <id>c300t12</id>
+                        <description>@string/um_class_imperative_programming_topic12</description>
+                    </topic>
+                    <topic>
+                        <id>c300t13</id>
+                        <description>@string/um_class_imperative_programming_topic13</description>
+                    </topic>
+                    <topic>
+                        <id>c300t14</id>
+                        <description>@string/um_class_imperative_programming_topic14</description>
+                    </topic>
+                    <topic>
+                        <id>c300t15</id>
+                        <description>@string/um_class_imperative_programming_topic15</description>
+                    </topic>
+                </program>
+            </class>
+            <class>
+                <id>uminho_miei_c12</id>
+                <name>@string/um_class_informatics_labs2</name>
+                <description>@string/um_class_informatics_labs2_description</description>
+                <year>1</year>
+                <semester>1</semester>
+                <ects>5</ects>
+                <optional>false</optional>
+                <paths></paths>
+                <mandatoryPaths></mandatoryPaths>
+                <exclusivePath></exclusivePath>
+                <program>
+                    <topic>
+                        <id>c301t1</id>
+                        <description>@string/um_class_informatics_labs2_topic1</description>
+                    </topic>
+                    <topic>
+                        <id>c301t2</id>
+                        <description>@string/um_class_informatics_labs2_topic2</description>
+                    </topic>
+                    <topic>
+                        <id>c301t3</id>
+                        <description>@string/um_class_informatics_labs2_topic3</description>
+                    </topic>
+                    <topic>
+                        <id>c301t4</id>
+                        <description>@string/um_class_informatics_labs2_topic4</description>
+                    </topic>
+                    <topic>
+                        <id>c301t5</id>
+                        <description>@string/um_class_informatics_labs2_topic5</description>
+                    </topic>
+                </program>
+            </class>
+
+            <!-- 2ND YEAR -->
             <class>
                 <id>uminho_miei_c18</id>
                 <name>@string/up_class_algorithm_analysis</name>
@@ -18608,6 +19171,8 @@
                     </topic>
                 </program>
             </class>
+
+            <!-- 3RD YEAR -->
             <class>
                 <id>uminho_miei_c26</id>
                 <name>@string/up_class_web_tech</name>
@@ -18658,6 +19223,8 @@
                     </topic>
                 </program>
             </class>
+
+            <!-- 4TH YEAR -->
             <class>
                 <id>uminho_miei_c70</id>
                 <name>@string/up_class_markup_languages</name>
@@ -18696,6 +19263,8 @@
                     </topic>
                 </program>
             </class>
+
+            <!-- 5TH YEAR -->
             <class>
                 <id>uminho_miei_c69</id>
                 <name>@string/up_class_dissertation</name>
@@ -18734,7 +19303,7 @@
                     </topic>
                 </program>
             </class>
+
         </classes>
     </degree>
-
 </degrees>

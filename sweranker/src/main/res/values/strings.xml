@@ -1466,20 +1466,6 @@
 
     <!-- UNIVERSIDADE DO PORTO END -->
 
-    <!-- UNIVERSIDADE DO MINHO START -->
-
-    <string name="uminho_miei">MiEI</string>
-    <string name="uminho_miei_fullname">Mestrado Integrado em Engenharia Informática</string>
-    <string name="uminho_miei_description">O Mestrado Integrado em Engenharia Informática (MiEI) é um curso integrado do primeiro e segundo ciclo de estudos do ensino superior, ministrado na Universidade do Minho, com a duração de 5 anos lectivos, 10 semestres lectivos, a 40 semanas de estudo a tempo inteiro por ano e a um total de 300 ECTS.\n\nO MiEI tem por objectivo preparar engenheiros informáticos, aptos em todas as fases actualmente reconhecidas no rigoroso processo de análise, concepção e implementação de soluções informáticas. Os seus licenciados devem adquirir durante o curso grande experiência teórica e prática na análise de sistemas de software, na especificação dos requisitos desses mesmos sistemas, nas técnicas de construção de protótipos e em todas as fases da sua instalação, na gestão de projectos informáticos, no teste, instalação e manutenção de aplicações informáticas, e, consequentemente, dos sistemas ou redes que as suportam.\n\nO MiEI tem como objectivo básico providenciar durante o curso aos seus alunos a perícia e o conhecimento (teórico e prático) necessários para:\n
-        - a análise e especificação de requisitos de sistemas de software a implementar;\n
-        - a aplicação de técnicas de construção de protótipos;\n
-        - o projecto, concepção, desenvolvimento, teste e manutenção de aplicações informáticas;\n
-        - a implementação de redes de comunicação por computador e infra-estruturas de suporte;\n
-        - a gestão e implementação de projectos informáticos, incluindo o projecto e implementação de sistemas de computação.\n\nComo futuros engenheiros deverão, também, ter sempre a preocupação do rigor, quer na execução quer na gestão do projecto, avaliando a sua qualidade, custos e impacto económico, bem como nas preocupações de implementação dos seus produtos nas organizações destino.</string>
-    <string name="uminho">Universidade do Minho</string>
-
-    <!-- UNIVERSIDADE DO MINHO END -->
-
     <!-- UNIVERSIDADE DE COIMBRA START -->
 
     <string name="uc_mei">LEI + MEI</string>
@@ -5483,30 +5469,281 @@ Os estudantes deverão ainda desenvolver competências em análise e síntese, r
         - Promover o raciocínio crítico e o desenvolvimento da autocrítica.</string>
     <string name="uav_class_dissertation_topic1">Realização de uma dissertação de natureza científica, de um projeto de engenharia ou de um estágio profissional</string>
 
-    <string name="uav_class_"></string>
-    <string name="uav_class__description"></string>
-    <string name="uav_class__topic1"></string>
-    <string name="uav_class__topic2"></string>
-    <string name="uav_class__topic3"></string>
-    <string name="uav_class__topic4"></string>
-    <string name="uav_class__topic5"></string>
-    <string name="uav_class__topic6"></string>
-    <string name="uav_class__topic7"></string>
-    <string name="uav_class__topic8"></string>
-    <string name="uav_class__topic9"></string>
-    <string name="uav_class__topic10"></string>
-    <string name="uav_class__topic11"></string>
-    <string name="uav_class__topic12"></string>
-    <string name="uav_class__topic13"></string>
-    <string name="uav_class__topic14"></string>
-    <string name="uav_class__topic15"></string>
-    <string name="uav_class__topic16"></string>
-    <string name="uav_class__topic17"></string>
-    <string name="uav_class__topic18"></string>
-    <string name="uav_class__topic19"></string>
-    <string name="uav_class__topic20"></string>
-
-
     <!-- UNIVERSIDADE DE AVEIRO END-->
+
+    <!-- UNIVERSIDADE DO MINHO START -->
+
+    <string name="uminho_miei">MiEI</string>
+    <string name="uminho_miei_fullname">Mestrado Integrado em Engenharia Informática</string>
+    <string name="uminho_miei_description">O Mestrado Integrado em Engenharia Informática (MiEI) é um curso integrado do primeiro e segundo
+        ciclo de estudos do ensino superior, ministrado na Universidade do Minho, com a duração de 5 anos lectivos, 10 semestres lectivos,
+        a 40 semanas de estudo a tempo inteiro por ano e a um total de 300 ECTS.\n\nO MiEI tem por objectivo preparar engenheiros
+        informáticos, aptos em todas as fases actualmente reconhecidas no rigoroso processo de análise, concepção e implementação
+        de soluções informáticas. Os seus licenciados devem adquirir durante o curso grande experiência teórica e prática
+        na análise de sistemas de software, na especificação dos requisitos desses mesmos sistemas, nas técnicas de
+        construção de protótipos e em todas as fases da sua instalação, na gestão de projectos informáticos, no teste,
+        instalação e manutenção de aplicações informáticas, e, consequentemente, dos sistemas ou redes que as suportam.\n\n
+        O MiEI tem como objectivo básico providenciar durante o curso aos seus alunos a perícia e o conhecimento
+        (teórico e prático) necessários para:\n
+        - a análise e especificação de requisitos de sistemas de software a implementar;\n
+        - a aplicação de técnicas de construção de protótipos;\n
+        - o projecto, concepção, desenvolvimento, teste e manutenção de aplicações informáticas;\n
+        - a implementação de redes de comunicação por computador e infra-estruturas de suporte;\n
+        - a gestão e implementação de projectos informáticos, incluindo o projecto e implementação de sistemas de computação.\n\nComo futuros engenheiros deverão, também, ter sempre a preocupação do rigor, quer na execução quer na gestão do projecto, avaliando a sua qualidade, custos e impacto económico, bem como nas preocupações de implementação dos seus produtos nas organizações destino.</string>
+    <string name="uminho">Universidade do Minho</string>
+
+    <string name="um_class_algebra">Álgebra Linear</string>
+    <string name="um_class_algebra_description">Pretende-se que o estudante adquira:\n
+        - conhecimentos básicos de Álgebra Linear;\n
+        - capacidade de aplicar os conhecimentos adquiridos em diversos contextos;\n
+        - aptidões de cálculo e raciocínio matemáticos de modo a construir argumentos rigorosos;\n
+        - capacidade de comunicar, por escrito e oralmente, em linguagem matemática;\n
+        - capacidade de trabalhar em grupo;\n
+        - capacidade de aprender de modo autónomo.</string>
+    <string name="um_class_algebra_topic1">Matrizes</string>
+    <string name="um_class_algebra_topic2">Determinantes</string>
+    <string name="um_class_algebra_topic3">Sistemas de Equações</string>
+    <string name="um_class_algebra_topic4">Espaços Vectoriais Reais</string>
+    <string name="um_class_algebra_topic5">Valores e Vectores Próprios</string>
+    <string name="um_class_algebra_topic6">Aplicações Lineares</string>
+
+    <string name="um_class_calculus">Cálculo</string>
+    <string name="um_class_calculus_description">No final do semestre os alunos deverão ser capazes de:\n
+        - aplicar resultados de continuidade e diferenciabilidade ao estudo das propriedades e ao esboço dos
+        gráficos de funções reais de variável real;\n
+        - calcular primitivas de funções aplicando as técnicas apresentadas;\n
+        - aplicar o conceito de integral ao áreas e de comprimento de curvas. Reconhecer e calcular
+        integrais impróprios;\n
+        - interpretar e aplicar critérios de convergência de séries numéricas;\n
+        - analisar em que condições uma série de potências define uma função e estabelecer algumas das suas
+        propriedades.</string>
+    <string name="um_class_calculus_topic1">Funções reais de variável real</string>
+    <string name="um_class_calculus_topic2">Generalidades sobre funções. Extremos relativos e absolutos.</string>
+    <string name="um_class_calculus_topic3">Limites e continuidade. Função composta e função inversa.</string>
+    <string name="um_class_calculus_topic4">Funções trigonométricas e hiperbólicas e suas inversas</string>
+    <string name="um_class_calculus_topic5">Derivada de uma função; interpretação geométrica.</string>
+    <string name="um_class_calculus_topic6">Polinómio de Taylor. Regra de L\'Hôpital</string>
+    <string name="um_class_calculus_topic7">Primitivas: Definição e propriedades.</string>
+    <string name="um_class_calculus_topic8">Integrais indefinidos. Integração imediata, por partes e por substituição.</string>
+    <string name="um_class_calculus_topic9">Integração de funções racionais</string>
+    <string name="um_class_calculus_topic10">Integral de Riemann: Definição e propriedades</string>
+    <string name="um_class_calculus_topic11">Teoremas fundamentais do cálculo e aplicações ao áreas e de comprimento de curvas</string>
+    <string name="um_class_calculus_topic12">Integrais impróprios</string>
+    <string name="um_class_calculus_topic13">Séries numéricas: Definição e propriedades</string>
+    <string name="um_class_calculus_topic14">Convergência de séries e critérios de convergência</string>
+    <string name="um_class_calculus_topic15">Séries de potências: Definição e propriedades</string>
+    <string name="um_class_calculus_topic16">Raio e intervalo de convergência e Série de Taylor</string>
+
+    <string name="um_class_discrete_math">Tópicos de Matemática Discreta</string>
+    <string name="um_class_discrete_math_description">Transmissão de conhecimentos específicos: cálculo proposicional, indução nos naturais, teoria de
+        conjuntos, relações binárias, conjuntos finitos e infinitos.
+        Contribuição para a aquisição de um conjunto de competências:\n
+        - capacidade de assimilar informação e de a comunicar;\n
+        - capacidade de construir argumentos rigorosos, recorrendo ao raciocínio matemático;\n
+        - capacidade de expressão escrita e oral;\n
+        - capacidade de aprendizagem independente.</string>
+    <string name="um_class_discrete_math_topic1">Noções Básicas de Lógica</string>
+    <string name="um_class_discrete_math_topic2">Teoria Elementar de Conjuntos</string>
+    <string name="um_class_discrete_math_topic3">Indução natural</string>
+    <string name="um_class_discrete_math_topic4">Funções</string>
+    <string name="um_class_discrete_math_topic5">Relações binárias</string>
+    <string name="um_class_discrete_math_topic6">Grafos</string>
+
+    <string name="um_class_functional_programming">Programação Funcional</string>
+    <string name="um_class_functional_programming_description">No final desta unidade curricular o aluno deverá ser
+        capaz de programar dentro do paradigma funcional, tendo por base a linguagem Haskell. Nomeadamente:\n
+        - Escrever programas em Haskell.\n
+        - Definir tipos indutivos e codificar funções recursivas.\n
+        - Definir tipos algébricos para modelar problemas, e programar com esses tipos.\n
+        - Compreender a noção de tipo principal e de polimorfismo.\n
+        - Usar funções de ordem superior.</string>
+    <string name="um_class_functional_programming_topic1">O paradigma funcional da computação</string>
+    <string name="um_class_functional_programming_topic2">A linguagem de programação Haskell</string>
+    <string name="um_class_functional_programming_topic3">Expressões, valores e redução</string>
+    <string name="um_class_functional_programming_topic4">Tipos básicos, tipos algébricos, indução e recursividade</string>
+    <string name="um_class_functional_programming_topic5">Programação funcional de ordem superior</string>
+    <string name="um_class_functional_programming_topic6">Polimorfismo, classes, tipos principais</string>
+    <string name="um_class_functional_programming_topic7">Modularidade</string>
+    <string name="um_class_functional_programming_topic8">Monads</string>
+
+    <string name="um_class_sys_eng_elements">Elementos de Engenharia de Sistemas</string>
+    <string name="um_class_sys_eng_elements_description">O principal objectivo desta UC é introduzir a área a
+        Engenharia de Sistemas através da sua caracterização, metodologia e ferramentas representativas.
+        Dentro destas últimas são abordados modelos de simulação, de filas de espera e de optimização de
+        sistemas em rede. Os resultados de aprendizagem são:\n
+        - Identificar sistemas onde modelos de simulação, filas de espera e de optimização,
+        podem ser utilizados na definição da sua configuração ou no melhoramento do seu desempenho.\n
+        - Obter e interpretar as principais medidas de desempenho de um sistema de filas de espera
+        de Markov dadas as taxas de chegada e de serviço.\n
+        - Utilizar modelos de rede para representar e optimizar problemas reais.\n
+        - Obter soluções óptimas através da utilização de software em modelos referidos
+        no ponto anterior.\n
+        - Obter soluções aproximadas através da aplicação manual de algoritmos adequados
+        em problemas de redes de pequena dimensão.</string>
+    <string name="um_class_sys_eng_elements_topic1">Introdução a Sistemas</string>
+    <string name="um_class_sys_eng_elements_topic2">Modelação de Sistemas</string>
+    <string name="um_class_sys_eng_elements_topic3">Modelos de Simulação</string>
+    <string name="um_class_sys_eng_elements_topic4">Tópicos elementares sobre Teoria das Filas de Espera</string>
+    <string name="um_class_sys_eng_elements_topic5">Modelação e optimização de sistemas em rede</string>
+    <string name="um_class_sys_eng_elements_topic6">Aplicações e utilização de software (Arena, folhas de cálculo e solvers de programação linear em folhas de cálculo)</string>
+
+    <string name="um_class_informatics_lab1">Laboratórios de Informática I</string>
+    <string name="um_class_informatics_lab1_description">Aprendizagem prática de conceitos básicos de programação.
+        Ciclo edição/compilação/teste. Programação na shell de um sistema operativo. Contacto com um sistema
+        para produção de documentação de qualidade. Prática em desenvolvimento de projectos de software em grupo.</string>
+    <string name="um_class_informatics_lab1_topic1">O Unix como iniciação prática aos sistemas operativos</string>
+    <string name="um_class_informatics_lab1_topic2">Sistema de ficheiros, "kernel" e "shell"</string>
+    <string name="um_class_informatics_lab1_topic3">Interpretação de comandos</string>
+    <string name="um_class_informatics_lab1_topic4">Pipes, entrada, saída e redireccionamento</string>
+    <string name="um_class_informatics_lab1_topic5">Padrões (wildcards)</string>
+    <string name="um_class_informatics_lab1_topic6">Processos</string>
+    <string name="um_class_informatics_lab1_topic7">Estudo do repertório dos principais comandos da "shell"</string>
+    <string name="um_class_informatics_lab1_topic8">LaTeX: Utilização do sistema LaTeX para elaboração de relatórios técnicos de qualidade</string>
+    <string name="um_class_informatics_lab1_topic9">Linguagens de "mark-up" por oposição a "what you see is what you get"</string>
+    <string name="um_class_informatics_lab1_topic10">Separação entre texto fonte e texto impresso</string>
+    <string name="um_class_informatics_lab1_topic11">Estrutura do documento fonte</string>
+    <string name="um_class_informatics_lab1_topic12">Formatação de texto: geração da impressão a partir da fonte</string>
+    <string name="um_class_informatics_lab1_topic13">Ambientes, macros e seu sabor funcional</string>
+    <string name="um_class_informatics_lab1_topic14">Os ambientes itemize, enumerate, description e verbatim</string>
+    <string name="um_class_informatics_lab1_topic15">Índices. Referências cruzadas, tabelas, imagens e corpos flutuantes.</string>
+    <string name="um_class_informatics_lab1_topic16">Listas de tabelas e de figuras. Escrita de formulas matemáticas. O BibTeX.</string>
+    <string name="um_class_informatics_lab1_topic17">Projecto: programação na linguagem funcional Haskell através da realização de um projecto em grupo de pequena dimensão</string>
+
+    <string name="um_class_computing_sys">Sistemas de Computação</string>
+    <string name="um_class_computing_sys_description">Ao completar com sucesso a UC cada estudante deverá demonstrar que
+        adquiriu os seguintes conhecimentos, capacidades e aptidões:\n
+        - reconhecer e discutir a organização e arquitetura dum computador e sua evolução;\n
+        - reconhecer e interpretar as principais características da arquitetura de um instraction set;\n
+        - examinar e modificar a funcionalidade de programas imperativos (tipo C), com recurso ao assembly e
+        linguagem máquina;\n
+        - aplicar e experimentar técnicas com impacto no desempenho na execução de código;\n
+        - utilizar e analisar ferramentas de compilação de programas, e análise e teste de
+        baixo nível de código (em Unix/Linux);\n
+        - aptidões transversais, nomeadamente a capacidade de raciocínio na resolução de problemas
+        e a capacidade de comunicação escrita e oral.</string>
+    <string name="um_class_computing_sys_topic1">Organização e estrutura de um computador</string>
+    <string name="um_class_computing_sys_topic2">Representação de informação numérica num computador (inteiros e reais)</string>
+    <string name="um_class_computing_sys_topic3">Análise da arquitectura do instruction set (ISA) de um processador genérico</string>
+    <string name="um_class_computing_sys_topic4">Nível ISA do Intel IA-32 em Unix/Linux</string>
+    <string name="um_class_computing_sys_topic5">Avaliação do desempenho de computadores</string>
+    <string name="um_class_computing_sys_topic6">Principais factores com impacto no desempenho: paralelismo ao nível da instrução</string>
+    <string name="um_class_computing_sys_topic7">Principais factores com impacto no desempenho: hierarquia de memória</string>
+    <string name="um_class_computing_sys_topic8">Principais factores com impacto no desempenho: organização multi-core</string>
+
+    <string name="um_class_analysys">Análise</string>
+    <string name="um_class_analysys_description">No final do semestre os alunos deverão ser capazes de:\n
+        - interpretar as noções de continuidade, de derivabilidade direcional e global;\n
+        - determinar e classificar extremos livres e condicionados de funções reais de várias variáveis reais;\n
+        - interpretar a noção de integrabilidade de uma função real sobre um subconjunto de R^n;\n
+        - calcular e interpretar integrais múltiplos, de linha e de superfície.</string>
+    <string name="um_class_analysys_topic1">Funções vectoriais de variável real: Limites e continuidade</string>
+    <string name="um_class_analysys_topic2">Funções vectoriais de variável real: Derivadas</string>
+    <string name="um_class_analysys_topic3">Funções vectoriais de variável real: Curvas em R^2 e em R^3 e suas parametrizações</string>
+    <string name="um_class_analysys_topic4">Funções vectoriais de variável real: Trajetória de uma partícula em movimento - velocidade e aceleração</string>
+    <string name="um_class_analysys_topic5">Funções reais de várias variáveis reais: Domínios, gráficos e conjuntos de nível</string>
+    <string name="um_class_analysys_topic6">Funções reais de várias variáveis reais: Limites e continuidade</string>
+    <string name="um_class_analysys_topic7">Funções reais de várias variáveis reais: Derivadas parciais, derivadas direccionais e derivada da função composta</string>
+    <string name="um_class_analysys_topic8">Funções reais de várias variáveis reais: Polinómio de Taylor</string>
+    <string name="um_class_analysys_topic9">Funções reais de várias variáveis reais: Máximos e mínimos locais e condicionados</string>
+    <string name="um_class_analysys_topic10">Integrais múltiplos: Áreas, volumes e mudanças de coordenadas</string>
+    <string name="um_class_analysys_topic11">Integrais múltiplos: Integrais de linha e de superfície</string>
+    <string name="um_class_analysys_topic12">Integrais múltiplos: Teoremas da análise vectorial</string>
+
+    <string name="um_class_modern_physics">Tópicos de Física Moderna</string>
+    <string name="um_class_modern_physics_description">Conhecer a relatividade de Einstein aplicando-a a problemas concretos.
+        Descrever matematicamente ondas mecânicas e ondas eletromagnéticas e aplicar os conceitos de reflexão,
+        refracção, polarização, interferência e difracção da radiação electromagnética.
+        Reconhecer a natureza corpuscular da radiação e a existência de níveis de energia discretos na matéria.
+        Conhecer e aplicar os diversos modelos atómicos.
+        Reconhecer o dualismo onda-corpúsculo quer para a radiação quer para as partículas.
+        Interpretar o princípio de incerteza de Heisenberg e os fundamentos da Física Quântica interpretando a
+        equação de Schrodinger.
+        Compreender os fundamentos da estrutura atómica e molecular à luz da Mecânica Quântica.
+        Conhecer a estrutura nuclear e aplicar os conceitos associados à radioactividade.
+        Compreender os efeitos nocivos da radiação ionizante.
+        Adquirir conhecimentos básicos sobre as partículas elementares e as interações fundamentais na
+        natureza. Interpretar o modelo padrão.</string>
+    <string name="um_class_modern_physics_topic1">Relatividade Restrita</string>
+    <string name="um_class_modern_physics_topic2">Movimentos ondulatórios e radiação electromagética. O espectro eletromagnético.</string>
+    <string name="um_class_modern_physics_topic3">A física pré-quântica: efeito foto-elétrico, radiação do corpo negro, efeito de Compton, o fotão</string>
+    <string name="um_class_modern_physics_topic4">O dualismo onda-corpúsculo para a radiação</string>
+    <string name="um_class_modern_physics_topic5">Modelos atómicos; modelo atómico de Bohr; séries espectrais; a experiência de Franck-Hertz.</string>
+    <string name="um_class_modern_physics_topic6">Fundamentos da Física Quântica : equação de onda de Schrödinger, a estrutura atómica à luz da Mecânica Quântica</string>
+    <string name="um_class_modern_physics_topic7">Fundamentos da Física Quântica : os números quânticos e a sua interpretação</string>
+    <string name="um_class_modern_physics_topic8">Fundamentos da Física Quântica : transições electrónicas, vibracionais e rotacionais</string>
+    <string name="um_class_modern_physics_topic9">O núcleo atómico; desintegrações radioativas; reações nucleares; conservação de energia</string>
+    <string name="um_class_modern_physics_topic10">Física das partículas; partículas elementares; interações fundamentais. O modelo padrão.</string>
+
+    <string name="um_class_logic">Lógica</string>
+    <string name="um_class_logic_description">No final do semestre o aluno deve ter capacidade para:\n
+        1) definir funções por recursão estrutural e fazer demonstrações por indução estrutural;\n
+        2) manipular a sintaxe formal do Cálculo Proposicional e do Predicados de 1ª Ordem da Lógica Clássica;\n
+        3) usar fórmulas da Lógica de 1ª Ordem para representar frases em linguagem natural;\n
+        4) dar significado a fórmulas e decidir o seu valor lógico, no contexto de uma interpretação;\n
+        5) compreender e construir demonstrações formais em dedução natural;\n
+        6) conhecer algumas das consequências dos Teoremas da Correção e da Completude.</string>
+    <string name="um_class_logic_topic1">Lógica Proposicional: Sintaxe, Semântica e Sistemas Dedutivos</string>
+    <string name="um_class_logic_topic2">Lógica de 1ª ordem: Sintaxe, Semântica e Sistemas Dedutivos</string>
+
+    <string name="um_class_imperative_programming">Programação Imperativa</string>
+    <string name="um_class_imperative_programming_description">No fim da disciplina, o aluno deverá ser capaz de: \n
+        - bresolver problemas decompondo-os em problemas mais pequenos e especificando algoritmos para cada um destes;\n
+        - resolver problemas envolvendo cálculo numérico, manipulação de strings, manipulação de ficheiros,
+        armazenamento de informação e processamento de estruturas de dados (listas e árvores binárias);\n
+        - codificar qualquer algoritmo na linguagem de programação C.</string>
+    <string name="um_class_imperative_programming_topic1">Programação Imperativa: objectivos, dificuldades e etapas</string>
+    <string name="um_class_imperative_programming_topic2">Análise Descendente de problemas</string>
+    <string name="um_class_imperative_programming_topic3">Noção de Algoritmo: Linguagem Algorítmica através de problemas e exemplos típicos</string>
+    <string name="um_class_imperative_programming_topic4">Linguagem de programação "C": Filosofia e historial</string>
+    <string name="um_class_imperative_programming_topic5">Linguagem de programação "C": Representação da Informação tipos de dados</string>
+    <string name="um_class_imperative_programming_topic6">Linguagem de programação "C": Instruções simples e estruturas de controlo</string>
+    <string name="um_class_imperative_programming_topic7">Linguagem de programação "C": Acesso e armazenamento de informação em memória secundária - manipulação de ficheiros</string>
+    <string name="um_class_imperative_programming_topic8">Linguagem de programação "C": Introdução ao polimorfismo, registos variantes e apontadores para funções</string>
+    <string name="um_class_imperative_programming_topic9">Algoritmos de Pesquisa e Ordenação</string>
+    <string name="um_class_imperative_programming_topic10">Recursividade: Adequação da recursividade ao problema a resolver</string>
+    <string name="um_class_imperative_programming_topic11">Recursividade: Implementação de alguns casos matemáticos de natureza recursiva</string>
+    <string name="um_class_imperative_programming_topic12">Recursividade: Resolução de problemas "try-and-error"</string>
+    <string name="um_class_imperative_programming_topic13">Estruturas de Dados: Listas --- caso geral, Stacks e Queues</string>
+    <string name="um_class_imperative_programming_topic14">Funções Finitas</string>
+    <string name="um_class_imperative_programming_topic15">Estruturas de dados dinâmicas: apontadores, listas e árvores</string>
+
+    <string name="um_class_informatics_labs2">Laboratórios de Informática II</string>
+    <string name="um_class_informatics_labs2_description">O conhecimento e a capacidade de codificar algoritmos e estruturas de
+        dados numa linguagem de programação imperativa:\n
+        - a capacidade de gerar, executar e testar programas codificados em C, usando um conjunto adequado de utilitários\n
+        - o conhecimento e a capacidade de analisar a execução de programas numa dada arquitectura, e as aptidões de
+        desenvolver e aplicar testes de conformidade em situações de fronteira\n
+        - a aptidão para analisar código em assembly e utilizar ferramentas de depuração de programas\n
+        - as capacidades e aptidões para descrever, aplicar e avaliar técnicas de optimização de desempenho\n
+        - a capacidade trabalhar em equipa e de desenvolver algoritmos para resolver problemas</string>
+    <string name="um_class_informatics_labs2_topic1">Linguagem C: Variáveis</string>
+    <string name="um_class_informatics_labs2_topic2">Linguagem C: Vectores e matrizes</string>
+    <string name="um_class_informatics_labs2_topic3">Linguagem C: Ordenação</string>
+    <string name="um_class_informatics_labs2_topic4">Linguagem C: Estruturas de dados dinâmicas (listas, stacks, queues, árvores binárias de procura)</string>
+    <string name="um_class_informatics_labs2_topic5">Linguagem C: Monitorização e optimização de código</string>
+
+    <string name="um_class_"></string>
+    <string name="um_class__description"></string>
+    <string name="um_class__topic1"></string>
+    <string name="um_class__topic2"></string>
+    <string name="um_class__topic3"></string>
+    <string name="um_class__topic4"></string>
+    <string name="um_class__topic5"></string>
+    <string name="um_class__topic6"></string>
+    <string name="um_class__topic7"></string>
+    <string name="um_class__topic8"></string>
+    <string name="um_class__topic9"></string>
+    <string name="um_class__topic10"></string>
+    <string name="um_class__topic11"></string>
+    <string name="um_class__topic12"></string>
+    <string name="um_class__topic13"></string>
+    <string name="um_class__topic14"></string>
+    <string name="um_class__topic15"></string>
+    <string name="um_class__topic16"></string>
+    <string name="um_class__topic17"></string>
+    <string name="um_class__topic18"></string>
+    <string name="um_class__topic19"></string>
+    <string name="um_class__topic20"></string>
+    <!-- UNIVERSIDADE DO MINHO END -->
 
 </resources>
