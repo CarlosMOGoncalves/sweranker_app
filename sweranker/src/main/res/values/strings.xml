@@ -5952,6 +5952,240 @@ Os estudantes deverão ainda desenvolver competências em análise e síntese, r
     <string name="um_class_informatics_labs3_topic6">Persistência simples de dados em Java (ObjectStreams)</string>
     <string name="um_class_informatics_labs3_topic7">Realização do 2º projeto (em Java)</string>
 
+    <string name="um_class_databases">Bases de Dados</string>
+    <string name="um_class_databases_description">1) Distinguir dados, informação e conhecimento.\n
+        2) Compreender e aplicar as formas normais e definir conceptualmente o modelo de dados para um
+        problema específico.\n
+        3) Escrever interrogações de bases de dados relacionais usando a álgebra relacional\n
+        4) Utilizar a linguagem SQL para administrar, manter e interrogar bases de dados relacionais.\n
+        5) Desenvolver aplicações informáticas que operem sobre bases de dados, incluindo aplicações baseadas
+        na Web.</string>
+    <string name="um_class_databases_topic1">Sistemas de informação e bases de dados</string>
+    <string name="um_class_databases_topic2">A linguagem estruturada de interrogação SQL</string>
+    <string name="um_class_databases_topic3">Bases de dados distribuídas</string>
+    <string name="um_class_databases_topic4">Bases de Dados Dedutivas ou Lógicas</string>
+    <string name="um_class_databases_topic5">Optimização de interrogações e avaliação do desempenho</string>
+    <string name="um_class_databases_topic6">Sistemas Gestores de Bases de Dados</string>
+
+    <string name="um_class_software_sys">Desenvolvimento de Sistemas Software</string>
+    <string name="um_class_software_sys_description">Os alunos deverão ser capazes de:\n
+        - Reconhecer os diferentes tipos de diagramas da UML ;\n
+        - Compreender modelos (de requisitos/estruturais/comportamentais) descritos em UML;\n
+        - Conceber sistemas de software utilizando UML;\n
+        - Implementar sistemas de software a partir de modelos UML.</string>
+    <string name="um_class_software_sys_topic1">Introdução aos Sistemas de Software: definição</string>
+    <string name="um_class_software_sys_topic2">Introdução aos Sistemas de Software: modelos</string>
+    <string name="um_class_software_sys_topic3">Introdução aos Sistemas de Software: processo de desenvolvimento de software</string>
+    <string name="um_class_software_sys_topic4">Modelação em UML: Introdução à Unified Modelling Language (UML)</string>
+    <string name="um_class_software_sys_topic5">Modelação em UML: Modelação Estrutural</string>
+    <string name="um_class_software_sys_topic6">Modelação em UML: Modelação Comportamental</string>
+    <string name="um_class_software_sys_topic7">Modelação em UML: Modelação Arquitectural</string>
+    <string name="um_class_software_sys_topic8">Modelação em UML: Estudos de Casos</string>
+
+    <string name="um_class_determi_models">Modelos Determinísticos de Investigação Operacional</string>
+    <string name="um_class_determi_models_description">Desenvolver a capacidade de resolução de problemas (modelos determinísticos), com ênfase em
+        problemas de engenharia de sistemas.\n
+        - Conhecer as técnicas e os métodos de Investigação Operacional apresentados na Unidade Curricular, e
+        ser capaz de os aplicar na resolução de instâncias de problemas de pequena dimensão.\n
+        -  Desenvolver a capacidade de analisar sistemas complexos, de criar modelos para os descrever, de obter
+        soluções para esses modelos utilizando programas computacionais adequados, de validar os modelos
+        obtidos, de interpretar as soluções obtidas, e de elaborar recomendações para o sistema em análise.\n
+        - Compreender a importância da avaliação das soluções, e ser capaz de realizar análises de sensibilidade.</string>
+    <string name="um_class_determi_models_topic1">Metodologia da Investigação Operacional</string>
+    <string name="um_class_determi_models_topic2">Modelos e sua estrutura</string>
+    <string name="um_class_determi_models_topic3">Disponibilidade de dados</string>
+    <string name="um_class_determi_models_topic4">Óptimo e Função Objectivo</string>
+    <string name="um_class_determi_models_topic5">Resolução e Validação de Modelos</string>
+    <string name="um_class_determi_models_topic6">Programação Linear: Aspectos geométricos, Método Simplex, Método do M e Técnica das Duas Fases.</string>
+    <string name="um_class_determi_models_topic7">Programação Linear Avançada: Teoremas da Programação Linear e Análise de Sensibilidade</string>
+    <string name="um_class_determi_models_topic8">Programação Linear Avançada: Preço Sombra, Teoria da Dualidade e Método Simplex-Dual.</string>
+    <string name="um_class_determi_models_topic9">Programação Inteira: Método Partição e Avaliação, Planos de Corte Fraccional e Mistos.</string>
+    <string name="um_class_determi_models_topic10">Programação Inteira: Modelos de Programação Inteira, Custo Fixo</string>
+    <string name="um_class_determi_models_topic11">Programação Inteira: Planeamento da Produção, Dicotomias, Dimensão de Lote</string>
+    <string name="um_class_determi_models_topic12">Programação Inteira: Modelos de Fluxo em Rede e Análise de Optimabilidade</string>
+    <string name="um_class_determi_models_topic13">Programação Inteira: Método dos Multiplicadores e Transporte com Limites Superiores.</string>
+    <string name="um_class_determi_models_topic14">Gestão de Projectos: Representação de projectos, redes de actividades, diagramas de Gantt, CPM</string>
+    <string name="um_class_determi_models_topic15">Programação Dinâmica: Definições e terminologia, Relação de Recorrência.</string>
+    <string name="um_class_determi_models_topic16">Programação Dinâmica: Condições de Validade (separabilidade e optimalidade)</string>
+    <string name="um_class_determi_models_topic17">Programação Dinâmica: Contribuições aditivas, multiplicativas e maximin</string>
+    <string name="um_class_determi_models_topic18">Programação Dinâmica: Carga computacional</string>
+
+    <string name="um_class_distributed_sys">Sistemas Distribuídos</string>
+    <string name="um_class_distributed_sys_description">a) Conhecer as características, virtudes, limitações e aplicabilidade do modelo de memória partilhada;\n
+        b) conhecer e saber analisar os vários problemas decorrentes da programação com processos concorrentes;\n
+        c) conhecer e saber aplicar vários tipos de primitivas de controlo de concorrência em sistemas de memória partilhada;\n
+        d) Conhecer as características, virtudes, limitações e aplicabilidade dos modelos e arquitecturas de sistemas distribuídos;\n
+        f) saber resolver problemas clássicos de coordenação em sistemas distribuídos.</string>
+    <string name="um_class_distributed_sys_topic1">Introdução a processos</string>
+    <string name="um_class_distributed_sys_topic2">Concorrência e sistemas distribuídos</string>
+    <string name="um_class_distributed_sys_topic3">Concorrência em memória partilhada</string>
+    <string name="um_class_distributed_sys_topic4">Passagem de mensagens e sistemas distribuídos</string>
+    <string name="um_class_distributed_sys_topic5">Algoritmos distribuídos</string>
+
+    <string name="um_class_computer_networks">Redes de Computadores</string>
+    <string name="um_class_computer_networks_description">Como resultado da aprendizagem, espera-se que os alunos devam ser capazes de:\n
+        - Discutir os conceitos fundamentais sobre comunicação de dados, protocolos de comunicação, famílias
+        de protocolos e sua arquitectura, incluindo os elementos protocolares mais comuns;\n
+        - Analisar e instanciar esses conceitos, em especial, no nível de ligação de dados;\n
+        - Ter uma visão global e crítica sobre as redes locais de computadores e do seu funcionamento;\n
+        - Explicar em detalhe as principais funções do protocolo IP;\n
+        - Saber implementar soluções concretas do estabelecimento de uma rede local IP, planeando também o
+        seu esquema de endereçamento e encaminhamento.</string>
+    <string name="um_class_computer_networks_topic1">Introdução à comunicação de dados: Transmissão assíncrona e síncrona</string>
+    <string name="um_class_computer_networks_topic2">Introdução à comunicação de dados: Protocolos de comunicação e funções protocolares</string>
+    <string name="um_class_computer_networks_topic3">Introdução à comunicação de dados: Modelo de referência protocolar OSI</string>
+    <string name="um_class_computer_networks_topic4">Introdução à comunicação de dados: Modelo TCP/IP</string>
+    <string name="um_class_computer_networks_topic5">Elementos de protocolos: Controlo de uma ligação de dados</string>
+    <string name="um_class_computer_networks_topic6">Elementos de protocolos: Topologias e disciplinas não contenciosas</string>
+    <string name="um_class_computer_networks_topic7">Elementos de protocolos: Endereçamento e controlo de fluxo</string>
+    <string name="um_class_computer_networks_topic8">Elementos de protocolos: Controlo de erros ARQ</string>
+    <string name="um_class_computer_networks_topic9">Elementos de protocolos: Análise de desempenho</string>
+    <string name="um_class_computer_networks_topic10">Protocolos de ligação: Modos, estrutura e operação</string>
+    <string name="um_class_computer_networks_topic11">Protocolos de ligação: Encapsulamento protocolar e interfaces de serviço</string>
+    <string name="um_class_computer_networks_topic12">Protocolos de ligação: Diagrama de transição de estados</string>
+    <string name="um_class_computer_networks_topic13">Redes Locais: Topologias</string>
+    <string name="um_class_computer_networks_topic14">Redes Locais: Acesso ao meio por CSMA</string>
+    <string name="um_class_computer_networks_topic15">Redes Locais: Normas 802.x: Ethernet e WLAN</string>
+    <string name="um_class_computer_networks_topic16">Redes Locais: Equipamento de interligação</string>
+    <string name="um_class_computer_networks_topic17">Redes Locais: Comutação e redes virtuais</string>
+    <string name="um_class_computer_networks_topic18">Protocolo Internet: Interligação, serviço e encaminhamento</string>
+    <string name="um_class_computer_networks_topic19">Protocolo Internet: Comutação de datagramas e redes de circuitos virtuais</string>
+    <string name="um_class_computer_networks_topic20">Protocolo Internet: Serviço de entrega por melhor-esforço</string>
+    <string name="um_class_computer_networks_topic21">Protocolo Internet: Endereçamento com e sem classes, subnets e supernets, resolução nomes e ARP</string>
+    <string name="um_class_computer_networks_topic22">Protocolo Internet: Algoritmos encaminhamento, Fragmentação, MTU, ICMP, IPv6</string>
+
+    <string name="um_class_numeric_methods">Métodos Numéricos e Optimização Não Linear</string>
+    <string name="um_class_numeric_methods_description">Compreender e utilizar métodos de resolução de equações e sistemas não lineares;\n
+        Resolver sistemas de equações lineares por métodos diretos com pivotagem parcial;\n
+        Compreender e aplicar estratégias de aproximação de funções;\n
+        Descrever e aplicar métodos de integração numérica;\n
+        Compreender, escolher e utilizar o método de otimização mais adequado a um problema específico;\n
+        Utilizar os métodos numéricos em problemas de Engenharia Informática;\n
+        Utilizar software específico (MATLAB) na resolução de problemas.</string>
+    <string name="um_class_numeric_methods_topic1">Erros em cálculo numérico</string>
+    <string name="um_class_numeric_methods_topic2">Métodos directos para sistemas de equações lineares</string>
+    <string name="um_class_numeric_methods_topic3">Métodos iterativos para equações não lineares</string>
+    <string name="um_class_numeric_methods_topic4">Aproximação de funções por polinómios interpoladores e por "Splines" cúbicas</string>
+    <string name="um_class_numeric_methods_topic5">Integração numérica</string>
+    <string name="um_class_numeric_methods_topic6">Aproximação dos mínimos quadrados (linear)</string>
+    <string name="um_class_numeric_methods_topic7">Métodos de optimização para problemas não lineares sem restrições, com e sem derivadas</string>
+    <string name="um_class_numeric_methods_topic8">Prática laboratorial: MATLAB</string>
+
+    <string name="um_class_srcr">Sistemas de Representação de Conhecimento e Raciocínio</string>
+    <string name="um_class_srcr_description">As matérias que são objecto de tratamento na unidade curricular emanam da área de conhecimento que,
+        em larga medida, se situa na intersecção das áreas científicas da Inteligência Artificial, das Bases de
+        Dados e da Lógica Computacional.\n
+        (i) É objectivo desta unidade curricular a introdução dos discentes aos paradigmas da representação do
+        conhecimento e de raciocínio lógico, e sua aplicação na concepção e implementação de sistemas
+        inteligentes ou de apoio à decisão, em que a qualidade da informação e o grau de confiança que é
+        depositado na conjugação dos atributos de um predicado ou função lógica é fulcral.\n
+        (ii) Compreender a relação entre a complexidade de um modelo representação de conhecimento e as
+        formas de raciocínio a ele associadas e o seu desempenho, utilizando esta informação na definição de
+        uma estratégia para a sua optimização.</string>
+    <string name="um_class_srcr_topic1">Lógica computacional</string>
+    <string name="um_class_srcr_topic2">Extensão à programação em lógica</string>
+    <string name="um_class_srcr_topic3">Representação do conhecimento e formas de raciocínio</string>
+    <string name="um_class_srcr_topic4">Representação de conhecimento imperfeito</string>
+    <string name="um_class_srcr_topic5">Inferência estatística</string>
+    <string name="um_class_srcr_topic6">Sistemas hierárquicos</string>
+    <string name="um_class_srcr_topic7">Reconhecimento de padrões</string>
+    <string name="um_class_srcr_topic8">Estudos de complexidade</string>
+
+    <string name="um_class_meio">Modelos Estocásticos de Investigação Operacional</string>
+    <string name="um_class_meio_description">a) Conhecer as técnicas e os métodos de Investigação Operacional apresentados na UC, e ser capaz de os
+        aplicar na resolução de instâncias de problemas de pequena dimensão.\n
+        b) Desenvolver a capacidade de resolução de problemas (modelos estocásticos), com ênfase em
+        problemas de engenharia de sistemas.\n
+        c) Desenvolver a capacidade de analisar sistemas complexos, de criar modelos para os descrever, de
+        obter soluções para esses modelos utilizando programas computacionais adequados, de validar os
+        modelos obtidos, de interpretar as soluções obtidas, e de elaborar recomendações para o sistema em
+        análise.\n
+        d) Compreender a importância da avaliação das soluções, e ser capaz de realizar análises de sensibilidade.</string>
+    <string name="um_class_meio_topic1">Introdução aos Processos Estocásticos</string>
+    <string name="um_class_meio_topic2">Processos Markovianos</string>
+    <string name="um_class_meio_topic3">Processos Ergódicos</string>
+    <string name="um_class_meio_topic4">Programação Dinâmica</string>
+    <string name="um_class_meio_topic5">Processos de decisão Markovianos com um número finito de estágios</string>
+    <string name="um_class_meio_topic6">Processos de decisão Markovianos com um número indeterminado de estágios</string>
+    <string name="um_class_meio_topic7">Filas de Espera: Filas M/M/S, M/M/S(K), M/M/S(N), Ek/El/1</string>
+    <string name="um_class_meio_topic8">Filas de Espera: Problemas de decisão e Métodos exactos</string>
+    <string name="um_class_meio_topic9">Filas de Espera: Simulação de filas de espera</string>
+    <string name="um_class_meio_topic10">Modelo determinístico da Quantidade Económica de Encomenda (QEE)</string>
+    <string name="um_class_meio_topic11">Modelos probabilísticos ou estocásticos: políticas de Nível de Encomenda e de Ciclo de Encomenda para procuras estacionárias e estáveis</string>
+    <string name="um_class_meio_topic12">Modelo estático de decisão, "Newsboy Problem", para situações de encomenda única</string>
+
+    <string name="um_class_graphics_computing">Computação Gráfica</string>
+    <string name="um_class_graphics_computing_description">Os formandos devem desenvolver as seguintes competências com a frequência deste módulo:\n
+        - Caracterizar as transformações geométricas e os referencias utilizados na computação gráfica;\n
+        - Aplicar transformações para construção de modelos geométricos complexos e posicionamento da câmara;\n
+        - Algoritmos de iluminação local e global: Gouraud, Phong, Ray-tracing, Radiosity and Virtual Point Lights;\n
+        - Aplicar texturas e definir coordenadas de textura;\n
+        - Analisar soluções do ponto de vista do desempenho recorrento a profilers.\n
+        - Utilizar apropriadamente soluções de eliminação de geometria, recorrendo a partição espacial.\n
+        - Aplicar a Analisar algoritmos para geração de sombras</string>
+    <string name="um_class_graphics_computing_topic1">Transformações geométricas e referenciais</string>
+    <string name="um_class_graphics_computing_topic2">Construção de cenários 3D complexos através de primitivas simples e transformações geométricas</string>
+    <string name="um_class_graphics_computing_topic3">Algoritmos de iluminação local e global: Gouraud, Phong, Ray-tracing, radiosity, e Virtual Point Lights</string>
+    <string name="um_class_graphics_computing_topic4">Texturas: aplicação e definição de coordenadas de textura</string>
+    <string name="um_class_graphics_computing_topic5">Análise de desempenho com ferramentas de profiling</string>
+    <string name="um_class_graphics_computing_topic6">Partição espacial e culling</string>
+    <string name="um_class_graphics_computing_topic7">Algoritmos para geração de sombras: shadow maps e shadow volumes</string>
+
+    <string name="um_class_computer_comm">Comunicações por Computador</string>
+    <string name="um_class_computer_comm_description">- Descrever e aplicar os diferentes algoritmos de rotas (LS e DV)\n
+        - Discutir diferentes protocolos de encaminhamento unicast\n
+        - Planear e implementar solução de interligação intra e inter domínios\n
+        - Distinguir os diferentes serviços de transporte\n
+        - Configurar soluções de segurança para os níveis de rede e de transporte\n
+        - Identificar, classificar e configurar serviços básicos de rede e soluções de gestão de redes\n
+        - Descrever o funcionamento das principais aplicações\n
+        - Classificar as diferentes aplicações em função dos seus requisitos de QoS</string>
+    <string name="um_class_computer_comm_topic1">Encaminhamento dinâmico: Vector Distância (DV) e Estado das Ligações (LS)</string>
+    <string name="um_class_computer_comm_topic2">Protocolos de encaminhamento</string>
+    <string name="um_class_computer_comm_topic3">UDP e TCP</string>
+    <string name="um_class_computer_comm_topic4">Mecanismos TCP: controlo de fluxo, controlo de congestão, controlo de erros</string>
+    <string name="um_class_computer_comm_topic5">Programação usando sockets TCP e UDP</string>
+    <string name="um_class_computer_comm_topic6">SMTP e MIME, POP e IMAP</string>
+    <string name="um_class_computer_comm_topic7">FTP e HTTP: Mensagens, Diagramas de sequência</string>
+    <string name="um_class_computer_comm_topic8">Directorias e Serviços de Resolução de Nomes (DNS, X.500, LDAP)</string>
+    <string name="um_class_computer_comm_topic9">Segurança ao nível da rede e de transporte</string>
+    <string name="um_class_computer_comm_topic10">Aplicações Multimédia: Streaming de Audio e Video na Internet</string>
+
+    <string name="um_class_language_processing">Processamento de Linguagens</string>
+    <string name="um_class_language_processing_description">Competências Genéricas:
+        a capacidade de comunicação escrita e oral na apresentação e discussão dos processos usados e
+        resultados obtidos;\n
+        a capacidade de utilização de ferramentas genéricas de informática em ambiente Linux e de elaboração de
+        documentos.</string>
+    <string name="um_class_language_processing_topic1">Noção de Linguagem e de Gramática</string>
+    <string name="um_class_language_processing_topic2">Interpretador versus Compilador</string>
+    <string name="um_class_language_processing_topic3">Arquitectura de um processador de linguagens: análise léxica, análise sintáctica e análise semântica</string>
+    <string name="um_class_language_processing_topic4">Linguagens Regulares e Análise Léxica</string>
+    <string name="um_class_language_processing_topic5">Especificação de linguagens regulares com expressões regulares</string>
+    <string name="um_class_language_processing_topic6">Reconhecimento de linguagens especificadas com expressões regulares: o conceito de autómato</string>
+    <string name="um_class_language_processing_topic7">Conversão de Expressões Regulares em Autómatos Finitos Determinísticos</string>
+    <string name="um_class_language_processing_topic8">A ferramenta flex como gerador de autómatos</string>
+    <string name="um_class_language_processing_topic9">Análise Sintáctica: Linguagens e Gramáticas Independentes de Contexto</string>
+    <string name="um_class_language_processing_topic10">Estrutura e funcionamento de um parser; Parsing Top-Down: o Recursivo-descendente e LL(1); Parsing Bottom-UP: LR(0), LR(1) e SLR(1)</string>
+    <string name="um_class_language_processing_topic11">Utilização da ferramenta yacc como gerador de parsers Bottom-UP</string>
+    <string name="um_class_language_processing_topic12">Análise Semântica e Transformação especificada via Gramáticas Tradutoras</string>
+    <string name="um_class_language_processing_topic13">Tradução Dirigida pela Sintaxe</string>
+
+    <string name="um_class_informatics_labs4">Laboratórios de Informática IV</string>
+    <string name="um_class_informatics_labs4_description">- Fundamentar, projectar e gerir o desenvolvimento de um sistema de software.\n
+        - Analisar e especificar de forma completa todos os requisitos operacionais e funcionais de um sistema de software.\n
+        - Desenvolver, testar, documentar e instalar sistemas de software.</string>
+    <string name="um_class_informatics_labs4_topic1">A Evolução do Software</string>
+    <string name="um_class_informatics_labs4_topic2">Metodologias e Processos de Software</string>
+    <string name="um_class_informatics_labs4_topic3">Gestão de Projectos de Software</string>
+    <string name="um_class_informatics_labs4_topic4">Engenharia de Requisitos</string>
+    <string name="um_class_informatics_labs4_topic5">Modelação de Sistemas</string>
+    <string name="um_class_informatics_labs4_topic6">Arquitecturas de Software e de Aplicações</string>
+    <string name="um_class_informatics_labs4_topic7">Desenvolvimento Rápido de Software</string>
+    <string name="um_class_informatics_labs4_topic8">Verificação, Validação e Testes de Software</string>
+    <string name="um_class_informatics_labs4_topic9">Ambientes e Ferramentas de Desenvolvimento de Software</string>
+    <string name="um_class_informatics_labs4_topic10">Fábricas de Software</string>
+
     <string name="um_class_"></string>
     <string name="um_class__description"></string>
     <string name="um_class__topic1"></string>
