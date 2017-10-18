@@ -6186,6 +6186,211 @@ Os estudantes deverão ainda desenvolver competências em análise e síntese, r
     <string name="um_class_informatics_labs4_topic9">Ambientes e Ferramentas de Desenvolvimento de Software</string>
     <string name="um_class_informatics_labs4_topic10">Fábricas de Software</string>
 
+    <string name="um_class_biosequences">Algoritmos para Análise de Sequências Biológicas</string>
+    <string name="um_class_biosequences_description">O objetivo desta unidade curricular é o de dotar os alunos das capacidades de perceber,
+        utilizar e desenvolver algoritmos de processamento e análise de sequências biológicas, utilizando uma linguagem de programação para a sua implementação.</string>
+    <string name="um_class_biosequences_topic1">Algoritmos básicos de processamento de sequências biológicas</string>
+    <string name="um_class_biosequences_topic2">Procura de padrões em sequências</string>
+    <string name="um_class_biosequences_topic3">Alinhamentos de sequências (simples e múltiplos)</string>
+    <string name="um_class_biosequences_topic4">Procura de sequências similares em bases de dados</string>
+    <string name="um_class_biosequences_topic5">Algoritmos para análise filogenética</string>
+    <string name="um_class_biosequences_topic6">Descoberta de motifs a partir de conjuntos de sequências</string>
+    <string name="um_class_biosequences_topic7">Algoritmos para a descoberta de genes </string>
+
+    <string name="um_class_bioinformatics_lab">Laboratórios de Bioinformática</string>
+    <string name="um_class_bioinformatics_lab_description">- Dotar os alunos dos conhecimentos biológicos básicos para
+        compreensão dos problemas e ferramentas da Bioinformática\n
+        - Promover o conhecimento das principais bases de dados e ferramentas disponíveis na área da Bioinformática\n
+        - Promover o desenvolvimento de competências ao nível da utilização avançada de repositórios de software livre
+        na área da Bioinformática para construção de pequenos programas para tarafas específicas</string>
+    <string name="um_class_bioinformatics_lab_topic1">Conceitos básicos de Biologia Molecular</string>
+    <string name="um_class_bioinformatics_lab_topic2">Bases de dados biológicas e sua exploração</string>
+    <string name="um_class_bioinformatics_lab_topic3">Principais ferramentas na área da Bioinformática</string>
+    <string name="um_class_bioinformatics_lab_topic4">Repositórios de software livre em Bioinformática e sua exploração</string>
+
+    <string name="um_class_advanced_alg_bio">Algoritmos Avançados de Bioinformática</string>
+    <string name="um_class_advanced_alg_bio_description">Promover a aquisição de competências avançadas ao nível da compreensão
+        e implementação dos principais algoritmos na área da Bioinformática, incluindo métodos de
+        optimização e sua utilização para resolução de problemas biológicos</string>
+    <string name="um_class_advanced_alg_bio_topic1">Grafos e algoritmos sobre grafos</string>
+    <string name="um_class_advanced_alg_bio_topic2">Redes biológicas e sua análise</string>
+    <string name="um_class_advanced_alg_bio_topic3">Algoritmos para procura eficiente de padrões em sequências</string>
+    <string name="um_class_advanced_alg_bio_topic4">Algoritmos para alinhamento de sequências contra referências</string>
+    <string name="um_class_advanced_alg_bio_topic5">Algoritmos para assemblagem de genomas</string>
+    <string name="um_class_advanced_alg_bio_topic6">Métodos metaheurísticos de optimização estocásticos e sua aplicação em Bioinformática</string>
+    <string name="um_class_advanced_alg_bio_topic7">Implementação de algoritmos avançados de Bioinformática</string>
+
+    <string name="um_class_bio_bd_extraction">Extracção de Conhecimento de Bases de Dados Biológicas</string>
+    <string name="um_class_bio_bd_extraction_description">Promover a aquisição de conhecimentos e competências básicas sobre os processos e
+        ferramentas de análise de dados multivariada, mineração de dados  e aprendizagem máquina e suas aplicações na Bioinformática</string>
+    <string name="um_class_bio_bd_extraction_topic1">Métodos para análise multivariada de dados</string>
+    <string name="um_class_bio_bd_extraction_topic2">Métodos para pré-processamento de dados</string>
+    <string name="um_class_bio_bd_extraction_topic3">Mineração de Dados e Aprendizagem Máquina: conceitos</string>
+    <string name="um_class_bio_bd_extraction_topic4">Modelos e algoritmos de classificação e regressão</string>
+    <string name="um_class_bio_bd_extraction_topic5">Árvores e regras</string>
+    <string name="um_class_bio_bd_extraction_topic6">Redes neuronais e modelos funcionais</string>
+    <string name="um_class_bio_bd_extraction_topic7">Aprendizagem baseada em instâncias</string>
+    <string name="um_class_bio_bd_extraction_topic8">Modelos bayesianos</string>
+    <string name="um_class_bio_bd_extraction_topic9">Avaliação e comparação de modelos e algoritmos</string>
+    <string name="um_class_bio_bd_extraction_topic10">Aplicações na análise e mineração de dados biológicos</string>
+    <string name="um_class_bio_bd_extraction_topic11">Ferramentas computacionais para análise e mineração de dados</string>
+
+    <string name="um_class_visualisation1">Visualização e Iluminação I</string>
+    <string name="um_class_visualisation1_description">Os formandos devem desenvolver as seguintes competências com a frequência deste módulo:\m
+        Caracterizar o pipeline gráfico e o fluxo de dados. Identificar as componentes programáveis e as suas
+        potencialidades;\n
+        Produzir programas a correr no GPU para obter efeitos gráficos ou processamento de dados ;\n
+        Projectar, implementar, e avaliar soluções recorrendo à programação em GPU para problemas na área da
+        computação gráfica;\n
+        Analisar algoritmos de iluminação local, e efeitos gráficos do ponto de vista da sua adequabilidade à
+        utilização de GPUs, e desempenho final.\n
+        Adicionalmente, pretende-se desenvolver a seguinte competência transversal:\n
+        Exibir uma capacidade de comunicação escrita e oral adequada, promovendo a linguagem como ferramenta
+        de expressão e construção de pensamentos, ideias e argumentos próprios, alicerçados no espírito crítico;</string>
+    <string name="um_class_visualisation1_topic1">O Pipeline Gráfico no estado presente e a sua evolução</string>
+    <string name="um_class_visualisation1_topic2">Programação do pipeline gráfico recorrendo a linguagens como o GLSL</string>
+    <string name="um_class_visualisation1_topic3">Algoritmos de iluminação local e efeitos gráficos e a sua implementação em GPU</string>
+    <string name="um_class_visualisation1_topic4">Análise de desempenho para soluções em GPU</string>
+
+    <string name="um_class_computer_vision">Visão por computador</string>
+    <string name="um_class_computer_vision_description">Introduzir o estado da arte na tecnologia da imagem médica, fornecendo uma visão global sobre as normas,
+        técnicas, equipamentos e aplicações. Promover a análise de casos práticos e simulação de situações de
+        ambientes clínicos reais.\n
+        Competências:\n
+        - Reconhecer e argumentar a importância da utilização de computadores no processamento de informação
+        pictórica no contexto médico.\n
+        - Evidenciar conhecimento acerca dos conceitos associados aos sistemas de imagem, processamento de
+        imagem, visão e modelação por computador em imagem médica.\n
+        - Executar as tarefas de desenvolvimento de novos componentes funcionais utilizando as aplicações ImageJ e OsiriX.</string>
+    <string name="um_class_computer_vision_topic1">Evolução na área da imagem médica: evolução no sentido das modalidades digitais</string>
+    <string name="um_class_computer_vision_topic2">Evolução na área da imagem médica: equipamentos de imagem médica</string>
+    <string name="um_class_computer_vision_topic3">Manipulação e processamento de imagem médica: Nível e janela, ampliação, filtros, segmentação, ROIs (Regiões de Interesse)</string>
+    <string name="um_class_computer_vision_topic4">Manipulação e processamento de imagem médica: Aplicações clínicas</string>
+    <string name="um_class_computer_vision_topic5">Sistemas de arquivo e comunicação de imagem (PACS): Arquitectura, tecnologias de arquivo, norma DICOM</string>
+    <string name="um_class_computer_vision_topic6">Sistemas de arquivo e comunicação de imagem (PACS): processos do fluxo de trabalhos</string>
+    <string name="um_class_computer_vision_topic7">Sistemas de arquivo e comunicação de imagem (PACS): integração dos sistemas de informação hospitalar com o sistema de informação da radiologia</string>
+    <string name="um_class_computer_vision_topic8">Sistemas de arquivo e comunicação de imagem (PACS): Concretizações práticas</string>
+    <string name="um_class_computer_vision_topic9">Imagem Multidimensional: realinhamento e fusão de imagens</string>
+    <string name="um_class_computer_vision_topic10">Imagem Multidimensional: reconstruções 3D</string>
+    <string name="um_class_computer_vision_topic11">Imagem Multidimensional: aplicações clinicas</string>
+
+    <string name="um_class_visualisation2">Visualização e Iluminação II</string>
+    <string name="um_class_visualisation2_description">Os formandos devem desenvolver as seguintes competências com a frequência deste módulo:\n
+        - Caracterizar a iluminação global e descrever os vários estágios do processo de síntese e visualização de
+        imagens;\n
+        - Explicar a equação de rendering e discutir o significado de cada um dos seus factores;\n
+        - Relacionar os vários métodos de iluminação global com o modelo geral sustentado pela equação de
+        rendering, inferindo quais os fenómenos de iluminação modelados;\n
+        - Projectar, implementar e avaliar soluções para novos problemas de iluminação por recombinação de
+        soluções conhecidas;\n
+        -Reconhecer as limitações funcionais e/ou de desempenho associadas a cada algoritmo de iluminação global.
+        Adicionalmente, pretende-se desenvolver a seguinte competência transversal:\n
+        - Exibir uma capacidade de comunicação escrita e oral adequada, promovendo a linguagem como ferramenta
+        de expressão e construção de pensamentos, ideias e argumentos próprios, alicerçados no espírito crítico;</string>
+    <string name="um_class_visualisation2_topic1">Modelos de iluminação locais e globais</string>
+    <string name="um_class_visualisation2_topic2">Modelos de iluminação empíricos (Phong)</string>
+    <string name="um_class_visualisation2_topic3">Modelos de iluminação baseados na física (Cook-Torrance, Ward)</string>
+    <string name="um_class_visualisation2_topic4">Radiometria e Fotometria</string>
+    <string name="um_class_visualisation2_topic5">Mecanismos de transporte de luz, a BRDF e a equação de rendering</string>
+    <string name="um_class_visualisation2_topic6">Algoritmos de iluminação global: Ray tracing (Clássico, distribuído e Monte Carlo)</string>
+    <string name="um_class_visualisation2_topic7">Algoritmos de iluminação global: radiosidade</string>
+    <string name="um_class_visualisation2_topic8">Algoritmos de iluminação global: photon mapping</string>
+
+    <string name="um_class_tech_application">Tecnologias e Aplicações</string>
+    <string name="um_class_tech_application_description">Este módulo pretende expor os alunos a técnicas avançadas no domínio da
+        computação gráfica confrontado-os com aplicações práticas. Pretende-se que os formandos desenvolvam as seguintes competências:\n
+        Analisar soluções associadas aos sistemas de imagem, processamento de imagem, visão e modelação por computador em imagem médica,
+        nomeadamente utilizando técnicas de aprendizagem profunda;\n
+        Criar aplicações de processamento de imagem baseadas em casos concretos, como por exemplo reconhecimento de sinais de trânsito;
+        Proectar, implementar e avaliar soluções para geração de imagens baseadas na física do transporte de luz;\n
+        Projectar, implementar e avaliar soluções para geração de imagens de alta qualidade em tempo real recorrendo a técnicas como Voxelização;</string>
+    <string name="um_class_tech_application_topic1">Imagem médica: evolução no sentido das modalidades digitais</string>
+    <string name="um_class_tech_application_topic2">Imagem médica: equipamentos de imagem médica</string>
+    <string name="um_class_tech_application_topic3">Manipulação e processamento de imagem médica: Nível e janela, ampliação, filtros, segmentação, ROIs (Regiões de Interesse)</string>
+    <string name="um_class_tech_application_topic4">Análise de imagem médica utilizando técnicas de aprendizagem profunda</string>
+    <string name="um_class_tech_application_topic5">Imagem Multidimensional: realinhamento e fusão de imagens</string>
+    <string name="um_class_tech_application_topic6">Manipulação e processamento de imagem médica: </string>
+    <string name="um_class_tech_application_topic7">Imagem Multidimensional: reconstruções 3D e aplicações clinicas</string>
+    <string name="um_class_tech_application_topic8">Aplicação das técnicas de visão por computador a casos reais</string>
+    <string name="um_class_tech_application_topic9">Desenvolvmento de aplicações para produção de imagens baseadas na física do transporte de luz</string>
+    <string name="um_class_tech_application_topic10">A voxelização como alternativa ao ray-tracing e à rasterização</string>
+    <string name="um_class_tech_application_topic11">Algoritmos e técnicas de produção de imagens de alta qualidade em tempo real</string>
+
+    <string name="um_class_advaced_arch">Arquitecturas Avançadas</string>
+    <string name="um_class_advaced_arch_description">Um estudante que complete com sucesso a UC deverá ser capaz de demonstrar que adquiriu as seguintes
+        competências:\n
+        - caracterizar e avaliar qualitativa e quantitativamente a arquitectura de sistemas de computação
+        paralelos/distribuídos\n
+        - analisar, medir e avaliar o desempenho de sistemas de computação na execução de aplicações\n
+        - desenvolver e/ou modificar aplicações computacionais com vista a optimizar o seu desempenho e
+        escalabilidade.</string>
+    <string name="um_class_advaced_arch_topic1">Arquitetura de processadores: pipeline, superescalaridade</string>
+    <string name="um_class_advaced_arch_topic2">Arquitetura de processadores: multi-threading, multi-core</string>
+    <string name="um_class_advaced_arch_topic3">Arquitetura de processadores: many-core; hierarquia de memória em ambiente partilhado</string>
+    <string name="um_class_advaced_arch_topic4">Paralelismo nas arquitecturas: arquitecturas vectoriais</string>
+    <string name="um_class_advaced_arch_topic5">Paralelismo nas arquitecturas: arquitecturas paralelas com memória partilhada e memória distribuída</string>
+    <string name="um_class_advaced_arch_topic6">Paralelismo nas arquitecturas: arquitecturas distribuídas em rede</string>
+    <string name="um_class_advaced_arch_topic7">Paralelismo nas arquitecturas: análise de desempenho em arquitecturas massivamente paralelas</string>
+    <string name="um_class_advaced_arch_topic8">Avaliação de desempenho: métricas, profiling, análise e afinação de código</string>
+    <string name="um_class_advaced_arch_topic9">Avaliação de desempenho: benchmarking</string>
+
+    <string name="um_class_parallel_alg">Algoritmos Paralelos</string>
+    <string name="um_class_parallel_alg_description">Um estudante que complete com sucesso esta UC deverá ser capaz de demonstrar que adquiriu as seguintes
+        competências:\n
+        Apreender os fundamentos teóricos para suporte aos algoritmos analisados\n
+        Identificar, a diferentes níveis (complexidade, robustez, eficiência, escalabilidade, etc.) pontos fortes e fracos
+        dos algoritmos analisados\n
+        Desenvolver implementações sequenciais e paralelas e discutir os resultados de desempenho e eficiência
+        obtidos com os algoritmos analisados\n
+        Identificar, nos algoritmos paralelos, eventuais problemas de balanceamento de carga e/ou elevados custos
+        de comunicação entre os elementos de computação</string>
+    <string name="um_class_parallel_alg_topic1">Algoritmos de pesquisa e ordenação: mergesort, quicksort e bitonic</string>
+    <string name="um_class_parallel_alg_topic2">Técnicas de procura paralelas: depthfirst e breadth-first</string>
+    <string name="um_class_parallel_alg_topic3">Algoritmos matriciais em ambientes paralelos heterogéneos: multiplicação de matrizes, sistemas de equações lineares, valores próprios</string>
+    <string name="um_class_parallel_alg_topic4">Algoritmos matriciais em ambientes paralelos heterogéneos: matrizes densas e esparsas, métodos dos elementos finitos e dos gradientes conjugados</string>
+    <string name="um_class_parallel_alg_topic5">Optimização: grafos, e spanning trees</string>
+    <string name="um_class_parallel_alg_topic6">Programação dinâmica e problemas knapsack</string>
+    <string name="um_class_parallel_alg_topic7">Algoritmos genéticos paralelos em problemas de optimização/modelação</string>
+
+    <string name="um_class_comp_sys_eng">Engenharia dos Sistemas de Computação</string>
+    <string name="um_class_comp_sys_eng_description">Identificar os diferentes tipos de sistemas de computação, incluindo máquinas SMP, clusters e grids e
+        discutir as respectivas vantagens e limitações\n
+        Analisar e avaliar os requisitos de hardware e software com vista ao planeamento e instalação do
+        equipamento\n
+        Identificar os requisitos dos utilizadores necessários para selecionar o software a instalar e a manter\n
+        Identificar e caracterizar políticas de gestão e escalonamento de trabalhos e avaliar os resultados da sua
+        aplicação\n
+        Discutir e avaliar o desempenho efetivo de programas sequenciais e paralelos nas plataformas estudadas\n
+        Identificar os pontos de estrangulamento do ambiente de execução (run-time) face a uma determinada carga
+        computacional.\n
+        Usar as ferramentas existentes, ao nível do ambiente de execução, para estudar estratégias de optimização
+        dos recurso partilhados nas diferentes plataformas com vista a minimizar uma determinada função de custo
+        (por exemplo tempo de execução)</string>
+    <string name="um_class_comp_sys_eng_topic1">Clusters: arquitectura (terminologia, tecnologias, limitações) e equipamentos</string>
+    <string name="um_class_comp_sys_eng_topic2">Clusters computacionais Linux: características, instalação e configuração de serviços, segurança</string>
+    <string name="um_class_comp_sys_eng_topic3">Planeamento e construção de clusters: missão, arquitectura e suporte lógico</string>
+    <string name="um_class_comp_sys_eng_topic4">Planeamento e construção de clusters: sistemas de ficheiros paralelo, tecnologias de interligação</string>
+    <string name="um_class_comp_sys_eng_topic5">Planeamento e construção de clusters: clonagem e instalações</string>
+    <string name="um_class_comp_sys_eng_topic6">Gestão de clusters: modelos para a submissão de tarefas</string>
+    <string name="um_class_comp_sys_eng_topic7">Gestão de clusters: monitorização e administração de utilizadores e recursos</string>
+    <string name="um_class_comp_sys_eng_topic8">Gestão de clusters: políticas de escalonamento e contabilização</string>
+    <string name="um_class_comp_sys_eng_topic9">Gestão de clusters: segurança de dados</string>
+    <string name="um_class_comp_sys_eng_topic10">Gestão de clusters: análise de desempenho e afinação</string>
+    <string name="um_class_comp_sys_eng_topic11">Estudo de casos: desenvolvimento de estratégias de gestão</string>
+
+    <string name="um_class_parallel_comp_parad">Paradigmas de Computação Paralela</string>
+    <string name="um_class_parallel_comp_parad_description">Um estudante que complete com sucesso esta UC deverá ser capaz de demonstrar que adquiriu as seguintes
+        competências:
+        - Desenvolver aplicações paralelas capazes de executar numa gama alargada de arquiteturas
+        - Implementar aplicações utilizando os tipos mais comuns de algoritmos paralelos
+        - Medir e otimizar o desempenho de aplicações em sistemas de memória distribuída
+        - Implementar técnicas de gestão de recursos ao nível da aplicação.</string>
+    <string name="um_class_parallel_comp_parad_topic1">Modelos de programação: fios de execução em memória partilhada, passagem de mensagens, objectos distribuídos, workflows</string>
+    <string name="um_class_parallel_comp_parad_topic2">Metodologias de desenvolvimento de aplicações paralelas: partição, comunicação, agregação e mapeamento de tarefas e dados</string>
+    <string name="um_class_parallel_comp_parad_topic3">Análise de algoritmos paralelos típicos: pipelining, farming, heartbeat e divide and conquer</string>
+    <string name="um_class_parallel_comp_parad_topic4">Medição e otimização do desempenho de aplicações em sistemas de memória partilhada e distribuída, homogéneos e heterogéneos</string>
+    <string name="um_class_parallel_comp_parad_topic5">Linguagens e utilitários de apoio ao desenvolvimento de aplicações</string>
+
     <string name="um_class_"></string>
     <string name="um_class__description"></string>
     <string name="um_class__topic1"></string>
