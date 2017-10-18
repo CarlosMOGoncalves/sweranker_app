@@ -19106,7 +19106,7 @@
 
             <!-- 2ND YEAR -->
             <class>
-                <id>uminho_miei_c18</id>
+                <id>uminho_miei_c13</id>
                 <name>@string/um_class_dynamic_sys</name>
                 <description>@string/um_class_dynamic_sys_description</description>
                 <year>2</year>
@@ -19156,7 +19156,7 @@
                 </program>
             </class>
             <class>
-                <id>uminho_miei_c18</id>
+                <id>uminho_miei_c14</id>
                 <name>@string/um_class_statistics</name>
                 <description>@string/um_class_statistics_description</description>
                 <year>2</year>
@@ -19226,7 +19226,7 @@
                 </program>
             </class>
             <class>
-                <id>uminho_miei_c18</id>
+                <id>uminho_miei_c15</id>
                 <name>@string/um_class_economic_engineering</name>
                 <description>@string/um_class_economic_engineering_description</description>
                 <year>2</year>
@@ -19272,7 +19272,7 @@
                 </program>
             </class>
             <class>
-                <id>uminho_miei_c18</id>
+                <id>uminho_miei_c16</id>
                 <name>@string/um_class_computer_arch</name>
                 <description>@string/um_class_computer_arch_description</description>
                 <year>2</year>
@@ -19322,7 +19322,7 @@
                 </program>
             </class>
             <class>
-                <id>uminho_miei_c18</id>
+                <id>uminho_miei_c17</id>
                 <name>@string/um_class_data_communication</name>
                 <description>@string/um_class_data_communication_description</description>
                 <year>2</year>
@@ -19434,7 +19434,7 @@
                 </program>
             </class>
             <class>
-                <id>uminho_miei_c18</id>
+                <id>uminho_miei_c19</id>
                 <name>@string/um_class_os</name>
                 <description>@string/um_class_os_description</description>
                 <year>2</year>
@@ -19472,7 +19472,7 @@
                 </program>
             </class>
             <class>
-                <id>uminho_miei_c18</id>
+                <id>uminho_miei_c20</id>
                 <name>@string/um_class_oop</name>
                 <description>@string/um_class_oop_description</description>
                 <year>2</year>
@@ -19518,7 +19518,7 @@
                 </program>
             </class>
             <class>
-                <id>uminho_miei_c18</id>
+                <id>uminho_miei_c21</id>
                 <name>@string/um_class_electromagnetism</name>
                 <description>@string/um_class_electromagnetism_description</description>
                 <year>2</year>
@@ -19556,7 +19556,7 @@
                 </program>
             </class>
             <class>
-                <id>uminho_miei_c18</id>
+                <id>uminho_miei_c22</id>
                 <name>@string/um_class_option</name>
                 <description>@string/um_class_option_description</description>
                 <year>2</year>
@@ -19574,7 +19574,7 @@
                 </program>
             </class>
             <class>
-                <id>uminho_miei_c18</id>
+                <id>uminho_miei_c23</id>
                 <name>@string/um_class_calc_programs</name>
                 <description>@string/um_class_calc_programs_description</description>
                 <year>2</year>
@@ -19700,7 +19700,7 @@
                 </program>
             </class>
             <class>
-                <id>uminho_miei_c18</id>
+                <id>uminho_miei_c24</id>
                 <name>@string/um_class_informatics_labs3_calc_programs</name>
                 <description>@string/um_class_informatics_labs3_calc_programs_description
                 </description>
@@ -19753,52 +19753,96 @@
 
             <!-- 3RD YEAR -->
             <class>
-                <id>uminho_miei_c26</id>
-                <name>@string/up_class_web_tech</name>
-                <description>@string/up_class_web_tech_description</description>
+                <id>uminho_miei_c25</id>
+                <name>@string/um_class</name>
+                <description>@string/um_class_description</description>
                 <year>3</year>
-                <semester>2</semester>
-                <ects>7.5</ects>
+                <semester>1</semester>
+                <ects>5</ects>
                 <optional>false</optional>
                 <paths></paths>
                 <mandatoryPaths></mandatoryPaths>
                 <exclusivePath></exclusivePath>
                 <program>
                     <topic>
-                        <id>c26t1</id>
-                        <description>@string/up_class_web_tech_topic1</description>
+                        <id>c312t1</id>
+                        <description>@string/um_class_topic1</description>
                     </topic>
                     <topic>
-                        <id>c26t2</id>
-                        <description>@string/up_class_web_tech_topic2</description>
+                        <id>c312t2</id>
+                        <description>@string/um_class_topic2</description>
                     </topic>
                     <topic>
-                        <id>c26t3</id>
-                        <description>@string/up_class_web_tech_topic3</description>
+                        <id>c312t3</id>
+                        <description>@string/um_class_topic3</description>
                     </topic>
                     <topic>
-                        <id>c26t4</id>
-                        <description>@string/up_class_web_tech_topic4</description>
+                        <id>c312t4</id>
+                        <description>@string/um_class_topic4</description>
                     </topic>
                     <topic>
-                        <id>c26t5</id>
-                        <description>@string/up_class_web_tech_topic5</description>
+                        <id>c312t5</id>
+                        <description>@string/um_class_topic5</description>
                     </topic>
                     <topic>
-                        <id>c26t6</id>
-                        <description>@string/up_class_web_tech_topic6</description>
+                        <id>c312t6</id>
+                        <description>@string/um_class_topic6</description>
                     </topic>
                     <topic>
-                        <id>c26t7</id>
-                        <description>@string/up_class_web_tech_topic7</description>
+                        <id>c312t7</id>
+                        <description>@string/um_class_topic7</description>
                     </topic>
                     <topic>
-                        <id>c26t8</id>
-                        <description>@string/up_class_web_tech_topic8</description>
+                        <id>c312t8</id>
+                        <description>@string/um_class_topic8</description>
                     </topic>
                     <topic>
-                        <id>c26t9</id>
-                        <description>@string/up_class_web_tech_topic9</description>
+                        <id>c312t9</id>
+                        <description>@string/um_class_topic9</description>
+                    </topic>
+                    <topic>
+                        <id>c312t10</id>
+                        <description>@string/um_class_topic10</description>
+                    </topic>
+                    <topic>
+                        <id>c312t11</id>
+                        <description>@string/um_class_topic11</description>
+                    </topic>
+                    <topic>
+                        <id>c312t12</id>
+                        <description>@string/um_class_topic12</description>
+                    </topic>
+                    <topic>
+                        <id>c312t13</id>
+                        <description>@string/um_class_topic13</description>
+                    </topic>
+                    <topic>
+                        <id>c312t14</id>
+                        <description>@string/um_class_topic14</description>
+                    </topic>
+                    <topic>
+                        <id>c312t15</id>
+                        <description>@string/um_class_topic15</description>
+                    </topic>
+                    <topic>
+                        <id>c312t16</id>
+                        <description>@string/um_class_topic16</description>
+                    </topic>
+                    <topic>
+                        <id>c312t17</id>
+                        <description>@string/um_class_topic17</description>
+                    </topic>
+                    <topic>
+                        <id>c312t18</id>
+                        <description>@string/um_class_topic18</description>
+                    </topic>
+                    <topic>
+                        <id>c312t19</id>
+                        <description>@string/um_class_topic19</description>
+                    </topic>
+                    <topic>
+                        <id>c312t20</id>
+                        <description>@string/um_class_topic20</description>
                     </topic>
                 </program>
             </class>
