@@ -5722,6 +5722,236 @@ Os estudantes deverão ainda desenvolver competências em análise e síntese, r
     <string name="um_class_informatics_labs2_topic4">Linguagem C: Estruturas de dados dinâmicas (listas, stacks, queues, árvores binárias de procura)</string>
     <string name="um_class_informatics_labs2_topic5">Linguagem C: Monitorização e optimização de código</string>
 
+    <string name="um_class_dynamic_sys">Introdução aos Sistemas Dinâmicos</string>
+    <string name="um_class_dynamic_sys_description">1. Descrever técnicas de integração e exemplificar aplicações de equações diferenciais ordinárias.\n
+        2. Analisar qualitativamente sistemas de EDOs não-lineares.\n
+        3. Aplicar ferramentas computacionais no contexto da unidade curricular.\n
+        4. Descrever técnicas de integração e aplicações de equações diferenciais de derivadas parciais.</string>
+    <string name="um_class_dynamic_sys_topic1">Equações diferenciais ordinárias</string>
+    <string name="um_class_dynamic_sys_topic2">Aplicações à dinâmica de sistemas mecânicos</string>
+    <string name="um_class_dynamic_sys_topic3">Oscilações lineares</string>
+    <string name="um_class_dynamic_sys_topic4">Equações diferenciais com derivadas parciais</string>
+    <string name="um_class_dynamic_sys_topic5">Análise de Fourier</string>
+    <string name="um_class_dynamic_sys_topic6">Equação de onda e equação de difusão</string>
+    <string name="um_class_dynamic_sys_topic7">Sistemas não-lineares</string>
+    <string name="um_class_dynamic_sys_topic8">Sistemas caóticos</string>
+    <string name="um_class_dynamic_sys_topic9">Implementação computacional de sistemas dinâmicos</string>
+
+    <string name="um_class_statistics">Estatística Aplicada</string>
+    <string name="um_class_statistics_description">Aprendizagem de metodologia associada à recolha e análise de dados em estatística. Os objectivos
+        expressos em resultados de aprendizagem podem ser descritos da seguinte forma:\n
+        - Resumir e descrever conjuntos de dados.\n
+        - Seleccionar uma amostra representativa.\n
+        - Interpretar dados de natureza qualitativa e quantitativa.\n
+        - Calcular probabilidades e determinar funções de probabilidade.\n
+        - Formular e testar hipóteses.\n
+        - Usar software específico (SPSS).</string>
+    <string name="um_class_statistics_topic1">População e amostra</string>
+    <string name="um_class_statistics_topic2">Tipos de dados e escalas de medida</string>
+    <string name="um_class_statistics_topic3">Estatística descritiva</string>
+    <string name="um_class_statistics_topic4">Conceitos de probabilidade</string>
+    <string name="um_class_statistics_topic5">Variáveis aleatórias e distribuições de probabilidade univariadas</string>
+    <string name="um_class_statistics_topic6">Esperança matemática</string>
+    <string name="um_class_statistics_topic7">Famílias de distribuições de probabilidade</string>
+    <string name="um_class_statistics_topic8">Estimação de parâmetros</string>
+    <string name="um_class_statistics_topic9">Intervalos de confiança</string>
+    <string name="um_class_statistics_topic10">Testes de hipóteses simples</string>
+    <string name="um_class_statistics_topic11">Análise da variância (ANOVA)</string>
+    <string name="um_class_statistics_topic12">Regressão e correlação</string>
+    <string name="um_class_statistics_topic13">Testes de bom ajuste para grandes amostras</string>
+    <string name="um_class_statistics_topic14">Uso de software: SPSS</string>
+
+    <string name="um_class_economic_engineering">Engenharia Económica</string>
+    <string name="um_class_economic_engineering_description">O objectivo principal desta UC é proporcionar aos alunos
+        conhecimentos essenciais de economia e gestão que lhes permitam uma correta tomada de decisão em ambiente empresarial. Os resultados esperados de
+        aprendizagem são os seguintes:\n
+        - Compreender o funcionamento de uma economia \n
+        - Caracterizar as funções gerais de gestão de uma empresa\n
+        - Explicar os comportamentos dos agentes económicos e suas inter-relações nos mercados\n
+        - Explicar o funcionamento de diferentes estruturas de mercado \n
+        - Avaliar aspetos económicos na perspetiva da decisão\n
+        - Adquirir conhecimentos básicos de natureza financeira \n
+        - Aplicar conhecimentos matemáticos e de natureza financeira para descrever e analisar projetos de investimento.\n
+        - Aplicar ferramentas de análise económica.</string>
+    <string name="um_class_economic_engineering_topic1">Conceitos introdutórios: escolha e escassez; princípio do custo-benefício; custo de oportunidade; lucro económico</string>
+    <string name="um_class_economic_engineering_topic2">O modelo da procura e da oferta: os determinantes da oferta e da procura, o equilíbrio de mercado, utilizações do modelo</string>
+    <string name="um_class_economic_engineering_topic3">Teoria da procura: da procura individual à procura de mercado; o conceito de elasticidade da procura; a estimação da procura</string>
+    <string name="um_class_economic_engineering_topic4">A empresa: definição, objectivo e classificação; formalidades na constituição de uma empresa; o planeamento estratégico</string>
+    <string name="um_class_economic_engineering_topic5">Teoria da oferta: função de produção; a produção; os rendimentos à escala; os custos; custos no longo prazo e a estrutura do sector</string>
+    <string name="um_class_economic_engineering_topic6">Mercados e formação dos preços: a concorrência perfeita; o monopólio</string>
+    <string name="um_class_economic_engineering_topic7">Conceitos básicos de matemática financeira: valor do dinheiro no tempo, conceito de equivalência de capitais, actualização e capitalização</string>
+    <string name="um_class_economic_engineering_topic8">Comparação e selecção de projetos de investimento: opções com igual tempo de vida, opções com diferente tempo de vida e opções com diferente dimensão de investimento</string>
+
+    <string name="um_class_computer_arch">Arquitectura de Computadores</string>
+    <string name="um_class_computer_arch_description">Identificar e caracterizar as métricas relativas ao
+        desempenho da execução de programas e a sua relação com a codificação de programas em linguagens de alto nível\n
+        Identificar o impacto da hierarquia de memória no desempenho de programas escritos em linguagens de alto nível \n
+        Caracterizar limitações inerentes ao encadeamento de instruções (dependências) e conceber potenciais soluções\n
+        Analisar e justificar o impacto de múltiplas unidades funcionais no desempenho da máquina\n
+        Descrever, aplicar e avaliar técnicas de optimização do desempenho\n
+        Identificar as oportunidades de exploração de processamento paralelo e caracterizar as limitações inerentes ao processamento paralelo</string>
+    <string name="um_class_computer_arch_topic1">Avaliação do Desempenho: “Benchmarks”: sintéticos, SPEC</string>
+    <string name="um_class_computer_arch_topic2">Métricas: tempo de execução, ciclos por instrução (CPI); ciclos por elemento (CPE)</string>
+    <string name="um_class_computer_arch_topic3">Metodologias: resolução e precisão do relógio; medição de tempo; contadores de desempenho; apresentação de resultados</string>
+    <string name="um_class_computer_arch_topic4">Hierarquia de Memória: Conceitos; localidade temporal e espacial; métricas</string>
+    <string name="um_class_computer_arch_topic5">Organização de memória: mapeamento, políticas de escrita e substituição</string>
+    <string name="um_class_computer_arch_topic6">Codificação de algoritmos: técnicas de codificação para melhoria da localidade</string>
+    <string name="um_class_computer_arch_topic7">Organização do Processador: Organização sequencial - fases de execução; execução encadeada; arquitecturas superescalares</string>
+    <string name="um_class_computer_arch_topic8">Optimização do Desempenho: optimizações dependentes/independentes da máquina</string>
+    <string name="um_class_computer_arch_topic9">Arquiteturas Actuais: vectoriais e multicore</string>
+
+    <string name="um_class_data_communication">Comunicação de Dados</string>
+    <string name="um_class_data_communication_description">Definir, discutir e relacionar os conceitos teóricos básicos
+        relacionados com os processos de comunicação de dados e tecnologias de telecomunicações;\n
+        Explicar os componentes fundamentais dum sistema de comunicações digital ou analógico; \n
+        Compreender e relacionar diversos conceitos da área da Teoria da Informação
+        no contexto dos processos de codificação e comunicação de dados; \n
+        Listar e discutir as principais limitações dos sistemas de transmissão;\n
+        Compreender os mecanismos básicos de multiplexagem subjacentes aos sistemas de telecomunicações/transmissão actuais; \n
+        Capacidade de compreender e analisar a representação no domínio das frequências
+        (espectro) de sinais analógicos e digitais; \n
+        Compreender os conceitos subjacentes aos principais algoritmos,técnicas e ferramentas
+        relacionadas com a digitalização e processamento de sinais multimédia; \n
+        Compreender as técnicas e a teorias de suporte que permitem a detecção e correcção
+        de erros nas comunicações digitais.</string>
+    <string name="um_class_data_communication_topic1">Teoria da Informação: Medidas de Informação, Entropia, Codificação de Fontes com/sem memória, Rendimento e Compressao, Códigos Shannon-fano</string>
+    <string name="um_class_data_communication_topic2">Capacidade do canal, Lei de Hartley Shannon</string>
+    <string name="um_class_data_communication_topic3">Digitalização: Teoria da Amostragem; Quantização Uniforme/não uniforme; Ruído de Quantização</string>
+    <string name="um_class_data_communication_topic4">Digitalização: Conversão Analógico/Digital; PCM, Ruído em PCM; Outras tecnicas</string>
+    <string name="um_class_data_communication_topic5">Multiplexagem: Multipla Divisão do Tempo (TDM); Hierarquias PDH/SONET/SDH. TDM estatístico;</string>
+    <string name="um_class_data_communication_topic6">Multiplexagem: Modelos de filas de espera e escalonamento. Multipla Divisão de Frequência (FDM); Técnicas híbridas</string>
+    <string name="um_class_data_communication_topic7">Análise de Sinais: Análise temporal/frequências, Séries de Fourier, Potência, Largura de Banda</string>
+    <string name="um_class_data_communication_topic8">Análise de Sinais: Teorema de Parseval, Modulação</string>
+    <string name="um_class_data_communication_topic9">Análise de Sistemas de Transmissão: Sistemas LIT, Função de transferência, Largura de Banda, Ganhos/Perdas</string>
+    <string name="um_class_data_communication_topic10">Análise de Sistemas de Transmissão: Limitações, Ritmo de Nyquist, Ruído, Fitros/sistemas reais/ideais</string>
+    <string name="um_class_data_communication_topic11">Códigos de Controlo de Erros: Códigos de bloco, Distância de Hamming, Capacidade de detecção/correcção</string>
+    <string name="um_class_data_communication_topic12">Códigos de Controlo de Erros: Circuitos codificadores de códigos cíclicos sistemáticos</string>
+
+    <string name="um_class_algorithms">Algoritmos e Complexidade</string>
+    <string name="um_class_algorithms_description">O objectivo principal da UC de Algoritmos e Complexidade é
+        a introdução de técnicas para o desenho e análise de algoritmos.Resultados de aprendizagem:\n
+        1. Avaliar a correcção de um algoritmo\n
+        2. Determinar a complexidade assimptótica de um algoritmo iterativo ou recursivo.\n
+        3. Reconhecer e utilizar estratégias algorítmicas fundamentais.\n
+        4. Utilizar estruturas de dados fundamentais (em particular implementações de funções finitas e grafos), e
+        utilizar algoritmos sobre elas.\n
+        5. Reconhecer problemas NP-completos e alguns algoritmos aproximados para a sua resolução.
+    </string>
+    <string name="um_class_algorithms_topic1">Análise de correcção: Introdução à Lógica de Floyd-Hoare</string>
+    <string name="um_class_algorithms_topic2">Análise de de complexidade: modelo da complexidade assimptótica</string>
+    <string name="um_class_algorithms_topic3">Estratégias algorítmicas: incremental, greedy, programação dinâmica</string>
+    <string name="um_class_algorithms_topic4">Casos de estudo:algoritmos de ordenação</string>
+    <string name="um_class_algorithms_topic5">Estudo de algoritmos fundamentais sobre grafos</string>
+    <string name="um_class_algorithms_topic6">Introdução à noção de problema NP-completo</string>
+    <string name="um_class_algorithms_topic7">Estruturas de dados fundamentais e eficiência na procura: tabelas de Hash</string>
+    <string name="um_class_algorithms_topic8">Estruturas de dados fundamentais e eficiência na procura: estruturas lineares</string>
+    <string name="um_class_algorithms_topic9">Estruturas de dados fundamentais e eficiência na procura: hierárquicas (árvores, heaps, árvores-B)</string>
+
+    <string name="um_class_os">Sistemas Operativos</string>
+    <string name="um_class_os_description">Num sentido lato, o objectivo da unidade curricular é ajudar a ter uma visão coerente e integrada de como
+        funcionam os sistemas informáticos: o que é, em termos físicos, uma aplicação informática, que recursos
+        necessita, como interage com outras e com o sistema operativo, que políticas de gestão são mais
+        adequadas a cada tipo de carga e respectivos custos de implementação, razões para o sistema estar lento,
+        que atitudes tomar, etc.</string>
+    <string name="um_class_os_topic1">Introdução aos sistemas operativos modernos</string>
+    <string name="um_class_os_topic2">Gestão de processos: objectivos, estratégias de escalonamento</string>
+    <string name="um_class_os_topic3">Noções de programação concorrente: comunicação e sincronização de processos e threads</string>
+    <string name="um_class_os_topic4">Gestão de memória: sistemas de memória real e virtual, paginação e segmentação</string>
+    <string name="um_class_os_topic5">Gestão de periféricos</string>
+    <string name="um_class_os_topic6">Gestão de ficheiros</string>
+
+    <string name="um_class_oop">Programação Orientada aos Objectos</string>
+    <string name="um_class_oop_description">Compreender os conceitos fundamentais da PPO ( Objectos, Classes, Herança e Polimorfismo;\n
+        - analisar e ilustrar a estruturação de um domínio em classes;\n
+        - construir hierarquias de classes utilizando as noções de classe abstracta, tipo abstracto de dados e polimorfismo;\n
+        - compreender a importância das classes abstractas e herança na concepção de um sistema em POO;\n
+        - utilizar linguagens de programação por objectos para construção de programas de média escala, seguros, robustos e extensíveis.</string>
+    <string name="um_class_oop_topic1">Introdução à Programação por Objectos</string>
+    <string name="um_class_oop_topic2">Noção de Objecto em POO</string>
+    <string name="um_class_oop_topic3">Encapsulamento</string>
+    <string name="um_class_oop_topic4">Classes e Hierarquias de classes</string>
+    <string name="um_class_oop_topic5">Herança</string>
+    <string name="um_class_oop_topic6">Classes Abstractas</string>
+    <string name="um_class_oop_topic7">Herança simples vs herança múltipla</string>
+    <string name="um_class_oop_topic8">Herança múltipla e interfaces</string>
+
+    <string name="um_class_electromagnetism">Electromagnetismo</string>
+    <string name="um_class_electromagnetism_description">1. Calcular o campo eléctrico para distribuições discretas e contínuas de carga.\n
+        Usar a lei de Gauss para o cálculo do campo eléctricos.\n
+        2. Aplicar o conceito de potencial eléctrico a distribuições discretas e contínuas de carga.\n
+        3. Compreender e usar o conceito de capacidade e de força electromotriz\n
+        4.) Descrever o movimento de cargas eléctricas na presença de campos magnéticos\n
+        5.) Conhecer as fontes de campo magnético. Calcular o campo magnético de alguns sistemas simples\n
+        6.) Conhecer e aplicar o conceito de indução magnética e de indutância.</string>
+    <string name="um_class_electromagnetism_topic1">Campo eléctrico</string>
+    <string name="um_class_electromagnetism_topic2">Potencial eléctrico</string>
+    <string name="um_class_electromagnetism_topic3">Capacitância, força electromotriz e circuitos simples</string>
+    <string name="um_class_electromagnetism_topic4">Campo magnético</string>
+    <string name="um_class_electromagnetism_topic5">Fontes do campo magnético</string>
+    <string name="um_class_electromagnetism_topic6">Indução electromagnética</string>
+
+    <string name="um_class_option">Opcional</string>
+    <string name="um_class_option_description">A Opção UMinho será escolhida pelos alunos entre um conjunto de UCs que todos os anos será disponibilizado ao nível da Universidade</string>
+    <string name="um_class_option_topic1">Desconhecido</string>
+
+    <string name="um_class_calc_programs">Programas</string>
+    <string name="um_class_calc_programs_description">(i) Construção de programas: escrever programas funcionais de forma
+        composicional, com recurso a combinadores algébricos.\n
+        (ii) Transformação de programas: recurso à algebra da programação para se obterem programas mais
+        eficientes sem comprometer as sua correcção.\n
+        (iii) Análise e compreensão de programas: recurso à factorização em pares "fold" + "unfold" (hilomorfismos)
+        como forma de se perceber a arquitectura dos algoritmos e sua catalogação.\n
+        (iv) Síntese de programas: ciclos-for a partir de definições indutivas.\n
+        (v) Programação funcional avançada: construir e raciocinar sobre programas funcionais com efeitos sob a forma de mónades.</string>
+    <string name="um_class_calc_programs_topic1">Teoria e método em programação</string>
+    <string name="um_class_calc_programs_topic2">Cálculo e raciocínio sobre programas</string>
+    <string name="um_class_calc_programs_topic3">Composicionalidade</string>
+    <string name="um_class_calc_programs_topic4">Combinadores de programas</string>
+    <string name="um_class_calc_programs_topic5">Modularidade e reutilização</string>
+    <string name="um_class_calc_programs_topic6">«Pacotes» de programação</string>
+    <string name="um_class_calc_programs_topic7">Programação funcional: sua motivação e antecendentes históricos</string>
+    <string name="um_class_calc_programs_topic8">Composição de funções</string>
+    <string name="um_class_calc_programs_topic9">Noções de abstracção e de isomorfismo</string>
+    <string name="um_class_calc_programs_topic10">Iniciação à estruturação de dados</string>
+    <string name="um_class_calc_programs_topic11">Combinadores básicos e suas propriedades estruturais (reflexão, fusão, absorção, cancelamento e de functorialidade)</string>
+    <string name="um_class_calc_programs_topic12">Álgebra de um tipo de dados</string>
+    <string name="um_class_calc_programs_topic13">Lei da troca</string>
+    <string name="um_class_calc_programs_topic14">Introdução às estruturas de dados indutivas regulares</string>
+    <string name="um_class_calc_programs_topic15">Álgebras de functores</string>
+    <string name="um_class_calc_programs_topic16">A triologia «cata-ana-hilo»</string>
+    <string name="um_class_calc_programs_topic17">Recursividade polinomial</string>
+    <string name="um_class_calc_programs_topic18">Caso de estudo: algoritmos de ordenação</string>
+    <string name="um_class_calc_programs_topic19">Parametrização e polimorfismo</string>
+    <string name="um_class_calc_programs_topic20">Inferência de tipos polimórficos</string>
+    <string name="um_class_calc_programs_topic21">Programação genérica</string>
+    <string name="um_class_calc_programs_topic22">Functores de tipo</string>
+    <string name="um_class_calc_programs_topic23">Introdução ao politipismo</string>
+    <string name="um_class_calc_programs_topic24">Programação funcional com efeitos</string>
+    <string name="um_class_calc_programs_topic25">Mónades e sua teoria</string>
+    <string name="um_class_calc_programs_topic26">Construção de programas monádicos</string>
+    <string name="um_class_calc_programs_topic27">Exemplos: excepções, processamento de listas, computações com estado</string>
+    <string name="um_class_calc_programs_topic28">Breve referência ao mónade IO</string>
+
+    <string name="um_class_informatics_labs3">Laboratórios de Informática III</string>
+    <string name="um_class_informatics_labs3_description">Conhecer os princípios fundamentais da Engenharia de Software, designadamente modularidade,
+        reutilização, encapsulamento e abstracção de dados, e saber implementá-los em diferentes linguagens de
+        implementação (C - 1º projecto e Java 2º projecto);\n
+        - Complementar experimentalmente os conhecimentos adquiridos nas Unidades Curriculares de
+        Algoritmos e Complexidade e Programação Orientada aos Objectos;\n
+        - Desenhar e codificar dois projetos de média dimensão, a serem entregues e avaliados em várias fases. 1º
+        projeto Linguagem C Conceitos envolvidos: modularidade, reutilização, grafos, árvores, manipulação de
+        ficheiros.
+        2º projeto Linguagem Java Conceitos envolvidos: manipulação de colecções Java, medição de
+        tempos de operações sobre colecções, construção de interfaces com utilizador (padrão MVC), exploração
+        dos componentes Swing.</string>
+    <string name="um_class_informatics_labs3_topic1">Revisão de princípios de engenharia fundamentais como: modularidade, abstracção de dados, encapsulamento e reutilização</string>
+    <string name="um_class_informatics_labs3_topic2">Estruturas de dados genéricas em C (árvores e grafos)</string>
+    <string name="um_class_informatics_labs3_topic3">Realização do 1º projeto (em C)</string>
+    <string name="um_class_informatics_labs3_topic4">Revisão do Java Collections Framework (JCF); Implementação de Grafos em Java</string>
+    <string name="um_class_informatics_labs3_topic5">Criação de Interfaces com o utilizador usando SWING e o modelo MVC (Model-View-Controller)</string>
+    <string name="um_class_informatics_labs3_topic6">Persistência simples de dados em Java (ObjectStreams)</string>
+    <string name="um_class_informatics_labs3_topic7">Realização do 2º projeto (em Java)</string>
+
     <string name="um_class_"></string>
     <string name="um_class__description"></string>
     <string name="um_class__topic1"></string>
