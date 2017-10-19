@@ -6624,6 +6624,201 @@ Os estudantes deverão ainda desenvolver competências em análise e síntese, r
     <string name="um_class_sw_process_man_topic14">Execução, Controlo e Encerramento do projeto (PMBOK): Encerramento do projeto</string>
     <string name="um_class_sw_process_man_topic15">PRINCE2 - Projects in a Controlled Environment</string>
 
+    <string name="um_class_net_protocols">Tecnologias e Protocolos Internet</string>
+    <string name="um_class_net_protocols_description">Pretende-se com esta UC desenvolver as capacidades dos alunos nas vertentes de conhecimentos
+        teóricos e experimentais centrados em temas relevantes da área das tecnologias de acesso e core,
+        bem como das soluções protocolares de internetworking IPv4 e IPv6.</string>
+    <string name="um_class_net_protocols_topic1">Redes de Acesso e Core: Redes de Acesso</string>
+    <string name="um_class_net_protocols_topic2">Redes de Acesso e Core: Redes Metropolitanas e de Longa Distância</string>
+    <string name="um_class_net_protocols_topic3">Redes de Acesso e Core: Planeamento e Arquitectura de Redes de Core</string>
+    <string name="um_class_net_protocols_topic4">Protocolos e Mobilidade em redes IP: Mobilidade IP (IPv4 e IPv6)</string>
+    <string name="um_class_net_protocols_topic5">Protocolos e Mobilidade em redes IP: Handoff em Mobilidade</string>
+    <string name="um_class_net_protocols_topic6">Protocolos e Mobilidade em redes IP: Mobilidade em Contexto Multihoming</string>
+    <string name="um_class_net_protocols_topic7">Redes Ópticas: Tecnologias e Componentes de Redes Ópticas</string>
+    <string name="um_class_net_protocols_topic8">Redes Ópticas: SONET/SDH e Hierarquias Digitais</string>
+    <string name="um_class_net_protocols_topic9">Redes Ópticas: Redes WDM e Redes de Transporte Óptico (OTN)</string>
+    <string name="um_class_net_protocols_topic10">Internet e Interligações de Redes: Protocolos de encaminhamento Interno e Externo</string>
+    <string name="um_class_net_protocols_topic11">Internet e Interligações de Redes: Interligações de Rede com IPv6</string>
+    <string name="um_class_net_protocols_topic12">Internet e Interligações de Redes: Integração IPv6 e Mecanismos de transição</string>
+
+    <string name="um_class_mobile_networks">Redes Móveis</string>
+    <string name="um_class_mobile_networks_description">Enquadra-se na vertente de formação especializada do curso,
+        leccionada no 1º ano, e destina-se a introduzir os fundamentos e as tecnologias associados às redes de
+        comunicações móveis. Aborda a emissão, propagação e recepção de sinais de rádio, e introduz as tecnologias
+        associadas às redes móveis celulares e às redes de área local sem fios.</string>
+    <string name="um_class_mobile_networks_topic1">Conceitos fundamentais sobre propagação de sinais rádio</string>
+    <string name="um_class_mobile_networks_topic2">Fundamentos sobre arquitectura de redes por rádio</string>
+    <string name="um_class_mobile_networks_topic3">Redes móveis celulares terrestres</string>
+    <string name="um_class_mobile_networks_topic4">Outras redes móveis celulares</string>
+    <string name="um_class_mobile_networks_topic5">Redes de área local sem fios</string>
+    <string name="um_class_mobile_networks_topic6">Novas tendências em redes de comunicações por radio</string>
+
+    <string name="um_class_qos_internet">Qualidade de Serviço na Internet</string>
+    <string name="um_class_qos_internet_description">A presente unidade curricular (UC) visa promover o estudo e o
+        conhecimento de soluções actuais e emergentes que possibilitam a integração de Aplicações e Serviços
+        com requisitos de Qualidade de Serviço (QoS) distintos na rede Internet.</string>
+    <string name="um_class_qos_internet_topic1">Perceber a motivação para a integração de aplicações e serviços, e o problema de suportar Qualidade de Serviço em redes TCP/IP</string>
+    <string name="um_class_qos_internet_topic2">Definir e monitorizar métricas de QoS em função dos requisitos das aplicações e serviços</string>
+    <string name="um_class_qos_internet_topic3">Avaliar o comportamento e a implementação de mecanismos de controlo de QoS</string>
+    <string name="um_class_qos_internet_topic4">Perceber, explicar e exemplificar arquitecturas de QoS actuais</string>
+    <string name="um_class_qos_internet_topic5">Perceber o processo de estabelecimento de contractos de serviço e as suas componentes</string>
+    <string name="um_class_qos_internet_topic6">Identificar, perceber e seleccionar protocolos de transporte adequados, com base nas características e requisitos das aplicações e dos serviços</string>
+    <string name="um_class_qos_internet_topic7">Avaliar soluções para suporte a tempo-real</string>
+    <string name="um_class_qos_internet_topic8">Identificar e compreender as principais soluções de protocolos sinalização no suporte às aplicações em redes TCP/IP</string>
+
+    <string name="um_class_ubiquitous_apps">Aplicações Multimedia e Ubíquas</string>
+    <string name="um_class_ubiquitous_apps_description">Compreender os princípios, técnicas e algoritmos usados para
+        representação, compressão, recuperação e processamento de conteúdos multimédia;
+        Conhecer e diferenciar as diferentes tecnologias e sistemas e aplicações multimédia em rede.
+        Tem ainda como objetivo complementar a formação em Tecnologia da Informação e Comunicações com
+        competências avançadas na concepção, realização e avaliação de soluções informáticas para
+        sistemas caracterizados pela forte mobilidade dos seus utilizadores e pela ubiquidade
+        dos serviços de computação e comunicações.</string>
+    <string name="um_class_ubiquitous_apps_topic1">Sistemas e serviços Multimédia</string>
+    <string name="um_class_ubiquitous_apps_topic2">Representação, compressão, processamento, classificação e recuperação de multimédia</string>
+    <string name="um_class_ubiquitous_apps_topic3">Redes Multimédia</string>
+    <string name="um_class_ubiquitous_apps_topic4">Aplicações e Serviços Multimédia em Rede</string>
+    <string name="um_class_ubiquitous_apps_topic5">Fundamentos de Computação Móvel Ubíqua</string>
+    <string name="um_class_ubiquitous_apps_topic6">Tecnologias base</string>
+    <string name="um_class_ubiquitous_apps_topic7">Modelos de interacção</string>
+    <string name="um_class_ubiquitous_apps_topic8">Sistemas e plataformas de software</string>
+    <string name="um_class_ubiquitous_apps_topic9">Domínios de aplicação</string>
+
+    <string name="um_class_db_exploring">Administração e Exploração de Bases de Dados</string>
+    <string name="um_class_db_exploring_description">É objectivo desta unidade curricular a introdução aos sistemas de bases de dados,
+        em particular no que diz respeito à sua administração e exploração.</string>
+    <string name="um_class_db_exploring_topic1">Funções de um DBA</string>
+    <string name="um_class_db_exploring_topic2">Modelação e normalização</string>
+    <string name="um_class_db_exploring_topic3">Design de base de dados e aplicações</string>
+    <string name="um_class_db_exploring_topic4">Transportabilidade, Disponibilidade, Performance, Integridade e Segurança</string>
+    <string name="um_class_db_exploring_topic5">Cópias e reposição de cópias</string>
+    <string name="um_class_db_exploring_topic6">Gestão de desastres</string>
+    <string name="um_class_db_exploring_topic7">Ferramentas de administração e exploração de bases de dados</string>
+
+    <string name="um_class_data_analysys">Análise de Dados</string>
+    <string name="um_class_data_analysys_description">É objectivo desta unidade curricular a introdução à análise de dados e a sua
+        aplicação na concepção e implementação de sistemas de business inteligence ou de apoio à decisão.</string>
+    <string name="um_class_data_analysys_topic1">Modelos, técnicas e tecnologias de Business Intelligence</string>
+    <string name="um_class_data_analysys_topic2">Processo ETL</string>
+    <string name="um_class_data_analysys_topic3">Estrutura funcional das Bases de dados multidimensionais</string>
+    <string name="um_class_data_analysys_topic4">Análise de dados com ferramentas OLAP</string>
+    <string name="um_class_data_analysys_topic5">Ferramentas de modelação</string>
+    <string name="um_class_data_analysys_topic6">Sistemas de Processamento Analítico</string>
+    <string name="um_class_data_analysys_topic7">Algoritmos e estruturas de dados para o processamento analítico de dados</string>
+    <string name="um_class_data_analysys_topic8">Optimização e reestruturação dinâmica de cubos</string>
+    <string name="um_class_data_analysys_topic9">Sistemas de Apoio à decisão inteligente</string>
+    <string name="um_class_data_analysys_topic10">Monitorização de indicadores, reporting e dashboarding</string>
+    <string name="um_class_data_analysys_topic11">Plataformas de Business Intelligenc</string>
+    <string name="um_class_data_analysys_topic12">Vistas</string>
+
+    <string name="um_class_semantic_interop">Interoperabilidade Semântica</string>
+    <string name="um_class_semantic_interop_description">O objectivo desta unidade curricular a introdução ao conceito de interoperabilidade semântica.
+        Pretende-se alcançar os seguintes resultados de aprendizagem:\n
+        - Identificar, descrever e definir os principais conceitos relacionados com a interopersbilidade semântica.\n
+        - Compreender e identificar os níveis de interoperabilidade e as normas internacionais associadas a esta área temática.\n
+        - Compreender e identificar protocolos e formatos de comunicação.\n
+        - Estudar, implementar e avaliar arquétipos, terminologias e ontologias.\n
+        - Desenvolver ferramentas de software para a sincronização e integração semântica de dados.</string>
+    <string name="um_class_semantic_interop_topic1">Níveis de interoperabilidade</string>
+    <string name="um_class_semantic_interop_topic2">Normas internacionais</string>
+    <string name="um_class_semantic_interop_topic3">Arquétipos, terminologias e ontologias</string>
+    <string name="um_class_semantic_interop_topic4">Protocolos e formatos de comunicação</string>
+    <string name="um_class_semantic_interop_topic5">Serviços web</string>
+    <string name="um_class_semantic_interop_topic6">Sincronismo de dados</string>
+    <string name="um_class_semantic_interop_topic7">Ferramentas de implementação</string>
+
+    <string name="um_class_knowledge_discovery">Descoberta de Conhecimento</string>
+    <string name="um_class_knowledge_discovery_description">É objectivo desta unidade curricular a introdução ao conceito de descoberta do conhecimento.
+        Pretende-se alcançar os seguintes resultados de aprendizagem:\n
+        - Identificar, descrever e definir os principais conceitos relacionados com a descoberta do conhecimento.\n
+        - Seleccionar as metodologias apropriadas e aplicar software disponível mais recomendado na resolução de problemas reais de descoberta de conhecimento.\n
+        - Introduzir o conceito de visão por computador.\n
+        - Analisar os resultados de ferramentas de descoberta de conhecimento.\n
+        - Conhecer e ser capaz de implementar e avaliar cenários.</string>
+    <string name="um_class_knowledge_discovery_topic1">Preparação de dados</string>
+    <string name="um_class_knowledge_discovery_topic2">Processamento de dados estatísticos</string>
+    <string name="um_class_knowledge_discovery_topic3">Etapas do Data Mining</string>
+    <string name="um_class_knowledge_discovery_topic4">Metodologias de data mining</string>
+    <string name="um_class_knowledge_discovery_topic5">Aprendizagem por computador</string>
+    <string name="um_class_knowledge_discovery_topic6">Visão por computador</string>
+    <string name="um_class_knowledge_discovery_topic7">Ferramentas e aplicações</string>
+
+    <string name="um_class_network_manag">Gestão de Redes</string>
+    <string name="um_class_network_manag_description">Esta UC visa introduzir uma formação genérica na área da gestão
+        de redes e de sistemas de comunicações por computador. Abordando temáticas iminentemente práticas, apesar da
+        intenção em garantir uma importante componente formativa sobre os principais conceitos teóricos definidos nas
+        normas actuais, as aulas teóricas são complementadas, na parte prática, com pequenos projectos de desenvolvimento
+        ou de investigação, individuais ou em pequenos grupos, que sirvam para experimentação das ferramentas mais
+        importantes neste domínio e que ajudem os alunos a compreender e resolver os problemas mais comuns da gestão
+        de redes de computadores, serviços, sistemas de comunicações ou aplicações distribuídas.</string>
+    <string name="um_class_network_manag_topic1">Motivação, Introdução Histórica e Gestão de redes</string>
+    <string name="um_class_network_manag_topic2">Arquitecturas de gestão e gestão INMF/SNMP</string>
+    <string name="um_class_network_manag_topic3">Gestão por serviços</string>
+    <string name="um_class_network_manag_topic4">Tecnologias complementares: gestão distribuída, baseada em protocolos Web e gestão por agentes móveis e/ou por delegação</string>
+    <string name="um_class_network_manag_topic5">Actividades de gestão</string>
+    <string name="um_class_network_manag_topic6">Introdução à Gestão de Redes de Telecomunicações (TMN)</string>
+    <string name="um_class_network_manag_topic7">Ferramentas de Gestão Corrente</string>
+    <string name="um_class_network_manag_topic8">Gestão de Serviços por Políticas</string>
+    <string name="um_class_network_manag_topic9">Gestão Integrada</string>
+    <string name="um_class_network_manag_topic10">Automação e representação/definição de comportamentos</string>
+
+    <string name="um_class_network_security">Segurança em Redes</string>
+    <string name="um_class_network_security_description">As competências a adquirir são as seguintes:\n
+        Reconhecer a importância de uma cultura de segurança relativamente à utilização das redes de computadores\n
+        Conhecer os aspectos técnicos das redes de computadores e que mais as expõem a riscos de segurança\n
+        Reconhecer as principais ameaças e a forma típica como os ataques são efectuados\n
+        Analisar vulnerabilidades em sistemas interligados em rede\n
+        Implementar e controlar processos de gestão, contínuos, definidos no contexto de uma política de segurança para rede de computadores\n
+        Discutir a evolução do fenómeno de Segurança dos Sistemas de Informação, não só no aspecto das tecnologias de segurança, mas também das ameaças</string>
+    <string name="um_class_network_security_topic1">Conceitos gerais sobre Segurança da Informação</string>
+    <string name="um_class_network_security_topic2">Modelo de análise da SegInfo e normalização</string>
+    <string name="um_class_network_security_topic3">Ataques, ameaças e vulnerabilidades nos Sistemas de Informação</string>
+    <string name="um_class_network_security_topic4">Uso da criptografia em Segurança de redes</string>
+    <string name="um_class_network_security_topic5">Controlo de Acesso</string>
+    <string name="um_class_network_security_topic6">Segurança em redes TCP/IP</string>
+    <string name="um_class_network_security_topic7">Protocolos de segurança</string>
+    <string name="um_class_network_security_topic8">Componentes de Segurança</string>
+    <string name="um_class_network_security_topic9">Firewalls; Sistemas de detecção de intrusões; VPNs</string>
+    <string name="um_class_network_security_topic10">Introdução à análise Forense</string>
+
+    <string name="um_class_network_virtualisation">Virtualização de Redes</string>
+    <string name="um_class_network_virtualisation_description">Explorar e compreender as definições, protocolos e normas para as Redes
+        Definidas por Software (SDN). Perceber o funcionamento e a interligação dos componentes que são necessários para construir
+        redes que usam software para comunição bi-direcional comunicação entre as aplicações e a infra-estrutura de rede subjacente.
+        Será tambem necessário a compreensão de vários caso de uso das SDNs nomeadamente escalonamento e manipulação da
+        largura de banda, tráfego de entrada e acções desencadeadas, tal como casos interessantes à volta de big data,
+        redes de overlay em centros de dados e virtualização de funções de rede (NFVs). É necessário avaliar como as
+        empresas e fornecedores de serviço estão a tirar partido das SDNs e as NFVs para concretizar e fazer evoluir
+        os seus serviços e negócios.</string>
+    <string name="um_class_network_virtualisation_topic1">Planos de dados e controlo distribuídos e centralizados</string>
+    <string name="um_class_network_virtualisation_topic2">OpenFlow</string>
+    <string name="um_class_network_virtualisation_topic3">Controladores SDN</string>
+    <string name="um_class_network_virtualisation_topic4">Programação de Redes</string>
+    <string name="um_class_network_virtualisation_topic5">Conceitos e construções do centro de dados</string>
+    <string name="um_class_network_virtualisation_topic6">Virtualização da Função de Rede</string>
+    <string name="um_class_network_virtualisation_topic7">Abstracção da topologia da rede e da informação topologia</string>
+    <string name="um_class_network_virtualisation_topic8">Construção dum Framework SDN</string>
+    <string name="um_class_network_virtualisation_topic9">Casos de Uso</string>
+
+    <string name="um_class_emerging_netw">Arquitecturas Emergentes de Rede</string>
+    <string name="um_class_emerging_netw_description">Nesta UC o objetivo é tomar contacto com arquiteturas emergentes de rede.
+        Começa-se por identificar as principais debilidades da arquitectura da Internet actual, abordando a partir delas novas
+        arquitecturas que melhor colmatam essas debilidades. Para as dificuldades em lidar com a mobilidade, surgem as redes
+        Ad-Hoc as redes Veiculares e as redes tolerantes a atrasos. Para as questões relacionadas com o desempenho as novas
+        arquitecturas centradas nos conteúdos (CDN, Peer-to-Peer e NDN). No último item abordam-se as questões relacionadas
+        com a escala levantadas pela Internet das Coisas.</string>
+    <string name="um_class_emerging_netw_topic1">Arquitecturas da Internet e as suas principais debilidades</string>
+    <string name="um_class_emerging_netw_topic2">Cenários de evolução para uma arquitectura da Internet do futuro</string>
+    <string name="um_class_emerging_netw_topic3">Mobilidade: Redes Peer-to-Peer</string>
+    <string name="um_class_emerging_netw_topic4">Mobilidade: Redes veiculares</string>
+    <string name="um_class_emerging_netw_topic5">Mobilidade: DTN - Delay Tolerant Networks</string>
+    <string name="um_class_emerging_netw_topic6">Desempenho: P2P - Peer-to-Peer Networks</string>
+    <string name="um_class_emerging_netw_topic7">Desempenho: CDN - Content Delivery Networks</string>
+    <string name="um_class_emerging_netw_topic8">Desempenho: CCN - Content Centric Networks</string>
+    <string name="um_class_emerging_netw_topic9">Desempenho: NDN - Named Data Networks</string>
+    <string name="um_class_emerging_netw_topic10">Escala: IoT - Internet of Things</string>
+    <string name="um_class_emerging_netw_topic11">Escala: WsN - Redes de sensores</string>
+
     <string name="um_class_"></string>
     <string name="um_class__description"></string>
     <string name="um_class__topic1"></string>
