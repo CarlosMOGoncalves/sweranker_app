@@ -6391,6 +6391,239 @@ Os estudantes deverão ainda desenvolver competências em análise e síntese, r
     <string name="um_class_parallel_comp_parad_topic4">Medição e otimização do desempenho de aplicações em sistemas de memória partilhada e distribuída, homogéneos e heterogéneos</string>
     <string name="um_class_parallel_comp_parad_topic5">Linguagens e utilitários de apoio ao desenvolvimento de aplicações</string>
 
+    <string name="um_class_cripto_tec">Tecnologia Criptográfica</string>
+    <string name="um_class_cripto_tec_description">(Não disponível)</string>
+    <string name="um_class_cripto_tec_topic1">Terminologia e Conceitos criptográficos: criptografia simétrica (cifras simétricas; funções de hash criptográficas; MACs)</string>
+    <string name="um_class_cripto_tec_topic2">Terminologia e Conceitos criptográficos: criptografia assimétrica (acordo de chaves; cifra de chave pública; assinatura digital)</string>
+    <string name="um_class_cripto_tec_topic3">Terminologia e Conceitos criptográficos: certificação e PKI</string>
+    <string name="um_class_cripto_tec_topic4">Utilização de "frameworks" e bibliotecas criptográficas na codificação de sistemas seguros</string>
+    <string name="um_class_cripto_tec_topic5">Certificação e infra-estruturas de chave pública, certificados X.509</string>
+    <string name="um_class_cripto_tec_topic6">Protecção de redes, protocolos relevantes (IPSec, HTTPS, SSH, etc.)</string>
+    <string name="um_class_cripto_tec_topic7">Firewalls e VPNs</string>
+
+    <string name="um_class_security_tec">Tecnologia da Segurança</string>
+    <string name="um_class_security_tec_description">(Não disponível)</string>
+    <string name="um_class_security_tec_topic1">Conceitos da segurança: propriedades, vulnerabilidades, riscos, ataques e controlos</string>
+    <string name="um_class_security_tec_topic2">Controlo de acesso: identificação, autenticação, autorização, operações, propriedade, estruturas de controlo de acesso, e monitor de referência</string>
+    <string name="um_class_security_tec_topic3">Segurança de sistema operativo: vulnerabilidades, riscos, ataques, protecção de recursos, hardening, e ambientes de restrição restrita</string>
+    <string name="um_class_security_tec_topic4">Segurança de aplicações: vulnerabilidades, riscos e ataques</string>
+    <string name="um_class_security_tec_topic5">Segurança de redes: vulnerabilidades, riscos e ataques, arquitecturas seguras de rede, mecanismos de defesa e contramedidas</string>
+    <string name="um_class_security_tec_topic6">Sistemas transversais de gestão, monitorização e defesa: registo e monitorização de eventos e identificação de anomalias</string>
+    <string name="um_class_security_tec_topic7">Sistemas transversais de gestão, monitorização e defesa: gestão de configurações, reconhecimento de infra-estruturas e testes de penetração</string>
+    <string name="um_class_security_tec_topic8">Sistemas transversais de gestão, monitorização e defesa: desenho e exploração de vulnerabilidades</string>
+    <string name="um_class_security_tec_topic9">Segurança na web: vulnerabilidades, riscos e ataques, modelos de segurança</string>
+    <string name="um_class_security_tec_topic10">Segurança na web: gestão de sessão e autenticação</string>
+    <string name="um_class_security_tec_topic11">Segurança na web: segurança no cliente e no servidor</string>
+
+    <string name="um_class_cripto_structures">Estruturas Criptográficas</string>
+    <string name="um_class_cripto_structures_description">(Não disponível)</string>
+    <string name="um_class_cripto_structures_topic1">Criação de um ambiente de trabalho adequado à aprendizagem de Estruturas Criptográficas</string>
+    <string name="um_class_cripto_structures_topic2">Operações criptográficas básicas: uso de "hashs", uso de "key derivation functions", uso de cifras simétricas com escolha do modo, etc.</string>
+    <string name="um_class_cripto_structures_topic3">Grupos, anéis e corpos finitos definidos sobre inteiros</string>
+    <string name="um_class_cripto_structures_topic4">Os seus problemas "difíceis": factorização e logaritmo discreto</string>
+    <string name="um_class_cripto_structures_topic5">Aplicação às técnicas criptográficas das famílias RSA e DSA</string>
+    <string name="um_class_cripto_structures_topic6">Esquemas KEM/DEM</string>
+    <string name="um_class_cripto_structures_topic7">Anéis e corpos de polinómios</string>
+    <string name="um_class_cripto_structures_topic8">Noções básicas de Teoria dos Códigos</string>
+    <string name="um_class_cripto_structures_topic9">Aplicação aos criptosistemas das famílias NTRU e McEliece</string>
+    <string name="um_class_cripto_structures_topic10">Corpos finitos e curvas elipticas</string>
+    <string name="um_class_cripto_structures_topic11">Os esquemas DH sobre curvas elípticas, e.g. ECDSA</string>
+    <string name="um_class_cripto_structures_topic12">Emparelhamentos e criptografia orientada à identidade; os criptosistemas BF e BLMQ</string>
+    <string name="um_class_cripto_structures_topic13">Reticulados e criptografia pós-quântica</string>
+    <string name="um_class_cripto_structures_topic14">Os seus problemas difíceis: SVP e CVP; redução a estes problemas do NTRU e McEliece</string>
+    <string name="um_class_cripto_structures_topic15">Criptosistemas sobre reticulados</string>
+    <string name="um_class_cripto_structures_topic16">Problemas de aprendizagem (LPN e LWE), suas variantes e redução a reticulados</string>
+    <string name="um_class_cripto_structures_topic17">Redução de bases e algoritmo de Coppersmith: ataques ao RSA</string>
+    <string name="um_class_cripto_structures_topic18">Cifras simétricas</string>
+    <string name="um_class_cripto_structures_topic19">Arquitectura e modos e Funções "almost bent" e "almost perfect non-linear"</string>
+    <string name="um_class_cripto_structures_topic20">Uso da transformada Walsh-Hadamard; criptoanálise linear e diferencial</string>
+    <string name="um_class_cripto_structures_topic21">Problemas MQ ("multivariate quadratic") e a criptoanálise algébrica</string>
+
+    <string name="um_class_security_eng">Engenharia de Segurança</string>
+    <string name="um_class_security_eng_description">(Não disponível)</string>
+    <string name="um_class_security_eng_topic1">Vulnerabilidades aplicacionais: Vulnerabilidades de Software</string>
+    <string name="um_class_security_eng_topic2">Vulnerabilidades aplicacionais: Vulnerabilidades de Aplicações Web (de acordo com OWASP)</string>
+    <string name="um_class_security_eng_topic3">Vulnerabilidades aplicacionais: Buffer overflow, Input validation, Race conditions e Integer Overflow</string>
+    <string name="um_class_security_eng_topic4">Testes de software: Modelos de ameaças/ataques</string>
+    <string name="um_class_security_eng_topic5">Testes de software: Blackbox testing</string>
+    <string name="um_class_security_eng_topic6">Testes de software: Whitebox testing - Análise estática</string>
+    <string name="um_class_security_eng_topic7">Infra-estrutura para desenvolvimento de software de qualidade: IDE e Sistema de controlo de versões</string>
+    <string name="um_class_security_eng_topic8">Infra-estrutura para desenvolvimento de software de qualidade: Gestor de repositórios e Gestor de qualidade de código fonte</string>
+    <string name="um_class_security_eng_topic9">Infra-estrutura para desenvolvimento de software de qualidade: Gerador de documentação e Ferramentas de integração contínua</string>
+    <string name="um_class_security_eng_topic10">Ciclo de vida de desenvolvimento de software seguro: Modelos de ciclo de vida de desenvolvimento de software</string>
+    <string name="um_class_security_eng_topic11">Ciclo de vida de desenvolvimento de software seguro: Análise de Riscos</string>
+    <string name="um_class_security_eng_topic12">Ciclo de vida de desenvolvimento de software seguro: Standards e Metodologias de desenvolvimento de software seguro</string>
+
+    <string name="um_class_app_arch">Arquitecturas Aplicacionais</string>
+    <string name="um_class_app_arch_description">Analisar e conhecer os principais patterns estruturais e de comportamento utilizados para o
+        desenvolvimento de sistemas de software complexo e de grande escala, tendo em conta as especificidades
+        arquitecturais das aplicações multi-camada.\n
+        Saber desenvolver camadas computacionais que permitam evolução controlada e independente das
+        camadas de apresentação e dados e que permitam a disponibilização de serviços como mecanismo de
+        integração.\n
+        Identificar as principais características dos servidores aplicacionais por forma a escolher o modelo de
+        programação pretendido e saber utilizar tecnologia orientada a serviços como mecanismo de criação de
+        arquitecturas de software parametrizáveis.</string>
+    <string name="um_class_app_arch_topic1">Arquitectura do Sistema de Software: Patterns estruturais e de comportamento</string>
+    <string name="um_class_app_arch_topic2">Arquitectura do Sistema de Software: Aspectos avançados de programação orientada aos objectos</string>
+    <string name="um_class_app_arch_topic3">Arquitectura do Sistema de Software: Arquitecturas orientadas a serviços</string>
+    <string name="um_class_app_arch_topic4">Arquitectura do Sistema de Software: Modelos de programação orientados à construção de componentes reutilizáveis</string>
+    <string name="um_class_app_arch_topic5">Arquitectura do Sistema de Software: Manutenção evolutiva de arquitecturas orientadas aos objectos</string>
+    <string name="um_class_app_arch_topic6">Tecnologias de Programação Multi-Camada: Servidores aplicacionais como contexto aplicacional</string>
+    <string name="um_class_app_arch_topic7">Tecnologias de Programação Multi-Camada: Estratégias de desenvolvimento dos mecanismos de independência multi-camada</string>
+    <string name="um_class_app_arch_topic8">Tecnologias de Programação Multi-Camada: Programação concorrente</string>
+    <string name="um_class_app_arch_topic9">Tecnologias de Programação Multi-Camada: Mecanismos de caching e de sessão</string>
+    <string name="um_class_app_arch_topic10">Tecnologias de Programação Multi-Camada: Serviços como técnicas de integração multi-aplicação</string>
+
+    <string name="um_class_dbadmin">Administração de Bases de Dados</string>
+    <string name="um_class_dbadmin_description">Reconhecer e explicar os principais desafios de desempenho, fiabilidade e escala na gestão de dados.
+        Conhecer e descrever os mecanismos disponiveis para o processamento de interrogações e a manutenção de
+        garantias transaccionais.
+        Planear e executar soluções de gestão de dados, combinando, compondo e configurando os mecanismos
+        disponíveis.
+        Estimar a medir o comportamento de sistemas de gestão de dados.</string>
+    <string name="um_class_dbadmin_topic1">Anatomia de um sistema de gestão de bases de dados</string>
+    <string name="um_class_dbadmin_topic2">Caracterização de aplicações-alvo</string>
+    <string name="um_class_dbadmin_topic3">Identificação dos principais desafios de desempenho, fiabilidade e escala</string>
+    <string name="um_class_dbadmin_topic4">Execução de interrogações: representação física de dados</string>
+    <string name="um_class_dbadmin_topic5">Execução de interrogações: operadores relacionais e iteradores</string>
+    <string name="um_class_dbadmin_topic6">Execução de interrogações: redundância com indices e vistas</string>
+    <string name="um_class_dbadmin_topic7">Execução de interrogações: planeamento e optimização de interrogações</string>
+    <string name="um_class_dbadmin_topic8">Isolamento e recuperação transaccionais: anomalias de concorrência</string>
+    <string name="um_class_dbadmin_topic9">Isolamento e recuperação transaccionais: resolução com locking e multi-versão</string>
+    <string name="um_class_dbadmin_topic10">Isolamento e recuperação transaccionais: características de desempenho e estratégias de optimização</string>
+    <string name="um_class_dbadmin_topic11">Isolamento e recuperação transaccionais: atomicidade vs durabilidade</string>
+    <string name="um_class_dbadmin_topic12">Isolamento e recuperação transaccionais: métodos de logging e checkpointing</string>
+    <string name="um_class_dbadmin_topic13">Isolamento e recuperação transaccionais: cópias de segurança</string>
+    <string name="um_class_dbadmin_topic14">Big Data: replicação e particionamento (“sharding”) em sistemas relacionais/transaccionais</string>
+    <string name="um_class_dbadmin_topic15">Big Data: sistemas distribuídos de gestão de dados (NoSQL)</string>
+    <string name="um_class_dbadmin_topic16">Big Data: modelo de dados, indexação e materialização</string>
+    <string name="um_class_dbadmin_topic17">Big Data: execução distribuída com “map-reduce”</string>
+    <string name="um_class_dbadmin_topic18">Estudo de casos: benchmarks OLTP (e.g. TPC-C) e aplicação de análise exploratória de dados</string>
+    <string name="um_class_dbadmin_topic19">Estudo de casos: sistemas PostgreSQL e HBase</string>
+
+    <string name="um_class_datacentre_infra">Infraestruturas de Centro de Dados</string>
+    <string name="um_class_datacentre_infra_description">Compreender e explicar os compromissos entre custo, desempenho, e confiabilidade na concepção de
+        centros de dados e a sua tradução em tecnologias concretas.\n
+        Aplicar mecanismos de redundância, virtualização e administração centralizada no desenvolvimento e
+        operação de centros de dados.\n
+        Desenhar, planear e concretizar infraestruturas de armazenamento de dados escaláveis e de elevado
+        desempenho\n
+        Compreender e estabelecer os limites das infraestruturas definindo os thresholds para a sua revisão e
+        actualização\n
+        Ter uma visão global das infraestruturas e capacidade para identificar os pontos críticos das mesmas</string>
+    <string name="um_class_datacentre_infra_topic1">Armazenamento de dados: armazenamento em rede</string>
+    <string name="um_class_datacentre_infra_topic2">Armazenamento de dados: RAID</string>
+    <string name="um_class_datacentre_infra_topic3">Armazenamento de dados: gestão de volumes lógicos</string>
+    <string name="um_class_datacentre_infra_topic4">Armazenamento de dados: sistemas de ficheiros</string>
+    <string name="um_class_datacentre_infra_topic5">Armazenamento de dados: key-value stores</string>
+    <string name="um_class_datacentre_infra_topic6">Armazenamento de dados: mecanismos e políticas de salvaguarda</string>
+    <string name="um_class_datacentre_infra_topic7">Infraestrutura de serviços: serviços redundantes</string>
+    <string name="um_class_datacentre_infra_topic8">Infraestrutura de serviços: virtualização de servidores</string>
+    <string name="um_class_datacentre_infra_topic9">Monitorização e gestão centralizada: gestão de parques informáticos</string>
+    <string name="um_class_datacentre_infra_topic10">Monitorização e gestão centralizada: análise de desempenho</string>
+    <string name="um_class_datacentre_infra_topic11">Monitorização e gestão centralizada: monitorização</string>
+    <string name="um_class_datacentre_infra_topic12">Segurança de infraestruturas e serviços</string>
+
+    <string name="um_class_interactive_sys">Sistemas Interativos</string>
+    <string name="um_class_interactive_sys_description">Conceber interfaces com o utilizador com consideração por aspectos de usabilidade\n
+        - Saber avaliar as interfaces concebidas recorrendo às técnicas mais apropriadas\n
+        - Compreender e explorar diferentes técnicas de desenvolvimento de camadas interactivas\n
+        - Saber desenvolver camadas de apresentação que permitam evolução controlada e independente das
+        camadas de lógica e de dados.</string>
+    <string name="um_class_interactive_sys_topic1">Interacção Humano-Computador: definição de usabilidade, modelo de interacção de Norman</string>
+    <string name="um_class_interactive_sys_topic2">Interacção Humano-Computador: desenvolvimento centrado no utilizador</string>
+    <string name="um_class_interactive_sys_topic3">Interfaces baseado em modelos: a framework de referência Cameleon</string>
+    <string name="um_class_interactive_sys_topic4">Interfaces baseado em modelos: modelação de domínio, tarefas, interfaces abstractas e interfaces concretas, a linguagem UsiXML</string>
+    <string name="um_class_interactive_sys_topic5">Interfaces baseado em modelos: prototipagem de interfaces</string>
+    <string name="um_class_interactive_sys_topic6">Interfaces baseado em modelos: independência do dispositivo/adaptação ao dispositivo</string>
+    <string name="um_class_interactive_sys_topic7">Interfaces baseado em modelos: padrões de desenho</string>
+    <string name="um_class_interactive_sys_topic8">Tecnologias de desenvolvimento web: tecnologias server side vs cliente side</string>
+    <string name="um_class_interactive_sys_topic9">Tecnologias de desenvolvimento web: desenvolvimento server side (HTML5, CSS, JSP)</string>
+    <string name="um_class_interactive_sys_topic10">Tecnologias de desenvolvimento web: desenvolvimento client side (DOM, Javascript)</string>
+    <string name="um_class_interactive_sys_topic11">Tecnologias de desenvolvimento web: programação de interfaces síncronas vs. assíncronas (AJAX)</string>
+    <string name="um_class_interactive_sys_topic12">Avaliação de interfaces: avaliação empírica vs. avaliação analítica</string>
+    <string name="um_class_interactive_sys_topic13">Avaliação de interfaces: avaliação por inspecção</string>
+    <string name="um_class_interactive_sys_topic14">Avaliação de interfaces: avaliação baseada em modelos</string>
+
+    <string name="um_class_sw_arch">Arquitecturas de Software</string>
+    <string name="um_class_sw_arch_description">Conhecer e compreender, tendo por base o RUP, as várias etapas do processo de conceção e
+        desenvolvimento de um sistema de software complexo e de grande escala e usar a linguagem UML como
+        ferramenta de base para a sua modelação;\n
+        - Conhecer e ser capaz de aplicar princípios avançados de engenharia de software (ES), designadamente IOC
+        (Inversion of Control), DI (Dependency Injection) e de separação de camadas (cf. modelo MVC - model, view e
+        controller), bem como aplicar padrões usuais (“design patterns”);\n
+        - Saber usar tecnologias Java para desenvolvimento de aplicações Web, designadamente, Servlets, Java
+        Server Pages (ou Java Server Faces ou Structs) e Beans (bem como tecnologias de persistência), e usá-las
+        segundo os princípios do modelo MVC;\n
+        - Saber modelar em Alloy pequenos subsistemas de um dado sistema de software e realizar a verificação
+        formal da satisfação de propriedades que fazem parte dos requisitos funcionais de tais subsistemas</string>
+    <string name="um_class_sw_arch_topic1">Análise das plataformas J2EE e .NET</string>
+    <string name="um_class_sw_arch_topic2">Introdução ao Rational Unified Process (RUP)</string>
+    <string name="um_class_sw_arch_topic3">Engenharia de Software baseada em Modelos: UML</string>
+    <string name="um_class_sw_arch_topic4">JAVA avançado: Generics,  Implementação de classes genéricas, Elisão de tipos em Java, Mecanismo de Reflexão e Factory methods</string>
+    <string name="um_class_sw_arch_topic5">Princípios de Engenharia de Software: Inversão de Controlo (IOC) e Injecção de Dependência (DI)</string>
+    <string name="um_class_sw_arch_topic6">Padrões de Conceção e Desenvolvimento (Design Patterns)</string>
+    <string name="um_class_sw_arch_topic7">Tecnologia Java para aplicações Web: Servlets, Java Server Pages (JSP) e Java Beans</string>
+    <string name="um_class_sw_arch_topic8">Tecnologia Java para aplicações Web: Modelo MVC de implementação, MVC usando Struts ou JSF</string>
+    <string name="um_class_sw_arch_topic9">Tecnologias para Persistência: DAOs (Data Access objects), TAOs (Transfer Objects), JPA (Java Persistence API) e Hibernate</string>
+    <string name="um_class_sw_arch_topic10">Validação e verificação de modelos de software em Alloy</string>
+
+    <string name="um_class_req_eng">Engenharia de Requisitos</string>
+    <string name="um_class_req_eng_description"> Definir, no âmbito de todo o processo de engenharia de software, a intervenção da equipa de engenharia de
+        requisitos e o envolvimento formal dos stakeholders\n
+        Escolher a forma como devem ser capturados os requisitos, em particular decidir quais as técnicas a usar
+        para levantar os requisitos junto das fontes identificadas\n
+        Detectar, negociar e resolver conflitos entre os requisitos capturados\n
+        Estruturar o documento de requisitos a dois níveis (os requisitos do utilizador e os requisitos de sistema) e
+        assegurar a sua qualidade e verificabilidade\n
+        Examinar o documento de requisitos, garantindo que descreve o sistema pretendido, através de revisões
+        formais, de inspecções ou de criação de protótipos\n
+        Gerir a alteração dos requisitos, através de técnicas de rastreabilidade e de análise de impacto</string>
+    <string name="um_class_req_eng_topic1">Processo de engenharia de requisitos</string>
+    <string name="um_class_req_eng_topic2">Levantamento de requisitos</string>
+    <string name="um_class_req_eng_topic3">Análise de requisitos</string>
+    <string name="um_class_req_eng_topic4">Especificação e modelação de requisitos</string>
+    <string name="um_class_req_eng_topic5">Validação de requisitos</string>
+    <string name="um_class_req_eng_topic6">Gestão de requisitos</string>
+
+    <string name="um_class_web_eng">Engenharia Web</string>
+    <string name="um_class_web_eng_description">Conceber, desenvolver, instalar e manter aplicações web\n
+        Identificar as questões de âmbito legal, profissional, social e ético envolvidas no desenvolvimento de
+        aplicações web usáveis e acessíveis\n
+        Adaptar uma aplicação web a outros contextos de utilização, em função dos requisitos capturados\n
+        Descrever e discutir as técnicas, os métodos e as abordagens usados no desenvolvimento web</string>
+    <string name="um_class_web_eng_topic1">Tecnologias</string>
+    <string name="um_class_web_eng_topic2">Processo de desenvolvimento</string>
+    <string name="um_class_web_eng_topic3">Engenharia de requisitos</string>
+    <string name="um_class_web_eng_topic4">Concepção de aplicações web</string>
+    <string name="um_class_web_eng_topic5">Implementação, deployment e manutenção</string>
+    <string name="um_class_web_eng_topic6">Avaliação da qualidade</string>
+    <string name="um_class_web_eng_topic7">Web semântica e Web 2.0</string>
+
+    <string name="um_class_sw_process_man">Gestão do Processo de Software</string>
+    <string name="um_class_sw_process_man_description">Os estudantes que completarem esta UC com sucesso, deverão ser capazes de:\n
+        1. Discutir alternativas de aplicação das técnicas do PMBoK em projectos de software;\n
+        2. Elaborar o plano de um projecto de desenvolvimento de sistemas de informação, seguindo as orientações do PMBoK;\n
+        3. Compreender e aplicar os métodos adequados para registar o progresso de um projecto (Execução do Projecto);\n
+        4. Aplicar as técnicas propostas pelo PMBoK para monitorizar o progresso de um projecto (EVM - Earned Value Management);\n
+        5. Compreender os princípios, temas e processos propostos pelo método PRINCE2 .</string>
+    <string name="um_class_sw_process_man_topic1">Introdução: Contexto de um projecto</string>
+    <string name="um_class_sw_process_man_topic2">Introdução: Organização de um projecto</string>
+    <string name="um_class_sw_process_man_topic3">Introdução: A Framework do PMBoK</string>
+    <string name="um_class_sw_process_man_topic4">Introdução: As Áreas de Conhecimento</string>
+    <string name="um_class_sw_process_man_topic5">PMBOK: Planeamento do âmbito</string>
+    <string name="um_class_sw_process_man_topic6">PMBOK: Planeamento do tempo</string>
+    <string name="um_class_sw_process_man_topic7">PMBOK: Planeamento do custo</string>
+    <string name="um_class_sw_process_man_topic8">PMBOK: Planeamento da qualidade</string>
+    <string name="um_class_sw_process_man_topic9">PMBOK: Planeamento das outras áreas de conhecimento</string>
+    <string name="um_class_sw_process_man_topic10">PMBOK: Mecanismo para o Planeamento de Projectos de software</string>
+    <string name="um_class_sw_process_man_topic11">Execução, Controlo e Encerramento do projeto (PMBOK): Relatórios do progresso</string>
+    <string name="um_class_sw_process_man_topic12">Execução, Controlo e Encerramento do projeto (PMBOK): EVM – Earned Value Management</string>
+    <string name="um_class_sw_process_man_topic13">Execução, Controlo e Encerramento do projeto (PMBOK): Controlar as alterações do projecto</string>
+    <string name="um_class_sw_process_man_topic14">Execução, Controlo e Encerramento do projeto (PMBOK): Encerramento do projeto</string>
+    <string name="um_class_sw_process_man_topic15">PRINCE2 - Projects in a Controlled Environment</string>
+
     <string name="um_class_"></string>
     <string name="um_class__description"></string>
     <string name="um_class__topic1"></string>
