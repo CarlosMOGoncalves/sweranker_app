@@ -6819,6 +6819,428 @@ Os estudantes deverão ainda desenvolver competências em análise e síntese, r
     <string name="um_class_emerging_netw_topic10">Escala: IoT - Internet of Things</string>
     <string name="um_class_emerging_netw_topic11">Escala: WsN - Redes de sensores</string>
 
+    <string name="um_class_modelling_spec">Especificação e Modelação</string>
+    <string name="um_class_modelling_spec_description">Abstrair os detalhes de um componente de software por forma a obter um modelo adequado à verificação
+        formal; \n
+        Modelar o estado de um componente de software usando o conceito unificador de relação matemática;\n
+        Especificar invariantes e pré- e pós-condições de operações usando lógica relacional; \n
+        Especificar sistemas reactivos usando lógica temporal;\n
+        Utilizar ferramentas de verificação automática para estabelecer a validade
+        de uma propriedade de software.</string>
+    <string name="um_class_modelling_spec_topic1">Lógica proposicional e de primeira ordem</string>
+    <string name="um_class_modelling_spec_topic2">Lógica relacional: sintaxe e semântica</string>
+    <string name="um_class_modelling_spec_topic3">Lógica relacional: modelação usando relações</string>
+    <string name="um_class_modelling_spec_topic4">Lógica relacional: introdução ao cálculo relacional</string>
+    <string name="um_class_modelling_spec_topic5">Lógica relacional: taxonomia e álgebra das relações</string>
+    <string name="um_class_modelling_spec_topic6">Alloy: especificação de invariantes e de operações usando pré- e pós-condições em lógica relacional</string>
+    <string name="um_class_modelling_spec_topic7">Alloy: idiomas para modelação de comportamento dinâmico</string>
+    <string name="um_class_modelling_spec_topic8">Alloy: semântica e sistema de tipos</string>
+    <string name="um_class_modelling_spec_topic9">Alloy: técnicas para verificação automática</string>
+    <string name="um_class_modelling_spec_topic10">Alloy: comparação com outras linguagens de modelação</string>
+    <string name="um_class_modelling_spec_topic11">Especificação de sistemas reactivos: lógica temporal (LTL e CTL)</string>
+    <string name="um_class_modelling_spec_topic12">Especificação de sistemas reactivos: verificação de modelos por enumeração explícita do espaço de estados</string>
+    <string name="um_class_modelling_spec_topic13">Especificação de sistemas reactivos: verificação de modelos simbólica</string>
+    <string name="um_class_modelling_spec_topic14">Especificação de sistemas reactivos: ferramentas para verificaçao de modelos</string>
+
+    <string name="um_class_arch_calculus">Arquitectura e Cálculo</string>
+    <string name="um_class_arch_calculus_description">Esta Unidade Curricular, que é parte integrante do perfil em Métodos Formais em Engenharia de Software, tem
+        por objectivo proporcionar formação em Arquitectura de Software numa perspectiva formal e com ênfase nos sistemas reactivos</string>
+    <string name="um_class_arch_calculus_topic1">Sistemas de transição como elementos base em modelação de arquitectras para sistemas reactivos</string>
+    <string name="um_class_arch_calculus_topic2">Simulação, bissimulação e invariantes</string>
+    <string name="um_class_arch_calculus_topic3">Cálculo relacional e conexões de Galois</string>
+    <string name="um_class_arch_calculus_topic4">Relação com a lógica modal e as álgebras de processos</string>
+    <string name="um_class_arch_calculus_topic5">Autómatos pesados e com evolução estocástica</string>
+    <string name="um_class_arch_calculus_topic6">Introdução à álgebra linear dos programas</string>
+    <string name="um_class_arch_calculus_topic7">Modelação arquitectural: Orientação aos processos. Introdução a AADL.</string>
+    <string name="um_class_arch_calculus_topic8">Modelação arquitectural: Orientação à coordenação. Introdução a Reo.</string>
+    <string name="um_class_arch_calculus_topic9">Análise arquitectural: Propriedades estruturais, comportamentais e desemepnho.</string>
+    <string name="um_class_arch_calculus_topic10">Análise arquitectural: Cadeias de Markov interactivas - aplicação à análise arquitectural.</string>
+
+    <string name="um_class_formal_verif">Verificação Formal</string>
+    <string name="um_class_formal_verif_description">Explicar o funcionamento das técnicas mais importantes em verificação de software.\n
+        Especificar o comportamento de programas através de contratos.\n
+        Utilizar ferramentas para a verificação de programas anotados com contratos.\n
+        Explicar as diferentes abordagens que têm sido utilizadas para mitigar o problema de explosão do espaço de
+        estados no model checking.\n
+        Utilizar uma ferramenta de model checking simbólico.\n
+        Utilizar ferramentas de verificação automática de software baseadas em model checking.</string>
+    <string name="um_class_formal_verif_topic1">Demonstração de Teoremas: introdução à construção interactiva de provas</string>
+    <string name="um_class_formal_verif_topic2">Teorias de Primeira Ordem: utilização de SMT solvers</string>
+    <string name="um_class_formal_verif_topic3">Verificação Dedutiva: lógicas de programas</string>
+    <string name="um_class_formal_verif_topic4">Verificação Dedutiva: geração de condições de verificação</string>
+    <string name="um_class_formal_verif_topic5">Verificação Dedutiva: linguagens de especificação comportamental de interfaces de código e design by contract</string>
+    <string name="um_class_formal_verif_topic6">Verificação Dedutiva: Componente prática - Dafny, Frama-C e SPARK</string>
+    <string name="um_class_formal_verif_topic7">Model Checking: model checking simbólico</string>
+    <string name="um_class_formal_verif_topic8">Model Checking: redução de ordem parcial</string>
+    <string name="um_class_formal_verif_topic9">Model Checking: bounded model checking</string>
+    <string name="um_class_formal_verif_topic10">Model Checking: Componente prática - SMV</string>
+    <string name="um_class_formal_verif_topic11">Model Checking de Software: bounded model checking de código</string>
+    <string name="um_class_formal_verif_topic12">Model Checking de Software: mecanismos de abstracção existencial</string>
+    <string name="um_class_formal_verif_topic13">Model Checking de Software: abstracção baseada em predicados</string>
+    <string name="um_class_formal_verif_topic14">Model Checking de Software: refinamento de abstracções</string>
+    <string name="um_class_formal_verif_topic15">Model Checking de Software: Componente prática - CBMC e BLAST</string>
+
+    <string name="um_class_grammars">Gramáticas na Compreensão de Software</string>
+    <string name="um_class_grammars_description">No fim, os alunos deverão ter: capacidade para desenvolver especificações da sintaxe/semântica de
+        linguagens e problemas em geral com gramáticas;\n
+        capacidade para gerar programas (protótipos) usando ferramentas automáticas baseadas em gramáticas;\n
+        capacidade de construir front-ends poderosos para a análise de linguagens de programação;\n
+        capacidade para conceber e implementar estruturas de dados complexas para representação intermédia da
+        informação extraída da análise do código;\n
+        capacidade para criar representações visuais adequadas à compreensão clara do conhecimento complexo detido;\n
+        capacidade para desenvolver software como uma tarefa de transformação de programas e/ou especificações em
+        implementações eficientes;\n
+        capacidade para utilizar técnicas de transformação de programas para optimizar
+        programas (e.g. cálculo parcial, detecção de código morto), efetuar debugging de programase melhorar a estrutura dos programas;\n
+        capacidade de desenvolver ferramentas para ajuda à compreensão de código.</string>
+    <string name="um_class_grammars_topic1">Compreensão de Programas, modelos cognitivos, abordagens, conceitos e domínio do saber</string>
+    <string name="um_class_grammars_topic2">Linguagens e Gramáticas, caracterização destes conceitos e domínios do saber</string>
+    <string name="um_class_grammars_topic3">Conceitos sobre Gramáticas de Atributos (GA): definição formal, desenvolvimento</string>
+    <string name="um_class_grammars_topic4">Processamento de Linguagens baseado em Gramáticas: notações gramaticais, gramáticas tradutoras (GT) e gramáticas de atributos (GA)</string>
+    <string name="um_class_grammars_topic5">Tradução Dirigida pela Sintaxe versus Tradução Dirigida pela Semântica</string>
+    <string name="um_class_grammars_topic6">Geração de Programas (processadores de Linguagens, protótipos rápidos) a partir de GT/GAs</string>
+    <string name="um_class_grammars_topic7">Análise de programas</string>
+    <string name="um_class_grammars_topic8">Transformação de programas</string>
+    <string name="um_class_grammars_topic9">Paradigmas para visualização de programas</string>
+
+    <string name="um_class_knowledge_proces">Processamento e Representação de Conhecimento</string>
+    <string name="um_class_knowledge_proces_description">No fim, os alunos deverão: ser capazes de especificar formalmente conhecimento usando várias
+        metodologias: taxonomias, thesaurus e ontologias; ser capazes de adicionar semântica descritiva a objetos
+        digitais; ser capazes de especificar taxonomias em SKOS; ser capazes de espeficicar ontologias em OWL; ser
+        capazes de processar ontologias; ser capazes de adicionar semântica a sítios web usando as normas RDFa e
+        "Open Linked Data".</string>
+    <string name="um_class_knowledge_proces_topic1">Especificação formal de conhecimento: taxonomias, thesaurus e ontologias</string>
+    <string name="um_class_knowledge_proces_topic2">Semântica descritiva em objectos digitais: RDF - Resource Description Framework</string>
+    <string name="um_class_knowledge_proces_topic3">SKOS - Simple Knowledge Organization System: especificação de taxonomias, thesaurus e sistemas classificativos</string>
+    <string name="um_class_knowledge_proces_topic4">Especificação de ontologias: Entidades principais - Classes/Conceitos, Propriedades e Indivíduos</string>
+    <string name="um_class_knowledge_proces_topic5">Especificação de ontologias: Hierarquias de Classes</string>
+    <string name="um_class_knowledge_proces_topic6">Reasoning: Inferência de Conhecimento - Lógica de 1ª ordem e Lógica Descritiva</string>
+    <string name="um_class_knowledge_proces_topic7">OWL - Ontology Web Language: OWL-Lite e OWL-DL</string>
+    <string name="um_class_knowledge_proces_topic8">Editores e navegadores de/em OWL</string>
+    <string name="um_class_knowledge_proces_topic9">Processamento de ontologias e construção de ferramentas: reasoners, editores e navegadores</string>
+    <string name="um_class_knowledge_proces_topic10">Web 2.0 e o software social</string>
+    <string name="um_class_knowledge_proces_topic11">Web 3.0: a web semântica (OWL, RDF)</string>
+    <string name="um_class_knowledge_proces_topic12">Transformação de Sistemas de Informação em Sistemas de Conhecimento: RDFa - Resource Description Framework in Attributes, Open Linked Data</string>
+
+    <string name="um_class_info_proces">Processamento e Representação de Informação</string>
+    <string name="um_class_info_proces_description">No fim, os alunos deverão: conhecer o ciclo de vida documental, saber identificar as várias fases e as
+        tecnologias a utilizar em cada uma; ser capazes de especificar uma linguagem de anotação para um conjunto
+        de requisitos; ser capazes de implementar transformações de documentos para diversos fins: extracção de
+        conhecimento, publicação na Web, intercâmbio de informação; conhecer e utilizar soluções de
+        armazenamento para documentos anotados; ser capazes de definir as camadas necessárias para integrar e
+        realizar o intercâmbio de informação entre sistemas de informação distintos; ser capazes de implementar um
+        projecto de publicação electrónica recorrendo a normas internacionais abertas: XML, XSLFO e XSL; ser capazes
+        de programar a geração automática de sítios Web a partir de um repositório de documentos XML; ser capazes
+        de utilizar linguagens de anotação e respectivas ferramentas desenvolvidas por outrém.</string>
+    <string name="um_class_info_proces_topic1">Representação da informação: evolução histórica, ASCII, Unicode</string>
+    <string name="um_class_info_proces_topic2">Texto como a forma fundamental de representar informação</string>
+    <string name="um_class_info_proces_topic3">Linguagens de anotação descritivas: introdução e um pouco de história, SGML, HTML, XML, JSON</string>
+    <string name="um_class_info_proces_topic4">Documentação estruturada e anotação</string>
+    <string name="um_class_info_proces_topic5">Algumas linguagens de anotação para a Web: XML, HTML, WML, WSDL, SVG</string>
+    <string name="um_class_info_proces_topic6">Documentos XML: estrutura e conceitos, ciclo de vida documental, desenvolvimento de DTDs e Schemas</string>
+    <string name="um_class_info_proces_topic7">Processamento de linguagens de anotação: árvore documental abstracta (ADA)</string>
+    <string name="um_class_info_proces_topic8">Navegação e pesquisa na ADA: o XPath</string>
+    <string name="um_class_info_proces_topic9">Modelos de processamento: DOM e SAX</string>
+    <string name="um_class_info_proces_topic10">XSL: XML Stylesheet Language</string>
+    <string name="um_class_info_proces_topic11">XQuery: XML Query Language</string>
+    <string name="um_class_info_proces_topic12">XML e Bases de Dados: armazenamento de dados estruturados e semi-estruturados</string>
+    <string name="um_class_info_proces_topic13">Integração e intercâmbio de informação entre sistemas: Limpeza de dados, Construção de validadores, ferramentas de e migradores, Protocolo OAI-PMH</string>
+    <string name="um_class_info_proces_topic14">Publicação Electrónica: a norma XSL-FO</string>
+    <string name="um_class_info_proces_topic15">Processamento de documentos: HTML, CGIs, XML</string>
+
+    <string name="um_class_natural_lang_proces">Scripting no Processamento de Linguagem Natural</string>
+    <string name="um_class_natural_lang_proces_description">No fim, os alunos deverão: ser capazes de escrever scripts para automatização de uma variedade de tarefas e
+        transformações; ser capazes de resolver problemas usando transformações via expressões regulares;
+        compreender as vantagens e o funcionamento de sistemas guiados por regras de produção (condição-reacção);
+        ter a capacidade para construir DSLs concretas; ter a capacidade de construir e usar corpora; ter a capacidade
+        de extrair informação diversa a partir de corpora; ter a capacidade de construir dicionários electrónicos; ter a
+        capacidade de construir pequenos protótipos para modelar linguagem natural.</string>
+    <string name="um_class_natural_lang_proces_topic1">Linguagens de scripting: características, objectivos e conceitos, introdução a uma linguagem de scripting (e.g. Perl)</string>
+    <string name="um_class_natural_lang_proces_topic2">Processadores de linguagens regulares e programação orientada à expressão regular</string>
+    <string name="um_class_natural_lang_proces_topic3">Design Patterns no processamento de linguagens</string>
+    <string name="um_class_natural_lang_proces_topic4">Linguagens baseadas em regras: reescrita textual e linguagens de domínio específico (DSL) baseadas em regras de reescrita</string>
+    <string name="um_class_natural_lang_proces_topic5">Processamento estrutural de árvores e DSLs baseadas nestes processadores (e.g. XML::DT, Lingua::Treebank)</string>
+    <string name="um_class_natural_lang_proces_topic6">Processamento de Linguagem Natural: Análise Morfossintática de textos em língua natural</string>
+    <string name="um_class_natural_lang_proces_topic7">Modelos morfológicos, Gramáticas lógicas e Definite Clause Grammars, Parsing robusto</string>
+    <string name="um_class_natural_lang_proces_topic8">Processamento de Linguagem Natural: semântica e pragmática</string>
+    <string name="um_class_natural_lang_proces_topic9">Dicionários multifonte e Thesaurus</string>
+    <string name="um_class_natural_lang_proces_topic10">Extracção de Conhecimento a partir de Textos</string>
+    <string name="um_class_natural_lang_proces_topic11">Sumarização e Classificação</string>
+    <string name="um_class_natural_lang_proces_topic12">Introdução à Tradução automática</string>
+
+    <string name="um_class_ds_paradigms">Paradigmas de Sistemas Distribuídos</string>
+    <string name="um_class_ds_paradigms_description">No seguimento da programação de sistemas (de Sistemas Operativos) e das
+        noções essenciais de programação concorrente e sistemas distribuídos (de Sistemas Distribuídos), esta UC aborda
+        diferentes paradigmas que podem ser utilizados no desenvolvimento de aplicações distribuídas sofisticadas.</string>
+    <string name="um_class_ds_paradigms_topic1">Paradigma cliente-servidor</string>
+    <string name="um_class_ds_paradigms_topic2">Serialização de dados</string>
+    <string name="um_class_ds_paradigms_topic3">Programação baseada em actores</string>
+    <string name="um_class_ds_paradigms_topic4">Programação orientada às mensagens: padrões de mensagens e notificação de eventos</string>
+    <string name="um_class_ds_paradigms_topic5">Programação orientada aos recursos: Representational State Transfer (REST)</string>
+
+    <string name="um_class_ds_fundamentals">Fundamentos de Sistemas Distribuídos</string>
+    <string name="um_class_ds_fundamentals_description">Na sequência das noções básicas de programação de sistemas distribuídos e em
+        paralelo com a aprendizagem de paradigmas de programação que tornam possível a construção de sistemas cada vez mais complexos,
+        esta unidade curricular tem como objectivo focar o raciocínio no sistema distribuído como um todo, compreendendo as noções
+        de correcção do sistema e os algoritmos principais para a atingir baseados em relógios lógicos e transacções distribuídas.</string>
+    <string name="um_class_ds_fundamentals_topic1">Programação baseada em eventos</string>
+    <string name="um_class_ds_fundamentals_topic2">Modelação e correcção de sistemas distribuídos</string>
+    <string name="um_class_ds_fundamentals_topic3">Tempo lógico e observação global</string>
+    <string name="um_class_ds_fundamentals_topic4">Transacções distribuídas: algoritmos 2PL e 2PC; middleware</string>
+
+    <string name="um_class_fault_tolerance">Tolerância a Faltas</string>
+    <string name="um_class_fault_tolerance_description">Desenvolver e aprofundar a formação na área de sistemas distribuídos
+        dando continuidade ao desenvolvimento das técnicas estudadas na unidade curricular de Sistemas Distribuídos.
+        Pretende-se complementar a formação anterior e conferir capacidade de desenvolver sistemas distribuídos
+        confiáveis com recurso a técnicas de replicação por software para coerência forte.</string>
+    <string name="um_class_fault_tolerance_topic1">Fundamentos de tolerância a faltas: modelação, detecção de faltas</string>
+    <string name="um_class_fault_tolerance_topic2">Sistemas distribuídos tolerantes a faltas: comunicação em grupo</string>
+    <string name="um_class_fault_tolerance_topic3">Acordo em sistemas distribuídos, replicação com coerência forte</string>
+    <string name="um_class_fault_tolerance_topic4">Replicação de sistemas de bases de dados</string>
+
+    <string name="um_class_large_sc_ds">Sistemas Distribuídos em Larga Escala</string>
+    <string name="um_class_large_sc_ds_description">Esta unidade dá continuidade aos temas desenvolvidos em Sistemas Operativos e Sistemas Distribuídos,
+        e aborda um conjunto de matérias que suportam a criação de soluções robustas para sistemas distribuídos em larga escala.
+        Entende-se aqui larga escala por elevados números de componentes, potencialmente distribuídos numa escala
+        geográfica com distâncias físicas significativas.</string>
+    <string name="um_class_large_sc_ds_topic1">Modelos e limitações da computação distribuída: assincronia e faltas, teorema CAP, limite na entrega causal fiável</string>
+    <string name="um_class_large_sc_ds_topic2">Topologias distribuídas e escaláveis: propriedades de grafos</string>
+    <string name="um_class_large_sc_ds_topic3">Topologias distribuídas e escaláveis: flooding e construção de árvores</string>
+    <string name="um_class_large_sc_ds_topic4">Topologias distribuídas e escaláveis: comunicação epidémica</string>
+    <string name="um_class_large_sc_ds_topic5">Topologias distribuídas e escaláveis: localidade e propriedades small-world</string>
+    <string name="um_class_large_sc_ds_topic6">Desenho de sistemas para larga escala: Sistemas P2P</string>
+    <string name="um_class_large_sc_ds_topic7">Desenho de sistemas para larga escala: redes periféricas e de sensores</string>
+    <string name="um_class_large_sc_ds_topic8">Desenho de sistemas para larga escala: distributed hash tables e encaminhamento</string>
+    <string name="um_class_large_sc_ds_topic9">Desenho de sistemas para larga escala: disseminação e procura de dados</string>
+    <string name="um_class_large_sc_ds_topic10">Tempo e causalidade: sincronização de relógios, histórias causais, tempo lógico, escalabilidade de tempo lógico</string>
+    <string name="um_class_large_sc_ds_topic11">Sincronização de dados e coerência progressiva: sincronização uni-direccional e sincronização de ficheiros</string>
+    <string name="um_class_large_sc_ds_topic12">Sincronização de dados e coerência progressiva: garantias de sessão e eventual consistency</string>
+    <string name="um_class_large_sc_ds_topic13">Sincronização de dados e coerência progressiva: comutatividade de operações vs evolução de estado</string>
+    <string name="um_class_large_sc_ds_topic14">Sincronização de dados e coerência progressiva: tipos de dados replicados</string>
+
+    <string name="um_class_intelligent_agents">Agentes Inteligentes</string>
+    <string name="um_class_intelligent_agents_description">- Compreender as noções gerais de agente e sistemas multiagente, enumerando
+        e classificando diferentes propriedades de agentes e de ambientes;\n
+        - Criar agentes com uma dada arquitectura;\n
+        - Desenhar uma sociedade de agentes e utilizá-la na resolução de um problema; \n
+        - Desenvolver soluções, nas mais diversas áreas de aplicação, usando uma metodologia de resolução de problemas orientada ao agente;\n
+        - Criar, de uma forma prática, uma sociedade de agentes que comunicam usando uma linguagem de agentes, e usando diferentes plataformas.</string>
+    <string name="um_class_intelligent_agents_topic1">Agentes Inteligentes</string>
+    <string name="um_class_intelligent_agents_topic2">Sistemas Multiagente</string>
+    <string name="um_class_intelligent_agents_topic3">Coordenação</string>
+    <string name="um_class_intelligent_agents_topic4">Sistemas Argumentativos</string>
+    <string name="um_class_intelligent_agents_topic5">Aplicações de Agentes Inteligentes</string>
+    <string name="um_class_intelligent_agents_topic6">Segurança, Confiança e Relações Jurídicas</string>
+
+    <string name="um_class_knowledge_extrac">Aprendizagem e Extracção de Conhecimento</string>
+    <string name="um_class_knowledge_extrac_description">- Identificar, descrever e definir os principais conceitos relacionados com os sistemas de dados,
+        processamento analítico, mineração, extracção de conhecimento e aprendizagem máquina.\n
+        - Utilizar, classificar e avaliar as aplicações existentes ou a desenvolver.\n
+        - Seleccionar as metodologias apropriadas e aplicar software disponível na resolução de problemas reais, ao
+        nível da análise de dados, mineração de dados, extração de conhecimento e tomada de decisão.\n
+        - Conhecer e ser capaz de implementar os principais algoritmos relacionados com as técnicas de mineração
+        de dados, extracção de conhecimento e formas de aprendizagem.</string>
+    <string name="um_class_knowledge_extrac_topic1">Sistemas de Aprendizagem: Redes Neuronais Artificiais</string>
+    <string name="um_class_knowledge_extrac_topic2">Sistemas de Aprendizagem: Computação Genética</string>
+    <string name="um_class_knowledge_extrac_topic3">Sistemas de Aprendizagem: Inteligência de Grupo</string>
+    <string name="um_class_knowledge_extrac_topic4">Sistemas de Aprendizagem: Raciocínio Baseado em Casos</string>
+    <string name="um_class_knowledge_extrac_topic5">Extracção de Conhecimento de Dados: Conceitos Gerais</string>
+    <string name="um_class_knowledge_extrac_topic6">Extracção de Conhecimento de Dados: Objectivos</string>
+    <string name="um_class_knowledge_extrac_topic7">Extracção de Conhecimento de Dados: Metodologias</string>
+    <string name="um_class_knowledge_extrac_topic8">Extracção de Conhecimento de Dados: Técnicas</string>
+    <string name="um_class_knowledge_extrac_topic9">Extracção de Conhecimento de Dados: Ferramentas</string>
+    <string name="um_class_knowledge_extrac_topic10">Aplicações</string>
+
+    <string name="um_class_natural_computing">Computação Natural</string>
+    <string name="um_class_natural_computing_description">- Identificar, descrever e definir os principais conceitos relacionados
+        com Computação Evolutiva (e.g., Intelectos Virtuais), Inteligência de Grupo (e.g. “Particle Swarm”)
+        e Computação Natural (e.g. Redes Neuronais Artificias, Programação Genética e Evolucionária).\n
+        - Seleccionar as metodologias de resolução de problemas, assim como os paradigmas computacionais que melhor se lhes adequam.</string>
+    <string name="um_class_natural_computing_topic1">Intelectos Virtuais</string>
+    <string name="um_class_natural_computing_topic2">Redes Neuronais Artificiais</string>
+    <string name="um_class_natural_computing_topic3">Algoritmos Genéticos</string>
+    <string name="um_class_natural_computing_topic4">Programação Genética</string>
+    <string name="um_class_natural_computing_topic5">Estratégias Evolucionárias</string>
+    <string name="um_class_natural_computing_topic6">Programação Evolucionária</string>
+    <string name="um_class_natural_computing_topic7">Sistemas de Vida Artificial</string>
+    <string name="um_class_natural_computing_topic8">Inteligência de Grupo</string>
+
+    <string name="um_class_autonomous_sys">Sistemas Autónomos</string>
+    <string name="um_class_autonomous_sys_description">- Identificar, descrever e definir os principais conceitos relacionados com Sistemas Autónomos e Agentes Robóticos.\n
+        - Realizar Sistemas Autónomos pela utilização do conceito de Agentes Inteligentes.\n
+        - Conhecer e saber utilizar o conhecimento proveniente de sensores.\n
+        - Conhecer e saber utilizar os actuadores que potenciam a mobilidade e a navegação.\n
+        - Estudar e desenvolver métodos de coordenação e interacção com o meio.\n
+        - Utilizar a prototipagem e a análise de complexidade para a sua aplicação na resolução de problemas.</string>
+    <string name="um_class_autonomous_sys_topic1">Sistemas Robóticos Autónomos</string>
+    <string name="um_class_autonomous_sys_topic2">Arquitecturas de Controlo para Sistemas Autónomos</string>
+    <string name="um_class_autonomous_sys_topic3">Sensores e Actuadores</string>
+    <string name="um_class_autonomous_sys_topic4">Percepção, Mobilidade e Navegação</string>
+    <string name="um_class_autonomous_sys_topic5">Sistemas Multi-agente Robóticos</string>
+    <string name="um_class_autonomous_sys_topic6">Coordenação e Interacção</string>
+    <string name="um_class_autonomous_sys_topic7">Aplicações de Sistemas Autónomos</string>
+    <string name="um_class_autonomous_sys_topic8">Simulação</string>
+
+    <string name="um_class_data_mining">Mineração de Dados</string>
+    <string name="um_class_data_mining_description">Sensibilizar os alunos para o valor acrescentado que se pode retirar
+        dos dados acumulados resultantes de actividades empresariais, públicas ou científicas;\n
+        Dotar os alunos do conhecimento adequado para que possam utilizar, ou gerir a utilização,
+        com rigor de ferramentas computacionais no apoio à decisão baseado em dados;\n
+        Dotar os alunos de conhecimentos suficientes, a nível conceptual, para que possam
+        desenvolver e avaliar novas ferramentas de mineração de dados;</string>
+    <string name="um_class_data_mining_topic1">Análise exploratória de dados</string>
+    <string name="um_class_data_mining_topic2">Modelos de previsão: algoritmos, testes, avaliação, pruning, tratamento de valores numéricos e nulos</string>
+    <string name="um_class_data_mining_topic3">Modelos de previsão: Classificação e previsão numérica</string>
+    <string name="um_class_data_mining_topic4">Modelos de previsão: Modelos Múltiplos (ensembles)</string>
+    <string name="um_class_data_mining_topic5">Clustering: Algoritmos e tipos de segmentação</string>
+    <string name="um_class_data_mining_topic6">Clustering: Clustering por partições e Clustering hierárquico, aplicações usando o sistema WEKA</string>
+    <string name="um_class_data_mining_topic7">Regras de Associação, algoritmos, termos frequentes, interpretação, medidas de interesse, pruning</string>
+    <string name="um_class_data_mining_topic8">Derivação de subgrupos, aplicações</string>
+    <string name="um_class_data_mining_topic9">Análise de redes sociais</string>
+    <string name="um_class_data_mining_topic10">Medidas, avaliação, detecção de comunidades</string>
+    <string name="um_class_data_mining_topic11">Avaliação de elementos da rede: Page rank e HITS</string>
+
+    <string name="um_class_parallel_comp">Computação Paralela</string>
+    <string name="um_class_parallel_comp_description">Um estudante que complete com sucesso a UC deverá ser capaz de demonstrar que adquiriu as seguintes competências:\n
+        caracterizar e avaliar qualitativa e quantitativamente os sistemas de computação;\n
+        analisar, medir e avaliar o desempenho de sistemas de computação na execução de aplicações;\n
+        desenvolver aplicações paralelas capazes de executar numa gama alargada de arquitecturas;\n
+        implementar aplicações utilizando os tipos mais comuns de algoritmos paralelos;\n
+        medir e otimizar o desempenho de aplicações computacionais com vista a optimizar o seu desempenho e escalabilidade;</string>
+    <string name="um_class_parallel_comp_topic1">Evolução recente da arquitectura de processadores: pipeline, superescalaridade, multi-threading, multi-core, many-core; hierarquia de memória</string>
+    <string name="um_class_parallel_comp_topic2">Evolução do paralelismo nas arquitecturas: arquitecturas vectoriais, arquitecturas paralelas com memória partilhada e memória distribuída</string>
+    <string name="um_class_parallel_comp_topic3">Avaliação de desempenho na execução de aplicações: métricas, profiling, análise e afinação de código</string>
+    <string name="um_class_parallel_comp_topic4">Modelos de programação baseados em memória partilhada e em memória distribuída</string>
+    <string name="um_class_parallel_comp_topic5">Metodologias de desenvolvimento de aplicações paralelas: partição, comunicação, agregação e mapeamento de tarefas e dados</string>
+    <string name="um_class_parallel_comp_topic6">Análise de algoritmos paralelos típicos: "pipelining", "farming", "heartbeat" e "divide and conquer";</string>
+    <string name="um_class_parallel_comp_topic7">Medição e optimização do desempenho de aplicações em sistemas de memória partilhada e distribuída, homogéneos e heterogéneos</string>
+
+    <string name="um_class_it_security">Segurança de Sistemas Informáticos</string>
+    <string name="um_class_it_security_description">O objectivo desta unidade curricular é o de dotar os alunos de capacidade de:
+        - compreender conceitos, estratégias, técnicas e ferramentas essenciais para o domínio da Segurança de Sistemas Informáticos;\n
+        - identificar e relacionar os principais problemas relacionados com ameaças e vulnerabilidades técnicas e não-técnicas no domínio das Tecnologias da Informação;\n
+        - compreender e aplicar as normas e melhores práticas no âmbito da segurança, tanto ao nível do desenvolvimento do software como da operação de infra-estruturas;\n
+        - desenhar, implementar e manter mecanismos de protecção de infra-estruturas informáticas;\n
+        - desenhar, implementar e manter mecanismos de mitigação de riscos de segurança, detectar e conter intrusões, e conter o impacto na organização;\n
+        - auditar infra-estruturas existentes, identificar vulnerabilidades, eventuais métodos de exploração e ferramentas relevantes;</string>
+    <string name="um_class_it_security_topic1">Conceitos da segurança: propriedades, vulnerabilidades, riscos, ataques e controlos</string>
+    <string name="um_class_it_security_topic2">Terminologia e conceitos criptográficos: criptografia simétrica (cifras simétricas; funções de hash criptográficas; MACs)</string>
+    <string name="um_class_it_security_topic3">Terminologia e conceitos criptográficos: criptografia assimétrica (acordo de chaves; cifra de chave pública)</string>
+    <string name="um_class_it_security_topic4">Controlo de acesso: identificação, autenticação, autorização, operações, propriedade, estruturas de controlo de acesso, e monitor de referência</string>
+    <string name="um_class_it_security_topic5">Segurança de plataforma: vulnerabilidades, riscos, ataques, proteção de recursos, hardening e ambientes de restrição restrita</string>
+    <string name="um_class_it_security_topic6">Segurança de plataforma: programação defensiva, arquitecturas seguras de rede</string>
+    <string name="um_class_it_security_topic7">Segurança de plataforma: mecanismos de defesa e contramedidas</string>
+    <string name="um_class_it_security_topic8">Monitorização e defesa: eventos, identificação de anomalias, gestão de configurações</string>
+    <string name="um_class_it_security_topic9">Monitorização e defesa: reconhecimento de infra-estruturas e testes de penetração, desenho e exploração de vulnerabilidades</string>
+    <string name="um_class_it_security_topic10">Segurança na web: vulnerabilidades, riscos e ataques, modelos de segurança, gestão de sessão e autenticação</string>
+    <string name="um_class_it_security_topic11">Segurança na web: modelos de segurança, gestão de sessão e autenticação, segurança no cliente e no servidor</string>
+    <string name="um_class_it_security_topic12">Ciclo de vida de desenvolvimento de software seguro: modelos de ciclo de vida de desenvolvimento de software; análise de riscos</string>
+    <string name="um_class_it_security_topic13">Ciclo de vida de desenvolvimento de software seguro: standards e metodologias de desenvolvimento de software seguro</string>
+
+    <string name="um_class_java_streams">Processamento de Dados com Streams de Java</string>
+    <string name="um_class_java_streams_description">Estudo, compreensão e aplicação das construções de Java que possibilitam realizar
+        Programação Funcional: Lambdas, Interfaces Funcionais, Funções, Composição Funcional e Currying;\n
+        Estudo, compreensão e aplicação de construções, técnicas e métodos de Metaprogramação e de
+        Refactoring em Java: Reflexão, MetaClasses, Factory Methods, Annotations e Inversão de Controlo (IoC);\n
+        Processamento massivo de dados usando pipelines. Estudo das Streams de Java. Operações com streams.
+        Processamento sequencial versus processamento paralelo. Análise e testes de performance;</string>
+    <string name="um_class_java_streams_topic1">Noções Fundamentais - Parametrização de comportamento</string>
+    <string name="um_class_java_streams_topic2">Expressões lambda - Expressões lambdas e parametrização de comportamento</string>
+    <string name="um_class_java_streams_topic3">nterfaces Funcionais, Predicados, Consumidores e Funções, Composição de expressões lambda. Currying</string>
+    <string name="um_class_java_streams_topic4">Metaprogramação e Refactoring em Java: Reflexão, MetaClasses, Factory Methods, Annotations e Inversão de Controlo (IoC)</string>
+    <string name="um_class_java_streams_topic5">Novas interfaces e Default methods. Uso do tipo Optional.</string>
+    <string name="um_class_java_streams_topic6">Programação com streams de Java. Streams versus Colecções</string>
+    <string name="um_class_java_streams_topic7">Operações com streams: criação de streams, operações intermédias e operações terminais. Operações stateful e stateless. Estudo de Collectors</string>
+    <string name="um_class_java_streams_topic8">Streams numéricas e Streams genéricas</string>
+    <string name="um_class_java_streams_topic9">Processamento sequencial e processamento paralelo de streams</string>
+    <string name="um_class_java_streams_topic10">Análise e testes de performance</string>
+
+    <string name="um_class_sw_test">Análise e Teste de Software</string>
+    <string name="um_class_sw_test_description">Explicar as técnicas genéricas para análise de código de software;\n
+        Desenvolver ferramentas para analisar programas e sistemas de software;\n
+        Perceber o conceito de qualidade de software e modelos de qualidade de software;\n
+        Desenvolver analisadores de qualidadade de software baseado em métricas;\n
+        Construir ferramentas de software para a transformação, refactoring e evolução de programas.\n
+        Implementar algoritmos fundamentais de análise estática de programas;</string>
+    <string name="um_class_sw_test_topic1">Análise de Código de Programas: Técnicas de Parsing Generalised e Scannerless, Combinadores de Parsing, Travessias Genéricas de árvores, Programação Estratégica</string>
+    <string name="um_class_sw_test_topic2">Análise de Código de Programas: Análise de Tipos; Análise de fluxo de dados; Análise inter-procedimental; Análise de controlo de fluxo;</string>
+    <string name="um_class_sw_test_topic3">Qualidade de Software: Métricas para Código de Programas, Métricas para Sistemas de Software, Estudos Empiricos para analisar qualidade software</string>
+    <string name="um_class_sw_test_topic4">Qualidade de Software: Modelos de qualidade de Software (CMMI, ISO 9126), Certificação de software</string>
+    <string name="um_class_sw_test_topic5">Transformação de Software: Técnicas para Transformação e Refactoring de Programas (sistema TOM e RASCAL), Slicing e Cálculo Parcial de Programas</string>
+    <string name="um_class_sw_test_topic6">Transformação de Software: Técnicas para a Evolução de Software, Evolução em engenharia dirigida por modelos</string>
+    <string name="um_class_sw_test_topic7">Teste de Software: Teste unitário e funcional; Análise da cobertura de teste; Teste orientado por modelos</string>
+    <string name="um_class_sw_test_topic8">Teste de Software: Geração automática de cenários de teste; Injecção de falhas</string>
+    <string name="um_class_sw_test_topic9">JUnit + Emma, QuickCheck, PEX</string>
+
+    <string name="um_class_sys_deploy">Entrega de Sistemas e Benchmarking</string>
+    <string name="um_class_sys_deploy_description">A UC tem como objectivo a aprendizagem do processo de análise de
+        requisitos de operação de aplicações informáticas, seguida da operacionalização e avaliação de todo o
+        sistema de suporte à entrega do serviço.
+        A UC é de cariz fortemente tecnológico, fazendo acompanhar a formação conceptual dos vários
+        tópicos do programa com a apresentação e experimentação detalhada de tecnologia representante do estado da arte.
+        O conteúdo programático da UC está particularmente alinhado com os perfis de Sistemas
+        Distribuídos e Engenharia de Aplicações. O seu teor prático é complementar e de manifesto
+        interesse tanto para estes como para vários perfis orientados à construção de software.</string>
+    <string name="um_class_sys_deploy_topic1">Requisitos operacionais de aplicações: requisitos e métricas funcionais e não-funcionais</string>
+    <string name="um_class_sys_deploy_topic2">Requisitos operacionais de aplicações: modelos de operação exclusiva vs. SaaS</string>
+    <string name="um_class_sys_deploy_topic3">Plataformas de componentes de serviços: bases de dados</string>
+    <string name="um_class_sys_deploy_topic4">Plataformas de componentes de serviços: servidores de aplicações</string>
+    <string name="um_class_sys_deploy_topic5">Plataformas de componentes de serviços: coordenação, logging e monitorização</string>
+    <string name="um_class_sys_deploy_topic6">Infraestruturas computacionais: máquinas físicas e virtualizadas</string>
+    <string name="um_class_sys_deploy_topic7">Infraestruturas computacionais: software-defined network</string>
+    <string name="um_class_sys_deploy_topic8">Infraestruturas computacionais: software-defined storage</string>
+    <string name="um_class_sys_deploy_topic9">Avaliação de aspectos não-funcionais</string>
+
+    <string name="um_class_ambient_intel">Inteligência Ambiente: Tecnologias e Aplicações</string>
+    <string name="um_class_ambient_intel_description">Com a unidade curricular de Inteligência Ambiente pretende-se dar formação na área
+        científica da Inteligência Ambiente. Os tópicos que a compõem garantem que o aluno possuirá conhecimentos sobre as
+        potencialidades da Inteligência Ambiente, sua caracterização, bem como das tecnologias e metodologias de
+        resolução problemas, mais comuns nesta área, sendo capaz de as contextualizar, aplicar e analisar.</string>
+    <string name="um_class_ambient_intel_topic1">Visão: Motivação, Contexto, Abordagens e Desafios</string>
+    <string name="um_class_ambient_intel_topic2">Computação Ubíqua e Pervasive;</string>
+    <string name="um_class_ambient_intel_topic3">Wearable Computing</string>
+    <string name="um_class_ambient_intel_topic4">Interfaces Inteligentes</string>
+    <string name="um_class_ambient_intel_topic5">Metodologias de engenharia de software para o desenvolvimento de aplicações inteligentes.</string>
+    <string name="um_class_ambient_intel_topic6">Computação Reativa vs Pró-ativa</string>
+    <string name="um_class_ambient_intel_topic7">Context-awareness</string>
+    <string name="um_class_ambient_intel_topic8">Sistemas de Referenciação, de Localização e de Orientação</string>
+    <string name="um_class_ambient_intel_topic9">Detecção de actividades e eventos</string>
+    <string name="um_class_ambient_intel_topic10">Modelação de utilizadores e personalização, e Sistemas de Recomendação</string>
+    <string name="um_class_ambient_intel_topic11">Análise Comportamental</string>
+    <string name="um_class_ambient_intel_topic12">Inteligência Ambiente e Inteligência Artificial</string>
+    <string name="um_class_ambient_intel_topic13">Arquitectura genérica de um sistema de Inteligência Ambiente</string>
+    <string name="um_class_ambient_intel_topic14">Percepção, Raciocínio, Decisão, Actuação e Aprendizagem</string>
+    <string name="um_class_ambient_intel_topic15">Segurança, Privacidade, Proteção de Dados, Identificação e Enquadramento Legal</string>
+    <string name="um_class_ambient_intel_topic16">Exemplos de aplicações em domínios concretos, na área da Saúde, Ambient Assisted Living, Resolução de Disputas, Smart Cities</string>
+
+    <string name="um_class_special_labs">Laboratório de Engenharia Informática</string>
+    <string name="um_class_special_labs_description">Aprendizagem prática de conceitos de desenvolvimento de projecto, associado a um perfil de especialização.</string>
+    <string name="um_class_special_labs_topic1">Realizaçao de todas as etapas do ciclo de vida de projecto de Software de acordo com um perfil escolhido</string>
+
+    <string name="um_class_project">Projecto de Engenharia Informática</string>
+    <string name="um_class_project_description">Desenhar e implementar um projecto de software em grupo</string>
+    <string name="um_class_project_topic1">Interagir com o cliente; comunicar requisitos e decisões de concepção com os utilizadores</string>
+    <string name="um_class_project_topic2">Planear e acompanhar um projecto de desenvolvimento de software</string>
+    <string name="um_class_project_topic3">Rever o plano durante a execução do projecto</string>
+    <string name="um_class_project_topic4">Reflectir sobre as expectativas iniciais e estimativas</string>
+    <string name="um_class_project_topic5">Trabalhar em equipa, Coordenar uma equipa e as suas reuniões e usar ferramentas de colaboração básicas no desenvolvimento de software</string>
+    <string name="um_class_project_topic6">Identificar os requisitos</string>
+    <string name="um_class_project_topic7">Criar a arquitectura que suporta os requisitos</string>
+    <string name="um_class_project_topic8">Implementar o projecto</string>
+    <string name="um_class_project_topic9">Testar e validar a implementação</string>
+    <string name="um_class_project_topic10">Apresentar o projecto, produto, planos e documentos para os colegas, as partes interessadas e o público em geral</string>
+    <string name="um_class_project_topic11">Produzir documentação que é compreensível e utilizável</string>
+    <string name="um_class_project_topic12">Criar um novo produto, comparar o produto com a concorrência</string>
+    <string name="um_class_project_topic13">Produzir um plano de negócios para o produto</string>
+
+    <string name="um_class_dissertation">Dissertação em Engenharia Informática</string>
+    <string name="um_class_dissertation_description">A dissertação implica necessariamente o envolvimento do estudante num projecto de
+        investigação e desenvolvimento de média/grande dimensão. Este projeto insere-se regra geral num projecto
+        maior, associado a um centro de investigação e/ou a uma empresa</string>
+    <string name="um_class_dissertation_topic1">Identificar e delimitar o problema a tratar, bem como de propor uma metodologia para abordar esse problema</string>
+    <string name="um_class_dissertation_topic2">Desenvolver competências para realizar trabalho de investigação individual em Engenharia Informática</string>
+    <string name="um_class_dissertation_topic3">Escrever, apresentar e defender publicamente uma prova escrita, promovendo a capacidade de síntese e comunicação oral e escrita</string>
+
     <string name="um_class_"></string>
     <string name="um_class__description"></string>
     <string name="um_class__topic1"></string>
@@ -6841,6 +7263,7 @@ Os estudantes deverão ainda desenvolver competências em análise e síntese, r
     <string name="um_class__topic18"></string>
     <string name="um_class__topic19"></string>
     <string name="um_class__topic20"></string>
+
     <!-- UNIVERSIDADE DO MINHO END -->
 
 </resources>
