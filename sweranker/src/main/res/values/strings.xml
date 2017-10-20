@@ -6186,16 +6186,16 @@ Os estudantes deverão ainda desenvolver competências em análise e síntese, r
     <string name="um_class_informatics_labs4_topic9">Ambientes e Ferramentas de Desenvolvimento de Software</string>
     <string name="um_class_informatics_labs4_topic10">Fábricas de Software</string>
 
-    <string name="um_class_biosequences">Algoritmos para Análise de Sequências Biológicas</string>
-    <string name="um_class_biosequences_description">O objetivo desta unidade curricular é o de dotar os alunos das capacidades de perceber,
+    <string name="um_class_bio_sequences">Algoritmos para Análise de Sequências Biológicas</string>
+    <string name="um_class_bio_sequences_description">O objetivo desta unidade curricular é o de dotar os alunos das capacidades de perceber,
         utilizar e desenvolver algoritmos de processamento e análise de sequências biológicas, utilizando uma linguagem de programação para a sua implementação.</string>
-    <string name="um_class_biosequences_topic1">Algoritmos básicos de processamento de sequências biológicas</string>
-    <string name="um_class_biosequences_topic2">Procura de padrões em sequências</string>
-    <string name="um_class_biosequences_topic3">Alinhamentos de sequências (simples e múltiplos)</string>
-    <string name="um_class_biosequences_topic4">Procura de sequências similares em bases de dados</string>
-    <string name="um_class_biosequences_topic5">Algoritmos para análise filogenética</string>
-    <string name="um_class_biosequences_topic6">Descoberta de motifs a partir de conjuntos de sequências</string>
-    <string name="um_class_biosequences_topic7">Algoritmos para a descoberta de genes </string>
+    <string name="um_class_bio_sequences_topic1">Algoritmos básicos de processamento de sequências biológicas</string>
+    <string name="um_class_bio_sequences_topic2">Procura de padrões em sequências</string>
+    <string name="um_class_bio_sequences_topic3">Alinhamentos de sequências (simples e múltiplos)</string>
+    <string name="um_class_bio_sequences_topic4">Procura de sequências similares em bases de dados</string>
+    <string name="um_class_bio_sequences_topic5">Algoritmos para análise filogenética</string>
+    <string name="um_class_bio_sequences_topic6">Descoberta de motifs a partir de conjuntos de sequências</string>
+    <string name="um_class_bio_sequences_topic7">Algoritmos para a descoberta de genes </string>
 
     <string name="um_class_bioinformatics_lab">Laboratórios de Bioinformática</string>
     <string name="um_class_bioinformatics_lab_description">- Dotar os alunos dos conhecimentos biológicos básicos para
@@ -6316,23 +6316,23 @@ Os estudantes deverão ainda desenvolver competências em análise e síntese, r
     <string name="um_class_tech_application_topic10">A voxelização como alternativa ao ray-tracing e à rasterização</string>
     <string name="um_class_tech_application_topic11">Algoritmos e técnicas de produção de imagens de alta qualidade em tempo real</string>
 
-    <string name="um_class_advaced_arch">Arquitecturas Avançadas</string>
-    <string name="um_class_advaced_arch_description">Um estudante que complete com sucesso a UC deverá ser capaz de demonstrar que adquiriu as seguintes
+    <string name="um_class_advanced_arch">Arquitecturas Avançadas</string>
+    <string name="um_class_advanced_arch_description">Um estudante que complete com sucesso a UC deverá ser capaz de demonstrar que adquiriu as seguintes
         competências:\n
         - caracterizar e avaliar qualitativa e quantitativamente a arquitectura de sistemas de computação
         paralelos/distribuídos\n
         - analisar, medir e avaliar o desempenho de sistemas de computação na execução de aplicações\n
         - desenvolver e/ou modificar aplicações computacionais com vista a optimizar o seu desempenho e
         escalabilidade.</string>
-    <string name="um_class_advaced_arch_topic1">Arquitetura de processadores: pipeline, superescalaridade</string>
-    <string name="um_class_advaced_arch_topic2">Arquitetura de processadores: multi-threading, multi-core</string>
-    <string name="um_class_advaced_arch_topic3">Arquitetura de processadores: many-core; hierarquia de memória em ambiente partilhado</string>
-    <string name="um_class_advaced_arch_topic4">Paralelismo nas arquitecturas: arquitecturas vectoriais</string>
-    <string name="um_class_advaced_arch_topic5">Paralelismo nas arquitecturas: arquitecturas paralelas com memória partilhada e memória distribuída</string>
-    <string name="um_class_advaced_arch_topic6">Paralelismo nas arquitecturas: arquitecturas distribuídas em rede</string>
-    <string name="um_class_advaced_arch_topic7">Paralelismo nas arquitecturas: análise de desempenho em arquitecturas massivamente paralelas</string>
-    <string name="um_class_advaced_arch_topic8">Avaliação de desempenho: métricas, profiling, análise e afinação de código</string>
-    <string name="um_class_advaced_arch_topic9">Avaliação de desempenho: benchmarking</string>
+    <string name="um_class_advanced_arch_topic1">Arquitetura de processadores: pipeline, superescalaridade</string>
+    <string name="um_class_advanced_arch_topic2">Arquitetura de processadores: multi-threading, multi-core</string>
+    <string name="um_class_advanced_arch_topic3">Arquitetura de processadores: many-core; hierarquia de memória em ambiente partilhado</string>
+    <string name="um_class_advanced_arch_topic4">Paralelismo nas arquitecturas: arquitecturas vectoriais</string>
+    <string name="um_class_advanced_arch_topic5">Paralelismo nas arquitecturas: arquitecturas paralelas com memória partilhada e memória distribuída</string>
+    <string name="um_class_advanced_arch_topic6">Paralelismo nas arquitecturas: arquitecturas distribuídas em rede</string>
+    <string name="um_class_advanced_arch_topic7">Paralelismo nas arquitecturas: análise de desempenho em arquitecturas massivamente paralelas</string>
+    <string name="um_class_advanced_arch_topic8">Avaliação de desempenho: métricas, profiling, análise e afinação de código</string>
+    <string name="um_class_advanced_arch_topic9">Avaliação de desempenho: benchmarking</string>
 
     <string name="um_class_parallel_alg">Algoritmos Paralelos</string>
     <string name="um_class_parallel_alg_description">Um estudante que complete com sucesso esta UC deverá ser capaz de demonstrar que adquiriu as seguintes
