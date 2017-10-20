@@ -4727,8 +4727,8 @@
         <classes>
             <class>
                 <id>uc_mei_c1</id>
-                <name>@string/uc_math_analysis</name>
-                <description>@string/uc_math_analysis_description</description>
+                <name>@string/uc_class_math_analysis</name>
+                <description>@string/uc_class_math_analysis_description</description>
                 <year>1</year>
                 <semester>1</semester>
                 <ects>6</ects>
@@ -4805,8 +4805,8 @@
             </class>
             <class>
                 <id>uc_mei_c2</id>
-                <name>@string/uc_discrete_structures</name>
-                <description>@string/uc_discrete_structures_description</description>
+                <name>@string/uc_class_discrete_structures</name>
+                <description>@string/uc_class_discrete_structures_description</description>
                 <year>1</year>
                 <semester>1</semester>
                 <ects>6</ects>
@@ -4851,8 +4851,8 @@
             </class>
             <class>
                 <id>uc_mei_c3</id>
-                <name>@string/uc_intro_programming</name>
-                <description>@string/uc_intro_programming_description</description>
+                <name>@string/uc_class_intro_programming</name>
+                <description>@string/uc_class_intro_programming_description</description>
                 <year>1</year>
                 <semester>1</semester>
                 <ects>6</ects>
