@@ -6842,6 +6842,23 @@ Os estudantes deverão ainda desenvolver competências em análise e síntese, r
     <string name="um_class_modelling_spec_topic13">Especificação de sistemas reactivos: verificação de modelos simbólica</string>
     <string name="um_class_modelling_spec_topic14">Especificação de sistemas reactivos: ferramentas para verificaçao de modelos</string>
 
+    <string name="um_class_info_sys_calculus">Cálculo de Sistemas de Informação</string>
+    <string name="um_class_info_sys_calculus_description">(Não disponível)</string>
+    <string name="um_class_info_sys_calculus_topic1">Verificação e cálculo de soluções informáticas</string>
+    <string name="um_class_info_sys_calculus_topic2">Problemas e sistemas de informação para os resolver</string>
+    <string name="um_class_info_sys_calculus_topic3">Modelos e seu papel na concepção de soluções</string>
+    <string name="um_class_info_sys_calculus_topic4">Importância da abstracção na captação de requisitos</string>
+    <string name="um_class_info_sys_calculus_topic5">Limites da tipagem estática</string>
+    <string name="um_class_info_sys_calculus_topic6">Papel das relações binárias na modelação formal</string>
+    <string name="um_class_info_sys_calculus_topic7">Bases de dados seguindo o modelo key-value pair</string>
+    <string name="um_class_info_sys_calculus_topic8">Taxonomia e álgebra das relações binárias</string>
+    <string name="um_class_info_sys_calculus_topic9">O lema - everything is a relation</string>
+    <string name="um_class_info_sys_calculus_topic10">Model checking usando a ferramenta Alloy</string>
+    <string name="um_class_info_sys_calculus_topic11">Demonstração de corrrecção usando álgebra relacional</string>
+    <string name="um_class_info_sys_calculus_topic12">Noção formal de contrato</string>
+    <string name="um_class_info_sys_calculus_topic13">Pré-condições mais fracas</string>
+    <string name="um_class_info_sys_calculus_topic14">Lógica de Hoare em formato relacional</string>
+
     <string name="um_class_arch_calculus">Arquitectura e Cálculo</string>
     <string name="um_class_arch_calculus_description">Esta Unidade Curricular, que é parte integrante do perfil em Métodos Formais em Engenharia de Software, tem
         por objectivo proporcionar formação em Arquitectura de Software numa perspectiva formal e com ênfase nos sistemas reactivos</string>
