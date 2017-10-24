@@ -30,7 +30,7 @@ import pt.cmg.sweranker.R;
 
 public class ResourcesDegreeMatchesRepository implements DegreeMatchesRepository {
 
-    private static final String STANDARD_DIRECTORY = "default_matches";
+    private static final String STANDARD_DIRECTORY = "custom_matches";
 
     private Context _context;
     private MutableLiveData<Map<String, DegreeClassMatch>> _systemMatches;
@@ -46,11 +46,13 @@ public class ResourcesDegreeMatchesRepository implements DegreeMatchesRepository
 
     /**
      * Creates the root directory for saving the matches.
+     * The reason it is here is to that it creates the directory beforehand, if it already exists, it does nothing.
+     * <p>
      * This is used to save matches that were input but the user.
      * It will save one single file that can be used to either replace the system defaults
      * or used as a future merge with the system defaults.
      */
-    public File createCustomMatchesDirectory() {
+    private File createCustomMatchesDirectory() {
         return _context.getDir(STANDARD_DIRECTORY, Context.MODE_PRIVATE);
     }
 

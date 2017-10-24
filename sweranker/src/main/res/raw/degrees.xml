@@ -20378,7 +20378,7 @@
                 <id>uminho_miei_c36</id>
                 <name>@string/um_class_informatics_labs4</name>
                 <description>@string/um_class_informatics_labs4_description</description>
-                <year>4</year>
+                <year>3</year>
                 <semester>2</semester>
                 <ects>5</ects>
                 <optional>false</optional>
@@ -20437,7 +20437,7 @@
                 <year>4</year>
                 <semester>2</semester>
                 <ects>5</ects>
-                <optional>false</optional>
+                <optional>true</optional>
                 <paths>
                     <path>1</path>
                 </paths>
@@ -20499,7 +20499,7 @@
                 <year>4</year>
                 <semester>1</semester>
                 <ects>5</ects>
-                <optional>false</optional>
+                <optional>true</optional>
                 <paths>
                     <path>1</path>
                 </paths>
@@ -20545,7 +20545,7 @@
                 <year>4</year>
                 <semester>1</semester>
                 <ects>5</ects>
-                <optional>false</optional>
+                <optional>true</optional>
                 <paths>
                     <path>1</path>
                 </paths>
@@ -20579,7 +20579,7 @@
                 <year>4</year>
                 <semester>2</semester>
                 <ects>5</ects>
-                <optional>false</optional>
+                <optional>true</optional>
                 <paths>
                     <path>1</path>
                 </paths>
@@ -20629,7 +20629,7 @@
                 <year>4</year>
                 <semester>1</semester>
                 <ects>5</ects>
-                <optional>false</optional>
+                <optional>true</optional>
                 <paths>
                     <path>2</path>
                 </paths>
@@ -20663,7 +20663,7 @@
                 <year>4</year>
                 <semester>1</semester>
                 <ects>5</ects>
-                <optional>false</optional>
+                <optional>true</optional>
                 <paths>
                     <path>2</path>
                 </paths>
@@ -20725,7 +20725,7 @@
                 <year>4</year>
                 <semester>2</semester>
                 <ects>5</ects>
-                <optional>false</optional>
+                <optional>true</optional>
                 <paths>
                     <path>2</path>
                 </paths>
@@ -20775,7 +20775,7 @@
                 <year>4</year>
                 <semester>2</semester>
                 <ects>5</ects>
-                <optional>false</optional>
+                <optional>true</optional>
                 <paths>
                     <path>2</path>
                 </paths>
@@ -20837,7 +20837,7 @@
                 <year>4</year>
                 <semester>1</semester>
                 <ects>5</ects>
-                <optional>false</optional>
+                <optional>true</optional>
                 <paths>
                     <path>3</path>
                 </paths>
@@ -20891,7 +20891,7 @@
                 <year>4</year>
                 <semester>2</semester>
                 <ects>5</ects>
-                <optional>false</optional>
+                <optional>true</optional>
                 <paths>
                     <path>3</path>
                 </paths>
@@ -20937,7 +20937,7 @@
                 <year>4</year>
                 <semester>2</semester>
                 <ects>5</ects>
-                <optional>false</optional>
+                <optional>true</optional>
                 <paths>
                     <path>3</path>
                 </paths>
@@ -20999,7 +20999,7 @@
                 <year>4</year>
                 <semester>1</semester>
                 <ects>5</ects>
-                <optional>false</optional>
+                <optional>true</optional>
                 <paths>
                     <path>3</path>
                 </paths>
@@ -21037,7 +21037,7 @@
                 <year>4</year>
                 <semester>1</semester>
                 <ects>5</ects>
-                <optional>false</optional>
+                <optional>true</optional>
                 <paths>
                     <path>4</path>
                 </paths>
@@ -21083,7 +21083,7 @@
                 <year>4</year>
                 <semester>1</semester>
                 <ects>5</ects>
-                <optional>false</optional>
+                <optional>true</optional>
                 <paths>
                     <path>4</path>
                 </paths>
@@ -21145,7 +21145,7 @@
                 <year>4</year>
                 <semester>2</semester>
                 <ects>5</ects>
-                <optional>false</optional>
+                <optional>true</optional>
                 <paths>
                     <path>4</path>
                 </paths>
@@ -21247,7 +21247,7 @@
                 <year>4</year>
                 <semester>2</semester>
                 <ects>5</ects>
-                <optional>false</optional>
+                <optional>true</optional>
                 <paths>
                     <path>4</path>
                 </paths>
@@ -21313,7 +21313,7 @@
                 <year>4</year>
                 <semester>1</semester>
                 <ects>5</ects>
-                <optional>false</optional>
+                <optional>true</optional>
                 <paths>
                     <path>5</path>
                 </paths>
@@ -21371,7 +21371,7 @@
                 <year>4</year>
                 <semester>1</semester>
                 <ects>5</ects>
-                <optional>false</optional>
+                <optional>true</optional>
                 <paths>
                     <path>5</path>
                 </paths>
@@ -21465,7 +21465,7 @@
                 <year>4</year>
                 <semester>2</semester>
                 <ects>5</ects>
-                <optional>false</optional>
+                <optional>true</optional>
                 <paths>
                     <path>5</path>
                 </paths>
@@ -21531,7 +21531,7 @@
                 <year>4</year>
                 <semester>2</semester>
                 <ects>5</ects>
-                <optional>false</optional>
+                <optional>true</optional>
                 <paths>
                     <path>5</path>
                 </paths>
@@ -21605,7 +21605,7 @@
                 <year>4</year>
                 <semester>1</semester>
                 <ects>5</ects>
-                <optional>false</optional>
+                <optional>true</optional>
                 <paths>
                     <path>6</path>
                 </paths>
@@ -21663,7 +21663,7 @@
                 <year>4</year>
                 <semester>1</semester>
                 <ects>5</ects>
-                <optional>false</optional>
+                <optional>true</optional>
                 <paths>
                     <path>6</path>
                 </paths>
@@ -21705,7 +21705,7 @@
                 <year>4</year>
                 <semester>2</semester>
                 <ects>5</ects>
-                <optional>false</optional>
+                <optional>true</optional>
                 <paths>
                     <path>6</path>
                 </paths>
@@ -21751,7 +21751,7 @@
                 <year>4</year>
                 <semester>2</semester>
                 <ects>5</ects>
-                <optional>false</optional>
+                <optional>true</optional>
                 <paths>
                     <path>6</path>
                 </paths>
@@ -21829,7 +21829,7 @@
                 <year>4</year>
                 <semester>1</semester>
                 <ects>5</ects>
-                <optional>false</optional>
+                <optional>true</optional>
                 <paths>
                     <path>7</path>
                 </paths>
@@ -21895,7 +21895,7 @@
                 <year>4</year>
                 <semester>1</semester>
                 <ects>5</ects>
-                <optional>false</optional>
+                <optional>true</optional>
                 <paths>
                     <path>7</path>
                 </paths>
@@ -21937,7 +21937,7 @@
                 <year>4</year>
                 <semester>2</semester>
                 <ects>5</ects>
-                <optional>false</optional>
+                <optional>true</optional>
                 <paths>
                     <path>7</path>
                 </paths>
@@ -21987,7 +21987,7 @@
                 <year>4</year>
                 <semester>2</semester>
                 <ects>5</ects>
-                <optional>false</optional>
+                <optional>true</optional>
                 <paths>
                     <path>7</path>
                 </paths>
@@ -22041,7 +22041,7 @@
                 <year>4</year>
                 <semester>1</semester>
                 <ects>5</ects>
-                <optional>false</optional>
+                <optional>true</optional>
                 <paths>
                     <path>8</path>
                 </paths>
@@ -22087,7 +22087,7 @@
                 <year>4</year>
                 <semester>1</semester>
                 <ects>5</ects>
-                <optional>false</optional>
+                <optional>true</optional>
                 <paths>
                     <path>8</path>
                 </paths>
@@ -22153,7 +22153,7 @@
                 <year>4</year>
                 <semester>2</semester>
                 <ects>5</ects>
-                <optional>false</optional>
+                <optional>true</optional>
                 <paths>
                     <path>8</path>
                 </paths>
@@ -22199,7 +22199,7 @@
                 <year>4</year>
                 <semester>2</semester>
                 <ects>5</ects>
-                <optional>false</optional>
+                <optional>true</optional>
                 <paths>
                     <path>8</path>
                 </paths>
@@ -22245,7 +22245,7 @@
                 <year>4</year>
                 <semester>1</semester>
                 <ects>5</ects>
-                <optional>false</optional>
+                <optional>true</optional>
                 <paths>
                     <path>9</path>
                 </paths>
@@ -22303,7 +22303,7 @@
                 <year>4</year>
                 <semester>1</semester>
                 <ects>5</ects>
-                <optional>false</optional>
+                <optional>true</optional>
                 <paths>
                     <path>9</path>
                 </paths>
@@ -22361,7 +22361,7 @@
                 <year>4</year>
                 <semester>2</semester>
                 <ects>5</ects>
-                <optional>false</optional>
+                <optional>true</optional>
                 <paths>
                     <path>9</path>
                 </paths>
@@ -22415,7 +22415,7 @@
                 <year>4</year>
                 <semester>2</semester>
                 <ects>5</ects>
-                <optional>false</optional>
+                <optional>true</optional>
                 <paths>
                     <path>9</path>
                 </paths>
@@ -22477,7 +22477,7 @@
                 <year>4</year>
                 <semester>1</semester>
                 <ects>5</ects>
-                <optional>false</optional>
+                <optional>true</optional>
                 <paths>
                     <path>10</path>
                 </paths>
@@ -22551,7 +22551,7 @@
                 <year>4</year>
                 <semester>1</semester>
                 <ects>5</ects>
-                <optional>false</optional>
+                <optional>true</optional>
                 <paths>
                     <path>10</path>
                 </paths>
@@ -22625,7 +22625,7 @@
                 <year>4</year>
                 <semester>2</semester>
                 <ects>5</ects>
-                <optional>false</optional>
+                <optional>true</optional>
                 <paths>
                     <path>10</path>
                 </paths>
@@ -22683,7 +22683,7 @@
                 <year>4</year>
                 <semester>2</semester>
                 <ects>5</ects>
-                <optional>false</optional>
+                <optional>true</optional>
                 <paths>
                     <path>10</path>
                 </paths>
@@ -22761,7 +22761,7 @@
                 <year>4</year>
                 <semester>1</semester>
                 <ects>5</ects>
-                <optional>false</optional>
+                <optional>true</optional>
                 <paths>
                     <path>11</path>
                 </paths>
@@ -22815,7 +22815,7 @@
                 <year>4</year>
                 <semester>2</semester>
                 <ects>5</ects>
-                <optional>false</optional>
+                <optional>true</optional>
                 <paths>
                     <path>11</path>
                 </paths>
@@ -22881,7 +22881,7 @@
                 <year>4</year>
                 <semester>1</semester>
                 <ects>5</ects>
-                <optional>false</optional>
+                <optional>true</optional>
                 <paths>
                     <path>11</path>
                 </paths>
@@ -22959,7 +22959,7 @@
                 <year>4</year>
                 <semester>2</semester>
                 <ects>5</ects>
-                <optional>false</optional>
+                <optional>true</optional>
                 <paths>
                     <path>11</path>
                 </paths>
@@ -23025,7 +23025,7 @@
                 <year>4</year>
                 <semester>1</semester>
                 <ects>5</ects>
-                <optional>false</optional>
+                <optional>true</optional>
                 <paths>
                     <path>12</path>
                 </paths>
@@ -23063,7 +23063,7 @@
                 <year>4</year>
                 <semester>1</semester>
                 <ects>5</ects>
-                <optional>false</optional>
+                <optional>true</optional>
                 <paths>
                     <path>12</path>
                 </paths>
@@ -23097,7 +23097,7 @@
                 <year>4</year>
                 <semester>2</semester>
                 <ects>5</ects>
-                <optional>false</optional>
+                <optional>true</optional>
                 <paths>
                     <path>12</path>
                 </paths>
@@ -23131,7 +23131,7 @@
                 <year>4</year>
                 <semester>2</semester>
                 <ects>5</ects>
-                <optional>false</optional>
+                <optional>true</optional>
                 <paths>
                     <path>12</path>
                 </paths>
@@ -23205,7 +23205,7 @@
                 <year>4</year>
                 <semester>1</semester>
                 <ects>5</ects>
-                <optional>false</optional>
+                <optional>true</optional>
                 <paths>
                     <path>13</path>
                 </paths>
@@ -23247,7 +23247,7 @@
                 <year>4</year>
                 <semester>1</semester>
                 <ects>5</ects>
-                <optional>false</optional>
+                <optional>true</optional>
                 <paths>
                     <path>13</path>
                 </paths>
@@ -23305,7 +23305,7 @@
                 <year>4</year>
                 <semester>2</semester>
                 <ects>5</ects>
-                <optional>false</optional>
+                <optional>true</optional>
                 <paths>
                     <path>13</path>
                 </paths>
@@ -23355,7 +23355,7 @@
                 <year>4</year>
                 <semester>2</semester>
                 <ects>5</ects>
-                <optional>false</optional>
+                <optional>true</optional>
                 <paths>
                     <path>13</path>
                 </paths>
@@ -23405,7 +23405,7 @@
                 <year>4</year>
                 <semester>1</semester>
                 <ects>5</ects>
-                <optional>false</optional>
+                <optional>true</optional>
                 <paths></paths>
                 <mandatoryPaths></mandatoryPaths>
                 <exclusivePath></exclusivePath>
@@ -23463,7 +23463,7 @@
                 <year>4</year>
                 <semester>1</semester>
                 <ects>5</ects>
-                <optional>false</optional>
+                <optional>true</optional>
                 <paths></paths>
                 <mandatoryPaths></mandatoryPaths>
                 <exclusivePath></exclusivePath>
@@ -23505,7 +23505,7 @@
                 <year>4</year>
                 <semester>1</semester>
                 <ects>5</ects>
-                <optional>false</optional>
+                <optional>true</optional>
                 <paths></paths>
                 <mandatoryPaths></mandatoryPaths>
                 <exclusivePath></exclusivePath>
@@ -23571,7 +23571,7 @@
                 <year>4</year>
                 <semester>1</semester>
                 <ects>5</ects>
-                <optional>false</optional>
+                <optional>true</optional>
                 <paths></paths>
                 <mandatoryPaths></mandatoryPaths>
                 <exclusivePath></exclusivePath>
@@ -23625,7 +23625,7 @@
                 <year>4</year>
                 <semester>1</semester>
                 <ects>5</ects>
-                <optional>false</optional>
+                <optional>true</optional>
                 <paths></paths>
                 <mandatoryPaths></mandatoryPaths>
                 <exclusivePath></exclusivePath>
@@ -23675,7 +23675,7 @@
                 <year>4</year>
                 <semester>1</semester>
                 <ects>5</ects>
-                <optional>false</optional>
+                <optional>true</optional>
                 <paths></paths>
                 <mandatoryPaths></mandatoryPaths>
                 <exclusivePath></exclusivePath>
@@ -23725,7 +23725,7 @@
                 <year>4</year>
                 <semester>1</semester>
                 <ects>5</ects>
-                <optional>false</optional>
+                <optional>true</optional>
                 <paths></paths>
                 <mandatoryPaths></mandatoryPaths>
                 <exclusivePath></exclusivePath>

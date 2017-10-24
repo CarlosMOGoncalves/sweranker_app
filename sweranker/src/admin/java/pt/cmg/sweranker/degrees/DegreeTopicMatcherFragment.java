@@ -68,10 +68,10 @@ public class DegreeTopicMatcherFragment extends Fragment {
 
         if (_sharedViewModel.hasMatches(_degreeClassId)) {
 
-            DegreeClassMatch previousMatch = _sharedViewModel.getDegreeClassMatch(_degreeClassId);
-            pt.cmg.sweranker.degrees.DegreeTopicMatcherAdapter adapter = new pt.cmg.sweranker.degrees.DegreeTopicMatcherAdapter(getActivity(),
+            DegreeClassMatch existingMatch = _sharedViewModel.getDegreeClassMatch(_degreeClassId);
+            DegreeTopicMatcherAdapter adapter = new DegreeTopicMatcherAdapter(getActivity(),
                     _degreeClass,
-                    previousMatch,
+                    existingMatch,
                     _sharedViewModel.getKnowledgeAreas().getValue(),
                     selectedMatch -> {
                         if (_sharedViewModel.saveMatch(selectedMatch)) {
@@ -81,7 +81,7 @@ public class DegreeTopicMatcherFragment extends Fragment {
             matcherList.setAdapter(adapter);
 
         } else {
-            pt.cmg.sweranker.degrees.DegreeTopicMatcherAdapter adapter = new pt.cmg.sweranker.degrees.DegreeTopicMatcherAdapter(getActivity(),
+            DegreeTopicMatcherAdapter adapter = new DegreeTopicMatcherAdapter(getActivity(),
                     _degreeClass,
                     _sharedViewModel.getKnowledgeAreas().getValue(),
                     selectedMatch -> {
