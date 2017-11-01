@@ -210,10 +210,10 @@ public class DegreeDetailsFragment extends Fragment implements LifecycleRegistry
             window.setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
 
             // set the custom dialog components - title, ProgressBar and button
-            updateText = (TextView) this.findViewById(R.id.progress_text);
-            progressBar = (ProgressBar) this.findViewById(R.id.progress_bar);
+            updateText = this.findViewById(R.id.progress_text);
+            progressBar = this.findViewById(R.id.progress_bar);
             progressBar.setVisibility(View.VISIBLE);
-            progressValue = (TextView) this.findViewById(R.id.progress_counter);
+            progressValue = this.findViewById(R.id.progress_counter);
         }
 
         public void startProgress() {
@@ -246,10 +246,10 @@ public class DegreeDetailsFragment extends Fragment implements LifecycleRegistry
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         _myView = inflater.inflate(R.layout.degree_details_fragment, container, false);
 
-        ImageView degreeImage = (ImageView) _myView.findViewById(R.id.degree_image);
-        TextView universityName = (TextView) _myView.findViewById(R.id.university_name);
-        TextView degreeName = (TextView) _myView.findViewById(R.id.degree_name);
-        TextView isDegreeEvaluated = (TextView) _myView.findViewById(R.id.evaluated_status);
+        ImageView degreeImage = _myView.findViewById(R.id.degree_image);
+        TextView universityName = _myView.findViewById(R.id.university_name);
+        TextView degreeName = _myView.findViewById(R.id.degree_name);
+        TextView isDegreeEvaluated = _myView.findViewById(R.id.evaluated_status);
 
         degreeImage.setImageDrawable(this.getResources().getDrawable(_degree.getImageResource(), null));
         universityName.setText(this.getResources().getText(_degree.getUniversityResource()));
@@ -263,13 +263,13 @@ public class DegreeDetailsFragment extends Fragment implements LifecycleRegistry
             isDegreeEvaluated.setTextColor((this.getResources().getColor(R.color.materialNegative)));
         }
 
-        ViewPager viewPager = (ViewPager) _myView.findViewById(R.id.degree_viewPager);
+        ViewPager viewPager = _myView.findViewById(R.id.degree_viewPager);
         viewPager.setAdapter(new DegreeViewPagerAdapter(this.getActivity(), _degree, (view, degreeClass) -> {
             _sharedViewModel.setSelectedDegreeClass(degreeClass);
             _parentActivity.loadDegreeClassFragment(view);
         }));
 
-        TabLayout tabLayout = (TabLayout) _myView.findViewById(R.id.degree_tabs);
+        TabLayout tabLayout = _myView.findViewById(R.id.degree_tabs);
         tabLayout.setupWithViewPager(viewPager);
 
         _progressDialog = new ProgressDialog(getActivity());

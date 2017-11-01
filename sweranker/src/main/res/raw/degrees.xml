@@ -4917,14 +4917,6 @@
                         <id>c73t14</id>
                         <description>@string/uc_class_intro_programming_topic14</description>
                     </topic>
-                    <topic>
-                        <id>c73t15</id>
-                        <description>@string/uc_class_intro_programming_topic15</description>
-                    </topic>
-                    <topic>
-                        <id>c73t16</id>
-                        <description>@string/uc_class_intro_programming_topic16</description>
-                    </topic>
                 </program>
             </class>
             <class>
@@ -5981,8 +5973,8 @@
             </class>
             <class>
                 <id>uc_mei_c19</id>
-                <name>@string/uc_class_modern_physics</name>
-                <description>@string/uc_class_modern_physics_description</description>
+                <name>@string/uc_class_communication_protocols</name>
+                <description>@string/uuc_class_communication_protocols_description</description>
                 <year>2</year>
                 <semester>2</semester>
                 <ects>6</ects>
@@ -6849,53 +6841,43 @@
                 <program>
                     <topic>
                         <id>c102t1</id>
-                        <description>@string/uc_class_human_computer_interaction_topic1
-                        </description>
+                        <description>@string/uc_class_human_computer_interaction_topic1</description>
                     </topic>
                     <topic>
                         <id>c102t2</id>
-                        <description>@string/uc_class_human_computer_interaction_topic2
-                        </description>
+                        <description>@string/uc_class_human_computer_interaction_topic2</description>
                     </topic>
                     <topic>
                         <id>c102t3</id>
-                        <description>@string/uc_class_human_computer_interaction_topic3
-                        </description>
+                        <description>@string/uc_class_human_computer_interaction_topic3</description>
                     </topic>
                     <topic>
                         <id>c102t4</id>
-                        <description>@string/uc_class_human_computer_interaction_topic4
-                        </description>
+                        <description>@string/uc_class_human_computer_interaction_topic4</description>
                     </topic>
                     <topic>
                         <id>c102t5</id>
-                        <description>@string/uc_class_human_computer_interaction_topic5
-                        </description>
+                        <description>@string/uc_class_human_computer_interaction_topic5</description>
                     </topic>
                     <topic>
                         <id>c102t6</id>
-                        <description>@string/uc_class_human_computer_interaction_topic6
-                        </description>
+                        <description>@string/uc_class_human_computer_interaction_topic6</description>
                     </topic>
                     <topic>
                         <id>c102t7</id>
-                        <description>@string/uc_class_human_computer_interaction_topic7
-                        </description>
+                        <description>@string/uc_class_human_computer_interaction_topic7</description>
                     </topic>
                     <topic>
                         <id>c102t8</id>
-                        <description>@string/uc_class_human_computer_interaction_topic8
-                        </description>
+                        <description>@string/uc_class_human_computer_interaction_topic8</description>
                     </topic>
                     <topic>
                         <id>c102t9</id>
-                        <description>@string/uc_class_human_computer_interaction_topic9
-                        </description>
+                        <description>@string/uc_class_human_computer_interaction_topic9</description>
                     </topic>
                     <topic>
                         <id>c102t10</id>
-                        <description>@string/uc_class_human_computer_interaction_topic10
-                        </description>
+                        <description>@string/uc_class_human_computer_interaction_topic10</description>
                     </topic>
                 </program>
             </class>
@@ -6918,33 +6900,27 @@
                 <program>
                     <topic>
                         <id>c103t1</id>
-                        <description>@string/uc_class_experimental_methodologies_topic1
-                        </description>
+                        <description>@string/uc_class_experimental_methodologies_topic1</description>
                     </topic>
                     <topic>
                         <id>c103t2</id>
-                        <description>@string/uc_class_experimental_methodologies_topic2
-                        </description>
+                        <description>@string/uc_class_experimental_methodologies_topic2</description>
                     </topic>
                     <topic>
                         <id>c103t3</id>
-                        <description>@string/uc_class_experimental_methodologies_topic3
-                        </description>
+                        <description>@string/uc_class_experimental_methodologies_topic3</description>
                     </topic>
                     <topic>
                         <id>c103t4</id>
-                        <description>@string/uc_class_experimental_methodologies_topic4
-                        </description>
+                        <description>@string/uc_class_experimental_methodologies_topic4</description>
                     </topic>
                     <topic>
                         <id>c103t5</id>
-                        <description>@string/uc_class_experimental_methodologies_topic5
-                        </description>
+                        <description>@string/uc_class_experimental_methodologies_topic5</description>
                     </topic>
                     <topic>
                         <id>c103t6</id>
-                        <description>@string/uc_class_experimental_methodologies_topic6
-                        </description>
+                        <description>@string/uc_class_experimental_methodologies_topic6</description>
                     </topic>
                 </program>
             </class>
@@ -8480,13 +8456,11 @@
                 <program>
                     <topic>
                         <id>c131t1</id>
-                        <description>@string/uc_class_emerging_internet_services_topic1
-                        </description>
+                        <description>@string/uc_class_emerging_internet_services_topic1</description>
                     </topic>
                     <topic>
                         <id>c131t2</id>
-                        <description>@string/uc_class_emerging_internet_services_topic2
-                        </description>
+                        <description>@string/uc_class_emerging_internet_services_topic2</description>
                     </topic>
                     <topic>
                         <id>c131t3</id>
@@ -8495,38 +8469,31 @@
                     </topic>
                     <topic>
                         <id>c131t4</id>
-                        <description>@string/uc_class_emerging_internet_services_topic4
-                        </description>
+                        <description>@string/uc_class_emerging_internet_services_topic4</description>
                     </topic>
                     <topic>
                         <id>c131t5</id>
-                        <description>@string/uc_class_emerging_internet_services_topic5
-                        </description>
+                        <description>@string/uc_class_emerging_internet_services_topic5</description>
                     </topic>
                     <topic>
                         <id>c131t6</id>
-                        <description>@string/uc_class_emerging_internet_services_topic6
-                        </description>
+                        <description>@string/uc_class_emerging_internet_services_topic6</description>
                     </topic>
                     <topic>
                         <id>c131t7</id>
-                        <description>@string/uc_class_emerging_internet_services_topic7
-                        </description>
+                        <description>@string/uc_class_emerging_internet_services_topic7</description>
                     </topic>
                     <topic>
                         <id>c131t8</id>
-                        <description>@string/uc_class_emerging_internet_services_topic8
-                        </description>
+                        <description>@string/uc_class_emerging_internet_services_topic8</description>
                     </topic>
                     <topic>
                         <id>c131t9</id>
-                        <description>@string/uc_class_emerging_internet_services_topic9
-                        </description>
+                        <description>@string/uc_class_emerging_internet_services_topic9</description>
                     </topic>
                     <topic>
                         <id>c131t10</id>
-                        <description>@string/uc_class_emerging_internet_services_topic10
-                        </description>
+                        <description>@string/uc_class_emerging_internet_services_topic10</description>
                     </topic>
                 </program>
             </class>
@@ -8861,33 +8828,27 @@
                     </topic>
                     <topic>
                         <id>c136t10</id>
-                        <description>@string/ist_class_programming_fundamentals_topic10
-                        </description>
+                        <description>@string/ist_class_programming_fundamentals_topic10</description>
                     </topic>
                     <topic>
                         <id>c136t11</id>
-                        <description>@string/ist_class_programming_fundamentals_topic11
-                        </description>
+                        <description>@string/ist_class_programming_fundamentals_topic11</description>
                     </topic>
                     <topic>
                         <id>c136t12</id>
-                        <description>@string/ist_class_programming_fundamentals_topic12
-                        </description>
+                        <description>@string/ist_class_programming_fundamentals_topic12</description>
                     </topic>
                     <topic>
                         <id>c136t13</id>
-                        <description>@string/ist_class_programming_fundamentals_topic13
-                        </description>
+                        <description>@string/ist_class_programming_fundamentals_topic13</description>
                     </topic>
                     <topic>
                         <id>c136t14</id>
-                        <description>@string/ist_class_programming_fundamentals_topic14
-                        </description>
+                        <description>@string/ist_class_programming_fundamentals_topic14</description>
                     </topic>
                     <topic>
                         <id>c136t15</id>
-                        <description>@string/ist_class_programming_fundamentals_topic15
-                        </description>
+                        <description>@string/ist_class_programming_fundamentals_topic15</description>
                     </topic>
                 </program>
             </class>
@@ -14021,48 +13982,39 @@
                     </topic>
                     <topic>
                         <id>c212t10</id>
-                        <description>@string/ist_class_intelligent_environments_topic10
-                        </description>
+                        <description>@string/ist_class_intelligent_environments_topic10</description>
                     </topic>
                     <topic>
                         <id>c212t11</id>
-                        <description>@string/ist_class_intelligent_environments_topic11
-                        </description>
+                        <description>@string/ist_class_intelligent_environments_topic11</description>
                     </topic>
                     <topic>
                         <id>c212t12</id>
-                        <description>@string/ist_class_intelligent_environments_topic12
-                        </description>
+                        <description>@string/ist_class_intelligent_environments_topic12</description>
                     </topic>
                     <topic>
                         <id>c212t13</id>
-                        <description>@string/ist_class_intelligent_environments_topic13
-                        </description>
+                        <description>@string/ist_class_intelligent_environments_topic13</description>
                     </topic>
                     <topic>
                         <id>c212t14</id>
-                        <description>@string/ist_class_intelligent_environments_topic14
-                        </description>
+                        <description>@string/ist_class_intelligent_environments_topic14</description>
                     </topic>
                     <topic>
                         <id>c212t15</id>
-                        <description>@string/ist_class_intelligent_environments_topic15
-                        </description>
+                        <description>@string/ist_class_intelligent_environments_topic15</description>
                     </topic>
                     <topic>
                         <id>c212t16</id>
-                        <description>@string/ist_class_intelligent_environments_topic16
-                        </description>
+                        <description>@string/ist_class_intelligent_environments_topic16</description>
                     </topic>
                     <topic>
                         <id>c212t17</id>
-                        <description>@string/ist_class_intelligent_environments_topic17
-                        </description>
+                        <description>@string/ist_class_intelligent_environments_topic17</description>
                     </topic>
                     <topic>
                         <id>c212t18</id>
-                        <description>@string/ist_class_intelligent_environments_topic18
-                        </description>
+                        <description>@string/ist_class_intelligent_environments_topic18</description>
                     </topic>
                 </program>
             </class>
@@ -15013,13 +14965,11 @@
                     </topic>
                     <topic>
                         <id>c230t10</id>
-                        <description>@string/uav_class_programming_fundamentals_topic10
-                        </description>
+                        <description>@string/uav_class_programming_fundamentals_topic10</description>
                     </topic>
                     <topic>
                         <id>c230t11</id>
-                        <description>@string/uav_class_programming_fundamentals_topic11
-                        </description>
+                        <description>@string/uav_class_programming_fundamentals_topic11</description>
                     </topic>
                 </program>
             </class>
@@ -15786,58 +15736,47 @@
                 <program>
                     <topic>
                         <id>c244t1</id>
-                        <description>@string/uav_class_human_computer_interaction_topic1
-                        </description>
+                        <description>@string/uav_class_human_computer_interaction_topic1</description>
                     </topic>
                     <topic>
                         <id>c244t2</id>
-                        <description>@string/uav_class_human_computer_interaction_topic2
-                        </description>
+                        <description>@string/uav_class_human_computer_interaction_topic2</description>
                     </topic>
                     <topic>
                         <id>c244t3</id>
-                        <description>@string/uav_class_human_computer_interaction_topic3
-                        </description>
+                        <description>@string/uav_class_human_computer_interaction_topic3</description>
                     </topic>
                     <topic>
                         <id>c244t4</id>
-                        <description>@string/uav_class_human_computer_interaction_topic4
-                        </description>
+                        <description>@string/uav_class_human_computer_interaction_topic4</description>
                     </topic>
                     <topic>
                         <id>c244t5</id>
-                        <description>@string/uav_class_human_computer_interaction_topic5
-                        </description>
+                        <description>@string/uav_class_human_computer_interaction_topic5</description>
                     </topic>
                     <topic>
                         <id>c244t6</id>
-                        <description>@string/uav_class_human_computer_interaction_topic6
-                        </description>
+                        <description>@string/uav_class_human_computer_interaction_topic6</description>
                     </topic>
                     <topic>
                         <id>c244t7</id>
-                        <description>@string/uav_class_human_computer_interaction_topic7
-                        </description>
+                        <description>@string/uav_class_human_computer_interaction_topic7</description>
                     </topic>
                     <topic>
                         <id>c244t8</id>
-                        <description>@string/uav_class_human_computer_interaction_topic8
-                        </description>
+                        <description>@string/uav_class_human_computer_interaction_topic8</description>
                     </topic>
                     <topic>
                         <id>c244t9</id>
-                        <description>@string/uav_class_human_computer_interaction_topic9
-                        </description>
+                        <description>@string/uav_class_human_computer_interaction_topic9</description>
                     </topic>
                     <topic>
                         <id>c244t10</id>
-                        <description>@string/uav_class_human_computer_interaction_topic10
-                        </description>
+                        <description>@string/uav_class_human_computer_interaction_topic10</description>
                     </topic>
                     <topic>
                         <id>c244t11</id>
-                        <description>@string/uav_class_human_computer_interaction_topic11
-                        </description>
+                        <description>@string/uav_class_human_computer_interaction_topic11</description>
                     </topic>
                 </program>
             </class>
@@ -16273,63 +16212,51 @@
                 <program>
                     <topic>
                         <id>c253t1</id>
-                        <description>@string/uav_class_operational_investigation_topic1
-                        </description>
+                        <description>@string/uav_class_operational_investigation_topic1</description>
                     </topic>
                     <topic>
                         <id>c253t2</id>
-                        <description>@string/uav_class_operational_investigation_topic2
-                        </description>
+                        <description>@string/uav_class_operational_investigation_topic2</description>
                     </topic>
                     <topic>
                         <id>c253t3</id>
-                        <description>@string/uav_class_operational_investigation_topic3
-                        </description>
+                        <description>@string/uav_class_operational_investigation_topic3</description>
                     </topic>
                     <topic>
                         <id>c253t4</id>
-                        <description>@string/uav_class_operational_investigation_topic4
-                        </description>
+                        <description>@string/uav_class_operational_investigation_topic4</description>
                     </topic>
                     <topic>
                         <id>c253t5</id>
-                        <description>@string/uav_class_operational_investigation_topic5
-                        </description>
+                        <description>@string/uav_class_operational_investigation_topic5</description>
                     </topic>
                     <topic>
                         <id>c253t6</id>
-                        <description>@string/uav_class_operational_investigation_topic6
-                        </description>
+                        <description>@string/uav_class_operational_investigation_topic6</description>
                     </topic>
                     <topic>
                         <id>c253t7</id>
-                        <description>@string/uav_class_operational_investigation_topic7
-                        </description>
+                        <description>@string/uav_class_operational_investigation_topic7</description>
                     </topic>
                     <topic>
                         <id>c253t8</id>
-                        <description>@string/uav_class_operational_investigation_topic8
-                        </description>
+                        <description>@string/uav_class_operational_investigation_topic8</description>
                     </topic>
                     <topic>
                         <id>c253t9</id>
-                        <description>@string/uav_class_operational_investigation_topic9
-                        </description>
+                        <description>@string/uav_class_operational_investigation_topic9</description>
                     </topic>
                     <topic>
                         <id>c253t10</id>
-                        <description>@string/uav_class_operational_investigation_topic10
-                        </description>
+                        <description>@string/uav_class_operational_investigation_topic10</description>
                     </topic>
                     <topic>
                         <id>c253t11</id>
-                        <description>@string/uav_class_operational_investigation_topic11
-                        </description>
+                        <description>@string/uav_class_operational_investigation_topic11</description>
                     </topic>
                     <topic>
                         <id>c253t12</id>
-                        <description>@string/uav_class_operational_investigation_topic12
-                        </description>
+                        <description>@string/uav_class_operational_investigation_topic12</description>
                     </topic>
                 </program>
             </class>
@@ -17717,58 +17644,47 @@
                 <program>
                     <topic>
                         <id>c279t1</id>
-                        <description>@string/uav_class_service_quality_management_topic1
-                        </description>
+                        <description>@string/uav_class_service_quality_management_topic1</description>
                     </topic>
                     <topic>
                         <id>c279t2</id>
-                        <description>@string/uav_class_service_quality_management_topic2
-                        </description>
+                        <description>@string/uav_class_service_quality_management_topic2</description>
                     </topic>
                     <topic>
                         <id>c279t3</id>
-                        <description>@string/uav_class_service_quality_management_topic3
-                        </description>
+                        <description>@string/uav_class_service_quality_management_topic3</description>
                     </topic>
                     <topic>
                         <id>c279t4</id>
-                        <description>@string/uav_class_service_quality_management_topic4
-                        </description>
+                        <description>@string/uav_class_service_quality_management_topic4</description>
                     </topic>
                     <topic>
                         <id>c279t5</id>
-                        <description>@string/uav_class_service_quality_management_topic5
-                        </description>
+                        <description>@string/uav_class_service_quality_management_topic5</description>
                     </topic>
                     <topic>
                         <id>c279t6</id>
-                        <description>@string/uav_class_service_quality_management_topic6
-                        </description>
+                        <description>@string/uav_class_service_quality_management_topic6</description>
                     </topic>
                     <topic>
                         <id>c279t7</id>
-                        <description>@string/uav_class_service_quality_management_topic7
-                        </description>
+                        <description>@string/uav_class_service_quality_management_topic7</description>
                     </topic>
                     <topic>
                         <id>c279t8</id>
-                        <description>@string/uav_class_service_quality_management_topic8
-                        </description>
+                        <description>@string/uav_class_service_quality_management_topic8</description>
                     </topic>
                     <topic>
                         <id>c279t9</id>
-                        <description>@string/uav_class_service_quality_management_topic9
-                        </description>
+                        <description>@string/uav_class_service_quality_management_topic9</description>
                     </topic>
                     <topic>
                         <id>c279t10</id>
-                        <description>@string/uav_class_service_quality_management_topic10
-                        </description>
+                        <description>@string/uav_class_service_quality_management_topic10</description>
                     </topic>
                     <topic>
                         <id>c279t11</id>
-                        <description>@string/uav_class_service_quality_management_topic11
-                        </description>
+                        <description>@string/uav_class_service_quality_management_topic11</description>
                     </topic>
                 </program>
             </class>
@@ -18004,133 +17920,107 @@
                 <program>
                     <topic>
                         <id>c285t1</id>
-                        <description>@string/uav_class_service_networks_imagiology_topic1
-                        </description>
+                        <description>@string/uav_class_service_networks_imagiology_topic1</description>
                     </topic>
                     <topic>
                         <id>c285t2</id>
-                        <description>@string/uav_class_service_networks_imagiology_topic2
-                        </description>
+                        <description>@string/uav_class_service_networks_imagiology_topic2</description>
                     </topic>
                     <topic>
                         <id>c285t3</id>
-                        <description>@string/uav_class_service_networks_imagiology_topic3
-                        </description>
+                        <description>@string/uav_class_service_networks_imagiology_topic3</description>
                     </topic>
                     <topic>
                         <id>c285t4</id>
-                        <description>@string/uav_class_service_networks_imagiology_topic4
-                        </description>
+                        <description>@string/uav_class_service_networks_imagiology_topic4</description>
                     </topic>
                     <topic>
                         <id>c285t5</id>
-                        <description>@string/uav_class_service_networks_imagiology_topic5
-                        </description>
+                        <description>@string/uav_class_service_networks_imagiology_topic5</description>
                     </topic>
                     <topic>
                         <id>c285t6</id>
-                        <description>@string/uav_class_service_networks_imagiology_topic6
-                        </description>
+                        <description>@string/uav_class_service_networks_imagiology_topic6</description>
                     </topic>
                     <topic>
                         <id>c285t7</id>
-                        <description>@string/uav_class_service_networks_imagiology_topic7
-                        </description>
+                        <description>@string/uav_class_service_networks_imagiology_topic7</description>
                     </topic>
                     <topic>
                         <id>c285t8</id>
-                        <description>@string/uav_class_service_networks_imagiology_topic8
-                        </description>
+                        <description>@string/uav_class_service_networks_imagiology_topic8</description>
                     </topic>
                     <topic>
                         <id>c285t9</id>
-                        <description>@string/uav_class_service_networks_imagiology_topic9
-                        </description>
+                        <description>@string/uav_class_service_networks_imagiology_topic9</description>
                     </topic>
                     <topic>
                         <id>c285t10</id>
-                        <description>@string/uav_class_service_networks_imagiology_topic10
-                        </description>
+                        <description>@string/uav_class_service_networks_imagiology_topic10</description>
                     </topic>
                     <topic>
                         <id>c285t11</id>
-                        <description>@string/uav_class_service_networks_imagiology_topic11
-                        </description>
+                        <description>@string/uav_class_service_networks_imagiology_topic11</description>
                     </topic>
                     <topic>
                         <id>c285t12</id>
-                        <description>@string/uav_class_service_networks_imagiology_topic12
-                        </description>
+                        <description>@string/uav_class_service_networks_imagiology_topic12</description>
                     </topic>
                     <topic>
                         <id>c285t13</id>
-                        <description>@string/uav_class_service_networks_imagiology_topic13
-                        </description>
+                        <description>@string/uav_class_service_networks_imagiology_topic13</description>
                     </topic>
                     <topic>
                         <id>c285t14</id>
-                        <description>@string/uav_class_service_networks_imagiology_topic14
-                        </description>
+                        <description>@string/uav_class_service_networks_imagiology_topic14</description>
                     </topic>
                     <topic>
                         <id>c285t15</id>
-                        <description>@string/uav_class_service_networks_imagiology_topic15
-                        </description>
+                        <description>@string/uav_class_service_networks_imagiology_topic15</description>
                     </topic>
                     <topic>
                         <id>c285t16</id>
-                        <description>@string/uav_class_service_networks_imagiology_topic16
-                        </description>
+                        <description>@string/uav_class_service_networks_imagiology_topic16</description>
                     </topic>
                     <topic>
                         <id>c285t17</id>
-                        <description>@string/uav_class_service_networks_imagiology_topic17
-                        </description>
+                        <description>@string/uav_class_service_networks_imagiology_topic17</description>
                     </topic>
                     <topic>
                         <id>c285t18</id>
-                        <description>@string/uav_class_service_networks_imagiology_topic18
-                        </description>
+                        <description>@string/uav_class_service_networks_imagiology_topic18</description>
                     </topic>
                     <topic>
                         <id>c285t19</id>
-                        <description>@string/uav_class_service_networks_imagiology_topic19
-                        </description>
+                        <description>@string/uav_class_service_networks_imagiology_topic19</description>
                     </topic>
                     <topic>
                         <id>c285t20</id>
-                        <description>@string/uav_class_service_networks_imagiology_topic20
-                        </description>
+                        <description>@string/uav_class_service_networks_imagiology_topic20</description>
                     </topic>
                     <topic>
                         <id>c285t21</id>
-                        <description>@string/uav_class_service_networks_imagiology_topic21
-                        </description>
+                        <description>@string/uav_class_service_networks_imagiology_topic21</description>
                     </topic>
                     <topic>
                         <id>c285t22</id>
-                        <description>@string/uav_class_service_networks_imagiology_topic22
-                        </description>
+                        <description>@string/uav_class_service_networks_imagiology_topic22</description>
                     </topic>
                     <topic>
                         <id>c285t23</id>
-                        <description>@string/uav_class_service_networks_imagiology_topic23
-                        </description>
+                        <description>@string/uav_class_service_networks_imagiology_topic23</description>
                     </topic>
                     <topic>
                         <id>c285t24</id>
-                        <description>@string/uav_class_service_networks_imagiology_topic24
-                        </description>
+                        <description>@string/uav_class_service_networks_imagiology_topic24</description>
                     </topic>
                     <topic>
                         <id>c285t25</id>
-                        <description>@string/uav_class_service_networks_imagiology_topic25
-                        </description>
+                        <description>@string/uav_class_service_networks_imagiology_topic25</description>
                     </topic>
                     <topic>
                         <id>c285t26</id>
-                        <description>@string/uav_class_service_networks_imagiology_topic26
-                        </description>
+                        <description>@string/uav_class_service_networks_imagiology_topic26</description>
                     </topic>
                 </program>
             </class>
@@ -19714,38 +19604,31 @@
                 <program>
                     <topic>
                         <id>c313t1</id>
-                        <description>@string/um_class_informatics_labs3_calc_programs_topic1
-                        </description>
+                        <description>@string/um_class_informatics_labs3_calc_programs_topic1</description>
                     </topic>
                     <topic>
                         <id>c313t2</id>
-                        <description>@string/um_class_informatics_labs3_calc_programs_topic2
-                        </description>
+                        <description>@string/um_class_informatics_labs3_calc_programs_topic2</description>
                     </topic>
                     <topic>
                         <id>c313t3</id>
-                        <description>@string/um_class_informatics_labs3_calc_programs_topic3
-                        </description>
+                        <description>@string/um_class_informatics_labs3_calc_programs_topic3</description>
                     </topic>
                     <topic>
                         <id>c313t4</id>
-                        <description>@string/um_class_informatics_labs3_calc_programs_topic4
-                        </description>
+                        <description>@string/um_class_informatics_labs3_calc_programs_topic4</description>
                     </topic>
                     <topic>
                         <id>c313t5</id>
-                        <description>@string/um_class_informatics_labs3_calc_programs_topic5
-                        </description>
+                        <description>@string/um_class_informatics_labs3_calc_programs_topic5</description>
                     </topic>
                     <topic>
                         <id>c313t6</id>
-                        <description>@string/um_class_informatics_labs3_calc_programs_topic6
-                        </description>
+                        <description>@string/um_class_informatics_labs3_calc_programs_topic6</description>
                     </topic>
                     <topic>
                         <id>c313t7</id>
-                        <description>@string/um_class_informatics_labs3_calc_programs_topic7
-                        </description>
+                        <description>@string/um_class_informatics_labs3_calc_programs_topic7</description>
                     </topic>
                 </program>
             </class>

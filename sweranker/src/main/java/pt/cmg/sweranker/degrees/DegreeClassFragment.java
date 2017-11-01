@@ -111,13 +111,16 @@ public class DegreeClassFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         _myView = inflater.inflate(R.layout.degree_class_fragment, container, false);
 
-        TextView classYear = (TextView) _myView.findViewById(R.id.year);
+        TextView classYear = _myView.findViewById(R.id.year);
         classYear.setText(String.valueOf(_degreeClass.getYear()));
-        TextView classSemester = (TextView) _myView.findViewById(R.id.semester);
+
+        TextView classSemester = _myView.findViewById(R.id.semester);
         classSemester.setText(String.valueOf(_degreeClass.getSemester()));
-        TextView classECTS = (TextView) _myView.findViewById(R.id.ects);
+
+        TextView classECTS = _myView.findViewById(R.id.ects);
         classECTS.setText(String.valueOf(_degreeClass.getEctsCredits()));
-        TextView classOptional = (TextView) _myView.findViewById(R.id.optional);
+
+        TextView classOptional = _myView.findViewById(R.id.optional);
 
         if (_degreeClass.isOptionalClass()) {
             classOptional.setText(getString(R.string.yes));
@@ -127,7 +130,7 @@ public class DegreeClassFragment extends Fragment {
             classOptional.setTextColor(ContextCompat.getColor(getActivity(), R.color.materialNegative));
         }
 
-        TextView areMatchesAvailable = (TextView) _myView.findViewById(R.id.is_matched);
+        TextView areMatchesAvailable = _myView.findViewById(R.id.is_matched);
 
 
         if (_sharedViewModel.hasMatches(_degreeClassId)) {
@@ -139,7 +142,7 @@ public class DegreeClassFragment extends Fragment {
         }
 
 
-        RecyclerView curriculumList = (RecyclerView) _myView.findViewById(R.id.degree_program_list);
+        RecyclerView curriculumList = _myView.findViewById(R.id.degree_program_list);
 
         DegreeClassAdapter adapter = new DegreeClassAdapter(this.getActivity(), _degreeClass);
 
@@ -156,7 +159,7 @@ public class DegreeClassFragment extends Fragment {
         curriculumList.setItemAnimator(new DefaultItemAnimator());
         curriculumList.setAdapter(adapter);
 
-        _fab = (FloatingActionButton) _myView.findViewById(R.id.evaluateButton);
+        _fab = _myView.findViewById(R.id.evaluateButton);
         _fab.setOnClickListener(view -> _parentActivity.loadDegreeTopicMatcherFragment());
 
         return _myView;
@@ -214,7 +217,7 @@ public class DegreeClassFragment extends Fragment {
 
             public ClassTopicViewHolder(View view) {
                 super(view);
-                _classTopic = (TextView) view.findViewById(R.id.degree_class_topic);
+                _classTopic = view.findViewById(R.id.degree_class_topic);
             }
 
 

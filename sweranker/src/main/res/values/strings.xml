@@ -1417,7 +1417,7 @@
     <string name="up_class_intelsystems_seminar_topic10">Apresentações dos trabalhos realizados pelos alunos</string>
 
     <string name="up_class_network_services">Serviços de Rede e de Sistema</string>
-    <string name="up_class_network_services_description"></string>
+    <string name="up_class_network_services_description">(Não disponível)</string>
     <string name="up_class_network_services_topic1">Arquitectura TCP/IP, endereçamento IP</string>
     <string name="up_class_network_services_topic2">Protocolos de encaminhamento em redes IP; routing interno e externo</string>
     <string name="up_class_network_services_topic3">Serviços básicos e de suporte de rede e de sistemas: serviço de DNS (Domain Name System) e serviço de atribuição de endereços e configurações (DHCP)</string>
@@ -1582,7 +1582,7 @@
     <string name="uc_class_math_analysis2_topic7">Derivação de funções complexas</string>
     <string name="uc_class_math_analysis2_topic8">Séries de potências e de Laurent</string>
     <string name="uc_class_math_analysis2_topic9">Singularidades, zeros e resíduos</string>
-    <string name="uc_class_math_analysis2_topic10">Integração de funções complexas e suas plicações</string>
+    <string name="uc_class_math_analysis2_topic10">Integração de funções complexas e suas aplicações</string>
     <string name="uc_class_math_analysis2_topic11">Transformada-Z e inversa</string>
     <string name="uc_class_math_analysis2_topic12">Resolução de equações de diferenças</string>
     <string name="uc_class_math_analysis2_topic13">Transformada de Laplace e inversa</string>
@@ -1612,7 +1612,7 @@
     <string name="uc_class_computer_architecture_topic9">Programação em Assembly: Números e representação em floating-point</string>
     <string name="uc_class_computer_architecture_topic10">Programação em Assembly: Criação de um executável (compilação, assemblagem, linkagem, etc.)</string>
     <string name="uc_class_computer_architecture_topic11">A Linguagem C e o Hardware: Linguagem C (revisão de conceitos básicos)</string>
-    <string name="uc_class_computer_architecture_topic12">A Linguagem C e o Hardware: Ponteiros e endereçamento de memória</string>
+    <string name="uc_class_computer_architecture_topic12">A Linguagem C e o Hardware: Apontadores e endereçamento de memória</string>
     <string name="uc_class_computer_architecture_topic13">A Linguagem C e o Hardware: Zonas de memória: código, alocação estática, pilha, e “heap” para alocação dinâmica</string>
     <string name="uc_class_computer_architecture_topic14">A Linguagem C e o Hardware: Gestão de memória dinâmica</string>
     <string name="uc_class_computer_architecture_topic15">A Linguagem C e o Hardware: Portas de I/O e programação de hardware</string>
@@ -1641,13 +1641,13 @@
 
     <string name="uc_class_procedure_programming">Princípios de Programação Procedimental</string>
     <string name="uc_class_procedure_programming_description">Permitir ao aluno adquirir um conjunto de conhecimentos sólidos sobre programação procedimental
-        utilizando a linguagem C, com particular destaque para ponteiros e estruturas de dados dinâmicas simples.</string>
+        utilizando a linguagem C, com particular destaque para apontadores e estruturas de dados dinâmicas simples.</string>
     <string name="uc_class_procedure_programming_topic1">Estrutura de um Programa em C </string>
     <string name="uc_class_procedure_programming_topic2">Tipos de Dados Elementares</string>
     <string name="uc_class_procedure_programming_topic3">Instruções de Selecção e Repetição</string>
     <string name="uc_class_procedure_programming_topic4">Definição de Funções. Passagem de parâmetros</string>
     <string name="uc_class_procedure_programming_topic5">Tabelas e ordenamento</string>
-    <string name="uc_class_procedure_programming_topic6">Ponteiros</string>
+    <string name="uc_class_procedure_programming_topic6">Apontadores</string>
     <string name="uc_class_procedure_programming_topic7">Acesso a ficheiros</string>
     <string name="uc_class_procedure_programming_topic8">Listas Ligadas</string>
     <string name="uc_class_procedure_programming_topic9">Pilhas </string>
@@ -1748,7 +1748,7 @@
     <string name="uc_class_info_theory_description">Fornecer de uma forma sistemática as noções fundamentais da teoria da informação e a sua aplicação
         em contextos de aprendizagem computacional, análise de dados e, sobretudo, aos princípios da codificação nos contextos da codificação de fontes
         e de canal e na criptografia.</string>
-    <string name="uc_class_info_theory_topic1">Informação:intuição, conceito e propriedades</string>
+    <string name="uc_class_info_theory_topic1">Informação: intuição, conceito e propriedades</string>
     <string name="uc_class_info_theory_topic2">Entropia, incerteza e dispersão</string>
     <string name="uc_class_info_theory_topic3">Entropia conjunta, condicionada e propriedades</string>
     <string name="uc_class_info_theory_topic4">Divergência Kullback-Leibler</string>
