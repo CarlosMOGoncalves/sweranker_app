@@ -74,6 +74,7 @@ public class DegreeTopicMatcherFragment extends Fragment {
                     existingMatch,
                     _sharedViewModel.getKnowledgeAreas().getValue(),
                     selectedMatch -> {
+                        // TODO: se isto retornar false, ninguém sai daqui sem pressionar BACK, é melhor uma notificação
                         if (_sharedViewModel.saveMatch(selectedMatch)) {
                             getFragmentManager().popBackStackImmediate();
                         }
@@ -85,6 +86,7 @@ public class DegreeTopicMatcherFragment extends Fragment {
                     _degreeClass,
                     _sharedViewModel.getKnowledgeAreas().getValue(),
                     selectedMatch -> {
+                        // TODO: se isto retornar false, ninguém sai daqui sem pressionar BACK, é melhor uma notificação
                         if (_sharedViewModel.saveMatch(selectedMatch)) {
                             getFragmentManager().popBackStackImmediate();
                         }

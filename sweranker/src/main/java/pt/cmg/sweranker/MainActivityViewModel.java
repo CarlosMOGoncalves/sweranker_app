@@ -70,9 +70,14 @@ public class MainActivityViewModel extends ViewModel {
      */
     private Map<String, DegreeClass> _degreeClassesById;
 
-    // Keys -> Degree Class Id , Values -> its current matches
+    /**
+     * Keys -> Degree Class Id , Values -> its current matches
+     */
     private LiveData<Map<String, DegreeClassMatch>> _degreeMatches = new MutableLiveData<>();
-    // Keys -> Degree Id , Values -> true if completely matched, false otherwise
+
+    /**
+     * Keys -> Degree Id , Values -> true if completely matched, false otherwise
+     */
     private Map<Integer, Boolean> _matchedDegrees;
 
     /**
@@ -84,26 +89,38 @@ public class MainActivityViewModel extends ViewModel {
      */
     private Map<String, SweScore> _degreeClassScores;
 
-    // Keys -> Degree combination name , Values -> a Degree image.
+    /**
+     * Keys -> Degree combination name , Values -> a Degree image.
+     */
     private MutableLiveData<LinkedHashMap<String, Integer>> _scoreImages = new MutableLiveData<>();
 
     private MutableLiveData<Boolean> _isLoaded = new MutableLiveData<>();
 
-    // Used in inter-fragment communication between SwebokMasterFragment and SwebokDetailedFragment
+    /**
+     * Used in inter-fragment communication between SwebokMasterFragment and SwebokDetailedFragment
+     */
     private KnowledgeArea _selectedKnowledgeArea;
 
-    // Used in inter-fragment communication between DegreeMasterFragment and DegreeDetailedFragment
+    /**
+     * Used in inter-fragment communication between DegreeMasterFragment and DegreeDetailedFragment
+     */
     private Degree _selectedDegree;
 
-    // Used in inter-fragment communication between DegreeDetailedFragment and DegreeClassFragment
+    /**
+     * Used in inter-fragment communication between DegreeDetailedFragment and DegreeClassFragment
+     */
     private DegreeClass _selectedDegreeClass;
 
-    // Used in inter-fragment communication between ScoreMasterFragment and ScoreDetailedChartFragment
-    // This will be used to load data about this particular combination.
+    /**
+     * Used in inter-fragment communication between ScoreMasterFragment and ScoreDetailedChartFragment
+     * This will be used to load data about this particular combination.
+     */
     private String _selectedDegreeCombinationId;
 
-    // Used in inter-fragment communication between ScoreMasterFragment and MultiScoreDetailedChartFragment
-    // This will be used in when comparing two degree combinations against each other
+    /**
+     * Used in inter-fragment communication between ScoreMasterFragment and MultiScoreDetailedChartFragment
+     * This will be used in when comparing two degree combinations against each other
+     */
     private List<String> _selectedDegreeCombinationsToCompare;
 
     private SwebokRepository _swebokRepository;
@@ -396,7 +413,7 @@ public class MainActivityViewModel extends ViewModel {
      * @return
      */
     public boolean hasMatches(String degreeClassId) {
-        return _degreeMatches.getValue().get(degreeClassId) != null;
+        return _matchesRepository.hasMatch(degreeClassId);
     }
 
 
@@ -405,7 +422,7 @@ public class MainActivityViewModel extends ViewModel {
     }
 
     public DegreeClassMatch getDegreeClassMatch(String degreeClassId) {
-        return _degreeMatches.getValue().get(degreeClassId);
+        return _matchesRepository.getDegreeClassMatch(degreeClassId);
     }
 
     public SweScore getDegreeScore(String degreeCombinationId) {

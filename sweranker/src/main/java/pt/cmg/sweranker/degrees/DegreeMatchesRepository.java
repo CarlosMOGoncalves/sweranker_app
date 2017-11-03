@@ -20,4 +20,21 @@ public interface DegreeMatchesRepository {
      */
     boolean saveMatch(DegreeClassMatch classMatch);
 
+    /**
+     * Returns true if there is a match in this repository for the given Degree Class Id
+     *
+     * @param degreeClassId the Degree Class Id that will be tested
+     * @return true if there is one match, false otherwise
+     */
+    boolean hasMatch(String degreeClassId);
+
+    /**
+     * Returns any found Degree Class Match in this repository.
+     * Should not be used before checking if it has a match before
+     *
+     * @param degreeClassId the Degree Class Id parameter to be searched
+     * @return a found degree class match or NULL if no one is found
+     */
+    DegreeClassMatch getDegreeClassMatch(String degreeClassId);
+
 }

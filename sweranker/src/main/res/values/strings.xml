@@ -1826,7 +1826,7 @@
     <string name="uc_class_multimedia_topic9">Imagem Digital: codecs de áudio digital (destrutivos e não destrutivos) e compressão perceptual de áudio digital</string>
     <string name="uc_class_multimedia_topic10">Vídeo Digital: noções de vídeo e fenómenos perceptuais de imagens em movimento</string>
     <string name="uc_class_multimedia_topic11">Vídeo Digital: representação de vídeo digital</string>
-    <string name="uc_class_multimedia_topic12">Vídeo Digital: odecs de vídeo digital (destrutivos e não destrutivos)</string>
+    <string name="uc_class_multimedia_topic12">Vídeo Digital: codecs de vídeo digital (destrutivos e não destrutivos)</string>
 
     <string name="uc_class_communication_protocols">Protocolos de Comunicação</string>
     <string name="uc_class_communication_protocols_description">Os objectivos centrais da disciplina são o estudo e compreensão dos aspectos protocolares
