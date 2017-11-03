@@ -9534,10 +9534,6 @@
                         <id>c149t8</id>
                         <description>@string/ist_class_electromagnetism_topic8</description>
                     </topic>
-                    <topic>
-                        <id>c149t9</id>
-                        <description>@string/ist_class_electromagnetism_topic9</description>
-                    </topic>
                 </program>
             </class>
             <class>
@@ -9874,14 +9870,6 @@
                         <id>c154t9</id>
                         <description>@string/ist_class_graphics_computing_topic9</description>
                     </topic>
-                    <topic>
-                        <id>c154t10</id>
-                        <description>@string/ist_class_graphics_computing_topic10</description>
-                    </topic>
-                    <topic>
-                        <id>c154t11</id>
-                        <description>@string/ist_class_graphics_computing_topic11</description>
-                    </topic>
                 </program>
             </class>
             <class>
@@ -10015,10 +10003,6 @@
                     <topic>
                         <id>c157t7</id>
                         <description>@string/ist_class_computer_networks_topic7</description>
-                    </topic>
-                    <topic>
-                        <id>c157t8</id>
-                        <description>@string/ist_class_computer_networks_topic8</description>
                     </topic>
                 </program>
             </class>
@@ -16688,7 +16672,7 @@
             </class>
             <class>
                 <id>uav_mei_c37</id>
-                <name>@string/uav_class_sw_test</name>
+                <name>@string/uav_class_large_scale_computing</name>
                 <description>@string/uav_class_large_scale_computing_description</description>
                 <year>4</year>
                 <semester>2</semester>
@@ -19592,8 +19576,7 @@
             <class>
                 <id>uminho_miei_c24</id>
                 <name>@string/um_class_informatics_labs3</name>
-                <description>@string/um_class_informatics_labs3_description
-                </description>
+                <description>@string/um_class_informatics_labs3_description</description>
                 <year>2</year>
                 <semester>2</semester>
                 <ects>5</ects>
@@ -19604,31 +19587,31 @@
                 <program>
                     <topic>
                         <id>c313t1</id>
-                        <description>@string/um_class_informatics_labs3_calc_programs_topic1</description>
+                        <description>@string/um_class_informatics_labs3_topic1</description>
                     </topic>
                     <topic>
                         <id>c313t2</id>
-                        <description>@string/um_class_informatics_labs3_calc_programs_topic2</description>
+                        <description>@string/um_class_informatics_labs3_topic2</description>
                     </topic>
                     <topic>
                         <id>c313t3</id>
-                        <description>@string/um_class_informatics_labs3_calc_programs_topic3</description>
+                        <description>@string/um_class_informatics_labs3_topic3</description>
                     </topic>
                     <topic>
                         <id>c313t4</id>
-                        <description>@string/um_class_informatics_labs3_calc_programs_topic4</description>
+                        <description>@string/um_class_informatics_labs3_topic4</description>
                     </topic>
                     <topic>
                         <id>c313t5</id>
-                        <description>@string/um_class_informatics_labs3_calc_programs_topic5</description>
+                        <description>@string/um_class_informatics_labs3_topic5</description>
                     </topic>
                     <topic>
                         <id>c313t6</id>
-                        <description>@string/um_class_informatics_labs3_calc_programs_topic6</description>
+                        <description>@string/um_class_informatics_labs3_topic6</description>
                     </topic>
                     <topic>
                         <id>c313t7</id>
-                        <description>@string/um_class_informatics_labs3_calc_programs_topic7</description>
+                        <description>@string/um_class_informatics_labs3_topic7</description>
                     </topic>
                 </program>
             </class>
@@ -20498,10 +20481,6 @@
                     <topic>
                         <id>c329t7</id>
                         <description>@string/um_class_advanced_alg_bio_topic7</description>
-                    </topic>
-                    <topic>
-                        <id>c329t8</id>
-                        <description>@string/um_class_advanced_alg_bio_topic8</description>
                     </topic>
                 </program>
             </class>

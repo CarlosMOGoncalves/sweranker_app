@@ -2774,13 +2774,13 @@ Os estudantes deverão ainda desenvolver competências em análise e síntese, r
         esses conceitos e saber aplica-los à resolução de problemas.
         Os estudantes serão motivados por exemplos de aplicação dos princípios da física noutras áreas do conhecimento científico e tecnológico.</string>
     <string name="ist_class_electromagnetism_topic1">Campo electrostático no vácuo. Lei de Coulomb. Princípio de sobreposição. Nocão de campo e de potencial. Dipolo eléctrico. Lei de Gauss. Condensador</string>
-    <string name="ist_class_electromagnetism_topic3">Campo electrostático na matéria. Dieléctricos. Polarização. Energia eléctrica</string>
-    <string name="ist_class_electromagnetism_topic4">Corrente eléctrica estacionária. Densidade e intensidade de corrente. Equação da continuidade da carga. Lei de Ohm. Lei de Joule. Leis de Kirchoff. Circuito RC</string>
-    <string name="ist_class_electromagnetism_topic5">Campo magnético no vácuo. Lei de Biot-Savart. Lei de Ampère. Força de Lorentz. Fluxo magnético. Coeficientes de indução. Bobina.</string>
-    <string name="ist_class_electromagnetism_topic6">Campo magnético na matéria. Magnetização. Diamagnetismo, paramagnetismo e ferromagnetismo. Energia em magnetostática</string>
-    <string name="ist_class_electromagnetism_topic7">Indução electromagnética. Lei de Faraday. Motores e geradores eléctricos. Corrente de deslocamento. Energia electromagnética. Circuito RLC</string>
-    <string name="ist_class_electromagnetism_topic8">Equações de Maxwell. Ondas electromagnéticas. Ondas planas monocromáticas. Energia e intensidade das ondas electromagnéticas</string>
-    <string name="ist_class_electromagnetism_topic9">Carácter electromagnético da luz. Dispersão, polarização, reflexão, interferência e difracção. O limite da óptica geométrica e as leis de reflexão e refracção. Equações de Fresnel e princípio de Fermat.</string>
+    <string name="ist_class_electromagnetism_topic2">Campo electrostático na matéria. Dieléctricos. Polarização. Energia eléctrica</string>
+    <string name="ist_class_electromagnetism_topic3">Corrente eléctrica estacionária. Densidade e intensidade de corrente. Equação da continuidade da carga. Lei de Ohm. Lei de Joule. Leis de Kirchoff. Circuito RC</string>
+    <string name="ist_class_electromagnetism_topic4">Campo magnético no vácuo. Lei de Biot-Savart. Lei de Ampère. Força de Lorentz. Fluxo magnético. Coeficientes de indução. Bobina.</string>
+    <string name="ist_class_electromagnetism_topic5">Campo magnético na matéria. Magnetização. Diamagnetismo, paramagnetismo e ferromagnetismo. Energia em magnetostática</string>
+    <string name="ist_class_electromagnetism_topic6">Indução electromagnética. Lei de Faraday. Motores e geradores eléctricos. Corrente de deslocamento. Energia electromagnética. Circuito RLC</string>
+    <string name="ist_class_electromagnetism_topic7">Equações de Maxwell. Ondas electromagnéticas. Ondas planas monocromáticas. Energia e intensidade das ondas electromagnéticas</string>
+    <string name="ist_class_electromagnetism_topic8">Carácter electromagnético da luz. Dispersão, polarização, reflexão, interferência e difracção. O limite da óptica geométrica e as leis de reflexão e refracção. Equações de Fresnel e princípio de Fermat.</string>
 
     <string name="ist_class_human_machine">Interfaces Pessoa Máquina</string>
     <string name="ist_class_human_machine_description">Aprender os princípios e regras fundamentais para a concepção e desenvolvimento de Interfaces
@@ -2872,14 +2872,14 @@ Os estudantes deverão ainda desenvolver competências em análise e síntese, r
         e compreender o funcionamento do pipeline de visualização 3D e dos seus andares principais. No final, os alunos
         estarão preparados para desenhar e desenvolver aplicações gráficas interactivas.</string>
     <string name="ist_class_graphics_computing_topic1">Matemática para CG (inclui trigonometria e matrizes)</string>
-    <string name="ist_class_graphics_computing_topic3">Introdução ao three.js</string>
-    <string name="ist_class_graphics_computing_topic4">Transformações Geométricas: Transformações geométricas planas elementares; Transformações em coordenadas homogéneas; Transformações em três dimensões; Composição de transformações geométricas; Matriz de transformação composta</string>
-    <string name="ist_class_graphics_computing_topic5">Grafos de cena</string>
-    <string name="ist_class_graphics_computing_topic6">Manipulação de matrizes em three.js</string>
-    <string name="ist_class_graphics_computing_topic7">Programação baseada em acontecimentos, animação e colisões</string>
-    <string name="ist_class_graphics_computing_topic8">Pipeline Gráfico: Visualização e projecção; Câmara Virtual Simples; Visualização e Projecção em three.js; Iluminação (modelo de Blinn-Phong); Sombreamento (Flat, Gouraud e Phong) Recorte (Cohen-Sutherland e Sutherland-Hodgman) e remoção de superfícies ocultas</string>
-    <string name="ist_class_graphics_computing_topic10">Operações sobre fragmentos: memórias-tampão e mapeamento de texturas</string>
-    <string name="ist_class_graphics_computing_topic11">Novas arquitecturas hardware/software em Computação Gráfica</string>
+    <string name="ist_class_graphics_computing_topic2">Introdução ao three.js</string>
+    <string name="ist_class_graphics_computing_topic3">Transformações Geométricas: Transformações geométricas planas elementares; Transformações em coordenadas homogéneas; Transformações em três dimensões; Composição de transformações geométricas; Matriz de transformação composta</string>
+    <string name="ist_class_graphics_computing_topic4">Grafos de cena</string>
+    <string name="ist_class_graphics_computing_topic5">Manipulação de matrizes em three.js</string>
+    <string name="ist_class_graphics_computing_topic6">Programação baseada em acontecimentos, animação e colisões</string>
+    <string name="ist_class_graphics_computing_topic7">Pipeline Gráfico: Visualização e projecção; Câmara Virtual Simples; Visualização e Projecção em three.js; Iluminação (modelo de Blinn-Phong); Sombreamento (Flat, Gouraud e Phong) Recorte (Cohen-Sutherland e Sutherland-Hodgman) e remoção de superfícies ocultas</string>
+    <string name="ist_class_graphics_computing_topic8">Operações sobre fragmentos: memórias-tampão e mapeamento de texturas</string>
+    <string name="ist_class_graphics_computing_topic9">Novas arquitecturas hardware/software em Computação Gráfica</string>
 
     <string name="ist_class_ia">Inteligência Artificial</string>
     <string name="ist_class_ia_description">ntroduzir o tema de Inteligência Artificial ao aluno, de forma a
@@ -2914,11 +2914,11 @@ Os estudantes deverão ainda desenvolver competências em análise e síntese, r
         rede usando a interface de sockets.</string>
     <string name="ist_class_computer_networks_topic1">Introdução: redes de computadores e a Internet; tecnologias de comutação; arquitectura em camadas; protocolos; serviços; medidas de desempenho</string>
     <string name="ist_class_computer_networks_topic2">Camada de aplicação: a Web e HTTP; FTP; SMTP; DNS; a interface de sockets</string>
-    <string name="ist_class_computer_networks_topic4">Camada de transporte: multiplexagem e desmultiplexagem; UDP; transferência fiável de dados; stop-and-wait, go-back-N e selective Repeat; TCP; controlo de congestão</string>
-    <string name="ist_class_computer_networks_topic5">Camada de rede: encaminhamento por estado-da-ligação; encaminhamento por vector-distãncia; IP; CIDR; RIP; OSPF; BGP; IPv6; VPNs; NAT</string>
-    <string name="ist_class_computer_networks_topic6">Camada da ligação de dados: detecção e correcção de erros; acesso múltiplo; ALOHA; CSMA; token-ring; WLANs e IEEE 802.11; ARP; hubs e comutadores; PPP; ATM</string>
-    <string name="ist_class_computer_networks_topic7">Aplicações multimedia: streaming áudio e vídeo; telefonia pela Internet; qualidade de serviço; escalonamento de tráfego</string>
-    <string name="ist_class_computer_networks_topic8">Segurança em redes: criptografia de chave simétrica, DES e AES; criptografia de chave pública, Diffie-Hellman e RSA; confidencialidade; autenticação; integralidade; PGP; SSL; IPSec</string>
+    <string name="ist_class_computer_networks_topic3">Camada de transporte: multiplexagem e desmultiplexagem; UDP; transferência fiável de dados; stop-and-wait, go-back-N e selective Repeat; TCP; controlo de congestão</string>
+    <string name="ist_class_computer_networks_topic4">Camada de rede: encaminhamento por estado-da-ligação; encaminhamento por vector-distãncia; IP; CIDR; RIP; OSPF; BGP; IPv6; VPNs; NAT</string>
+    <string name="ist_class_computer_networks_topic5">Camada da ligação de dados: detecção e correcção de erros; acesso múltiplo; ALOHA; CSMA; token-ring; WLANs e IEEE 802.11; ARP; hubs e comutadores; PPP; ATM</string>
+    <string name="ist_class_computer_networks_topic6">Aplicações multimedia: streaming áudio e vídeo; telefonia pela Internet; qualidade de serviço; escalonamento de tráfego</string>
+    <string name="ist_class_computer_networks_topic7">Segurança em redes: criptografia de chave simétrica, DES e AES; criptografia de chave pública, Diffie-Hellman e RSA; confidencialidade; autenticação; integralidade; PGP; SSL; IPSec</string>
 
     <string name="ist_class_sys_modeling_analysis">Análise e Modelação de Sistemas</string>
     <string name="ist_class_sys_modeling_analysis_description">Dotar os alunos com as competências fundamentais para a análise de problemas
@@ -3201,23 +3201,23 @@ Os estudantes deverão ainda desenvolver competências em análise e síntese, r
     <string name="ist_class_info_sys_fundamentals_topic11">Gestão de Projectos de Sistemas de Informação: “Runaway projects” e falha no sistema; Vinculação do projectos de sistemas de informação ao plano de negócios; Análise de portfolio; Gestão dos riscos do projecto</string>
     <string name="ist_class_info_sys_fundamentals_topic12">Gestão de Sistemas de Informação à Escala Global: O ambiente global: “business drivers” e desafios; Localização do software; Integração de sistemas à escala global; Gestão de sistemas globais</string>
 
-    <string name="ist_class_enterprise_arch">Arquitetura Empresarial</string>
+    <string name="ist_class_enterprise_arch">Arquitectura Empresarial</string>
     <string name="ist_class_enterprise_arch_description">1. Compreender o ciclo de vida da engenharia empresarial, incluindo a governação e os processos de transformação organizacionais.
         2. Compreender as teorias fundamentais subjacentes engenharia empresarial.
-        3. Compreender e aplicar os princípios de arquitetura empresarial.
-        4. Compreender e usar as linguagens de modelação de arquitetura empresarial, nomeadamente o ArchiMate e o DEMO.
+        3. Compreender e aplicar os princípios de arquitectura empresarial.
+        4. Compreender e usar as linguagens de modelação de arquitectura empresarial, nomeadamente o ArchiMate e o DEMO.
         5. Compreender e utilizar modelos e molduras de referência das organizações por indústria.
         6. Compreender e aplicar as técnicas de alinhamento empresarial
         7. Analisar casos de estudos de organizações reais.</string>
     <string name="ist_class_enterprise_arch_topic1">Desenho Organizacional: ontologia organizacional; desenho datalógico, infológico e ontológico; o método DEMO e a linguagem DEMO</string>
-    <string name="ist_class_enterprise_arch_topic2">Linguagens de Modelação de Arquitetura Empresarial: panorâmica da notações de Arquitectura Empresarial: BPMN, REA, EPC, IDEF, YAWL, UML;  modelo fundamental e extensões do ArchiMate</string>
+    <string name="ist_class_enterprise_arch_topic2">Linguagens de Modelação de Arquitectura Empresarial: panorâmica da notações de Arquitectura Empresarial: BPMN, REA, EPC, IDEF, YAWL, UML;  modelo fundamental e extensões do ArchiMate</string>
     <string name="ist_class_enterprise_arch_topic3">Molduras de Arquitectura Empresarial: panorâmica das molduras de arquitetura empresarial - FEAF 2.0, DODAF, PEAF, IAF, BEN/St. Galen, COBIT, ITIL , IEEE 42010, Zachman, TOGAF</string>
     <string name="ist_class_enterprise_arch_topic4">Perspectivas da Arquitectura Empresarial: vistas, pontos de vista, e modelos de visualização;  perspectiva de negócio e motivacional; perspectiva informacional; perspectiva sistémica; perspectiva infraestrutural</string>
-    <string name="ist_class_enterprise_arch_topic5">Modelos de Referência de Arquitetura Empresarial: Propriedade s Requisitos de um Modelo de Referência Arquitectura Empresarial;  Exemplos de Modelos de Referência - Telecomunicações, Retalho, Financeiro, (TAM, eTOM, SID; PCF, SCOR)</string>
+    <string name="ist_class_enterprise_arch_topic5">Modelos de Referência de Arquitectura Empresarial: Propriedade s Requisitos de um Modelo de Referência Arquitectura Empresarial; Exemplos de Modelos de Referência - Telecomunicações, Retalho, Financeiro, (TAM, eTOM, SID; PCF, SCOR)</string>
     <string name="ist_class_enterprise_arch_topic6">Princípios de Arquitectura Empresarial: padrões e princípios de arquitectura empresarial e exemplos reais</string>
     <string name="ist_class_enterprise_arch_topic7">Representação Empresarial: técnicas de representação e automação da representação empresarial</string>
     <string name="ist_class_enterprise_arch_topic8">Métodos de Arquitectura Empresarial: “Business Systems Planning”; “Information Systems Architecture”;  Alinhamento da Arquitectura Empresarial; conceitos e tipos de alinhamentos; aferição e medição dos alinhamentos</string>
-    <string name="ist_class_enterprise_arch_topic9">Conceitos e Modelação da Arquitetura de Informação: entidades informacionais; linguagens e técnicas da arquitectura de informação</string>
+    <string name="ist_class_enterprise_arch_topic9">Conceitos e Modelação da Arquitectura de Informação: entidades informacionais; linguagens e técnicas da arquitectura de informação</string>
     <string name="ist_class_enterprise_arch_topic10">Conceitos da Arquitectura de Sistemas: conceitos de sistemas de informação e arquitectura de sistemas em archimate</string>
     <string name="ist_class_enterprise_arch_topic11">Arquitectura de Serviços: arquitectura orientada a serviços; modelação de serviços e métodos para a identificação de serviços</string>
     <string name="ist_class_enterprise_arch_topic12">Conceitos da Infraestrutura Tecnológica: modelação da infraestrutura, produtos e tecnologia e modelação das capacidades</string>

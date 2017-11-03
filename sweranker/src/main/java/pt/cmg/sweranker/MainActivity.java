@@ -373,7 +373,8 @@ public class MainActivity extends AppCompatActivity implements
 
         getFragmentManager()
                 .beginTransaction()
-                .replace(R.id.content_area, degreeClassFragment, "DegreeClass")
+                .add(R.id.content_area, degreeClassFragment)
+//                .replace(R.id.content_area, degreeClassFragment, "DegreeClass")
                 .addToBackStack(null)
                 .commit();
     }
