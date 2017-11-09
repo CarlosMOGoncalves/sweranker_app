@@ -214,7 +214,7 @@ public class MainActivity extends AppCompatActivity implements
 
     @Override
     public void loadDetailedKnowledgeAreaFragment(View knowledgeAreaCardView, int colour) {
-        ImageView image = (ImageView) knowledgeAreaCardView.findViewById(R.id.ka_image);
+        ImageView image = knowledgeAreaCardView.findViewById(R.id.ka_image);
 
         // Gets the colour that will be changed between fragments, the source, which is the KA decorative colour
         int imageBackgroundColour = colour;
@@ -292,9 +292,9 @@ public class MainActivity extends AppCompatActivity implements
     @Override
     public void loadDetailedDegreeFragment(View degreeCard) {
 
-        ImageView image = (ImageView) degreeCard.findViewById(R.id.university_image);
-        TextView universityName = (TextView) degreeCard.findViewById(R.id.university_name);
-        TextView degreeName = (TextView) degreeCard.findViewById(R.id.degree_name);
+        ImageView image = degreeCard.findViewById(R.id.university_image);
+        TextView universityName = degreeCard.findViewById(R.id.university_name);
+        TextView degreeName = degreeCard.findViewById(R.id.degree_name);
 
         Degree degree = _viewModel.getSelectedDegree();
 
@@ -415,7 +415,8 @@ public class MainActivity extends AppCompatActivity implements
 
         getFragmentManager()
                 .beginTransaction()
-                .replace(R.id.content_area, classEvaluator, "ClassEvaluator")
+                .add(R.id.content_area, classEvaluator)
+//                .replace(R.id.content_area, classEvaluator, "ClassEvaluator")
                 .addToBackStack(null)
                 .commit();
 

@@ -241,7 +241,7 @@
     <string name="ka12_topic2_name">Economia de Ciclos de Vida</string>
     <string name="ka12_topic2_description">Sobre os conceitos económicos aplicados à actividade do software ao longo do seu ciclo de vida;\n\nconceitos de produto, projecto, programa, portefolio, ciclo de vida de um produto, ciclo de vida de um projecto, propostas e tipos de propostas;\n\ndecisões de investimento;\n\nhorizonte de planeamento (sobre os custos económicos relacionados com investimentos num determinado prazo, como o tempo de vida de um produto de sotware e o seu impacto económico numa empresa);\n\nconceito de preço e estabelecimento de políticas de preços;\n\nconceito de custo e gestão de custos;\n\nmedição de performance económica;\n\ngestão do valor ganho (técnica económica que permite um controlo eficaz de custos comparando o valor já criado com o orçamento projectado e com o custo calendarizado até esse momento);\n\ndecisões de terminação de um produto baseadas em economia;\n\ndecisões de troca (troca de um software antiquado por um novo em vez de o manter) ou descontinuação (de um produto ou de actividade como um todo).</string>
     <string name="ka12_topic3_name">Risco e Incerteza</string>
-    <string name="ka12_topic3_description">Sobre os conceitos de objectivo económico, estimativas e planeamento;\n\ntécnicas de estimação (como analogias, estimação por partes, métodos estatísticos, etc.);\n\n reagir a incerteza (como ulilizar estimativas de diversos âmbitos, adiar decisões finais, etc.);\n\n técnicas de prioritização;\n\n técnincas de tomada decisões sob risco (como árvores de decisão, análise de Monte Carlo, etc.);\n\n técnicas de tomada de decisões sob incerteza (como Regra de Laplace, Regra de Hurwicz, etc.).</string>
+    <string name="ka12_topic3_description">Sobre os conceitos de objectivo económico, estimativas e planeamento;\n\ntécnicas de estimação (como analogias, estimação por partes, métodos estatísticos, etc.);\n\n reagir a incerteza (como ulilizar estimativas de diversos âmbitos, adiar decisões finais, etc.);\n\n técnicas de prioritização;\n\n técnicas de tomada decisões sob risco (como árvores de decisão, análise de Monte Carlo, etc.);\n\n técnicas de tomada de decisões sob incerteza (como Regra de Laplace, Regra de Hurwicz, etc.).</string>
     <string name="ka12_topic4_name">Metodos de Análise Económica</string>
     <string name="ka12_topic4_description">Sobre os diferentes métodos de análise ecónomica aplicáveis dependendo do tipo de organização, finalidade ou objectivos do software: análise de decisão de organizações com fins lucrativos;\n\nmínimo rácio de retorno aceitável (critério de escolha de investimentos baseado num retorno percentual mínimo);\n\nretorno de investimento (rácio entre o valor ganho relativamente ao investido);\n\nretorno do capital aplicado;\n\nanálise custo-benefício;\n\nanálise custo-efectividade;\n\nanálise de break-even (igualdade entre custos e rendimentos);\n\ncaso de negócio (apresentação estruturada e consolidada sobre uma proposta de negócio a partir de diferentes perpectivas de decisão como custos, benefícios, risco, etc.);\n\navaliação a multiplos atributos (a nível de outras propriedades que não simplesmente dinheiro);\n\nanálise de optimização.</string>
     <string name="ka12_topic5_name">Considerações Práticas</string>
@@ -1116,7 +1116,7 @@
     <string name="up_class_logistics_topic9">Localização de Armazéns</string>
 
     <string name="up_class_markup_languages">Linguagens de Anotação e Processamento de Documentos</string>
-    <string name="up_class_markup_languages_description">Esta unidade curricular foca-se na obtenção de linguagens de anotação para um dado domínio e na realização de aplicações baseadas em linguagens de anotação e tem por objetivos:\n- Sensibilizar os estudantes para as múltiplas aplicações não triviais das linguagens de anotação;\n- Familiarizar os estudantes com as tecnologias de processamento e armazenamento de informação semi-estruturada;\n- Aplicar as tecnologias de anotação na definição de uma linguagem e na resolução de um problema com recurso ao desenvolvimento de uma aplicação.</string>
+    <string name="up_class_markup_languages_description">Esta unidade curricular foca-se na obtenção de linguagens de anotação para um dado domínio e na realização de aplicações baseadas em linguagens de anotação e tem por objectivos:\n- Sensibilizar os estudantes para as múltiplas aplicações não triviais das linguagens de anotação;\n- Familiarizar os estudantes com as tecnologias de processamento e armazenamento de informação semi-estruturada;\n- Aplicar as tecnologias de anotação na definição de uma linguagem e na resolução de um problema com recurso ao desenvolvimento de uma aplicação.</string>
     <string name="up_class_markup_languages_topic1">Desenho de linguagens de anotação. Análise de linguagens existentes em vários domínios.</string>
     <string name="up_class_markup_languages_topic2">Interrogação de documentos XML. A linguagem XPath. A linguagem XQuery.</string>
     <string name="up_class_markup_languages_topic3">Transformações de documentos XML com XSLT. Apresentação de documentos XML com XSL-FO.</string>
@@ -1191,7 +1191,7 @@
     <string name="up_class_embedded_systems_topic7">Programação com POSIX para Tempo-Real</string>
 
     <string name="up_class_database_technologies">Tecnologias de Bases de Dados</string>
-    <string name="up_class_database_technologies_description">Esta UC tem por objectivo habilitar os alunos a desenvolver e administrar grandes bases de dados, nomeadamente a afinar o esquema físico, a otimizar interrogações SQL, a tirar partido das extensões à manipulação de objetos e à tecnologia XML e a recuperar e replicar dados.</string>
+    <string name="up_class_database_technologies_description">Esta UC tem por objectivo habilitar os alunos a desenvolver e administrar grandes bases de dados, nomeadamente a afinar o esquema físico, a otimizar interrogações SQL, a tirar partido das extensões à manipulação de objectos e à tecnologia XML e a recuperar e replicar dados.</string>
     <string name="up_class_database_technologies_topic1">Esquema físico e afinação (\"tuning\") de BD</string>
     <string name="up_class_database_technologies_topic2">Armazenamento de dados e índices</string>
     <string name="up_class_database_technologies_topic3">Execução e optimização de interrogações</string>
@@ -2167,7 +2167,7 @@ Os estudantes deverão ainda desenvolver competências em análise e síntese, r
     <string name="uc_class_ai_description">Fornecer aos estudantes conceitos, princípios e teorias avançadas necessárias para o desenvolvimento de aplicações reais envolvendo agentes ou sistemas com capacidades de raciocínio, comportamento e interação com os seus ambientes de forma inteligente.</string>
     <string name="uc_class_ai_topic1">Lógica para Representação de Conhecimento e Raciocínio</string>
     <string name="uc_class_ai_topic2">Formalismos lógicos para representação de conhecimento: lógica proposicional; lógica de predicados de primeira ordem; lógica de omissão; lógicas descritivas; ontologias e taxonomias</string>
-    <string name="uc_class_ai_topic3">Raciocínio lógico: satisfatibilidade, dedução crédula e cética</string>
+    <string name="uc_class_ai_topic3">Raciocínio lógico: satisfatibilidade, dedução crédula e céptica</string>
     <string name="uc_class_ai_topic4">Programação em lógica</string>
     <string name="uc_class_ai_topic5">Agentes e ambientes; taxonomia de agentes</string>
     <string name="uc_class_ai_topic6">Arquitectura BDI: crenças, desejos e intenções</string>
@@ -2207,7 +2207,7 @@ Os estudantes deverão ainda desenvolver competências em análise e síntese, r
     <string name="uc_class_it_security_topic2">Segurança em sistemas de comunicação</string>
     <string name="uc_class_it_security_topic3">Segurança em sistemas de informação</string>
     <string name="uc_class_it_security_topic4">Segurança na Internet</string>
-    <string name="uc_class_it_security_topic5">Segurança em comércio e transacções etectrónicas</string>
+    <string name="uc_class_it_security_topic5">Segurança em comércio e transacções electrónicas</string>
     <string name="uc_class_it_security_topic6">Controlo de acesso e detecção e prevenção de intrusões</string>
     <string name="uc_class_it_security_topic7">Auditorias de segurança e aspectos organizacionais.</string>
 
@@ -2221,9 +2221,9 @@ Os estudantes deverão ainda desenvolver competências em análise e síntese, r
     <string name="uc_class_network_modeling">Modelação e Desempenho de Redes</string>
     <string name="uc_class_network_modeling_description">O objectivo principal da disciplina é o estudo de metodologias para a modelação e avaliação do desempenho de redes de comunicação. A disciplina aborda os fundamentos da teoria das probabilidades e dos processos estocásticos na perspectiva da modelação e análise de desempenho das redes de comunicação. De forma complementar, a disciplina aborda metodologias de simulação para avaliação de desempenho de sistemas de comunicação.</string>
     <string name="uc_class_network_modeling_topic1">Metodologias de avaliação de desempenho de sistemas de comunicação</string>
-    <string name="uc_class_network_modeling_topic2">Modelação por simulação de sistemas de comunicação: objetivos, requisitos e abordagens; criação de modelos de simulação de componentes de sistemas de comunicação; validação, análise e apresentação de resultados</string>
-    <string name="uc_class_network_modeling_topic3">Técnicas de classificação e caracterização de tráfego: classificação por inspeção e por análise estatística; parâmetros de caracterização de tráfego</string>
-    <string name="uc_class_network_modeling_topic4">Modelação analítica de sistemas de comunicação: modelos analíticos de ligações e de tráfego; teria de filas aplicada à modelação de componentes de sistemas de comunicação</string>
+    <string name="uc_class_network_modeling_topic2">Modelação por simulação de sistemas de comunicação: objectivos, requisitos e abordagens; criação de modelos de simulação de componentes de sistemas de comunicação; validação, análise e apresentação de resultados</string>
+    <string name="uc_class_network_modeling_topic3">Técnicas de classificação e caracterização de tráfego: classificação por inspecção e por análise estatística; parâmetros de caracterização de tráfego</string>
+    <string name="uc_class_network_modeling_topic4">Modelação analítica de sistemas de comunicação: modelos analíticos de ligações e de tráfego; teoria de filas aplicada à modelação de componentes de sistemas de comunicação</string>
     <string name="uc_class_network_modeling_topic5">Avaliação de desempenho de sistemas reais: protótipos e redes em produção</string>
 
     <string name="uc_class_software_architecture">Arquitectura de Software</string>
@@ -2247,7 +2247,7 @@ Os estudantes deverão ainda desenvolver competências em análise e síntese, r
     <string name="uc_class_software_architecture_topic10">Consideração de tendências futuras do software e o seu impacto nas Arquitectura de Software</string>
 
     <string name="uc_class_software_quality">Qualidade e Confiabilidade de Software</string>
-    <string name="uc_class_software_quality_description">Esta unidade curricular aborda com profundidade as áreas da engenharia de software relacionadas com a verificação, validação e certificação. O objetivo é dotar os alunos com conhecimento abrangente sobre qualidade de software e as actividades técnicas levadas a cabo para assegurar a qualidade e a confiabilidade do software, incluindo análise estática e dinâmica, modelos de desenvolvimento e standards, e certificação de software.</string>
+    <string name="uc_class_software_quality_description">Esta unidade curricular aborda com profundidade as áreas da engenharia de software relacionadas com a verificação, validação e certificação. O objectivo é dotar os alunos com conhecimento abrangente sobre qualidade de software e as actividades técnicas levadas a cabo para assegurar a qualidade e a confiabilidade do software, incluindo análise estática e dinâmica, modelos de desenvolvimento e standards, e certificação de software.</string>
     <string name="uc_class_software_quality_topic1">Fundamentos: Qualidade funcional e qualidade estrutural</string>
     <string name="uc_class_software_quality_topic2">Fundamentos: O valor económico da qualidade</string>
     <string name="uc_class_software_quality_topic3">Fundamentos: Confiabilidade de software: atributos, ameaças e meios</string>
@@ -2603,7 +2603,7 @@ Os estudantes deverão ainda desenvolver competências em análise e síntese, r
     <string name="ist_class_intro_computer_arch_topic4">Circuitos aritméticos: somadores e subtractores; multiplicadores e divisores; unidade lógica e aritmética (ULA)</string>
     <string name="ist_class_intro_computer_arch_topic5">Circuitos sequenciais: registos e bancos de registos; memórias; separação entre circuito de dados e circuito de controlo.</string>
     <string name="ist_class_intro_computer_arch_topic6">Conjunto de Instruções (ISA): instruções típicas; modos de endereçamento; pilha e rotinas; interrupções.</string>
-    <string name="ist_class_intro_computer_arch_topic7">Arquitetura de um processador: estrutura interna de um processador, codificação de instruções; bits de estado; registos especiais; unidade de processamento, banco de registos e ULA; unidade de controlo e micro-programação; análise da execução de instruções</string>
+    <string name="ist_class_intro_computer_arch_topic7">Arquitectura de um processador: estrutura interna de um processador, codificação de instruções; bits de estado; registos especiais; unidade de processamento, banco de registos e ULA; unidade de controlo e micro-programação; análise da execução de instruções</string>
     <string name="ist_class_intro_computer_arch_topic8">Sistema de memória: endereçamento da memória, protocolos e descodificação de endereços; caches, princípios de funcionamento e racional de desempenho; memória virtual, princípios de funcionamento e sistema de tradução de endereços</string>
     <string name="ist_class_intro_computer_arch_topic9">Sistema de entradas e saídas: periféricos e barramentos; comunicação com o exterior (paralela e série, protocolos); temporizadores e interrupções</string>
 
@@ -2853,7 +2853,7 @@ Os estudantes deverão ainda desenvolver competências em análise e síntese, r
     <string name="ist_class_databases_topic5">Introdução ao Modelo Relacional e conversão de modelos E-A em relacionais</string>
     <string name="ist_class_databases_topic6">Linguagens para interrogação de bases de dados. Álgebra Relacional e SQL.</string>
     <string name="ist_class_databases_topic7">Restrições de Integridade, Integridade de entidades, Integridade de domínio, Integridade referencial e Integridade em SQL.</string>
-    <string name="ist_class_databases_topic8">Integridade em SQL: Triggers Arquitetura de aplicações de bases de bases de dados e sua programação Stored procedures. Cursores. SQL embebido/SQLJ. SQL dinâmico/JDBC </string>
+    <string name="ist_class_databases_topic8">Integridade em SQL: Triggers Arquitectura de aplicações de bases de bases de dados e sua programação Stored procedures. Cursores. SQL embebido/SQLJ. SQL dinâmico/JDBC </string>
     <string name="ist_class_databases_topic9">Normalização de dados</string>
     <string name="ist_class_databases_topic10">Teoria das Dependências e Axiomas de Armstrong</string>
     <string name="ist_class_databases_topic11">Tipos de Ficheiros: tabelas e índices Estruturas de Indexação: Árvore B+. Índices Hash. Índices Bitmap. Criação de índices em SQL</string>
@@ -2906,7 +2906,7 @@ Os estudantes deverão ainda desenvolver competências em análise e síntese, r
     <string name="ist_class_computer_organisation_topic3">Funcionamento de um processador RISC: organização; processamento em pipeline; conflitos no pipeline de dados, controlo e estruturais; optimização do código</string>
     <string name="ist_class_computer_organisation_topic4">Sistema de memória: hierarquia de memória; memória primária; arquitectura das memórias cache; optimização de programas; gestão de memória, ligação ao sistema operativo; mecanismos eficientes de tradução de endereços; funcionamento integrado do sistema de memória</string>
     <string name="ist_class_computer_organisation_topic5">Sistema de entradas e saídas: interface analógico-digital; desempenho na comunicação com periféricos; características de barramentos padrão; interface de periféricos com a memória, processador e sistema operativo; interrupções, excepções e traps; DMA; compressão de dados; fiabilidade de dados: paridade, ECC, RAID</string>
-    <string name="ist_class_computer_organisation_topic6">Arquiteturas avançadas: processadores multiple-issue: superescalares e VLIWs; arquitecturas paralelas, taxonomia de Flynn; multiprocessadores: SMP e NUMA; coerência de memória; sincronismo; clusters</string>
+    <string name="ist_class_computer_organisation_topic6">Arquitecturas avançadas: processadores multiple-issue: superescalares e VLIWs; arquitecturas paralelas, taxonomia de Flynn; multiprocessadores: SMP e NUMA; coerência de memória; sincronismo; clusters</string>
 
     <string name="ist_class_computer_networks">Redes de Computadores</string>
     <string name="ist_class_computer_networks_description">Saber analisar de forma crítica as várias opções tomadas na concepção de redes
@@ -3030,7 +3030,7 @@ Os estudantes deverão ainda desenvolver competências em análise e síntese, r
 
     <string name="ist_class_sw_arch">Arquitecturas de Software</string>
     <string name="ist_class_sw_arch_description">Formar nos métodos, técnicas e linguagens do desenho de software de qualidade
-        utilizando as abordagens de arquiteturas de software e padrões de desenho. Estudar os métodos e as técnicas da passagem
+        utilizando as abordagens de arquitecturas de software e padrões de desenho. Estudar os métodos e as técnicas da passagem
         do espaço do problema para o espaço da solução de modo a garantir a rastreabilidade entre os requisitos do sistema e o
         seu desenho. Ler, avaliar e escrever arquitecturas de software.</string>
     <string name="ist_class_sw_arch_topic1">Introdução às Arquitecturas de Software: O Ciclo de Influência da Arquitectura; Conceitos; Atributos e Táticas de Qualidade</string>
@@ -3068,7 +3068,7 @@ Os estudantes deverão ainda desenvolver competências em análise e síntese, r
     <string name="ist_class_sw_specification_topic23">Estratégias para provar correcção de programas</string>
 
     <string name="ist_class_swe_management">Gestão de Projectos Informáticos</string>
-    <string name="ist_class_swe_management_description">Os objetivos de aprendizagem de Gestão de Projectos Informáticos são alinhados com
+    <string name="ist_class_swe_management_description">Os objectivos de aprendizagem de Gestão de Projectos Informáticos são alinhados com
         os da disciplina “IS 2010.4 IS Project Management” do currículo “ACM/AIS IS 2010 Curriculum Guidelines”</string>
     <string name="ist_class_swe_management_topic1">Conceito de gestão de projectos numa perspectiva organizacional</string>
     <string name="ist_class_swe_management_topic2">Os fundamentos do projecto</string>
@@ -3144,7 +3144,7 @@ Os estudantes deverão ainda desenvolver competências em análise e síntese, r
         2.	Compreender a forma como os componentes de uma infraestrutura informática devem estar organizados em diferentes ambientes organizacionais
         3.	Compreender os princípios subjacentes à virtualização de serviços informáticos
         4.	Configurar uma solução de infraestrutura informática de pequena dimensão, incluindo servidores, armazenamento de dados, rede, dispositivos de segurança e clientes
-        5.	Compreender a arquitetura e compromissos envolvidos no desenho e gestão de uma solução de infraestrutura informática em ambientes organizacionais de larga escala
+        5.	Compreender a arquitectura e compromissos envolvidos no desenho e gestão de uma solução de infraestrutura informática em ambientes organizacionais de larga escala
         6.	Compreender o papel de ambientes de gestão e controlo de serviços na gestão de infraestruturas informáticas de grande escala
         7.	Compreender as oportunidades que as infraestruturas de aprovisionamento dinâmico, como as plataformas de computação em nuvem, criam para as organizações
         8.  Analisar e avaliar as implicações para o desenho de infraestruturas informáticas das soluções existentes de segurança e de continuidade de negócio
@@ -3173,7 +3173,7 @@ Os estudantes deverão ainda desenvolver competências em análise e síntese, r
     <string name="ist_class_business_tec_topic8">Automação de processos de negócio: Business process management systems, Enterprise computing, IT architectures</string>
 
     <string name="ist_class_info_sys_fundamentals">Fundamentos de Sistemas de Informação</string>
-    <string name="ist_class_info_sys_fundamentals_description">Os objetivos de aprendizagem de Fundamentos dos Sistemas de Informação são os da disciplina
+    <string name="ist_class_info_sys_fundamentals_description">Os objectivos de aprendizagem de Fundamentos dos Sistemas de Informação são os da disciplina
         “IS 2010.1 Foundations of Information Systems” do currículo “ACM/AIS IS 2010 Curriculum Guidelines”:
         1.	Fornecer uma abordagem sociotécnica aos sistemas de informação organizacionais; entender como e porquê os sistemas de informação são hoje usados nas organizações
         2.	Explicar a relações entre os componentes de tecnologia, de pessoas e organizacionais dos sistemas de informação empresariais
@@ -3211,7 +3211,7 @@ Os estudantes deverão ainda desenvolver competências em análise e síntese, r
         7. Analisar casos de estudos de organizações reais.</string>
     <string name="ist_class_enterprise_arch_topic1">Desenho Organizacional: ontologia organizacional; desenho datalógico, infológico e ontológico; o método DEMO e a linguagem DEMO</string>
     <string name="ist_class_enterprise_arch_topic2">Linguagens de Modelação de Arquitectura Empresarial: panorâmica da notações de Arquitectura Empresarial: BPMN, REA, EPC, IDEF, YAWL, UML;  modelo fundamental e extensões do ArchiMate</string>
-    <string name="ist_class_enterprise_arch_topic3">Molduras de Arquitectura Empresarial: panorâmica das molduras de arquitetura empresarial - FEAF 2.0, DODAF, PEAF, IAF, BEN/St. Galen, COBIT, ITIL , IEEE 42010, Zachman, TOGAF</string>
+    <string name="ist_class_enterprise_arch_topic3">Molduras de Arquitectura Empresarial: panorâmica das molduras de arquitectura empresarial - FEAF 2.0, DODAF, PEAF, IAF, BEN/St. Galen, COBIT, ITIL , IEEE 42010, Zachman, TOGAF</string>
     <string name="ist_class_enterprise_arch_topic4">Perspectivas da Arquitectura Empresarial: vistas, pontos de vista, e modelos de visualização;  perspectiva de negócio e motivacional; perspectiva informacional; perspectiva sistémica; perspectiva infraestrutural</string>
     <string name="ist_class_enterprise_arch_topic5">Modelos de Referência de Arquitectura Empresarial: Propriedade s Requisitos de um Modelo de Referência Arquitectura Empresarial; Exemplos de Modelos de Referência - Telecomunicações, Retalho, Financeiro, (TAM, eTOM, SID; PCF, SCOR)</string>
     <string name="ist_class_enterprise_arch_topic6">Princípios de Arquitectura Empresarial: padrões e princípios de arquitectura empresarial e exemplos reais</string>
@@ -3464,7 +3464,7 @@ Os estudantes deverão ainda desenvolver competências em análise e síntese, r
         Serão descritas as especificidades dos vários tipos de dados que podem ser usados para comunicar, e a melhor forma de
         os usar e combinar para esse fim. Posteriormente, serão ensinadas técnicas de extracção de metadados e descritores
         relevantes dos vários media, com ênfase em imagens, permitindo assim a sua mais eficiente manipulação e utilização.
-        A indexação e recuperação dos media com base nesses metadados e descritores será o objeto de estudo seguinte.
+        A indexação e recuperação dos media com base nesses metadados e descritores será o objecto de estudo seguinte.
         Já na posse dos dados num formato fácil de manipular, os alunos adquirirão competências relacionadas com a sua
         representação visual, e a sua exploração em ferramentas interactivas. Finalmente, será abordada a questão de qual
         a melhor forma de apresentar os conceitos, tendências e informação revelados na aplicação interactiva com a
@@ -3587,11 +3587,11 @@ Os estudantes deverão ainda desenvolver competências em análise e síntese, r
         agentes para a resolução de um problema concreto. Ter a capacidade de conceber agentes com arquitecturas reactivas,
         deliberativas e híbridas. Ter a capacidade de criar sociedades de agentes que comunicam, de uma forma prática,
         usando linguagens e plataformas adequadas.</string>
-    <string name="ist_class_autonomous_agents_topic1">Agentes e Ambientes: O conceito de agente, Propriedades de agentes, Propriedades de ambientes, Aplicações, Arquiteturas abstractas para agentes</string>
+    <string name="ist_class_autonomous_agents_topic1">Agentes e Ambientes: O conceito de agente, Propriedades de agentes, Propriedades de ambientes, Aplicações, Arquitecturas abstractas para agentes</string>
     <string name="ist_class_autonomous_agents_topic2">Arquitecturas Reactivas: Agentes puramente reactivos, Arquitectura de subsunção de Brooks</string>
     <string name="ist_class_autonomous_agents_topic3">Arquitecturas Deliberativas: O paradigma intencional, O modelo BDI, Arquitecturas de agentes de raciocínio prático, Procedural Reasoning System</string>
     <string name="ist_class_autonomous_agents_topic4">Arquitecturas Híbridas: Arquitecturas híbridas horizontais e verticais, TouringMachines e InteRRaP</string>
-    <string name="ist_class_autonomous_agents_topic5">Arquitecturas com Emoções: Teorias de "Appraisal", O conceito e papel da emoção, Agentes com emoções, Impacto nas arquiteturas estudadas, Modelos e sistemas existentes</string>
+    <string name="ist_class_autonomous_agents_topic5">Arquitecturas com Emoções: Teorias de "Appraisal", O conceito e papel da emoção, Agentes com emoções, Impacto nas arquitecturas estudadas, Modelos e sistemas existentes</string>
     <string name="ist_class_autonomous_agents_topic6">Sociedades de Agentes e Comportamento Emergente: Sociedades de agentes, Estigmergia, auto-organização e emergência, Casos de estudo - "Game of life", BOIDS e multidões</string>
     <string name="ist_class_autonomous_agents_topic7">Teoria de Jogos: Introdução à teoria de jogos - conceitos e propriedades fundamentais, O dilema do prisioneiro. Equilíbrio de Nash, Jogos sequenciais e jogos infinitamente longos</string>
     <string name="ist_class_autonomous_agents_topic8">Comunicação entre Agentes: Comunicação, Actos de discurso, Semântica,  KQML e KIF, FIPA-ACL</string>
@@ -3813,7 +3813,7 @@ Os estudantes deverão ainda desenvolver competências em análise e síntese, r
         relevante existem em grandes colecções, com base em termos chave, com base em exemplos, ou com base em perfis dos
         utilizadores; Conceber sistemas para a extração de informação desde documentos de texto, ou desde a Web;
         Avaliar comparativamente diferentes sistemas para a extracção, filtragem e recuperação de informação relevante</string>
-    <string name="ist_class_info_recovery_topic1">Introdução: Arquitetura geral de sistemas de IR/IE</string>
+    <string name="ist_class_info_recovery_topic1">Introdução: Arquitectura geral de sistemas de IR/IE</string>
     <string name="ist_class_info_recovery_topic2">Introdução: Pré-processamento de documentos em IR/IE</string>
     <string name="ist_class_info_recovery_topic3">Introdução: Modelos para dados não estruturados</string>
     <string name="ist_class_info_recovery_topic4">Introdução: O modelo booleano para recuperação de informação (RI)</string>
@@ -4373,12 +4373,12 @@ Os estudantes deverão ainda desenvolver competências em análise e síntese, r
     <string name="uav_class_calculus1_topic11">Séries numéricas: Séries alternadas e Critério de Leibniz</string>
 
     <string name="uav_class_intro_web">Introdução às Tecnologias Web</string>
-    <string name="uav_class_intro_web_description">Esta unidade curricular tem como objetivo fornecer as primeiras noções de
+    <string name="uav_class_intro_web_description">Esta unidade curricular tem como objectivo fornecer as primeiras noções de
         utilização de ferramentas e de programação web. Será dado um enfoque particular na criação das páginas, quer em
         modo autónomo quer através da sua integração em ferramentas e ainda na programação do lado do cliente. No final
         da unidade curricular, os alunos deverão ser capazes de desenvolver páginas web de pequena e média complexidade,
         que modelem situações concretas e que forneçam resposta às questões por elas levantadas. Os alunos aprenderão
-        a conceber programas que manipulam quer objetos de interface web quer estruturas de dados.</string>
+        a conceber programas que manipulam quer objectos de interface web quer estruturas de dados.</string>
     <string name="uav_class_intro_web_topic1">Elementos de desenho Web</string>
     <string name="uav_class_intro_web_topic2">Formatos de imagem</string>
     <string name="uav_class_intro_web_topic3">HTML (HyperText Markup Language)</string>
@@ -4403,8 +4403,8 @@ Os estudantes deverão ainda desenvolver competências em análise e síntese, r
     <string name="uav_class_programming_fundamentals_topic11">Algoritmos de Ordenação</string>
 
     <string name="uav_class_modeling">Modelação e Análise de Sistemas</string>
-    <string name="uav_class_modeling_description">O objetivo da unidade curricular é fornecer uma compreensão geral dos
-        conceitos da análise por objetos, das metodologias  de desenvolvimento de software, e da linguagem UML
+    <string name="uav_class_modeling_description">O objectivo da unidade curricular é fornecer uma compreensão geral dos
+        conceitos da análise por objectos, das metodologias  de desenvolvimento de software, e da linguagem UML
         para construção de modelos.</string>
     <string name="uav_class_modeling_topic1">Metodologias de desenvolvimento de software: disciplinas e resultados associados ao ciclo de vida do software</string>
     <string name="uav_class_modeling_topic2">Metodologias de desenvolvimento de software: Principais metodologias de desenvolvimento de software</string>
@@ -4466,9 +4466,9 @@ Os estudantes deverão ainda desenvolver competências em análise e síntese, r
     <string name="uav_class_compute_arch_topic13">Organização da memória central dos sistemas de computação. Ciclos básicos de acesso à memória.</string>
     <string name="uav_class_compute_arch_topic14">Traços gerais da evolução da arquitectura dos sistemas de computação e das tecnologias de implementação.</string>
     <string name="uav_class_compute_arch_topic15">Os diferentes níveis de utilização dos sistemas de computação: aplicação, linguagem de programação de alto nível, Assembly, serviços do sistema de operação.</string>
-    <string name="uav_class_compute_arch_topic16">Função e estrutura. Arquitetura como a visão funcional básica comum de uma "família" de processadores. Modelo de programação e repertório de instruções.</string>
+    <string name="uav_class_compute_arch_topic16">Função e estrutura. Arquitectura como a visão funcional básica comum de uma "família" de processadores. Modelo de programação e repertório de instruções.</string>
     <string name="uav_class_compute_arch_topic17">A arquitectura MIPS: Modelo de programação. Reportório de instruções: as 3 principais classes de instruções - de processamento (aritméticas e lógicas), de transferência da informação e de controlo do fluxo de execução.</string>
-    <string name="uav_class_compute_arch_topic18">A arquitectura MIPS: Instruções aritméticas e lógicas na arquitetura MIPS. Códigos de instrução.</string>
+    <string name="uav_class_compute_arch_topic18">A arquitectura MIPS: Instruções aritméticas e lógicas na arquitectura MIPS. Códigos de instrução.</string>
     <string name="uav_class_compute_arch_topic19">A arquitectura MIPS: Instruções de acesso à memória e modos de endereçamento.</string>
     <string name="uav_class_compute_arch_topic20">A arquitectura MIPS: Tradução das estruturas de decisão if e if…else para assembly: instruções de salto condicional e incondicional.</string>
     <string name="uav_class_compute_arch_topic21">A arquitectura MIPS: Tradução das estruturas de controlo de fluxo: for, while e do-while. Acesso sequencial a elementos de arrays.</string>
@@ -4481,7 +4481,7 @@ Os estudantes deverão ainda desenvolver competências em análise e síntese, r
 
 
     <string name="uav_class_oop">Programação Orientada a Objectos</string>
-    <string name="uav_class_oop_description">Este curso é uma introdução à programação orientada a objetos (OOP), usando a linguagem Java.
+    <string name="uav_class_oop_description">Este curso é uma introdução à programação orientada a objectos (OOP), usando a linguagem Java.
         O objectivo é abordar temas como encapsulamento,herança, polimorfismo, estruturas de dados, de modo que os
         alunos sejam capazes de decompor e construir uma solução de acordo com princípios de OOP.</string>
     <string name="uav_class_oop_topic1">Introdução à programação em Java: dados, tipo de dados, operações, instruções, selecção, controlo de fluxo e vectores</string>
@@ -4596,7 +4596,7 @@ Os estudantes deverão ainda desenvolver competências em análise e síntese, r
     <string name="uav_class_distributed_computing_topic1">Sistemas distribuídos: Modelos arquitecturais distribuídos (Cliente-Servidor, P2P, Grid, Cloud, SOA)</string>
     <string name="uav_class_distributed_computing_topic2">Comunicação e sincronização: Comunicação por passagem de mensagens</string>
     <string name="uav_class_distributed_computing_topic3">Comunicação e sincronização: Invocação de métodos remotos (RMI, SOAP)</string>
-    <string name="uav_class_distributed_computing_topic4">Comunicação e sincronização: Invocação de métodos sobre objetos remotos (CORBA, RMI)</string>
+    <string name="uav_class_distributed_computing_topic4">Comunicação e sincronização: Invocação de métodos sobre objectos remotos (CORBA, RMI)</string>
     <string name="uav_class_distributed_computing_topic5">Comunicação e sincronização: Manipulação de recursos remotos (REST)</string>
     <string name="uav_class_distributed_computing_topic6">Modelos de programação distribuída: Map-Reduce</string>
     <string name="uav_class_distributed_computing_topic7">Modelos de comunicação em grupo: Sincronização e exclusão mútua distribuídas</string>
@@ -5013,7 +5013,7 @@ Os estudantes deverão ainda desenvolver competências em análise e síntese, r
     <string name="uav_class_infra_management_topic2">Disponibilização de recursos de computação: sistemas, contentores, virtualização</string>
     <string name="uav_class_infra_management_topic3">Gestão de sistemas e recursos: orquestração, isolamento, gestão de rede centralizada, automatização das configurações</string>
     <string name="uav_class_infra_management_topic4">Fornecimento de serviços: disponibilidade, escalabilidade, distribuição de carga, redundância, desacoplamento</string>
-    <string name="uav_class_infra_management_topic5">Armazenamento de dados: arquiteturas, sistemas e protocolos para armazenamento local, remoto e distribuído, orientado a objectos ou a blocos</string>
+    <string name="uav_class_infra_management_topic5">Armazenamento de dados: arquitecturas, sistemas e protocolos para armazenamento local, remoto e distribuído, orientado a objectos ou a blocos</string>
     <string name="uav_class_infra_management_topic6">Arquitecturas, sistemas e protocolos para monitorização de sistemas e recursos: SNMP, WBEM, RRD</string>
     <string name="uav_class_infra_management_topic7">Arquitecturas e sistemas para distribuição de carga e distribuição de conteúdos na Internet</string>
 
@@ -5397,7 +5397,7 @@ Os estudantes deverão ainda desenvolver competências em análise e síntese, r
         fundamentais da segurança em sistemas computacionais. Como muitas das soluções de segurança recorrem à aplicação de técnicas
         criptográficas, nesta cadeira faz-se também uma introdução à criptografia e à criptanálise. A segurança é abordada em diversos
         contextos, como o dos programas, dos sistemas operativos, das máquinas virtuais e das bases de dados.</string>
-    <string name="uav_class_security2_topic1">Introdução: Objetivos, problemas, perspetiva das soluções, atitudes realistas</string>
+    <string name="uav_class_security2_topic1">Introdução: Objectivos, problemas, perspetiva das soluções, atitudes realistas</string>
     <string name="uav_class_security2_topic2">Introdução: Riscos e sua origem, Vulnerabilidades, sua detecção e exploração</string>
     <string name="uav_class_security2_topic3">Introdução: Políticas de segurança vs. mecanismos de segurança, Níveis de segurança, domínios de segurança</string>
     <string name="uav_class_security2_topic4">Introdução: Ataques e Mecanismos de defesa</string>
@@ -5453,7 +5453,7 @@ Os estudantes deverão ainda desenvolver competências em análise e síntese, r
     <string name="uav_class_security_and_risk_topic20">Ferramentas de apoio à Gestão da Segurança: Vantagens da utilização de ferramentas como apoio à gestão do risco</string>
     <string name="uav_class_security_and_risk_topic21">Ferramentas de apoio à Gestão da Segurança: Ferramentas de procura e análise de vulnerabilidades</string>
     <string name="uav_class_security_and_risk_topic22">Gestão da Continuidade de Negócio: Identificação e uso das ferramentas, as metodologias e os procedimentos necessários para conceber e concretizar um plano de recuperação de catástrofe e de reactivação do negócio</string>
-    <string name="uav_class_security_and_risk_topic23">Gestão da Continuidade de Negócio: Definição, em termos de gestão, das análises, dos objetivos e das justificações para o esforço de planeamento num ambiente empresarial</string>
+    <string name="uav_class_security_and_risk_topic23">Gestão da Continuidade de Negócio: Definição, em termos de gestão, das análises, dos objectivos e das justificações para o esforço de planeamento num ambiente empresarial</string>
     <string name="uav_class_security_and_risk_topic24">Gestão da Continuidade de Negócio: Análise do Business Impact Analysis como processo de análise dos impactos no negócio</string>
     <string name="uav_class_security_and_risk_topic25">Gestão da Continuidade de Negócio: Determinação de quais e de que forma os processos/sistemas requerem a continuidade de negócio</string>
 
@@ -5612,8 +5612,8 @@ Os estudantes deverão ainda desenvolver competências em análise e síntese, r
     <string name="um_class_computing_sys">Sistemas de Computação</string>
     <string name="um_class_computing_sys_description">Ao completar com sucesso a UC cada estudante deverá demonstrar que
         adquiriu os seguintes conhecimentos, capacidades e aptidões:\n
-        - reconhecer e discutir a organização e arquitetura dum computador e sua evolução;\n
-        - reconhecer e interpretar as principais características da arquitetura de um instraction set;\n
+        - reconhecer e discutir a organização e arquitectura dum computador e sua evolução;\n
+        - reconhecer e interpretar as principais características da arquitectura de um instraction set;\n
         - examinar e modificar a funcionalidade de programas imperativos (tipo C), com recurso ao assembly e
         linguagem máquina;\n
         - aplicar e experimentar técnicas com impacto no desempenho na execução de código;\n
@@ -5798,7 +5798,7 @@ Os estudantes deverão ainda desenvolver competências em análise e síntese, r
     <string name="um_class_computer_arch_topic6">Codificação de algoritmos: técnicas de codificação para melhoria da localidade</string>
     <string name="um_class_computer_arch_topic7">Organização do Processador: Organização sequencial - fases de execução; execução encadeada; arquitecturas superescalares</string>
     <string name="um_class_computer_arch_topic8">Optimização do Desempenho: optimizações dependentes/independentes da máquina</string>
-    <string name="um_class_computer_arch_topic9">Arquiteturas Actuais: vectoriais e multicore</string>
+    <string name="um_class_computer_arch_topic9">Arquitecturas Actuais: vectoriais e multicore</string>
 
     <string name="um_class_data_communication">Comunicação de Dados</string>
     <string name="um_class_data_communication_description">Definir, discutir e relacionar os conceitos teóricos básicos
@@ -5817,7 +5817,7 @@ Os estudantes deverão ainda desenvolver competências em análise e síntese, r
     <string name="um_class_data_communication_topic1">Teoria da Informação: Medidas de Informação, Entropia, Codificação de Fontes com/sem memória, Rendimento e Compressao, Códigos Shannon-fano</string>
     <string name="um_class_data_communication_topic2">Capacidade do canal, Lei de Hartley Shannon</string>
     <string name="um_class_data_communication_topic3">Digitalização: Teoria da Amostragem; Quantização Uniforme/não uniforme; Ruído de Quantização</string>
-    <string name="um_class_data_communication_topic4">Digitalização: Conversão Analógico/Digital; PCM, Ruído em PCM; Outras tecnicas</string>
+    <string name="um_class_data_communication_topic4">Digitalização: Conversão Analógico/Digital; PCM, Ruído em PCM; Outras técnicas</string>
     <string name="um_class_data_communication_topic5">Multiplexagem: Multipla Divisão do Tempo (TDM); Hierarquias PDH/SONET/SDH. TDM estatístico;</string>
     <string name="um_class_data_communication_topic6">Multiplexagem: Modelos de filas de espera e escalonamento. Multipla Divisão de Frequência (FDM); Técnicas híbridas</string>
     <string name="um_class_data_communication_topic7">Análise de Sinais: Análise temporal/frequências, Séries de Fourier, Potência, Largura de Banda</string>
@@ -6187,7 +6187,7 @@ Os estudantes deverão ainda desenvolver competências em análise e síntese, r
     <string name="um_class_informatics_labs4_topic10">Fábricas de Software</string>
 
     <string name="um_class_bio_sequences">Algoritmos para Análise de Sequências Biológicas</string>
-    <string name="um_class_bio_sequences_description">O objetivo desta unidade curricular é o de dotar os alunos das capacidades de perceber,
+    <string name="um_class_bio_sequences_description">O objectivo desta unidade curricular é o de dotar os alunos das capacidades de perceber,
         utilizar e desenvolver algoritmos de processamento e análise de sequências biológicas, utilizando uma linguagem de programação para a sua implementação.</string>
     <string name="um_class_bio_sequences_topic1">Algoritmos básicos de processamento de sequências biológicas</string>
     <string name="um_class_bio_sequences_topic2">Procura de padrões em sequências</string>
@@ -6324,9 +6324,9 @@ Os estudantes deverão ainda desenvolver competências em análise e síntese, r
         - analisar, medir e avaliar o desempenho de sistemas de computação na execução de aplicações\n
         - desenvolver e/ou modificar aplicações computacionais com vista a optimizar o seu desempenho e
         escalabilidade.</string>
-    <string name="um_class_advanced_arch_topic1">Arquitetura de processadores: pipeline, superescalaridade</string>
-    <string name="um_class_advanced_arch_topic2">Arquitetura de processadores: multi-threading, multi-core</string>
-    <string name="um_class_advanced_arch_topic3">Arquitetura de processadores: many-core; hierarquia de memória em ambiente partilhado</string>
+    <string name="um_class_advanced_arch_topic1">Arquitectura de processadores: pipeline, superescalaridade</string>
+    <string name="um_class_advanced_arch_topic2">Arquitectura de processadores: multi-threading, multi-core</string>
+    <string name="um_class_advanced_arch_topic3">Arquitectura de processadores: many-core; hierarquia de memória em ambiente partilhado</string>
     <string name="um_class_advanced_arch_topic4">Paralelismo nas arquitecturas: arquitecturas vectoriais</string>
     <string name="um_class_advanced_arch_topic5">Paralelismo nas arquitecturas: arquitecturas paralelas com memória partilhada e memória distribuída</string>
     <string name="um_class_advanced_arch_topic6">Paralelismo nas arquitecturas: arquitecturas distribuídas em rede</string>
@@ -6381,7 +6381,7 @@ Os estudantes deverão ainda desenvolver competências em análise e síntese, r
     <string name="um_class_parallel_comp_parad">Paradigmas de Computação Paralela</string>
     <string name="um_class_parallel_comp_parad_description">Um estudante que complete com sucesso esta UC deverá ser capaz de demonstrar que adquiriu as seguintes
         competências:
-        - Desenvolver aplicações paralelas capazes de executar numa gama alargada de arquiteturas
+        - Desenvolver aplicações paralelas capazes de executar numa gama alargada de arquitecturas
         - Implementar aplicações utilizando os tipos mais comuns de algoritmos paralelos
         - Medir e otimizar o desempenho de aplicações em sistemas de memória distribuída
         - Implementar técnicas de gestão de recursos ao nível da aplicação.</string>
@@ -6670,7 +6670,7 @@ Os estudantes deverão ainda desenvolver competências em análise e síntese, r
     <string name="um_class_ubiquitous_apps_description">Compreender os princípios, técnicas e algoritmos usados para
         representação, compressão, recuperação e processamento de conteúdos multimédia;
         Conhecer e diferenciar as diferentes tecnologias e sistemas e aplicações multimédia em rede.
-        Tem ainda como objetivo complementar a formação em Tecnologia da Informação e Comunicações com
+        Tem ainda como objectivo complementar a formação em Tecnologia da Informação e Comunicações com
         competências avançadas na concepção, realização e avaliação de soluções informáticas para
         sistemas caracterizados pela forte mobilidade dos seus utilizadores e pela ubiquidade
         dos serviços de computação e comunicações.</string>
@@ -6801,7 +6801,7 @@ Os estudantes deverão ainda desenvolver competências em análise e síntese, r
     <string name="um_class_network_virtualisation_topic9">Casos de Uso</string>
 
     <string name="um_class_emerging_netw">Arquitecturas Emergentes de Rede</string>
-    <string name="um_class_emerging_netw_description">Nesta UC o objetivo é tomar contacto com arquiteturas emergentes de rede.
+    <string name="um_class_emerging_netw_description">Nesta UC o objectivo é tomar contacto com arquitecturas emergentes de rede.
         Começa-se por identificar as principais debilidades da arquitectura da Internet actual, abordando a partir delas novas
         arquitecturas que melhor colmatam essas debilidades. Para as dificuldades em lidar com a mobilidade, surgem as redes
         Ad-Hoc as redes Veiculares e as redes tolerantes a atrasos. Para as questões relacionadas com o desempenho as novas
@@ -6922,7 +6922,7 @@ Os estudantes deverão ainda desenvolver competências em análise e síntese, r
 
     <string name="um_class_knowledge_proces">Processamento e Representação de Conhecimento</string>
     <string name="um_class_knowledge_proces_description">No fim, os alunos deverão: ser capazes de especificar formalmente conhecimento usando várias
-        metodologias: taxonomias, thesaurus e ontologias; ser capazes de adicionar semântica descritiva a objetos
+        metodologias: taxonomias, thesaurus e ontologias; ser capazes de adicionar semântica descritiva a objectos
         digitais; ser capazes de especificar taxonomias em SKOS; ser capazes de espeficicar ontologias em OWL; ser
         capazes de processar ontologias; ser capazes de adicionar semântica a sítios web usando as normas RDFa e
         "Open Linked Data".</string>
