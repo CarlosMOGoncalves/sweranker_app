@@ -1862,7 +1862,7 @@
     <string name="uc_class_databases_topic3">Modelo relacional: Chaves e restrições de integridade relacional</string>
     <string name="uc_class_databases_topic4">Modelo relacional: Restrições de integridade complexas: regras de negócio</string>
     <string name="uc_class_databases_topic5">Modelo relacional: Exemplos e casos de estudo</string>
-    <string name="uc_class_databases_topic6">Álgebra relacional e aspetos básicos de SQL</string>
+    <string name="uc_class_databases_topic6">Álgebra relacional e aspectos básicos de SQL</string>
     <string name="uc_class_databases_topic7">Diagramas de Entidade-Relacionamento (ER)</string>
     <string name="uc_class_databases_topic8">Heranças e outros conceitos de modelação avançados</string>
     <string name="uc_class_databases_topic9">Tradução de diagramas ER para esquemas relacionais</string>
@@ -2202,7 +2202,7 @@ Os estudantes deverão ainda desenvolver competências em análise e síntese, r
     <string name="uc_class_info_management_systems_topic7">Controlo e monitorização: Interligação da estratégia às operações; processos críticos; principais indicadores de desempenho; COBIT</string>
 
     <string name="uc_class_it_security">Segurança em Tecnologias da Informação</string>
-    <string name="uc_class_it_security_description">Esta UC pretende dotar os alunos das capacidades técnicas para administração da segurança em TI. Aspetos de sistemas de comunicação, redes informáticas, sistemas de informação organizacionais e sistemas distribuídos. Compreender o conjunto de métodos e ferramentas para a realização das tarefas associadas a um especialista em Segurança em TI.</string>
+    <string name="uc_class_it_security_description">Esta UC pretende dotar os alunos das capacidades técnicas para administração da segurança em TI. Aspectos de sistemas de comunicação, redes informáticas, sistemas de informação organizacionais e sistemas distribuídos. Compreender o conjunto de métodos e ferramentas para a realização das tarefas associadas a um especialista em Segurança em TI.</string>
     <string name="uc_class_it_security_topic1">Aspectos fundamentais</string>
     <string name="uc_class_it_security_topic2">Segurança em sistemas de comunicação</string>
     <string name="uc_class_it_security_topic3">Segurança em sistemas de informação</string>
@@ -3484,7 +3484,7 @@ Os estudantes deverão ainda desenvolver competências em análise e síntese, r
     <string name="ist_class_multimedia_production">Produção de Conteúdos Multimédia</string>
     <string name="ist_class_multimedia_production_description">Conhecer os vários tipos de informação multimédia e como os manipular
         para a produção de conteúdos. Reconhecer as características de um processo de Produção de Conteúdos Multimédia. Entender os
-        constrangimentos tecnológicos que se colocam na Produção, nomeadamente nos aspetos de captura, codificação, processamento
+        constrangimentos tecnológicos que se colocam na Produção, nomeadamente nos aspectos de captura, codificação, processamento
         e visualização dos vários media. Conhecer os vários tipos de ferramentas de autoria disponíveis. Produzir conteúdos
         Multimédia; Conhecer os vários contextos em que o multimédia por ser consumido, com ênfase em aspectos de rede (requisitos
         de largura de banda, tempo de latência, sincronização, etc.) e dispositivos móveis. Introduzir algumas formas avançadas
@@ -5769,7 +5769,7 @@ Os estudantes deverão ainda desenvolver competências em análise e síntese, r
         - Caracterizar as funções gerais de gestão de uma empresa\n
         - Explicar os comportamentos dos agentes económicos e suas inter-relações nos mercados\n
         - Explicar o funcionamento de diferentes estruturas de mercado \n
-        - Avaliar aspetos económicos na perspetiva da decisão\n
+        - Avaliar aspectos económicos na perspetiva da decisão\n
         - Adquirir conhecimentos básicos de natureza financeira \n
         - Aplicar conhecimentos matemáticos e de natureza financeira para descrever e analisar projetos de investimento.\n
         - Aplicar ferramentas de análise económica.</string>
