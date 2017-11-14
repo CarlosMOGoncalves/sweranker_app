@@ -133,12 +133,14 @@ public class AllPathMandatoryAndTwoOptional implements ClassCombinationStrategy 
      * PATH aware degrees because some classes need to be picked here and there.
      * In any case this is the list that will suffer Combinatory math a bit further down the line
      * to effectively create the final combinations of the year.
+     * <p>
+     * NOTE: only the second semester is subject to potential optional classes
      */
     private List<String> getOptionalPathClasses(int path, List<DegreeClass> allClasses) {
 
         List<String> optionalClasses = new ArrayList<>();
         for (DegreeClass degreeClass : allClasses) {
-            if (degreeClass.isOptionalForPath(path)) {
+            if (degreeClass.getSemester() == 2 && degreeClass.isOptionalForPath(path)) {
                 optionalClasses.add(degreeClass.getId());
             }
 

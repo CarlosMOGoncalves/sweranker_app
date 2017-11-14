@@ -537,7 +537,7 @@ public class MainActivityViewModel extends ViewModel {
                 ClassCombinationStrategy combinationStrategy = classCombinationStrategy.getValue();
 
                 // Here, using each year's strategy to unfold all possible combinations for this year
-                annualCombinations.addAll(combinationStrategy.getAnnualClassCombinations(yearOfDegree, degree.getClasses().get(yearOfDegree)));
+                annualCombinations.addAll(combinationStrategy.getAnnualClassCombinations(yearOfDegree, degree.getClassesAsList()));
 
                 if (_listener.isPresent()) {
                     _listener.get().updateProgressAction(1);

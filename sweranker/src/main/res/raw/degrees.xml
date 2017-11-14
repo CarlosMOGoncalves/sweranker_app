@@ -23,14 +23,11 @@
             </combinator>
             <combinator>
                 <year>4</year>
-                <class>
-                    pt.cmg.sweranker.ranking.combinationstrategies.AllMandatoryAndThreeOptionals
-                </class>
+                <class>pt.cmg.sweranker.ranking.combinationstrategies.AllMandatoryAndThreeOptionals</class>
             </combinator>
             <combinator>
                 <year>5</year>
-                <class>pt.cmg.sweranker.ranking.combinationstrategies.AllMandatoryAndFourOptionals
-                </class>
+                <class>pt.cmg.sweranker.ranking.combinationstrategies.AllMandatoryAndFourOptionals</class>
             </combinator>
         </yearly_combinators>
         <university>@string/up</university>
@@ -4712,15 +4709,11 @@
             </combinator>
             <combinator>
                 <year>4</year>
-                <class>
-                    pt.cmg.sweranker.ranking.combinationstrategies.AllPathMandatoryAndTwoOptional
-                </class>
+                <class>pt.cmg.sweranker.ranking.combinationstrategies.AllPathMandatoryAndTwoOptional</class>
             </combinator>
             <combinator>
                 <year>5</year>
-                <class>
-                    pt.cmg.sweranker.ranking.combinationstrategies.AllPathMandatoryAndTwoOptionalMixedWithPreviousYear
-                </class>
+                <class>pt.cmg.sweranker.ranking.combinationstrategies.AllPathMandatoryAndTwoOptionalMixedWithPreviousYear</class>
             </combinator>
         </yearly_combinators>
         <university>@string/uc</university>
@@ -7350,7 +7343,7 @@
                 <name>@string/uc_class_company_arch</name>
                 <description>@string/uc_class_company_arch_description</description>
                 <year>4</year>
-                <semester>2</semester>
+                <semester>1</semester>
                 <ects>6</ects>
                 <optional>true</optional>
                 <paths>
@@ -8616,14 +8609,11 @@
             </combinator>
             <combinator>
                 <year>4</year>
-                <class>
-                    pt.cmg.sweranker.ranking.combinationstrategies.AllMandatoryAndThreeOptionals
-                </class>
+                <class>pt.cmg.sweranker.ranking.combinationstrategies.AllMandatoryAndThreeOptionals</class>
             </combinator>
             <combinator>
                 <year>5</year>
-                <class>pt.cmg.sweranker.ranking.combinationstrategies.AllMandatoryAndFourOptionals
-                </class>
+                <class>pt.cmg.sweranker.ranking.combinationstrategies.AllMandatoryAndFourOptionals</class>
             </combinator>
         </yearly_combinators>
         <university>@string/ist</university>
@@ -14665,14 +14655,11 @@
             </combinator>
             <combinator>
                 <year>4</year>
-                <class>
-                    pt.cmg.sweranker.ranking.combinationstrategies.AllMandatoryAndThreeOptionals
-                </class>
+                <class>pt.cmg.sweranker.ranking.combinationstrategies.AllMandatoryAndThreeOptionals</class>
             </combinator>
             <combinator>
                 <year>5</year>
-                <class>pt.cmg.sweranker.ranking.combinationstrategies.AllMandatoryAndFourOptionals
-                </class>
+                <class>pt.cmg.sweranker.ranking.combinationstrategies.AllMandatoryAndFourOptionals</class>
             </combinator>
         </yearly_combinators>
         <university>@string/uav</university>
@@ -18350,14 +18337,11 @@
             </combinator>
             <combinator>
                 <year>4</year>
-                <class>
-                    pt.cmg.sweranker.ranking.combinationstrategies.AllMandatoryAndThreeOptionals
-                </class>
+                <class>pt.cmg.sweranker.ranking.combinationstrategies.AllMandatoryAndThreeOptionals</class>
             </combinator>
             <combinator>
                 <year>5</year>
-                <class>pt.cmg.sweranker.ranking.combinationstrategies.AllMandatoryAndFourOptionals
-                </class>
+                <class>pt.cmg.sweranker.ranking.combinationstrategies.AllMandatoryAndFourOptionals</class>
             </combinator>
         </yearly_combinators>
         <university>@string/uminho</university>
@@ -23772,4 +23756,5 @@
 
         </classes>
     </degree>
+
 </degrees>

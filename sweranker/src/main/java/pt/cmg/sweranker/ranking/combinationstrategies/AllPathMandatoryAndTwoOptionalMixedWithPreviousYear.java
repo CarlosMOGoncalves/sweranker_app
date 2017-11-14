@@ -38,8 +38,8 @@ import pt.cmg.sweranker.ranking.AnnualClassCombination;
  * 3 - Each path, for that year, has optional classes that are shared among every path <br/>
  * 4 - Each path, for that year, has optional classes FROM THE PREVIOUS YEAR and of THE 1ST SEMESTER
  * that were mandatory in another path, but that can now be used as optionals in the current year for
- * the current path.
- * 5 - The number of optional classes tha can be added to the mandatory ones is TWO!
+ * the current path.<br/>
+ * 5 - The number of optional classes that can be added to the mandatory ones is TWO!
  * <p>
  * </p>
  */
@@ -70,7 +70,7 @@ public class AllPathMandatoryAndTwoOptionalMixedWithPreviousYear implements Clas
 
         }
 
-        return null;
+        return allAnnualCombinations;
     }
 
     /**
@@ -100,8 +100,10 @@ public class AllPathMandatoryAndTwoOptionalMixedWithPreviousYear implements Clas
         // Atenção a esta instrução, isto vai os arrays de todas as cadeiras do ano para inserir multiplas vezes
         // os mesmos paths, como é um SET não haverá repetidos, mas mesmo assim vai tudo lá para dentro
         for (DegreeClass degreeClass : allClasses) {
-            for (int i = 0; i < degreeClass.getPaths().length; i++) {
-                paths.add(degreeClass.getPaths()[i]);
+            if (degreeClass.hasPaths()) {
+                for (int i = 0; i < degreeClass.getPaths().length; i++) {
+                    paths.add(degreeClass.getPaths()[i]);
+                }
             }
         }
         return paths;
@@ -120,6 +122,7 @@ public class AllPathMandatoryAndTwoOptionalMixedWithPreviousYear implements Clas
                 mandatoryClasses.add(degreeClass.getId());
             }
 
+            // This is not really necessary as in Coimbra there are no path mandatory in the 5th year
             if (degreeClass.isPathMandatory(path)) {
                 mandatoryClasses.add(degreeClass.getId());
             }
@@ -138,15 +141,12 @@ public class AllPathMandatoryAndTwoOptionalMixedWithPreviousYear implements Clas
 
         List<String> optionalClasses = new ArrayList<>();
 
-
         // First get the optionals unique of the current year
         for (DegreeClass degreeClass : classesOfTargetYear) {
             if (degreeClass.isOptionalForPath(path)) {
                 optionalClasses.add(degreeClass.getId());
             }
-
         }
-
         // Then get the optionals that could be used from the previous year
         optionalClasses.addAll(getPreviousYearOptionals(path, allDegreeClasses));
 

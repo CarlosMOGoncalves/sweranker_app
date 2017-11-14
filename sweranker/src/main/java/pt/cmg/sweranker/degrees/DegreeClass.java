@@ -184,6 +184,9 @@ public class DegreeClass {
     }
 
     public boolean isPathMandatory(int path) {
+        if (_mandatoryPaths == null) {
+            return false;
+        }
         return Arrays.binarySearch(_mandatoryPaths, path) >= 0;
     }
 
@@ -215,8 +218,13 @@ public class DegreeClass {
 
         //Since this has a lot of awkward clauses it will be fully documented.
 
+        // First, the obvious, if it is a mandatory class it simply cannot be optional in any way
+        if (isMandatoryClass()) {
+            return false;
+        }
+
         // If if does not have paths (i.e. it is a regular common degree class)
-        // it it a no-brainer, it cannot be optional for a path
+        // it is a no-brainer, it cannot be optional for a path
         if (!_hasPaths) {
             return false;
         }
@@ -279,6 +287,9 @@ public class DegreeClass {
     }
 
     public boolean isPathAvailable(int path) {
+        if (_paths == null) {
+            return false;
+        }
         return Arrays.binarySearch(_paths, path) >= 0;
     }
 
