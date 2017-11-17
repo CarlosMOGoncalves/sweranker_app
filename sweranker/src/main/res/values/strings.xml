@@ -2661,7 +2661,7 @@ Os estudantes deverão ainda desenvolver competências em análise e síntese, r
     <string name="ist_class_discrete_math_description">Desenvolver o raciocínio matemático rigoroso.
         Dominar os conceitos e instrumentos matemáticos necessários para a análise de procedimentos e
         algoritmos, quer quanto à sua correcção, quer quanto à sua eficiência.</string>
-    <string name="ist_class_discrete_math_topic1">Algoritmia: Introdução à linguagem de programação Mathematica. Procedimento versus algoritmo. Análise da eficiência de programas imperativos no pior caso e no caso médio. Notação assintótica. Somatórios, produtórios. Princípio de inclusão-exclusão. Demonstração por indução finita de formas fechadas. Fórmula da soma de Euler.</string>
+    <string name="ist_class_discrete_math_topic1">Algoritmia: Introdução à linguagem de programação Mathematica. Procedimento versus algoritmo. Análise da eficiência de programas imperativos no pior caso e no caso médio. Notação assimptótica. Somatórios, produtórios. Princípio de inclusão-exclusão. Demonstração por indução finita de formas fechadas. Fórmula da soma de Euler.</string>
     <string name="ist_class_discrete_math_topic2">Teoria de números elementar: Aritmética modular. Divisibilidade, máximo divisor comum, algoritmo de Euclides. Factorização e primalidade, teorema de Euler. Teorema chinês dos restos. Relações de equivalência e de congruência. Corpos finitos. Polinómios sobre corpos finitos. Transformada de Fourier discreta, seu cálculo eficiente e correcção.</string>
     <string name="ist_class_discrete_math_topic3">Funções geradoras: Função geradora de uma sucessão. Propriedades. Coeficientes binomiais. Função geradora de uma variável aleatória discreta, momentos. Análise de recorrências. Teorema da expansão racional. Resolução de equações lineares às diferenças.</string>
     <string name="ist_class_discrete_math_topic4">Correcção de programas: Correcção parcial de programas, condições invariantes. Terminação de programas, expressões variantes. Pré-condição e pós-condição. Cálculo de Hoare para correcção parcial de programas imperativos. Ordens parciais, bem fundadas e indução. Cálculo de Hoare para correcção total de programas imperativos. </string>
@@ -2732,13 +2732,15 @@ Os estudantes deverão ainda desenvolver competências em análise e síntese, r
         paradigma da programação com objectos, nomeadamente dos conceitos de encapsulamento, abstracção, herança e polimorfismo; capacidade de
         utilizar uma linguagem de programação baseada em objectos; capacidade de utilização de padrões de desenho; e domínio da escrita de
         testes de avaliação.</string>
-    <string name="ist_class_oop_topic1">Programação com Objectos e Linguagem Java Introdução aos objectos: definição; longevidade; classes; métodos; programas.</string>
-    <string name="ist_class_oop_topic2">Operadores, expressões e controlo de fluxo em Java: precedências; atribuição; operadores; conversões de tipos; literais; controlo de execução</string>
-    <string name="ist_class_oop_topic3">Construção de objectos: iniciação e limpeza; construtores; métodos sobrecarregados; "this"; colector de lixo Organização de código: interface vs. implementação; bibliotecas; acesso aos membros Herança e composição: desenvolvimento incremental; "final"; carregamento de classes Polimorfismo</string>
-    <string name="ist_class_oop_topic4">Classes abstractas e interfaces Classes internas: utilização e aspectos particulares de Java Tipos paramétricos</string>
-    <string name="ist_class_oop_topic5">Enumerações; Excepções; Colecções; Entradas/saídas; Informação de tipos em tempo de execução</string>
-    <string name="ist_class_oop_topic6">Introdução à UML: Diagramas de classes e de sequência</string>
-    <string name="ist_class_oop_topic7">Introdução aos padrões de desenho: Singleton Apresentação e discussão de padrões de desenho: Composite, State, Template Method, Strategy, Decorator, Factory Method, Abstract Factory, Simple Factory, Observer, Visitor, Adapter, Façade, Bridge, Proxy</string>
+    <string name="ist_class_oop_topic1">Introdução aos objectos: definição; longevidade; classes; métodos; programas.</string>
+    <string name="ist_class_oop_topic2">Operadores, expressões e controlo de fluxo em Java: precedências, atribuição, operadores, conversões de tipos, literais, controlo de execução</string>
+    <string name="ist_class_oop_topic3">Construção de objectos: iniciação e limpeza; construtores; métodos sobrecarregados; "this"; colector de lixo</string>
+    <string name="ist_class_oop_topic4">Organização de código: interface vs. implementação; bibliotecas; acesso aos membros</string>
+    <string name="ist_class_oop_topic5">Herança e composição: desenvolvimento incremental, "final", carregamento de classes, Polimorfismo</string>
+    <string name="ist_class_oop_topic6">Classes abstractas,interfaces e classes internas: utilização e aspectos particulares de Java</string>
+    <string name="ist_class_oop_topic7">Tipos paramétricos, Enumerações, Excepções, Colecções, Entradas/saídas, Informação de tipos em tempo de execução</string>
+    <string name="ist_class_oop_topic8">Introdução à UML: Diagramas de classes e de sequência</string>
+    <string name="ist_class_oop_topic9">Introdução aos padrões de desenho: Singleton, Composite, State, Template Method, Strategy, Decorator, Factory Method, Abstract Factory, Simple Factory, Observer, Visitor, Adapter, Façade, Bridge, Proxy</string>
 
     <string name="ist_class_os">Sistemas Operativos</string>
     <string name="ist_class_os_description">Conhecer os conceitos fundamentais subjacentes aos sistemas operativos, com ênfase nos seus mecanismos e algoritmos, assim como a estrutura interna dos sistemas operativos mais relevantes. Programar, ao nível sistema, usando todas as funcionalidades dos sistemas operativos tendo em conta os modelos de programação sequencial e concorrente.</string>
@@ -3021,7 +3023,7 @@ Os estudantes deverão ainda desenvolver competências em análise e síntese, r
     <string name="ist_class_distributed_sys_topic2">Comunicação Distribuídas: Nível de Transporte e respectivas API. Chamada de Procedimentos Remotos. Sistemas de Objectos Distribuídos. Web Services.</string>
     <string name="ist_class_distributed_sys_topic3">Gestão de Nomes: Propriedades dos Nomes, Sistemas de gestão de nomes. Sistemas de Directório. Arquitectura de serviço de gestão de nomes.</string>
     <string name="ist_class_distributed_sys_topic4">Segurança: Politicas e mecanismo de segurança. Base computacional de confiança. Canais seguros.</string>
-    <string name="ist_class_distributed_sys_topic5">Introdução à criptografia: Chave simétrica e chave assimétrica, distribuição de chaves. Autenticação. Autorização. Integridade ? assinaturas digitais</string>
+    <string name="ist_class_distributed_sys_topic5">Introdução à criptografia: Chave simétrica e chave assimétrica, distribuição de chaves. Autenticação. Autorização. Integridade e assinaturas digitais</string>
     <string name="ist_class_distributed_sys_topic6">Web Services security</string>
     <string name="ist_class_distributed_sys_topic7">Tolerância a faltas: Modelo de Sistema, Tipos de falta; densas, bizantinas. Grandezas: Fiabilidade, Disponibilidade. Politicas de tolerância a faltas e recuperação do erro, processamento do erro. Sistema de replicação passiva. </string>
     <string name="ist_class_distributed_sys_topic8">Transacções distribuídas: Arquitectura X/Open, Terminação em duas Fases, Monitores Transaccionais. Filas de Mensagens, Comunicação Síncrona e Assíncrona</string>
@@ -3116,7 +3118,7 @@ Os estudantes deverão ainda desenvolver competências em análise e síntese, r
 
     <string name="ist_class_sw_test_validation">Teste e Validação de Software</string>
     <string name="ist_class_sw_test_validation_description">O tamanho e a complexidade de programas de software tem vindo a crescer,
-        sendo por isso cada vez mais importante conseguir validar a correção dos programas. Um dos custos principais no
+        sendo por isso cada vez mais importante conseguir validar a correcção dos programas. Um dos custos principais no
         desenvolvimento de software é a sua validação. Existem várias técnicas de validação, sendo a técnica de teste de
         software uma das técnicas mais utilizadas. A UC de Teste e Validação de Software (TVS) oferece formação avançada nas
         técnicas de teste de software, incluindo técnicas manuais, semi-automáticas e automáticas. A UC de TVS oferece também
@@ -3745,7 +3747,7 @@ Os estudantes deverão ainda desenvolver competências em análise e síntese, r
 
     <string name="ist_class_programming_languages">Linguagens de Programação</string>
     <string name="ist_class_programming_languages_description">Compreensão da história e evolução das linguagens e paradigmas de programação.
-        Domínio das conceitos fundamentais de ligação, âmbito, duração, tipo, fluxo de controle, abstração de dados, abstração de controle,
+        Domínio das conceitos fundamentais de ligação, âmbito, duração, tipo, fluxo de controle, abstracção de dados, abstracção de controle,
         e excepções. Avaliação das semelhanças e diferenças entre as várias linguagens de programação. Compreensão das alternativas no
         desenho e implementação de linguagens, por exemplo, execução por compilação vs interpretação, âmbito léxico vs dinâmico,
         tipificação estática vs dinâmica, modelo de referências vs modelo de valores, memória gerida manualmente vs automaticamente,
@@ -3933,7 +3935,7 @@ Os estudantes deverão ainda desenvolver competências em análise e síntese, r
     <string name="ist_class_game_design_topic5">Modelos de jogadores </string>
     <string name="ist_class_game_design_topic6">A experiência do jogador</string>
     <string name="ist_class_game_design_topic7">Teoria do divertimento</string>
-    <string name="ist_class_game_design_topic8">Jogabilidade: mundos, cenários, abstrações, progressão e balanceamento</string>
+    <string name="ist_class_game_design_topic8">Jogabilidade: mundos, cenários, abstracções, progressão e balanceamento</string>
     <string name="ist_class_game_design_topic9">Categorização: géneros de jogos e seus desafios</string>
     <string name="ist_class_game_design_topic10">Narrativa e desenvolvimento de personagens</string>
     <string name="ist_class_game_design_topic11">Emoções em jogos</string>
@@ -5221,7 +5223,7 @@ Os estudantes deverão ainda desenvolver competências em análise e síntese, r
         - Fornecer aos discentes um conjunto de elementos que lhes permitam, utilizando uma lógica de raciocínio própria
         das ciências empresariais, compreender e interpretar o funcionamento das organizações, sejam públicas,
         privadas ou para-públicas, numa óptica estratégica;\n
-        - Proporcionar aos discentes uma perspetiva técnica e científica da estratégia e competitividade,
+        - Proporcionar aos discentes uma perspectiva técnica e científica da estratégia e competitividade,
         tanto a nível de planeamento como a nível de implementação;\n
         - Adquirir um corpo básico de conhecimentos, de forma a permitir a sua aplicação no contexto
         empresarial no que concerne a tomadas de decisões estratégicas;\n
@@ -5397,7 +5399,7 @@ Os estudantes deverão ainda desenvolver competências em análise e síntese, r
         fundamentais da segurança em sistemas computacionais. Como muitas das soluções de segurança recorrem à aplicação de técnicas
         criptográficas, nesta cadeira faz-se também uma introdução à criptografia e à criptanálise. A segurança é abordada em diversos
         contextos, como o dos programas, dos sistemas operativos, das máquinas virtuais e das bases de dados.</string>
-    <string name="uav_class_security2_topic1">Introdução: Objectivos, problemas, perspetiva das soluções, atitudes realistas</string>
+    <string name="uav_class_security2_topic1">Introdução: Objectivos, problemas, perspectiva das soluções, atitudes realistas</string>
     <string name="uav_class_security2_topic2">Introdução: Riscos e sua origem, Vulnerabilidades, sua detecção e exploração</string>
     <string name="uav_class_security2_topic3">Introdução: Políticas de segurança vs. mecanismos de segurança, Níveis de segurança, domínios de segurança</string>
     <string name="uav_class_security2_topic4">Introdução: Ataques e Mecanismos de defesa</string>
@@ -5681,7 +5683,7 @@ Os estudantes deverão ainda desenvolver competências em análise e síntese, r
         3) usar fórmulas da Lógica de 1ª Ordem para representar frases em linguagem natural;\n
         4) dar significado a fórmulas e decidir o seu valor lógico, no contexto de uma interpretação;\n
         5) compreender e construir demonstrações formais em dedução natural;\n
-        6) conhecer algumas das consequências dos Teoremas da Correção e da Completude.</string>
+        6) conhecer algumas das consequências dos Teoremas da Correcção e da Completude.</string>
     <string name="um_class_logic_topic1">Lógica Proposicional: Sintaxe, Semântica e Sistemas Dedutivos</string>
     <string name="um_class_logic_topic2">Lógica de 1ª ordem: Sintaxe, Semântica e Sistemas Dedutivos</string>
 
@@ -5769,7 +5771,7 @@ Os estudantes deverão ainda desenvolver competências em análise e síntese, r
         - Caracterizar as funções gerais de gestão de uma empresa\n
         - Explicar os comportamentos dos agentes económicos e suas inter-relações nos mercados\n
         - Explicar o funcionamento de diferentes estruturas de mercado \n
-        - Avaliar aspectos económicos na perspetiva da decisão\n
+        - Avaliar aspectos económicos na perspectiva da decisão\n
         - Adquirir conhecimentos básicos de natureza financeira \n
         - Aplicar conhecimentos matemáticos e de natureza financeira para descrever e analisar projetos de investimento.\n
         - Aplicar ferramentas de análise económica.</string>

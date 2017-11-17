@@ -57,8 +57,8 @@ public class SwebokDetailedFragment extends Fragment {
                              Bundle savedInstanceState) {
         _myView = inflater.inflate(R.layout.ka_fragment, container, false);
 
-        ImageView kaImage = (ImageView) _myView.findViewById(R.id.ka_details_image);
-        TextView kaTitle = (TextView) _myView.findViewById(R.id.ka_details_name);
+        ImageView kaImage = _myView.findViewById(R.id.ka_details_image);
+        TextView kaTitle = _myView.findViewById(R.id.ka_details_name);
 
         kaImage.setImageDrawable(this.getResources().getDrawable(_knowledgeArea.getImageResource(), null));
 //        kaImage.setBackgroundColor(ContextCompat.getColor(getActivity(), _knowledgeArea.getColourResource()));
@@ -67,7 +67,7 @@ public class SwebokDetailedFragment extends Fragment {
         kaImage.setColorFilter(ContextCompat.getColor(getActivity(), _knowledgeArea.getColourResource()));
         kaTitle.setText(this.getResources().getText(_knowledgeArea.getNameResource()));
 
-        _topicList = (RecyclerView) _myView.findViewById(R.id.ka_details_topics_list);
+        _topicList = _myView.findViewById(R.id.ka_details_topics_list);
 
 
         RecyclerView.LayoutManager linearLayoutManager = new LinearLayoutManager(this.getActivity(), LinearLayoutManager.VERTICAL, false);

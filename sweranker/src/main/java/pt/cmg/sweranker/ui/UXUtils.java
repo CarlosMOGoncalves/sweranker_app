@@ -42,7 +42,6 @@ public class UXUtils {
     }
 
     /**
-     * /**
      * Takes an Activity and creates an animator to paint the Status Bar it in the colour passed as parameter with the duration and delay given.
      * It uses a Value Animator...not that I know what it does YET, but hey, deadlines...
      *

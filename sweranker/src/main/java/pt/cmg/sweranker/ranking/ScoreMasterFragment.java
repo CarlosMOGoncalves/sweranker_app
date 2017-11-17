@@ -91,7 +91,7 @@ public class ScoreMasterFragment extends Fragment implements LifecycleRegistryOw
     private ProgressBar _progressBar;
     private ScoresAndImagesAdapter _adapter;
 
-    private Map<Integer, Degree> _degrees;
+    private Map<Integer, Degree> _degreesById;
 
     private MainActivityViewModel _sharedViewModel;
 
@@ -133,9 +133,9 @@ public class ScoreMasterFragment extends Fragment implements LifecycleRegistryOw
         _sharedViewModel = ViewModelProviders.of((MainActivity) getActivity()).get(MainActivityViewModel.class);
 
         List<Degree> degrees = _sharedViewModel.getDegrees().getValue();
-        _degrees = new LinkedHashMap<>();
+        _degreesById = new LinkedHashMap<>();
         for (Degree d : degrees) {
-            _degrees.put(d.getId(), d);
+            _degreesById.put(d.getId(), d);
         }
         setHasOptionsMenu(true);
 
@@ -196,19 +196,19 @@ public class ScoreMasterFragment extends Fragment implements LifecycleRegistryOw
     private View createFilterDialogView() {
         _filterDialog = getActivity().getLayoutInflater().inflate(R.layout.ranking_fragment_filter_dialog, null);
 
-        _filterDialogSelectedKA = (Spinner) _filterDialog.findViewById(R.id.knowledge_area_spinner);
+        _filterDialogSelectedKA = _filterDialog.findViewById(R.id.knowledge_area_spinner);
         _filterDialogSelectedKA.setAdapter(new KASpinnerAdapter(_sharedViewModel.getKnowledgeAreas().getValue()));
 
         String[] orders = new String[]{getActivity().getString(R.string.order_ascending), getActivity().getString(R.string.order_descending)};
-        _filterDialogSelectedOrder = (Spinner) _filterDialog.findViewById(R.id.order_spinner);
+        _filterDialogSelectedOrder = _filterDialog.findViewById(R.id.order_spinner);
         _filterDialogSelectedOrder.setAdapter(new ArrayAdapter<>(getActivity(), R.layout.ranking_fragment_filter_dialog_spinner_item, orders));
 
         String[] limits = new String[]{"1", "10", "50", getActivity().getString(R.string.filter_all_label)};
-        _filterDialogLimitSpinner = (Spinner) _filterDialog.findViewById(R.id.results_number_spinner);
+        _filterDialogLimitSpinner = _filterDialog.findViewById(R.id.results_number_spinner);
         _filterDialogLimitSpinner.setAdapter(new ArrayAdapter<>(getActivity(), R.layout.ranking_fragment_filter_dialog_spinner_item, limits));
         _filterDialogLimitSpinner.setSelection(1);
 
-        _filterDialogSelectedDegree = (Spinner) _filterDialog.findViewById(R.id.degree_spinner);
+        _filterDialogSelectedDegree = _filterDialog.findViewById(R.id.degree_spinner);
         _filterDialogSelectedDegree.setAdapter(new DegreeSpinnerAdapter(_sharedViewModel.getDegrees().getValue()));
 
         return _filterDialog;

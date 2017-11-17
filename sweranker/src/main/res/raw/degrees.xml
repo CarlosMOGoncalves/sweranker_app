@@ -9361,6 +9361,14 @@
                         <id>c146t7</id>
                         <description>@string/ist_class_oop_topic7</description>
                     </topic>
+                    <topic>
+                        <id>c146t8</id>
+                        <description>@string/ist_class_oop_topic8</description>
+                    </topic>
+                    <topic>
+                        <id>c146t9</id>
+                        <description>@string/ist_class_oop_topic9</description>
+                    </topic>
                 </program>
             </class>
             <class>

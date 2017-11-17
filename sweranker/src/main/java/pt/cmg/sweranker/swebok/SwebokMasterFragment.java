@@ -95,9 +95,9 @@ public class SwebokMasterFragment extends Fragment implements LifecycleRegistryO
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         _myView = inflater.inflate(R.layout.swebok_kas_grid_fragment, container, false);
-        _progressBar = (ProgressBar) _myView.findViewById(R.id.swebok_progress_bar);
+        _progressBar = _myView.findViewById(R.id.swebok_progress_bar);
         _progressBar.setVisibility(View.VISIBLE);
-        _swebokGrid = (RecyclerView) _myView.findViewById(R.id.swebok_grid);
+        _swebokGrid = _myView.findViewById(R.id.swebok_grid);
         _swebokGrid.setVisibility(View.INVISIBLE);
 
         _viewModel.getKnowledgeAreas().observe(this, knowledgeAreas -> fillSwebokGrid(knowledgeAreas));

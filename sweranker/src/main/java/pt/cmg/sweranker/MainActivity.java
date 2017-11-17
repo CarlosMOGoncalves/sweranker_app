@@ -43,7 +43,6 @@ import pt.cmg.sweranker.swebok.KnowledgeArea;
 import pt.cmg.sweranker.swebok.SwebokDetailedFragment;
 import pt.cmg.sweranker.swebok.SwebokMasterFragment;
 import pt.cmg.sweranker.ui.ImageSizeAndPlaceTransition;
-import pt.cmg.sweranker.ui.OnEndTransitionListener;
 import pt.cmg.sweranker.ui.OnStartTransitionListener;
 import pt.cmg.sweranker.ui.UXUtils;
 
@@ -228,22 +227,53 @@ public class MainActivity extends AppCompatActivity implements
         KnowledgeArea knowledgeArea = _viewModel.getSelectedKnowledgeArea();
         Activity myActivity = this;
 
-        Transition imageEnterTransition = createImageEnterSharedElementTransition(kaDetailsFragment, transitionDuration);
 
+        /**
+         * TODO: DAMN ANDROID 8 - the shared elements transitions stopped working, I don't know why, but it just doesn't trigger the Return Shared Elemetn Transition...
+         * TODO: I will have to review this... for now I just changed to a simpler whole fragment transition...
+         */
+//        Transition imageEnterTransition = createImageEnterSharedElementTransition(kaDetailsFragment, transitionDuration);
         // Very important! Adding a listener in order to change the Action Bar colour and the Status Bar colour when this transition finishes.
-        imageEnterTransition.addListener(new OnEndTransitionListener() {
+//        imageEnterTransition.addListener(new OnEndTransitionListener() {
+//            @Override
+//            public void onEndTransition(Transition transition) {
+//                UXUtils.animateActionBarColourChange(_toolbar, imageBackgroundColour, 0, 0);
+//                UXUtils.animateStatusBarColourChange(myActivity, imageBackgroundColour, 0, 0);
+//                changeToolbarIntoBackButton(getResources().getString(knowledgeArea.getNameResource()));
+//            }
+//        });
+
+
+//        Transition sharedImageExitTransition = createImageExitSharedElementTransition(kaDetailsFragment, transitionDuration);
+        // Very important! Adding a listener in order to change the Action Bar colour and the Status Bar colour when this transition starts.
+//        sharedImageExitTransition.addListener(new OnStartTransitionListener() {
+//            @Override
+//            public void onStartTransition(Transition transition) {
+//                UXUtils.animateStatusBarColourChange(myActivity, statusBarOriginalColour, 0, 0);
+//                UXUtils.animateActionBarColourChange(_toolbar, actionBarOriginalColour, 0, 0);
+//                resetToolbar();
+//            }
+//        });
+
+        // This just creates a transition for the rest of the content, i.e. not shared.
+        Transition enterTransition = new Slide(Gravity.RIGHT);
+        enterTransition.setDuration(transitionDuration);
+        kaDetailsFragment.setEnterTransition(enterTransition);
+        enterTransition.addListener(new OnStartTransitionListener() {
             @Override
-            public void onEndTransition(Transition transition) {
+            public void onStartTransition(Transition transition) {
                 UXUtils.animateActionBarColourChange(_toolbar, imageBackgroundColour, 0, 0);
                 UXUtils.animateStatusBarColourChange(myActivity, imageBackgroundColour, 0, 0);
                 changeToolbarIntoBackButton(getResources().getString(knowledgeArea.getNameResource()));
             }
         });
 
-
-        Transition sharedImageExitTransition = createImageExitSharedElementTransition(kaDetailsFragment, transitionDuration);
-        // Very important! Adding a listener in order to change the Action Bar colour and the Status Bar colour when this transition starts.
-        sharedImageExitTransition.addListener(new OnStartTransitionListener() {
+        // And when the user presses Back on the toolbar I use a transition listener to change the
+        // toolbar back to its original state. Neat.
+        Transition exitTransition = new Slide(Gravity.RIGHT);
+        exitTransition.setDuration(transitionDuration);
+        kaDetailsFragment.setReturnTransition(exitTransition);
+        exitTransition.addListener(new OnStartTransitionListener() {
             @Override
             public void onStartTransition(Transition transition) {
                 UXUtils.animateStatusBarColourChange(myActivity, statusBarOriginalColour, 0, 0);
@@ -251,12 +281,6 @@ public class MainActivity extends AppCompatActivity implements
                 resetToolbar();
             }
         });
-
-        // This just creates a transition for the rest of the content, i.e. not shared.
-        Transition contentTransition = new Slide();
-        contentTransition.setDuration(transitionDuration);
-        kaDetailsFragment.setEnterTransition(contentTransition);
-        kaDetailsFragment.setExitTransition(contentTransition);
 
         getFragmentManager().beginTransaction().addSharedElement(image, "ka_image").replace(R.id.content_area, kaDetailsFragment, "KADetail").addToBackStack(null).commit();
     }
