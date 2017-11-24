@@ -13035,10 +13035,6 @@
                         <id>c199t27</id>
                         <description>@string/ist_class_info_recovery_topic27</description>
                     </topic>
-                    <topic>
-                        <id>c199t28</id>
-                        <description>@string/ist_class_info_recovery_topic28</description>
-                    </topic>
                 </program>
             </class>
             <class>

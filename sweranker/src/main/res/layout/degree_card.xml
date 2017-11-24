@@ -2,27 +2,28 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
+    android:layout_width="wrap_content"
     android:layout_height="wrap_content"
+    android:background="@drawable/border_around"
     android:orientation="vertical">
 
     <android.support.v7.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/card_size"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         app:cardElevation="3dp">
 
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:paddingTop="@dimen/ka_title_padding"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/ka_title_padding"
             android:paddingLeft="@dimen/ka_title_padding"
             android:paddingRight="@dimen/ka_title_padding"
-            android:paddingBottom="@dimen/ka_title_padding"
-            android:orientation="vertical">
+            android:paddingTop="@dimen/ka_title_padding">
 
             <FrameLayout
                 android:id="@+id/degree_image_container"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content">
 
                 <ImageView

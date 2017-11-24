@@ -48,12 +48,12 @@ public class DegreeViewPagerAdapter extends PagerAdapter {
         ViewGroup layout;
         if (position == 0) {
             layout = (ViewGroup) inflater.inflate(R.layout.degree_details_basic_info, collection, false);
-            TextView degreeDescription = (TextView) layout.findViewById(R.id.degree_description);
+            TextView degreeDescription = layout.findViewById(R.id.degree_description);
             degreeDescription.setText(_context.getResources().getString(_degree.getDescriptionResource()));
             collection.addView(layout);
         } else {
             layout = (ViewGroup) inflater.inflate(R.layout.degree_details_class_list, collection, false);
-            RecyclerView programList = (RecyclerView) layout.findViewById(R.id.program_list);
+            RecyclerView programList = layout.findViewById(R.id.program_list);
             initialiseProgramList(programList);
             collection.addView(layout);
         }

@@ -205,7 +205,7 @@ public class MainActivity extends AppCompatActivity implements
             getFragmentManager().beginTransaction().replace(R.id.content_area, ScoreMasterFragment.newInstance(), "Degrees").commit();
         }
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.nav_drawer);
+        DrawerLayout drawer = findViewById(R.id.nav_drawer);
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }

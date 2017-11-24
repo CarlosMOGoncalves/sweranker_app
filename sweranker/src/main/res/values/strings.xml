@@ -2618,7 +2618,7 @@ Os estudantes deverão ainda desenvolver competências em análise e síntese, r
     <string name="ist_class_intro_swe_topic7">Inovação e Empreendedorismo em Engenharia Informática</string>
 
     <string name="ist_class_calculus2">Cálculo Diferencial e Integral II</string>
-    <string name="ist_class_calculus2_description">Esta Uc providencia os alunos com o domínio do cálculo diferencial e integral de funções de mais de uma variável real, incluindo os teoremas fundamentais do cálculo. Aplicações à Física.</string>
+    <string name="ist_class_calculus2_description">Esta UC providencia os alunos com o domínio do cálculo diferencial e integral de funções de mais de uma variável real, incluindo os teoremas fundamentais do cálculo. Aplicações à Física.</string>
     <string name="ist_class_calculus2_topic1">Estrutura algébrica e topológica de R^n</string>
     <string name="ist_class_calculus2_topic2">Funções de R^n em R^m: limite e continuidade</string>
     <string name="ist_class_calculus2_topic3">Diferenciabilidade. Derivadas parciais. Derivada da função composta.</string>
@@ -2793,7 +2793,7 @@ Os estudantes deverão ainda desenvolver competências em análise e síntese, r
     <string name="ist_class_human_machine_topic1">Perceber os utilizadores e as Tarefas</string>
     <string name="ist_class_human_machine_topic2">Análise de Tarefas e Factores Humanos</string>
     <string name="ist_class_human_machine_topic3">Modelos Mentais e Conceptuais e Prototipagem</string>
-    <string name="ist_class_human_machine_topic4">Avaliação Por Peritos (Aval. Heurística) Preditiva (Modelos de Utilizador) Com Utilizadores </string>
+    <string name="ist_class_human_machine_topic4">Avaliação Por Peritos (Aval. Heurística) Preditiva (Modelos de Utilizador) Com Utilizadores</string>
     <string name="ist_class_human_machine_topic5">Desenho e Construção de Interfaces Visuais</string>
     <string name="ist_class_human_machine_topic6">Dispositivos de Interacção</string>
     <string name="ist_class_human_machine_topic7">Estilos de Interacção</string>
@@ -3829,20 +3829,19 @@ Os estudantes deverão ainda desenvolver competências em análise e síntese, r
     <string name="ist_class_info_recovery_topic12">Avaliação: Métricas de avaliação (precisão, abrangência, MAP, NDCG)</string>
     <string name="ist_class_info_recovery_topic13">Avaliação: Colecções de referência, o TREC e a metodologia de avaliação de Cranfield</string>
     <string name="ist_class_info_recovery_topic14">Avaliação: Validação cruzada e outras considerações práticas</string>
-    <string name="ist_class_info_recovery_topic15">Avaliação: </string>
-    <string name="ist_class_info_recovery_topic16">Modelos de dados semi-estruturados (e.g., baseados em JSON)</string>
-    <string name="ist_class_info_recovery_topic17">A Extensible Markup Language (XML) e tecnologias relacionadas (e.g., XPath)</string>
-    <string name="ist_class_info_recovery_topic18">Linguagens de markup baseadas em XML (e.g., TEI, METS, MODS)</string>
-    <string name="ist_class_info_recovery_topic19">Outros modelos e linguagens de markup (e.g., SGML, HTML e RDF) </string>
-    <string name="ist_class_info_recovery_topic20">Geração de wrappers e extracção de informação a partir de recursos na Web</string>
-    <string name="ist_class_info_recovery_topic21">Consultas a dados semi-estruturados e a linguagem XQuery</string>
-    <string name="ist_class_info_recovery_topic22">Recuperação de informação em colecções de dados XML</string>
-    <string name="ist_class_info_recovery_topic23">Análise de hiperligações e recuperação de informação na Web: Modelos da Web, Conceitos gerais sobre grafos e métodos de análise de hiperligações, Ordenação de resultados em motores de busca na Web, com base na análise de hiperligações, Recolha de dados da Web </string>
-    <string name="ist_class_info_recovery_topic24">Indexação e consulta de informação não estruturada: Expressões regulares, Índices invertidos e construção eficiente de índices, Processamento de consultas com índices invertidos </string>
-    <string name="ist_class_info_recovery_topic25">Pesquisa por itens similares e pesquisa por similaridade em dados multi-dimensionais</string>
-    <string name="ist_class_info_recovery_topic26">Sistemas de recomendação: Contexto, personalização, e filtragem de informação, Sistemas de recomendação com base no conteúdo, Sistemas de filtragem colaborativa </string>
-    <string name="ist_class_info_recovery_topic27">Técnicas de processamento distribuído para IR e IE </string>
-    <string name="ist_class_info_recovery_topic28">Aplicações para as técnicas de IE e IR: Enterprise search e pesquisa de peritos, Bibliotecas digitais, Prospecção de opiniões em conteúdos online, Outras aplicações (e.g., publicidade online)</string>
+    <string name="ist_class_info_recovery_topic15">Modelos de dados semi-estruturados (e.g., baseados em JSON)</string>
+    <string name="ist_class_info_recovery_topic16">A Extensible Markup Language (XML) e tecnologias relacionadas (e.g., XPath)</string>
+    <string name="ist_class_info_recovery_topic17">Linguagens de markup baseadas em XML (e.g., TEI, METS, MODS)</string>
+    <string name="ist_class_info_recovery_topic18">Outros modelos e linguagens de markup (e.g., SGML, HTML e RDF) </string>
+    <string name="ist_class_info_recovery_topic19">Geração de wrappers e extracção de informação a partir de recursos na Web</string>
+    <string name="ist_class_info_recovery_topic20">Consultas a dados semi-estruturados e a linguagem XQuery</string>
+    <string name="ist_class_info_recovery_topic21">Recuperação de informação em colecções de dados XML</string>
+    <string name="ist_class_info_recovery_topic22">Análise de hiperligações e recuperação de informação na Web: Modelos da Web, Conceitos gerais sobre grafos e métodos de análise de hiperligações, Ordenação de resultados em motores de busca na Web, com base na análise de hiperligações, Recolha de dados da Web </string>
+    <string name="ist_class_info_recovery_topic23">Indexação e consulta de informação não estruturada: Expressões regulares, Índices invertidos e construção eficiente de índices, Processamento de consultas com índices invertidos </string>
+    <string name="ist_class_info_recovery_topic24">Pesquisa por itens similares e pesquisa por similaridade em dados multi-dimensionais</string>
+    <string name="ist_class_info_recovery_topic25">Sistemas de recomendação: Contexto, personalização, e filtragem de informação, Sistemas de recomendação com base no conteúdo, Sistemas de filtragem colaborativa </string>
+    <string name="ist_class_info_recovery_topic26">Técnicas de processamento distribuído para IR e IE </string>
+    <string name="ist_class_info_recovery_topic27">Aplicações para as técnicas de IE e IR: Enterprise search e pesquisa de peritos, Bibliotecas digitais, Prospecção de opiniões em conteúdos online, Outras aplicações (e.g., publicidade online)</string>
 
     <string name="ist_class_forensics_cibersec">Ciber Segurança Forense</string>
     <string name="ist_class_forensics_cibersec_description">O objectivo do curso é o estudo das técnicas e metodologias forenses
@@ -4293,7 +4292,7 @@ Os estudantes deverão ainda desenvolver competências em análise e síntese, r
         do mundo do trabalho, através da prática de actividades extra-curriculares.</string>
     <string name="ist_class_personal_portfolio1_topic1">Produção de um Relatório de Actividades e de um Relatório Individual de Aprendizagens</string>
 
-    <string name="ist_class_personal_portfolio2">Portfolio Pessoal 1</string>
+    <string name="ist_class_personal_portfolio2">Portfolio Pessoal 2</string>
     <string name="ist_class_personal_portfolio2_description">Desenvolver nos estudantes competências comportamentais de trabalho em equipa,
         de capacidade de expressão oral e escrita, de línguas e experiências internacionais e de experiência da realidade das empresas e
         do mundo do trabalho, através da prática de actividades extra-curriculares.</string>
