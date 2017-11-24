@@ -8609,11 +8609,11 @@
             </combinator>
             <combinator>
                 <year>4</year>
-                <class>pt.cmg.sweranker.ranking.combinationstrategies.AllMandatoryAndThreeOptionals</class>
+                <class>pt.cmg.sweranker.ranking.combinationstrategies.AllPathMandatoryAndThreeOptionalFirstSemester</class>
             </combinator>
             <combinator>
                 <year>5</year>
-                <class>pt.cmg.sweranker.ranking.combinationstrategies.AllMandatoryAndFourOptionals</class>
+                <class>pt.cmg.sweranker.ranking.combinationstrategies.AllClasses</class>
             </combinator>
         </yearly_combinators>
         <university>@string/ist</university>
@@ -10698,7 +10698,7 @@
                 <name>@string/ist_class_sw_test_validation</name>
                 <description>@string/ist_class_sw_test_validation_description</description>
                 <year>4</year>
-                <semester>1</semester>
+                <semester>2</semester>
                 <ects>7.5</ects>
                 <optional>true</optional>
                 <paths>

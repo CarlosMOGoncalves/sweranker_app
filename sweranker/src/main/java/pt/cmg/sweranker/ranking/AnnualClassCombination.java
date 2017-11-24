@@ -1,6 +1,6 @@
 package pt.cmg.sweranker.ranking;
 
-import java.util.List;
+import java.util.Collection;
 
 import io.realm.RealmList;
 import io.realm.RealmObject;
@@ -65,7 +65,7 @@ public class AnnualClassCombination extends RealmObject {
         this.degreeClassIds.addAll(degreeClassIds);
     }
 
-    public void addDegreeClasses(List<String> degreeClassIds) {
+    public void addDegreeClasses(Collection<String> degreeClassIds) {
         RealmList<DegreeClassId> classIds = new RealmList<>();
 
         for (String id : degreeClassIds) {
