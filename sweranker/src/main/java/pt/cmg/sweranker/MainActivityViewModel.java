@@ -417,6 +417,12 @@ public class MainActivityViewModel extends ViewModel {
     }
 
 
+    /**
+     * Saves a Degree Class Match into the system.
+     *
+     * @param newMatchToSave the match that will be saved
+     * @return true if it was successfully saved, false otherwise.
+     */
     public boolean saveMatch(DegreeClassMatch newMatchToSave) {
         return _matchesRepository.saveMatch(newMatchToSave);
     }
@@ -424,6 +430,17 @@ public class MainActivityViewModel extends ViewModel {
     public DegreeClassMatch getDegreeClassMatch(String degreeClassId) {
         return _matchesRepository.getDegreeClassMatch(degreeClassId);
     }
+
+    /**
+     * Admin utility to save all the current matches for a degree into a single xml file.
+     * It is useful to build new configurations.
+     *
+     * @param degreeId the degree id of the matches to save
+     */
+    public boolean flushMatchesToFile(int degreeId) {
+        return _matchesRepository.saveMatchesToSingleFile(degreeId);
+    }
+
 
     public SweScore getDegreeScore(String degreeCombinationId) {
         _scoresRepository.open();

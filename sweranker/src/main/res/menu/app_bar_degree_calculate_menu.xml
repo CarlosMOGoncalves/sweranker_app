@@ -8,5 +8,11 @@
         android:title="@string/action_calculate"
         android:orderInCategory="1"
         app:showAsAction="always" />
+    <item
+        android:id="@+id/action_save_to_file"
+        android:icon="@drawable/floppy"
+        android:title="@string/action_calculate"
+        android:orderInCategory="2"
+        app:showAsAction="always" />
 
 </menu>

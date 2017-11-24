@@ -21,6 +21,17 @@ public interface DegreeMatchesRepository {
     boolean saveMatch(DegreeClassMatch classMatch);
 
     /**
+     * Saves or overwrites all the Degree Class Match for a single degree into the system as a file.
+     * This is useful only in the admin version of the app since with this it is possible to flush all
+     * the changes made to system matches into a single file which will then fill the resources with
+     * new matches.
+     *
+     * @param degreeId The Degree id to save from
+     * @return true if successfully saved, false otherwise
+     */
+    boolean saveMatchesToSingleFile(int degreeId);
+
+    /**
      * Returns true if there is a match in this repository for the given Degree Class Id
      *
      * @param degreeClassId the Degree Class Id that will be tested

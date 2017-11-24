@@ -22,6 +22,7 @@ import android.view.Window;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import pt.cmg.sweranker.MainActivity;
 import pt.cmg.sweranker.MainActivityViewModel;
@@ -130,6 +131,14 @@ public class DegreeDetailsFragment extends Fragment implements LifecycleRegistry
         switch (id) {
             case R.id.action_calculate:
                 createAndShowFilterDialog();
+                return true;
+            case R.id.action_save_to_file:
+                // TODO: what if there are no matches to save?
+                if (_sharedViewModel.flushMatchesToFile(_degreeId)) {
+                    Toast.makeText(this.getActivity(), "File successfully saved", Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(this.getActivity(), "Error saving file", Toast.LENGTH_SHORT).show();
+                }
                 return true;
             default:
                 return super.onOptionsItemSelected(item);

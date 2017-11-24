@@ -16,6 +16,7 @@
     <string name="action_close">Fechar</string>
     <string name="action_apply">Aceitar</string>
     <string name="action_calculate">Calcular</string>
+    <string name="action_save_to_file">Guardar</string>
 
     <string name="proceed">Avançar!</string>
     <string name="cancel">Cancelar</string>

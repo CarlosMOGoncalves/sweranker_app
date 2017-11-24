@@ -226,6 +226,12 @@ public class ResourcesDegreeMatchesRepository implements DegreeMatchesRepository
     }
 
     @Override
+    public boolean saveMatchesToSingleFile(int degreeId) {
+        // This operation is unsupported in the client variant, probably not the most beautiful solution here...
+        return false;
+    }
+
+    @Override
     public boolean hasMatch(String degreeClassId) {
         // true if it's not null and has a match
         return _systemMatches.getValue() != null && _systemMatches.getValue().containsKey(degreeClassId);

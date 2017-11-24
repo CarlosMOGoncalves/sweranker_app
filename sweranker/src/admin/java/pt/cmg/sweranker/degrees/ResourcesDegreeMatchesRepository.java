@@ -34,7 +34,15 @@ public class ResourcesDegreeMatchesRepository implements DegreeMatchesRepository
     private static final String STANDARD_DIRECTORY = "custom_matches";
 
     private Context _context;
+
+    /**
+     * Keys -> Degree Class IDs : Values -> its DegreeClassMatch
+     */
     private MutableLiveData<Map<String, DegreeClassMatch>> _systemMatches;
+
+    /**
+     * Keys -> Degree Class IDs : Values -> its DegreeClassMatch
+     */
     private MutableLiveData<Map<String, DegreeClassMatch>> _customMatches;
 
     @Inject
@@ -446,7 +454,6 @@ public class ResourcesDegreeMatchesRepository implements DegreeMatchesRepository
         return isSaved;
     }
 
-
     /**
      * Saves a Degree Match to a single file in this app data reserved space.
      * This is a feature used ONLY IN ADMIN variant.
@@ -516,6 +523,111 @@ public class ResourcesDegreeMatchesRepository implements DegreeMatchesRepository
             Log.e("SweRanker-Matches", e.getLocalizedMessage());
             return false;
         }
+    }
+
+    @Override
+    public boolean saveMatchesToSingleFile(int degreeId) {
+
+        Map<String, DegreeClassMatch> matchesToSave = getMatchesOfDegree(degreeId);
+
+        final String xmlFileName = degreeId + "_all_" + "matches.xml";
+
+        File directory = _context.getDir(STANDARD_DIRECTORY, Context.MODE_PRIVATE);
+
+        File targetFile = new File(directory, xmlFileName);
+
+        // FileOutputStream guarantees the overwrite of the file, neat.
+        try (FileOutputStream outputStream = new FileOutputStream(targetFile)) {
+
+            XmlSerializer xmlSerializer = Xml.newSerializer();
+
+            StringWriter writer = new StringWriter();
+            xmlSerializer.setOutput(writer);
+            xmlSerializer.startDocument("UTF-8", true);
+
+            xmlSerializer.startTag(null, "all_matches");
+
+            // Here it will save each and every entry on the custom matches variable
+            for (Map.Entry<String, DegreeClassMatch> singleMatch : matchesToSave.entrySet()) {
+
+                xmlSerializer.startTag(null, "match");
+                xmlSerializer.startTag(null, "degree_class_id");
+                xmlSerializer.text(singleMatch.getKey());
+                xmlSerializer.endTag(null, "degree_class_id");
+
+                xmlSerializer.startTag(null, "degree_id");
+                xmlSerializer.text(String.valueOf(singleMatch.getValue().getDegreeId()));
+                xmlSerializer.endTag(null, "degree_id");
+
+                xmlSerializer.startTag(null, "topic_matches");
+                for (Map.Entry<String, LinkedList<Integer>> entry : singleMatch.getValue().getAllMatches().entrySet()) {
+                    xmlSerializer.startTag(null, "topic_match");
+
+                    xmlSerializer.startTag(null, "class_topic_id");
+                    xmlSerializer.text(entry.getKey());
+                    xmlSerializer.endTag(null, "class_topic_id");
+
+                    xmlSerializer.startTag(null, "ka_topics");
+                    for (Integer kaTopicId : entry.getValue()) {
+                        xmlSerializer.startTag(null, "id");
+                        xmlSerializer.text(kaTopicId.toString());
+                        xmlSerializer.endTag(null, "id");
+                    }
+                    xmlSerializer.endTag(null, "ka_topics");
+
+                    xmlSerializer.endTag(null, "topic_match");
+                }
+
+                xmlSerializer.endTag(null, "topic_matches");
+
+                xmlSerializer.endTag(null, "match");
+            }
+
+            xmlSerializer.endTag(null, "all_matches");
+            xmlSerializer.endDocument();
+
+            outputStream.write(writer.toString().getBytes());
+            return true;
+        } catch (Exception e) {
+            Log.e("SweRanker-Matches", e.getLocalizedMessage());
+            return false;
+        }
+    }
+
+
+    /**
+     * Returns a Map with all the matches found for this degree.
+     * As an important nuance this will overwrite all the system default matches
+     * IF there is one custom match.
+     * <p>
+     * This is relevant because it will serve the file saving function with the most up-to-date
+     * matches.
+     *
+     * @param degreeId the degree id that the matches belong to
+     * @return a Map where the keys are the Degree Class Ids and the values are the matching Matches (yeah, pun)
+     */
+    private Map<String, DegreeClassMatch> getMatchesOfDegree(int degreeId) {
+
+        Map<String, DegreeClassMatch> matchesFound = new HashMap<>();
+
+        if (_systemMatches.getValue() != null) {
+            for (DegreeClassMatch degreeMatch : _systemMatches.getValue().values()) {
+                if (degreeMatch.getDegreeId() == degreeId) {
+                    matchesFound.put(degreeMatch.getDegreeClassId(), degreeMatch);
+                }
+            }
+        }
+
+        // Custom Matches have precedence, so I will overwrite it
+        if (_customMatches.getValue() != null) {
+            for (DegreeClassMatch degreeMatch : _customMatches.getValue().values()) {
+                if (degreeMatch.getDegreeId() == degreeId) {
+                    matchesFound.put(degreeMatch.getDegreeClassId(), degreeMatch);
+                }
+            }
+        }
+
+        return matchesFound;
     }
 
 }

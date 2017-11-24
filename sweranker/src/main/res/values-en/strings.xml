@@ -45,6 +45,7 @@
     <string name="action_mode_title">Compare to...</string>
     <string name="action_mode_title_complete">Compare</string>
     <string name="action_calculate">Calculate</string>
+    <string name="action_save_to_file">Save</string>
 
     <string name="warning">Warning!</string>
     <string name="proceed">Do it!</string>
