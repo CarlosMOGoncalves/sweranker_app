@@ -18,6 +18,40 @@ import pt.cmg.sweranker.ranking.AnnualClassCombination;
 
 /**
  * Created by Carlos on 24/11/2017.
+ * <p>
+ * This is a class combination strategy that was custom-developed to calculate the combinations for the
+ * 4th year of IST - Lisboa degree.
+ * <p>
+ * The logic behind it makes it a somewhat complicated calculation.
+ * However, it results in a thankfully low number of class combinations because most degree classes are
+ * combined into a package of classes (a path).
+ * <p>
+ * This is how it works: <br/>
+ * 1 - Gets the different number of paths in the year <br/>
+ * 2 - Gets a data view of the classes that are mandatory for each path <br/>
+ * 3 - Gets a special view of all the classes of the first semester, this will be needed to calculate
+ * classes that should only be used in the 5th year but have to be part of the 4th year package. <br/>
+ * 4 - It then will mix and match the mandatory classes for each path with the optional ones, always making
+ * sure that NO classes are repeated (that is why SETs were used) <br/>
+ * 5 - That will result in a List of different annual combinations unique for each path. <br/>
+ * <p>
+ * Important notes: <br/>
+ * a) This is a complicated degree organisation. The main idea is that a student can choose any number of
+ * classes from a roster of 60 possible classes (until a ECTS credit limit, of course). Then, depending on
+ * the classes that he chose, the student could be awarded a specialisation on his diploma. This happens
+ * if he chooses more than 4 classes of a single path. However, this approach is ruinous for a calculation,
+ * because choosing 8 classes from a roster of 60 amounts to roughly 2 billion possible combination(!!!) <br/>
+ * b) Alternatively, the student can choose any two paths (paths are really just a SET of already combined classes)
+ * which is way easier, because now we are looking at a max of 105 combinations C(15,2). <br/>
+ * c) However, in the 5th year there is also a need to choose an additional 3 classes out of the same roster
+ * used here (the ones of the 4th year). These are all of the 1st Semester and of course, cannot have been taken yet.
+ * To tackle this problem I decided to just go ahead and calculate them all in the 4th year (because it is the only
+ * place where I have runtime access to all the classes already chosen, during the combination calculation).
+ * The good part is that the combinations are ACCURATE. The worst part is that the classes chosen that belong to
+ * the 5th year are shown in the 4th year. I guess the ends justify the means.
+ * Also, due to the strategy used to calculate the paths the number of possible combinations also benefits
+ * from that choice. Choosing TWO paths and 3 classes from the remaining optional ones amount to 105 x 2600
+ * which is roughly 250000 in total, way better than randomly choosing classes, which would go to the billions.
  */
 
 public class AllPathMandatoryAndThreeOptionalFirstSemester implements ClassCombinationStrategy {
