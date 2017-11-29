@@ -16,16 +16,24 @@ import pt.cmg.sweranker.ranking.AnnualClassCombination;
  */
 public class AllMandatoryAndThreeOptionals implements ClassCombinationStrategy {
 
+    private static String combinationIdBase;
+    private static int idCounter;
+    private static int currentYear;
+
 
     @Override
-    public List<AnnualClassCombination> getAnnualClassCombinations(int year, List<DegreeClass> degreeClassesOfYear) {
+    public List<AnnualClassCombination> getAnnualClassCombinations(int year, List<DegreeClass> allDegreeClasses) {
 
-        String combinationIdBase = "d_" + degreeClassesOfYear.get(0).getDegreeId() + "_y_" + degreeClassesOfYear.get(0).getYear() + "_c_";
+        currentYear = year;
+        combinationIdBase = "d_" + allDegreeClasses.get(0).getDegreeId() + "_y_" + year + "_c_";
+        idCounter = 1;
+
+        List<DegreeClass> classesOfYear = getDegreeClassesOfYear(allDegreeClasses);
 
         List<String> mandatoryClasses = new ArrayList<>();
         List<String> optionalClasses = new ArrayList<>();
 
-        for (DegreeClass degreeClass : degreeClassesOfYear) {
+        for (DegreeClass degreeClass : classesOfYear) {
             if (degreeClass.isMandatoryClass()) {
                 mandatoryClasses.add(degreeClass.getId());
             } else {
@@ -41,8 +49,6 @@ public class AllMandatoryAndThreeOptionals implements ClassCombinationStrategy {
 
         List<AnnualClassCombination> resultingCombinations = new ArrayList<>();
 
-
-        int idCounter = 1;
 
         // Now iterate over all the possible combinations, add them the mandatory classes and add them to the final object.
         for (ICombinatoricsVector<String> comboVector : optionalCombinations.generateAllObjects()) {
@@ -61,5 +67,20 @@ public class AllMandatoryAndThreeOptionals implements ClassCombinationStrategy {
 
 
         return resultingCombinations;
+    }
+
+
+    /**
+     * This function pretty much just returns a list with all the Degree Classes for THE CURRENT YEAR
+     * we are trying to get the combinations for.
+     */
+    private List<DegreeClass> getDegreeClassesOfYear(List<DegreeClass> allDegreeClasses) {
+        List<DegreeClass> classesOfYear = new ArrayList<>();
+        for (DegreeClass degreeClass : allDegreeClasses) {
+            if (degreeClass.getYear() == currentYear) {
+                classesOfYear.add(degreeClass);
+            }
+        }
+        return classesOfYear;
     }
 }

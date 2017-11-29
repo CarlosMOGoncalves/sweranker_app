@@ -41,7 +41,7 @@ import pt.cmg.sweranker.ranking.AnnualClassCombination;
  * 6 - The number of optional classes tha can be added to the mandatory ones is TWO!
  * </p>
  */
-public class AllPathMandatoryAndTwoOptional implements ClassCombinationStrategy {
+public class AllPathMandatoryAndTwoOptionals implements ClassCombinationStrategy {
 
 
     private static String combinationIdBase;

@@ -11,10 +11,11 @@ import pt.cmg.sweranker.degrees.DegreeClass;
 import pt.cmg.sweranker.ranking.AnnualClassCombination;
 
 /**
- * This strategy creates the combinations of classes obtained by combining all the optional classes, 4 at the time
+ * This strategy creates the combinations of classes obtained by combining all the optional classes, 3 at the time
  * and adding them the mandatory ones.
  */
-public class AllMandatoryAndFourOptionals implements ClassCombinationStrategy {
+public class AllMandatoryAndTwoOptionals implements ClassCombinationStrategy {
+
 
     private static String combinationIdBase;
     private static int idCounter;
@@ -28,6 +29,7 @@ public class AllMandatoryAndFourOptionals implements ClassCombinationStrategy {
         idCounter = 1;
 
         List<DegreeClass> classesOfYear = getDegreeClassesOfYear(allDegreeClasses);
+
 
         List<String> mandatoryClasses = new ArrayList<>();
         List<String> optionalClasses = new ArrayList<>();
@@ -43,7 +45,7 @@ public class AllMandatoryAndFourOptionals implements ClassCombinationStrategy {
         ICombinatoricsVector<String> optionalVector = Factory.createVector(optionalClasses.toArray(new String[optionalClasses.size()]));
 
         // creates the generator that can calculate the needed combinations.
-        Generator<String> optionalCombinations = Factory.createSimpleCombinationGenerator(optionalVector, 4);
+        Generator<String> optionalCombinations = Factory.createSimpleCombinationGenerator(optionalVector, 2);
 
 
         List<AnnualClassCombination> resultingCombinations = new ArrayList<>();

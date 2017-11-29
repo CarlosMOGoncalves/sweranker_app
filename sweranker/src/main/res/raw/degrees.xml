@@ -4709,7 +4709,7 @@
             </combinator>
             <combinator>
                 <year>4</year>
-                <class>pt.cmg.sweranker.ranking.combinationstrategies.AllPathMandatoryAndTwoOptional</class>
+                <class>pt.cmg.sweranker.ranking.combinationstrategies.AllPathMandatoryAndTwoOptionals</class>
             </combinator>
             <combinator>
                 <year>5</year>
@@ -14655,7 +14655,7 @@
             </combinator>
             <combinator>
                 <year>3</year>
-                <class>pt.cmg.sweranker.ranking.combinationstrategies.AllClasses</class>
+                <class>pt.cmg.sweranker.ranking.combinationstrategies.AllMandatoryAndOneOptionalPerSemester</class>
             </combinator>
             <combinator>
                 <year>4</year>
@@ -14663,7 +14663,7 @@
             </combinator>
             <combinator>
                 <year>5</year>
-                <class>pt.cmg.sweranker.ranking.combinationstrategies.AllMandatoryAndFourOptionals</class>
+                <class>pt.cmg.sweranker.ranking.combinationstrategies.AllMandatoryAndTwoOptionals</class>
             </combinator>
         </yearly_combinators>
         <university>@string/uav</university>
@@ -16139,40 +16139,6 @@
                 </program>
             </class>
             <class>
-                <id>uav_mei_c27</id>
-                <name>@string/uav_class_entrepreneurship</name>
-                <description>@string/uav_class_entrepreneurship_description</description>
-                <year>3</year>
-                <semester>2</semester>
-                <ects>6</ects>
-                <optional>true</optional>
-                <paths></paths>
-                <mandatoryPaths></mandatoryPaths>
-                <exclusivePath></exclusivePath>
-                <program>
-                    <topic>
-                        <id>c252t1</id>
-                        <description>@string/uav_class_entrepreneurship_topic1</description>
-                    </topic>
-                    <topic>
-                        <id>c252t2</id>
-                        <description>@string/uav_class_entrepreneurship_topic2</description>
-                    </topic>
-                    <topic>
-                        <id>c252t3</id>
-                        <description>@string/uav_class_entrepreneurship_topic3</description>
-                    </topic>
-                    <topic>
-                        <id>c252t4</id>
-                        <description>@string/uav_class_entrepreneurship_topic4</description>
-                    </topic>
-                    <topic>
-                        <id>c252t5</id>
-                        <description>@string/uav_class_entrepreneurship_topic5</description>
-                    </topic>
-                </program>
-            </class>
-            <class>
                 <id>uav_mei_c28</id>
                 <name>@string/uav_class_operational_investigation</name>
                 <description>@string/uav_class_operational_investigation_description</description>
@@ -17455,6 +17421,40 @@
                     <topic>
                         <id>c275t6</id>
                         <description>@string/uav_class_visual_computing_topic6</description>
+                    </topic>
+                </program>
+            </class>
+            <class>
+                <id>uav_mei_c27</id>
+                <name>@string/uav_class_entrepreneurship</name>
+                <description>@string/uav_class_entrepreneurship_description</description>
+                <year>5</year>
+                <semester>2</semester>
+                <ects>6</ects>
+                <optional>true</optional>
+                <paths></paths>
+                <mandatoryPaths></mandatoryPaths>
+                <exclusivePath></exclusivePath>
+                <program>
+                    <topic>
+                        <id>c252t1</id>
+                        <description>@string/uav_class_entrepreneurship_topic1</description>
+                    </topic>
+                    <topic>
+                        <id>c252t2</id>
+                        <description>@string/uav_class_entrepreneurship_topic2</description>
+                    </topic>
+                    <topic>
+                        <id>c252t3</id>
+                        <description>@string/uav_class_entrepreneurship_topic3</description>
+                    </topic>
+                    <topic>
+                        <id>c252t4</id>
+                        <description>@string/uav_class_entrepreneurship_topic4</description>
+                    </topic>
+                    <topic>
+                        <id>c252t5</id>
+                        <description>@string/uav_class_entrepreneurship_topic5</description>
                     </topic>
                 </program>
             </class>
