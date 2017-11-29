@@ -104,7 +104,7 @@
     <string name="ka2_topic2_name">Problemas-chave no Desenho de Software</string>
     <string name="ka2_topic2_description">Sobre os problemas típicos no desenho de software como concorrência: controlo de eventos;\n\npersistência de dados;\n\ndistribuição de componentes e comunicação entre si;\n\ntratamento de erros e tolerância a falhas;\n\ninteracção e apresentação;\n\nsegurança.</string>
     <string name="ka2_topic3_name">Estrutura e Arquitectura de Software</string>
-    <string name="ka2_topic3_description">Sobre os modos de organizar o software a vários níveis de abstracção desde a macro-arquitectura até ao desenho detalhado do código;\n\nos diferentes estilos de arquitectura tais como construção por camadas, sistemas distribuídos (Cliente-Servidor, Three-Tiers, Broker), sistemas interactivos (Model-View-Controller, Presentation-Abstraction-Control), sistemas adaptáveis (microkernel ou reflexão) e outros;\n\nDesign Patterns (como “builder”, “factory”, “adapter”; “bridge”, “iterator”, “strategy”, etc.);\n\n o cariz decisório do processo de design;\n\n familías de programas e “frameworks” de software.</string>
+    <string name="ka2_topic3_description">Sobre os modos de organizar o software a vários níveis de abstracção desde a macro-arquitectura até ao desenho detalhado do código;\n\nos diferentes estilos de arquitectura tais como construção por camadas, sistemas distribuídos (Cliente-Servidor, Three-Tiers, Broker), sistemas interactivos (Model-View-Controller, Presentation-Abstraction-Control), sistemas adaptáveis (microkernel ou reflexão) e outros;\n\nDesign Patterns (como “builder”, “factory”, “adapter”; “bridge”, “iterator”, “strategy”, etc.);\n\no cariz decisório do processo de design;\n\nfamilías de programas e “frameworks” de software.</string>
     <string name="ka2_topic4_name">Desenho de Interface com o Utilizador</string>
     <string name="ka2_topic4_description">Sobre a eficaz comunicação com o utilizador do software;\n\nprincípios base de UI (facilidade de aprendizagem, familiaridade, consistência, surpresa mínima, diversidade de utilização, etc.);\n\nlidar com problemas comuns (interacção com utilizador e  apresentação de informação);\n\nas modalidades típicas de interacção (pergunta-resposta, manipulação directa, selecção em menus, formulários, linguagens de comandos, linguagem natural);\n\ncomo apresentar a informação (número de cores, mudanças de cores, “colour-coding”, visualização para pessoas com necessidades especiais);\n\no processo de design de UI (análise de utilização, prototipagem de software, avaliação da interface com o utilizador desenvolvida);\n\nadaptar a UI para localização e internacionalização;\n\nmetáforas e modelos conceptuais (tal como utilização de ícones reconhecidos universalmente para diversas acções comuns, tal como usar uma roldana para representar as definições).</string>
     <string name="ka2_topic5_name">Análise de Qualidade e Avaliação</string>
@@ -134,7 +134,7 @@
     <string name="ka4_topic1_name">Fundamentos do Teste de Software</string>
     <string name="ka4_topic1_description">Sobre os conceitos fundamentais de teste;\n\ndistinção entre falta, falha, erro e defeito;\n\nescolha de casos de teste;\n\neficácia e objectivos do teste;\n\nteste para descoberta de defeitos;\n\nlimites teóricos e práticos dos testes;\n\ncenários de teste impraticávies e o relacionamento do teste com as outras actividades do ciclo de vida do software.</string>
     <string name="ka4_topic2_name">Níveis de Teste</string>
-    <string name="ka4_topic2_description">Sobre os diferentes níveis a que um software pode ser testado;\n\nquanto ao alvo do teste (testes unitários vs testes de integração vs testes do sistema);\n\nquanto ao objectivo do teste (testes de aceitação,  testes de instalação, testes alfa e beta;\n\n testes de confiabilidade, testes de regressão, testes de performance, testes de segurança, testes de stress, testes back-to-back, testes de recuperação, testes de interface, testes de configuração e testes de usabilidade).</string>
+    <string name="ka4_topic2_description">Sobre os diferentes níveis a que um software pode ser testado;\n\nquanto ao alvo do teste (testes unitários vs testes de integração vs testes do sistema);\n\nquanto ao objectivo do teste (testes de aceitação,  testes de instalação, testes alfa e beta;\n\ntestes de confiabilidade, testes de regressão, testes de performance, testes de segurança, testes de stress, testes back-to-back, testes de recuperação, testes de interface, testes de configuração e testes de usabilidade).</string>
     <string name="ka4_topic3_name">Técnicas de Teste</string>
     <string name="ka4_topic3_description">Sobre as diferentes técnicas usadas para encontrar o maior número de falhas possíveis;\n\ntécnicas baseadas na Intuição do Engenheiro (ad hoc e testes exploratórios);\n\ntécnicas baseadas no domínio do input (particionamento equivalente, teste combinatório, teste de valores-limite, testes aleatórios);\n\ntécnicas baseadas em código (testes baseados nos fluxos de controlo do código, testes do fluxo de dados);\n\ntécnicas baseadas nas falhas (error guessing, testes de mutação);\n\ntécnicas baseadas no uso (teste ao típico perfil operacional, heurísticas de observação do utilizador);\n\ntécnicas basedas em modelos (tabelas de decisão, máquinas de estado;\n\nespecificações formais, modelos de workflow);\n\ntécnicas baseadas na natureza da aplicação (aplicação web vs aplicação mobile, etc.);\n\ncombinação das técnicas descritas.</string>
     <string name="ka4_topic4_name">Métricas Relacionadas com o Teste</string>
@@ -153,7 +153,7 @@
     <string name="ka5_topic3_name">Processo de Manutenção</string>
     <string name="ka5_topic3_description">Sobre um ciclo de vida de uma fase de manutenção (analisar problemas, implementar as modificações, aprovar, descontinuar o produto, migrar, etc.);\n\nas actividades exclusivas de um engenheiro responsável pela manutenção (análise do estado do software, tarefas de suporte, planeamento da manutenção em termos de prazos e âmbito da manutenção, gestão da configuração do software em manutenção, garantir a qualidade do software em manutenção).</string>
     <string name="ka5_topic4_name">Técnicas de Manutenção</string>
-    <string name="ka5_topic4_description">Sobre as técnicas utilizadas para manter e/ou actualizar um software com sucesso;\n\ncompreensão do código do software;\n\ntécnicas de alteração sistemática do software (como refactoring);\n\ntécnicas de engenheria reversa de um software;\n\ntécnicas de migração de software;\n\ntécnicas e políticas de descontinuação de software.</string>
+    <string name="ka5_topic4_description">Sobre as técnicas utilizadas para manter e/ou actualizar um software com sucesso;\n\ncompreensão do código do software;\n\ntécnicas de alteração sistemática do software (como refactoring);\n\ntécnicas de engenharia reversa de um software;\n\ntécnicas de migração de software;\n\ntécnicas e políticas de descontinuação de software.</string>
     <string name="ka5_topic5_name">Ferramentas de Manutenção de Software</string>
     <string name="ka5_topic5_description">Sobre as ferramentas que auxiliam à manutenção de software, tais como ferramentas de corte (slicing) de software (que isolam as partes a modificar), analisadores estáticos e dinâmicos de código;\n\nanalisadores de fluxos de dados e de dependências e ainda ferramentas de auxílio à engenharia reversa.</string>
 
@@ -201,7 +201,7 @@
     <string name="ka8_topic3_description">Sobre o acompanhamento do desempenho dos processos e a sua potencial alteração de modo a melhor responderem às necessidades específicas do projecto ou organização;\n\nos diferentes modelos e métodos (qualitativos que são sujeitos ao julgamento especializado ou quantitativos que são realizados com base em métricas);\n\nmodelos de melhoria iterativa de processos (como por exemplo o Plan-Do-Check-Act);\n\nsistemas de avaliação e pontuação de processos.</string>
     <string name="ka8_topic4_name">Medidas para Processos de Software</string>
     <string name="ka8_topic4_description">Sobre as diferentes medidas e técnicas de medição usadas para os processos de software;\n\nmedidas de determinação da eficiência de um processo (como medidas de esforço, horas-homem, dias-homem, custos monetários do processo ou fase de processo) ou do produto em si;\n\na qualidade das medidas a usar para processos e produtos;\n\nrecurso a software com modelos de análise de processos que permitem testar vários parâmetros dos processos usados e determinar possíveis pontos de melhoria;\n\ntécnicas de medição de processos quantitativas (medição directa de número de defeitos, horas-homem, entre outras e respectiva análise por métodos estatísticos) e técnicas qualitativas (como questionários ou entrevistas).</string>
-    <string name="ka8_topic5_name">Ferramentas de Processos de Engenheria de Software</string>
+    <string name="ka8_topic5_name">Ferramentas de Processos de Engenharia de Software</string>
     <string name="ka8_topic5_description">Sobre todo o tipo de ferramentas relacionadas com os processos de software, com por exemplo diagramas de BPMN, folhas de cálculo, diagramas de UML ou até software de gestão de projectos.</string>
 
     <string name="ka_software_models_methods">Modelos e Métodos de Engenharia de Software</string>
@@ -242,7 +242,7 @@
     <string name="ka12_topic2_name">Economia de Ciclos de Vida</string>
     <string name="ka12_topic2_description">Sobre os conceitos económicos aplicados à actividade do software ao longo do seu ciclo de vida;\n\nconceitos de produto, projecto, programa, portefolio, ciclo de vida de um produto, ciclo de vida de um projecto, propostas e tipos de propostas;\n\ndecisões de investimento;\n\nhorizonte de planeamento (sobre os custos económicos relacionados com investimentos num determinado prazo, como o tempo de vida de um produto de sotware e o seu impacto económico numa empresa);\n\nconceito de preço e estabelecimento de políticas de preços;\n\nconceito de custo e gestão de custos;\n\nmedição de performance económica;\n\ngestão do valor ganho (técnica económica que permite um controlo eficaz de custos comparando o valor já criado com o orçamento projectado e com o custo calendarizado até esse momento);\n\ndecisões de terminação de um produto baseadas em economia;\n\ndecisões de troca (troca de um software antiquado por um novo em vez de o manter) ou descontinuação (de um produto ou de actividade como um todo).</string>
     <string name="ka12_topic3_name">Risco e Incerteza</string>
-    <string name="ka12_topic3_description">Sobre os conceitos de objectivo económico, estimativas e planeamento;\n\ntécnicas de estimação (como analogias, estimação por partes, métodos estatísticos, etc.);\n\n reagir a incerteza (como ulilizar estimativas de diversos âmbitos, adiar decisões finais, etc.);\n\n técnicas de prioritização;\n\n técnicas de tomada decisões sob risco (como árvores de decisão, análise de Monte Carlo, etc.);\n\n técnicas de tomada de decisões sob incerteza (como Regra de Laplace, Regra de Hurwicz, etc.).</string>
+    <string name="ka12_topic3_description">Sobre os conceitos de objectivo económico, estimativas e planeamento;\n\ntécnicas de estimação (como analogias, estimação por partes, métodos estatísticos, etc.);\n\nreagir a incerteza (como ulilizar estimativas de diversos âmbitos, adiar decisões finais, etc.);\n\ntécnicas de prioritização;\n\ntécnicas de tomada decisões sob risco (como árvores de decisão, análise de Monte Carlo, etc.);\n\ntécnicas de tomada de decisões sob incerteza (como Regra de Laplace, Regra de Hurwicz, etc.).</string>
     <string name="ka12_topic4_name">Metodos de Análise Económica</string>
     <string name="ka12_topic4_description">Sobre os diferentes métodos de análise ecónomica aplicáveis dependendo do tipo de organização, finalidade ou objectivos do software: análise de decisão de organizações com fins lucrativos;\n\nmínimo rácio de retorno aceitável (critério de escolha de investimentos baseado num retorno percentual mínimo);\n\nretorno de investimento (rácio entre o valor ganho relativamente ao investido);\n\nretorno do capital aplicado;\n\nanálise custo-benefício;\n\nanálise custo-efectividade;\n\nanálise de break-even (igualdade entre custos e rendimentos);\n\ncaso de negócio (apresentação estruturada e consolidada sobre uma proposta de negócio a partir de diferentes perpectivas de decisão como custos, benefícios, risco, etc.);\n\navaliação a multiplos atributos (a nível de outras propriedades que não simplesmente dinheiro);\n\nanálise de optimização.</string>
     <string name="ka12_topic5_name">Considerações Práticas</string>
@@ -273,7 +273,7 @@
     <string name="ka13_topic11_name">Bases de Sistemas Operativos</string>
     <string name="ka13_topic11_description">Sobre os conceitos de um sistemas operativo;\n\nas tarefas de um sistemas operativo;\n\nos diferentes tipos de sistemas operativos (batch, sistemas em time-sharing, sistemas em tempo real, sistemas operativos distribuídos, sistemas embebidos, sistema operativo de servidor, sistema operativo móvel, sistema operativo de computador pessoal, etc.).</string>
     <string name="ka13_topic12_name">Bases de Dados e Gestão de Dados</string>
-    <string name="ka13_topic12_description">Sobre os conceitos de uma base de dados;\n\nentidade e esquema;\n\nos diferentes sistemas de gestão de bases de dados (Oracle, MS SQL Server, Postgre, etc.);\n\nlinguagem de interpelação de bases de dados – como SQL – as suas características e como a usar;\n\norganização e manipulação de um sistema de gestão de bases de dados;\n\n mineração de dados (a descoberta de padrões e relações pouco óbvias entre os dados).</string>
+    <string name="ka13_topic12_description">Sobre os conceitos de uma base de dados;\n\nentidade e esquema;\n\nos diferentes sistemas de gestão de bases de dados (Oracle, MS SQL Server, Postgre, etc.);\n\nlinguagem de interpelação de bases de dados – como SQL – as suas características e como a usar;\n\norganização e manipulação de um sistema de gestão de bases de dados;\n\nmineração de dados (a descoberta de padrões e relações pouco óbvias entre os dados).</string>
     <string name="ka13_topic13_name">Bases de Comunicação em Redes</string>
     <string name="ka13_topic13_description">Sobre os diferentes tipos de redes (rede pessoal, rede local, wide area network, internet, etc.);\n\nos conceitos básicos de redes (os seus componentes e as diferentes funções destes);\n\nos protocolos e standards de redes (pilha OSI e seus componentes como TCP/IP, UDP, Bluetooth, etc.);\n\na Internet;\n\na Internet das Coisas;\n\nredes virtuais privadas (vulgo VPN).</string>
     <string name="ka13_topic14_name">Computação Paralela e Distribuída</string>
@@ -294,7 +294,7 @@
     <string name="ka14_topic3_name">Técnicas de Prova</string>
     <string name="ka14_topic3_description">Sobre os argumentos que estabelecem rigorosamente a verdade de uma afirmação;\n\nos métodos de prova de um teorema (provas por contradição, provas por indução, etc.).</string>
     <string name="ka14_topic4_name">Bases da Contagem</string>
-    <string name="ka14_topic4_description">Sobre as acções que permitem encontrar o número de elementos num conjunto finito de elementos e suas regras (regra da soma, regra do produto, etc.) e princípios;\n\n princípio da inclusão-exclusão;\n\ndefinição de recursividade, aleatoriedade, probabilidade, permutação e combinação.</string>
+    <string name="ka14_topic4_description">Sobre as acções que permitem encontrar o número de elementos num conjunto finito de elementos e suas regras (regra da soma, regra do produto, etc.) e princípios;\n\nprincípio da inclusão-exclusão;\n\ndefinição de recursividade, aleatoriedade, probabilidade, permutação e combinação.</string>
     <string name="ka14_topic5_name">Grafos e Árvores</string>
     <string name="ka14_topic5_description">Sobre os diferentes tipos de grafos (grafos direccionados, grafos não-direccionados, etc.), a sua terminologia (vértices, nós, peso, arestas, etc.) e operações (travessia, conexões, etc.);\n\nos diferentes tipos de árvores, as suas propriedades e operações (travessias, adições, etc.).</string>
     <string name="ka14_topic6_name">Probabilidade Discreta</string>
@@ -768,7 +768,7 @@
     <string name="up_class_software_engineering_topic41">Melhoria de Processos: o modelo de maturidade CMMI</string>
 
     <string name="up_class_computer_networks">Redes de Computadores</string>
-    <string name="up_class_computer_networks_description">Redes de Computadores (RCOM) é a unidade curricular que introduz os estudantes no domínio de conhecimento das redes de comunicações. Os conceitos fundamentais endereçados em RCOM incluem os seguintes: canais de comunicação e controlo da ligação de dados, modelos de erro e atraso, comunicações multi-acesso, encaminhamento, controlo de fluxo e controlo de congestionamento. As principais tecnologias discutidas em RCOM são a Ethernet comutada, a Wireless LAN 802.11, a Internet e a pilha de comunicações TCP/IP. As implementações e projetos a desenvolver em RCOM incluem um protocolo de ligação de dados com controlo de fluxo, uma aplicação a funcionar em modo cliente, e a configuração e teste de redes Ethernet e IP.</string>
+    <string name="up_class_computer_networks_description">Redes de Computadores (RCOM) é a unidade curricular que introduz os estudantes no domínio de conhecimento das redes de comunicações. Os conceitos fundamentais endereçados em RCOM incluem os seguintes: canais de comunicação e controlo da ligação de dados, modelos de erro e atraso, comunicações multi-acesso, encaminhamento, controlo de fluxo e controlo de congestionamento. As principais tecnologias discutidas em RCOM são a Ethernet comutada, a Wireless LAN 802.11, a Internet e a pilha de comunicações TCP/IP. As implementações e projectos a desenvolver em RCOM incluem um protocolo de ligação de dados com controlo de fluxo, uma aplicação a funcionar em modo cliente, e a configuração e teste de redes Ethernet e IP.</string>
     <string name="up_class_computer_networks_topic1">Introdução às redes de computadores</string>
     <string name="up_class_computer_networks_topic2">Técnicas de transmissão de dados</string>
     <string name="up_class_computer_networks_topic3">Controlo da ligação de dados</string>
@@ -797,7 +797,7 @@
     <string name="up_class_db_web_labs_topic1">Desenvolvimento de uma aplicação Web suportada por uma Base de Dados: levantamento de requisitos, concepção, modelação, implementação e documentação</string>
     <string name="up_class_db_web_labs_topic2">Noções gerais de arquitectura de aplicações Web. Utilização de linguagens de scripting de cliente (JavaScript) e de servidor (PHP)</string>
     <string name="up_class_db_web_labs_topic3">Apresentação do Document Object Model (DOM); utilização de frameworks AJAX e APIs de acesso a dados</string>
-    <string name="up_class_db_web_labs_topic4">Projeto de bases de dados relacionais com recurso a linguagens de modelação de dados (UML), à linguagem SQL e a extensões procedimentais à linguagem SQL</string>
+    <string name="up_class_db_web_labs_topic4">Projecto de bases de dados relacionais com recurso a linguagens de modelação de dados (UML), à linguagem SQL e a extensões procedimentais à linguagem SQL</string>
     <string name="up_class_db_web_labs_topic5">Identificação e manutenção de regras de negócio: na interface (JavaScript); na lógica de negócio e na base de dados (triggers); transacções</string>
     <string name="up_class_db_web_labs_topic6">Noções gerais de usabilidade e acessibilidade Web</string>
 
@@ -1004,7 +1004,7 @@
     <string name="up_class_operations_research_topic12">Filas de espera</string>
 
     <string name="up_class_project_labs">Laboratório de Gestão de Projectos</string>
-    <string name="up_class_project_labs_description">No final da Unidade Curricular os estudantes deverão ser capazes de:\n- Identificar a necessidade de recurso à gestão de projectos bem como a importância do seu enquadramento estratégico;\n- Identificar os diferentes referenciais normativos e metodologias para a gestão de projectos;\n- Identificar e definir as áreas de processo e variáveis da gestão de projetos;\n- Aplicar metodologias e ferramentas de gestão de projecto e trabalho em equipa;\n- Aplicar conceitos e ferramentas de gestão da qualidade a projectos;\n- Identificar e gerir os riscos inerentes a um projetco. </string>
+    <string name="up_class_project_labs_description">No final da Unidade Curricular os estudantes deverão ser capazes de:\n- Identificar a necessidade de recurso à gestão de projectos bem como a importância do seu enquadramento estratégico;\n- Identificar os diferentes referenciais normativos e metodologias para a gestão de projectos;\n- Identificar e definir as áreas de processo e variáveis da gestão de projectos;\n- Aplicar metodologias e ferramentas de gestão de projecto e trabalho em equipa;\n- Aplicar conceitos e ferramentas de gestão da qualidade a projectos;\n- Identificar e gerir os riscos inerentes a um projectco. </string>
     <string name="up_class_project_labs_topic1">Gestão de Projectos: Arranque do projecto</string>
     <string name="up_class_project_labs_topic2">Gestão de Projectos: Planeamento do projecto (decomposição hierárquica do projecto, definição de dependências, estimação de esforços, afectação de recursos, calendarização, diagramas, documento de plano do projecto, métodos PERT e CPM)</string>
     <string name="up_class_project_labs_topic3">Gestão de Projectos: Monitorização e controlo do projecto (medição do progresso do projecto, “earned value management,” reporte periódico, replaneamento)</string>
@@ -1470,7 +1470,7 @@
     <!-- UNIVERSIDADE DE COIMBRA START -->
 
     <string name="uc_mei">LEI + MEI</string>
-    <string name="uc_mei_fullname">Licenciatura em Engenheria Informatica e Mestrado em Engenharia Informática</string>
+    <string name="uc_mei_fullname">Licenciatura em Engenharia Informatica e Mestrado em Engenharia Informática</string>
     <string name="uc_mei_description">O curso de licenciatura em Engenharia Informática tem como objectivo principal fornecer aos futuros licenciados os princípios básicos, teorias, métodos e práticas da Engenharia Informática e da Computação de forma a que possam dominar todos os conceitos para a sua intervenção na sociedade ou complementar a sua formação com o 2º ciclo seguindo a vida prática ou a carreira científica. Para a concretização deste objectivo geral, o ciclo de estudos pretende conciliar os seguintes objectivos específicos: instrumentais, sistémicas e interpessoais.\n\n
     - No plano instrumental, procura-se que os licenciados em Engenharia Informática adquiram competências para articular de forma harmoniosa a complementaridade entre análise e síntese, que interiorizem as dinâmicas da resolução de problemas, que apreendam as lógicas e as práticas da gestão de informação e que perspectivem o exercício dessas competências segundo abordagens de planeamento organizacional centradas na construção de valor para o cliente e na transformação da complexidade em desempenho.\n
     - Ao nível sistémico, procura-se, reforçar a sua autonomia e capacidade para aprender, a sua adaptabilidade a situações novas, o seu sentido projectivo na aplicação dos saberes e competências e a sua aculturação para a qualidade e a excelência.\n
@@ -2065,7 +2065,7 @@
 - compreender o papel dos factores humanos na interação e interface;\n
 - compreender e aplicar técnicas de prototipagem para investigação e ensaio de proposta de design;\n
 - desenvolver a capacidade para conceber propostas de design de interação e interface para contextos de uso específicos tendo em vista a optimização da experiência de interação, com base em abordagens contextuais e participativas;\n
-- desenvolver a capacidade de avaliação da usabilidade com domínio de técnicas variadas e sua adequação ao contexto de projeto;\n
+- desenvolver a capacidade de avaliação da usabilidade com domínio de técnicas variadas e sua adequação ao contexto de projecto;\n
 - desenvolver a capacidade de construção de interfaces inovadoras e coerentes com o propósito;\n
 - desenvolver a capacidade de combinar as técnicas de uma forma sistemática numa abordagem empírica ao design de interação;\n
 - desenvolver a capacidade de aprendizagem autónoma no domínio de HCI.</string>
@@ -2514,7 +2514,7 @@ Os estudantes deverão ainda desenvolver competências em análise e síntese, r
     <!-- UNIVERSIDADE DE LISBOA START-->
 
     <string name="ist_meic">LEIC + MEIC</string>
-    <string name="ist_meic_fullname">Licenciatura em Engenheria Informatica e de Computadores e Mestrado em Engenharia Informática e de Computadores</string>
+    <string name="ist_meic_fullname">Licenciatura em Engenharia Informatica e de Computadores e Mestrado em Engenharia Informática e de Computadores</string>
     <string name="ist_meic_description">A licenciatura em Engenharia Informática e de Computadores (LEIC) é uma das maiores licenciaturas do Técnico e tem já provas dadas de sucesso no mercado de emprego, tanto a nível nacional como internacional. Os diplomados da LEIC são reconhecidos como profissionais competentes com conhecimentos sólidos a nível da engenharia informática e fácil adaptabilidade à evolução constante das tecnologias de informação.\n\nNo final da LEIC o aluno poderá especializar-se numa das áreas oferecidas no  Mestrado em Engenharia Informática e Computadores do Técnico, num outro curso afim, ou ainda entrar no mercado de trabalho.\n\nO Mestrado em Eng. Informática e de Computadores está alicerçado na forte formação de base dada pelo primeiro ciclo, oferece especializações atractivas para os alunos e para o mercado servindo ainda como base para os alunos que pretendam ingressar num Programa de Doutoramento, e cria uma base sólida para a intervenção do Departamento de Engenharia Informática do IST na formação ao longo da vida, que representará uma componente cada vez mais importante do mercado da educação avançada.\n\nNo final do Mestrado em Engenharia Informática e de Computadores os alunos poderão entrar no mercado de trabalho. Tendo em conta as especializações acima indicadas, os alunos têm uma gama alargada de competências profissionais específicas, das quais se destacam:\n
         - Análise e projecto de sistemas complexos\n
         - Técnicas de gestão de projecto de sistemas\n
@@ -4304,7 +4304,7 @@ Os estudantes deverão ainda desenvolver competências em análise e síntese, r
     <!-- UNIVERSIDADE DE AVEIRO START-->
 
     <string name="uav_mei">LEI + MEI</string>
-    <string name="uav_mei_fullname">Licenciatura em Engenheria Informatica + Mestrado em Engenharia Informática</string>
+    <string name="uav_mei_fullname">Licenciatura em Engenharia Informatica + Mestrado em Engenharia Informática</string>
     <string name="uav_mei_description">A Licenciatura em Engenharia Informática da Universidade de Aveiro tem por finalidade fornecer uma formação sólida em engenharia informática, área que se tem vindo a revelar como o principal motor de desenvolvimento nas economias avançadas.\n\nMais concretamente, esta licenciatura pretende fornecer as seguintes competências:\n
 - Compreender e utilizar metodologias de desenvolvimento de software em projectos de pequena e larga escala.\n
 - Planear e escrever programas correctos, robustos, eficientes, bem organizados e bem documentados.\n
@@ -4752,7 +4752,7 @@ Os estudantes deverão ainda desenvolver competências em análise e síntese, r
         equipa de desenvolvimento e construir um sistema ao longo do semestre utilizando de uma arquitectura/plataforma
         de referência (e.g. J2EE, .NET, Android), integrando serviços externos (e.g. google, sapo).</string>
     <string name="uav_class_swe_intro_topic1">Preparar o ambiente de trabalho para o desenvolvimento em equipa</string>
-    <string name="uav_class_swe_intro_topic2">Ciclo de vida, papéis e gestão do projeto</string>
+    <string name="uav_class_swe_intro_topic2">Ciclo de vida, papéis e gestão do projecto</string>
     <string name="uav_class_swe_intro_topic3">Distribuição de trabalho e seguimento do progresso</string>
     <string name="uav_class_swe_intro_topic4">Gestão de defeitos e configurações</string>
     <string name="uav_class_swe_intro_topic5">Frameworks correntes para soluções de classe empresarial: Desafios das soluções de larga escala</string>
@@ -4812,7 +4812,7 @@ Os estudantes deverão ainda desenvolver competências em análise e síntese, r
     <string name="uav_class_project_topic3">Metodologias ágeis para o desenvolvimento de software: Fases de desenvolvimento de um projecto</string>
     <string name="uav_class_project_topic4">Competências transversais: Trabalho em equipa</string>
     <string name="uav_class_project_topic5">Competências transversais: Uso de um repositório partilhado como parte do processo de desenvolvimento do projecto</string>
-    <string name="uav_class_project_topic6">Competências transversais: Elaboração de relatórios técnicos e documentação de projetos</string>
+    <string name="uav_class_project_topic6">Competências transversais: Elaboração de relatórios técnicos e documentação de projectos</string>
     <string name="uav_class_project_topic7">Competências transversais: Preparação de apresentações e demonstrações</string>
     <string name="uav_class_project_topic8">Competências transversais: Análise crítica do trabalho realizado, resultados obtidos, procedimentos e desempenho em equipa</string>
 
@@ -5076,7 +5076,7 @@ Os estudantes deverão ainda desenvolver competências em análise e síntese, r
     <string name="uav_class_distributed_sys_topic4">Modelos arquitecturais</string>
     <string name="uav_class_distributed_sys_topic5">Modelos fundamentais</string>
     <string name="uav_class_distributed_sys_topic6">Comunicação por passagem de mensagens</string>
-    <string name="uav_class_distributed_sys_topic7">Invocação de métodos sobre objectos remostos</string>
+    <string name="uav_class_distributed_sys_topic7">Invocação de métodos sobre objectos remotos</string>
     <string name="uav_class_distributed_sys_topic8">Modelos cliente-servidor</string>
     <string name="uav_class_distributed_sys_topic9">O problema da migração de código</string>
     <string name="uav_class_distributed_sys_topic10">Modelos de comunicação em grupo: Sincronização e exclusão mútua distribuídas</string>
@@ -5128,7 +5128,7 @@ Os estudantes deverão ainda desenvolver competências em análise e síntese, r
         ao nível de I and D quer ao nível das empresas, assim como abordar competências transversais ao nível da
         organização da investigação e escrita de artigos e teses, técnicas bibliográficas, apresentação e
         comunicação, ética e deontologia profissional, empreendedorismo, etc.</string>
-    <string name="uav_class_seminar_topic1">Temas de investigação dos vários grupos de I e D</string>
+    <string name="uav_class_seminar_topic1">Temas de investigação dos vários grupos de Investigação e Desenvolvimento</string>
     <string name="uav_class_seminar_topic2">Apresentações de empresas</string>
     <string name="uav_class_seminar_topic3">Organização da investigação e escrita de artigos e teses, procura de informação, técnicas bibliográficas, etc.</string>
     <string name="uav_class_seminar_topic4">Apresentações e comunicação</string>
@@ -5152,7 +5152,7 @@ Os estudantes deverão ainda desenvolver competências em análise e síntese, r
     <string name="uav_class_project_management_topic2">Gestão estratégica do projecto. Strategic fit. O projecto como elemento de descontinuidade do comportamento estratégico da organização.</string>
     <string name="uav_class_project_management_topic3">Inovação e mudança. Boas práticas de gestão de projectos.</string>
     <string name="uav_class_project_management_topic4">Fases de um projecto e ciclo de vida de um projecto</string>
-    <string name="uav_class_project_management_topic5">Estrutura e influênc­ias organizacionais na gestão de projectos. Relação do projecto com a estrutura da organização promotora.</string>
+    <string name="uav_class_project_management_topic5">Estrutura e influências organizacionais na gestão de projectos. Relação do projecto com a estrutura da organização promotora.</string>
     <string name="uav_class_project_management_topic6">Os processos e as interacções na gestão de projectos. Perfil e competências do gestor de projectos. Cultura da organização promotora e enquadramento do projecto.</string>
     <string name="uav_class_project_management_topic7">Preparação do dossier de um projecto</string>
     <string name="uav_class_project_management_topic8">Estrutura hierárquica das actividades (work breakdown structure). Definição de actividades. Estabelecimento da sequência de actividades. Redes de actividades. </string>
@@ -5269,8 +5269,8 @@ Os estudantes deverão ainda desenvolver competências em análise e síntese, r
     <string name="uav_class_service_quality_management_topic4">Requisitos do cliente: Ouvir o cliente através de pesquisa de marketing</string>
     <string name="uav_class_service_quality_management_topic5">Requisitos do cliente: Construção do relacionamento com o cliente</string>
     <string name="uav_class_service_quality_management_topic6">Requisitos do cliente: Recuperação do serviço</string>
-    <string name="uav_class_service_quality_management_topic7">Alinhamento do projeto e dos padrões de serviço: Inovação e projeto do serviço</string>
-    <string name="uav_class_service_quality_management_topic8">Alinhamento do projeto e dos padrões de serviço: Evidências físicas e cenário do serviço</string>
+    <string name="uav_class_service_quality_management_topic7">Alinhamento do projecto e dos padrões de serviço: Inovação e projecto do serviço</string>
+    <string name="uav_class_service_quality_management_topic8">Alinhamento do projecto e dos padrões de serviço: Evidências físicas e cenário do serviço</string>
     <string name="uav_class_service_quality_management_topic9">Prestação e desempenho do serviço: A importância dos clientes na prestação do serviço</string>
     <string name="uav_class_service_quality_management_topic10">Prestação e desempenho do serviço: Gestão da procura e da capacidade</string>
     <string name="uav_class_service_quality_management_topic11">Gestão das promessas de serviço: Comunicação integrada de serviços</string>
@@ -5459,7 +5459,7 @@ Os estudantes deverão ainda desenvolver competências em análise e síntese, r
     <string name="uav_class_security_and_risk_topic24">Gestão da Continuidade de Negócio: Análise do Business Impact Analysis como processo de análise dos impactos no negócio</string>
     <string name="uav_class_security_and_risk_topic25">Gestão da Continuidade de Negócio: Determinação de quais e de que forma os processos/sistemas requerem a continuidade de negócio</string>
 
-    <string name="uav_class_dissertation">Dissertação/Projeto/Estágio</string>
+    <string name="uav_class_dissertation">Dissertação/Projecto/Estágio</string>
     <string name="uav_class_dissertation_description">Esta é uma unidade curricular integradora onde os alunos devem demonstrar que têm as
         competências e os conhecimentos necessários para obter o grau de Mestre em Engenharia Informática. Os objectivos são os seguintes:\n
         - Aprofundar as capacidades de organização, planificação e gestão do tempo.
@@ -5469,7 +5469,7 @@ Os estudantes deverão ainda desenvolver competências em análise e síntese, r
         em situações novas e não familiares, bem como em contextos alargados e multidisciplinares.
         - Ser capaz de apresentar resultados de forma concisa, estruturada e com rigor académico e científico.
         - Promover o raciocínio crítico e o desenvolvimento da autocrítica.</string>
-    <string name="uav_class_dissertation_topic1">Realização de uma dissertação de natureza científica, de um projeto de engenharia ou de um estágio profissional</string>
+    <string name="uav_class_dissertation_topic1">Realização de uma dissertação de natureza científica, de um projecto de engenharia ou de um estágio profissional</string>
 
     <!-- UNIVERSIDADE DE AVEIRO END-->
 
@@ -5773,7 +5773,7 @@ Os estudantes deverão ainda desenvolver competências em análise e síntese, r
         - Explicar o funcionamento de diferentes estruturas de mercado \n
         - Avaliar aspectos económicos na perspectiva da decisão\n
         - Adquirir conhecimentos básicos de natureza financeira \n
-        - Aplicar conhecimentos matemáticos e de natureza financeira para descrever e analisar projetos de investimento.\n
+        - Aplicar conhecimentos matemáticos e de natureza financeira para descrever e analisar projectos de investimento.\n
         - Aplicar ferramentas de análise económica.</string>
     <string name="um_class_economic_engineering_topic1">Conceitos introdutórios: escolha e escassez; princípio do custo-benefício; custo de oportunidade; lucro económico</string>
     <string name="um_class_economic_engineering_topic2">O modelo da procura e da oferta: os determinantes da oferta e da procura, o equilíbrio de mercado, utilizações do modelo</string>
@@ -5782,7 +5782,7 @@ Os estudantes deverão ainda desenvolver competências em análise e síntese, r
     <string name="um_class_economic_engineering_topic5">Teoria da oferta: função de produção; a produção; os rendimentos à escala; os custos; custos no longo prazo e a estrutura do sector</string>
     <string name="um_class_economic_engineering_topic6">Mercados e formação dos preços: a concorrência perfeita; o monopólio</string>
     <string name="um_class_economic_engineering_topic7">Conceitos básicos de matemática financeira: valor do dinheiro no tempo, conceito de equivalência de capitais, actualização e capitalização</string>
-    <string name="um_class_economic_engineering_topic8">Comparação e selecção de projetos de investimento: opções com igual tempo de vida, opções com diferente tempo de vida e opções com diferente dimensão de investimento</string>
+    <string name="um_class_economic_engineering_topic8">Comparação e selecção de projectos de investimento: opções com igual tempo de vida, opções com diferente tempo de vida e opções com diferente dimensão de investimento</string>
 
     <string name="um_class_computer_arch">Arquitectura de Computadores</string>
     <string name="um_class_computer_arch_description">Identificar e caracterizar as métricas relativas ao
@@ -5940,19 +5940,19 @@ Os estudantes deverão ainda desenvolver competências em análise e síntese, r
         implementação (C - 1º projecto e Java 2º projecto);\n
         - Complementar experimentalmente os conhecimentos adquiridos nas Unidades Curriculares de
         Algoritmos e Complexidade e Programação Orientada aos Objectos;\n
-        - Desenhar e codificar dois projetos de média dimensão, a serem entregues e avaliados em várias fases. 1º
-        projeto Linguagem C Conceitos envolvidos: modularidade, reutilização, grafos, árvores, manipulação de
+        - Desenhar e codificar dois projectos de média dimensão, a serem entregues e avaliados em várias fases. 1º
+        projecto Linguagem C Conceitos envolvidos: modularidade, reutilização, grafos, árvores, manipulação de
         ficheiros.
-        2º projeto Linguagem Java Conceitos envolvidos: manipulação de colecções Java, medição de
+        2º projecto Linguagem Java Conceitos envolvidos: manipulação de colecções Java, medição de
         tempos de operações sobre colecções, construção de interfaces com utilizador (padrão MVC), exploração
         dos componentes Swing.</string>
     <string name="um_class_informatics_labs3_topic1">Revisão de princípios de engenharia fundamentais como: modularidade, abstracção de dados, encapsulamento e reutilização</string>
     <string name="um_class_informatics_labs3_topic2">Estruturas de dados genéricas em C (árvores e grafos)</string>
-    <string name="um_class_informatics_labs3_topic3">Realização do 1º projeto (em C)</string>
+    <string name="um_class_informatics_labs3_topic3">Realização do 1º projecto (em C)</string>
     <string name="um_class_informatics_labs3_topic4">Revisão do Java Collections Framework (JCF); Implementação de Grafos em Java</string>
     <string name="um_class_informatics_labs3_topic5">Criação de Interfaces com o utilizador usando SWING e o modelo MVC (Model-View-Controller)</string>
     <string name="um_class_informatics_labs3_topic6">Persistência simples de dados em Java (ObjectStreams)</string>
-    <string name="um_class_informatics_labs3_topic7">Realização do 2º projeto (em Java)</string>
+    <string name="um_class_informatics_labs3_topic7">Realização do 2º projecto (em Java)</string>
 
     <string name="um_class_databases">Bases de Dados</string>
     <string name="um_class_databases_description">1) Distinguir dados, informação e conhecimento.\n
@@ -6620,10 +6620,10 @@ Os estudantes deverão ainda desenvolver competências em análise e síntese, r
     <string name="um_class_sw_process_man_topic8">PMBOK: Planeamento da qualidade</string>
     <string name="um_class_sw_process_man_topic9">PMBOK: Planeamento das outras áreas de conhecimento</string>
     <string name="um_class_sw_process_man_topic10">PMBOK: Mecanismo para o Planeamento de Projectos de software</string>
-    <string name="um_class_sw_process_man_topic11">Execução, Controlo e Encerramento do projeto (PMBOK): Relatórios do progresso</string>
-    <string name="um_class_sw_process_man_topic12">Execução, Controlo e Encerramento do projeto (PMBOK): EVM – Earned Value Management</string>
-    <string name="um_class_sw_process_man_topic13">Execução, Controlo e Encerramento do projeto (PMBOK): Controlar as alterações do projecto</string>
-    <string name="um_class_sw_process_man_topic14">Execução, Controlo e Encerramento do projeto (PMBOK): Encerramento do projeto</string>
+    <string name="um_class_sw_process_man_topic11">Execução, Controlo e Encerramento do projecto (PMBOK): Relatórios do progresso</string>
+    <string name="um_class_sw_process_man_topic12">Execução, Controlo e Encerramento do projecto (PMBOK): EVM – Earned Value Management</string>
+    <string name="um_class_sw_process_man_topic13">Execução, Controlo e Encerramento do projecto (PMBOK): Controlar as alterações do projecto</string>
+    <string name="um_class_sw_process_man_topic14">Execução, Controlo e Encerramento do projecto (PMBOK): Encerramento do projecto</string>
     <string name="um_class_sw_process_man_topic15">PRINCE2 - Projects in a Controlled Environment</string>
 
     <string name="um_class_net_protocols">Tecnologias e Protocolos Internet</string>
@@ -7254,7 +7254,7 @@ Os estudantes deverão ainda desenvolver competências em análise e síntese, r
 
     <string name="um_class_dissertation">Dissertação em Engenharia Informática</string>
     <string name="um_class_dissertation_description">A dissertação implica necessariamente o envolvimento do estudante num projecto de
-        investigação e desenvolvimento de média/grande dimensão. Este projeto insere-se regra geral num projecto
+        investigação e desenvolvimento de média/grande dimensão. Este projecto insere-se regra geral num projecto
         maior, associado a um centro de investigação e/ou a uma empresa</string>
     <string name="um_class_dissertation_topic1">Identificar e delimitar o problema a tratar, bem como de propor uma metodologia para abordar esse problema</string>
     <string name="um_class_dissertation_topic2">Desenvolver competências para realizar trabalho de investigação individual em Engenharia Informática</string>
