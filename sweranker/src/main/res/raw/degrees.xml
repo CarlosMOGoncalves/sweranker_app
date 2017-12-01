@@ -4,7 +4,7 @@
     <degree>
         <name>@string/up_mieic</name>
         <fullname>@string/up_mieic_fullname</fullname>
-        <image>@drawable/feup_logo</image>
+        <image>@drawable/feup_logo_3</image>
         <id>1</id>
         <description>@string/up_mieic_description</description>
         <years>5</years>
@@ -4689,7 +4689,7 @@
     <!-- UNIVERSIDADE DE COIMBRA -->
     <degree>
         <name>@string/uc_mei</name>
-        <image>@drawable/uc_logo</image>
+        <image>@drawable/uc_logo_2</image>
         <id>2</id>
         <fullname>@string/uc_mei_fullname</fullname>
         <description>@string/uc_mei_description</description>
@@ -8589,7 +8589,7 @@
     <!-- UNIVERSIDADE DE LISBOA -->
     <degree>
         <name>@string/ist_meic</name>
-        <image>@drawable/ist_logo_2</image>
+        <image>@drawable/ist_logo_3</image>
         <id>3</id>
         <fullname>@string/ist_meic_fullname</fullname>
         <description>@string/ist_meic_description</description>
@@ -14639,7 +14639,7 @@
     <!-- UNIVERSIDADE DE AVEIRO -->
     <degree>
         <name>@string/uav_mei</name>
-        <image>@drawable/uav_logo</image>
+        <image>@drawable/uav_logo_2</image>
         <id>4</id>
         <fullname>@string/uav_mei_fullname</fullname>
         <description>@string/uav_mei_description</description>
@@ -18321,7 +18321,7 @@
     <!-- UNIVERSIDADE DO MINHO -->
     <degree>
         <name>@string/uminho_miei</name>
-        <image>@drawable/logo_uminho_2</image>
+        <image>@drawable/logo_uminho_3</image>
         <fullname>@string/uminho_miei_fullname</fullname>
         <id>5</id>
         <description>@string/uminho_miei_description</description>

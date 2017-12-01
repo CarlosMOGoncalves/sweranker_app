@@ -1192,7 +1192,7 @@
     <string name="up_class_embedded_systems_topic7">Programação com POSIX para Tempo-Real</string>
 
     <string name="up_class_database_technologies">Tecnologias de Bases de Dados</string>
-    <string name="up_class_database_technologies_description">Esta UC tem por objectivo habilitar os alunos a desenvolver e administrar grandes bases de dados, nomeadamente a afinar o esquema físico, a otimizar interrogações SQL, a tirar partido das extensões à manipulação de objectos e à tecnologia XML e a recuperar e replicar dados.</string>
+    <string name="up_class_database_technologies_description">Esta UC tem por objectivo habilitar os alunos a desenvolver e administrar grandes bases de dados, nomeadamente a afinar o esquema físico, a optimizar interrogações SQL, a tirar partido das extensões à manipulação de objectos e à tecnologia XML e a recuperar e replicar dados.</string>
     <string name="up_class_database_technologies_topic1">Esquema físico e afinação (\"tuning\") de BD</string>
     <string name="up_class_database_technologies_topic2">Armazenamento de dados e índices</string>
     <string name="up_class_database_technologies_topic3">Execução e optimização de interrogações</string>
@@ -2305,7 +2305,7 @@ Os estudantes deverão ainda desenvolver competências em análise e síntese, r
 
     <string name="uc_class_business_process_man">Gestão de Processos de Negócio</string>
     <string name="uc_class_business_process_man_description">A unidade curricular de Gestão de Processos de Negócio introduz conceitos e abordagens de gestão e melhoria de processos de negócio.
-        Foca-se na compreensão, desenho e otimização de processos.\n
+        Foca-se na compreensão, desenho e optimização de processos.\n
         Os estudantes aprenderão a identificar, desenhar, documentar, modelar, avaliar e melhorar processos de negócio,
         apercebendo-se dos desafios inerentes. Perceberão a forma como as tecnologias de informação podem ser usadas para automatizar,
         gerir, transformar e melhorar processos de negócio, ganhando competências na utilização de algumas ferramentas.
@@ -2820,7 +2820,7 @@ Os estudantes deverão ainda desenvolver competências em análise e síntese, r
         computação e recurso computacional. Compreender e aprofundar os conceitos de "tarefa" algorítmica e de "tarefa"
         não algorítmica. Conhecer os limites para "tarefas" algorítmicas. Entender a computação como conceito
         físico-matemático e não como conceito puramente matemático. Experimentar conceitos e técnicas em
-        ambientes computacionais interativos.</string>
+        ambientes computacionais interactivos.</string>
     <string name="ist_class_computing_theory_topic1">Máquinas de Turing determinísticas, não determinísticas e enumeradoras</string>
     <string name="ist_class_computing_theory_topic2">Funções computáveis</string>
     <string name="ist_class_computing_theory_topic3">Conjuntos recursivamente enumeráveis</string>
@@ -6061,7 +6061,7 @@ Os estudantes deverão ainda desenvolver competências em análise e síntese, r
         Resolver sistemas de equações lineares por métodos diretos com pivotagem parcial;\n
         Compreender e aplicar estratégias de aproximação de funções;\n
         Descrever e aplicar métodos de integração numérica;\n
-        Compreender, escolher e utilizar o método de otimização mais adequado a um problema específico;\n
+        Compreender, escolher e utilizar o método de optimização mais adequado a um problema específico;\n
         Utilizar os métodos numéricos em problemas de Engenharia Informática;\n
         Utilizar software específico (MATLAB) na resolução de problemas.</string>
     <string name="um_class_numeric_methods_topic1">Erros em cálculo numérico</string>
@@ -6385,12 +6385,12 @@ Os estudantes deverão ainda desenvolver competências em análise e síntese, r
         competências:
         - Desenvolver aplicações paralelas capazes de executar numa gama alargada de arquitecturas
         - Implementar aplicações utilizando os tipos mais comuns de algoritmos paralelos
-        - Medir e otimizar o desempenho de aplicações em sistemas de memória distribuída
+        - Medir e optimizar o desempenho de aplicações em sistemas de memória distribuída
         - Implementar técnicas de gestão de recursos ao nível da aplicação.</string>
     <string name="um_class_parallel_comp_parad_topic1">Modelos de programação: fios de execução em memória partilhada, passagem de mensagens, objectos distribuídos, workflows</string>
     <string name="um_class_parallel_comp_parad_topic2">Metodologias de desenvolvimento de aplicações paralelas: partição, comunicação, agregação e mapeamento de tarefas e dados</string>
     <string name="um_class_parallel_comp_parad_topic3">Análise de algoritmos paralelos típicos: pipelining, farming, heartbeat e divide and conquer</string>
-    <string name="um_class_parallel_comp_parad_topic4">Medição e otimização do desempenho de aplicações em sistemas de memória partilhada e distribuída, homogéneos e heterogéneos</string>
+    <string name="um_class_parallel_comp_parad_topic4">Medição e optimização do desempenho de aplicações em sistemas de memória partilhada e distribuída, homogéneos e heterogéneos</string>
     <string name="um_class_parallel_comp_parad_topic5">Linguagens e utilitários de apoio ao desenvolvimento de aplicações</string>
 
     <string name="um_class_cripto_tec">Tecnologia Criptográfica</string>
@@ -6527,7 +6527,7 @@ Os estudantes deverão ainda desenvolver competências em análise e síntese, r
     <string name="um_class_datacentre_infra_topic11">Monitorização e gestão centralizada: monitorização</string>
     <string name="um_class_datacentre_infra_topic12">Segurança de infraestruturas e serviços</string>
 
-    <string name="um_class_interactive_sys">Sistemas Interativos</string>
+    <string name="um_class_interactive_sys">Sistemas Interactivos</string>
     <string name="um_class_interactive_sys_description">Conceber interfaces com o utilizador com consideração por aspectos de usabilidade\n
         - Saber avaliar as interfaces concebidas recorrendo às técnicas mais apropriadas\n
         - Compreender e explorar diferentes técnicas de desenvolvimento de camadas interactivas\n
@@ -6535,7 +6535,7 @@ Os estudantes deverão ainda desenvolver competências em análise e síntese, r
         camadas de lógica e de dados.</string>
     <string name="um_class_interactive_sys_topic1">Interacção Humano-Computador: definição de usabilidade, modelo de interacção de Norman</string>
     <string name="um_class_interactive_sys_topic2">Interacção Humano-Computador: desenvolvimento centrado no utilizador</string>
-    <string name="um_class_interactive_sys_topic3">Interfaces baseado em modelos: a framework de referência Cameleon</string>
+    <string name="um_class_interactive_sys_topic3">Interfaces baseado em modelos: a framework de referência Chameleon</string>
     <string name="um_class_interactive_sys_topic4">Interfaces baseado em modelos: modelação de domínio, tarefas, interfaces abstractas e interfaces concretas, a linguagem UsiXML</string>
     <string name="um_class_interactive_sys_topic5">Interfaces baseado em modelos: prototipagem de interfaces</string>
     <string name="um_class_interactive_sys_topic6">Interfaces baseado em modelos: independência do dispositivo/adaptação ao dispositivo</string>
@@ -6563,7 +6563,7 @@ Os estudantes deverão ainda desenvolver competências em análise e síntese, r
     <string name="um_class_sw_arch_topic1">Análise das plataformas J2EE e .NET</string>
     <string name="um_class_sw_arch_topic2">Introdução ao Rational Unified Process (RUP)</string>
     <string name="um_class_sw_arch_topic3">Engenharia de Software baseada em Modelos: UML</string>
-    <string name="um_class_sw_arch_topic4">JAVA avançado: Generics,  Implementação de classes genéricas, Elisão de tipos em Java, Mecanismo de Reflexão e Factory methods</string>
+    <string name="um_class_sw_arch_topic4">JAVA avançado: Generics,  Implementação de classes genéricas, apagemento de tipos em Java, Mecanismo de Reflexão e Factory methods</string>
     <string name="um_class_sw_arch_topic5">Princípios de Engenharia de Software: Inversão de Controlo (IOC) e Injecção de Dependência (DI)</string>
     <string name="um_class_sw_arch_topic6">Padrões de Conceção e Desenvolvimento (Design Patterns)</string>
     <string name="um_class_sw_arch_topic7">Tecnologia Java para aplicações Web: Servlets, Java Server Pages (JSP) e Java Beans</string>
@@ -7125,7 +7125,7 @@ Os estudantes deverão ainda desenvolver competências em análise e síntese, r
         analisar, medir e avaliar o desempenho de sistemas de computação na execução de aplicações;\n
         desenvolver aplicações paralelas capazes de executar numa gama alargada de arquitecturas;\n
         implementar aplicações utilizando os tipos mais comuns de algoritmos paralelos;\n
-        medir e otimizar o desempenho de aplicações computacionais com vista a optimizar o seu desempenho e escalabilidade;</string>
+        medir e optimizar o desempenho de aplicações computacionais com vista a optimizar o seu desempenho e escalabilidade;</string>
     <string name="um_class_parallel_comp_topic1">Evolução recente da arquitectura de processadores: pipeline, superescalaridade, multi-threading, multi-core, many-core; hierarquia de memória</string>
     <string name="um_class_parallel_comp_topic2">Evolução do paralelismo nas arquitecturas: arquitecturas vectoriais, arquitecturas paralelas com memória partilhada e memória distribuída</string>
     <string name="um_class_parallel_comp_topic3">Avaliação de desempenho na execução de aplicações: métricas, profiling, análise e afinação de código</string>
