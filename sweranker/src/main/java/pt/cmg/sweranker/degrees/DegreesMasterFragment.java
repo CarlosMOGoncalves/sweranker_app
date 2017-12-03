@@ -23,6 +23,9 @@ import pt.cmg.sweranker.MainActivity;
 import pt.cmg.sweranker.MainActivityViewModel;
 import pt.cmg.sweranker.R;
 import pt.cmg.sweranker.ui.ConstantSpacingItemDecorator;
+import pt.cmg.sweranker.ui.GridSpacingItemDecorator;
+import pt.cmg.sweranker.ui.UXUtils;
+import pt.cmg.sweranker.util.SweRankerUtils;
 
 
 public class DegreesMasterFragment extends Fragment implements LifecycleRegistryOwner {
@@ -128,9 +131,10 @@ public class DegreesMasterFragment extends Fragment implements LifecycleRegistry
 
         RecyclerView.LayoutManager mLayoutManager = new GridLayoutManager(this.getActivity(), 2);
         _degreesGrid.setLayoutManager(mLayoutManager);
-        _degreesGrid.addItemDecoration(new ConstantSpacingItemDecorator(this.getActivity(),
-                10,
-                ConstantSpacingItemDecorator.Side.ALL_SIDES));
+//        _degreesGrid.addItemDecoration(new ConstantSpacingItemDecorator(this.getActivity(),
+//                10,
+//                ConstantSpacingItemDecorator.Side.ALL_SIDES));
+        _degreesGrid.addItemDecoration(new GridSpacingItemDecorator(2, SweRankerUtils.convertDpToPixels(this.getActivity(),10), true));
         _degreesGrid.setItemAnimator(new DefaultItemAnimator());
         _degreesGrid.setAdapter(adapter);
 
