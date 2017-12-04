@@ -15,7 +15,7 @@
 
         <FrameLayout
             android:id="@+id/degree_image_container"
-            android:layout_width="@dimen/degree_master_image_size"
+            android:layout_width="wrap_content"
             android:layout_height="@dimen/degree_master_image_size"
             app:layout_constraintBottom_toTopOf="@+id/university_name"
             app:layout_constraintEnd_toEndOf="parent"
