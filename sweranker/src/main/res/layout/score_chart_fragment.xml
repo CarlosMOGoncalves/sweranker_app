@@ -74,11 +74,12 @@
                         android:id="@+id/degree_overview_name"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
+                        android:layout_marginStart="24dp"
                         android:layout_marginEnd="8dp"
                         android:textAlignment="center"
                         android:textSize="@dimen/chart_degree_overview_name_text_size"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintLeft_toRightOf="@id/degree_image_area"
+                        app:layout_constraintStart_toEndOf="@id/degree_image_area"
                         app:layout_constraintTop_toTopOf="parent"
                         tools:text="MiEIC" />
 
@@ -86,11 +87,12 @@
                         android:id="@+id/degree_overview_university"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
+                        android:layout_marginStart="24dp"
                         android:layout_marginEnd="8dp"
                         android:textAlignment="center"
                         android:textSize="@dimen/chart_degree_overview_university_text_size"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintLeft_toRightOf="@id/degree_image_area"
+                        app:layout_constraintStart_toEndOf="@id/degree_image_area"
                         app:layout_constraintTop_toBottomOf="@id/degree_overview_name"
                         tools:text="Universidade do Porto" />
 
@@ -98,12 +100,13 @@
                         android:id="@+id/degree_overview_combo_name"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
+                        android:layout_marginStart="24dp"
                         android:layout_marginEnd="8dp"
                         android:layout_marginTop="2dp"
                         android:textAlignment="center"
                         android:textSize="@dimen/chart_degree_overview_combo_name"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintLeft_toRightOf="@id/degree_image_area"
+                        app:layout_constraintStart_toEndOf="@id/degree_image_area"
                         app:layout_constraintTop_toBottomOf="@id/degree_overview_university"
                         tools:text="Combination 620075" />
 
@@ -111,21 +114,19 @@
                         android:id="@+id/show_overview"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center_horizontal"
                         android:layout_marginBottom="0dp"
                         android:layout_marginEnd="8dp"
                         android:layout_marginTop="5dp"
                         android:background="@drawable/rounded_shape"
                         android:clickable="true"
+                        android:focusable="true"
                         android:padding="8dp"
                         android:text="@string/show_degree_overview"
-                        android:textAlignment="center"
                         android:textColor="@color/colorPrimary"
                         android:textSize="@dimen/chart_degree_overview_button_text_size"
                         android:textStyle="bold"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintLeft_toRightOf="@id/degree_image_area"
                         app:layout_constraintTop_toBottomOf="@id/degree_overview_combo_name" />
 
                 </android.support.constraint.ConstraintLayout>

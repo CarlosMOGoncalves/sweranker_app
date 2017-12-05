@@ -18341,11 +18341,11 @@
             </combinator>
             <combinator>
                 <year>4</year>
-                <class>pt.cmg.sweranker.ranking.combinationstrategies.AllMandatoryAndThreeOptionals</class>
+                <class>pt.cmg.sweranker.ranking.combinationstrategies.TwoPathsAndTwoOptionals</class>
             </combinator>
             <combinator>
                 <year>5</year>
-                <class>pt.cmg.sweranker.ranking.combinationstrategies.AllMandatoryAndFourOptionals</class>
+                <class>pt.cmg.sweranker.ranking.combinationstrategies.AllClasses</class>
             </combinator>
         </yearly_combinators>
         <university>@string/uminho</university>
@@ -20297,7 +20297,7 @@
                 <mandatoryPaths>
                     <path>1</path>
                 </mandatoryPaths>
-                <exclusivePath></exclusivePath>
+                <exclusivePath>1</exclusivePath>
                 <program>
                     <topic>
                         <id>c326t1</id>
@@ -20359,7 +20359,7 @@
                 <mandatoryPaths>
                     <path>1</path>
                 </mandatoryPaths>
-                <exclusivePath></exclusivePath>
+                <exclusivePath>1</exclusivePath>
                 <program>
                     <topic>
                         <id>c327t1</id>
@@ -20405,7 +20405,7 @@
                 <mandatoryPaths>
                     <path>1</path>
                 </mandatoryPaths>
-                <exclusivePath></exclusivePath>
+                <exclusivePath>1</exclusivePath>
                 <program>
                     <topic>
                         <id>c328t1</id>
@@ -20439,7 +20439,7 @@
                 <mandatoryPaths>
                     <path>1</path>
                 </mandatoryPaths>
-                <exclusivePath></exclusivePath>
+                <exclusivePath>1</exclusivePath>
                 <program>
                     <topic>
                         <id>c329t1</id>
@@ -20485,7 +20485,7 @@
                 <mandatoryPaths>
                     <path>2</path>
                 </mandatoryPaths>
-                <exclusivePath></exclusivePath>
+                <exclusivePath>2</exclusivePath>
                 <program>
                     <topic>
                         <id>c330t1</id>
@@ -20514,7 +20514,19 @@
                 <ects>5</ects>
                 <optional>true</optional>
                 <paths>
+                    <path>1</path>
                     <path>2</path>
+                    <path>3</path>
+                    <path>4</path>
+                    <path>5</path>
+                    <path>6</path>
+                    <path>7</path>
+                    <path>8</path>
+                    <path>9</path>
+                    <path>10</path>
+                    <path>11</path>
+                    <path>12</path>
+                    <path>13</path>
                 </paths>
                 <mandatoryPaths>
                     <path>2</path>
@@ -20581,7 +20593,7 @@
                 <mandatoryPaths>
                     <path>2</path>
                 </mandatoryPaths>
-                <exclusivePath></exclusivePath>
+                <exclusivePath>2</exclusivePath>
                 <program>
                     <topic>
                         <id>c332t1</id>
@@ -20631,7 +20643,7 @@
                 <mandatoryPaths>
                     <path>2</path>
                 </mandatoryPaths>
-                <exclusivePath></exclusivePath>
+                <exclusivePath>2</exclusivePath>
                 <program>
                     <topic>
                         <id>c333t1</id>
@@ -20693,7 +20705,7 @@
                 <mandatoryPaths>
                     <path>3</path>
                 </mandatoryPaths>
-                <exclusivePath></exclusivePath>
+                <exclusivePath>3</exclusivePath>
                 <program>
                     <topic>
                         <id>c334t1</id>
@@ -20747,7 +20759,7 @@
                 <mandatoryPaths>
                     <path>3</path>
                 </mandatoryPaths>
-                <exclusivePath></exclusivePath>
+                <exclusivePath>3</exclusivePath>
                 <program>
                     <topic>
                         <id>c335t1</id>
@@ -20793,7 +20805,7 @@
                 <mandatoryPaths>
                     <path>3</path>
                 </mandatoryPaths>
-                <exclusivePath></exclusivePath>
+                <exclusivePath>3</exclusivePath>
                 <program>
                     <topic>
                         <id>c336t1</id>
@@ -20855,7 +20867,7 @@
                 <mandatoryPaths>
                     <path>3</path>
                 </mandatoryPaths>
-                <exclusivePath></exclusivePath>
+                <exclusivePath>3</exclusivePath>
                 <program>
                     <topic>
                         <id>c337t1</id>
@@ -20893,7 +20905,7 @@
                 <mandatoryPaths>
                     <path>4</path>
                 </mandatoryPaths>
-                <exclusivePath></exclusivePath>
+                <exclusivePath>4</exclusivePath>
                 <program>
                     <topic>
                         <id>c338t1</id>
@@ -20939,7 +20951,7 @@
                 <mandatoryPaths>
                     <path>4</path>
                 </mandatoryPaths>
-                <exclusivePath></exclusivePath>
+                <exclusivePath>4</exclusivePath>
                 <program>
                     <topic>
                         <id>c339t1</id>
@@ -21001,7 +21013,7 @@
                 <mandatoryPaths>
                     <path>4</path>
                 </mandatoryPaths>
-                <exclusivePath></exclusivePath>
+                <exclusivePath>4</exclusivePath>
                 <program>
                     <topic>
                         <id>c340t1</id>
@@ -21103,7 +21115,7 @@
                 <mandatoryPaths>
                     <path>4</path>
                 </mandatoryPaths>
-                <exclusivePath></exclusivePath>
+                <exclusivePath>4</exclusivePath>
                 <program>
                     <topic>
                         <id>c341t1</id>
@@ -21169,7 +21181,7 @@
                 <mandatoryPaths>
                     <path>5</path>
                 </mandatoryPaths>
-                <exclusivePath></exclusivePath>
+                <exclusivePath>5</exclusivePath>
                 <program>
                     <topic>
                         <id>c342t1</id>
@@ -21227,7 +21239,7 @@
                 <mandatoryPaths>
                     <path>5</path>
                 </mandatoryPaths>
-                <exclusivePath></exclusivePath>
+                <exclusivePath>5</exclusivePath>
                 <program>
                     <topic>
                         <id>c343t1</id>
@@ -21321,7 +21333,7 @@
                 <mandatoryPaths>
                     <path>5</path>
                 </mandatoryPaths>
-                <exclusivePath></exclusivePath>
+                <exclusivePath>5</exclusivePath>
                 <program>
                     <topic>
                         <id>c344t1</id>
@@ -21387,7 +21399,7 @@
                 <mandatoryPaths>
                     <path>5</path>
                 </mandatoryPaths>
-                <exclusivePath></exclusivePath>
+                <exclusivePath>5</exclusivePath>
                 <program>
                     <topic>
                         <id>c345t1</id>
@@ -21461,7 +21473,7 @@
                 <mandatoryPaths>
                     <path>6</path>
                 </mandatoryPaths>
-                <exclusivePath></exclusivePath>
+                <exclusivePath>6</exclusivePath>
                 <program>
                     <topic>
                         <id>c346t1</id>
@@ -21514,7 +21526,19 @@
                 <ects>5</ects>
                 <optional>true</optional>
                 <paths>
+                    <path>1</path>
+                    <path>2</path>
+                    <path>3</path>
+                    <path>4</path>
+                    <path>5</path>
                     <path>6</path>
+                    <path>7</path>
+                    <path>8</path>
+                    <path>9</path>
+                    <path>10</path>
+                    <path>11</path>
+                    <path>12</path>
+                    <path>13</path>
                 </paths>
                 <mandatoryPaths>
                     <path>6</path>
@@ -21561,7 +21585,7 @@
                 <mandatoryPaths>
                     <path>6</path>
                 </mandatoryPaths>
-                <exclusivePath></exclusivePath>
+                <exclusivePath>6</exclusivePath>
                 <program>
                     <topic>
                         <id>c348t1</id>
@@ -21607,7 +21631,7 @@
                 <mandatoryPaths>
                     <path>6</path>
                 </mandatoryPaths>
-                <exclusivePath></exclusivePath>
+                <exclusivePath>6</exclusivePath>
                 <program>
                     <topic>
                         <id>c349t1</id>
@@ -21685,7 +21709,7 @@
                 <mandatoryPaths>
                     <path>7</path>
                 </mandatoryPaths>
-                <exclusivePath></exclusivePath>
+                <exclusivePath>7</exclusivePath>
                 <program>
                     <topic>
                         <id>c350t1</id>
@@ -21751,7 +21775,7 @@
                 <mandatoryPaths>
                     <path>7</path>
                 </mandatoryPaths>
-                <exclusivePath></exclusivePath>
+                <exclusivePath>7</exclusivePath>
                 <program>
                     <topic>
                         <id>c351t1</id>
@@ -21793,7 +21817,7 @@
                 <mandatoryPaths>
                     <path>7</path>
                 </mandatoryPaths>
-                <exclusivePath></exclusivePath>
+                <exclusivePath>7</exclusivePath>
                 <program>
                     <topic>
                         <id>c352t1</id>
@@ -21843,7 +21867,7 @@
                 <mandatoryPaths>
                     <path>7</path>
                 </mandatoryPaths>
-                <exclusivePath></exclusivePath>
+                <exclusivePath>7</exclusivePath>
                 <program>
                     <topic>
                         <id>c353t1</id>
@@ -21892,7 +21916,19 @@
                 <ects>5</ects>
                 <optional>true</optional>
                 <paths>
+                    <path>1</path>
+                    <path>2</path>
+                    <path>3</path>
+                    <path>4</path>
+                    <path>5</path>
+                    <path>6</path>
+                    <path>7</path>
                     <path>8</path>
+                    <path>9</path>
+                    <path>10</path>
+                    <path>11</path>
+                    <path>12</path>
+                    <path>13</path>
                 </paths>
                 <mandatoryPaths>
                     <path>8</path>
@@ -21943,7 +21979,7 @@
                 <mandatoryPaths>
                     <path>8</path>
                 </mandatoryPaths>
-                <exclusivePath></exclusivePath>
+                <exclusivePath>8</exclusivePath>
                 <program>
                     <topic>
                         <id>c355t1</id>
@@ -22009,7 +22045,7 @@
                 <mandatoryPaths>
                     <path>8</path>
                 </mandatoryPaths>
-                <exclusivePath></exclusivePath>
+                <exclusivePath>8</exclusivePath>
                 <program>
                     <topic>
                         <id>c356t1</id>
@@ -22055,7 +22091,7 @@
                 <mandatoryPaths>
                     <path>8</path>
                 </mandatoryPaths>
-                <exclusivePath></exclusivePath>
+                <exclusivePath>8</exclusivePath>
                 <program>
                     <topic>
                         <id>c357t1</id>
@@ -22096,7 +22132,19 @@
                 <ects>5</ects>
                 <optional>true</optional>
                 <paths>
+                    <path>1</path>
+                    <path>2</path>
+                    <path>3</path>
+                    <path>4</path>
+                    <path>5</path>
+                    <path>6</path>
+                    <path>7</path>
+                    <path>8</path>
                     <path>9</path>
+                    <path>10</path>
+                    <path>11</path>
+                    <path>12</path>
+                    <path>13</path>
                 </paths>
                 <mandatoryPaths>
                     <path>9</path>
@@ -22159,7 +22207,7 @@
                 <mandatoryPaths>
                     <path>9</path>
                 </mandatoryPaths>
-                <exclusivePath></exclusivePath>
+                <exclusivePath>9</exclusivePath>
                 <program>
                     <topic>
                         <id>c359t1</id>
@@ -22217,7 +22265,7 @@
                 <mandatoryPaths>
                     <path>9</path>
                 </mandatoryPaths>
-                <exclusivePath></exclusivePath>
+                <exclusivePath>9</exclusivePath>
                 <program>
                     <topic>
                         <id>c360t1</id>
@@ -22271,7 +22319,7 @@
                 <mandatoryPaths>
                     <path>9</path>
                 </mandatoryPaths>
-                <exclusivePath></exclusivePath>
+                <exclusivePath>9</exclusivePath>
                 <program>
                     <topic>
                         <id>c361t1</id>
@@ -22333,7 +22381,7 @@
                 <mandatoryPaths>
                     <path>10</path>
                 </mandatoryPaths>
-                <exclusivePath></exclusivePath>
+                <exclusivePath>10</exclusivePath>
                 <program>
                     <topic>
                         <id>c362t1</id>
@@ -22407,7 +22455,7 @@
                 <mandatoryPaths>
                     <path>10</path>
                 </mandatoryPaths>
-                <exclusivePath></exclusivePath>
+                <exclusivePath>10</exclusivePath>
                 <program>
                     <topic>
                         <id>c384t1</id>
@@ -22481,7 +22529,7 @@
                 <mandatoryPaths>
                     <path>10</path>
                 </mandatoryPaths>
-                <exclusivePath></exclusivePath>
+                <exclusivePath>10</exclusivePath>
                 <program>
                     <topic>
                         <id>c363t1</id>
@@ -22539,7 +22587,7 @@
                 <mandatoryPaths>
                     <path>10</path>
                 </mandatoryPaths>
-                <exclusivePath></exclusivePath>
+                <exclusivePath>10</exclusivePath>
                 <program>
                     <topic>
                         <id>c364t1</id>
@@ -22617,7 +22665,7 @@
                 <mandatoryPaths>
                     <path>11</path>
                 </mandatoryPaths>
-                <exclusivePath></exclusivePath>
+                <exclusivePath>11</exclusivePath>
                 <program>
                     <topic>
                         <id>c365t1</id>
@@ -22671,7 +22719,7 @@
                 <mandatoryPaths>
                     <path>11</path>
                 </mandatoryPaths>
-                <exclusivePath></exclusivePath>
+                <exclusivePath>11</exclusivePath>
                 <program>
                     <topic>
                         <id>c366t1</id>
@@ -22737,7 +22785,7 @@
                 <mandatoryPaths>
                     <path>11</path>
                 </mandatoryPaths>
-                <exclusivePath></exclusivePath>
+                <exclusivePath>11</exclusivePath>
                 <program>
                     <topic>
                         <id>c367t1</id>
@@ -22810,7 +22858,19 @@
                 <ects>5</ects>
                 <optional>true</optional>
                 <paths>
+                    <path>1</path>
+                    <path>2</path>
+                    <path>3</path>
+                    <path>4</path>
+                    <path>5</path>
+                    <path>6</path>
+                    <path>7</path>
+                    <path>8</path>
+                    <path>9</path>
+                    <path>10</path>
                     <path>11</path>
+                    <path>12</path>
+                    <path>13</path>
                 </paths>
                 <mandatoryPaths>
                     <path>11</path>
@@ -22881,7 +22941,7 @@
                 <mandatoryPaths>
                     <path>12</path>
                 </mandatoryPaths>
-                <exclusivePath></exclusivePath>
+                <exclusivePath>12</exclusivePath>
                 <program>
                     <topic>
                         <id>c369t1</id>
@@ -22919,7 +22979,7 @@
                 <mandatoryPaths>
                     <path>12</path>
                 </mandatoryPaths>
-                <exclusivePath></exclusivePath>
+                <exclusivePath>12</exclusivePath>
                 <program>
                     <topic>
                         <id>c370t1</id>
@@ -22953,7 +23013,7 @@
                 <mandatoryPaths>
                     <path>12</path>
                 </mandatoryPaths>
-                <exclusivePath></exclusivePath>
+                <exclusivePath>12</exclusivePath>
                 <program>
                     <topic>
                         <id>c371t1</id>
@@ -22987,7 +23047,7 @@
                 <mandatoryPaths>
                     <path>12</path>
                 </mandatoryPaths>
-                <exclusivePath></exclusivePath>
+                <exclusivePath>12</exclusivePath>
                 <program>
                     <topic>
                         <id>c372t1</id>
@@ -23061,7 +23121,7 @@
                 <mandatoryPaths>
                     <path>13</path>
                 </mandatoryPaths>
-                <exclusivePath></exclusivePath>
+                <exclusivePath>13</exclusivePath>
                 <program>
                     <topic>
                         <id>c373t1</id>
@@ -23103,7 +23163,7 @@
                 <mandatoryPaths>
                     <path>13</path>
                 </mandatoryPaths>
-                <exclusivePath></exclusivePath>
+                <exclusivePath>13</exclusivePath>
                 <program>
                     <topic>
                         <id>c374t1</id>
@@ -23161,7 +23221,7 @@
                 <mandatoryPaths>
                     <path>13</path>
                 </mandatoryPaths>
-                <exclusivePath></exclusivePath>
+                <exclusivePath>13</exclusivePath>
                 <program>
                     <topic>
                         <id>c375t1</id>
@@ -23211,7 +23271,7 @@
                 <mandatoryPaths>
                     <path>13</path>
                 </mandatoryPaths>
-                <exclusivePath></exclusivePath>
+                <exclusivePath>13</exclusivePath>
                 <program>
                     <topic>
                         <id>c376t1</id>

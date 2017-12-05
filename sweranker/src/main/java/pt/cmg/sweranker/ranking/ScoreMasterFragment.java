@@ -251,7 +251,7 @@ public class ScoreMasterFragment extends Fragment implements LifecycleRegistryOw
 
         _rankingsGrid.setLayoutManager(new GridLayoutManager(getActivity(), 4));
         _rankingsGrid.addItemDecoration(new ConstantSpacingItemDecorator(getActivity(),
-                2,
+                5,
                 ConstantSpacingItemDecorator.Side.ALL_SIDES));
         _rankingsGrid.setItemAnimator(new DefaultItemAnimator());
         _rankingsGrid.setAdapter(_adapter);
