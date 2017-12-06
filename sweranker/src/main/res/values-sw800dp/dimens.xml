@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="ka_card_image_height">270dp</dimen>
+    <dimen name="ka_card_title_size">15sp</dimen>
+    <dimen name="ka_detail_image_height">250dp</dimen>
+    <dimen name="ka_detail_title_size">25sp</dimen>
+    <dimen name="ka_detail_description_text_size">18sp</dimen>
+    <dimen name="ka_detail_topic_name_text_size">20sp</dimen>
+
+    <dimen name="degree_master_image_size">270dp</dimen>
+
+    <dimen name="score_image_size">180dp</dimen>
+    <dimen name="score_title_text_size">20sp</dimen>
+
+    <dimen name="score_dialog_title_size">30sp</dimen>
+    <dimen name="score_dialog_subtitle_text_size">20sp</dimen>
+    <dimen name="score_dialog_item_line_size">30sp</dimen>
+    <dimen name="score_dialog_item_option_text_size">20sp</dimen>
+
+    <dimen name="chart_subtitle_text_size">8sp</dimen>
+    <dimen name="chart_degree_overview_image_height">120dp</dimen>
+    <dimen name="chart_degree_overview_name_text_size">20sp</dimen>
+    <dimen name="chart_degree_overview_university_text_size">18sp</dimen>
+    <dimen name="chart_degree_overview_combo_name">15sp</dimen>
+    <dimen name="chart_degree_overview_button_text_size">18sp</dimen>
+    <dimen name="chart_swebok_coverage_chart_height">600dp</dimen>
+
+    <dimen name="swebok_distribution_chart_height">600dp</dimen>
+    <dimen name="swebok_distribution_chart_values_text_size">6sp</dimen>
+
+    <dimen name="top_kas_chart_height">400dp</dimen>
+    <dimen name="top_kas_chart_subtitle_text_size">8sp</dimen>
+
+    <dimen name="top_ka_topics_chart_height">700dp</dimen>
+
+</resources>

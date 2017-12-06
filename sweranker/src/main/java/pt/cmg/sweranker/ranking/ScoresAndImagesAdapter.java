@@ -44,7 +44,7 @@ public class ScoresAndImagesAdapter extends MultiSelectableAdapter<ScoresAndImag
 
     @Override
     public ScoreImageViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.ranking_card, parent, false);
+        View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.scores_master_card, parent, false);
         return new ScoreImageViewHolder(itemView);
     }
 

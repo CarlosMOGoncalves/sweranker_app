@@ -412,7 +412,7 @@ public class MultiScoreDetailedChartFragment extends Fragment implements Lifecyc
 
             TextView kaName = new TextView(getActivity());
             kaName.setText("KA" + _knowledgeAreas[i].getId() + "-" + getResources().getString(_knowledgeAreas[i].getNameResource()));
-            kaName.setTextSize(getResources().getDimension(R.dimen.chart_subtitle));
+            kaName.setTextSize(getResources().getDimension(R.dimen.chart_subtitle_text_size));
             kaName.setCompoundDrawables(calculateSideDrawable(squareIcon, kaName, _knowledgeAreaColours[i]), null, null, null);
 
             // All of this here below is just needed to set the alignment of the subtitles. Thank you stackoverflow.
@@ -537,7 +537,7 @@ public class MultiScoreDetailedChartFragment extends Fragment implements Lifecyc
 
 
             PieDataSet dataSet = new PieDataSet(entries, "KA Percentiles");
-            dataSet.setValueTextSize(getResources().getDimension(R.dimen.chart_ka_distribution_values_text_size));
+            dataSet.setValueTextSize(getResources().getDimension(R.dimen.swebok_distribution_chart_values_text_size));
             dataSet.setColors(_knowledgeAreaColours);
             dataSet.setValueFormatter(new PercentFormatter());
 
@@ -726,7 +726,7 @@ public class MultiScoreDetailedChartFragment extends Fragment implements Lifecyc
             Description chartDescription = new Description();
             chartDescription.setText(String.format(getResources().getString(R.string.bar_chart_description), degreeScore.getTotalTopicCount()));
             chartDescription.setTextAlign(Paint.Align.RIGHT);
-            chartDescription.setTextSize((int) getResources().getDimension(R.dimen.chart_top_ka_description_text_size));
+            chartDescription.setTextSize((int) getResources().getDimension(R.dimen.top_kas_chart_subtitle_text_size));
             horizontalBarChart.setDescription(chartDescription);
 
             horizontalBarChart.setFitBars(true);
@@ -924,7 +924,7 @@ public class MultiScoreDetailedChartFragment extends Fragment implements Lifecyc
             Description chartDescription = new Description();
             chartDescription.setText(String.format(getResources().getString(R.string.bar_chart_description), degreeScore.getTotalTopicCount()));
             chartDescription.setTextAlign(Paint.Align.RIGHT);
-            chartDescription.setTextSize((int) getResources().getDimension(R.dimen.chart_top_ka_description_text_size));
+            chartDescription.setTextSize((int) getResources().getDimension(R.dimen.top_kas_chart_subtitle_text_size));
             topKaTopicsChart.setDescription(chartDescription);
 
             topKaTopicsChart.setFitBars(true);

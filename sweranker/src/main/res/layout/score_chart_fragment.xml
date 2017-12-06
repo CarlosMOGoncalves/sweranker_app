@@ -54,13 +54,14 @@
 
                     <android.support.v7.widget.CardView
                         android:id="@+id/degree_image_area"
-                        android:layout_width="@dimen/chart_degree_overview_image_size"
-                        android:layout_height="@dimen/chart_degree_overview_image_size"
+                        android:layout_width="@dimen/chart_degree_overview_image_height"
+                        android:layout_height="@dimen/chart_degree_overview_image_height"
                         android:layout_marginBottom="8dp"
                         android:layout_marginStart="8dp"
                         android:layout_marginTop="8dp"
                         app:layout_constraintLeft_toRightOf="parent"
-                        app:layout_constraintTop_toTopOf="parent">
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent">
 
                         <ImageView
                             android:id="@+id/degree_image"
@@ -149,7 +150,7 @@
                 android:layout_marginStart="5dp"
                 android:layout_marginTop="8dp"
                 app:contentPadding="@dimen/card_inner_padding"
-                app:layout_constraintBottom_toTopOf="@+id/chart_legend"
+                app:layout_constraintBottom_toTopOf="@+id/chart_subtitle"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/degree_overview_area">
@@ -167,7 +168,7 @@
                         android:paddingBottom="5dp"
                         android:text="@string/coverage_chart_label"
                         android:textAlignment="center"
-                        android:textSize="@dimen/ranking_name_text_size"
+                        android:textSize="@dimen/score_title_text_size"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/degree_overview_label" />
@@ -175,7 +176,7 @@
                     <com.github.mikephil.charting.charts.RadarChart
                         android:id="@+id/coverage_chart"
                         android:layout_width="match_parent"
-                        android:layout_height="400dp"
+                        android:layout_height="@dimen/chart_swebok_coverage_chart_height"
                         android:background="@color/hollow"
                         android:paddingTop="5dp" />
                 </LinearLayout>
@@ -189,14 +190,14 @@
             </android.support.v7.widget.CardView>
 
             <android.support.v7.widget.CardView
-                android:id="@+id/chart_legend"
+                android:id="@+id/chart_subtitle"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="5dp"
                 android:layout_marginStart="5dp"
                 android:layout_marginTop="8dp"
                 app:contentPadding="@dimen/card_inner_padding"
-                app:layout_constraintBottom_toTopOf="@+id/percentile_chart_area"
+                app:layout_constraintBottom_toTopOf="@+id/distribution_chart_area"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/coverage_area">
@@ -214,7 +215,7 @@
                         android:paddingBottom="5dp"
                         android:text="@string/chart_subtitle"
                         android:textAlignment="center"
-                        android:textSize="@dimen/ranking_name_text_size"
+                        android:textSize="@dimen/score_title_text_size"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/degree_overview_label" />
@@ -234,7 +235,7 @@
             </android.support.v7.widget.CardView>
 
             <android.support.v7.widget.CardView
-                android:id="@+id/percentile_chart_area"
+                android:id="@+id/distribution_chart_area"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="5dp"
@@ -245,7 +246,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/chart_legend">
+                app:layout_constraintTop_toBottomOf="@+id/chart_subtitle">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -260,13 +261,13 @@
                         android:paddingBottom="5dp"
                         android:text="@string/ka_distribution"
                         android:textAlignment="center"
-                        android:textSize="@dimen/ranking_name_text_size"
-                        app:layout_constraintTop_toBottomOf="@+id/chart_legend" />
+                        android:textSize="@dimen/score_title_text_size"
+                        app:layout_constraintTop_toBottomOf="@+id/chart_subtitle" />
 
                     <com.github.mikephil.charting.charts.PieChart
                         android:id="@+id/ka_distribution_chart"
                         android:layout_width="match_parent"
-                        android:layout_height="400dp"
+                        android:layout_height="@dimen/swebok_distribution_chart_height"
                         android:background="@color/hollow"
                         android:paddingTop="5dp" />
                 </LinearLayout>
@@ -290,7 +291,7 @@
                 app:layout_constraintBottom_toTopOf="@+id/top_ka_topics_chart_area"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/percentile_chart_area">
+                app:layout_constraintTop_toBottomOf="@+id/distribution_chart_area">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -306,14 +307,14 @@
                         android:paddingBottom="5dp"
                         android:text="@string/top_kas"
                         android:textAlignment="center"
-                        android:textSize="@dimen/ranking_name_text_size"
-                        app:layout_constraintTop_toBottomOf="@+id/percentile_chart_area" />
+                        android:textSize="@dimen/score_title_text_size"
+                        app:layout_constraintTop_toBottomOf="@+id/distribution_chart_area" />
 
 
                     <com.github.mikephil.charting.charts.HorizontalBarChart
                         android:id="@+id/top_kas_chart"
                         android:layout_width="match_parent"
-                        android:layout_height="300dp"
+                        android:layout_height="@dimen/top_kas_chart_height"
                         android:layout_gravity="center"
                         android:background="@color/hollow"
                         android:paddingTop="5dp">
@@ -360,13 +361,13 @@
                         android:paddingBottom="5dp"
                         android:text="@string/top_ka_topics"
                         android:textAlignment="center"
-                        android:textSize="@dimen/ranking_name_text_size" />
+                        android:textSize="@dimen/score_title_text_size" />
 
 
                     <com.github.mikephil.charting.charts.HorizontalBarChart
                         android:id="@+id/top_ka_topics_chart"
                         android:layout_width="match_parent"
-                        android:layout_height="500dp"
+                        android:layout_height="@dimen/top_ka_topics_chart_height"
                         android:layout_gravity="center"
                         android:layout_marginTop="5dp"
                         android:background="@color/hollow">

@@ -3,25 +3,29 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical"
     android:elevation="3dp"
-    android:paddingTop="@dimen/ka_detail_topic_title_top_padding"
+    android:orientation="vertical"
     android:paddingLeft="@dimen/ka_detail_list_padding"
-    android:paddingRight="@dimen/ka_detail_list_padding">
+    android:paddingRight="@dimen/ka_detail_list_padding"
+    android:paddingTop="@dimen/ka_detail_topic_title_top_padding">
 
     <TextView
         android:id="@+id/topic_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:text="@string/loren_ipsum_title"
-        android:textSize="@dimen/ka_detail_topic_name_text_size" />
+        android:gravity="center_horizontal"
+        android:paddingBottom="@dimen/ka_detail_topic_title_top_padding"
+        android:textSize="@dimen/ka_detail_topic_name_text_size"
+        tools:text="@string/loren_ipsum_title" />
 
     <TextView
         android:id="@+id/topic_description"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:text="@string/loren_ipsum_description"
+        android:padding="@dimen/ka_detail_topic_title_top_padding"
+        android:textAlignment="center"
         android:textSize="@dimen/ka_detail_description_text_size"
-        android:visibility="gone" />
+        android:visibility="gone"
+        tools:text="@string/loren_ipsum_description" />
 
 </LinearLayout>

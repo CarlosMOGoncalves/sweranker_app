@@ -166,7 +166,7 @@ public class ScoreMasterFragment extends Fragment implements LifecycleRegistryOw
 
 
         dialogBuilder.setView(createFilterDialogView())
-                .setCustomTitle(getActivity().getLayoutInflater().inflate(R.layout.ranking_fragment_filter_dialog_title, null))
+                .setCustomTitle(getActivity().getLayoutInflater().inflate(R.layout.scores_master_filter_dialog_title, null))
                 .setPositiveButton(getResources().getString(R.string.apply), (dialog, which) -> {
 
                     // In the adapter this is the same
@@ -194,18 +194,18 @@ public class ScoreMasterFragment extends Fragment implements LifecycleRegistryOw
     }
 
     private View createFilterDialogView() {
-        _filterDialog = getActivity().getLayoutInflater().inflate(R.layout.ranking_fragment_filter_dialog, null);
+        _filterDialog = getActivity().getLayoutInflater().inflate(R.layout.scores_master_filter_dialog, null);
 
         _filterDialogSelectedKA = _filterDialog.findViewById(R.id.knowledge_area_spinner);
         _filterDialogSelectedKA.setAdapter(new KASpinnerAdapter(_sharedViewModel.getKnowledgeAreas().getValue()));
 
         String[] orders = new String[]{getActivity().getString(R.string.order_ascending), getActivity().getString(R.string.order_descending)};
         _filterDialogSelectedOrder = _filterDialog.findViewById(R.id.order_spinner);
-        _filterDialogSelectedOrder.setAdapter(new ArrayAdapter<>(getActivity(), R.layout.ranking_fragment_filter_dialog_spinner_item, orders));
+        _filterDialogSelectedOrder.setAdapter(new ArrayAdapter<>(getActivity(), R.layout.scores_master_filter_dialog_spinner_item, orders));
 
         String[] limits = new String[]{"1", "10", "50", getActivity().getString(R.string.filter_all_label)};
         _filterDialogLimitSpinner = _filterDialog.findViewById(R.id.results_number_spinner);
-        _filterDialogLimitSpinner.setAdapter(new ArrayAdapter<>(getActivity(), R.layout.ranking_fragment_filter_dialog_spinner_item, limits));
+        _filterDialogLimitSpinner.setAdapter(new ArrayAdapter<>(getActivity(), R.layout.scores_master_filter_dialog_spinner_item, limits));
         _filterDialogLimitSpinner.setSelection(1);
 
         _filterDialogSelectedDegree = _filterDialog.findViewById(R.id.degree_spinner);
@@ -219,7 +219,7 @@ public class ScoreMasterFragment extends Fragment implements LifecycleRegistryOw
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
 
-        _myRootView = inflater.inflate(R.layout.ranking_fragment, container, false);
+        _myRootView = inflater.inflate(R.layout.scores_master_fragment, container, false);
 
         _noScoresText = _myRootView.findViewById(R.id.no_scores_text);
         _progressBar = _myRootView.findViewById(R.id.progress_bar);
@@ -406,7 +406,7 @@ public class ScoreMasterFragment extends Fragment implements LifecycleRegistryOw
 
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
-            convertView = LayoutInflater.from(_context).inflate(R.layout.ranking_fragment_filter_dialog_spinner_item, null);
+            convertView = LayoutInflater.from(_context).inflate(R.layout.scores_master_filter_dialog_spinner_item, null);
             ((TextView) convertView.findViewById(R.id.list_item)).setText(_context.getString(_knowledgeAreas.get(position).getNameResource()));
             return convertView;
         }
@@ -449,7 +449,7 @@ public class ScoreMasterFragment extends Fragment implements LifecycleRegistryOw
 
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
-            convertView = LayoutInflater.from(_context).inflate(R.layout.ranking_fragment_filter_dialog_spinner_item, null);
+            convertView = LayoutInflater.from(_context).inflate(R.layout.scores_master_filter_dialog_spinner_item, null);
             if (position == 0) {
                 ((TextView) convertView.findViewById(R.id.list_item)).setText(R.string.filter_all_label);
             } else {

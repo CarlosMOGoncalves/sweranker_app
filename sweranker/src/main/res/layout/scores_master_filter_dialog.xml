@@ -12,7 +12,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:text="@string/knowledge_area"
-        android:textSize="15dp"
+        android:textSize="@dimen/score_dialog_subtitle_text_size"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -35,7 +35,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:text="@string/order"
-        android:textSize="15dp"
+        android:textSize="@dimen/score_dialog_subtitle_text_size"
         android:textStyle="bold"
         app:layout_constraintLeft_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/knowledge_area_spinner"
@@ -43,7 +43,7 @@
 
     <Spinner
         android:id="@+id/order_spinner"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
@@ -56,7 +56,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/result_count"
-        android:textSize="15dp"
+        android:textSize="@dimen/score_dialog_subtitle_text_size"
         android:textStyle="bold"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/order_spinner"
@@ -65,7 +65,7 @@
 
     <Spinner
         android:id="@+id/results_number_spinner"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
@@ -79,7 +79,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:text="@string/degree"
-        android:textSize="15dp"
+        android:textSize="@dimen/score_dialog_subtitle_text_size"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/results_number_spinner"

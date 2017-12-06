@@ -203,7 +203,7 @@
             app:contentPadding="@dimen/card_inner_padding"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintBottom_toTopOf="@+id/chart_legend"
+            app:layout_constraintBottom_toTopOf="@+id/chart_subtitle"
             app:layout_constraintTop_toBottomOf="@+id/degree_overview_area">
 
             <LinearLayout
@@ -219,7 +219,7 @@
                     android:paddingBottom="5dp"
                     android:text="@string/coverage_chart_label"
                     android:textAlignment="center"
-                    android:textSize="@dimen/ranking_name_text_size"
+                    android:textSize="@dimen/score_title_text_size"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/degree_overview_label" />
@@ -241,7 +241,7 @@
         </android.support.v7.widget.CardView>
 
         <android.support.v7.widget.CardView
-            android:id="@+id/chart_legend"
+            android:id="@+id/chart_subtitle"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginEnd="5dp"
@@ -250,7 +250,7 @@
             app:contentPadding="@dimen/card_inner_padding"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintBottom_toTopOf="@+id/percentile_chart_area"
+            app:layout_constraintBottom_toTopOf="@+id/distribution_chart_area"
             app:layout_constraintTop_toBottomOf="@+id/coverage_area">
 
             <LinearLayout
@@ -266,7 +266,7 @@
                     android:paddingBottom="5dp"
                     android:text="@string/chart_subtitle"
                     android:textAlignment="center"
-                    android:textSize="@dimen/ranking_name_text_size"
+                    android:textSize="@dimen/score_title_text_size"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/degree_overview_label" />
@@ -286,7 +286,7 @@
         </android.support.v7.widget.CardView>
 
         <android.support.v7.widget.CardView
-            android:id="@+id/percentile_chart_area"
+            android:id="@+id/distribution_chart_area"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginEnd="5dp"
@@ -297,7 +297,7 @@
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintBottom_toTopOf="@+id/top_ka_chart_area"
-            app:layout_constraintTop_toBottomOf="@+id/chart_legend">
+            app:layout_constraintTop_toBottomOf="@+id/chart_subtitle">
 
             <android.support.constraint.ConstraintLayout
                 android:id="@+id/ka_percentiles_chart_container"
@@ -313,7 +313,7 @@
                     android:paddingBottom="5dp"
                     android:text="@string/ka_distribution"
                     android:textAlignment="center"
-                    android:textSize="@dimen/ranking_name_text_size"
+                    android:textSize="@dimen/score_title_text_size"
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintEnd_toEndOf="parent" />
@@ -354,7 +354,7 @@
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintBottom_toTopOf="@+id/top_ka_topics_chart_area"
-            app:layout_constraintTop_toBottomOf="@+id/percentile_chart_area">
+            app:layout_constraintTop_toBottomOf="@+id/distribution_chart_area">
 
             <android.support.constraint.ConstraintLayout
                 android:id="@+id/top_ka_chart_container"
@@ -370,7 +370,7 @@
                     android:paddingBottom="5dp"
                     android:text="@string/top_kas"
                     android:textAlignment="center"
-                    android:textSize="@dimen/ranking_name_text_size"
+                    android:textSize="@dimen/score_title_text_size"
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintEnd_toEndOf="parent" />
@@ -430,7 +430,7 @@
                     android:paddingBottom="5dp"
                     android:text="@string/top_ka_topics"
                     android:textAlignment="center"
-                    android:textSize="@dimen/ranking_name_text_size"
+                    android:textSize="@dimen/score_title_text_size"
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintEnd_toEndOf="parent" />

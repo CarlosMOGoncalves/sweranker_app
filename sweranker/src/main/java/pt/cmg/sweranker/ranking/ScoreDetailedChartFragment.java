@@ -161,8 +161,8 @@ public class ScoreDetailedChartFragment extends Fragment implements LifecycleReg
 
 
         _myRootView = inflater.inflate(R.layout.score_chart_fragment, container, false);
-        _contentArea = (ScrollView) _myRootView.findViewById(R.id.content_area);
-        _noScoreAvailable = (TextView) _myRootView.findViewById(R.id.no_score_text);
+        _contentArea = _myRootView.findViewById(R.id.content_area);
+        _noScoreAvailable = _myRootView.findViewById(R.id.no_score_text);
 
         if (_degreeScoreId == null) {
             _contentArea.setVisibility(View.GONE);
@@ -171,31 +171,31 @@ public class ScoreDetailedChartFragment extends Fragment implements LifecycleReg
         } else {
             _contentArea.setVisibility(View.VISIBLE);
             _noScoreAvailable.setVisibility(View.GONE);
-            _degreeImage = (ImageView) _myRootView.findViewById(R.id.degree_image);
-            _overviewDegreeName = (TextView) _myRootView.findViewById(R.id.degree_overview_name);
-            _overviewUniversityName = (TextView) _myRootView.findViewById(R.id.degree_overview_university);
-            _overviewCombinationName = (TextView) _myRootView.findViewById(R.id.degree_overview_combo_name);
-            _overviewProgressBar = (ProgressBar) _myRootView.findViewById(R.id.overview_progress);
-            _showOverview = (TextView) _myRootView.findViewById(R.id.show_overview);
+            _degreeImage = _myRootView.findViewById(R.id.degree_image);
+            _overviewDegreeName = _myRootView.findViewById(R.id.degree_overview_name);
+            _overviewUniversityName = _myRootView.findViewById(R.id.degree_overview_university);
+            _overviewCombinationName = _myRootView.findViewById(R.id.degree_overview_combo_name);
+            _overviewProgressBar = _myRootView.findViewById(R.id.overview_progress);
+            _showOverview = _myRootView.findViewById(R.id.show_overview);
 
-            _subtitleTable = (GridLayout) _myRootView.findViewById(R.id.chart_legend_table);
+            _subtitleTable = _myRootView.findViewById(R.id.chart_legend_table);
 
-            _percentProgressBar = (ProgressBar) _myRootView.findViewById(R.id.percent_chart_progress);
+            _percentProgressBar = _myRootView.findViewById(R.id.percent_chart_progress);
             _percentProgressBar.setVisibility(View.VISIBLE);
-            _kaPercentDistributionChart = (PieChart) _myRootView.findViewById(R.id.ka_distribution_chart);
+            _kaPercentDistributionChart = _myRootView.findViewById(R.id.ka_distribution_chart);
             _kaPercentDistributionChart.setVisibility(View.INVISIBLE);
 
-            _topKaProgressBar = (ProgressBar) _myRootView.findViewById(R.id.top_kas_chart_progress);
+            _topKaProgressBar = _myRootView.findViewById(R.id.top_kas_chart_progress);
             _topKaProgressBar.setVisibility(View.VISIBLE);
-            _topKaChart = (HorizontalBarChart) _myRootView.findViewById(R.id.top_kas_chart);
+            _topKaChart = _myRootView.findViewById(R.id.top_kas_chart);
 
-            _topcKaTopicsProgressBar = (ProgressBar) _myRootView.findViewById(R.id.top_ka_topics_chart_progress);
+            _topcKaTopicsProgressBar = _myRootView.findViewById(R.id.top_ka_topics_chart_progress);
             _topcKaTopicsProgressBar.setVisibility(View.VISIBLE);
-            _topKaTopicsChart = (HorizontalBarChart) _myRootView.findViewById(R.id.top_ka_topics_chart);
+            _topKaTopicsChart = _myRootView.findViewById(R.id.top_ka_topics_chart);
 
-            _coverageChartProgressBar = (ProgressBar) _myRootView.findViewById(R.id.coverage_chart_progress);
+            _coverageChartProgressBar = _myRootView.findViewById(R.id.coverage_chart_progress);
             _coverageChartProgressBar.setVisibility(View.VISIBLE);
-            _coverageChart = (RadarChart) _myRootView.findViewById(R.id.coverage_chart);
+            _coverageChart = _myRootView.findViewById(R.id.coverage_chart);
 
         }
 
@@ -381,7 +381,7 @@ public class ScoreDetailedChartFragment extends Fragment implements LifecycleReg
 
             TextView kaName = new TextView(getActivity());
             kaName.setText("KA" + _knowledgeAreas[i].getId() + "-" + getResources().getString(_knowledgeAreas[i].getNameResource()));
-            kaName.setTextSize(getResources().getDimension(R.dimen.chart_subtitle));
+            kaName.setTextSize(getResources().getDimension(R.dimen.chart_subtitle_text_size));
             kaName.setCompoundDrawables(calculateSideDrawable(squareIcon, kaName, _knowledgeAreaColours[i]), null, null, null);
 
             // All of this here below is just needed to set the alignment of the subtitles. Thank you stackoverflow.
@@ -441,7 +441,7 @@ public class ScoreDetailedChartFragment extends Fragment implements LifecycleReg
 
 
         PieDataSet dataSet = new PieDataSet(entries, "KA Percentiles");
-        dataSet.setValueTextSize(getResources().getDimension(R.dimen.chart_ka_distribution_values_text_size));
+        dataSet.setValueTextSize(getResources().getDimension(R.dimen.swebok_distribution_chart_values_text_size));
         dataSet.setColors(_knowledgeAreaColours);
         dataSet.setValueFormatter(new PercentFormatter());
 
@@ -539,7 +539,7 @@ public class ScoreDetailedChartFragment extends Fragment implements LifecycleReg
         Description chartDescription = new Description();
         chartDescription.setText(String.format(getResources().getString(R.string.bar_chart_description), _degreeScore.getTotalTopicCount()));
         chartDescription.setTextAlign(Paint.Align.RIGHT);
-        chartDescription.setTextSize((int) getResources().getDimension(R.dimen.chart_top_ka_description_text_size));
+        chartDescription.setTextSize((int) getResources().getDimension(R.dimen.top_kas_chart_subtitle_text_size));
         _topKaChart.setDescription(chartDescription);
 
         _topKaChart.setFitBars(true);
@@ -641,7 +641,7 @@ public class ScoreDetailedChartFragment extends Fragment implements LifecycleReg
         Description chartDescription = new Description();
         chartDescription.setText(String.format(getResources().getString(R.string.bar_chart_description), _degreeScore.getTotalTopicCount()));
         chartDescription.setTextAlign(Paint.Align.RIGHT);
-        chartDescription.setTextSize((int) getResources().getDimension(R.dimen.chart_top_ka_description_text_size));
+        chartDescription.setTextSize((int) getResources().getDimension(R.dimen.top_kas_chart_subtitle_text_size));
         _topKaTopicsChart.setDescription(chartDescription);
 
         _topKaTopicsChart.setFitBars(true);

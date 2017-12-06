@@ -1,6 +1,7 @@
 package pt.cmg.sweranker.swebok;
 
 import android.content.Context;
+import android.graphics.drawable.GradientDrawable;
 import android.support.v7.widget.RecyclerView;
 import android.transition.Fade;
 import android.transition.TransitionManager;
@@ -89,20 +90,20 @@ public class KnowledgeAreaDetailAdapter extends RecyclerView.Adapter<RecyclerVie
     }
 
 
-    class KADetailsViewHolder extends RecyclerView.ViewHolder {
+    private class KADetailsViewHolder extends RecyclerView.ViewHolder {
 
         private TextView _kaDescription;
 
-        public KADetailsViewHolder(View view) {
+        private KADetailsViewHolder(View view) {
             super(view);
-            _kaDescription = (TextView) view.findViewById(R.id.ka_details_description_text);
+            _kaDescription = view.findViewById(R.id.ka_details_description_text);
         }
     }
 
     // Really just a marker class to be able to inflate the textview
-    class KATopicsTitleViewHolder extends RecyclerView.ViewHolder {
+    private class KATopicsTitleViewHolder extends RecyclerView.ViewHolder {
 
-        public KATopicsTitleViewHolder(View view) {
+        private KATopicsTitleViewHolder(View view) {
             super(view);
         }
     }
@@ -110,25 +111,27 @@ public class KnowledgeAreaDetailAdapter extends RecyclerView.Adapter<RecyclerVie
     /**
      * ViewHolder pattern to hold each KA topic and its description
      */
-    public class KATopicsViewHolder extends RecyclerView.ViewHolder {
+    protected class KATopicsViewHolder extends RecyclerView.ViewHolder {
 
         private TextView _topicName;
         private TextView _topicDescritpion;
 
-        public KATopicsViewHolder(View view) {
+        private KATopicsViewHolder(View view) {
             super(view);
-            _topicName = (TextView) view.findViewById(R.id.topic_name);
-            _topicDescritpion = (TextView) view.findViewById(R.id.topic_description);
+            _topicName = view.findViewById(R.id.topic_name);
+            _topicDescritpion = view.findViewById(R.id.topic_description);
 
-            //This listener is used to set the visibility of the topic description, it is GONE by
-            //default
-            view.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    TransitionManager.beginDelayedTransition(_parentView, new Fade());
-                    boolean isGone = _topicDescritpion.getVisibility() == View.GONE;
-                    _topicDescritpion.setVisibility(isGone ? View.VISIBLE : View.GONE);
-                }
+            //This listener is used to set the visibility of the topic description, it is GONE by default
+            view.setOnClickListener(v -> {
+
+                TransitionManager.beginDelayedTransition(_parentView, new Fade());
+                boolean isGone = _topicDescritpion.getVisibility() == View.GONE;
+                _topicDescritpion.setVisibility(isGone ? View.VISIBLE : View.GONE);
+
+                // This part just adds a nice border to the description text with the same colour as the KA dominant colour
+                GradientDrawable border = new GradientDrawable();
+                border.setStroke(2, _context.getResources().getColor(_knowledgeArea.getColourResource()));
+                _topicDescritpion.setBackground(border);
             });
         }
 
