@@ -11,7 +11,9 @@
         android:layout_height="wrap_content"
         android:background="@color/darkerBackground"
         android:gravity="center"
+        android:paddingBottom="5dp"
+        android:paddingTop="5dp"
         android:textAlignment="center"
-        android:textSize="@dimen/chart_degree_info_item_text_size"
+        android:textSize="@dimen/score_chart_degree_info_dialog_item_year_label_text_size"
         tools:text="Year 1" />
 </LinearLayout>

@@ -116,11 +116,11 @@ public class DegreeOverviewAdapter extends RecyclerView.Adapter<RecyclerView.Vie
         View itemView;
 
         if (viewType == TYPE_DEGREE_CLASS_YEAR) {
-            itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.score_chart_list_item_year, parent, false);
+            itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.score_chart_degree_overview_dialog_list_item_year, parent, false);
             return new DegreeOverviewAdapter.DegreeYearViewHolder(itemView);
         }
 
-        itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.score_chart_list_item_degree_class, parent, false);
+        itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.score_chart_degree_overview_dialog_list_item_degree_class, parent, false);
         return new DegreeOverviewAdapter.DegreeClassViewHolder(itemView);
     }
 

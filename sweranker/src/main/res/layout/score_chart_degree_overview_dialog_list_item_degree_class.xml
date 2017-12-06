@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="?android:selectableItemBackground"
@@ -11,6 +12,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center_vertical"
-        android:text="Programming in C"
-        android:textSize="@dimen/chart_degree_info_item_class_text_size" />
+        android:paddingStart="5dp"
+        android:paddingTop="2dp"
+        android:paddingBottom="2dp"
+        tools:text="Programming in C"
+        android:textSize="@dimen/score_chart_degree_info_dialog_item_class_name_text_size" />
 </LinearLayout>

@@ -34,6 +34,9 @@
 
     <dimen name="top_ka_topics_chart_height">700dp</dimen>
 
+    <dimen name="score_chart_degree_info_dialog_item_year_label_text_size">20sp</dimen>
+    <dimen name="score_chart_degree_info_dialog_item_class_name_text_size">18sp</dimen>
+
     <dimen name="multi_score_distribution_chart_area_height">600dp</dimen>
 
     <dimen name="multi_score_top_kas_chart_area_height">400dp</dimen>
