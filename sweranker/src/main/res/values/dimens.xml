@@ -86,6 +86,12 @@
     <dimen name="chart_degree_info_item_text_size">13dp</dimen>
     <dimen name="chart_degree_info_item_class_text_size">13dp</dimen>
 
+    <dimen name="multi_score_distribution_chart_area_height">500dp</dimen>
+
+    <dimen name="multi_score_top_kas_chart_area_height">300dp</dimen>
+
+    <dimen name="multi_score_top_ka_topics_chart_area_height">500dp</dimen>
+
     <dimen name="material_spinner_padding_left">24dp</dimen>
     <dimen name="material_spinner_padding_top">12dp</dimen>
     <dimen name="material_spinner_item_height">48dp</dimen>

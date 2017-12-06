@@ -34,4 +34,10 @@
 
     <dimen name="top_ka_topics_chart_height">700dp</dimen>
 
+    <dimen name="multi_score_distribution_chart_area_height">600dp</dimen>
+
+    <dimen name="multi_score_top_kas_chart_area_height">400dp</dimen>
+
+    <dimen name="multi_score_top_ka_topics_chart_area_height">700dp</dimen>
+
 </resources>

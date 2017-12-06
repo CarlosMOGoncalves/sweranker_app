@@ -38,7 +38,7 @@ import pt.cmg.sweranker.dependencies.MainActivityComponent;
 import pt.cmg.sweranker.dependencies.MainActivityModule;
 import pt.cmg.sweranker.ranking.MultiScoreDetailedChartFragment;
 import pt.cmg.sweranker.ranking.ScoreDetailedChartFragment;
-import pt.cmg.sweranker.ranking.ScoreMasterFragment;
+import pt.cmg.sweranker.ranking.ScoresMasterFragment;
 import pt.cmg.sweranker.swebok.KnowledgeArea;
 import pt.cmg.sweranker.swebok.SwebokDetailedFragment;
 import pt.cmg.sweranker.swebok.SwebokMasterFragment;
@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity implements
         DegreesMasterFragment.DegreesFragmentInteractionListener,
         DegreeDetailsFragment.DegreeDetailsFragmentInteractionListener,
         DegreeClassFragment.DegreeClassFragmentInteractionListener,
-        ScoreMasterFragment.ScoreFragmentInteractionListener {
+        ScoresMasterFragment.ScoreFragmentInteractionListener {
 
 
     private Toolbar _toolbar;
@@ -202,7 +202,7 @@ public class MainActivity extends AppCompatActivity implements
             getFragmentManager().beginTransaction().replace(R.id.content_area, DegreesMasterFragment.newInstance(), "Degrees").commit();
         } else if (id == R.id.rankings_nav) {
             getFragmentManager().popBackStackImmediate();
-            getFragmentManager().beginTransaction().replace(R.id.content_area, ScoreMasterFragment.newInstance(), "Degrees").commit();
+            getFragmentManager().beginTransaction().replace(R.id.content_area, ScoresMasterFragment.newInstance(), "Degrees").commit();
         }
 
         DrawerLayout drawer = findViewById(R.id.nav_drawer);

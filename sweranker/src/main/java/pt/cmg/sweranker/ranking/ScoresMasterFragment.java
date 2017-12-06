@@ -36,7 +36,7 @@ import pt.cmg.sweranker.degrees.Degree;
 import pt.cmg.sweranker.swebok.KnowledgeArea;
 import pt.cmg.sweranker.ui.ConstantSpacingItemDecorator;
 
-public class ScoreMasterFragment extends Fragment implements LifecycleRegistryOwner {
+public class ScoresMasterFragment extends Fragment implements LifecycleRegistryOwner {
 
 
     private LifecycleRegistry _lifecycle;
@@ -95,13 +95,13 @@ public class ScoreMasterFragment extends Fragment implements LifecycleRegistryOw
 
     private MainActivityViewModel _sharedViewModel;
 
-    public ScoreMasterFragment() {
+    public ScoresMasterFragment() {
         _lifecycle = new LifecycleRegistry(this);
     }
 
 
-    public static ScoreMasterFragment newInstance() {
-        return new ScoreMasterFragment();
+    public static ScoresMasterFragment newInstance() {
+        return new ScoresMasterFragment();
     }
 
     @Override
@@ -160,7 +160,12 @@ public class ScoreMasterFragment extends Fragment implements LifecycleRegistryOw
         }
     }
 
-
+    /**
+     * This will create and show a Dialog that has the purpose of filtering the results.
+     * This is a very very important piece of UI as most of the functionality benefits from this filtering.
+     * The usage of a simple AlertDialog seems appropriate, at least for now, because what is really important
+     * is what happens below the surface... and by that I mean querying the model.
+     */
     private void createAndShowFilterDialog() {
         AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(getActivity());
 
@@ -181,6 +186,8 @@ public class ScoreMasterFragment extends Fragment implements LifecycleRegistryOw
                     // The positive button launches a new search with new parameters
                     _progressBar.setVisibility(View.VISIBLE);
                     _rankingsGrid.setVisibility(View.INVISIBLE);
+
+                    // Pretty tricky, this will actually UPDATE A LIVEDATA object that in turn will trigger the filling of the grid with new results
                     _sharedViewModel.applyFilterToScores(kaId, order, degreeId, limit);
 
                     dialog.cancel();
@@ -229,6 +236,7 @@ public class ScoreMasterFragment extends Fragment implements LifecycleRegistryOw
         _progressBar.setVisibility(View.VISIBLE);
         _rankingsGrid.setVisibility(View.GONE);
 
+        initialiseScoresGrid();
 
         _sharedViewModel.getOrderedScoresImages().observe(this, combinationImages -> {
             if (combinationImages == null || combinationImages.isEmpty()) {
@@ -236,7 +244,7 @@ public class ScoreMasterFragment extends Fragment implements LifecycleRegistryOw
                 _noScoresText.setText(R.string.no_scores_available_yet);
                 _noScoresText.setVisibility(View.VISIBLE);
             } else {
-                initialiseScoresGrid(combinationImages);
+                resetScoresGrid(combinationImages);
             }
         });
 
@@ -244,16 +252,19 @@ public class ScoreMasterFragment extends Fragment implements LifecycleRegistryOw
     }
 
 
-    private void initialiseScoresGrid(LinkedHashMap<String, Integer> combinationNameAndImage) {
-
-        _adapter = new ScoresAndImagesAdapter(getActivity(),
-                combinationNameAndImage, new ScoresGridListener());
-
+    private void initialiseScoresGrid() {
         _rankingsGrid.setLayoutManager(new GridLayoutManager(getActivity(), 4));
         _rankingsGrid.addItemDecoration(new ConstantSpacingItemDecorator(getActivity(),
                 5,
                 ConstantSpacingItemDecorator.Side.ALL_SIDES));
         _rankingsGrid.setItemAnimator(new DefaultItemAnimator());
+    }
+
+    private void resetScoresGrid(LinkedHashMap<String, Integer> combinationNameAndImage) {
+
+        _adapter = new ScoresAndImagesAdapter(getActivity(),
+                combinationNameAndImage, new ScoresGridListener());
+
         _rankingsGrid.setAdapter(_adapter);
         _adapter.notifyDataSetChanged();
 

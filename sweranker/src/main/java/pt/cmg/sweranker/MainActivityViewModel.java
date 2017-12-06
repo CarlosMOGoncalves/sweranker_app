@@ -112,13 +112,13 @@ public class MainActivityViewModel extends ViewModel {
     private DegreeClass _selectedDegreeClass;
 
     /**
-     * Used in inter-fragment communication between ScoreMasterFragment and ScoreDetailedChartFragment
+     * Used in inter-fragment communication between ScoresMasterFragment and ScoreDetailedChartFragment
      * This will be used to load data about this particular combination.
      */
     private String _selectedDegreeCombinationId;
 
     /**
-     * Used in inter-fragment communication between ScoreMasterFragment and MultiScoreDetailedChartFragment
+     * Used in inter-fragment communication between ScoresMasterFragment and MultiScoreDetailedChartFragment
      * This will be used in when comparing two degree combinations against each other
      */
     private List<String> _selectedDegreeCombinationsToCompare;
@@ -953,7 +953,7 @@ public class MainActivityViewModel extends ViewModel {
     /**
      * Loads a data structure that is just a visual representation of the degree scores.
      * It basically consists of a Degree Combination name and its Image Resource.
-     * This is the data needed to be fed to the ScoreMasterFragment grid.
+     * This is the data needed to be fed to the ScoresMasterFragment grid.
      *
      * @return
      */
@@ -968,7 +968,7 @@ public class MainActivityViewModel extends ViewModel {
     /**
      * Loads a data structure that is just a visual representation of the degree scores.
      * It basically consists of a Degree Combination name and its Image Resource.
-     * This is the data needed to be fed to the ScoreMasterFragment grid.
+     * This is the data needed to be fed to the ScoresMasterFragment grid.
      *
      * @param kaId
      * @param order

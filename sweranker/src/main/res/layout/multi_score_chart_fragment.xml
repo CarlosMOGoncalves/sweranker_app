@@ -49,6 +49,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="8dp"
                         android:layout_marginStart="8dp"
+                        android:gravity="center_horizontal"
                         android:textAlignment="center"
                         android:textColor="@color/scoreComparisonMaterialBlue500"
                         android:textSize="@dimen/chart_degree_overview_name_text_size"
@@ -63,6 +64,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="8dp"
                         android:layout_marginStart="8dp"
+                        android:gravity="center_horizontal"
                         android:textAlignment="center"
                         android:textSize="@dimen/chart_degree_overview_university_text_size"
                         app:layout_constraintEnd_toEndOf="parent"
@@ -77,6 +79,7 @@
                         android:layout_marginEnd="8dp"
                         android:layout_marginStart="8dp"
                         android:layout_marginTop="2dp"
+                        android:gravity="center_horizontal"
                         android:textAlignment="center"
                         android:textSize="@dimen/chart_degree_overview_combo_name"
                         app:layout_constraintEnd_toEndOf="parent"
@@ -123,6 +126,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="8dp"
                         android:layout_marginStart="8dp"
+                        android:gravity="center_horizontal"
                         android:textAlignment="center"
                         android:textColor="@color/scoreComparisonMaterialRed500"
                         android:textSize="@dimen/chart_degree_overview_name_text_size"
@@ -137,6 +141,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="8dp"
                         android:layout_marginStart="8dp"
+                        android:gravity="center_horizontal"
                         android:textAlignment="center"
                         android:textSize="@dimen/chart_degree_overview_university_text_size"
                         app:layout_constraintEnd_toEndOf="parent"
@@ -151,6 +156,7 @@
                         android:layout_marginEnd="8dp"
                         android:layout_marginStart="8dp"
                         android:layout_marginTop="2dp"
+                        android:gravity="center_horizontal"
                         android:textAlignment="center"
                         android:textSize="@dimen/chart_degree_overview_combo_name"
                         app:layout_constraintEnd_toEndOf="parent"
@@ -216,6 +222,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@drawable/border_below"
+                    android:gravity="center_horizontal"
                     android:paddingBottom="5dp"
                     android:text="@string/coverage_chart_label"
                     android:textAlignment="center"
@@ -227,7 +234,7 @@
                 <com.github.mikephil.charting.charts.RadarChart
                     android:id="@+id/coverage_chart"
                     android:layout_width="match_parent"
-                    android:layout_height="400dp"
+                    android:layout_height="@dimen/chart_swebok_coverage_chart_height"
                     android:background="@color/hollow"
                     android:paddingTop="5dp" />
             </LinearLayout>
@@ -263,6 +270,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@drawable/border_below"
+                    android:gravity="center_horizontal"
                     android:paddingBottom="5dp"
                     android:text="@string/chart_subtitle"
                     android:textAlignment="center"
@@ -287,14 +295,13 @@
 
         <android.support.v7.widget.CardView
             android:id="@+id/distribution_chart_area"
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginEnd="5dp"
             android:layout_marginStart="5dp"
             android:layout_marginTop="8dp"
             app:contentPadding="@dimen/card_inner_padding"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintBottom_toTopOf="@+id/top_ka_chart_area"
             app:layout_constraintTop_toBottomOf="@+id/chart_subtitle">
@@ -310,27 +317,34 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@drawable/border_below"
+                    android:gravity="center_horizontal"
                     android:paddingBottom="5dp"
                     android:text="@string/ka_distribution"
                     android:textAlignment="center"
                     android:textSize="@dimen/score_title_text_size"
-                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toTopOf="@+id/ka_percentile_viewpager"
+                    app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent" />
 
 
                 <android.support.v4.view.ViewPager
                     android:id="@+id/ka_percentile_viewpager"
-                    android:layout_width="0dp"
-                    android:layout_height="500dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/multi_score_distribution_chart_area_height"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/ka_percentile_label">
+                    app:layout_constraintTop_toBottomOf="@+id/ka_percentile_label"
+                    app:layout_constraintBottom_toBottomOf="parent">
 
                     <android.support.design.widget.TabLayout
                         android:id="@+id/ka_percentile_tabs"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"></android.support.design.widget.TabLayout>
+                        android:layout_height="wrap_content"
+                        app:tabMaxWidth="0dp"
+                        app:tabGravity="fill">
+
+                    </android.support.design.widget.TabLayout>
                 </android.support.v4.view.ViewPager>
 
             </android.support.constraint.ConstraintLayout>
@@ -367,19 +381,20 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@drawable/border_below"
+                    android:gravity="center_horizontal"
                     android:paddingBottom="5dp"
                     android:text="@string/top_kas"
                     android:textAlignment="center"
                     android:textSize="@dimen/score_title_text_size"
-                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent" />
 
 
                 <android.support.v4.view.ViewPager
                     android:id="@+id/top_ka_viewpager"
                     android:layout_width="0dp"
-                    android:layout_height="300dp"
+                    android:layout_height="@dimen/multi_score_top_kas_chart_area_height"
 
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -388,7 +403,11 @@
                     <android.support.design.widget.TabLayout
                         android:id="@+id/top_ka_tabs"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"></android.support.design.widget.TabLayout>
+                        android:layout_height="wrap_content"
+                        app:tabMaxWidth="0dp"
+                        app:tabGravity="fill">
+
+                    </android.support.design.widget.TabLayout>
                 </android.support.v4.view.ViewPager>
 
             </android.support.constraint.ConstraintLayout>
@@ -427,18 +446,19 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@drawable/border_below"
+                    android:gravity="center_horizontal"
                     android:paddingBottom="5dp"
                     android:text="@string/top_ka_topics"
                     android:textAlignment="center"
                     android:textSize="@dimen/score_title_text_size"
-                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <android.support.v4.view.ViewPager
                     android:id="@+id/top_ka_topics_viewpager"
                     android:layout_width="0dp"
-                    android:layout_height="500dp"
+                    android:layout_height="@dimen/multi_score_top_ka_topics_chart_area_height"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/top_ka_topics_label">
@@ -446,7 +466,11 @@
                     <android.support.design.widget.TabLayout
                         android:id="@+id/top_ka_topics_tabs"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"></android.support.design.widget.TabLayout>
+                        android:layout_height="wrap_content"
+                        app:tabMaxWidth="0dp"
+                        app:tabGravity="fill">
+
+                    </android.support.design.widget.TabLayout>
                 </android.support.v4.view.ViewPager>
 
             </android.support.constraint.ConstraintLayout>

@@ -2,7 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="pt.cmg.sweranker.ranking.ScoreMasterFragment">
+    tools:context="pt.cmg.sweranker.ranking.ScoresMasterFragment">
 
     <TextView
         android:id="@+id/no_scores_text"

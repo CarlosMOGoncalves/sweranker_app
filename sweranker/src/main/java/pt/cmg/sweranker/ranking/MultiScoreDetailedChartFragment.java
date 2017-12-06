@@ -176,38 +176,38 @@ public class MultiScoreDetailedChartFragment extends Fragment implements Lifecyc
 
         _myRootView = inflater.inflate(R.layout.multi_score_chart_fragment, container, false);
 
-        _overviewDegreeName = (TextView) _myRootView.findViewById(R.id.degree_overview_name);
-        _overviewUniversityName = (TextView) _myRootView.findViewById(R.id.degree_overview_university);
-        _overviewCombinationName = (TextView) _myRootView.findViewById(R.id.degree_overview_combo_name);
-        _showOverview = (TextView) _myRootView.findViewById(R.id.show_overview);
+        _overviewDegreeName = _myRootView.findViewById(R.id.degree_overview_name);
+        _overviewUniversityName = _myRootView.findViewById(R.id.degree_overview_university);
+        _overviewCombinationName = _myRootView.findViewById(R.id.degree_overview_combo_name);
+        _showOverview = _myRootView.findViewById(R.id.show_overview);
 
-        _overviewDegreeName2 = (TextView) _myRootView.findViewById(R.id.degree_overview_name_2);
-        _overviewUniversityName2 = (TextView) _myRootView.findViewById(R.id.degree_overview_university_2);
-        _overviewCombinationName2 = (TextView) _myRootView.findViewById(R.id.degree_overview_combo_name_2);
-        _showOverview2 = (TextView) _myRootView.findViewById(R.id.show_overview_2);
+        _overviewDegreeName2 = _myRootView.findViewById(R.id.degree_overview_name_2);
+        _overviewUniversityName2 = _myRootView.findViewById(R.id.degree_overview_university_2);
+        _overviewCombinationName2 = _myRootView.findViewById(R.id.degree_overview_combo_name_2);
+        _showOverview2 = _myRootView.findViewById(R.id.show_overview_2);
 
-        _overviewProgressBar = (ProgressBar) _myRootView.findViewById(R.id.overview_progress);
+        _overviewProgressBar = _myRootView.findViewById(R.id.overview_progress);
 
-        _subtitleTable = (GridLayout) _myRootView.findViewById(R.id.chart_legend_table);
+        _subtitleTable = _myRootView.findViewById(R.id.chart_legend_table);
 
-        _percentProgressBar = (ProgressBar) _myRootView.findViewById(R.id.ka_percent_chart_progress);
+        _percentProgressBar = _myRootView.findViewById(R.id.ka_percent_chart_progress);
         _percentProgressBar.setVisibility(View.VISIBLE);
-        _percentTabs = (TabLayout) _myRootView.findViewById(R.id.ka_percentile_tabs);
-        _percentViewPager = (ViewPager) _myRootView.findViewById(R.id.ka_percentile_viewpager);
+        _percentTabs = _myRootView.findViewById(R.id.ka_percentile_tabs);
+        _percentViewPager = _myRootView.findViewById(R.id.ka_percentile_viewpager);
 
-        _topKaProgressBar = (ProgressBar) _myRootView.findViewById(R.id.top_kas_chart_progress);
+        _topKaProgressBar = _myRootView.findViewById(R.id.top_kas_chart_progress);
         _topKaProgressBar.setVisibility(View.VISIBLE);
-        _topKaTabs = (TabLayout) _myRootView.findViewById(R.id.top_ka_tabs);
-        _topKaViewPager = (ViewPager) _myRootView.findViewById(R.id.top_ka_viewpager);
+        _topKaTabs = _myRootView.findViewById(R.id.top_ka_tabs);
+        _topKaViewPager = _myRootView.findViewById(R.id.top_ka_viewpager);
 
-        _topKaTopicsProgressBar = (ProgressBar) _myRootView.findViewById(R.id.top_ka_topics_chart_progress);
+        _topKaTopicsProgressBar = _myRootView.findViewById(R.id.top_ka_topics_chart_progress);
         _topKaTopicsProgressBar.setVisibility(View.VISIBLE);
-        _topKaTopicsTabs = (TabLayout) _myRootView.findViewById(R.id.top_ka_topics_tabs);
-        _topKaTopicsViewPager = (ViewPager) _myRootView.findViewById(R.id.top_ka_topics_viewpager);
+        _topKaTopicsTabs = _myRootView.findViewById(R.id.top_ka_topics_tabs);
+        _topKaTopicsViewPager = _myRootView.findViewById(R.id.top_ka_topics_viewpager);
 
-        _coverageChartProgressBar = (ProgressBar) _myRootView.findViewById(R.id.coverage_chart_progress);
+        _coverageChartProgressBar = _myRootView.findViewById(R.id.coverage_chart_progress);
         _coverageChartProgressBar.setVisibility(View.VISIBLE);
-        _coverageChart = (RadarChart) _myRootView.findViewById(R.id.coverage_chart);
+        _coverageChart = _myRootView.findViewById(R.id.coverage_chart);
 
         return _myRootView;
     }
