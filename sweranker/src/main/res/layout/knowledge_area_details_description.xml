@@ -14,6 +14,6 @@
         android:layout_height="wrap_content"
         android:paddingTop="@dimen/ka_detail_list_padding"
         android:text="@string/loren_ipsum"
-        android:textSize="@dimen/ka_detail_text_size" />
+        android:textSize="@dimen/ka_detail_description_text_size" />
 
 </LinearLayout>

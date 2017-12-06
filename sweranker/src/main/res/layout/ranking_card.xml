@@ -16,7 +16,6 @@
             android:layout_width="wrap_content"
             android:layout_height="@dimen/ranking_image_size"
             android:maxHeight="100dp"
-            android:padding="@dimen/ranking_image_padding"
             android:scaleType="fitCenter"
             app:srcCompat="@drawable/feup_logo" />
 

@@ -44,7 +44,7 @@ public class KnowledgeAreasAdapter extends RecyclerView.Adapter<KnowledgeAreasAd
     @Override
     public KAViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 
-        View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.swebok_card, parent, false);
+        View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.knowledge_area_card, parent, false);
         return new KAViewHolder(itemView);
     }
 

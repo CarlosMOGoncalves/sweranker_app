@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="ka_card_image_height">270dp</dimen>
+    <dimen name="ka_card_title_size">15sp</dimen>
+    <dimen name="ka_detail_image_height">250dp</dimen>
+    <dimen name="ka_detail_title_size">25sp</dimen>
+    <dimen name="ka_detail_description_text_size">18sp</dimen>
+    <dimen name="ka_detail_topic_name_text_size">20sp</dimen>
+
+    <dimen name="degree_master_image_size">270dp</dimen>
+
+    <dimen name="ranking_image_size">180dp</dimen>
+</resources>

@@ -46,14 +46,14 @@ public class KnowledgeAreaDetailAdapter extends RecyclerView.Adapter<RecyclerVie
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View itemView;
         if (viewType == TYPE_HEADER) {
-            itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.ka_details_header, parent, false);
+            itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.knowledge_area_details_description, parent, false);
             return new KADetailsViewHolder(itemView);
         } else if (viewType == TYPE_TOPICS_TITLE) {
             itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.ka_details_topics_text, parent, false);
             return new KATopicsTitleViewHolder(itemView);
         }
 
-        itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.ka_topics_item, parent, false);
+        itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.knowledge_area_details_topic_item, parent, false);
         return new KATopicsViewHolder(itemView);
     }
 

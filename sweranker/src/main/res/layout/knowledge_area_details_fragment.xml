@@ -9,7 +9,7 @@
     <ImageView
         android:id="@+id/ka_details_image"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="@dimen/ka_detail_image_height"
         android:scaleType="fitCenter"
         app:srcCompat="@drawable/function"
         android:transitionName="ka_image"

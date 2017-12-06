@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
@@ -12,15 +13,15 @@
         android:id="@+id/topic_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/loren_ipsum_title"
-        android:textSize="@dimen/ka_detail_topic_title" />
+        tools:text="@string/loren_ipsum_title"
+        android:textSize="@dimen/ka_detail_topic_name_text_size" />
 
     <TextView
         android:id="@+id/topic_description"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/loren_ipsum_description"
-        android:textSize="@dimen/ka_detail_text_size"
+        tools:text="@string/loren_ipsum_description"
+        android:textSize="@dimen/ka_detail_description_text_size"
         android:visibility="gone" />
 
 </LinearLayout>

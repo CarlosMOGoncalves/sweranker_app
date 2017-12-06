@@ -55,7 +55,7 @@ public class SwebokDetailedFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        _myView = inflater.inflate(R.layout.ka_fragment, container, false);
+        _myView = inflater.inflate(R.layout.knowledge_area_details_fragment, container, false);
 
         ImageView kaImage = _myView.findViewById(R.id.ka_details_image);
         TextView kaTitle = _myView.findViewById(R.id.ka_details_name);

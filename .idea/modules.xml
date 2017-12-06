@@ -4,9 +4,6 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/SweRanker.iml" filepath="$PROJECT_DIR$/SweRanker.iml" />
       <module fileurl="file://$PROJECT_DIR$/sweranker/sweranker.iml" filepath="$PROJECT_DIR$/sweranker/sweranker.iml" />
-      <module fileurl="file://C:\AndroidProjects\sweranker\sweranker\sweranker.iml" filepath="C:\AndroidProjects\sweranker\sweranker\sweranker.iml" />
-      <module fileurl="file://D:\Android Studio Projects\SweRanker\sweranker\sweranker.iml" filepath="D:\Android Studio Projects\SweRanker\sweranker\sweranker.iml" />
-      <module fileurl="file://D:\Android Studio Projects\SweRanker\sweranker\sweranker-sweranker.iml" filepath="D:\Android Studio Projects\SweRanker\sweranker\sweranker-sweranker.iml" />
     </modules>
   </component>
 </project>

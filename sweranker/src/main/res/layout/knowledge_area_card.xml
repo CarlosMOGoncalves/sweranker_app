@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/cardview_shadow_start_color"
+    app:cardElevation="0dp">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="?android:selectableItemBackground">
+
+        <ImageView
+            android:id="@+id/ka_image"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/ka_card_image_height"
+            android:scaleType="fitCenter"
+            android:background="?android:selectableItemBackground"
+            app:layout_constraintBottom_toTopOf="@+id/ka_name"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@drawable/bitbucket" />
+
+        <TextView
+            android:id="@+id/ka_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/border_above"
+            android:paddingLeft="@dimen/ka_title_padding"
+            android:paddingRight="@dimen/ka_title_padding"
+            android:textAlignment="center"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="@dimen/ka_card_title_size"
+            app:layout_constraintBottom_toTopOf="@+id/ka_topic_number"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ka_image"
+            tools:text="Software Construction" />
+
+        <TextView
+            android:id="@+id/ka_topic_number"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/ka_title_padding"
+            android:paddingLeft="@dimen/ka_title_padding"
+            android:paddingRight="@dimen/ka_title_padding"
+            android:textAlignment="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ka_name"
+            tools:text="10 topics" />
+    </android.support.constraint.ConstraintLayout>
+</android.support.v7.widget.CardView>
