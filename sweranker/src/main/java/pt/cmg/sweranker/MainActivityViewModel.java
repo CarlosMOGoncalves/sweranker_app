@@ -978,6 +978,7 @@ public class MainActivityViewModel extends ViewModel {
             if (_listener.isPresent()) {
                 _listener.get().terminateProgress();
             }
+            _calculatedDegrees = getCalculatedDegrees();
         }
     }
 
@@ -1040,7 +1041,7 @@ public class MainActivityViewModel extends ViewModel {
             _kaFieldName = "";
             _sortOrder = null;
             _degreeid = 0;
-            _limit = 10;
+            _limit = 5;
         }
 
         private DegreeComboQueryLoader(int kaId, ScoresRepository.Sort order, int degreeId, int limit) {
@@ -1101,7 +1102,7 @@ public class MainActivityViewModel extends ViewModel {
 
             _scoresRepository.open();
 
-            Collection<SweScore> queryResults = queryForScores();
+            Collection<SweScore> queryResults = fetchScores();
 
             /*
              * TODO : Ha aqui uma grande grande falha. Devido ao facto de o Realm cortar o acesso aos dados quando se faz close na
@@ -1123,7 +1124,13 @@ public class MainActivityViewModel extends ViewModel {
         }
 
 
-        private Collection<SweScore> queryForScores() {
+        /**
+         * Returns the scores of multiple degree combinations for a single or multiple degrees.
+         * That all depends on the parameters that this Async Task was called with.
+         *
+         * @return A Collection with the requested, parameterised and ordered scores.
+         */
+        private Collection<SweScore> fetchScores() {
 
             Collection<SweScore> scoresFetched;
 
@@ -1136,6 +1143,21 @@ public class MainActivityViewModel extends ViewModel {
             return scoresFetched;
         }
 
+        /**
+         * This is used when combinations for ALL the degrees must be found.
+         * It is a tricky function. It executes multiple queries (as much as calculated degrees are in the system)
+         * to get the needed results. But then another step in needed, which is to ORDER them into a collection that
+         * will finally be returned to the calling function.
+         * <p>
+         * The reason for the ordering is quite simple - it is the point of the app. The results need to be passed
+         * ordered to the calling function because they will be displayed ordered somewhere in the app and it should not be
+         * Fragments job to do that sorting.
+         * <p>
+         * That limit is calculated JUST IN CASE the query fetched less than the minimum amount required by
+         * the limit parameter.
+         *
+         * @return A Collection with the requested, parameterised and ordered scores.
+         */
         private Collection<SweScore> fetchAllDegreeScores() {
 
             Map<Integer, List<SweScore>> multiQueryResults = new TreeMap<>();
@@ -1153,6 +1175,8 @@ public class MainActivityViewModel extends ViewModel {
                 }
             }
 
+            // This part is very very tricky. After getting the results from multiple queries, they need to be inserted ORDERED
+            // into a collection. Naturally the SET was chosen because I can pass in a Comparator that will do the job for me.
             Set<SweScore> orderedScores = new TreeSet<>(createQueryComparator());
             for (List<SweScore> resultSet : multiQueryResults.values()) {
 
@@ -1166,26 +1190,40 @@ public class MainActivityViewModel extends ViewModel {
 
         }
 
+
+        /**
+         * Interestingly enough this comparator was needed because of the inverse order of numbers.
+         * A regular TreeSet inserts objects using their "natural order". In this case, a SweScore does not
+         * have a natural order - it is a composition of multiple numerical scores that each have their natural order
+         * when compared with each other accordingly (i.e. kaPercent1 from score A with kaPercent1 of score B).
+         * <p>
+         * So a comparator for the actual field we are sorting was needed. But of course, if the order is inverse (DESCENDING)
+         * the comparator must be inverted as well. That is why this mess was created...
+         * <p>
+         * This comparator COMPARES FLOATS. If for some reason they are equal it will then compare the IDs of the score,
+         * which are basically Strings.
+         */
         private Comparator<SweScore> createQueryComparator() {
 
+            // Yes, I could just have used the subtraction or addition result, but I decided not to in order
+            // to improve readability
             if (_sortOrder == ScoresRepository.Sort.DESCENDING) {
-                return (o1, o2) -> {
-
-                    if (o1.getKaPercent(_kaId) == o2.getKaPercent(_kaId)) {
-                        return o1.getId().compareTo(o2.getId());
+                return (score1, score2) -> {
+                    if (score1.getKaPercent(_kaId) == score2.getKaPercent(_kaId)) {
+                        return score1.getId().compareTo(score2.getId());
                     }
-                    if (o1.getKaPercent(_kaId) < o2.getKaPercent(_kaId)) {
+                    if (score1.getKaPercent(_kaId) < score2.getKaPercent(_kaId)) {
                         return 1;
                     }
                     return -1;
                 };
             }
 
-            return (o1, o2) -> {
-                if (o1.getKaPercent(_kaId) == o2.getKaPercent(_kaId)) {
-                    return o1.getId().compareTo(o2.getId());
+            return (score1, score2) -> {
+                if (score1.getKaPercent(_kaId) == score2.getKaPercent(_kaId)) {
+                    return score1.getId().compareTo(score2.getId());
                 }
-                if (o1.getKaPercent(_kaId) < o2.getKaPercent(_kaId)) {
+                if (score1.getKaPercent(_kaId) < score2.getKaPercent(_kaId)) {
                     return -1;
                 }
                 return 1;
@@ -1193,6 +1231,16 @@ public class MainActivityViewModel extends ViewModel {
         }
 
 
+        /**
+         * Much easier than the fetchAllDegrees, this one does just one query. Period.
+         * Since it is like that AND the order is already in the query, the last step is merely to add
+         * the results to a final collection with the established limit.
+         * <p>
+         * That limit is calculated JUST IN CASE the query fetched less than the minimum amount required by
+         * the limit parameter.
+         *
+         * @return A Collection with the requested, parameterised and ordered scores.
+         */
         private Collection<SweScore> fetchSingleDegreeScores() {
 
             List<SweScore> queryResults;

@@ -137,7 +137,7 @@ public class RealmScoresRepository implements ScoresRepository {
         return getRealmnstanceOfThread().where(SweScore.class)
                 .equalTo(SweScoreFields.SCORE_TYPE, SweScore.TYPE_DEGREE_SCORE)
                 .equalTo(SweScoreFields.DEGREE_ID, degreeId)
-                .findAllSorted(orderedFieldName, io.realm.Sort.valueOf(order.name()));
+                .findAll().sort(orderedFieldName, io.realm.Sort.valueOf(order.name()));
     }
 
     @Override

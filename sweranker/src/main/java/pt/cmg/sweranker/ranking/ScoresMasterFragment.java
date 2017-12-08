@@ -210,7 +210,7 @@ public class ScoresMasterFragment extends Fragment implements LifecycleRegistryO
         _filterDialogSelectedOrder = _filterDialog.findViewById(R.id.order_spinner);
         _filterDialogSelectedOrder.setAdapter(new ArrayAdapter<>(getActivity(), R.layout.scores_master_filter_dialog_spinner_item, orders));
 
-        String[] limits = new String[]{"1", "10", "50", getActivity().getString(R.string.filter_all_label)};
+        String[] limits = new String[]{"1", "5", "10", getActivity().getString(R.string.filter_all_label)};
         _filterDialogLimitSpinner = _filterDialog.findViewById(R.id.results_number_spinner);
         _filterDialogLimitSpinner.setAdapter(new ArrayAdapter<>(getActivity(), R.layout.scores_master_filter_dialog_spinner_item, limits));
         _filterDialogLimitSpinner.setSelection(1);
