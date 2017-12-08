@@ -12,12 +12,17 @@ import android.util.Log;
 import com.google.common.base.Optional;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Random;
+import java.util.Set;
+import java.util.TreeMap;
+import java.util.TreeSet;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
@@ -73,12 +78,17 @@ public class MainActivityViewModel extends ViewModel {
     /**
      * Keys -> Degree Class Id , Values -> its current matches
      */
-    private LiveData<Map<String, DegreeClassMatch>> _degreeMatches = new MutableLiveData<>();
+    private LiveData<Map<String, DegreeClassMatch>> _degreeClassMatches = new MutableLiveData<>();
 
     /**
      * Keys -> Degree Id , Values -> true if completely matched, false otherwise
      */
     private Map<Integer, Boolean> _matchedDegrees;
+
+    /**
+     * Keys -> Degree Id , Values -> true if there is at least one degree combination in the system, false otherwise
+     */
+    private Map<Integer, Boolean> _calculatedDegrees;
 
     /**
      * Very important, this are all the scores of all the different Degree Classes.
@@ -174,12 +184,15 @@ public class MainActivityViewModel extends ViewModel {
             _degrees.observe(ALWAYS_ON, degrees -> {
                 _degreesById = createDegreesByIdView(degrees);
                 _degreeClassesById = createDegreeClassByIdView(degrees);
-                _degreeMatches = _matchesRepository.loadMatches();
-                _degreeMatches.observe(ALWAYS_ON, degreeMatches -> {
+                _degreeClassMatches = _matchesRepository.loadMatches();
+                _degreeClassMatches.observe(ALWAYS_ON, degreeMatches -> {
                     _matchedDegrees = calculateMatchedDegrees(degreeMatches);
                     List<SweScore> baselineScores = calculateDegreeClassScores();
                     _degreeClassScores = createDegreeClassScoresView(baselineScores);
                     saveBaselineDegreeClassScores(baselineScores);
+
+                    _calculatedDegrees = getCalculatedDegrees();
+
                     _isLoaded.setValue(true);
                 });
             });
@@ -191,7 +204,7 @@ public class MainActivityViewModel extends ViewModel {
         super.onCleared();
         _knowledgeAreas.removeObservers(ALWAYS_ON);
         _degrees.removeObservers(ALWAYS_ON);
-        _degreeMatches.removeObservers(ALWAYS_ON);
+        _degreeClassMatches.removeObservers(ALWAYS_ON);
     }
 
     public LiveData<Boolean> isLoaded() {
@@ -299,6 +312,26 @@ public class MainActivityViewModel extends ViewModel {
     }
 
 
+    private Map<Integer, Boolean> getCalculatedDegrees() {
+
+        Map<Integer, Boolean> calculatedDegrees = new TreeMap<>();
+
+        _scoresRepository.open();
+
+        for (Degree degree : _degrees.getValue()) {
+            if (_scoresRepository.getAllCombinationsOfDegree(degree.getId()).size() > 0) {
+                calculatedDegrees.put(degree.getId(), true);
+            } else {
+                calculatedDegrees.put(degree.getId(), false);
+            }
+        }
+
+        _scoresRepository.close();
+
+        return calculatedDegrees;
+    }
+
+
     /**
      * Calculates the list with ALL the BASELINE scores for all possible Degree Classes of all the
      * Degrees in the systems baseline.
@@ -310,7 +343,7 @@ public class MainActivityViewModel extends ViewModel {
     private List<SweScore> calculateDegreeClassScores() {
 
         List<SweScore> allDegreeClassScores = new ArrayList<>();
-        for (DegreeClassMatch match : _degreeMatches.getValue().values()) {
+        for (DegreeClassMatch match : _degreeClassMatches.getValue().values()) {
             allDegreeClassScores.add(CalculationUtils.calculateScore(_knowledgeAreaTopicsByTopicId, match));
         }
 
@@ -394,7 +427,7 @@ public class MainActivityViewModel extends ViewModel {
     }
 
     public LiveData<Map<String, DegreeClassMatch>> getDegreeMatches() {
-        return _degreeMatches;
+        return _degreeClassMatches;
     }
 
     /**
@@ -909,7 +942,6 @@ public class MainActivityViewModel extends ViewModel {
                     // Then gets their individual class scores
                     List<SweScore> currentAnnualScores = new ArrayList<>();
                     for (AnnualClassCombination annualCombo : degreeAnnualCombinations) {
-//                        currentAnnualScores.add(_scoresByAnnualCombination.get(annualCombo.getId()));
                         for (DegreeClassId degreeClassId : annualCombo.getDegreeClassIds()) {
                             currentAnnualScores.add(_degreeClassScores.get(degreeClassId.getDegreeClassId()));
                         }
@@ -996,6 +1028,7 @@ public class MainActivityViewModel extends ViewModel {
      */
     private class DegreeComboQueryLoader extends AsyncTask<Void, Void, LinkedHashMap<String, Integer>> {
 
+        private int _kaId;
         private String _kaFieldName;
         private ScoresRepository.Sort _sortOrder;
         private int _degreeid;
@@ -1003,6 +1036,7 @@ public class MainActivityViewModel extends ViewModel {
 
 
         private DegreeComboQueryLoader() {
+            _kaId = 1;
             _kaFieldName = "";
             _sortOrder = null;
             _degreeid = 0;
@@ -1010,6 +1044,7 @@ public class MainActivityViewModel extends ViewModel {
         }
 
         private DegreeComboQueryLoader(int kaId, ScoresRepository.Sort order, int degreeId, int limit) {
+            _kaId = kaId;
             _kaFieldName = getKaFieldName(kaId);
             _sortOrder = order;
             _degreeid = degreeId;
@@ -1066,30 +1101,115 @@ public class MainActivityViewModel extends ViewModel {
 
             _scoresRepository.open();
 
-            List<SweScore> results;
-            // If no sort order was input, I don't care the order, so the default will be fine
-            if (_sortOrder == null) {
-                results = _scoresRepository.getScoresOfDegree(_degreeid == 0 ? 1 : _degreeid);
-            } else {
-                results = _scoresRepository.getScoresOfDegreeOrderedBy(_degreeid == 0 ? 1 : _degreeid, _kaFieldName, _sortOrder);
-            }
+            Collection<SweScore> queryResults = queryForScores();
 
-            // ATENCAO: Ha aqui uma grande grande falha. Devido ao facto de o Realm cortar o acesso aos dados quando se faz close na
-            // ligacao eu criei uma copia dos mesmos( ja que nao e mais do que um inteiro e uma string).
-            // No entanto nao e assim que se deve fazer, o ideal e devolver um "ResultSet" que vai sendo iterado ate nao se pretender
-            // mais dados. Isso seria feito, presumo, pelo Adapter desta coisa. Logo a connection estaria aberta ate sair desse ecra...
-            // Tenho que pensar melhor nisto e implementar no futuro.
+            /*
+             * TODO : Ha aqui uma grande grande falha. Devido ao facto de o Realm cortar o acesso aos dados quando se faz close na
+             * ligacao eu criei uma copia dos mesmos( ja que nao e mais do que um inteiro e uma string).
+             * No entanto nao e assim que se deve fazer, o ideal e devolver um "ResultSet" que vai sendo iterado ate nao se pretender
+             * mais dados. Isso seria feito, presumo, pelo Adapter desta coisa. Logo a connection estaria aberta ate sair desse ecra...
+             * Tenho que pensar melhor nisto e implementar no futuro.
+             * */
             LinkedHashMap<String, Integer> temporaryData = new LinkedHashMap<>();
-            int resultsLimit = _limit == 0 ? results.size() : _limit;
-            if (!results.isEmpty()) {
-                for (int i = 0; i < resultsLimit; i++) {
-                    SweScore currentScore = results.get(i);
-                    temporaryData.put(currentScore.getId(), _degreesById.get((int) currentScore.getDegreeId()).getImageResource());
+            if (!queryResults.isEmpty()) {
+                for (SweScore score : queryResults) {
+                    temporaryData.put(score.getId(), _degreesById.get((int) score.getDegreeId()).getImageResource());
                 }
             }
+
             _scoresRepository.close();
 
             return temporaryData;
+        }
+
+
+        private Collection<SweScore> queryForScores() {
+
+            Collection<SweScore> scoresFetched;
+
+            if (_degreeid == 0) {
+                scoresFetched = fetchAllDegreeScores();
+            } else {
+                scoresFetched = fetchSingleDegreeScores();
+            }
+
+            return scoresFetched;
+        }
+
+        private Collection<SweScore> fetchAllDegreeScores() {
+
+            Map<Integer, List<SweScore>> multiQueryResults = new TreeMap<>();
+            if (_sortOrder == null) {
+                for (Integer matchedDegreeId : _calculatedDegrees.keySet()) {
+                    if (_calculatedDegrees.get(matchedDegreeId)) {
+                        multiQueryResults.put(matchedDegreeId, _scoresRepository.getScoresOfDegree(matchedDegreeId));
+                    }
+                }
+            } else {
+                for (Integer matchedDegreeId : _calculatedDegrees.keySet()) {
+                    if (_calculatedDegrees.get(matchedDegreeId)) {
+                        multiQueryResults.put(matchedDegreeId, _scoresRepository.getScoresOfDegreeOrderedBy(matchedDegreeId, _kaFieldName, _sortOrder));
+                    }
+                }
+            }
+
+            Set<SweScore> orderedScores = new TreeSet<>(createQueryComparator());
+            for (List<SweScore> resultSet : multiQueryResults.values()) {
+
+                int resultsLimit = resultSet.size() <= _limit ? resultSet.size() : _limit;
+                for (int i = 0; i < resultsLimit; i++) {
+                    orderedScores.add(resultSet.get(i));
+                }
+            }
+
+            return orderedScores;
+
+        }
+
+        private Comparator<SweScore> createQueryComparator() {
+
+            if (_sortOrder == ScoresRepository.Sort.DESCENDING) {
+                return (o1, o2) -> {
+
+                    if (o1.getKaPercent(_kaId) == o2.getKaPercent(_kaId)) {
+                        return o1.getId().compareTo(o2.getId());
+                    }
+                    if (o1.getKaPercent(_kaId) < o2.getKaPercent(_kaId)) {
+                        return 1;
+                    }
+                    return -1;
+                };
+            }
+
+            return (o1, o2) -> {
+                if (o1.getKaPercent(_kaId) == o2.getKaPercent(_kaId)) {
+                    return o1.getId().compareTo(o2.getId());
+                }
+                if (o1.getKaPercent(_kaId) < o2.getKaPercent(_kaId)) {
+                    return -1;
+                }
+                return 1;
+            };
+        }
+
+
+        private Collection<SweScore> fetchSingleDegreeScores() {
+
+            List<SweScore> queryResults;
+            if (_sortOrder == null) {
+                queryResults = _scoresRepository.getScoresOfDegree(_degreeid);
+            } else {
+                queryResults = _scoresRepository.getScoresOfDegreeOrderedBy(_degreeid, _kaFieldName, _sortOrder);
+            }
+
+            int resultsLimit = queryResults.size() <= _limit ? queryResults.size() : _limit;
+
+            List<SweScore> resultsToDisplay = new ArrayList<>(resultsLimit);
+            for (int i = 0; i < resultsLimit; i++) {
+                resultsToDisplay.add(queryResults.get(i));
+            }
+
+            return resultsToDisplay;
         }
 
         @Override

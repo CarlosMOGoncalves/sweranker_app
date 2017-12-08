@@ -252,6 +252,11 @@ public class ScoresMasterFragment extends Fragment implements LifecycleRegistryO
     }
 
 
+    /**
+     * Initialisation sets little more than the basics to build a neat Recycler View.
+     * I needed to separate this because the updates on the list must reuse the item decorator or all
+     * hell breaks loose.
+     */
     private void initialiseScoresGrid() {
         _rankingsGrid.setLayoutManager(new GridLayoutManager(getActivity(), 4));
         _rankingsGrid.addItemDecoration(new ConstantSpacingItemDecorator(getActivity(),
@@ -260,10 +265,12 @@ public class ScoresMasterFragment extends Fragment implements LifecycleRegistryO
         _rankingsGrid.setItemAnimator(new DefaultItemAnimator());
     }
 
+    /**
+     * Resetting actually sends the data to the RecyclerView.
+     */
     private void resetScoresGrid(LinkedHashMap<String, Integer> combinationNameAndImage) {
 
-        _adapter = new ScoresAndImagesAdapter(getActivity(),
-                combinationNameAndImage, new ScoresGridListener());
+        _adapter = new ScoresAndImagesAdapter(getActivity(), combinationNameAndImage, new ScoresGridListener());
 
         _rankingsGrid.setAdapter(_adapter);
         _adapter.notifyDataSetChanged();
