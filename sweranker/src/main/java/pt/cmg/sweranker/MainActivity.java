@@ -53,7 +53,8 @@ public class MainActivity extends AppCompatActivity implements
         DegreesMasterFragment.DegreesFragmentInteractionListener,
         DegreeDetailsFragment.DegreeDetailsFragmentInteractionListener,
         DegreeClassFragment.DegreeClassFragmentInteractionListener,
-        ScoresMasterFragment.ScoreFragmentInteractionListener {
+        ScoresMasterFragment.ScoreFragmentInteractionListener,
+        ScoreDetailedChartFragment.OnScoreDetailedChartFragmentInteractionListener {
 
 
     private Toolbar _toolbar;

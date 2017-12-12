@@ -62,9 +62,10 @@
     <string name="top_kas">Top Áreas de Conhecimento</string>
     <string name="bar_chart_description">De um total de %1$d tópicos correspondidos</string>
     <string name="top_ka_topics">Top Tópicos de Conhecimento</string>
-    <string name="times_matched">vezes correspondido</string>
+    <string name="times_matched">correspondidos</string>
     <string name="coverage_chart_label">Cobertura SWEBOK</string>
     <string name="degree_overview_combination">Combinação %1$d</string>
+    <string name="degree_overview_annual_combination">Combinação Anual %1$s</string>
     <string name="show_overview">DETALHES</string>
     <string name="show_degree_overview">MOSTRAR DETALHES</string>
     <string name="no_scores_available_yet">Não existem Resultados.\n Efectua o Cálculo em pelo menos um Curso.\nVai ao Menu da Action Bar -> Cursos -> Selecciona um Curso -> Calcular Resultados.</string>

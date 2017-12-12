@@ -1,5 +1,6 @@
 package pt.cmg.sweranker.ranking;
 
+import android.app.Activity;
 import android.app.Fragment;
 import android.arch.lifecycle.Lifecycle;
 import android.arch.lifecycle.LifecycleRegistry;
@@ -19,6 +20,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.GridLayout;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.ScrollView;
 import android.widget.TextView;
@@ -44,15 +46,17 @@ import com.github.mikephil.charting.formatter.IndexAxisValueFormatter;
 import com.github.mikephil.charting.formatter.PercentFormatter;
 import com.github.mikephil.charting.highlight.Highlight;
 import com.github.mikephil.charting.listener.OnChartValueSelectedListener;
+import com.github.mikephil.charting.utils.Utils;
 import com.github.mikephil.charting.utils.ViewPortHandler;
 
 import java.text.DecimalFormat;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
-import java.util.TreeMap;
+import java.util.TreeSet;
 
 import pt.cmg.sweranker.MainActivity;
 import pt.cmg.sweranker.MainActivityViewModel;
@@ -70,7 +74,7 @@ import pt.cmg.sweranker.swebok.KnowledgeAreaTopic;
  * the way they are structured, what to expect of them and their completeness in relation to SWEBOK.
  * In simple words, this is the graphical tool that is the point of this application.
  */
-public class ScoreDetailedChartFragment extends Fragment implements LifecycleRegistryOwner {
+public class ScoreDetailedChartFragment extends Fragment implements LifecycleRegistryOwner, DegreeOverviewDialog.OnDegreeOverviewDialogFragmentListener {
 
 
     private LifecycleRegistry _lifecycle;
@@ -84,7 +88,7 @@ public class ScoreDetailedChartFragment extends Fragment implements LifecycleReg
     private static final int SUBTITLE_COLUMN_COUNT = 2;
     private static final int SUBTITLE_ROW_COUNT = 8;
 
-    private String _degreeScoreId;
+    private String _scoreId;
 
     /**
      * This array stores the colour mapping to each KA. Each KA has its own colour that identifies it graphically.
@@ -126,12 +130,41 @@ public class ScoreDetailedChartFragment extends Fragment implements LifecycleReg
 
     private SweScore _degreeScore;
     private DegreeClassCombination _degreeCombination;
+    private boolean _isDegreeCombination;
+    private AnnualClassCombination _annualClassCombination;
+    private boolean _isAnnualCombination;
+    private DegreeClass _degreeClass;
+    private boolean _isClassCombination;
 
     private MainActivityViewModel _sharedViewModel;
+
+    /**
+     * This is a reference to the parent activity that this fragment will be attached to on onAttach()
+     * It is used to communicate with it.
+     */
+    private OnScoreDetailedChartFragmentInteractionListener _parentActivity;
+
+    /**
+     * Communication interface between this fragment and its parent Activity.
+     */
+    public interface OnScoreDetailedChartFragmentInteractionListener {
+
+        /**
+         * Loads the Chart fragment for this particular score Id. Note that due to
+         * the implementation I made, the Degree Score Id and the Degree Combination Id
+         * is actually the same, which is nice, but will really make me cry when looking
+         * for it in the code somewhere in the future...
+         */
+        void loadChartFragment(View selectedView);
+
+    }
 
 
     public ScoreDetailedChartFragment() {
         _lifecycle = new LifecycleRegistry(this);
+        _isDegreeCombination = false;
+        _isAnnualCombination = false;
+        _isClassCombination = false;
     }
 
     public static ScoreDetailedChartFragment newInstance() {
@@ -142,15 +175,30 @@ public class ScoreDetailedChartFragment extends Fragment implements LifecycleReg
     @Override
     public void onAttach(Context parentActivity) {
         super.onAttach(parentActivity);
-
+        if (parentActivity instanceof OnScoreDetailedChartFragmentInteractionListener) {
+            _parentActivity = (OnScoreDetailedChartFragmentInteractionListener) parentActivity;
+        } else {
+            throw new RuntimeException(parentActivity.toString() + " must implement ScoreFragmentInteractionListener");
+        }
     }
 
+    // NOTE: this is here because onAttach(Context) was added only on API 23, so as long as Lollipop is min sdk this shall be here
+    @Override
+    public void onAttach(Activity activity) {
+        super.onAttach(activity);
+        if (activity instanceof OnScoreDetailedChartFragmentInteractionListener) {
+            _parentActivity = (OnScoreDetailedChartFragmentInteractionListener) activity;
+        } else {
+            throw new RuntimeException(activity.toString() + " must implement ScoreFragmentInteractionListener");
+        }
+
+    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         _sharedViewModel = ViewModelProviders.of((MainActivity) getActivity()).get(MainActivityViewModel.class);
-        _degreeScoreId = _sharedViewModel.getSelectedDegreeCombinationId();
+        _scoreId = _sharedViewModel.getSelectedScoreId();
 
         _lifecycle.handleLifecycleEvent(Lifecycle.Event.ON_CREATE);
     }
@@ -164,14 +212,17 @@ public class ScoreDetailedChartFragment extends Fragment implements LifecycleReg
         _contentArea = _myRootView.findViewById(R.id.content_area);
         _noScoreAvailable = _myRootView.findViewById(R.id.no_score_text);
 
-        if (_degreeScoreId == null) {
+        if (_scoreId == null) {
             _contentArea.setVisibility(View.GONE);
             _noScoreAvailable.setText(R.string.no_scores_available_yet);
             _noScoreAvailable.setVisibility(View.VISIBLE);
         } else {
             _contentArea.setVisibility(View.VISIBLE);
             _noScoreAvailable.setVisibility(View.GONE);
+
+
             _degreeImage = _myRootView.findViewById(R.id.degree_image);
+
             _overviewDegreeName = _myRootView.findViewById(R.id.degree_overview_name);
             _overviewUniversityName = _myRootView.findViewById(R.id.degree_overview_university);
             _overviewCombinationName = _myRootView.findViewById(R.id.degree_overview_combo_name);
@@ -200,7 +251,7 @@ public class ScoreDetailedChartFragment extends Fragment implements LifecycleReg
         }
 
         _sharedViewModel.isLoaded().observe(this, isLoaded -> {
-            if (isLoaded && (_sharedViewModel.getSelectedDegreeCombinationId() != null)) {
+            if (isLoaded && (_sharedViewModel.getSelectedScoreId() != null)) {
                 new SweScoreLoader().execute();
             }
         });
@@ -209,16 +260,25 @@ public class ScoreDetailedChartFragment extends Fragment implements LifecycleReg
         return _myRootView;
     }
 
+
     private void updateDegreeOverViewInfo() {
 
-        int combinationNumber = Integer.valueOf(_degreeScore.getId().substring(3, _degreeScore.getId().length()));
 
         _degreeImage.setImageDrawable(ContextCompat.getDrawable(getActivity(), _sharedViewModel.getDegree(_degreeScore.getDegreeId()).getImageResource()));
         _overviewDegreeName.setText(getResources().getString(_sharedViewModel.getDegree(_degreeScore.getDegreeId()).getNameResource()));
         _overviewUniversityName.setText(getResources().getString(_sharedViewModel.getDegree(_degreeScore.getDegreeId()).getUniversityResource()));
-        _overviewCombinationName.setText(String.format(getResources().getString(R.string.degree_overview_combination), combinationNumber));
+
+        if (_isClassCombination) {
+            _overviewCombinationName.setText(getResources().getString(_degreeClass.getNameResource()));
+        } else if (_isAnnualCombination) {
+            _overviewCombinationName.setText(String.format(getResources().getString(R.string.degree_overview_annual_combination), _degreeScore.getId()));
+        } else {
+            int combinationNumber = Integer.valueOf(_degreeScore.getId().substring(3, _degreeScore.getId().length()));
+            _overviewCombinationName.setText(String.format(getResources().getString(R.string.degree_overview_combination), combinationNumber));
+        }
+
         _showOverview.setOnClickListener(view ->
-                DegreeOverviewDialog.newInstance(getDegreeClasses()).show(getFragmentManager(), "")
+                DegreeOverviewDialog.newInstance(this, getDegreeClasses()).show(getFragmentManager(), "")
         );
 
         _overviewProgressBar.setVisibility(View.INVISIBLE);
@@ -226,16 +286,30 @@ public class ScoreDetailedChartFragment extends Fragment implements LifecycleReg
 
 
     /**
-     * This helper function simply loads from the parent activity ALL the classes that compos THIS particular
-     * degree. This function is used to construct the parameters that will be sent to the DegreeOverviewDialog.
+     * This helper function simply loads the Degree Classes that are included in the target score,
+     * that can either mean the classes that compose the degree combination, the annual combination
+     * or the degree class itself.
+     * It is used to construct the parameters that will be sent to the DegreeOverviewDialog.
      */
     private List<DegreeClass> getDegreeClasses() {
 
         List<DegreeClass> degreeClasses = new ArrayList<>();
 
-        for (AnnualClassCombination annualCombination : _degreeCombination.getAnnualClassCombinations()) {
-            for (DegreeClassId degreeId : annualCombination.getDegreeClassIds()) {
+        if (_isClassCombination) {
+            degreeClasses.add(_degreeClass);
+        }
+
+        if (_isAnnualCombination) {
+            for (DegreeClassId degreeId : _annualClassCombination.getDegreeClassIds()) {
                 degreeClasses.add(_sharedViewModel.getDegreeClass(degreeId.getDegreeClassId()));
+            }
+        }
+
+        if (_isDegreeCombination) {
+            for (AnnualClassCombination annualCombination : _degreeCombination.getAnnualClassCombinations()) {
+                for (DegreeClassId degreeId : annualCombination.getDegreeClassIds()) {
+                    degreeClasses.add(_sharedViewModel.getDegreeClass(degreeId.getDegreeClassId()));
+                }
             }
         }
 
@@ -484,42 +558,46 @@ public class ScoreDetailedChartFragment extends Fragment implements LifecycleReg
     /**
      * Feeds data and draws an Horizontal Bar Chart with a Top X KAs
      */
-    private void updateTopKaChart(@IntRange(from = 0, to = 15) int nummberOfKasToDisplay) {
-
+    private void updateTopKaChart(@IntRange(from = 0, to = 15) int numberOfKasToDisplay) {
 
         short[] kaCounters = _degreeScore.getKaCounters();
 
-        // This part is tricky, I am getting a TreeMap to take advantage of the ordering it makes
-        // So now I have a Map where keys are the actual values ORDERED and the values are the array indexes which are equivalent
-        // to the KA ids minus 1. Dear future me, don't hate me, remember that this native array stuff was implemented for performance reasons
-        // as well as simplicity because of the Realm database.
-        TreeMap<Integer, Integer> countersAndKaIds = new TreeMap<>();
+        // Intermediate object is useful for ORDERING and just that
+        TreeSet<KAEntry> kaCountersOrdered = new TreeSet<>(ENTRY_COMPARATOR);
         for (int i = 0; i < kaCounters.length; i++) {
-            countersAndKaIds.put((int) kaCounters[i], i);
+            kaCountersOrdered.add(new KAEntry(i, kaCounters[i]));
         }
 
-        // These two variables are meant to fill subtitles and colours in the chart
-        String[] topKaNames = new String[nummberOfKasToDisplay];
-        int[] topKaColours = new int[nummberOfKasToDisplay];
+        int maxTopicsFound = 0;
+        for (KAEntry entry : kaCountersOrdered) {
+            if (entry.value != 0) {
+                maxTopicsFound++;
+            } else {
+                break;
+            }
+        }
+        int topicsToBeDisplayed = maxTopicsFound > numberOfKasToDisplay ? numberOfKasToDisplay : maxTopicsFound;
 
-        // Now tricking intensifies. I am iterating in the reverse order (where the bigger numbers are).
-        // Yes I could simply have implemented a comparator to order them in reverse when inserting in the TreeMap, there are millions of solutions
-        Iterator<Integer> iterator = countersAndKaIds.descendingKeySet().iterator();
-        int currentKeyWhichIsActuallyAValue;
-        int currentKaId;
-        List<BarEntry> entries = new ArrayList<>();
+        _topKaChart.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
+                calculateTopKAChartHeight(topicsToBeDisplayed)));
+
+        // These two variables are meant to fill subtitles and colours in the chart
+        String[] topKaNames = new String[topicsToBeDisplayed];
+        int[] topKaColours = new int[topicsToBeDisplayed];
+
+        Iterator<KAEntry> iterator = kaCountersOrdered.iterator();
+        List<BarEntry> entries = new ArrayList<>(topicsToBeDisplayed);
 
         // Now to fill these variables I am iterating from the TOP to the BOTTOM because in the chart greater values of XAxis are in the top
         // of the chart, which is what I wanted in the first place. Yes, it's ugly. Yes, it is very confusing. Yes, I hate myself for doing it like this.
-        for (int i = nummberOfKasToDisplay - 1, j = 0; i >= 0; i--, j++) {
-            currentKeyWhichIsActuallyAValue = iterator.next();
-            currentKaId = countersAndKaIds.get(currentKeyWhichIsActuallyAValue);
+        for (int i = topicsToBeDisplayed - 1, j = 0; i >= 0; i--, j++) {
+            KAEntry currentEntry = iterator.next();
 
-            entries.add(new BarEntry((float) i, (float) currentKeyWhichIsActuallyAValue));
-            topKaNames[i] = getResources().getString(_knowledgeAreas[currentKaId].getNameResource());
+            entries.add(new BarEntry((float) i, (float) currentEntry.value));
+            topKaNames[i] = getResources().getString(_knowledgeAreas[currentEntry.id].getNameResource());
 
             // For some reason the colours are fed to the chart in the opposite indexing as the values, go figure...
-            topKaColours[j] = ContextCompat.getColor(getActivity(), _knowledgeAreas[currentKaId].getColourResource());
+            topKaColours[j] = ContextCompat.getColor(getActivity(), _knowledgeAreas[currentEntry.id].getColourResource());
 
         }
 
@@ -554,6 +632,9 @@ public class ScoreDetailedChartFragment extends Fragment implements LifecycleReg
         _topKaChart.getXAxis().setPosition(XAxis.XAxisPosition.BOTTOM);
         // And this part replaces the X values by actual labels
         _topKaChart.getXAxis().setValueFormatter(new IndexAxisValueFormatter(topKaNames));
+        // Very important line, this will make sure that the correct number of labels is shown whenever the chart only has a few to show, for example, when viewing an annual combo or class
+        _topKaChart.getXAxis().setLabelCount(topicsToBeDisplayed, false);
+
 
         _topKaChart.getAxisLeft().setEnabled(false);
         //_topKaChart.getAxisLeft().setDrawAxisLine(false);
@@ -581,52 +662,71 @@ public class ScoreDetailedChartFragment extends Fragment implements LifecycleReg
         _topKaChart.setVisibility(View.VISIBLE);
     }
 
+
+    private int calculateTopKAChartHeight(int topicsToBeDisplayed) {
+
+        float calculatedDimension = getResources().getDimension(R.dimen.top_kas_chart_height);
+
+        if (topicsToBeDisplayed < 4) {
+            calculatedDimension = calculatedDimension * 0.3f;
+        } else if (topicsToBeDisplayed > 8) {
+            calculatedDimension = calculatedDimension * 1.2f;
+        }
+        return (int) Utils.convertDpToPixel(calculatedDimension);
+    }
+
+
     /**
      * Feeds data and draws an Horizontal Bar Chart with a Top X KAs
      */
-    private void updateTopKaTopicsChart(@IntRange(from = 0, to = 102) int nummberOfTopicsToDisplay) {
+    private void updateTopKaTopicsChart(@IntRange(from = 0, to = 102) int numberOfTopicsToDisplay) {
 
 
         short[] topicCounter = _degreeScore.getTopicCounters();
 
-        // This part is tricky, I am getting a TreeMap to take advantage of the ordering it makes
-        // So now I have a Map where keys are the actual values ORDERED and the values are the array indexes which are equivalent
-        // to the KA ids minus 1. Dear future me, don't hate me, remember that this native array stuff was implemented for performance reasons
-        // as well as simplicity because of the Realm database.
-        TreeMap<Integer, Integer> countersAndKaTopicIds = new TreeMap<>();
+        // Intermediate object is useful for ORDERING and just that
+        TreeSet<KAEntry> kaTopicCountersOrdered = new TreeSet<>(ENTRY_COMPARATOR);
         for (int i = 0; i < topicCounter.length; i++) {
-            countersAndKaTopicIds.put((int) topicCounter[i], i);
+            kaTopicCountersOrdered.add(new KAEntry(i, topicCounter[i]));
         }
 
-        // These two variables are meant to fill subtitles and colours in the chart
-        String[] topKaTopicNames = new String[nummberOfTopicsToDisplay];
-        int[] topKaTopicColours = new int[nummberOfTopicsToDisplay];
+        int maxTopicsFound = 0;
+        for (KAEntry entry : kaTopicCountersOrdered) {
+            if (entry.value != 0) {
+                maxTopicsFound++;
+            } else {
+                break;
+            }
+        }
+        int topicsToBeDisplayed = maxTopicsFound > numberOfTopicsToDisplay ? numberOfTopicsToDisplay : maxTopicsFound;
 
-        // Now tricking intensifies. I am iterating in the reverse order (where the bigger numbers are).
-        // Yes I could simply have implemented a comparator to order them in reverse when inserting in the TreeMap, there are millions of solutions
-        Iterator<Integer> iterator = countersAndKaTopicIds.descendingKeySet().iterator();
-        int currentKeyWhichIsActuallyAValue;
-        int currentKATopicId;
+        // This part will resize the chart height based on how many elements it has to show
+        _topKaTopicsChart.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
+                calculateTopKATopicsChartHeight(topicsToBeDisplayed)));
+
+        // These two variables are meant to fill subtitles and colours in the chart
+        String[] topKaTopicNames = new String[topicsToBeDisplayed];
+        int[] topKaTopicColours = new int[topicsToBeDisplayed];
+
+        Iterator<KAEntry> iterator = kaTopicCountersOrdered.iterator();
         List<BarEntry> entries = new ArrayList<>();
 
         // Now to fill these variables I am iterating from the TOP to the BOTTOM because in the chart greater values of XAxis are in the top
         // of the chart, which is what I wanted in the first place. Yes, it's ugly. Yes, it is very confusing. Yes, I hate myself for doing it like this.
-        for (int i = nummberOfTopicsToDisplay - 1, j = 0; i >= 0; i--, j++) {
-            currentKeyWhichIsActuallyAValue = iterator.next();
-            currentKATopicId = countersAndKaTopicIds.get(currentKeyWhichIsActuallyAValue);
+        for (int i = topicsToBeDisplayed - 1, j = 0; i >= 0; i--, j++) {
+            KAEntry currentEntry = iterator.next();
 
-            entries.add(new BarEntry((float) i, (float) currentKeyWhichIsActuallyAValue));
-            topKaTopicNames[i] = getResources().getString(_knowledgeAreaTopics[currentKATopicId].getNameResource());
+            entries.add(new BarEntry((float) i, (float) currentEntry.value));
+            topKaTopicNames[i] = getResources().getString(_knowledgeAreaTopics[currentEntry.id].getNameResource());
 
             // For some reason the colours are fed to the chart in the opposite indexing as the values, go figure...
-            topKaTopicColours[j] = ContextCompat.getColor(getActivity(), _knowledgeAreas[_knowledgeAreaTopics[currentKATopicId].getKnowledgeAreaId() - 1].getColourResource());
+            topKaTopicColours[j] = ContextCompat.getColor(getActivity(), _knowledgeAreas[_knowledgeAreaTopics[currentEntry.id].getKnowledgeAreaId() - 1].getColourResource());
 
         }
 
 
         BarDataSet dataSet = new BarDataSet(entries, "TopKATopics");
         dataSet.setValueFormatter(new PrefixedNonDecimalValueFormatter(getActivity().getString(R.string.times_matched)));
-        dataSet.setValueTextColor(ContextCompat.getColor(getActivity(), R.color.white));
         dataSet.setColors(topKaTopicColours);
 
         BarData data = new BarData(dataSet);
@@ -634,7 +734,6 @@ public class ScoreDetailedChartFragment extends Fragment implements LifecycleReg
 
 
         _topKaTopicsChart.setDrawBorders(false);
-
         _topKaTopicsChart.getLegend().setEnabled(false);
 
         // This description part uses a formatted string that reads something along the lines of 'From a total of  X topics'
@@ -646,8 +745,6 @@ public class ScoreDetailedChartFragment extends Fragment implements LifecycleReg
 
         _topKaTopicsChart.setFitBars(true);
 
-        _topKaTopicsChart.setDrawValueAboveBar(false);
-
         // All the gibberish below simply deactivates most of the grid lines to get the effect I wanted
         _topKaTopicsChart.getXAxis().setEnabled(true);
         //_topKaTopicsChart.getXAxis().setDrawAxisLine(false);
@@ -658,6 +755,7 @@ public class ScoreDetailedChartFragment extends Fragment implements LifecycleReg
         _topKaTopicsChart.getXAxis().setPosition(XAxis.XAxisPosition.BOTTOM);
         // And this part replaces the X values by actual labels
         _topKaTopicsChart.getXAxis().setValueFormatter(new IndexAxisValueFormatter(topKaTopicNames));
+        // Very important line, this will make sure that the correct number of labels is shown whenever the chart only has a few to show, for example, when viewing an annual combo or class
         _topKaTopicsChart.getXAxis().setLabelCount(topKaTopicNames.length);
 
         _topKaTopicsChart.getAxisLeft().setEnabled(false);
@@ -681,11 +779,61 @@ public class ScoreDetailedChartFragment extends Fragment implements LifecycleReg
 
         _topKaTopicsChart.invalidate();
 
-
         _topcKaTopicsProgressBar.setVisibility(View.INVISIBLE);
         _topKaTopicsChart.setVisibility(View.VISIBLE);
     }
 
+    /**
+     * This is an auxiliary function that calculates a percent of the base value to be used as the actual value of the height
+     * of the chart. This is useful so that it can resize a bit better depending on how many elements we are showing.
+     *
+     * @param topicsToBeDisplayed number of topics currently available to be seen
+     * @return value, in pixels, of expected size for the height of the chart
+     */
+    private int calculateTopKATopicsChartHeight(int topicsToBeDisplayed) {
+
+        float calculatedDimension = getResources().getDimension(R.dimen.top_ka_topics_chart_height);
+
+        if (topicsToBeDisplayed < 4) {
+            calculatedDimension = calculatedDimension * 0.2f;
+        } else if (topicsToBeDisplayed < 8) {
+            calculatedDimension = calculatedDimension * 0.4f;
+        } else if (topicsToBeDisplayed > 15) {
+            calculatedDimension = calculatedDimension * 1.2f;
+        }
+        return (int) Utils.convertDpToPixel(calculatedDimension);
+    }
+
+    /**
+     * This is a wrapper class.
+     * It basically holds a classic PAIR object. It is very useful to load numerical ID objects and its values
+     * into a Collection in a custom ordered way, which is basically the main reason it was used here.
+     */
+    private class KAEntry {
+        private int id;
+        private int value;
+
+        KAEntry(int id, int value) {
+            this.id = id;
+            this.value = value;
+        }
+    }
+
+    /**
+     * Unbelievably useful.
+     * I used this comparator so that I could order entries BY THEIR VALUE and not key, as is
+     * normal with standard TreeMaps. As ordering will be needed for this charts, this seemed
+     * like a nice approach.
+     * <p>
+     * This orders the values in DESCENDING ORDER and when they are the same, then the keys
+     * are ordered in DESCENDING.
+     */
+    private static Comparator<KAEntry> ENTRY_COMPARATOR = (kaEntry1, kaEntry2) -> {
+        if (kaEntry2.value == kaEntry1.value) {
+            return kaEntry2.id - kaEntry1.id;
+        }
+        return kaEntry2.value - kaEntry1.value;
+    };
 
     @Override
     public void onStart() {
@@ -725,6 +873,13 @@ public class ScoreDetailedChartFragment extends Fragment implements LifecycleReg
     @Override
     public void onDetach() {
         super.onDetach();
+    }
+
+    @Override
+    public void loadSelectedScoreFragment(String scoreId) {
+        _sharedViewModel.setSelectedScoreId(scoreId);
+        _parentActivity.loadChartFragment(null);
+
     }
 
 
@@ -770,8 +925,30 @@ public class ScoreDetailedChartFragment extends Fragment implements LifecycleReg
          * Loads from the Realm database the selected score for this fragment and naturally closes the door afterwards
          */
         private void loadSelectedScore() {
-            _degreeScore = _sharedViewModel.getDegreeScore(_degreeScoreId);
-            _degreeCombination = _sharedViewModel.getDegreeClassCombination(_degreeScoreId);
+            _degreeScore = _sharedViewModel.getScore(_scoreId);
+
+            switch (_degreeScore.getScoreType()) {
+                case SweScore.TYPE_CLASS_SCORE:
+                    _degreeClass = _sharedViewModel.getDegreeClass(_scoreId);
+                    _isClassCombination = true;
+                    _isAnnualCombination = false;
+                    _isDegreeCombination = true;
+                    break;
+                case SweScore.TYPE_ANNUAL_SCORE:
+                    _annualClassCombination = _sharedViewModel.getAnnualClassCombination(_scoreId);
+                    _isAnnualCombination = true;
+                    _isDegreeCombination = false;
+                    _isClassCombination = false;
+                    break;
+                case SweScore.TYPE_DEGREE_SCORE:
+                    _degreeCombination = _sharedViewModel.getDegreeClassCombination(_scoreId);
+                    _isDegreeCombination = true;
+                    _isAnnualCombination = false;
+                    _isClassCombination = false;
+                    break;
+                default:
+                    throw new RuntimeException("You should really contact me if this happens...");
+            }
         }
 
         @Override

@@ -297,7 +297,7 @@ public class ScoresMasterFragment extends Fragment implements LifecycleRegistryO
 
         @Override
         public void loadDegreeChartsFragment(View rootView, String degreeCombinationId) {
-            _sharedViewModel.setSelectedDegreeCombinationId(degreeCombinationId);
+            _sharedViewModel.setSelectedScoreId(degreeCombinationId);
             _parentActivity.loadChartFragment(rootView);
         }
 

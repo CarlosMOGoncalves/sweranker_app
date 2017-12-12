@@ -165,29 +165,31 @@ public class RealmScoresRepository implements ScoresRepository {
      * @return
      */
     @Override
-    public SweScore getDegreeCombinationScore(String degreeCombinationId) {
+    public SweScore getScore(String degreeCombinationId) {
         SweScore score = getRealmnstanceOfThread().where(SweScore.class)
-                .equalTo(SweScoreFields.SCORE_TYPE, SweScore.TYPE_DEGREE_SCORE)
                 .equalTo(SweScoreFields.ID, degreeCombinationId)
                 .findFirst();
 
         return getRealmnstanceOfThread().copyFromRealm(score);
     }
 
-    /**
-     * Note that this method does return a deep copied object from the underlying database.
-     * Due to the goal of this method, which is to retrieve an actual object and not to iterate over it
-     * a copy is made, otherwise the object will be lost as soon as the connection is closed.
-     *
-     * @param degreeCombinationId
-     * @return
-     */
     @Override
     public DegreeClassCombination getDegreeClassCombination(String degreeCombinationId) {
-        DegreeClassCombination degreeClassCombination = getRealmnstanceOfThread().where(DegreeClassCombination.class)
+        DegreeClassCombination degreeClassCombination = getRealmnstanceOfThread()
+                .where(DegreeClassCombination.class)
                 .equalTo(DegreeClassCombinationFields.COMBINATION_ID, degreeCombinationId)
                 .findFirst();
         return getRealmnstanceOfThread().copyFromRealm(degreeClassCombination);
+    }
+
+
+    @Override
+    public AnnualClassCombination getAnnualClassCombination(String annualClassCombinationId) {
+        AnnualClassCombination annualClassCombination = getRealmnstanceOfThread()
+                .where(AnnualClassCombination.class)
+                .equalTo(AnnualClassCombinationFields.ANNUAL_COMBINATION_ID, annualClassCombinationId)
+                .findFirst();
+        return getRealmnstanceOfThread().copyFromRealm(annualClassCombination);
     }
 
 

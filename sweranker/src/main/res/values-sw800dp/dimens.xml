@@ -29,10 +29,10 @@
     <dimen name="swebok_distribution_chart_height">600dp</dimen>
     <dimen name="swebok_distribution_chart_values_text_size">6sp</dimen>
 
-    <dimen name="top_kas_chart_height">400dp</dimen>
+    <dimen name="top_kas_chart_height">280dp</dimen>
     <dimen name="top_kas_chart_subtitle_text_size">8sp</dimen>
 
-    <dimen name="top_ka_topics_chart_height">700dp</dimen>
+    <dimen name="top_ka_topics_chart_height">600dp</dimen>
 
     <dimen name="score_chart_degree_info_dialog_item_year_label_text_size">20sp</dimen>
     <dimen name="score_chart_degree_info_dialog_item_class_name_text_size">18sp</dimen>

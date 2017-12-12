@@ -29,9 +29,32 @@ public interface ScoresRepository {
 
     List<SweScore> getScoresOfDegree(int degreeId);
 
-    SweScore getDegreeCombinationScore(String degreeCombinationId);
+    /**
+     * Loads the SweScore using the ID as parameter.
+     * This method should return a deep copy of the object.
+     *
+     * @param scoreId the ID of the SweScore to load.
+     * @return a deep copy of the SweScore whose ID is the same as the parameter.
+     */
+    SweScore getScore(String scoreId);
 
+    /**
+     * Loads the Degree Class Combination using the ID as parameter.
+     * This method should return a deep copy of the object.
+     *
+     * @param degreeCombinationId the ID of the Degree Class Combination to load.
+     * @return a deep copy of the Degree Class Combination whose ID is the same as the parameter.
+     */
     DegreeClassCombination getDegreeClassCombination(String degreeCombinationId);
+
+    /**
+     * Loads the Annual Score Combination using the ID as parameter.
+     * This method should return a deep copy of the object.
+     *
+     * @param combinationId the ID of the Annual Class Combination to load.
+     * @return a deep copy of the Annual Class Combination whose ID is the same as the parameter.
+     */
+    AnnualClassCombination getAnnualClassCombination(String combinationId);
 
     int countAllCombinationsOfDegree(int degreeId);
 

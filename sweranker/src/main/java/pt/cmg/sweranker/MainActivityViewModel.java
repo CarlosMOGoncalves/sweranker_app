@@ -125,7 +125,7 @@ public class MainActivityViewModel extends ViewModel {
      * Used in inter-fragment communication between ScoresMasterFragment and ScoreDetailedChartFragment
      * This will be used to load data about this particular combination.
      */
-    private String _selectedDegreeCombinationId;
+    private String _selectedScoreId;
 
     /**
      * Used in inter-fragment communication between ScoresMasterFragment and MultiScoreDetailedChartFragment
@@ -475,9 +475,9 @@ public class MainActivityViewModel extends ViewModel {
     }
 
 
-    public SweScore getDegreeScore(String degreeCombinationId) {
+    public SweScore getScore(String scoreId) {
         _scoresRepository.open();
-        SweScore result = _scoresRepository.getDegreeCombinationScore(degreeCombinationId);
+        SweScore result = _scoresRepository.getScore(scoreId);
         _scoresRepository.close();
         return result;
     }
@@ -485,6 +485,13 @@ public class MainActivityViewModel extends ViewModel {
     public DegreeClassCombination getDegreeClassCombination(String degreeCombinationId) {
         _scoresRepository.open();
         DegreeClassCombination result = _scoresRepository.getDegreeClassCombination(degreeCombinationId);
+        _scoresRepository.close();
+        return result;
+    }
+
+    public AnnualClassCombination getAnnualClassCombination(String annualClassCombination) {
+        _scoresRepository.open();
+        AnnualClassCombination result = _scoresRepository.getAnnualClassCombination(annualClassCombination);
         _scoresRepository.close();
         return result;
     }
@@ -497,12 +504,12 @@ public class MainActivityViewModel extends ViewModel {
 
         int maxscores = (int) _scoresRepository.getScoreCount();
         if (maxscores == 0) {
-            setSelectedDegreeCombinationId(null);
+            setSelectedScoreId(null);
         } else {
             result = _scoresRepository.getAllScores().get(new Random().nextInt(maxscores));
         }
 
-        setSelectedDegreeCombinationId(result.getId());
+        setSelectedScoreId(result.getId());
         _scoresRepository.close();
     }
 
@@ -1294,12 +1301,12 @@ public class MainActivityViewModel extends ViewModel {
         return _selectedDegreeClass;
     }
 
-    public void setSelectedDegreeCombinationId(String degreeCombinationId) {
-        _selectedDegreeCombinationId = degreeCombinationId;
+    public void setSelectedScoreId(String degreeCombinationId) {
+        _selectedScoreId = degreeCombinationId;
     }
 
-    public String getSelectedDegreeCombinationId() {
-        return _selectedDegreeCombinationId;
+    public String getSelectedScoreId() {
+        return _selectedScoreId;
     }
 
     public void setMultiSelectedDereeCombinationIds(List<String> selectedDegreeCombinationsToCompare) {

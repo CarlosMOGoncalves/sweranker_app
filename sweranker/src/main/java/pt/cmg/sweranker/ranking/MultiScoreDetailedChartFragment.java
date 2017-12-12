@@ -51,11 +51,12 @@ import com.github.mikephil.charting.utils.ViewPortHandler;
 
 import java.text.DecimalFormat;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
-import java.util.TreeMap;
+import java.util.TreeSet;
 
 import pt.cmg.sweranker.MainActivity;
 import pt.cmg.sweranker.MainActivityViewModel;
@@ -70,7 +71,7 @@ import pt.cmg.sweranker.swebok.KnowledgeAreaTopic;
  * Despite the name, as of now it displays charts for just a simple comparison between TWO degree combinations.
  * In fact, in a mobile screen, anymore than that an it gets really hard to understand.
  */
-public class MultiScoreDetailedChartFragment extends Fragment implements LifecycleRegistryOwner {
+public class MultiScoreDetailedChartFragment extends Fragment implements LifecycleRegistryOwner, DegreeOverviewDialog.OnDegreeOverviewDialogFragmentListener {
 
     LifecycleRegistry lifecycleRegistry = new LifecycleRegistry(this);
 
@@ -220,7 +221,7 @@ public class MultiScoreDetailedChartFragment extends Fragment implements Lifecyc
         _overviewUniversityName.setText(getResources().getString(_degree1.getUniversityResource()));
         _overviewCombinationName.setText(String.format(getResources().getString(R.string.degree_overview_combination), degreeCombinationNumber1));
         _showOverview.setOnClickListener(view ->
-                DegreeOverviewDialog.newInstance(getDegreeClasses(_degreeCombination1)).show(getFragmentManager(), "")
+                DegreeOverviewDialog.newInstance(this, getDegreeClasses(_degreeCombination1)).show(getFragmentManager(), "")
         );
 
         int degreeCombinationNumber2 = Integer.valueOf(_degreeScore2.getId().substring(3, _degreeScore2.getId().length()));
@@ -229,7 +230,7 @@ public class MultiScoreDetailedChartFragment extends Fragment implements Lifecyc
         _overviewUniversityName2.setText(getResources().getString(_degree2.getUniversityResource()));
         _overviewCombinationName2.setText(String.format(getResources().getString(R.string.degree_overview_combination), degreeCombinationNumber2));
         _showOverview2.setOnClickListener(view ->
-                DegreeOverviewDialog.newInstance(getDegreeClasses(_degreeCombination2)).show(getFragmentManager(), "")
+                DegreeOverviewDialog.newInstance(this, getDegreeClasses(_degreeCombination2)).show(getFragmentManager(), "")
         );
 
         _overviewProgressBar.setVisibility(View.INVISIBLE);
@@ -495,6 +496,42 @@ public class MultiScoreDetailedChartFragment extends Fragment implements Lifecyc
         _percentProgressBar.setVisibility(View.INVISIBLE);
     }
 
+    @Override
+    public void loadSelectedScoreFragment(String scoreId) {
+
+    }
+
+    /**
+     * This is a wrapper class.
+     * It basically holds a classic PAIR object. It is very useful to load numerical ID objects and its values
+     * into a Collection in a custom ordered way, which is basically the main reason it was used here.
+     */
+    private class KAEntry {
+        private int id;
+        private int value;
+
+        KAEntry(int id, int value) {
+            this.id = id;
+            this.value = value;
+        }
+    }
+
+    /**
+     * Unbelievably useful.
+     * I used this comparator so that I could order entries BY THEIR VALUE and not key, as is
+     * normal with standard TreeMaps. As ordering will be needed for this charts, this seemed
+     * like a nice approach.
+     * <p>
+     * This orders the values in DESCENDING ORDER and when they are the same, then the keys
+     * are ordered in DESCENDING.
+     */
+    private static Comparator<KAEntry> ENTRY_COMPARATOR = (kaEntry1, kaEntry2) -> {
+        if (kaEntry2.value == kaEntry1.value) {
+            return kaEntry2.id - kaEntry1.id;
+        }
+        return kaEntry2.value - kaEntry1.value;
+    };
+
 
     /**
      * This adapter is needed because I am using a Page Viewer and avoiding the common Fragment approach.
@@ -676,40 +713,31 @@ public class MultiScoreDetailedChartFragment extends Fragment implements Lifecyc
 
             short[] kaCounters = degreeScore.getKaCounters();
 
-            // This part is tricky, I am getting a TreeMap to take advantage of the ordering it makes
-            // So now I have a Map where keys are the actual values ORDERED and the values are the array indexes which are equivalent
-            // to the KA ids minus 1. Dear future me, don't hate me, remember that this native array stuff was implemented for performance reasons
-            // as well as simplicity because of the Realm database.
-            TreeMap<Integer, Integer> countersAndKaIds = new TreeMap<>();
+            // Intermediate object is useful for ORDERING and just that
+            TreeSet<KAEntry> kaCountersOrdered = new TreeSet<>(ENTRY_COMPARATOR);
             for (int i = 0; i < kaCounters.length; i++) {
-                countersAndKaIds.put((int) kaCounters[i], i);
+                kaCountersOrdered.add(new KAEntry(i, kaCounters[i]));
             }
 
             // These two variables are meant to fill subtitles and colours in the chart
             String[] topKaNames = new String[numberOfKasToDisplay];
             int[] topKaColours = new int[numberOfKasToDisplay];
 
-            // Now tricking intensifies. I am iterating in the reverse order (where the bigger numbers are).
-            // Yes I could simply have implemented a comparator to order them in reverse when inserting in the TreeMap, there are millions of solutions
-            Iterator<Integer> iterator = countersAndKaIds.descendingKeySet().iterator();
-            int currentKeyWhichIsActuallyAValue;
-            int currentKaId;
-            List<BarEntry> entries = new ArrayList<>();
+            Iterator<KAEntry> iterator = kaCountersOrdered.iterator();
+            List<BarEntry> entries = new ArrayList<>(numberOfKasToDisplay);
 
             // Now to fill these variables I am iterating from the TOP to the BOTTOM because in the chart greater values of XAxis are in the top
             // of the chart, which is what I wanted in the first place. Yes, it's ugly. Yes, it is very confusing. Yes, I hate myself for doing it like this.
             for (int i = numberOfKasToDisplay - 1, j = 0; i >= 0; i--, j++) {
-                currentKeyWhichIsActuallyAValue = iterator.next();
-                currentKaId = countersAndKaIds.get(currentKeyWhichIsActuallyAValue);
+                KAEntry currentEntry = iterator.next();
 
-                entries.add(new BarEntry((float) i, (float) currentKeyWhichIsActuallyAValue));
-                topKaNames[i] = getResources().getString(_knowledgeAreas[currentKaId].getNameResource());
+                entries.add(new BarEntry((float) i, (float) currentEntry.value));
+                topKaNames[i] = getResources().getString(_knowledgeAreas[currentEntry.id].getNameResource());
 
                 // For some reason the colours are fed to the chart in the opposite indexing as the values, go figure...
-                topKaColours[j] = ContextCompat.getColor(getActivity(), _knowledgeAreas[currentKaId].getColourResource());
+                topKaColours[j] = ContextCompat.getColor(getActivity(), _knowledgeAreas[currentEntry.id].getColourResource());
 
             }
-
 
             BarDataSet dataSet = new BarDataSet(entries, "TopKA");
             dataSet.setValueFormatter(new PrefixedNonDecimalValueFormatter(getActivity().getString(R.string.topics_lowercase)));
@@ -717,7 +745,6 @@ public class MultiScoreDetailedChartFragment extends Fragment implements Lifecyc
 
             BarData data = new BarData(dataSet);
             data.setBarWidth(0.9f);
-
 
             horizontalBarChart.setDrawBorders(false);
             horizontalBarChart.getLegend().setEnabled(false);
@@ -739,6 +766,7 @@ public class MultiScoreDetailedChartFragment extends Fragment implements Lifecyc
             horizontalBarChart.getXAxis().setPosition(XAxis.XAxisPosition.BOTTOM);
             // And this part replaces the X values by actual labels
             horizontalBarChart.getXAxis().setValueFormatter(new IndexAxisValueFormatter(topKaNames));
+            horizontalBarChart.getXAxis().setLabelCount(topKaNames.length);
 
             horizontalBarChart.getAxisLeft().setEnabled(false);
             horizontalBarChart.getAxisLeft().setDrawGridLines(false);
@@ -872,37 +900,29 @@ public class MultiScoreDetailedChartFragment extends Fragment implements Lifecyc
 
             short[] topicCounter = degreeScore.getTopicCounters();
 
-            // This part is tricky, I am getting a TreeMap to take advantage of the ordering it makes
-            // So now I have a Map where keys are the actual values ORDERED and the values are the array indexes which are equivalent
-            // to the KA ids minus 1. Dear future me, don't hate me, remember that this native array stuff was implemented for performance reasons
-            // as well as simplicity because of the Realm database.
-            TreeMap<Integer, Integer> countersAndKaTopicIds = new TreeMap<>();
+            // Intermediate object is useful for ORDERING and just that
+            TreeSet<KAEntry> kaTopicCountersOrdered = new TreeSet<>(ENTRY_COMPARATOR);
             for (int i = 0; i < topicCounter.length; i++) {
-                countersAndKaTopicIds.put((int) topicCounter[i], i);
+                kaTopicCountersOrdered.add(new KAEntry(i, topicCounter[i]));
             }
 
             // These two variables are meant to fill subtitles and colours in the chart
             String[] topKaTopicNames = new String[numberOfKaTopicsToDisplay];
             int[] topKaTopicColours = new int[numberOfKaTopicsToDisplay];
 
-            // Now tricking intensifies. I am iterating in the reverse order (where the bigger numbers are).
-            // Yes I could simply have implemented a comparator to order them in reverse when inserting in the TreeMap, there are millions of solutions
-            Iterator<Integer> iterator = countersAndKaTopicIds.descendingKeySet().iterator();
-            int currentKeyWhichIsActuallyAValue;
-            int currentKATopicId;
+            Iterator<KAEntry> iterator = kaTopicCountersOrdered.iterator();
             List<BarEntry> entries = new ArrayList<>();
 
             // Now to fill these variables I am iterating from the TOP to the BOTTOM because in the chart greater values of XAxis are in the top
             // of the chart, which is what I wanted in the first place. Yes, it's ugly. Yes, it is very confusing. Yes, I hate myself for doing it like this.
             for (int i = numberOfKaTopicsToDisplay - 1, j = 0; i >= 0; i--, j++) {
-                currentKeyWhichIsActuallyAValue = iterator.next();
-                currentKATopicId = countersAndKaTopicIds.get(currentKeyWhichIsActuallyAValue);
+                KAEntry currentEntry = iterator.next();
 
-                entries.add(new BarEntry((float) i, (float) currentKeyWhichIsActuallyAValue));
-                topKaTopicNames[i] = getResources().getString(_knowledgeAreaTopics[currentKATopicId].getNameResource());
+                entries.add(new BarEntry((float) i, (float) currentEntry.value));
+                topKaTopicNames[i] = getResources().getString(_knowledgeAreaTopics[currentEntry.id].getNameResource());
 
                 // For some reason the colours are fed to the chart in the opposite indexing as the values, go figure...
-                topKaTopicColours[j] = ContextCompat.getColor(getActivity(), _knowledgeAreas[_knowledgeAreaTopics[currentKATopicId].getKnowledgeAreaId() - 1].getColourResource());
+                topKaTopicColours[j] = ContextCompat.getColor(getActivity(), _knowledgeAreas[_knowledgeAreaTopics[currentEntry.id].getKnowledgeAreaId() - 1].getColourResource());
 
             }
 
@@ -1035,11 +1055,11 @@ public class MultiScoreDetailedChartFragment extends Fragment implements Lifecyc
          */
         private void loadSelectedScore() {
             _degreeCombination1 = _sharedViewModel.getDegreeClassCombination(_degreeScoreId1);
-            _degreeScore1 = _sharedViewModel.getDegreeScore(_degreeScoreId1);
+            _degreeScore1 = _sharedViewModel.getScore(_degreeScoreId1);
             _degree1 = _sharedViewModel.getDegree(_degreeScore1.getDegreeId());
 
             _degreeCombination2 = _sharedViewModel.getDegreeClassCombination(_degreeScoreId2);
-            _degreeScore2 = _sharedViewModel.getDegreeScore(_degreeScoreId2);
+            _degreeScore2 = _sharedViewModel.getScore(_degreeScoreId2);
             _degree2 = _sharedViewModel.getDegree(_degreeScore2.getDegreeId());
 
         }

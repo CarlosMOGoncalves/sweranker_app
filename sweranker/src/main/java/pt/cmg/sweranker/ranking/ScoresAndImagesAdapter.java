@@ -21,7 +21,7 @@ import pt.cmg.sweranker.R;
 
 public class ScoresAndImagesAdapter extends MultiSelectableAdapter<ScoresAndImagesAdapter.ScoreImageViewHolder> {
 
-    public static final int MAX_COMPARE_ITEMS = 2;
+    private static final int MAX_COMPARE_ITEMS = 2;
 
     private Context _context;
 
@@ -88,9 +88,9 @@ public class ScoresAndImagesAdapter extends MultiSelectableAdapter<ScoresAndImag
         public ScoreImageViewHolder(View itemView) {
             super(itemView);
 
-            _scoreContainer = (LinearLayout) itemView.findViewById(R.id.score_container);
-            _degreeLogo = (ImageView) itemView.findViewById(R.id.ranking_logo);
-            _rankingName = (TextView) itemView.findViewById(R.id.ranking_name);
+            _scoreContainer = itemView.findViewById(R.id.score_container);
+            _degreeLogo = itemView.findViewById(R.id.ranking_logo);
+            _rankingName = itemView.findViewById(R.id.ranking_name);
 
             // On click, either we open a new fragment with the detailed score or we add a new element to the multi select Action Mode
             _degreeLogo.setOnClickListener(view -> {
