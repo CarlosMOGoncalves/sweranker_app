@@ -29,7 +29,7 @@
     <dimen name="swebok_distribution_chart_height">600dp</dimen>
     <dimen name="swebok_distribution_chart_values_text_size">6sp</dimen>
 
-    <dimen name="top_kas_chart_height">280dp</dimen>
+    <dimen name="top_kas_chart_height">300dp</dimen>
     <dimen name="top_kas_chart_subtitle_text_size">8sp</dimen>
 
     <dimen name="top_ka_topics_chart_height">600dp</dimen>

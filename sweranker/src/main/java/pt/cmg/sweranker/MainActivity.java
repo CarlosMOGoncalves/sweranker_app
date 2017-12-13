@@ -2,6 +2,7 @@ package pt.cmg.sweranker;
 
 import android.app.Activity;
 import android.app.Fragment;
+import android.app.FragmentManager;
 import android.arch.lifecycle.LifecycleRegistry;
 import android.arch.lifecycle.LifecycleRegistryOwner;
 import android.arch.lifecycle.ViewModelProvider;
@@ -42,7 +43,6 @@ import pt.cmg.sweranker.ranking.ScoresMasterFragment;
 import pt.cmg.sweranker.swebok.KnowledgeArea;
 import pt.cmg.sweranker.swebok.SwebokDetailedFragment;
 import pt.cmg.sweranker.swebok.SwebokMasterFragment;
-import pt.cmg.sweranker.ui.ImageSizeAndPlaceTransition;
 import pt.cmg.sweranker.ui.OnStartTransitionListener;
 import pt.cmg.sweranker.ui.UXUtils;
 
@@ -81,7 +81,14 @@ public class MainActivity extends AppCompatActivity implements
         _viewModel = ViewModelProviders.of(this, viewmodelFactory).get(MainActivityViewModel.class);
         _viewModel.init();
         resetToolbar();
-
+        getFragmentManager().addOnBackStackChangedListener(new FragmentManager.OnBackStackChangedListener() {
+            @Override
+            public void onBackStackChanged() {
+                if (getFragmentManager().getBackStackEntryCount() == 0) {
+                    resetToolbar();
+                }
+            }
+        });
         initialiseRandomScoreView();
 
     }
@@ -93,7 +100,7 @@ public class MainActivity extends AppCompatActivity implements
      */
     private void resetToolbar() {
 
-        _toolbar = (Toolbar) findViewById(R.id.toolbar);
+        _toolbar = findViewById(R.id.toolbar);
 
         // this sets the title. Although it is standard behaviour, in case the title was changed somehow, this is needed
         // to return to the original title.
@@ -104,12 +111,12 @@ public class MainActivity extends AppCompatActivity implements
         getSupportActionBar().setDisplayHomeAsUpEnabled(false);
         getSupportActionBar().setDisplayShowHomeEnabled(false);
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.nav_drawer);
+        DrawerLayout drawer = findViewById(R.id.nav_drawer);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, _toolbar, R.string.openDrawer, R.string.closeDrawer);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
-        NavigationView navigationView = (NavigationView) findViewById(R.id.navigation_view);
+        NavigationView navigationView = findViewById(R.id.navigation_view);
         navigationView.setNavigationItemSelectedListener(this);
     }
 
@@ -197,13 +204,22 @@ public class MainActivity extends AppCompatActivity implements
             // Careful with his, it is here because of the animations on KA details.
             // When pressed the menu and selected one item the animations would not run.
             getFragmentManager().popBackStackImmediate();
-            getFragmentManager().beginTransaction().replace(R.id.content_area, SwebokMasterFragment.newInstance(), "Swebok").commit();
+            getFragmentManager()
+                    .beginTransaction()
+                    .replace(R.id.content_area, SwebokMasterFragment.newInstance(), "Swebok")
+                    .commit();
         } else if (id == R.id.curricula_nav) {
             getFragmentManager().popBackStackImmediate();
-            getFragmentManager().beginTransaction().replace(R.id.content_area, DegreesMasterFragment.newInstance(), "Degrees").commit();
-        } else if (id == R.id.rankings_nav) {
+            getFragmentManager()
+                    .beginTransaction()
+                    .replace(R.id.content_area, DegreesMasterFragment.newInstance(), "Degrees")
+                    .commit();
+        } else if (id == R.id.scores_nav) {
             getFragmentManager().popBackStackImmediate();
-            getFragmentManager().beginTransaction().replace(R.id.content_area, ScoresMasterFragment.newInstance(), "Degrees").commit();
+            getFragmentManager()
+                    .beginTransaction()
+                    .replace(R.id.content_area, ScoresMasterFragment.newInstance(), "Scores")
+                    .commit();
         }
 
         DrawerLayout drawer = findViewById(R.id.nav_drawer);
@@ -269,8 +285,7 @@ public class MainActivity extends AppCompatActivity implements
             }
         });
 
-        // And when the user presses Back on the toolbar I use a transition listener to change the
-        // toolbar back to its original state. Neat.
+        // And when the user presses Back on the toolbar I use a transition listener to change the toolbar back to its original state. Neat.
         Transition exitTransition = new Slide(Gravity.RIGHT);
         exitTransition.setDuration(transitionDuration);
         kaDetailsFragment.setReturnTransition(exitTransition);
@@ -279,11 +294,15 @@ public class MainActivity extends AppCompatActivity implements
             public void onStartTransition(Transition transition) {
                 UXUtils.animateStatusBarColourChange(myActivity, statusBarOriginalColour, 0, 0);
                 UXUtils.animateActionBarColourChange(_toolbar, actionBarOriginalColour, 0, 0);
-                resetToolbar();
             }
         });
 
-        getFragmentManager().beginTransaction().addSharedElement(image, "ka_image").replace(R.id.content_area, kaDetailsFragment, "KADetail").addToBackStack(null).commit();
+        getFragmentManager()
+                .beginTransaction()
+                .addSharedElement(image, "ka_image")
+                .replace(R.id.content_area, kaDetailsFragment, "KADetail")
+                .addToBackStack(null)
+                .commit();
     }
 
     /**
@@ -291,29 +310,27 @@ public class MainActivity extends AppCompatActivity implements
      * The shared element is the KA decorative image and it will be set on the fragment transaction.
      * This function only creates the Transition animation for the image.
      */
-    private Transition createImageEnterSharedElementTransition(Fragment targetFragment, long transitionDuration) {
-
-        Transition sharedImageEnterTransition = new ImageSizeAndPlaceTransition();
-        sharedImageEnterTransition.setDuration(transitionDuration);
-        targetFragment.setSharedElementEnterTransition(sharedImageEnterTransition);
-        return sharedImageEnterTransition;
-
-    }
+//    private Transition createImageEnterSharedElementTransition(Fragment targetFragment, long transitionDuration) {
+//
+//        Transition sharedImageEnterTransition = new ImageSizeAndPlaceTransition();
+//        sharedImageEnterTransition.setDuration(transitionDuration);
+//        targetFragment.setSharedElementEnterTransition(sharedImageEnterTransition);
+//        return sharedImageEnterTransition;
+//
+//    }
 
     /**
      * Creates and sets a shared element transition from target fragment {@link SwebokDetailedFragment} BACK TO the source fragment {@link SwebokMasterFragment}.
      * The shared element is the KA decorative image and it will be set on the fragment transaction.
      * This function only creates the Transition animation for the image.
      */
-    private Transition createImageExitSharedElementTransition(Fragment targetFragment, long transitionDuration) {
-
-        Transition sharedImageExitTransition = new ImageSizeAndPlaceTransition();
-        sharedImageExitTransition.setDuration(transitionDuration);
-        targetFragment.setSharedElementReturnTransition(sharedImageExitTransition);
-        return sharedImageExitTransition;
-    }
-
-
+//    private Transition createImageExitSharedElementTransition(Fragment targetFragment, long transitionDuration) {
+//
+//        Transition sharedImageExitTransition = new ImageSizeAndPlaceTransition();
+//        sharedImageExitTransition.setDuration(transitionDuration);
+//        targetFragment.setSharedElementReturnTransition(sharedImageExitTransition);
+//        return sharedImageExitTransition;
+//    }
     @Override
     public void loadDetailedDegreeFragment(View degreeCard) {
 
@@ -340,17 +357,11 @@ public class MainActivity extends AppCompatActivity implements
             }
         });
 
-        // And when the user presses Back on the toolbar I use a transition listener to change the
-        // toolbar back to its original state. Neat.
+
+        // TODO: as transições shared não funcionam muito bem com o Android 8. Atenção quando rever isto
         Transition exitTransition = new Slide(Gravity.RIGHT);
         exitTransition.setDuration(transitionDuration);
         degreeDetailsFragment.setReturnTransition(exitTransition);
-        exitTransition.addListener(new OnStartTransitionListener() {
-            @Override
-            public void onStartTransition(Transition transition) {
-                resetToolbar();
-            }
-        });
 
         getFragmentManager()
                 .beginTransaction()
@@ -382,8 +393,7 @@ public class MainActivity extends AppCompatActivity implements
             }
         });
 
-        // And when the user presses Back on the toolbar I use a transition listener to change the
-        // toolbar back to its original state. Neat.
+        // Since I am navigating back to the degree, I will change again the toolbar to its name
         Transition exitTransition = new Slide(Gravity.RIGHT);
         exitTransition.setDuration(400);
         degreeClassFragment.setReturnTransition(exitTransition);
@@ -399,7 +409,6 @@ public class MainActivity extends AppCompatActivity implements
         getFragmentManager()
                 .beginTransaction()
                 .add(R.id.content_area, degreeClassFragment)
-//                .replace(R.id.content_area, degreeClassFragment, "DegreeClass")
                 .addToBackStack(null)
                 .commit();
     }
@@ -424,24 +433,13 @@ public class MainActivity extends AppCompatActivity implements
             }
         });
 
-        // And when the user presses Back on the toolbar I use a transition listener to change the
-        // toolbar back to its original state. Neat.
         Transition exitTransition = new Slide(Gravity.RIGHT);
         exitTransition.setDuration(400);
         classEvaluator.setReturnTransition(exitTransition);
-        exitTransition.addListener(new OnStartTransitionListener() {
-            @Override
-            public void onStartTransition(Transition transition) {
-                // When we get back, we get back to degree so it is too soon to reset the toolbar
-                changeToolbarIntoBackButton(getResources().getString(degreeClass.getNameResource()));
-            }
-        });
-
 
         getFragmentManager()
                 .beginTransaction()
                 .add(R.id.content_area, classEvaluator)
-//                .replace(R.id.content_area, classEvaluator, "ClassEvaluator")
                 .addToBackStack(null)
                 .commit();
 
@@ -465,21 +463,13 @@ public class MainActivity extends AppCompatActivity implements
             }
         });
 
-        // And when the user presses Back on the toolbar I use a transition listener to change the
-        // toolbar back to its original state. Neat.
         Transition exitTransition = new Slide(Gravity.RIGHT);
         exitTransition.setDuration(300);
         chartFragment.setReturnTransition(exitTransition);
-        exitTransition.addListener(new OnStartTransitionListener() {
-            @Override
-            public void onStartTransition(Transition transition) {
-                resetToolbar();
-            }
-        });
 
         getFragmentManager()
                 .beginTransaction()
-                .replace(R.id.content_area, chartFragment, "ChartFragment")
+                .add(R.id.content_area, chartFragment, "ChartFragment")
                 .addToBackStack(null)
                 .commit();
     }
@@ -501,17 +491,9 @@ public class MainActivity extends AppCompatActivity implements
             }
         });
 
-        // And when the user presses Back on the toolbar I use a transition listener to change the
-        // toolbar back to its original state. Neat.
         Transition exitTransition = new Slide(Gravity.RIGHT);
         exitTransition.setDuration(300);
         chartFragment.setReturnTransition(exitTransition);
-        exitTransition.addListener(new OnStartTransitionListener() {
-            @Override
-            public void onStartTransition(Transition transition) {
-                resetToolbar();
-            }
-        });
 
         getFragmentManager()
                 .beginTransaction()

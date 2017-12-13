@@ -9,7 +9,7 @@
         android:icon="@mipmap/ic_school_black_24dp"
         android:title="@string/curricula"></item>
     <item
-        android:id="@+id/rankings_nav"
+        android:id="@+id/scores_nav"
         android:icon="@mipmap/ic_assessment_black_24dp"
         android:title="@string/rankings"></item>
 </menu>

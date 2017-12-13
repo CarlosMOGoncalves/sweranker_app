@@ -46,7 +46,6 @@ import com.github.mikephil.charting.formatter.IndexAxisValueFormatter;
 import com.github.mikephil.charting.formatter.PercentFormatter;
 import com.github.mikephil.charting.highlight.Highlight;
 import com.github.mikephil.charting.listener.OnChartValueSelectedListener;
-import com.github.mikephil.charting.utils.Utils;
 import com.github.mikephil.charting.utils.ViewPortHandler;
 
 import java.text.DecimalFormat;
@@ -131,8 +130,10 @@ public class ScoreDetailedChartFragment extends Fragment implements LifecycleReg
     private SweScore _degreeScore;
     private DegreeClassCombination _degreeCombination;
     private boolean _isDegreeCombination;
+
     private AnnualClassCombination _annualClassCombination;
     private boolean _isAnnualCombination;
+
     private DegreeClass _degreeClass;
     private boolean _isClassCombination;
 
@@ -277,10 +278,14 @@ public class ScoreDetailedChartFragment extends Fragment implements LifecycleReg
             _overviewCombinationName.setText(String.format(getResources().getString(R.string.degree_overview_combination), combinationNumber));
         }
 
-        _showOverview.setOnClickListener(view ->
-                DegreeOverviewDialog.newInstance(this, getDegreeClasses()).show(getFragmentManager(), "")
-        );
+        _showOverview.setOnClickListener(view -> {
+                    if (_isClassCombination) {
 
+                    } else {
+                        DegreeOverviewDialog.newInstance(this, getAnnualCombinations(), getDegreeClasses()).show(getFragmentManager(), "");
+                    }
+                }
+        );
         _overviewProgressBar.setVisibility(View.INVISIBLE);
     }
 
@@ -298,13 +303,11 @@ public class ScoreDetailedChartFragment extends Fragment implements LifecycleReg
         if (_isClassCombination) {
             degreeClasses.add(_degreeClass);
         }
-
         if (_isAnnualCombination) {
             for (DegreeClassId degreeId : _annualClassCombination.getDegreeClassIds()) {
                 degreeClasses.add(_sharedViewModel.getDegreeClass(degreeId.getDegreeClassId()));
             }
         }
-
         if (_isDegreeCombination) {
             for (AnnualClassCombination annualCombination : _degreeCombination.getAnnualClassCombinations()) {
                 for (DegreeClassId degreeId : annualCombination.getDegreeClassIds()) {
@@ -312,8 +315,30 @@ public class ScoreDetailedChartFragment extends Fragment implements LifecycleReg
                 }
             }
         }
-
         return degreeClasses;
+    }
+
+
+    /**
+     * This helper function simply loads the Degree Classes that are included in the target score,
+     * that can either mean the classes that compose the degree combination, the annual combination
+     * or the degree class itself.
+     * It is used to construct the parameters that will be sent to the DegreeOverviewDialog.
+     */
+    private List<AnnualClassCombination> getAnnualCombinations() {
+
+        List<AnnualClassCombination> annualClassCombinations = new ArrayList<>();
+
+        if (_isClassCombination) {
+        }
+        if (_isAnnualCombination) {
+            annualClassCombinations.add(_annualClassCombination);
+        }
+        if (_isDegreeCombination) {
+            annualClassCombinations.addAll(_degreeCombination.getAnnualClassCombinations());
+        }
+
+        return annualClassCombinations;
     }
 
     /**
@@ -668,11 +693,11 @@ public class ScoreDetailedChartFragment extends Fragment implements LifecycleReg
         float calculatedDimension = getResources().getDimension(R.dimen.top_kas_chart_height);
 
         if (topicsToBeDisplayed < 4) {
-            calculatedDimension = calculatedDimension * 0.3f;
+            calculatedDimension = calculatedDimension * 0.5f;
         } else if (topicsToBeDisplayed > 8) {
             calculatedDimension = calculatedDimension * 1.2f;
         }
-        return (int) Utils.convertDpToPixel(calculatedDimension);
+        return (int) calculatedDimension;
     }
 
 
@@ -795,13 +820,13 @@ public class ScoreDetailedChartFragment extends Fragment implements LifecycleReg
         float calculatedDimension = getResources().getDimension(R.dimen.top_ka_topics_chart_height);
 
         if (topicsToBeDisplayed < 4) {
-            calculatedDimension = calculatedDimension * 0.2f;
-        } else if (topicsToBeDisplayed < 8) {
             calculatedDimension = calculatedDimension * 0.4f;
+        } else if (topicsToBeDisplayed < 8) {
+            calculatedDimension = calculatedDimension * 0.8f;
         } else if (topicsToBeDisplayed > 15) {
             calculatedDimension = calculatedDimension * 1.2f;
         }
-        return (int) Utils.convertDpToPixel(calculatedDimension);
+        return (int) calculatedDimension;
     }
 
     /**

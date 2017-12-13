@@ -221,7 +221,7 @@ public class MultiScoreDetailedChartFragment extends Fragment implements Lifecyc
         _overviewUniversityName.setText(getResources().getString(_degree1.getUniversityResource()));
         _overviewCombinationName.setText(String.format(getResources().getString(R.string.degree_overview_combination), degreeCombinationNumber1));
         _showOverview.setOnClickListener(view ->
-                DegreeOverviewDialog.newInstance(this, getDegreeClasses(_degreeCombination1)).show(getFragmentManager(), "")
+                DegreeOverviewDialog.newInstance(this, _degreeCombination1.getAnnualClassCombinations(), getDegreeClasses(_degreeCombination1)).show(getFragmentManager(), "")
         );
 
         int degreeCombinationNumber2 = Integer.valueOf(_degreeScore2.getId().substring(3, _degreeScore2.getId().length()));
@@ -230,7 +230,7 @@ public class MultiScoreDetailedChartFragment extends Fragment implements Lifecyc
         _overviewUniversityName2.setText(getResources().getString(_degree2.getUniversityResource()));
         _overviewCombinationName2.setText(String.format(getResources().getString(R.string.degree_overview_combination), degreeCombinationNumber2));
         _showOverview2.setOnClickListener(view ->
-                DegreeOverviewDialog.newInstance(this, getDegreeClasses(_degreeCombination2)).show(getFragmentManager(), "")
+                DegreeOverviewDialog.newInstance(this, _degreeCombination2.getAnnualClassCombinations(), getDegreeClasses(_degreeCombination2)).show(getFragmentManager(), "")
         );
 
         _overviewProgressBar.setVisibility(View.INVISIBLE);

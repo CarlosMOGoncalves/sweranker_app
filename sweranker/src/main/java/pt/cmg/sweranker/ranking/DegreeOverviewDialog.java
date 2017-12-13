@@ -15,12 +15,9 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
 import java.util.TreeMap;
-import java.util.TreeSet;
 
 import pt.cmg.sweranker.R;
 import pt.cmg.sweranker.degrees.DegreeClass;
@@ -35,6 +32,7 @@ import pt.cmg.sweranker.ui.UnderlineDividerItemDecorator;
 public class DegreeOverviewDialog extends DialogFragment {
 
     private List<DegreeClass> _combinationClasses;
+    private List<AnnualClassCombination> _annualCombinations;
 
     private OnDegreeOverviewDialogFragmentListener _listener;
 
@@ -48,9 +46,10 @@ public class DegreeOverviewDialog extends DialogFragment {
     }
 
 
-    public static DegreeOverviewDialog newInstance(OnDegreeOverviewDialogFragmentListener listener, List<DegreeClass> combinationClasses) {
+    public static DegreeOverviewDialog newInstance(OnDegreeOverviewDialogFragmentListener listener, List<AnnualClassCombination> annualCombinations, List<DegreeClass> combinationClasses) {
         DegreeOverviewDialog fragment = new DegreeOverviewDialog();
         fragment._combinationClasses = combinationClasses;
+        fragment._annualCombinations = annualCombinations;
         fragment._listener = listener;
         return fragment;
     }
@@ -86,13 +85,21 @@ public class DegreeOverviewDialog extends DialogFragment {
                 .build());
         _overviewList.setItemAnimator(new DefaultItemAnimator());
 
-        DegreeOverviewAdapter adapter = new DegreeOverviewAdapter(this, _combinationClasses);
+        DegreeOverviewAdapter adapter = new DegreeOverviewAdapter(this, _annualCombinations, _combinationClasses);
         _overviewList.setAdapter(adapter);
 
         return _overviewList;
     }
 
-
+    /**
+     * This adapter is used to modulate the data that will feed a RecyclerView list with both degree classes and
+     * the years they belong to. It is slightly more complicated due to fact that this number of both the years
+     * and the degree classes can change.
+     * <p>
+     * Since this adapter is very crucial to navigation and uses multiple view types that can change with the
+     * amount of data fed to it, it requires some more work on building an underlying (I just love this word...)
+     * abstraction to represent a simpler way to iterate over it.
+     */
     public class DegreeOverviewAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
         private static final int TYPE_DEGREE_CLASS_YEAR = 10;
@@ -100,94 +107,89 @@ public class DegreeOverviewDialog extends DialogFragment {
 
         private DegreeOverviewDialog _parentDialog;
         private Context _context;
-        private List<DegreeClass> _degreeClassList;
-        private int _numberOfYears;
 
         /**
-         * This is an array with all the data transformed for the commodity of the adapter.
-         * Every position is either a Degree Class or null, which represents a Year view.
+         * Keys -> the index (zero-based) of the Degree Class in the adapter position: Values -> the actual Degree Class
          */
-        private DegreeClass[] _degreeClasses;
+        private Map<Integer, DegreeClass> _degreeClassesPerAdapterPosition;
+
+        /**
+         * Keys -> the index (zero-based) of the Annual Class Combination in the adapter position: Values -> the actual Annual Class Combination
+         */
+        private Map<Integer, AnnualClassCombination> _annualCombinationPerAdapterPosition;
 
 
-        private int[] _yearTitlePositions;
-
-
-        public DegreeOverviewAdapter(DegreeOverviewDialog dialog, List<DegreeClass> degreeClasses) {
-
+        private DegreeOverviewAdapter(DegreeOverviewDialog dialog, List<AnnualClassCombination> annualCombinations, List<DegreeClass> degreeClasses) {
             _parentDialog = dialog;
             _context = dialog.getActivity();
-            _numberOfYears = getNumberOfYears(degreeClasses);
-            _degreeClassList = degreeClasses;
-            _degreeClasses = getDegreeClassesAsArray();
-
+            _degreeClassesPerAdapterPosition = new TreeMap<>();
+            _annualCombinationPerAdapterPosition = new TreeMap<>();
+            buildAdapterPositionStructures(annualCombinations, degreeClasses);
         }
 
 
         /**
-         * Just a quick calculation to get the number of years this degree has.
-         *
-         * @param degreeClasses
-         * @return
+         * This is the very core of this mess. This will fill both index pointer variables on one sweep.
+         * By iterating over the pre-built data structures for the effect it will build a complete index based
+         * solution that will place the YEARs and CLASSES in their right place.
          */
-        private int getNumberOfYears(List<DegreeClass> degreeClasses) {
-            Set<Integer> allYears = new TreeSet<>();
+        private void buildAdapterPositionStructures(List<AnnualClassCombination> annualClassCombinations, List<DegreeClass> degreeClasses) {
+            Map<Integer, AnnualClassCombination> combinationsPerYear = createAnnualCombinationPerYearView(annualClassCombinations);
+            Map<Integer, List<DegreeClass>> classesPerYear = calculateClassesPerYearView(degreeClasses);
+
+            int adapterPosition = 0;
+            for (AnnualClassCombination annualCombo : combinationsPerYear.values()) {
+
+                _annualCombinationPerAdapterPosition.put(adapterPosition, annualCombo);
+                adapterPosition++;
+
+                for (DegreeClass degreeClass : classesPerYear.get(annualCombo.getYear())) {
+                    _degreeClassesPerAdapterPosition.put(adapterPosition, degreeClass);
+                    adapterPosition++;
+                }
+            }
+        }
+
+        /**
+         * Creates a data view where Keys are the Years of a combination and the Values are the matching
+         * combinations.
+         * They ARE ORDERED. This is guaranteed by the TreeMap implementation.
+         * If you change this, all Hell will break loose.
+         */
+        private Map<Integer, AnnualClassCombination> createAnnualCombinationPerYearView(List<AnnualClassCombination> annualClassCombinations) {
+            Map<Integer, AnnualClassCombination> annualCombosPerYear = new TreeMap<>();
+
+            for (AnnualClassCombination annualClassCombination : annualClassCombinations) {
+                annualCombosPerYear.put(annualClassCombination.getYear(), annualClassCombination);
+            }
+            return annualCombosPerYear;
+        }
+
+        /**
+         * Creates a data view where Keys are the Years of a DegreeClass and the Values are list of all the
+         * DegreeClasses of that year.
+         * They ARE ORDERED. This is guaranteed by the TreeMap implementation.
+         * If you change this, all Hell will break loose.
+         */
+        private Map<Integer, List<DegreeClass>> calculateClassesPerYearView(List<DegreeClass> degreeClasses) {
+
+            Map<Integer, List<DegreeClass>> classesPerYear = new TreeMap<>();
+
             for (DegreeClass degreeClass : degreeClasses) {
-                allYears.add(degreeClass.getYear());
+                // If its bigger, tough luck, I won't accept it.
+                if (!classesPerYear.containsKey(degreeClass.getYear())) {
+                    classesPerYear.put(degreeClass.getYear(), new ArrayList<>());
+                }
+                classesPerYear.get(degreeClass.getYear()).add(degreeClass);
             }
 
-            return allYears.size();
+            return classesPerYear;
         }
 
-
-        /**
-         * This one is very tricky.
-         * Returns an array where each position is occupied by the DegreeClass that matches that same position in the adapter.
-         * So there is an array with the number of classes plus the number of years where only the classes are actually filled.
-         * Like this [ null , DegreeClass1, DC2, DC3 , null , DC4 , ...] where each null is actually an empty spot to sit the Year View.
-         *
-         * @return
-         */
-        private DegreeClass[] getDegreeClassesAsArray() {
-            Map<Integer, List<DegreeClass>> classesByYear = calculateClassesByYear();
-            DegreeClass[] degreeClasses = new DegreeClass[_numberOfYears + _degreeClassList.size()];
-
-            _yearTitlePositions = new int[_numberOfYears];
-            _yearTitlePositions[0] = 0;
-            // This will iterate over ALL of the available positions in the array that was allocated
-            for (int i = 1, position = 1; i <= classesByYear.size(); i++) {
-
-                for (DegreeClass degreeClass : classesByYear.get(i)) {
-                    degreeClasses[position++] = degreeClass;
-                }
-                if (i != classesByYear.size()) {
-                    _yearTitlePositions[i] = position;
-                    position++;
-                }
-
-
-            }
-
-            return degreeClasses;
-        }
-
-
-        private Map<Integer, List<DegreeClass>> calculateClassesByYear() {
-            Map<Integer, List<DegreeClass>> result = new TreeMap<>();
-            for (DegreeClass degreeClass : _degreeClassList) {
-
-                if (result.get(degreeClass.getYear()) == null) {
-                    result.put(degreeClass.getYear(), new ArrayList());
-                }
-                result.get(degreeClass.getYear()).add(degreeClass);
-            }
-            return result;
-        }
 
         @Override
         public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
             View itemView;
-
             if (viewType == TYPE_DEGREE_CLASS_YEAR) {
                 itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.score_chart_degree_overview_dialog_list_item_year, parent, false);
                 return new DegreeYearViewHolder(itemView);
@@ -201,67 +203,58 @@ public class DegreeOverviewDialog extends DialogFragment {
         @Override
         public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
             if (holder instanceof DegreeYearViewHolder) {
-                ((DegreeYearViewHolder) holder)._year.setText(_context.getResources().getString(R.string.year) + " " + getYearOfPosition(position));
+                ((DegreeYearViewHolder) holder)._year.setText(_context.getResources().getString(R.string.year) + " " + _annualCombinationPerAdapterPosition.get(position).getYear());
             } else {
-                DegreeClass currentClass = _degreeClasses[position];
-                ((DegreeClassViewHolder) holder)._degreeClassName.setText(_context.getResources().getString(currentClass.getNameResource()));
+                ((DegreeClassViewHolder) holder)._degreeClassName.setText(_context.getResources().getString(_degreeClassesPerAdapterPosition.get(position).getNameResource()));
             }
-        }
-
-
-        /**
-         * Returns the position that the year View occupies in the data set (i.e. the degrees)
-         *
-         * @param recyclerViewPosition
-         * @return
-         */
-
-        private int getYearOfPosition(int recyclerViewPosition) {
-            // Aha, magic here! The BinarySearch actually returns the position that the given element occupies in the array, so it
-            // is used here not for finding out if it exists but rather to get its position. Neat.
-            return Arrays.binarySearch(_yearTitlePositions, recyclerViewPosition) + 1;
         }
 
         @Override
         public int getItemCount() {
-            // There are as many views as the number of classes PLUS x views for years
-            return _degreeClassList.size() + _numberOfYears;
+            return _annualCombinationPerAdapterPosition.size() + _degreeClassesPerAdapterPosition.size();
         }
 
         @Override
         public int getItemViewType(int position) {
-            if (Arrays.binarySearch(_yearTitlePositions, position) >= 0) {
+            if (_annualCombinationPerAdapterPosition.containsKey(position)) {
                 return TYPE_DEGREE_CLASS_YEAR;
             }
             return TYPE_DEGREE_CLASS_ITEM;
         }
 
 
-        // Really just a marker class to be able to inflate the textview
-        public class DegreeYearViewHolder extends RecyclerView.ViewHolder {
+        /**
+         * ViewHolder pattern to hold a degree year text view
+         */
+        private class DegreeYearViewHolder extends RecyclerView.ViewHolder {
             private TextView _year;
 
-            public DegreeYearViewHolder(View view) {
+            private DegreeYearViewHolder(View view) {
                 super(view);
                 _year = view.findViewById(R.id.year_label);
+                view.setOnClickListener(v -> {
+                    int adapterPosition = getAdapterPosition();
+                    _parentDialog.dismiss();
+                    _listener.loadSelectedScoreFragment(_annualCombinationPerAdapterPosition.get(adapterPosition).getId());
+                });
             }
         }
 
         /**
-         * ViewHolder pattern to hold one of the cards
+         * ViewHolder pattern to hold a degree class text view
          */
-        public class DegreeClassViewHolder extends RecyclerView.ViewHolder {
+        private class DegreeClassViewHolder extends RecyclerView.ViewHolder {
 
             private TextView _degreeClassName;
 
-            public DegreeClassViewHolder(View view) {
+            private DegreeClassViewHolder(View view) {
                 super(view);
                 _degreeClassName = view.findViewById(R.id.class_name);
 
                 view.setOnClickListener(v -> {
                     int adapterPosition = getAdapterPosition();
                     _parentDialog.dismiss();
-                    _listener.loadSelectedScoreFragment(_degreeClasses[adapterPosition].getId());
+                    _listener.loadSelectedScoreFragment(_degreeClassesPerAdapterPosition.get(adapterPosition).getId());
                 });
             }
 
