@@ -158,6 +158,8 @@ public class ScoreDetailedChartFragment extends Fragment implements LifecycleReg
          */
         void loadChartFragment(View selectedView);
 
+        void loadDegreeTopicMatcherFragment();
+
     }
 
 
@@ -280,7 +282,8 @@ public class ScoreDetailedChartFragment extends Fragment implements LifecycleReg
 
         _showOverview.setOnClickListener(view -> {
                     if (_isClassCombination) {
-
+                        _sharedViewModel.setSelectedDegreeClass(_degreeClass);
+                        _parentActivity.loadDegreeTopicMatcherFragment();
                     } else {
                         DegreeOverviewDialog.newInstance(this, getAnnualCombinations(), getDegreeClasses()).show(getFragmentManager(), "");
                     }

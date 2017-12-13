@@ -43,6 +43,7 @@ import pt.cmg.sweranker.ranking.ScoresMasterFragment;
 import pt.cmg.sweranker.swebok.KnowledgeArea;
 import pt.cmg.sweranker.swebok.SwebokDetailedFragment;
 import pt.cmg.sweranker.swebok.SwebokMasterFragment;
+import pt.cmg.sweranker.ui.OnEndTransitionListener;
 import pt.cmg.sweranker.ui.OnStartTransitionListener;
 import pt.cmg.sweranker.ui.UXUtils;
 
@@ -421,6 +422,8 @@ public class MainActivity extends AppCompatActivity implements
 
         DegreeClass degreeClass = _viewModel.getSelectedDegreeClass();
 
+        String toolbarTitle = _toolbar.getTitle().toString();
+
         // This is important. I used a simples transition but the real magic is that I change the
         // toolbar into a back button toolbar so that it is easier to navigate.
         Transition enterTransition = new Slide(Gravity.RIGHT);
@@ -433,9 +436,16 @@ public class MainActivity extends AppCompatActivity implements
             }
         });
 
+        // Also important, with this I change the title back to whatever it had before
         Transition exitTransition = new Slide(Gravity.RIGHT);
         exitTransition.setDuration(400);
         classEvaluator.setReturnTransition(exitTransition);
+        exitTransition.addListener(new OnEndTransitionListener() {
+            @Override
+            public void onEndTransition(Transition transition) {
+                changeToolbarIntoBackButton(toolbarTitle);
+            }
+        });
 
         getFragmentManager()
                 .beginTransaction()
