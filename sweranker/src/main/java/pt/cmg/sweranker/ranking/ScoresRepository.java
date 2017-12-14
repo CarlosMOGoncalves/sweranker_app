@@ -1,6 +1,7 @@
 package pt.cmg.sweranker.ranking;
 
 
+import java.util.Collection;
 import java.util.List;
 
 
@@ -37,6 +38,17 @@ public interface ScoresRepository {
      * @return a deep copy of the SweScore whose ID is the same as the parameter.
      */
     SweScore getScore(String scoreId);
+
+
+    /**
+     * Loads a list of SweScores using the IDs as parameter.
+     * This method should return a deep copy of the object.
+     * Use judiciously because a lot of objects might be loaded, have pity on your phone...
+     *
+     * @param scoreIds the IDs of the SweScores to load.
+     * @return a deep copy of the SweScore whose ID is the same as the parameter.
+     */
+    List<SweScore> getScores(Collection<String> scoreIds);
 
     /**
      * Loads the Degree Class Combination using the ID as parameter.

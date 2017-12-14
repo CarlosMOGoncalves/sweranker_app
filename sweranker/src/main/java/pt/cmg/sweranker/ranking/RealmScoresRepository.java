@@ -3,6 +3,7 @@ package pt.cmg.sweranker.ranking;
 import android.util.Log;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
 import java.util.ListIterator;
@@ -156,14 +157,6 @@ public class RealmScoresRepository implements ScoresRepository {
                 .findAll();
     }
 
-    /**
-     * Note that this method does return a deep copied object from the underlying database.
-     * Due to the goal of this method, which is to retrieve an actual object and not to iterate over it
-     * a copy is made, otherwise the object will be lost as soon as the connection is closed.
-     *
-     * @param degreeCombinationId
-     * @return
-     */
     @Override
     public SweScore getScore(String degreeCombinationId) {
         SweScore score = getRealmnstanceOfThread().where(SweScore.class)
@@ -171,6 +164,15 @@ public class RealmScoresRepository implements ScoresRepository {
                 .findFirst();
 
         return getRealmnstanceOfThread().copyFromRealm(score);
+    }
+
+    @Override
+    public List<SweScore> getScores(Collection<String> scoreIds) {
+        List<SweScore> scores = getRealmnstanceOfThread().where(SweScore.class)
+                .in(SweScoreFields.ID, scoreIds.toArray(new String[scoreIds.size()]))
+                .findAll();
+
+        return getRealmnstanceOfThread().copyFromRealm(scores);
     }
 
     @Override

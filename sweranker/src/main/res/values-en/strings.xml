@@ -64,6 +64,8 @@
     <string name="degree_overview_annual_combination">Annual Combination %1$s</string>
     <string name="show_overview">OVERVIEW</string>
     <string name="show_degree_overview">SHOW DEGREE OVERVIEW</string>
+    <string name="show_licence_degree_score">SHOW LICENCE DEGREE SCORE</string>
+    <string name="show_curriculum_details">SHOW CURRICULUM</string>
     <string name="no_scores_available_yet">No Scores found to display.\nPlease run the Calculation for at least one Degree.\nGo to Action Bar Menu -> Curricula -> Select Degree -> Calculate Score.</string>
 
     <string name="calculation_progress_annual_combo">Calculating annual combinations...</string>

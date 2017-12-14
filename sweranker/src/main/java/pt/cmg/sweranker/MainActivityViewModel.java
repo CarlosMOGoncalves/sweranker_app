@@ -475,28 +475,147 @@ public class MainActivityViewModel extends ViewModel {
     }
 
 
+    /**
+     * EXTRAORDINARILY these two variables are here.
+     * The reason is that these are very specific and hopefully temporary hacks used to the specific purpose of
+     * analysis of licence degrees scores.
+     * TODO: Vou ter que mudar isto, é tão feio que tenho que tomar banho cada vez que vejo este código só de me sentir sujo.
+     */
+    private SweScore _scoreOnDemand;
+    private DegreeClassCombination _degreeCombinationOnDemand;
+
+    /**
+     * Very very very tricky. I used this...- well, I guess hack is benevolent way to put it - in order
+     * to make an ad hoc calculation. This is a special case, the purpose of this on demand calculation is
+     * to create a ONE TIME score for the LICENCE DEGREE of a complete DEGREE COMBINATION.
+     * <p>
+     * Since I never calculated or made any distinction between the whole degree and its part (the Licentiate part)
+     * there are NO scores available for anything other that DEGREE CLASSES, ANNUAL COMBINATIONS or DEGREE COMBINATIONS.
+     * <p>
+     * The need for the LICENTIATE part (i.e. the first 3 years) arose upon seeing the results for the different degrees
+     * from every university - THEY WERE VERY DIFFERENT (maybe I should have expected that). So the logical conclusion
+     * is that the main factor that contributes to the differences between the degree scores must be the MANDATORY LINEAR
+     * PATH of the degree - the licence part. Hence the need to visually understand the differences between them.
+     * <p>
+     * The strategy used here is highly shameful. I used this ViewModel class to store a temporary, single SweScore and
+     * DegreeClassCombination that I build on-the-fly. This is never stored persistently on the DB, it just lives here.
+     * Then, when the fragment asks for a score and its combination, it is this temporary one that is fed to it. For
+     * the fragment it means a lot of ugly code to check for what the hell it is looking at, but here it saved me a lot
+     * of work on redesigning the persistence layer to accommodate for another kind of combination.
+     *
+     * @param degreeClassCombination This is the base Degree Combination that will be used to calculate the licence from
+     */
+    public void calculateScoreOnDemand(DegreeClassCombination degreeClassCombination) {
+
+        List<String> degreeClassScoreIds = getLicenceScores(degreeClassCombination);
+
+        _scoresRepository.open();
+        List<SweScore> result = _scoresRepository.getScores(degreeClassScoreIds);
+        _scoresRepository.close();
+
+
+        SweScore scoreOnDemand = CalculationUtils.calculateAccumulatedScore(_degreeClassesById, result);
+        scoreOnDemand.setScoreType(SweScore.TYPE_ON_DEMAND);
+        scoreOnDemand.setId("Licence_" + degreeClassCombination.getCombinationId());
+        scoreOnDemand.setDegreeId(degreeClassCombination.getDegreeId());
+        _scoreOnDemand = scoreOnDemand;
+
+        _degreeCombinationOnDemand = new DegreeClassCombination(degreeClassCombination.getDegreeId(), "Licence_" + degreeClassCombination.getCombinationId());
+        _degreeCombinationOnDemand.setAnnualClassCombinations(getAnnualClassCombinationsOfLicenceDegree(degreeClassCombination));
+
+        setSelectedScoreId(_scoreOnDemand.getId());
+    }
+
+    /**
+     * This will just fetch the classes that compose the licentiate degree.
+     * That means basically all the classes from the 3 first years.
+     *
+     * @param degreeClassCombination The Degree Combination to get them from
+     * @return a List with all the classes of the first 3 years of this degree
+     */
+    private List<String> getLicenceScores(DegreeClassCombination degreeClassCombination) {
+        List<DegreeClassId> degreeClassIds = new ArrayList<>();
+        for (int i = 1; i <= 3; i++) {
+            degreeClassIds.addAll(degreeClassCombination.getAnnualCombination(i).getDegreeClassIds());
+        }
+
+        List<String> degreeClassScoreIds = new ArrayList<>();
+        for (DegreeClassId degreeClassId : degreeClassIds) {
+            degreeClassScoreIds.add(degreeClassId.getDegreeClassId());
+        }
+
+        return degreeClassScoreIds;
+    }
+
+    /**
+     * Another method to feed data for the On Demand score. This one is used to build the Degree Class Combination
+     * by providing the first 3 years annual combinations.
+     *
+     * @param degreeClassCombination
+     * @return
+     */
+    private List<AnnualClassCombination> getAnnualClassCombinationsOfLicenceDegree(DegreeClassCombination degreeClassCombination) {
+        List<AnnualClassCombination> annualCombinations = new ArrayList<>();
+        for (int i = 1; i <= 3; i++) {
+            annualCombinations.add(degreeClassCombination.getAnnualCombination(i));
+        }
+        return annualCombinations;
+    }
+
+
+    /**
+     * Returns a SweScore by its id.
+     */
     public SweScore getScore(String scoreId) {
+
+        // VERY TRICKY here: if I have an On Demand score and it is the one I am looking for then I return that instead.
+        // The explanation for this is above.
+        if (_scoreOnDemand != null && _scoreOnDemand.getId().equals(scoreId)) {
+            return _scoreOnDemand;
+        }
+
         _scoresRepository.open();
         SweScore result = _scoresRepository.getScore(scoreId);
         _scoresRepository.close();
         return result;
     }
 
+    /**
+     * Returns a Degree Class Combination by its id.
+     */
     public DegreeClassCombination getDegreeClassCombination(String degreeCombinationId) {
+
+        // VERY TRICKY here: if I have an On Demand degree combination and it is the one I am looking for then I return that instead.
+        // The explanation for this is above.
+        if (_degreeCombinationOnDemand != null && _degreeCombinationOnDemand.getCombinationId().equals(degreeCombinationId)) {
+            return _degreeCombinationOnDemand;
+        }
+
         _scoresRepository.open();
         DegreeClassCombination result = _scoresRepository.getDegreeClassCombination(degreeCombinationId);
         _scoresRepository.close();
         return result;
     }
 
-    public AnnualClassCombination getAnnualClassCombination(String annualClassCombination) {
+
+    /**
+     * Returns an Annual Class Combination by its id.
+     */
+    public AnnualClassCombination getAnnualClassCombination(String annualClassCombinationId) {
         _scoresRepository.open();
-        AnnualClassCombination result = _scoresRepository.getAnnualClassCombination(annualClassCombination);
+        AnnualClassCombination result = _scoresRepository.getAnnualClassCombination(annualClassCombinationId);
         _scoresRepository.close();
         return result;
     }
 
 
+    /**
+     * This is used to get a random Score. I have used this to load a random score
+     * to show as a first screen for the application.
+     * It basically fetches a random score from the DB, between zero and whatever the max
+     * value of degree combinations it has found taking advantage of being using a List to get it
+     * from an index.
+     */
     public void setRandomlySelectedDegreeScore() {
 
         SweScore result = new SweScore();

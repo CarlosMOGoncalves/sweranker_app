@@ -24,6 +24,7 @@ public class SweScore extends RealmObject {
     public static final String TYPE_CLASS_SCORE = "C";
     public static final String TYPE_ANNUAL_SCORE = "A";
     public static final String TYPE_DEGREE_SCORE = "D";
+    public static final String TYPE_ON_DEMAND = "O";
 
 
     /**

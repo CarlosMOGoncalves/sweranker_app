@@ -111,6 +111,7 @@ public class ScoreDetailedChartFragment extends Fragment implements LifecycleReg
     private TextView _overviewUniversityName;
     private TextView _overviewCombinationName;
     private TextView _showOverview;
+    private TextView _showLicenceDegre;
     private ProgressBar _overviewProgressBar;
 
     private GridLayout _subtitleTable;
@@ -130,6 +131,7 @@ public class ScoreDetailedChartFragment extends Fragment implements LifecycleReg
     private SweScore _degreeScore;
     private DegreeClassCombination _degreeCombination;
     private boolean _isDegreeCombination;
+    private boolean _isCombinationOnDemand;
 
     private AnnualClassCombination _annualClassCombination;
     private boolean _isAnnualCombination;
@@ -158,6 +160,12 @@ public class ScoreDetailedChartFragment extends Fragment implements LifecycleReg
          */
         void loadChartFragment(View selectedView);
 
+        /**
+         * Loads the Degree Class Match fragment. This is used specifically for when this fragment
+         * is called with a Degree Class score. This way, the user will be able to navigate to the
+         * fragment that actually allows him to view which matches were made to which Degree Class
+         * Program item.
+         */
         void loadDegreeTopicMatcherFragment();
 
     }
@@ -168,6 +176,7 @@ public class ScoreDetailedChartFragment extends Fragment implements LifecycleReg
         _isDegreeCombination = false;
         _isAnnualCombination = false;
         _isClassCombination = false;
+        _isCombinationOnDemand = false;
     }
 
     public static ScoreDetailedChartFragment newInstance() {
@@ -223,7 +232,6 @@ public class ScoreDetailedChartFragment extends Fragment implements LifecycleReg
             _contentArea.setVisibility(View.VISIBLE);
             _noScoreAvailable.setVisibility(View.GONE);
 
-
             _degreeImage = _myRootView.findViewById(R.id.degree_image);
 
             _overviewDegreeName = _myRootView.findViewById(R.id.degree_overview_name);
@@ -231,6 +239,7 @@ public class ScoreDetailedChartFragment extends Fragment implements LifecycleReg
             _overviewCombinationName = _myRootView.findViewById(R.id.degree_overview_combo_name);
             _overviewProgressBar = _myRootView.findViewById(R.id.overview_progress);
             _showOverview = _myRootView.findViewById(R.id.show_overview);
+            _showLicenceDegre = _myRootView.findViewById(R.id.show_licenciate);
 
             _subtitleTable = _myRootView.findViewById(R.id.chart_legend_table);
 
@@ -263,7 +272,11 @@ public class ScoreDetailedChartFragment extends Fragment implements LifecycleReg
         return _myRootView;
     }
 
-
+    /**
+     * The Degree Overview part of the screen is the header. This one is the actually different part depending on what kind of score we
+     * are looking at. This function is triggered when a score is calculated and has some different screen combinations possible because
+     * of the different kinds of scores. This part of the UI is what allows drilling down from a full degree score to a simpler, unitary degree class.
+     */
     private void updateDegreeOverViewInfo() {
 
 
@@ -272,12 +285,26 @@ public class ScoreDetailedChartFragment extends Fragment implements LifecycleReg
         _overviewUniversityName.setText(getResources().getString(_sharedViewModel.getDegree(_degreeScore.getDegreeId()).getUniversityResource()));
 
         if (_isClassCombination) {
+            _showOverview.setText(getResources().getString(R.string.show_curriculum_details));
+            _showLicenceDegre.setVisibility(View.GONE);
             _overviewCombinationName.setText(getResources().getString(_degreeClass.getNameResource()));
         } else if (_isAnnualCombination) {
+            _showLicenceDegre.setVisibility(View.GONE);
             _overviewCombinationName.setText(String.format(getResources().getString(R.string.degree_overview_annual_combination), _degreeScore.getId()));
-        } else {
+        } else if (_isDegreeCombination) {
+
+            // If this is a degree combination then I can activate the SHOW LICENCE and activate its functionality
+            _showLicenceDegre.setVisibility(View.VISIBLE);
+            _showLicenceDegre.setOnClickListener(view -> {
+                _sharedViewModel.calculateScoreOnDemand(_degreeCombination);
+                _parentActivity.loadChartFragment(null);
+            });
+
             int combinationNumber = Integer.valueOf(_degreeScore.getId().substring(3, _degreeScore.getId().length()));
             _overviewCombinationName.setText(String.format(getResources().getString(R.string.degree_overview_combination), combinationNumber));
+        } else {
+            _showLicenceDegre.setVisibility(View.GONE);
+            _overviewCombinationName.setText("Licence: " + _degreeScore.getId());
         }
 
         _showOverview.setOnClickListener(view -> {
@@ -291,7 +318,6 @@ public class ScoreDetailedChartFragment extends Fragment implements LifecycleReg
         );
         _overviewProgressBar.setVisibility(View.INVISIBLE);
     }
-
 
     /**
      * This helper function simply loads the Degree Classes that are included in the target score,
@@ -311,7 +337,7 @@ public class ScoreDetailedChartFragment extends Fragment implements LifecycleReg
                 degreeClasses.add(_sharedViewModel.getDegreeClass(degreeId.getDegreeClassId()));
             }
         }
-        if (_isDegreeCombination) {
+        if (_isDegreeCombination || _isCombinationOnDemand) {
             for (AnnualClassCombination annualCombination : _degreeCombination.getAnnualClassCombinations()) {
                 for (DegreeClassId degreeId : annualCombination.getDegreeClassIds()) {
                     degreeClasses.add(_sharedViewModel.getDegreeClass(degreeId.getDegreeClassId()));
@@ -337,7 +363,7 @@ public class ScoreDetailedChartFragment extends Fragment implements LifecycleReg
         if (_isAnnualCombination) {
             annualClassCombinations.add(_annualClassCombination);
         }
-        if (_isDegreeCombination) {
+        if (_isDegreeCombination || _isCombinationOnDemand) {
             annualClassCombinations.addAll(_degreeCombination.getAnnualClassCombinations());
         }
 
@@ -576,6 +602,10 @@ public class ScoreDetailedChartFragment extends Fragment implements LifecycleReg
                 _kaPercentDistributionChart.setCenterText("");
             }
         });
+
+        // This is neat, this will initialise the highlight of the chart in the Computing Foundations
+        // It also needs to be reviewed to choose maybe a dynamic number, some classes don't have any value in Computing foundations
+        _kaPercentDistributionChart.highlightValue(12f, 0);
 
         // Now hide the progress bar and show the chart in all its glory
         _percentProgressBar.setVisibility(View.INVISIBLE);
@@ -911,6 +941,8 @@ public class ScoreDetailedChartFragment extends Fragment implements LifecycleReg
     }
 
 
+    //TODO: Isto não pode estar aqui. O processamento de Threads não pode de todo estar dentro de um fragmento. Terá que ser passado no futuro para outro lado, possivelmente o ViewModel.
+
     /**
      * All the heavier loading work is done here.
      */
@@ -960,19 +992,29 @@ public class ScoreDetailedChartFragment extends Fragment implements LifecycleReg
                     _degreeClass = _sharedViewModel.getDegreeClass(_scoreId);
                     _isClassCombination = true;
                     _isAnnualCombination = false;
-                    _isDegreeCombination = true;
+                    _isDegreeCombination = false;
+                    _isCombinationOnDemand = false;
                     break;
                 case SweScore.TYPE_ANNUAL_SCORE:
                     _annualClassCombination = _sharedViewModel.getAnnualClassCombination(_scoreId);
                     _isAnnualCombination = true;
                     _isDegreeCombination = false;
                     _isClassCombination = false;
+                    _isCombinationOnDemand = false;
                     break;
                 case SweScore.TYPE_DEGREE_SCORE:
                     _degreeCombination = _sharedViewModel.getDegreeClassCombination(_scoreId);
                     _isDegreeCombination = true;
                     _isAnnualCombination = false;
                     _isClassCombination = false;
+                    _isCombinationOnDemand = false;
+                    break;
+                case SweScore.TYPE_ON_DEMAND:
+                    _degreeCombination = _sharedViewModel.getDegreeClassCombination(_scoreId);
+                    _isDegreeCombination = false;
+                    _isAnnualCombination = false;
+                    _isClassCombination = false;
+                    _isCombinationOnDemand = true;
                     break;
                 default:
                     throw new RuntimeException("You should really contact me if this happens...");
