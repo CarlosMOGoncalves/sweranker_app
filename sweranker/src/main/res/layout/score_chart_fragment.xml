@@ -44,7 +44,7 @@
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_chainStyle="spread">
+                app:layout_constraintVertical_chainStyle="packed">
 
                 <android.support.constraint.ConstraintLayout
                     android:layout_width="match_parent"
@@ -126,15 +126,14 @@
                         android:textSize="@dimen/chart_degree_overview_button_text_size"
                         android:textStyle="bold"
                         android:visibility="gone"
-                        app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toStartOf="@+id/show_overview"
-                        app:layout_constraintTop_toBottomOf="@id/degree_overview_combo_name" />
+                        app:layout_constraintTop_toBottomOf="@id/degree_overview_combo_name"
+                        app:layout_constraintBottom_toBottomOf="parent" />
 
                     <TextView
                         android:id="@+id/show_overview"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginBottom="0dp"
                         android:layout_marginEnd="8dp"
                         android:layout_marginTop="5dp"
                         android:background="@drawable/rounded_shape"
@@ -145,6 +144,7 @@
                         android:textColor="@color/colorPrimary"
                         android:textSize="@dimen/chart_degree_overview_button_text_size"
                         android:textStyle="bold"
+                        android:visibility="visible"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toBottomOf="@id/degree_overview_combo_name" />
