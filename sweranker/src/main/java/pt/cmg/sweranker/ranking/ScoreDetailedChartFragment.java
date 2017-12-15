@@ -286,10 +286,10 @@ public class ScoreDetailedChartFragment extends Fragment implements LifecycleReg
 
         if (_isClassCombination) {
             _showOverview.setText(getResources().getString(R.string.show_curriculum_details));
-            _showLicenceDegre.setVisibility(View.GONE);
+            _showLicenceDegre.setVisibility(View.INVISIBLE);
             _overviewCombinationName.setText(getResources().getString(_degreeClass.getNameResource()));
         } else if (_isAnnualCombination) {
-            _showLicenceDegre.setVisibility(View.GONE);
+            _showLicenceDegre.setVisibility(View.INVISIBLE);
             _overviewCombinationName.setText(String.format(getResources().getString(R.string.degree_overview_annual_combination), _degreeScore.getId()));
         } else if (_isDegreeCombination) {
 
@@ -304,7 +304,7 @@ public class ScoreDetailedChartFragment extends Fragment implements LifecycleReg
             _overviewCombinationName.setText(String.format(getResources().getString(R.string.degree_overview_combination), combinationNumber));
         } else {
             _showLicenceDegre.setVisibility(View.GONE);
-            _overviewCombinationName.setText("Licence: " + _degreeScore.getId());
+            _overviewCombinationName.setText(_degreeScore.getId());
         }
 
         _showOverview.setOnClickListener(view -> {

@@ -3,7 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:transitionGroup="true">
+    android:transitionGroup="true"
+    tools:context=".MainActivity">
 
     <TextView
         android:id="@+id/no_score_text"
@@ -199,6 +200,13 @@
                         android:layout_height="@dimen/chart_swebok_coverage_chart_height"
                         android:background="@color/hollow"
                         android:paddingTop="5dp" />
+
+                    <android.support.v7.widget.RecyclerView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        tools:itemCount="6">
+
+                    </android.support.v7.widget.RecyclerView>
                 </LinearLayout>
 
                 <ProgressBar
