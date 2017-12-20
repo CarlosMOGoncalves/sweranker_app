@@ -202,8 +202,12 @@
                         android:paddingTop="5dp" />
 
                     <android.support.v7.widget.RecyclerView
+                        android:id="@+id/missing_topics_list"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        tools:listitem="@layout/score_chart_missing_topics_list_item"
+                        tools:layoutManager="android.support.v7.widget.GridLayoutManager"
+                        tools:spanCount="2"
                         tools:itemCount="6">
 
                     </android.support.v7.widget.RecyclerView>

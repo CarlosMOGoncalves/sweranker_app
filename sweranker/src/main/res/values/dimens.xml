@@ -73,6 +73,7 @@
     <dimen name="chart_degree_overview_button_text_size">15sp</dimen>
 
     <dimen name="chart_swebok_coverage_chart_height">400dp</dimen>
+    <dimen name="swebok_coverage_chart_missing_topics_text_size">10sp</dimen>
 
     <dimen name="swebok_distribution_chart_height">400dp</dimen>
     <dimen name="swebok_distribution_chart_values_text_size">4sp</dimen>

@@ -24,7 +24,9 @@
     <dimen name="chart_degree_overview_university_text_size">18sp</dimen>
     <dimen name="chart_degree_overview_combo_name">15sp</dimen>
     <dimen name="chart_degree_overview_button_text_size">18sp</dimen>
+
     <dimen name="chart_swebok_coverage_chart_height">600dp</dimen>
+    <dimen name="swebok_coverage_chart_missing_topics_text_size">12sp</dimen>
 
     <dimen name="swebok_distribution_chart_height">600dp</dimen>
     <dimen name="swebok_distribution_chart_values_text_size">6sp</dimen>

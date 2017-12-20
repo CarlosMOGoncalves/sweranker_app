@@ -14,6 +14,9 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.IntRange;
 import android.support.v4.content.ContextCompat;
+import android.support.v7.widget.DefaultItemAnimator;
+import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -116,7 +119,7 @@ public class ScoreDetailedChartFragment extends Fragment implements LifecycleReg
 
     private GridLayout _subtitleTable;
 
-    private ProgressBar _percentProgressBar;
+    private ProgressBar _kaPercentDistributionProgressBar;
     private PieChart _kaPercentDistributionChart;
 
     private ProgressBar _topKaProgressBar;
@@ -127,6 +130,7 @@ public class ScoreDetailedChartFragment extends Fragment implements LifecycleReg
 
     private ProgressBar _coverageChartProgressBar;
     private RadarChart _coverageChart;
+    private RecyclerView _missingTopicsGrid;
 
     private SweScore _degreeScore;
     private DegreeClassCombination _degreeCombination;
@@ -243,8 +247,9 @@ public class ScoreDetailedChartFragment extends Fragment implements LifecycleReg
 
             _subtitleTable = _myRootView.findViewById(R.id.chart_legend_table);
 
-            _percentProgressBar = _myRootView.findViewById(R.id.percent_chart_progress);
-            _percentProgressBar.setVisibility(View.VISIBLE);
+
+            _kaPercentDistributionProgressBar = _myRootView.findViewById(R.id.percent_chart_progress);
+            _kaPercentDistributionProgressBar.setVisibility(View.VISIBLE);
             _kaPercentDistributionChart = _myRootView.findViewById(R.id.ka_distribution_chart);
             _kaPercentDistributionChart.setVisibility(View.INVISIBLE);
 
@@ -259,6 +264,7 @@ public class ScoreDetailedChartFragment extends Fragment implements LifecycleReg
             _coverageChartProgressBar = _myRootView.findViewById(R.id.coverage_chart_progress);
             _coverageChartProgressBar.setVisibility(View.VISIBLE);
             _coverageChart = _myRootView.findViewById(R.id.coverage_chart);
+            _missingTopicsGrid = _myRootView.findViewById(R.id.missing_topics_list);
 
         }
 
@@ -431,6 +437,8 @@ public class ScoreDetailedChartFragment extends Fragment implements LifecycleReg
 
         _coverageChart.invalidate();
 
+        fillMissingTopicsGrid();
+
         _coverageChartProgressBar.setVisibility(View.INVISIBLE);
         _coverageChart.setVisibility(View.VISIBLE);
     }
@@ -488,6 +496,12 @@ public class ScoreDetailedChartFragment extends Fragment implements LifecycleReg
         return result;
     }
 
+
+    private void fillMissingTopicsGrid() {
+        _missingTopicsGrid.setLayoutManager(new GridLayoutManager(getActivity(), 2));
+        _missingTopicsGrid.setItemAnimator(new DefaultItemAnimator());
+        _missingTopicsGrid.setAdapter(new MissingTopicsAdapter());
+    }
 
     /**
      * This initialises and draws a simple subtitle graphic layout that displays the colours and names of all KAs.
@@ -608,7 +622,7 @@ public class ScoreDetailedChartFragment extends Fragment implements LifecycleReg
         _kaPercentDistributionChart.highlightValue(12f, 0);
 
         // Now hide the progress bar and show the chart in all its glory
-        _percentProgressBar.setVisibility(View.INVISIBLE);
+        _kaPercentDistributionProgressBar.setVisibility(View.INVISIBLE);
         _kaPercentDistributionChart.setVisibility(View.VISIBLE);
     }
 
@@ -1072,5 +1086,67 @@ public class ScoreDetailedChartFragment extends Fragment implements LifecycleReg
             return _formatter.format(v) + "%";
         }
     }
+
+
+    private class MissingTopicsAdapter extends RecyclerView.Adapter<MissingTopicsAdapter.MissinTopicViewHolder> {
+
+
+        private int numberOfMissingTopics;
+        private List<Integer> positionsNotFound;
+
+        private MissingTopicsAdapter() {
+            super();
+            calculateMissingTopics();
+
+        }
+
+        private void calculateMissingTopics() {
+
+            int topicsNotFound = 0;
+            List<Integer> indexesNotFound = new ArrayList<>();
+
+            short[] topicsInScore = _degreeScore.getTopicCounters();
+            for (int i = 0; i < 102; i++) {
+                if (topicsInScore[i] == 0) {
+                    indexesNotFound.add(i);
+                    topicsNotFound++;
+                }
+            }
+
+            numberOfMissingTopics = topicsNotFound;
+            positionsNotFound = indexesNotFound;
+
+        }
+
+
+        @Override
+        public MissinTopicViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+            View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.score_chart_missing_topics_list_item, parent, false);
+            return new MissinTopicViewHolder(itemView);
+        }
+
+        @Override
+        public void onBindViewHolder(MissinTopicViewHolder holder, int position) {
+
+            holder._topicName.setText(getString(_knowledgeAreaTopics[positionsNotFound.get(position)].getNameResource()));
+            holder._topicName.setTextColor(_knowledgeAreaColours[_knowledgeAreaTopics[positionsNotFound.get(position)].getKnowledgeAreaId() - 1]);
+        }
+
+        @Override
+        public int getItemCount() {
+            return numberOfMissingTopics;
+        }
+
+        protected class MissinTopicViewHolder extends RecyclerView.ViewHolder {
+
+            private TextView _topicName;
+
+            private MissinTopicViewHolder(View itemView) {
+                super(itemView);
+                _topicName = itemView.findViewById(R.id.list_item);
+            }
+        }
+    }
+
 
 }
