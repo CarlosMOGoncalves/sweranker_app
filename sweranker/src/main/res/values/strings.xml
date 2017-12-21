@@ -64,6 +64,7 @@
     <string name="top_ka_topics">Top Tópicos de Conhecimento</string>
     <string name="times_matched">correspondidos</string>
     <string name="coverage_chart_label">Cobertura SWEBOK</string>
+    <string name="missing_topics">Tópicos em falta</string>
     <string name="degree_overview_combination">Combinação %1$d</string>
     <string name="degree_overview_annual_combination">Combinação Anual %1$s</string>
     <string name="show_overview">DETALHES</string>

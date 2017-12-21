@@ -60,6 +60,7 @@
     <string name="top_ka_topics">Top Knowledge Area Topics</string>
     <string name="times_matched">matched</string>
     <string name="coverage_chart_label">SWEBOK Coverage</string>
+    <string name="missing_topics">Missing topics</string>
     <string name="degree_overview_combination">Combination %1$d</string>
     <string name="degree_overview_annual_combination">Annual Combination %1$s</string>
     <string name="show_overview">OVERVIEW</string>

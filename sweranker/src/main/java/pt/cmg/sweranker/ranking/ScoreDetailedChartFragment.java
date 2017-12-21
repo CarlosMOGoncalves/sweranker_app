@@ -131,6 +131,7 @@ public class ScoreDetailedChartFragment extends Fragment implements LifecycleReg
     private ProgressBar _coverageChartProgressBar;
     private RadarChart _coverageChart;
     private RecyclerView _missingTopicsGrid;
+    private TextView _missingTopicsLabel;
 
     private SweScore _degreeScore;
     private DegreeClassCombination _degreeCombination;
@@ -264,6 +265,7 @@ public class ScoreDetailedChartFragment extends Fragment implements LifecycleReg
             _coverageChartProgressBar = _myRootView.findViewById(R.id.coverage_chart_progress);
             _coverageChartProgressBar.setVisibility(View.VISIBLE);
             _coverageChart = _myRootView.findViewById(R.id.coverage_chart);
+            _missingTopicsLabel = _myRootView.findViewById(R.id.missing_topics_button);
             _missingTopicsGrid = _myRootView.findViewById(R.id.missing_topics_list);
 
         }
@@ -437,7 +439,12 @@ public class ScoreDetailedChartFragment extends Fragment implements LifecycleReg
 
         _coverageChart.invalidate();
 
-        fillMissingTopicsGrid();
+        if (!_degreeScore.getScoreType().equals(SweScore.TYPE_CLASS_SCORE)) {
+            fillMissingTopicsGrid();
+        } else {
+            _missingTopicsLabel.setVisibility(View.GONE);
+            _missingTopicsGrid.setVisibility(View.GONE);
+        }
 
         _coverageChartProgressBar.setVisibility(View.INVISIBLE);
         _coverageChart.setVisibility(View.VISIBLE);

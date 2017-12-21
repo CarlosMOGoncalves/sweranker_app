@@ -4,9 +4,9 @@
     android:id="@+id/list_item"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:gravity="center_vertical"
-    android:paddingStart="5dp"
+    android:gravity="center_horizontal"
     android:paddingEnd="5dp"
+    android:paddingStart="5dp"
     android:textAlignment="textStart"
     android:textSize="@dimen/swebok_coverage_chart_missing_topics_text_size"
     tools:text="Requirements Process" />
