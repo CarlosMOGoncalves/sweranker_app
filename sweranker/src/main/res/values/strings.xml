@@ -835,7 +835,7 @@
     <string name="up_class_ai_topic26">Engenharia do Conhecimento: Sistemas Baseados em Conhecimento</string>
     <string name="up_class_ai_topic27">Engenharia do Conhecimento: Sistemas Periciais: Caracterização; Estrutura; Representação do Conhecimento e Meta Conhecimento; Motor de Inferência e Geração de Explicações; Casos exemplares de Sistemas periciais.</string>
     <string name="up_class_ai_topic28">Engenharia do Conhecimento: Demonstrações</string>
-    <string name="up_class_ai_topic29">Engenharia do Conhecimento: Sistemas Genéricos: "Shells"</string>
+    <string name="up_class_ai_topic29">Engenharia do Conhecimento: Sistemas Genéricos - "Shells"</string>
     <string name="up_class_ai_topic30">Introdução à Linguagem Natural Computacional: Objectivos e dificuldades</string>
     <string name="up_class_ai_topic31">Introdução à Linguagem Natural Computacional: Análises Sintáctica e Semântica</string>
     <string name="up_class_ai_topic32">Introdução à Linguagem Natural Computacional: ATN; Gramáticas Semânticas; Gramáticas de Caso</string>
@@ -5844,7 +5844,7 @@ Os estudantes deverão ainda desenvolver competências em análise e síntese, r
         5. Reconhecer problemas NP-completos e alguns algoritmos aproximados para a sua resolução.
     </string>
     <string name="um_class_algorithms_topic1">Análise de correcção: Introdução à Lógica de Floyd-Hoare</string>
-    <string name="um_class_algorithms_topic2">Análise de de complexidade: modelo da complexidade assimptótica</string>
+    <string name="um_class_algorithms_topic2">Análise de complexidade: modelo da complexidade assimptótica</string>
     <string name="um_class_algorithms_topic3">Estratégias algorítmicas: incremental, greedy, programação dinâmica</string>
     <string name="um_class_algorithms_topic4">Casos de estudo:algoritmos de ordenação</string>
     <string name="um_class_algorithms_topic5">Estudo de algoritmos fundamentais sobre grafos</string>
@@ -5898,7 +5898,7 @@ Os estudantes deverão ainda desenvolver competências em análise e síntese, r
 
     <string name="um_class_option">Opcional</string>
     <string name="um_class_option_description">A Opção UMinho será escolhida pelos alunos entre um conjunto de UCs que todos os anos será disponibilizado ao nível da Universidade</string>
-    <string name="um_class_option_topic1">Desconhecido</string>
+    <string name="um_class_option_topic1">A UC Opcional é escolhida de uma panóplia de UCs oferecidas pela UMinho das mais variadas Áreas Científicas que não a Engenharia Informática</string>
 
     <string name="um_class_calc_programs">Programas</string>
     <string name="um_class_calc_programs_description">(i) Construção de programas: escrever programas funcionais de forma
@@ -7169,7 +7169,7 @@ Os estudantes deverão ainda desenvolver competências em análise e síntese, r
         Processamento sequencial versus processamento paralelo. Análise e testes de performance;</string>
     <string name="um_class_java_streams_topic1">Noções Fundamentais - Parametrização de comportamento</string>
     <string name="um_class_java_streams_topic2">Expressões lambda - Expressões lambdas e parametrização de comportamento</string>
-    <string name="um_class_java_streams_topic3">nterfaces Funcionais, Predicados, Consumidores e Funções, Composição de expressões lambda. Currying</string>
+    <string name="um_class_java_streams_topic3">Interfaces Funcionais, Predicados, Consumidores e Funções, Composição de expressões lambda. Currying</string>
     <string name="um_class_java_streams_topic4">Metaprogramação e Refactoring em Java: Reflexão, MetaClasses, Factory Methods, Annotations e Inversão de Controlo (IoC)</string>
     <string name="um_class_java_streams_topic5">Novas interfaces e Default methods. Uso do tipo Optional.</string>
     <string name="um_class_java_streams_topic6">Programação com streams de Java. Streams versus Colecções</string>
@@ -7224,16 +7224,16 @@ Os estudantes deverão ainda desenvolver competências em análise e síntese, r
     <string name="um_class_ambient_intel_topic3">Wearable Computing</string>
     <string name="um_class_ambient_intel_topic4">Interfaces Inteligentes</string>
     <string name="um_class_ambient_intel_topic5">Metodologias de engenharia de software para o desenvolvimento de aplicações inteligentes.</string>
-    <string name="um_class_ambient_intel_topic6">Computação Reativa vs Pró-ativa</string>
+    <string name="um_class_ambient_intel_topic6">Computação Reactiva vs Pró-activa</string>
     <string name="um_class_ambient_intel_topic7">Context-awareness</string>
     <string name="um_class_ambient_intel_topic8">Sistemas de Referenciação, de Localização e de Orientação</string>
     <string name="um_class_ambient_intel_topic9">Detecção de actividades e eventos</string>
-    <string name="um_class_ambient_intel_topic10">Modelação de utilizadores e personalização, e Sistemas de Recomendação</string>
+    <string name="um_class_ambient_intel_topic10">Modelação de utilizadores e personalização e Sistemas de Recomendação</string>
     <string name="um_class_ambient_intel_topic11">Análise Comportamental</string>
     <string name="um_class_ambient_intel_topic12">Inteligência Ambiente e Inteligência Artificial</string>
     <string name="um_class_ambient_intel_topic13">Arquitectura genérica de um sistema de Inteligência Ambiente</string>
     <string name="um_class_ambient_intel_topic14">Percepção, Raciocínio, Decisão, Actuação e Aprendizagem</string>
-    <string name="um_class_ambient_intel_topic15">Segurança, Privacidade, Proteção de Dados, Identificação e Enquadramento Legal</string>
+    <string name="um_class_ambient_intel_topic15">Segurança, Privacidade, Protecção de Dados, Identificação e Enquadramento Legal</string>
     <string name="um_class_ambient_intel_topic16">Exemplos de aplicações em domínios concretos, na área da Saúde, Ambient Assisted Living, Resolução de Disputas, Smart Cities</string>
 
     <string name="um_class_special_labs">Laboratório de Engenharia Informática</string>
