@@ -24,10 +24,12 @@ public class SweRankerApplication extends Application {
         Realm.init(this);
 
         RealmConfiguration defaultConfiguration = new RealmConfiguration.Builder()
-                .name("sweranker.realm")
-                .deleteRealmIfMigrationNeeded()
+                .assetFile("sweranker.realm")
+                .name("sweranker_prod.realm")
                 .schemaVersion(1)
                 .build();
+
+//        boolean compacted = Realm.compactRealm(defaultConfiguration);
 
         Realm.setDefaultConfiguration(defaultConfiguration);
 
@@ -42,5 +44,6 @@ public class SweRankerApplication extends Application {
     public ApplicationComponent getComponent() {
         return _component;
     }
+
 
 }

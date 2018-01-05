@@ -680,10 +680,11 @@ public class MainActivityViewModel extends ViewModel {
             _degreeCombinationIdBase = "d" + _degreeId + "c";
             _combinationIdCounter = 1;
 
-            calculateAndSaveAnnualCombinations(_degree);
+            calculateAndSaveAnnualCombinations();
             calculateAndSaveAnnualScores();
-            calculateAndSaveDegreeClassCombinations(_degree);
+            calculateAndSaveDegreeClassCombinations();
             calculateAndSaveDegreeScores();
+
             return null;
 
         }
@@ -694,26 +695,23 @@ public class MainActivityViewModel extends ViewModel {
          * After executing this will return a list that is composed by a set of degree classes
          * that is possible to take in a given year and it calculates the combinations for each
          * year by using a calculation strategy that must be defined by each degree for each year.
-         *
-         * @param degree
-         * @return
          */
-        private void calculateAndSaveAnnualCombinations(Degree degree) {
+        private void calculateAndSaveAnnualCombinations() {
             List<AnnualClassCombination> annualCombinations = new ArrayList<>();
 
             if (_listener.isPresent()) {
-                _listener.get().startProgressAction(R.string.calculation_progress_annual_combo, degree.getYears());
+                _listener.get().startProgressAction(R.string.calculation_progress_annual_combo, _degree.getYears());
             }
 
             publishProgress();
 
-            for (Map.Entry<Integer, ClassCombinationStrategy> classCombinationStrategy : degree.getClassCombinationStrategies().entrySet()) {
+            for (Map.Entry<Integer, ClassCombinationStrategy> classCombinationStrategy : _degree.getClassCombinationStrategies().entrySet()) {
 
                 Integer yearOfDegree = classCombinationStrategy.getKey();
                 ClassCombinationStrategy combinationStrategy = classCombinationStrategy.getValue();
 
                 // Here, using each year's strategy to unfold all possible combinations for this year
-                annualCombinations.addAll(combinationStrategy.getAnnualClassCombinations(yearOfDegree, degree.getClassesAsList()));
+                annualCombinations.addAll(combinationStrategy.getAnnualClassCombinations(yearOfDegree, _degree.getClassesAsList()));
 
                 if (_listener.isPresent()) {
                     _listener.get().updateProgressAction(1);
@@ -729,7 +727,7 @@ public class MainActivityViewModel extends ViewModel {
 
 
             if (_listener.isPresent()) {
-                _listener.get().startProgressAction(R.string.calculation_progress_saving_annual_combos, degree.getYears());
+                _listener.get().startProgressAction(R.string.calculation_progress_saving_annual_combos, _degree.getYears());
             }
 
             _scoresRepository.saveObjects(annualCombinations);
@@ -817,10 +815,8 @@ public class MainActivityViewModel extends ViewModel {
          * Since this is usually a big number a recursive algorithm was used to save memory. Furthermore, everytime a complete batch
          * of X combinations was found they were immediately saved to the Realm database freeing up the memory ASAP.
          * <p>
-         *
-         * @param degree
          */
-        private void calculateAndSaveDegreeClassCombinations(Degree degree) {
+        private void calculateAndSaveDegreeClassCombinations() {
 
             _scoresRepository.open();
 
@@ -1236,7 +1232,8 @@ public class MainActivityViewModel extends ViewModel {
              * No entanto nao e assim que se deve fazer, o ideal e devolver um "ResultSet" que vai sendo iterado ate nao se pretender
              * mais dados. Isso seria feito, presumo, pelo Adapter desta coisa. Logo a connection estaria aberta ate sair desse ecra...
              * Tenho que pensar melhor nisto e implementar no futuro.
-             * */
+             *
+             */
             LinkedHashMap<String, Integer> temporaryData = new LinkedHashMap<>();
             if (!queryResults.isEmpty()) {
                 for (SweScore score : queryResults) {

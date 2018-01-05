@@ -35,6 +35,7 @@
 -keep class * implements android.arch.lifecycle.LifecycleObserver {
     <init>(...);
 }
+-dontwarn android.arch.**
 # ViewModel's empty constructor is considered to be unused by proguard
 -keepclassmembers class * extends android.arch.lifecycle.ViewModel {
     <init>(...);

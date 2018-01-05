@@ -114,7 +114,7 @@ public class RealmScoresRepository implements ScoresRepository {
     @Override
     public void insertOrUpdateObjectsInTransaction(List<?> objects) {
         getRealmnstanceOfThread().executeTransaction(r -> r.insertOrUpdate((List<RealmObject>) objects));
-        Log.i("SweRanker:Database", "Saved or updated " + objects.size() + " of type " + objects.get(0).getClass().getSimpleName());
+        Log.i("SweRanker:Database", "Saved or updated " + objects.size() + " objects of type " + objects.get(0).getClass().getSimpleName());
     }
 
     @Override
