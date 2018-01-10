@@ -11,6 +11,8 @@ Software Engineer.
 
 More information about this standard can be found here: https://www.computer.org/web/swebok/v3-guide
 
+Download it from Google Play here (currently BETA): https://play.google.com/apps/testing/pt.cmg.sweranker
+
 ### What does this app do? ###
 
 This app's main goal is to crunch through every available degree it has and calculate a score.
@@ -101,8 +103,8 @@ a **single score per Degree Combination, i.e. per different way to complete a de
 Every Degree Combination is unique, meaning that there is **at least** one class that differs it from any other combination.
 
 This gives potential to a lot of interesting conclusions for a given degree, because it surfaces specific strenghts and weaknesses to a combination.
-Do you want your degree to focus in Software Construction? Then "Combination nÂº X" from a given degree is probably more suited to your needs
-because it has more Software Construction classes than, say "Combination nÂº Y" that is more focused on Software Testing. This app lends itself to this
+Do you want your degree to focus in Software Construction? Then "Combination nº X" from a given degree is probably more suited to your needs
+because it has more Software Construction classes than, say "Combination nº Y" that is more focused on Software Testing. This app lends itself to this
 kind of conclusion - that is the point of this app.
 
 #### The filters ####
