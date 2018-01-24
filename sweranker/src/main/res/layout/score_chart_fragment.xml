@@ -61,14 +61,14 @@
                         android:layout_marginStart="8dp"
                         android:layout_marginTop="8dp"
                         app:layout_constraintLeft_toRightOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintBottom_toBottomOf="parent">
+                        app:layout_constraintTop_toTopOf="parent">
 
                         <ImageView
                             android:id="@+id/degree_image"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             tools:src="@drawable/feup_logo" />
+
                     </android.support.v7.widget.CardView>
 
 
@@ -76,8 +76,9 @@
                         android:id="@+id/degree_overview_name"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="24dp"
                         android:layout_marginEnd="8dp"
+                        android:layout_marginStart="24dp"
+                        android:layout_marginTop="8dp"
                         android:textAlignment="center"
                         android:textSize="@dimen/chart_degree_overview_name_text_size"
                         app:layout_constraintEnd_toEndOf="parent"
@@ -89,8 +90,8 @@
                         android:id="@+id/degree_overview_university"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="24dp"
                         android:layout_marginEnd="8dp"
+                        android:layout_marginStart="24dp"
                         android:textAlignment="center"
                         android:textSize="@dimen/chart_degree_overview_university_text_size"
                         app:layout_constraintEnd_toEndOf="parent"
@@ -102,8 +103,8 @@
                         android:id="@+id/degree_overview_combo_name"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="24dp"
                         android:layout_marginEnd="8dp"
+                        android:layout_marginStart="24dp"
                         android:layout_marginTop="2dp"
                         android:textAlignment="center"
                         android:textSize="@dimen/chart_degree_overview_combo_name"
@@ -116,7 +117,7 @@
                         android:id="@+id/show_licenciate"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginEnd="8dp"
+                        android:layout_marginStart="8dp"
                         android:layout_marginTop="5dp"
                         android:background="@drawable/rounded_shape"
                         android:clickable="true"
@@ -127,15 +128,15 @@
                         android:textSize="@dimen/chart_degree_overview_button_text_size"
                         android:textStyle="bold"
                         android:visibility="gone"
-                        app:layout_constraintEnd_toStartOf="@+id/show_overview"
-                        app:layout_constraintTop_toBottomOf="@id/degree_overview_combo_name"
-                        app:layout_constraintBottom_toBottomOf="parent" />
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/show_overview"
+                        app:layout_constraintTop_toBottomOf="@id/degree_image_area" />
 
                     <TextView
                         android:id="@+id/show_overview"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginEnd="8dp"
+                        android:layout_marginStart="8dp"
                         android:layout_marginTop="5dp"
                         android:background="@drawable/rounded_shape"
                         android:clickable="true"
@@ -146,9 +147,9 @@
                         android:textSize="@dimen/chart_degree_overview_button_text_size"
                         android:textStyle="bold"
                         android:visibility="visible"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/degree_overview_combo_name" />
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/degree_image_area" />
+
 
                 </android.support.constraint.ConstraintLayout>
 
@@ -205,9 +206,9 @@
                         android:id="@+id/missing_topics_button"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:paddingBottom="10dp"
                         android:background="@drawable/border_below"
                         android:gravity="center_horizontal"
+                        android:paddingBottom="10dp"
                         android:text="@string/missing_topics" />
 
                     <android.support.v7.widget.RecyclerView
