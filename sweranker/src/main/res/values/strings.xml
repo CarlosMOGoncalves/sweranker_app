@@ -128,7 +128,7 @@
     <string name="ka3_topic2_description">Sobre como gerir um processo de construção através de Modelos de Ciclo de Vida (como as metodologias lineares estilo Waterfall ou iterativas tipo Agile);\n\no planeamento da construção (qual a ordem de actividades num processo de construção – isto é altamente dependente de que Modelo de construção é usado);\n\ncomo medir o que é criado (estatísticas sobre código, calendarização, esforço – novamente diferentes medidas dependem do Modelo escolhido, e.g. esforço é uma medida típica da metodologia scrum).</string>
     <string name="ka3_topic3_name">Considerações Práticas</string>
     <string name="ka3_topic3_description">Sobre o cariz predominantemente prático da construção;\n\na necessidade de fazer ajustamentos ou modificações de pequena escala ao Desenho durante a construção;\n\nas linguagens necessárias para construir software - como linguagens de configuração, linguagens de scripting, linguagens de programação, linguagens visuais, etc.;\n\nas características da codificação em si (construções semânticas, estruturas de controlo, tratamento de erros, organização do código em classes, modos de documentação do código, etc.);\n\ntestes de construção (testes unitários e testes de integração);\n\ntécnicas de construção para reutilização por terceiros (tais como estruturação de bibliotecas, utilização de padrões de desenho conhecidos);\n\nreutilização de software pré-existente (recurso a bibliotecas, repositórios públicos, etc.);\n\nqualidade na construção (testes de código, debugging, assertions, programação defensiva, code reviews, etc.);\n\nintegração do código num sistema (phase integration e incremental).</string>
-    <string name="ka3_topic4_name">Técnologias de Construção</string>
+    <string name="ka3_topic4_name">Tecnologias de Construção</string>
     <string name="ka3_topic4_description">Sobre como desenhar e usar APIs;\n\nproblemas típicos de paradigmas orientados aos objectos (como polimorfismo e reflexão);\n\ntipos parametrizados e genéricos;\n\nassertions, programação por interfaces e programação defensiva;\n\ntratamento de erros;\n\nmodelos executáveis (criação de um programa compilando um modelo executável de uma linguagem de modelação);\n\nprogramação baseada em estados e baseada em tabelas;\n\nconfiguração em runtime e internacionalização;\n\nprocessamento de gramáticas de linguagens;\n\nprimitivas de concorrência (semáforos, mutexes, monitores, etc.);\n\nmiddleware (software que providencia serviços entre a camada do SO e a camada aplicacional);\n\nprogramação para sistemas distribuídos;\n\nconstrução de sistemas heterogéneos (como Processadores de Sinais Digitais ou Sistemas Embebidos);\n\nanálise de performance e tuning (escolhas de arquitecturas, estruturas de dados ou selecção de algoritmos);\n\nstandards de plataformas (por exemplo J2EE vs J2SE);\n\ntest-driven development.</string>
     <string name="ka3_topic5_name">Ferramentas de Construção de Software</string>
     <string name="ka3_topic5_description">Sobre todo o tipo de ferramentas (tipicamente também software) que ajudam à construção de software tais como IDEs (ambientes de desenvolvimento integrado como Eclipse, Netbeans, Visual Studio, etc);\n\nconstrutores de Interfaces Gráficas (actualmente também parte de IDEs modernos);\n\nferramentas de Testes Unitários e ainda ferramentas de profiling de código, análise de performance e slicing.</string>
@@ -200,7 +200,7 @@
     <string name="ka8_topic1_name">Definição de Processo de Software</string>
     <string name="ka8_topic1_description">Sobre a definição daquilo que é um processo de software e o que o compõe;\n\ninputs requeridos, actividades de trabalho transformativas e os outputs gerados;\n\ndecomposição do processo em unidades de trabalho;\n\ncargos e competências;\n\ntécnicas, ferramentas e notações;\n\ngestão de processos de software, a sua eficiência para um projecto e os impactos que advenham da sua troca por outro.</string>
     <string name="ka8_topic2_name">Ciclos de Vida de Software</string>
-    <string name="ka8_topic2_description">Sobre as diferentes categorias de modelos de ciclos de vida do desenvolvimento de software;\n\ncategorias de processos de software, tais com processos primários (para desenvolvimento, operação e manutenção de software), processos de suporte (para gestão das configurações, controlo de qualidade, verificação e validação), processos organizacionais (treino, gestão de infra-estruturas, gestão de portefolio, etc.), processos inter-projectos (transversais a vários projectos);\n\nmodelos de ciclo de vida do software (modelos preditivos ou lineares como o modelo cascata vs modelos iterativos como o modelo espirar vs modelos ágeis de desenvolvimento como scrum);\n\nadaptação de processos de software existentes às necessidades do projecto, organização ou desenvolvimentos técnologicos.</string>
+    <string name="ka8_topic2_description">Sobre as diferentes categorias de modelos de ciclos de vida do desenvolvimento de software;\n\ncategorias de processos de software, tais com processos primários (para desenvolvimento, operação e manutenção de software), processos de suporte (para gestão das configurações, controlo de qualidade, verificação e validação), processos organizacionais (treino, gestão de infra-estruturas, gestão de portefolio, etc.), processos inter-projectos (transversais a vários projectos);\n\nmodelos de ciclo de vida do software (modelos preditivos ou lineares como o modelo cascata vs modelos iterativos como o modelo espirar vs modelos ágeis de desenvolvimento como scrum);\n\nadaptação de processos de software existentes às necessidades do projecto, organização ou desenvolvimentos tecnológicos.</string>
     <string name="ka8_topic3_name">Avaliação e Melhoramento de Processos de Software</string>
     <string name="ka8_topic3_description">Sobre o acompanhamento do desempenho dos processos e a sua potencial alteração de modo a melhor responderem às necessidades específicas do projecto ou organização;\n\nos diferentes modelos e métodos (qualitativos que são sujeitos ao julgamento especializado ou quantitativos que são realizados com base em métricas);\n\nmodelos de melhoria iterativa de processos (como por exemplo o Plan-Do-Check-Act);\n\nsistemas de avaliação e pontuação de processos.</string>
     <string name="ka8_topic4_name">Medidas para Processos de Software</string>
@@ -2619,7 +2619,7 @@ Os estudantes deverão ainda desenvolver competências em análise e síntese, r
     <string name="ist_class_intro_swe_topic3">Engenharia de Computadores e das Infra-estruturas Informáticas Computadores, S.O.s, S.D.s,Computação em Nuvém, Data Centers, Segurança.</string>
     <string name="ist_class_intro_swe_topic4">Engenharia de Software e Sistemas Aplicacionais Especializados Concepção, desenvolvimento, produção e teste de produtos de Software. Principais domínios aplicacionais em Engenharia de Software</string>
     <string name="ist_class_intro_swe_topic5">Engenharia dos Sistemas de Informação; A Informática nas Organização: Arquitectura, Governação e Engenharia Empresarial; A descoberta, mineração, exploração e preservação da Informação</string>
-    <string name="ist_class_intro_swe_topic6"> A investigação em Engenharia Informática: Os grandes desafios da Sociedade Biónica</string>
+    <string name="ist_class_intro_swe_topic6">A investigação em Engenharia Informática: Os grandes desafios da Sociedade Biónica</string>
     <string name="ist_class_intro_swe_topic7">Inovação e Empreendedorismo em Engenharia Informática</string>
 
     <string name="ist_class_calculus2">Cálculo Diferencial e Integral II</string>
@@ -3040,7 +3040,7 @@ Os estudantes deverão ainda desenvolver competências em análise e síntese, r
         utilizando as abordagens de arquitecturas de software e padrões de desenho. Estudar os métodos e as técnicas da passagem
         do espaço do problema para o espaço da solução de modo a garantir a rastreabilidade entre os requisitos do sistema e o
         seu desenho. Ler, avaliar e escrever arquitecturas de software.</string>
-    <string name="ist_class_sw_arch_topic1">Introdução às Arquitecturas de Software: O Ciclo de Influência da Arquitectura; Conceitos; Atributos e Táticas de Qualidade</string>
+    <string name="ist_class_sw_arch_topic1">Introdução às Arquitecturas de Software: O Ciclo de Influência da Arquitectura; Conceitos; Atributos e Tácticas de Qualidade</string>
     <string name="ist_class_sw_arch_topic2">Documentar Arquitecturas de Software: Vistas e Estilos Arquitecturais - Módulo, Componente-Conector, Afectação; Diagramas de Contexto; Combinação de Vistas Variabilidade e Dinamismo; Escolha de Vistas</string>
     <string name="ist_class_sw_arch_topic3">Avaliar Arquitecturas de Software: Método ATAM; Método CBAM. Famílias de Produtos de Software.</string>
     <string name="ist_class_sw_arch_topic4">Melhores Práticas de Arquitecturas de Software: Padrões de Arquitectura Empresarial</string>
@@ -4397,7 +4397,7 @@ Os estudantes deverão ainda desenvolver competências em análise e síntese, r
     <string name="uav_class_programming_fundamentals_description">Pretende-se dotar os alunos da capacidade para resolver problemas de pequena e
         média dimensão recorrendo a uma linguagem de programação multi-paradigma (Python)</string>
     <string name="uav_class_programming_fundamentals_topic1">Enquadramento histórico e conceitos básicos sobre paradigmas de programação</string>
-    <string name="uav_class_programming_fundamentals_topic2">Variaveis, Expressões, e definições</string>
+    <string name="uav_class_programming_fundamentals_topic2">Variáveis, Expressões, e definições</string>
     <string name="uav_class_programming_fundamentals_topic3">Funções</string>
     <string name="uav_class_programming_fundamentals_topic4">Estruturas decisórias</string>
     <string name="uav_class_programming_fundamentals_topic5">Recursividade</string>
@@ -4513,7 +4513,7 @@ Os estudantes deverão ainda desenvolver competências em análise e síntese, r
     <string name="uav_class_algorithms_topic5">Gestão de falhas e construção de algoritmos e estruturas de dados com correcção e robustez</string>
     <string name="uav_class_algorithms_topic6">Implementação de estruturas de dados fundamentais: pilhas, filas, listas ligadas e bi-ligadas, tabelas de dispersão, árvores binárias de pesquisa e grafos.</string>
 
-    <string name="uav_class_probability">Métodos Probabílisticos para Engenharia Informática</string>
+    <string name="uav_class_probability">Métodos Probabilísticos para Engenharia Informática</string>
     <string name="uav_class_probability_description">Justificar a necessidade da modelação probabilística no contexto da Eng. Informática.
         Fornecer as ferramentas matemáticas que permitam caracterizar esta modelação nos seus diferentes aspectos
         (probabilidades, estatística e processos estocásticos). Explorar as possibilidades de experimentação abertas pela
@@ -5867,7 +5867,7 @@ Os estudantes deverão ainda desenvolver competências em análise e síntese, r
     <string name="um_class_os_topic6">Gestão de ficheiros</string>
 
     <string name="um_class_oop">Programação Orientada aos Objectos</string>
-    <string name="um_class_oop_description">Compreender os conceitos fundamentais da PPO ( Objectos, Classes, Herança e Polimorfismo;\n
+    <string name="um_class_oop_description">Compreender os conceitos fundamentais da PPO (Objectos, Classes, Herança e Polimorfismo;\n
         - analisar e ilustrar a estruturação de um domínio em classes;\n
         - construir hierarquias de classes utilizando as noções de classe abstracta, tipo abstracto de dados e polimorfismo;\n
         - compreender a importância das classes abstractas e herança na concepção de um sistema em POO;\n
